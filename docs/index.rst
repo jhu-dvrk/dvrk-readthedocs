@@ -11,3 +11,12 @@ dVRK
    pages/Classic
    pages/Si
    pages/instruments
+   pages/setup
+   pages/software
+   pages/connectivity
+   pages/calibration
+   pages/applications
+   pages/development
+   pages/video
+   pages/troubleshooting
+   pages/references
