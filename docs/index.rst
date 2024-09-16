@@ -3,8 +3,8 @@
 dVRK
 ````
 .. toctree::
-   :numbered:
-   :maxdepth: 3
+   :numbered: 3
+   :maxdepth: 4
 
    pages/introduction
    pages/kit
