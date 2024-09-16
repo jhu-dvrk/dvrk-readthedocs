@@ -2,40 +2,9 @@
 References
 ##########
 
-********
-Acronyms
-********
+.. toctree::
 
-************
-Publications
-************
-
-dVRK
-####
-
-dVRK community
-##############
-
-*****
-Links
-*****
-
-Intuitive Surgical
-##################
-
-Open source
-###########
-
-Mechatronics
-************
-
-Software
-********
-
-CAD
-***
-
-*********************************
-Documents from Intuitive Surgical
-*********************************
+   references/acronyms
+   references/publications
+   references/links
 
