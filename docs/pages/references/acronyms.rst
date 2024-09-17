@@ -1,3 +1,5 @@
+.. _references_acronyms:
+
 ********
 Acronyms
 ********
@@ -63,11 +65,17 @@ General
 **LCSR**
   `Laboratory for Computational Sensing and Robotics <https://lcsr.jhu.edu/>`_ (at Johns Hopkins)
 
-**ROS**
-  `Robotic Operating System <https://www.ros.org>`_
+**cisst**
+  Computer-Integrated Surgical Systems and Technology: `NSF ERC CISST <https://cisst.org>`_ and `cisst libraries <https://github.com/jhu-cisst>`_
 
+**SAW**
+  Surgical Workstation Assistant: `components based on cisst libraries <https://github.com/jhu-cisst/cisst/wiki/cisst-libraries-and-SAW-components>`_
+  
 **CRTK**
   `Collaborative Robotics ToolKit <https://crtk-robotics.readthedocs.io>`_
+
+  **ROS**
+  `Robotic Operating System <https://www.ros.org>`_
 
 dVRK specific
 *************
