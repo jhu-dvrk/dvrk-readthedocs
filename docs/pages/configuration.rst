@@ -6,5 +6,6 @@ Configuration files and calibration
 
    configuration/overview
    configuration/board-id
+   configuration/serial-number
    configuration/generators
    configuration/calibration
