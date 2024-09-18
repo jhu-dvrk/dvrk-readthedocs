@@ -12,6 +12,8 @@ dVRK
    pages/Si
    pages/instruments
    pages/setup
+   pages/controllers-Classic
+   pages/controllers-Si
    pages/software
    pages/connectivity
    pages/configuration
