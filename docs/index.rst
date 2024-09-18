@@ -8,12 +8,9 @@ dVRK
 
    pages/introduction
    pages/kit
-   pages/Classic
-   pages/Si
-   pages/instruments
+   pages/hardware
    pages/setup
-   pages/controllers-Classic
-   pages/controllers-Si
+   pages/controllers
    pages/software
    pages/connectivity
    pages/configuration

@@ -1,6 +1,6 @@
-########################
-dVRK Classic Controllers
-########################
+*******
+Classic
+*******
 
 Introduction Controller is IO + linear amps for 8 dofs Use of FireWire and Ethernet
 

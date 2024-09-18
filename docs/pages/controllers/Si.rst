@@ -1,6 +1,6 @@
-###################
-dVRK Si Controllers
-###################
+**
+Si
+**
 
 Introduction
 
@@ -8,6 +8,7 @@ Introduction
 * SUJ or standalone arms
 
 Sections
+
 * dRAC
 * FPGA, link to Standard Controllers/link to Peter's doc
 * ESPM programmer

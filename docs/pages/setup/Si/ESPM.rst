@@ -7,25 +7,25 @@ Introduction
 
 The circuit board (ESPM) inside the arm manages all the low power
 signals for the Si PSMs and ECMs: encoders, magnetic potentiometers,
-buttons, instrument Id, LEDs.
+buttons, instrument Id, LEDs...
 
 By default, it communicates with the core controller using a
 proprietary protocol over LVDS.  JHU, in collaboration with Intuitive
-Surgical, developed a closed-source FPGA firmware that relies an open
-protocol. The firmware is publicly available in a binary image only,
-its source is and will remain private.
+Surgical, developed a closed-source FPGA firmware for the ESPM that
+relies on an open protocol. The firmware is publicly available in a
+binary image only, its source is not open source.
 
 The ESPM programmer acts as an alternative boot loader and re-programs
 the arm every time it powers up. The dVRK specific firmware is not
-persistent and the arm will revert to the original firmware after a
-power cycle if the ESPM programmer is removed or de-activated (using
-switch on ESPM programmer).  The ESPM programmer uses an SD card so we
-can easily upgrade the dVRK firmware.
+persistent. The arm will revert to the original firmware after a power
+cycle if the ESPM programmer is removed or de-activated (using switch
+on ESPM programmer).  The ESPM programmer uses an SD card so one can
+easily upgrade the dVRK firmware.
 
 Installation
 ************
 
-You first need to make sure the arm is not power.
+You first need to make sure the arm is not powered.
 
 Then remove the plastic cover on the robot arm. You will need an
 imperial allen wrench to remove the single bolt holding the cover.
@@ -63,16 +63,22 @@ programmer in the holder, then stick the holder on the robot as shown
 below. Put the plastic cover back on the arm while making sure the
 cover is not pinching the cable.
 
+.. figure:: /images/Si/ESPM-programmer.jpg
+   :width: 400
+   :align: center
+
+   ESPM programmer on arm
+
 .. note:
 
-   If the arm is folded and you can access the surface to stick the
-   holder, you can let him hand until you can power the arm and
-   release the brakes.
+   If the arm is folded and you can't access the surface to stick the
+   holder, you can let it hang until you can power the arm and release
+   the brakes.
 
 Usage
 *****
 
-Make sure that the switch on the ESPM programmer is set to :enable",
-and that the micro SD is present.
+Make sure that the switch on the ESPM programmer is set to "enable",
+and that the micro SD card is present.
 
 todo document LED on programmer

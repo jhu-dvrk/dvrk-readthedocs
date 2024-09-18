@@ -1,6 +1,6 @@
-###############################
+*******************************
 Components from the da Vinci Si
-###############################
+*******************************
 
 .. toctree::
 
@@ -8,4 +8,3 @@ Components from the da Vinci Si
    Si/PSM
    Si/ECM
    Si/SUJ
-   Si/misc
