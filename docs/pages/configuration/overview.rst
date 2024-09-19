@@ -14,7 +14,7 @@ Types of files
 * **IO (input/output):** These files are used by the
   :ref:`*sawRobotIO1394*<sawrobotio>` software components.  They specify
   which signals coming in and out of the dVRK controllers a device needs
-  to use and how to convert them to something useful.  For exemple a
+  to use and how to convert them to something useful.  For example a
   digital input low/high can be converted to a pedal pressed or
   released, an analog input can be converted to a potentiometer position
   in SI units, an analog output can be used to send a desired motor
@@ -44,7 +44,7 @@ Types of files
 
 * **Kinematics**: These files are used by the
   :ref:`sawIntuititiveResearchKit<sawintuitiveresearchkit>` arm
-  components.  There is one file per arm type.  They are shared accross
+  components.  There is one file per arm type.  They are shared across
   systems and use the JSON file format.  The format is defined in the
   *cisst* library *cisstRobot*, class ``robManipulator``.
 
@@ -58,7 +58,7 @@ Types of files
   (e.g. ``LARGE_NEEDLE_DRIVER_400006.json``).  See :ref:`instrument
   naming<instrument-naming>`.
 
-* **Intruments list**: These are shared files listing all the
+* **Instruments list**: These are shared files listing all the
   available instruments (aka tools).  Most users will never need to
   modify these unless they need to add a new instrument (e.g. custom
   built).  They use the JSON file format and the documentation is
@@ -94,11 +94,11 @@ Where are the configuration files
 Shared files
 ************
 
-All the shared files are under the ``/shared`` directory of the main
+All the shared files are under the ``/share`` directory of the main
 dVRK repository:
 https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/share
 
-The subdirectories are:
+The sub-directories are:
 
 * ``io``: IO files for foot pedals, head sensors and focus controller
 * ``pid``: default PID configuration files
@@ -114,12 +114,59 @@ The subdirectories are:
 Site specific files
 *******************
 
-* For site specific examples, we recommend to use the JHU configuration repository: https://github.com/dvrk-config/dvrk_config_jhu
+For site specific examples, we recommend to use the JHU configuration
+repository as a template for the files ``CMakeLists.txt`` and
+``package.xml``: https://github.com/dvrk-config/dvrk_config_jhu
 
+Assuming a site can have multiple systems, we use sub-directory per
+system. Directory names start with the institution name (e.g. jhu for
+Johns Hopkins, isi for Intuitive Surgical) and should contain the
+system name (e.g. JHU has two systems, a research kit: ``jhu-dVRK``,
+and a full da Vinci: ``jhu-daVinci``).
+
+We strongly encourage each dVRK site to use their own configuration
+repository under https://github.com/dvrk-config.  If you need a new
+repository or access to an existing one, contact the dVRK maintainers.
+
+Each directory should contain:
+
+  * your IO configuration files, ``sawRobotIO1394-xxxxx.xml``, for
+    each arm identified by its number.  You should also store the
+    original ``.cal`` files provided by Intuitive Surgical since they
+    are needed to re-generate the IO XML files (for Classic arms only)
+  * your arms configuration files
+  * your console configuration files since these refer to your system
+    specific IO configuration files
+
+Site specific directories should **NOT** contain any of the shared
+files.  If you make a copy of the shared file in your directory, it
+will be used in place of the default one.  dVRK applications use a
+search path that includes the directory containing the console JSON
+file, the current working directory and then the dVRK shared
+directory.  The ``cisstLog-xxx.txt`` file generated when you run the
+dVRK code should log the path of each configuration file loaded.
 
 How to create the configuration files
 #####################################
 
-To get started, you will need to generate your [IO XML configuration file](/jhu-dvrk/sawIntuitiveResearchKit/wiki/XMLConfig).  The Python configuration generator will also create the Arm JSON file as well as a simple Console JSON file.
+In most cases, users don't have to create the instrument, kinematic
+and PID configuration files since these are shared.
 
-**Pay close attention to units as we used different ones in different sections!**
+For the site specific files, we provide a configuration generator
+(Python based) that will generate a blank IO configuration file for an
+arm, as well as the arm configuration file and a console configuration
+file for said arm.  See :ref:`config-generators <configuration
+generators`.
+
+We are working on a console configuration file generator but
+meanwhile, you will have to start from existing configuration files
+and edit by hand.  Since the JHU configurations files are usually
+up-to-date, we recommend to look at
+https://github.com/dvrk-config/dvrk_config_jhu.
+
+.. caution::
+
+   If you edit a configuration file by hand, pay close attention to
+   units as we used different ones in different sections!  Older files
+   might use millimeters and degrees.  Most other files use SI units,
+   i.e. meters and radians.
