@@ -30,19 +30,18 @@ Important notes
   the FPGA boards on the FireWire bus. These numbers usually don't
   match (you can use :ref:`qladisp` without options to see the mapping
   of nodes/board Ids)
-* The node number is determined by the Firewire bus (physical layer,
+* The node number is determined by the FireWire bus (physical layer,
   or PHY) and the numbers should be sequential. Node 0 usually
   corresponds to ``/dev/fw1``, 1 to ``/dev/fw2``, etc. If you have
   multiple FireWire adapters, the numbering for ``/dev/fw*`` might
-  start higher, i.e. node 0 would be associated to ``/dev/fw2``, etc.
-* The :ref:`board Id<board-id` is determined by the physical dial on
-  the FPGA board and is used to determine which controller is being
-  used.
+  start higher, i.e. node 0 would be associated to ``/dev/fw2``...
+* The :ref:`board Id<board-id>` is determined by the physical dial on
+  the FPGA board and is used to identify which controller is connected
 
 Setup
 #####
 
-FireFire adapter
+FireWire adapter
 ****************
 
 You will need a FireWire adapter on the PC. Due to the fact that
@@ -87,11 +86,11 @@ Set permissions for FireWire devices
 
 In order to run the control software without root/sudo permissions, please follow the following steps:
 
-* Create /etc/udev/rules.d folder if it's not there
+* Create ``/etc/udev/rules.d`` folder if it's not there
 * Add rules for ``/dev/fw*`` devices
-* Optionally create group fpgaqla
-* Optionally add the current user to Group fpgaqla
-* Reload udev rules
+* Optionally create group ``fpgaqla``
+* Optionally add the current user to group ``fpgaqla``
+* Reload ``udev`` rules
 
 Note: pick one of the two solutions described below!
 
@@ -101,7 +100,7 @@ Convenient solution
 If you or your institution doesn't care about who can access the
 FireWire devices on your system, you can grant anyone to have read and
 write permissions on all FireWire devices. This is simpler to manage
-and should satisfy the requirements of most if not all dVRK users.
+and should satisfy the requirements of most, if not all, dVRK users.
 
 The following script should be run only once per computer:
 
@@ -159,7 +158,8 @@ Testing connectivity
 ***********
 
 Note: qladisp is part of the dVRK software, so you will have to build
-the software first. See Build with ROS.
+the software first. See :ref:`software build
+instructions<software-build>`.
 
 There are a few ways to test that your controllers are properly
 connected. You can start with the command line application provided
@@ -262,7 +262,7 @@ the attributes using:
 The output will include the info provided by ``dmesg`` and more:
 
 .. code-block::
-   
+
    looking at device '/devices/pci0000:00/0000:00:1c.4/0000:03:00.0/0000:04:00.0/fw1':
     KERNEL=="fw1"
     SUBSYSTEM=="firewire"

@@ -5,6 +5,11 @@ Introduction
 There are different ways to connect the dVRK controllers depending on
 which version of dVRK controllers are used.
 
+While testing the communication with the dVRK controllers, keep in
+mind that the number of FPGA boards (showing as either a FireWire node
+or and Ethernet IP) depends on the type of controller you're using and
+how they are connected.  See :ref:`controllers<nb-fpgas>`.
+
 FireWire only
 =============
 
@@ -24,7 +29,6 @@ of dVRK controllers and is the most reliable approach.
 
    FireWire only
 
-
 FireWire with Ethernet bridge
 =============================
 
@@ -43,7 +47,6 @@ dVRK controllers.
    :align: center
 
    FireWire with Ethernet bridge
-
 
 Ethernet only
 =============
