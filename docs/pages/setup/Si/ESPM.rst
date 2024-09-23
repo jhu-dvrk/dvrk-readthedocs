@@ -6,21 +6,21 @@ Introduction
 ************
 
 The circuit board (ESPM) inside the arm manages all the low power
-signals for the Si PSMs and ECMs: encoders, magnetic potentiometers,
-buttons, instrument Id, LEDs...
+signals for the Si PSMs and ECMs: encoders, potentiometers, buttons,
+instrument Id, LEDs...
 
 By default, it communicates with the core controller using a
 proprietary protocol over LVDS.  JHU, in collaboration with Intuitive
 Surgical, developed a closed-source FPGA firmware for the ESPM that
 relies on an open protocol. The firmware is publicly available in a
-binary image only, its source is not open source.
+binary image only.
 
-The ESPM programmer acts as an alternative boot loader and re-programs
-the arm every time it powers up. The dVRK specific firmware is not
-persistent. The arm will revert to the original firmware after a power
-cycle if the ESPM programmer is removed or de-activated (using switch
-on ESPM programmer).  The ESPM programmer uses an SD card so one can
-easily upgrade the dVRK firmware.
+The ESPM programmer acts as an alternative boot loader when the arm
+powers-up. The dVRK specific firmware is not persistent. The arm will
+revert to the original firmware after a power cycle if the ESPM
+programmer is removed or de-activated (using switch on ESPM
+programmer). The ESPM programmer uses an SD card so one can easily
+upgrade the dVRK firmware.
 
 Installation
 ************
@@ -50,7 +50,7 @@ do not force it upside down.
    connectors on both ends but plugging it in backward will not
    work. If you are confused, look closely at the picture to see which
    pins are populated (i.e. have a black wire crimped)
-   
+
 .. figure:: /images/Si/ESPM-JTAG.jpg
    :width: 400
    :align: center
