@@ -2,9 +2,9 @@
 Connectivity
 ############
 
-.. _dmesg:
+.. toctree::
 
-dmesg
-=====
-
-dmesg use should be documented here or in subsections
+   connectivity/introduction
+   connectivity/firewire
+   connectivity/ethernet
+   connectivity/bluetooth

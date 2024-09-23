@@ -81,10 +81,10 @@ Types of files
   such as IO parameters (period, port), head sensor used, foot pedal,
   teleoperation component.  The most basic console file contains a
   single arm and uses the default options for everything else.  The
-  single arm files are :ref:`automatically
-  generated<config-generators>`.  The console configuration files use
-  the JSON file format and the documentation is generated from a
-  schema:
+  single arm console files are :ref:`automatically
+  generated<config-generators>` along the arm IO file.  The console
+  configuration files use the JSON file format and the documentation
+  is generated from a schema:
   https://dvrk.lcsr.jhu.edu/documentation/schemas/v2.2/dvrk-console.html
 
 

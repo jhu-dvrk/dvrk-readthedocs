@@ -74,7 +74,7 @@ General
 **CRTK**
   `Collaborative Robotics ToolKit <https://crtk-robotics.readthedocs.io>`_
 
-  **ROS**
+**ROS**
   `Robotic Operating System <https://www.ros.org>`_
 
 dVRK specific
