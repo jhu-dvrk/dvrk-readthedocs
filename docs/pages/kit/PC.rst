@@ -6,7 +6,7 @@ Computers
 
 .. warning::
 
-   You will need at least one PC running Linux but it is strongly
+   You will need at least one PC running Linux **but** it is strongly
    recommended to use two or more if you also need to setup the video
    pipeline or if you plan to run some heavy computations along the
    dVRK code.
@@ -86,8 +86,8 @@ Adapters
   * If you plan to send images to the stereo display, you will need
     two extra VGA outputs for the standard CRTs (or HDMI/DisplayPort
     with VGA converters) or two DVI outputs for the flat panels (see
-    `ISI private
-    Wiki<http://research.intusurg.com/dvrkwiki/index.php?title=DVRK:Topics:StereoViewerLCD>_`)
+    `ISI private Wiki
+    <http://research.intusurg.com/dvrkwiki/index.php?title=DVRK:Topics:StereoViewerLCD>`_)
   * In general Nvidia cards work fine on Linux but...
 
     .. warning::
