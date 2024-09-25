@@ -81,4 +81,22 @@ Usage
 Make sure that the switch on the ESPM programmer is set to "enable",
 and that the micro SD card is present.
 
-todo document LED on programmer
+Troubleshooting
+***************
+
+The blue or white LED indicates normal operation. After powering up, expect the blue or white light to flash rapidly (may appear dimly lit) for a couple seconds, followed by solid on for 2 seconds, then off.
+
+On error, you will see blinking yellow LED. Count the number of blinks between the 2-second intervals::
+
+   2: SD card hardware or filesystem problem
+      /* Try re-inserting the card. Then try formatting and re-flashing the card. */
+   3: Can't find/open espm.xsvf
+      /* Try re-flashing the card. */
+   4: XSVF_ERROR_UNKNOWN
+   5: XSVF_ERROR_TDOMISMATCH
+   6: XSVF_ERROR_MAXRETRIES
+   7: XSVF_ERROR_ILLEGALCMD
+   8: XSVF_ERROR_ILLEGALSTATE
+   9: XSVF_ERROR_DATAOVERFLOW
+
+The most common user errors are 2 and 3. Other errors indicate problems with the firmware image. The firmware flashing is completely open loop. A successful firmware flash reported by ESPM Programmer (blue/white light for 2 seconds) does not indicate a working ESPM.
