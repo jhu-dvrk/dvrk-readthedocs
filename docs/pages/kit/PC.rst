@@ -71,7 +71,7 @@ Adapters
 
   * A second Ethernet adapter is recommended if you plan to connect
     the dVRK controllers to the PC using Ethernet instead of FireWire
-    (see :ref:`connectivity <_Connectivity>`).
+    (see :ref:`connectivity <connectivity>`).
 
   * PCIe adapters are recommended over USB network adapters.  If
     you're using a USB adapter, make sure it's at least USB3.

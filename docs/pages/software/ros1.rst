@@ -110,5 +110,8 @@ your system.
 Notes
 *****
 
+* Don't forget to start a ``roscore`` if you're using ``rosrun``.
+  ``roslaunch`` will start a ``roscore`` if needed.
+  
 * Don't forget to kill our roscore when you're done.  If you're
   working on a shared computer, other users will thank you.

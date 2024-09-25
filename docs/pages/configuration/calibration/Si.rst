@@ -1,6 +1,10 @@
 Si
 ##
 
+.. warning::
+
+   This section is for the Si arms only!
+
 PSMs and ECM
 ************
 

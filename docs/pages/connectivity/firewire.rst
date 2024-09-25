@@ -55,7 +55,7 @@ To get the chipset model of your FireWire card, use ``lshw``.
 
 Here is an example of output for a chip known to work on PCIe bus (recent computers):
 
-.. code-block::
+::
 
    *-firewire
       description: FireWire (IEEE 1394)
@@ -64,7 +64,7 @@ Here is an example of output for a chip known to work on PCIe bus (recent comput
 
 And an example of output for a PCI based chip for much older computers:
 
-.. code-block::
+::
 
    *-firewire
       description: FireWire (IEEE 1394)
@@ -123,7 +123,7 @@ group to control who can access the FireWire devices.
 The following script should be run only once per computer and performs
 the steps described above:
 
-.. code-block::
+.. code-block:: bash
 
    sudo mkdir -p /etc/udev/rules.d # create a directory if needed
    cd
@@ -159,7 +159,7 @@ Testing connectivity
 
 Note: qladisp is part of the dVRK software, so you will have to build
 the software first. See :ref:`software build
-instructions<software-build>`.
+instructions<software>`.
 
 There are a few ways to test that your controllers are properly
 connected. You can start with the command line application provided
