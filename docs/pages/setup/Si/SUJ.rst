@@ -13,8 +13,8 @@ of the dVRK controllers.
 
    Most of the cables we need to reconnect to the dVRK controllers are
    plugged on the 4 RACs, on the front of the patient cart.  There is
-   one lone exception, a back 2-wires cable.  Make sure you keep track
-   of this cable.
+   one lone exception, a Z-axis cable.  Make sure you keep track
+   of this cable. All needed cables come out from a cutout in the vertical column.
 
 .. warning::
 
@@ -23,7 +23,7 @@ of the dVRK controllers.
    controllers.
 
 The first step is to remove the cover (2 parts) on the back of the
-cart.  The cover hold with 2 screws and some pressure clips.
+cart.  The cover hold with 2 screws (use 3/16 hex wrench) and some pressure clips.
 
 .. figure:: /images/Si/Si-SUJ-conversion-top-screws.png
    :width: 400
@@ -62,8 +62,8 @@ On the top view, you can find the "Z-AXIS" connector. Make sure you
 squeeze the tab to unplug it.  Keep that cable aside. it will be
 connected to the 5th dESSJ.
 
-On the front view, you can see 4 RACs, i.e. one per active arm.  They
-are labeled SJA2, SJX, SJC and SJA1.  These cables will need to be
+On the front view, you can see 4 RACs, i.e. one per active arm. Their cables 
+are labeled SJA2, SJX, SJC and SJA1.  They will need to be
 plugged in the dSIB for the PSM2, PSM3, ECM and PSM1 respectively.
 
 See next section for the :ref:`dESSJ<dessj-setup>` and
@@ -78,8 +78,10 @@ See next section for the :ref:`dESSJ<dessj-setup>` and
 On the front view, you can locate the 4 original RACs as well as all
 the connectors that will be connected to the dSIB on the dVRK
 controllers.  There are 2 connectors from a bundle (white), a 2-wires
-black cable, a FireWire B cable (aka LVDS) and a grounding cable with
-a ring terminal.  Make sure all these cables are labeled.
+black cable, a "FireWire B" cable (used for LVDS) and a grounding cable with
+a ring terminal.  Bundle all these cables together and label with the name of the arm.
+
+The upper "FireWire" cable (J10) and the bottom cable (J13) plugged into each RAC are not needed for dVRK.
 
 .. figure:: /images/Si/Si-SUJ-conversion-RAC-cables-labels.png
    :width: 300
