@@ -1,3 +1,5 @@
+.. _calibration-classic-pots:
+
 Potentiometers
 **************
 
@@ -51,7 +53,6 @@ identify a zero position based on mechanical properties.
   offset](/jhu-dvrk/sawIntuitiveResearchKit/wiki/Potentiometer-calibration-for-PSM-insertion)
   as well.
 
-
 Requirements
 ============
 
@@ -87,7 +88,7 @@ convenient for you:
    probably use a rubber band to pull the two vertical bars against
    the gears.
 
-   .. figure:: /images/Classic/PSM/psm-pot-calib-plate-lego-in-place.jpg
+   .. figure:: /images/Classic/PSM/psm-pot-calib-plate-in-place.jpg
       :width: 400
       :align: center
 
@@ -231,10 +232,8 @@ command line:
 
 .. code-block:: bash
 
-
    # In directory <my-config-dir>
    rosrun dvrk_robot dvrk_calibrate_potentiometers.py -t offsets -a PSM2 -c sawRobotIO1394-PSM2-00000.xml
-
 
 Follow the instructions and place the calibration template (either
 Lego bars or plexiglass plate) when prompted to.  The result should

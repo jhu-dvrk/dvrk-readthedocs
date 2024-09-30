@@ -101,10 +101,10 @@ values in the XML file:
    0.465A for the ``ReleasedCurrent``.
 
 For this procedure we will use the
-:ref:`sawRobotIO1394QtConsole<sawrobotioconsole>`program along with
+:ref:`sawRobotIO1394QtConsole<sawrobotioconsole>` program along with
 the ECM XML configuration file for your arm.  You will need to
 manually edit the XML file and between changes, quit and restart the
-`sawRobotIO1394QtConsole` program to test the new values.
+sawRobotIO1394 console program to test the new values.
 
 .. figure:: /images/gui/dvrk-gui-ecm-console.png
    :width: 400
