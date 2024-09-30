@@ -1,4 +1,0 @@
-Mechatronics
-############
-
-Text

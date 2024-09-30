@@ -84,7 +84,7 @@ Types of files
   teleoperation component.  The most basic console file contains a
   single arm and uses the default options for everything else.  The
   single arm console files are :ref:`automatically
-  generated<config-generators>` along the arm IO file.  The console
+  generated <config-generators>` along the arm IO file.  The console
   configuration files use the JSON file format and the documentation
   is generated from a schema:
   https://dvrk.lcsr.jhu.edu/documentation/schemas/v2.2/dvrk-console.html
@@ -157,8 +157,8 @@ and PID configuration files since these are shared.
 For the site specific files, we provide a configuration generator
 (Python based) that will generate a blank IO configuration file for an
 arm, as well as the arm configuration file and a console configuration
-file for said arm.  See :ref:`config-generators <configuration
-generators`.
+file for said arm.  See :ref:`configuration generators
+<config-generators>`.
 
 We are working on a console configuration file generator but
 meanwhile, you will have to start from existing configuration files

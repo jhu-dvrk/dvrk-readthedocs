@@ -1,10 +1,10 @@
-***************
-dVRK components
-***************
+****************
+dVRK controllers
+****************
 
 Text
 
 .. toctree::
 
-   from_JHU/mechatronics
-   from_JHU/software
+   from_JHU/Classic
+   from_JHU/Si

@@ -12,4 +12,4 @@ https://github.com/jhu-saw/vcs.
 The sections below include the ``vcs`` command lines specific to the
 dVRK.
 
-All the code for the dVRK is compatible with ROS1 and ROS2.
+All the code for the dVRK is compatible with ROS 1 and ROS 2.

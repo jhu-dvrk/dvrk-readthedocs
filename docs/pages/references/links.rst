@@ -47,7 +47,7 @@ Electronics
 
 * Logic board version 1 and 2: `FPGA1394 <https://github.com/jhu-cisst/FPGA1394>`_
 * Logic board version 3: `FPGA1394V3 <https://github.com/jhu-cisst/FPGA1394V3>`_
-  
+
 * Classic
 
   * Motor power board: `QLA <https://github.com/jhu-cisst/QLA>`_
@@ -90,7 +90,7 @@ cisst libraries and SAW components
   * `cisst repository <https://github.com/jhu-cisst/cisst>`_
   * `cisst documentation <https://github.com/jhu-cisst/cisst/wiki>`_
   * `cisst netlib <https://github.com/jhu-cisst/cisstNetlib>`_
-  * `cisst-ros <https://github.com/jhu-cisst/cisst-ros>`_ ROS1 and 2 bridge for SAW components
+  * `cisst-ros <https://github.com/jhu-cisst/cisst-ros>`_ ROS 1 and 2 bridge for SAW components
   * `vcs files <https://github.com/jhu-saw/vcs>`_ for cisst, SAW components and dVRK
   * `sawTextToSpeech <https://github.com/jhu-saw/sawTextToSpeech>`_
   * `sawKeyboard <https://github.com/jhu-saw/sawKeyboard>`_

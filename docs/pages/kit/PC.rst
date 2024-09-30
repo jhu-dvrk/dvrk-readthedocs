@@ -95,8 +95,11 @@ Adapters
        Make sure the drivers from NVidia are properly installed, "nouveau" drivers tend to disrupt the FireWire communication.  This happens fairly often due to EUFI/Secure Boot option.  To make sure your drivers are installed correctly, try ``nvidia-smi``.
 
 
+Miscellaneous
+*************
+
 FireWire cables
-***************
+===============
 
 Some cables should be shipped with the controllers. If you need more
 cables, maybe longer cables, we **strongly** recommend UniBrain cables
@@ -104,6 +107,23 @@ cables, maybe longer cables, we **strongly** recommend UniBrain cables
 <https://www.unibrain.com/products/firewire-400-cables/>`_.  Using
 random FireWire cables found in your lab or on the web is a sure way
 to loose a fair amount of time debugging connection issues.
+
+USB Bluetooth dongle
+====================
+
+If you have an Si system with a full cart, you will need a Bluetooth
+USB adapter with a long USB extension.  The dVRK relies on a 5
+Bluetooth Arduino boards (see :ref:`dESSJ <dessj-setup>`) to read the
+SUJ joint positions.  These boards have pretty weak reception so the
+Bluetooth antenna has to be close to the back of the SUJs.
+
+Foot pedal extension cable
+==========================
+
+If you need to use the original foot pedals of the da Vinci Classic
+(or S) surgeon, you need to buy a DB15 extension cable (for example
+https://smile.amazon.com/Monoprice-6ft-DB15-Molded-Cable/dp/B002LWJ7TA).
+
 
 OS
 ##
@@ -120,7 +140,7 @@ Software and OS requirements:
     * Ubuntu 18.04 or 20.04
     * ROS Melodic on Ubuntu 18.04 and Noetic on Ubuntu 20.04
 
-  * ROS2:
+  * ROS 2:
 
     * Ubuntu 20.04 or 22.04
     * ROS Galactic on Ubuntu 20.04 and Humble or Iron on Ubuntu 22.04

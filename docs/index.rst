@@ -8,9 +8,7 @@ dVRK
 
    pages/introduction
    pages/kit
-   pages/hardware
    pages/setup
-   pages/controllers
    pages/software
    pages/connectivity
    pages/configuration

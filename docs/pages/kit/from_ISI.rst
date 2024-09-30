@@ -1,6 +1,9 @@
-***************************
-Original daVinci components
-***************************
+******************
+daVinci components
+******************
 
-Arms, SUJ, Surgeon's console, instruments, sterile adapters, cannulas,
-cannulas holders, endoscope, camera, CCUs.
+.. toctree::
+
+   from_ISI/Classic
+   from_ISI/Si
+   from_ISI/instruments
