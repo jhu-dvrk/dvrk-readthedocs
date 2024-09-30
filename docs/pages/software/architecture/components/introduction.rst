@@ -1,0 +1,4 @@
+.. _components-intro:
+
+Introduction
+############
