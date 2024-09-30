@@ -6,6 +6,5 @@ Software
 
 .. toctree::
 
-   software/vcs
-   software/ros1
-   software/ros2
+   software/compilation
+   software/applications

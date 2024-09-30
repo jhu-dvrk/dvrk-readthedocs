@@ -12,7 +12,6 @@ dVRK
    pages/software
    pages/connectivity
    pages/configuration
-   pages/applications
    pages/development
    pages/video
    pages/troubleshooting
