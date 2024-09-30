@@ -96,10 +96,11 @@ in. To do so, you should add the following lines at the end of your
    if [ -f ~/ros2_ws/install/setup.bash ]; then
      . ~/ros2_ws/install/setup.bash
    fi
-   # for cisst (optional)
-   if [ -f ~/ros2_ws/install/cisstvars.sh ]; then
-     . ~/ros_ws/install/cisstvars.sh
-   fi
+
+.. note::
+   
+   There is no need to source ``cisstvars.sh`` for ROS 2.  It is added
+   as a hook in the *cisst* ``colcon.pkg`` file.
 
 Examples
 ********

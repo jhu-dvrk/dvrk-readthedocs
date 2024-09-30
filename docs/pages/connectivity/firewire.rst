@@ -237,11 +237,11 @@ re. the creation of FireWire devices:
 
 The GUID provides the following information:
 
-* **fa610e**3f00000007: fa610e is the vendor Id, i.e. JHU LCSR
-* fa610e**3**f00000007: 3 is the board Id
-* fa610e3**f**00000007: f is the FPGA board type, i.e. f for FireWire
+* **fa610e**\ 3f00000007: fa610e is the vendor Id, i.e. JHU LCSR
+* fa610e\ **3**\ f00000007: 3 is the board Id
+* fa610e3\ **f**\ 00000007: f is the FPGA board type, i.e. f for FireWire
   only, e for boards with Ethernet adapter (see controller versions)
-* fa610e3f0000000**7**: 7 is the firmware version
+* fa610e3f0000000\ **7**: 7 is the firmware version
 
 .. note::
 

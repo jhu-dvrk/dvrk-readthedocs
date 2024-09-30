@@ -65,8 +65,8 @@ As for the other calibration steps, you need to have all the
 configuration files generated, the C++ code compiled and the current
 calibration performed.  Furthermore, the current implementation
 requires the ROS bridges and Python.  Make sure you compiled your dVRK
-software stack using `catkin build`.  See [build with
-ROS](/jhu-dvrk/sawIntuitiveResearchKit/wiki/CatkinBuild).
+software stack using ``catkin`` or ``colcon`` (see
+:ref:`compilation<compilation>`).
 
 For the offsets, we need a physical mechanism to maintain the arm in
 zero position (or any known position).  We currently have a fairly
@@ -119,7 +119,7 @@ example, to calibrate a PSM2, command line options for
 
    The ``-C`` command line otion (added in release 2.0.1) allows to
    run the dVRK console without the potentiometer safety checks
-   (*C*alibration mode).  Otherwise, with very poorly calibrated
+   (**C**\ alibration mode).  Otherwise, with very poorly calibrated
    potentiometer parameters, the application would keep shutting down,
    preventing users to calibrate their potentiometer parameters.  With
    ``-C``, the console application also resets the encoder preloads on
