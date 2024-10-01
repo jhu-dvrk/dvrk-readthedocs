@@ -44,51 +44,41 @@ current calibration program.  A typical run looks like:
 
 ::
 
-  > sawIntuitiveResearchKitGripperCalibration -c sawRobotIO1394-MTML-gripper-00000.xml
-  Configuration file: sawRobotIO1394-MTML-gripper-00000.xml
-  Port: 0
-  Make sure:
+   adeguet1@lcsr-dvrk-09:~/ros2_ws/src/dvrk/dvrk_config_jhu/jhu-daVinci$
+     sawIntuitiveResearchKitGripperCalibration -c sawRobotIO1394-MTML-gripper-34863.xml
+
+   Configuration file: sawRobotIO1394-MTML-gripper-34863.xml
+   Port: fw:0
+   Make sure:
    - your computer is connected to the firewire controller.
-   - the MTM arm corresponding to the configuration file "sawRobotIO1394-MTML-00000.xml" is connected to the controller.
+   - the MTM arm corresponding to the configuration file "sawRobotIO1394-MTML-gripper-34863.xml" is connected to the controller.
    - the E-Stop is opened, this program doesn't require powered actuators.
    - you have no other device connected to the firewire chain.
    - you have no other program trying to communicate with the controller.
 
-  Press any key to start.
-  Loading config file ...
-  Creating robot ...
-  Creating port ...
-  FirewirePort: number of ports = 1
-  FirewirePort: successfully initialized port 0
-  ScanNodes: base node id = ffc0
-  ScanNodes: building node map for 9 nodes:
-    Node 0, BoardId = 6, Firmware Version = 3
-    Node 1, BoardId = 7, Firmware Version = 3
-    Node 2, BoardId = 8, Firmware Version = 3
-    Node 3, BoardId = 9, Firmware Version = 3
-    Node 4, BoardId = 0, Firmware Version = 3
-    Node 5, BoardId = 1, Firmware Version = 3
-    Node 6, BoardId = 3, Firmware Version = 3
-    Node 7, BoardId = 2, Firmware Version = 3
+   Press any key to start.
+   Loading config file ...
+   Creating robot ...
 
-  Press any key to start collecting data.
-  Fully open and close the gripper up to the second spring on the MTM multiple times.
-  NOTE: It is very important to not close the gripper all the way; stop when you feel some resistance from the second spring.
-  + indicates a new maximum, - indicates a new minimum.
-  Press any key to stop collecting data.
+   Press any key to start collecting data.
+   Fully open and close the gripper up to the second spring on the MTM multiple times.
+   NOTE: It is very important to not close the gripper all the way; stop when you feel some resistance from the second spring.
+   Keep closing and opening until the counter and range stop increasing.
+   Press any key to stop collecting data.
 
-   Counter:   394, range: [   22.256 -   29.272 ]
+     Counter:   533, range: [   16.313 -   60.370 ]
 
-  Status: found range [64.5983, 89.7076] degrees using 12210 samples.
+   Status: found range [16.313, 60.370] degrees using 533 samples.
 
-  Do you want to update the config file with these values? [Y/y]
-  Enter the new desired max for the gripper, 60 (degrees) is recommended to match the maximum tool opening.
-  60
-  Status: offset and scale in XML configuration file: 263.576 -64.5157
-  Status: new offset and scale:                       475.469 -154.164
+   Do you want to update the config file with these values? [Y/y]
+   Enter the new desired max for the gripper, 60 (degrees) is recommended to match the maximum tool opening.
+   60
+   Status: offset and scale in XML configuration file: 261.267 -74.922
+   Status: new offset and scale:                   	333.594 -102.033
 
-  Do you want to save these values? [S/s]
-  Status: new config file is "sawRobotIO1394-MTML-00000.xml-new"
+   Do you want to save these values? [S/s]
+   Existing IO config file has been renamed sawRobotIO1394-MTML-gripper-34863.xml-backup-2024-10-01-14-06-26
+   Results saved in IO config file sawRobotIO1394-MTML-gripper-34863.xml
 
 
 Notes:
