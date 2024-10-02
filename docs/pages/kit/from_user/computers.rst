@@ -103,10 +103,10 @@ These might be installed on the second PC.
   * If you've received a stereo camera with an endoscope from
     Intuitive Surgical, you might want to buy a dual SDI frame
     grabber.  The `Blackmagic DeckLink
-    Duo2<https://www.blackmagicdesign.com/products/decklink/models>`_
+    Duo2 <https://www.blackmagicdesign.com/products/decklink/models>`_
     have been used extensively by the dVRK community.  Remember to
     also buy some good SDI cables.
-    
+  
 OS
 **
 

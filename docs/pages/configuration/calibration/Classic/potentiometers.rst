@@ -158,7 +158,12 @@ the configuration file for your arm, the current system has no way to
 detect it.  So, make sure you are using the same file for both
 applications (console and calibration script).
 
-You will have to acknowledge a few prompt messages:
+You will have to acknowledge a few prompt messages, including a
+warning regarding large motions during the calibration.  The following
+two videos can give you a sense of the space required around the arm:
+
+* MTM: https://youtu.be/tixIjsO6BT0
+* PSM (the ECM performs a similar motion): https://youtu.be/Pl6NQTwF9nU
 
 ::
 

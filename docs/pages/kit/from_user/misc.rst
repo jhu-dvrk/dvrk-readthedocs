@@ -3,6 +3,12 @@
 Miscellaneous
 #############
 
+
+Stereo display
+**************
+
+HMD (for example :ref:`Goovis<goovis>`).
+
 FireWire cables
 ***************
 

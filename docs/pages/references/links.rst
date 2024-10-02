@@ -96,6 +96,10 @@ cisst libraries and SAW components
   * `sawKeyboard <https://github.com/jhu-saw/sawKeyboard>`_
   * `sawControllers <https://github.com/jhu-saw/sawControllers>`_
   * `sawRobotIO1394 <https://github.com/jhu-saw/sawRobotIO1394>`_
+  * *cisst*\ /*SAW* presentations, September 2021
+
+    * Part 1 (30 min): https://youtu.be/SSo2MPsfBlk
+    * Part 2 (45 min): https://youtu.be/XD0S4GzvfM8
 
 CRTK
 ====
@@ -110,6 +114,7 @@ dVRK
 
   * Main site: `dVRK <https://dvrk.lcsr.jhu.edu>`_
   * Documentation `dvrk.readthedocs.io <https://dvrk.readthedocs.io>`_
+  * `YouTube channel <https://www.youtube.com/channel/UCxZyIKTjk2coKGZslIOfblw>`_
   * Core components: `sawIntuitiveResearchKit <https://github.com/jhu-dvrk/sawIntuitiveResearchKit>`_
   * Python ROS client library and examples: `dvrk_python <https://github.com/jhu-dvrk/dvrk_python>`_
   * Matlab ROS client library and examples: `dvrk_matlab <https://github.com/jhu-dvrk/dvrk_matlab>`_
