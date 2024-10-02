@@ -36,10 +36,28 @@ For the offsets, it is a bit more challenging since we need to
 identify a zero position based on mechanical properties.
 
 * The zero position can be visualized using the dVRK in kinematic
-  simulation mode with rViz.  To do so, launch ``roslaunch dvrk_model
-  arm_.launch generation:=Classic arm:=ECM`` for the ECM zero.  You
+  simulation mode with RViz.  To do so, launch ``roslaunch dvrk_model
+  arm.launch generation:=Classic arm:=ECM`` for the ECM zero.  You
   can replace ``ECM`` by ``PSM1``, ``MTML`` or ``MTMR`` to visualize
   the zero position of different arms.
+
+  .. figure:: /images/Classic/PSM/psm-zero-rviz.png
+     :width: 300
+     :align: center
+
+     Classic PSM "home" or "zero" position
+
+  .. figure:: /images/Classic/ECM/ecm-zero-rviz.png
+     :width: 300
+     :align: center
+
+     Classic ECM "home" or "zero" position
+
+  .. figure:: /images/Classic/MTM/mtms-zero-rviz.png
+     :width: 300
+     :align: center
+
+     Classic MTML and MTMR "home" or "zero" position
 
 * For the calibration process, you need to hold the arm in zero
   position.  You can do this with the arm powered or not.  When
@@ -82,7 +100,7 @@ convenient for you:
    pins on the 4 wheels.
 
    .. figure:: /images/Classic/PSM/psm-pot-calib-plate-in-place.jpg
-      :width: 400
+      :width: 300
       :align: center
 
       PSM calibration plate for the last 4 actuators
@@ -91,8 +109,8 @@ convenient for you:
    probably use a rubber band to pull the two vertical bars against
    the gears.
 
-   .. figure:: /images/Classic/PSM/psm-pot-calib-plate-in-place.jpg
-      :width: 400
+   .. figure:: /images/Classic/PSM/psm-pot-calib-lego-in-place.jpg
+      :width: 300
       :align: center
 
       PSM calibration using Legos for the last 4 actuators
