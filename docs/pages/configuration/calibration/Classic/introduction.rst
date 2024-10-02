@@ -24,7 +24,7 @@ are listed below.  The "single step" links point to different
 procedures, make sure you follow all the steps for each arm.
 
 .. csv-table:: Calibration steps for da Vinci Classic
-   :name: default-board-ids
+   :name: default-board-ids-table
    :header: "", "PSM{1,2,3}", "MTM{L,R}", "ECM", "SUJ"
    :align: center
 

@@ -106,7 +106,7 @@ the ECM XML configuration file for your arm.  You will need to
 manually edit the XML file and between changes, quit and restart the
 sawRobotIO1394 console program to test the new values.
 
-.. figure:: /images/gui/dvrk-gui-ecm-console.png
+.. figure:: /images/gui/gui-Classic-ECM-io.png
    :width: 400
    :align: center
 

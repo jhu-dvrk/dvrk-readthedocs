@@ -8,4 +8,4 @@ Some text here?
 
    kit/from_ISI
    kit/from_JHU
-   kit/PC
+   kit/from_user

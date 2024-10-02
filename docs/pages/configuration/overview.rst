@@ -14,7 +14,7 @@ Types of files
 ##############
 
 * **IO (input/output):** These files are used by the
-  :ref:`*sawRobotIO1394*<sawrobotio>` software components.  They specify
+  :ref:`*sawRobotIO1394*<io>` software components.  They specify
   which signals coming in and out of the dVRK controllers a device needs
   to use and how to convert them to something useful.  For example a
   digital input low/high can be converted to a pedal pressed or
@@ -35,7 +35,7 @@ Types of files
     foot pedals, head sensors, focus controller...
 
 * **PID**: These files are used by the
-  :ref:`sawControllers<sawcontrollers>` ``mtsPID`` component.  They
+  :ref:`sawControllers<pid>` ``mtsPID`` component.  They
   contain the default `PID
   <https://en.wikipedia.org/wiki/Proportional-integral-derivative_controller>`_
   parameters, use the JSON file format and follow the naming
@@ -45,7 +45,7 @@ Types of files
   the same type (e.g. ``MTML``, ``ECM``, ``PSM-Si``).
 
 * **Kinematics**: These files are used by the
-  :ref:`sawIntuititiveResearchKit<sawintuitiveresearchkit>` arm
+  :ref:`sawIntuititiveResearchKit<arms>` arm
   components.  There is one file per arm type.  They are shared across
   systems and use the JSON file format.  The format is defined in the
   *cisst* library *cisstRobot*, class ``robManipulator``.
@@ -77,7 +77,7 @@ Types of files
   * ECM: https://dvrk.lcsr.jhu.edu/documentation/schemas/v2.2/dvrk-ecm.html
 
 * **Console**: These files are specific to each site.  They are used
-  by the :ref:`sawIntuititiveResearchKit<sawintuititiveresearchkit>`
+  by the :ref:`sawIntuititiveResearchKit<console>`
   ``mtsIntuitiveResearchKitConsole`` component to define the
   combination of arms you're using as well as a few other parameters
   such as IO parameters (period, port), head sensor used, foot pedal,

@@ -48,18 +48,21 @@ identify a zero position based on mechanical properties.
   dVRK 2.0).
 
 * This page contains a simple solution to calibrate the potentiometer
-  offsets for the PSM last 4 actuators.  Starting with the dVRK 2.0,
-  we provide a method to [calibrate the PSM 3rd potentiometer
-  offset](/jhu-dvrk/sawIntuitiveResearchKit/wiki/Potentiometer-calibration-for-PSM-insertion)
-  as well.
+  offsets for the PSM last 4 actuators.  We also provide a method to
+  `calibrate the PSM 3rd potentiometer
+  <calibration-classic-pots-depth>`.
+
+.. warning::
+
+   It is important to calibrate the potentiometer scales before the
+   offsets!
 
 Requirements
 ============
 
 For the ECM, make sure the brakes are properly calibrated.  This
 requires to calibrate both the controller current (see above) and the
-power to release the brakes, see [Full da Vinci
-system](/jhu-dvrk/sawIntuitiveResearchKit/wiki/Full-da-Vinci).
+power to release the brakes.
 
 As for the other calibration steps, you need to have all the
 configuration files generated, the C++ code compiled and the current

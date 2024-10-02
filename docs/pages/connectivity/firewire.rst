@@ -49,11 +49,13 @@ FireWire is a sophisticated protocol, some chipset implementations are
 not fully functional and have various issues such as dropping packets
 and supporting a limited number of FireWire nodes. We recommend
 adapters with chipsets from Texas Instruments with native PCIe support
-(i.e. not with PCIe to PCI bridge).  See :ref:`PC configuration<PC>`.
+(i.e. not with PCIe to PCI bridge).  See :ref:`PC
+configuration<user-computers>`.
 
 To get the chipset model of your FireWire card, use ``lshw``.
 
-Here is an example of output for a chip known to work on PCIe bus (recent computers):
+Here is an example of output for a chip known to work on PCIe bus
+(recent computers):
 
 ::
 
