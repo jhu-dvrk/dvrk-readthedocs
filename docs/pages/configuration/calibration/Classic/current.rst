@@ -81,47 +81,75 @@ something like:
 
 ::
 
-   Configuration file: sawRobotIO1394-MTML-00000.xml
-   Port: 0
+   adeguet1@lcsr-dvrk-09:~/ros2_ws/src/dvrk/dvrk_config_jhu/jhu-daVinci$
+     sawRobotIO1394CurrentCalibration -c sawRobotIO1394-PSM1-49695.xml
+
+   Configuration file: sawRobotIO1394-PSM1-49695.xml
+   Port: fw:0
    Make sure:
    - your computer is connected to the firewire controller.
-   - the arm corresponding to the configuration file "sawRobotIO1394-MTML-00000.xml" is connected to the controller.
+   - the arm corresponding to the configuration file "sawRobotIO1394-PSM1-49695.xml" is connected to the controller.
    - the E-Stop is closed, i.e. will let the controller power on.
    - you have no other device connected to the firewire chain.
    - you have no other program trying to communicate with the controller.
 
-   Press any key to get started.
+   Press any key to start.
    Loading config file ...
+   FirewirePort::Init: number of ports = 1
+   Port 0: /dev/fw11, 12 nodes
+   FirewirePort::Init: successfully initialized port 0
+   Using libraw1394 version 2.1.2
+   FirewirePort::Init: successfully disabled cycle start packet
+   FirewirePort::InitNodes: base node id = ffc0
+   BasePort::ScanNodes: building node map for 11 nodes:
+     Node 0, BoardId = 12, FPGA_V2, Hardware = QLA1, Firmware Version = 8
+     Node 1, BoardId = 5, FPGA_V1, Hardware = QLA1, Firmware Version = 8
+     Node 2, BoardId = 4, FPGA_V1, Hardware = QLA1, Firmware Version = 8
+     Node 3, BoardId = 8, FPGA_V1, Hardware = QLA1, Firmware Version = 8
+     Node 4, BoardId = 9, FPGA_V2, Hardware = QLA1, Firmware Version = 8
+     Node 5, BoardId = 6, FPGA_V1, Hardware = QLA1, Firmware Version = 8
+     Node 6, BoardId = 7, FPGA_V2, Hardware = QLA1, Firmware Version = 8
+     Node 7, BoardId = 3, FPGA_V1, Hardware = QLA1, Firmware Version = 8
+     Node 8, BoardId = 2, FPGA_V1, Hardware = QLA1, Firmware Version = 8
+     Node 9, BoardId = 1, FPGA_V1, Hardware = QLA1, Firmware Version = 8
+     Node 10, BoardId = 0, FPGA_V1, Hardware = QLA1, Firmware Version = 8
+   BasePort::ScanNodes: found 11 boards
+   BasePort::SetDefaultProtocol: all nodes broadcast capable and support shorter wait
+   W- Class mtsRobotIO1394: SetBoards: PSM1, board: 0, Id: 6, firmware: 8, FPGA serial: unknown, QLA serial: unknown
+   W- Class mtsRobotIO1394: SetBoards: PSM1, board: 1, Id: 7, firmware: 8, FPGA serial: 4981-14, QLA serial: 4980-14
+
    Creating robot ...
-   Creating port ...
-   FirewirePort: number of ports = 1
-   FirewirePort: successfully initialized port 0
-   ScanNodes: base node id = ffc0
-   ScanNodes: building node map for 9 nodes:
-    Node 0, BoardId = 6, Firmware Version = 3
-    Node 1, BoardId = 7, Firmware Version = 3
-    Node 2, BoardId = 8, Firmware Version = 3
-    Node 3, BoardId = 9, Firmware Version = 3
-    Node 4, BoardId = 0, Firmware Version = 3
-    Node 5, BoardId = 1, Firmware Version = 3
-    Node 6, BoardId = 3, Firmware Version = 3
-    Node 7, BoardId = 2, Firmware Version = 3
 
    Ready to power?  Press any key to start.
-   Enabling power ...
+   Enabling power to the QLA board...
    Status: power seems fine.
    Starting calibration ...
-   Status: average current feedback in mA:      8.35252     -33.1456      11.4888      -17.2173      10.3679     -16.9912      26.5735      8.29041
-   Status: standard deviation in mA:            1.12377      1.11879      1.23513       1.13384      1.21539      1.18651      1.11418      1.17129
-   Status: kept 2458 samples out of 50000
-   Status: new average in mA:                   8.39934     -33.1659      11.6538      -17.1952      10.3920     -16.9736      26.6081      8.33897
+   Measured current error statistics
+   Status: average current feedback in mA: 	0.328691	-0.488023  	51.6638 	0.314944 	0.498726 	0.717084	0.0938034
+   Status: standard deviation in mA:        	1.20528  	1.12293  	2.42928  	1.27400  	1.02623  	1.12980  	1.20621
+   Status: kept 3418 samples out of 50000
+   Status: new average in mA:              	0.292594	-0.455903  	51.9898 	0.323646 	0.411650 	0.777404	0.0646454
 
-   Do you want to update the config file with these values? [Y/y]
-   Status: current offsets in XML configuration file:      32768.0      32768.0      32768.0      32768.0      32768.0      32768.0      32768.0      32768.0
-   Status: new current offsets:                            32812.0      32941.9      32706.9      32858.2      32822.5      32857.0      32907.5      32724.3
+   Enabling amplifiers for the actuators...
+   Status: power seems fine.
+   Starting calibration ...
+   Commanded current error statistics
+   Status: average current feedback in mA:	-0.406738	-0.473329 	-28.8600	-0.372567  	1.28329	-0.733715	-0.504301
+   Status: standard deviation in mA:        	1.17603  	1.12665  	1.34004  	1.26102  	1.10190  	1.19607  	1.26267
+   Status: kept 3024 samples out of 50000
+   Status: new average in mA:             	-0.372473	-0.445304 	-28.8130	-0.318020  	1.28542	-0.738004	-0.496518
 
-   Do you want to save these values? [S/s]
-   Status: new configuration file is "sawRobotIO1394-MTML-00000.xml-new"
+   Status: measured current offsets in mA: 	0.292594	-0.455903  	51.9898 	0.323646 	0.411650 	0.777404	0.0646454
+   Status: command current offsets in mA (corrected):	-0.665067	0.0105987 	-80.8027	-0.641666 	0.873767 	-1.51541	-0.561164
+
+   Status: commanded current offsets in XML configuration file:  	33087.0  	32650.0  	33060.0  	33035.0  	32919.0  	32971.0  	32894.0
+   Status: new commanded current offsets:                        	33083.5  	32650.1  	33483.6  	33031.6  	32923.6  	32978.9  	32896.9
+   Status: measured current offsets in XML configuration file:  	6.28967  	6.23475 	-6.27485  	6.27740  	6.24977 	-6.24615 	-6.25612
+   Status: new measured current offsets:                        	6.28938  	6.23520 	-6.32684  	6.27707  	6.24936 	-6.24692 	-6.25619
+
+   Do you want to update the config file with these values? [y(es)/n(o)]
+   Existing IO config file has been renamed sawRobotIO1394-PSM1-49695.xml-backup-2024-10-01-14-02-34
+   Results saved in IO config file sawRobotIO1394-PSM1-49695.xml
 
 Notes:
 
