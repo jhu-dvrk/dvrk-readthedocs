@@ -35,7 +35,7 @@ FireWire with Ethernet bridge
 Starting with dVRK Software Version 2.0, Ethernet/UDP is also
 supported. To use Ethernet/UDP, you will need to use firmware 7+ on
 all your dVRK controllers and you will need at least one FPGA V2.x
-board (with Ethernet jack, see :ref:`FPGA versions<fpga-version>`). In
+board (with Ethernet jack, see :ref:`FPGA versions<fpga-versions>`). In
 this scenario, the controllers are daisy-chained using FireWire but
 the computer is not on the FireWire chain. Instead, the computer is
 connected via Ethernet to one of the dVRK controllers. Said dVRK

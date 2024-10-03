@@ -15,4 +15,3 @@ Revisions
 * FPGA v1/v2
 * Dallas chip
 * QLA1 vs DQLA
-

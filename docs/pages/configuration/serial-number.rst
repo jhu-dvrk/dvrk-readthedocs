@@ -28,3 +28,17 @@ To find the serial number, look for a label on the arm itself.
    :align: center
 
    Label on Classic PSM
+
+.. figure:: /images/Si/PSM-Si-serial-number-label.jpeg
+   :width: 400
+   :align: center
+
+   Label on Si PSM
+
+.. figure:: /images/Si/ECM-Si-serial-number-label.jpeg
+   :width: 400
+   :align: center
+
+   Label on Si ECM
+
+	   

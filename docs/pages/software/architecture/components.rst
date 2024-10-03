@@ -6,6 +6,7 @@ Components
 
    components/introduction
    components/threads
+   components/widget
    components/io
    components/pid
    components/arms
