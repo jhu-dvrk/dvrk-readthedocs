@@ -32,11 +32,20 @@ Generic widgets
 
 The dVRK components use a few widgets included in the *cisst* libraries.
 
-* Timing
+Timing
+======
 
-* Messages
+todo
 
-* 3D pose
+Messages
+========
+
+todo
+
+t to toggle, c to clear
+
+3D pose
+=======
 
   On top, from left to right, the widget display the names of the
   moving and reference frames (e.g. PSM1/ECM).  If the cartesian pose
@@ -44,40 +53,44 @@ The dVRK components use a few widgets included in the *cisst* libraries.
   widget will show *Invalid* in red.  The time displayed along the
   status is the time the pose was computed since the program started.
 
-  The rotation is displayed in the middle.  The default is a 3D view
-  but one can change to a matrix, quaternion or axis/angle using the
-  right-click menu.
-  
-  The position vector is displayed at the bottom, in millimeters.
-
   .. figure:: /images/gui/gui-pose-3D.png
-     :width: 400
+     :width: 200
      :align: center
 
      Pose widget (3D view)
 
+  The rotation is displayed in the middle.  The default is a 3D view
+  but one can change to a matrix, quaternion or axis/angle using the
+  right-click menu.
+
+  The position vector is displayed at the bottom, in millimeters.
+
   .. figure:: /images/gui/gui-pose-axis-angle.png
-     :width: 400
+     :width: 200
      :align: center
 
      Pose widget (axis/angle view)
 
-* Wrench
+Wrench
+======
+
+todo
 
   .. figure:: /images/gui/gui-wrench-3D.png
-     :width: 400
+     :width: 200
      :align: center
 
      Wrench (3D view)
 
   .. figure:: /images/gui/gui-wrench-2D.png
-     :width: 400
      :align: center
 
      Wrench (time plot)
 
-* 2D plot
+2D plot
+=======
 
+todo
 
 Customization
 *************

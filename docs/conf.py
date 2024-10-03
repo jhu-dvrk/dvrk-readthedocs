@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'dVRK'
-copyright = '2012-2023, Johns Hopkins University (Baltimore, USA)'
+copyright = '2012-2024, Johns Hopkins University (Baltimore, USA)'
 author = 'Anton Deguet, Peter Kazanzides'
 
 # The full version, including alpha/beta/rc tags
