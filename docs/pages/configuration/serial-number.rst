@@ -1,8 +1,10 @@
+.. _serial-number:
+
 *****************
 Arm serial number
 *****************
 
-Each arm is uniquely identified by it's serial number, also known as
+Each arm is uniquely identified by its serial number, also known as
 tracking Id (TRK ID).  It's important to find the serial number and
 use it consistently across configuration files.
 
@@ -12,7 +14,7 @@ use it consistently across configuration files.
 
    Do not copy/rename a file with a serial number in its name to
    create a configuration file for another arm.
-   
+
    Serious damage can occur!
 
 To find the serial number, look for a label on the arm itself.
@@ -40,5 +42,3 @@ To find the serial number, look for a label on the arm itself.
    :align: center
 
    Label on Si ECM
-
-	   

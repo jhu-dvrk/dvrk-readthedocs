@@ -3,7 +3,7 @@
 ************************
 Configuration generators
 ************************
-    
+
 Arm IO, arm and arm console
 ###########################
 
@@ -13,9 +13,10 @@ your build and source your ``devel/setup.bash`` (ROS 1) or
 ``install/setup.bash`` (ROS 2).
 
 This script will generate a "blank" IO XML configuration file for the
-arm identified by its serial number.  This file will be updated by the
-different calibration steps.  The script also generates a sample arm
-configuration file as well as a console file with a single arm.
+arm identified by its :ref:`serial number<serial-number>`.  This file
+will be updated by the different calibration steps.  The script also
+generates a sample arm configuration file as well as a console file
+with a single arm.
 
 The script has 5 options:
 
@@ -43,19 +44,19 @@ There are only 3 possible combinations of generations and hardware/controller ty
   find the controller type), you would use:
 
   .. code-block:: bash
-		  
+
      dvrk-config-generator.py -a MTMR -g Classic -H QLA1 -c m23456.cal
 
 * For a Classic arm with a DQLA based controller, you would use:
 
   .. code-block:: bash
-		  
+
      dvrk-config-generator.py -a MTMR -g Classic -H DQLA -c m23456.cal
 
 * For an Si arm, the controller is always dRA1 based so you need to use:
 
   .. code-block:: bash
-		  
+
      dvrk-config-generator.py -a PSM1 -g Si -H dRA1 -s 123456
 
 Console generator

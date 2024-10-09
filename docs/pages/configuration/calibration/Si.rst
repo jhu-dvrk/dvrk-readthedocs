@@ -98,8 +98,8 @@ configuration file with all the active arms.
 
 The console configuration must include the SUJ Si and the main ROS
 node (``dvrk_robot/dvrk_console_json``) must be launched with the
-command line option ``-s`` (or ``--suj-voltages``).  Once the dVRK
-console is started, you should be able to see the potentiometer
+extra command line option ``-s`` (or ``--suj-voltages``).  Once the
+dVRK console is started, you should be able to see the potentiometer
 voltages using ROS topics.  For example:
 
 ::

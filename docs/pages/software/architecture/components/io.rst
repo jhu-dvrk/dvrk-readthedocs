@@ -13,7 +13,7 @@ controllers (part of :ref:`mechatronic software <amp1394>`).
 
 It provides:
 
-* Conversion to/fromfrom integers from/to SI units
+* Conversion to/from integers from/to SI units
 * Support for motors and brakes (e.g. Classic ECM and Si PSMs/ECM)
 * Software based velocity estimation based on encoder counts and time
   since last change
@@ -26,13 +26,20 @@ used for all digital inputs and outputs.
 Configuration files
 *******************
 
-Configuration files use XML or JSON (future versions)
+Configuration files use XML or JSON (future versions).  Most files are
+specific to each arm identified by its :ref:`serial number
+<serial-number>`.  There are a few files than can be shared across
+sites.  These are used for digital IOs and therefore don't require any
+calibration.  They can be found in the main dVRK repository under
+``share/io``.
 
 Applications
 ************
 
-  * *sawIntuitiveResearchKitQtConsoleJSON* and ROS ``dvrk_robot/dvrk_console_json``
+  * *sawIntuitiveResearchKitQtConsoleJSON* and ROS
+    ``dvrk_robot/dvrk_console_json`` for regular use
   * *sawRobotIO1394QtConsole* and ``ROS robot_io/robot_io_console``
+    for debugging
 
 Widgets
 *******
@@ -65,15 +72,35 @@ the current sent to any motor or brake.
    When using *Direct control*, please keep the emergency stop handy
    so you can easily power off everything!
 
+For any arm with brakes, the IO widget also displays the setpoint and
+measured current for each brake.  In *Direct control* mode, one can
+manually trigger the release of the brakes.  Be very careful when
+doing so since there will be no position controller running (PID).
+The arm will likely fall under its own weight.
+
 .. figure:: /images/gui/gui-Classic-ECM-io.png
    :align: center
 
    IO widget for an arm without brakes (MTM)
 
+The dVRK controllers can also be used to read different analog inputs,
+i.e. not tied to a motorized axis.  This is the case for the Hall
+effect sensor of the MTM grippers.  When you will start a dVRK console
+application with an MTM, there will be an IO widget for each MTM
+gripper.  In these widgets, the current setpoint and measure are
+meaningless and it doesn't need to be powered.  The widget is also
+used for the Classic SUJ controller.  In this case, it is powered but
+the 4 axes are used to drive the SUJ brakes.
+
 .. figure:: /images/gui/gui-Classic-MTML-gripper-io.png
    :align: center
 
    IO widget for a single analog input (MTM gripper)
+
+One very convenient feature of the IO widget is the ability to plot
+the potentiometer positions along the encoder based positions.  This
+is useful to check if there are any issue with either the
+potentiometers or encoders.
 
 .. figure:: /images/gui/gui-Classic-MTML-io-plot.png
    :align: center
