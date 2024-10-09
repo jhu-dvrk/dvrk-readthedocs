@@ -53,6 +53,26 @@ When setup joints are present, the following positions are reported:
     * PSM tooltip frame defined with respect to **camera frame**
     * Uses ``PSM-SUJ * PSM-Local`` (``PSM-SUJ`` is the base frame)
 
+
+The following assumes the ECM is the reference arm for all the PSMs.
+Versions greater than 2.1, one can change the reference arm in the SUJ
+configuration file. ⊙ represents the reference frame and the arrows
+show the transformations.
+
+.. csv-table:: dVRK transformation compositions and topics
+   :name: dvrk-suj-frames
+   :header: "Command", "PSM tip", "PSM RCM", "Cart", "ECM RCM", "ECM tip"
+   :align: center
+
+   " ``ECM/measured_cp`` ",          "  ", "  ", "⊙", "➡", "➡"
+   " ``ECM/local/measured_cp`` ",    "  ", "  ", "  ", "⊙", "➡"
+   " ``SUJ/ECM/measured_cp`` ",      "  ", "  ", "⊙", "➡", "  "
+   " ``SUJ/ECM/local/measured_cp``", "  ", "  ", "⊙", "➡", "  "
+   " ``PSM/measured_cp``",           "⬅", "⬅", "⬅", "⬅", "⊙"
+   " ``PSM/local/measured_cp``",     "⬅", "⊙", "  ", "  ", "  "
+   " ``SUJ/PSM/measured_cp``",       "  ", "⬅", "⬅", "⬅", "⊙"
+   " ``SUJ/PSM/local/measured_cp``", "  ", "⬅", "⊙", "  ", "  "
+
 Intuitive SUJ
 *************
 
@@ -101,26 +121,3 @@ as `World` (see https://github.com/jhu-dvrk/dvrk_camera_registration).
    :align: center
 
    Patient's side with SUJ Fixed, hand-eye registration
-
-Summary
-*******
-
-⊙ represents the reference frame.
-
-The following assumes the ECM is the reference arm for all the PSMs.
-Versions greater than 2.1, one can change the reference arm in the SUJ
-configuration file.
-
-.. csv-table:: dVRK transformation compositions and topics
-   :name: dvrk-suj-frames
-   :header: "Command", "PSM tip", "PSM RCM", "Cart", "ECM RCM", "ECM tip"
-   :align: center
-
-   " ``ECM/measured_cp`` ",          "  ", "  ", "⊙", "➡", "➡"
-   " ``ECM/local/measured_cp`` ",    "  ", "  ", "  ", "⊙", "➡"
-   " ``SUJ/ECM/measured_cp`` ",      "  ", "  ", "⊙", "➡", "  "
-   " ``SUJ/ECM/local/measured_cp``", "  ", "  ", "⊙", "➡", "  "
-   " ``PSM/measured_cp``",           "⬅", "⬅", "⬅", "⬅", "⊙"
-   " ``PSM/local/measured_cp``",     "⬅", "⊙", "  ", "  ", "  "
-   " ``SUJ/PSM/measured_cp``",       "  ", "⬅", "⬅", "⬅", "⊙"
-   " ``SUJ/PSM/local/measured_cp``", "  ", "⬅", "⊙", "  ", "  "
