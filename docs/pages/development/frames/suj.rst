@@ -27,6 +27,7 @@ When setup joints are present, the following positions are reported:
       up or down)
 
   * ECM:
+    
     * Camera frame defined with respect to **patient cart**
     * Uses ``ECM-SUJ * ECM-Local`` (``ECM-SUJ`` is the base frame)
 

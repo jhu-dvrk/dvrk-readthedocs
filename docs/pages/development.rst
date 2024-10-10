@@ -6,4 +6,4 @@ Development
 
    development/options
    development/frames
-   development/python-ros
+   development/ros-clients
