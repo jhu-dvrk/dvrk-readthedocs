@@ -32,7 +32,7 @@ can be programmed using the ``pgm1394`` utility.
 All controllers come with FireWire adapters.  Ethernet adapters were
 introduced on FPGA 2+, i.e. in build #5 (2016).
 
-.. _classic-arm-controller-version:
+.. _controller-version:
 
 dVRK Classic arm controllers
 ############################
