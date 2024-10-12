@@ -56,7 +56,7 @@ To summarize:
 
 * When used with the setup joints, the console class propagates the
   different base frames to make sure the PSMs are defined with respect
-  to the camera frame (see :ref:`SUJ <frame_SUJ>`).
+  to the camera frame (see :ref:`SUJ <frames_SUJ>`).
 * If you have an ECM **and** don't have access to the setup joints
   **but** have a way to register the PSMs to the camera/ECM, you
   should use the SUJ Fixed class.  We offer a simple method to
