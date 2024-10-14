@@ -1,3 +1,5 @@
+.. _calibration_classic:
+
 Classic
 #######
 

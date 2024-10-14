@@ -1,3 +1,5 @@
+.. _calibration_si:
+
 Si
 ##
 
@@ -82,7 +84,7 @@ SUJs
 ****
 
 The SUJ Si are fairly new for the dVRK and the calibration process is
-not thorougly tested. For now, we use the mechanical limits to
+not thoroughly tested. For now, we use the mechanical limits to
 identify the conversion factors from the analog potentiometers to SI
 units. We don't use the "home" grooves on the links except for the
 PSM3 SUJ. There is a joint that moves past the analog potentiometers
@@ -114,6 +116,24 @@ in the ROS package ``dvrk_python``.
 * ROS 2: ``source ~/ros2_ws/install/setup.bash`` and ``ros2 run dvrk_python dvrk_calibrate_suj.py``
 
 Since SUJ calibration relies on the joint limits, i.e. you will have
-to move each joint to its minimum and maximum limits.  The
-potentiometer readings are fairly slow so make sure you stay a the
-position limit for a second or so.
+to move each joint from its minimum to maximum limit.  The
+potentiometer readings are fairly slow so make sure you stay at the
+position limit for a second or so.  As you move the SUJs around, each
+potentiometer range displayed in the GUI should increase.  Start with
+one SUJ, move each joint from one mechanical limit to the other.
+
+You can at any point see the results of the calibration by hitting the
+**Show** button.  When you hit **Show**, the result of the calibration
+are displayed in the terminal, in JSON format.  You can then select
+the lines corresponding to the SUJ arm you just calibrated and
+copy/paste them in your SUJ Si JSON configuration files (replace the
+existing lines in the file).
+
+.. caution::
+
+   There is a potentiometer dead-zone on the third joint of the SUJ
+   PSM3.  Past a certain point, the values reported in the GUI are
+   meaningless.  For this specific joint, you have to identify the
+   dead-zone and avoid it during the calibration.  The range of motion
+   to calibrate this joint should be from the lower mechanical limit
+   to the point where the hash marks (grooves) line up.
