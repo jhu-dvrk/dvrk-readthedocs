@@ -1,2 +1,3 @@
 sphinx-tabs
 sphinx_rtd_theme
+json_schema_for_humans

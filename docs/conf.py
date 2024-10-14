@@ -24,7 +24,6 @@ author = 'Anton Deguet, Peter Kazanzides'
 # The full version, including alpha/beta/rc tags
 release = '2.3.0'
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -43,6 +42,68 @@ templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 master_doc = 'index'
+
+# -- Hook to download and compile json schemas
+import json
+import os
+import shutil
+from json_schema_for_humans.generate import generate_from_schema, generate_from_filename, GenerationConfiguration
+import urllib.request
+
+dvrk_version = '2.3.0'
+for file in ['cisst-component-manager', 
+             'cisst-matrices',
+             'dvrk-arm',
+             'dvrk-console',
+             'dvrk-ecm',
+             'dvrk-interface-button',
+             'dvrk-mtm',
+             'dvrk-psm',
+             'dvrk-teleop-ecm',
+             'dvrk-teleop-psm',
+             'dvrk-tool-list']:
+    print(f'retrieving JSON schema {file}')
+    url = f'https://raw.githubusercontent.com/jhu-dvrk/sawIntuitiveResearchKit/refs/tags/{dvrk_version}/share/schemas/{file}.schema.json'
+    dest = f'_build/{file}.schema.json'
+    urllib.request.urlretrieve(url, dest)
+
+# the following is to be able to locate all possible $ref in schema
+schema_store = {}
+schema_files = []
+
+# find all files in directory
+all_files = os.listdir('_build')
+for that_file in all_files:
+    that_file_full_path = os.path.join('_build', that_file)
+    extension = '.schema.json'
+    if that_file_full_path[-len(extension):] == extension:
+        print(f'Found possible schema file: {that_file}')
+        with open(that_file_full_path, 'r') as schema_file_descriptor:
+            that_schema = json.load(schema_file_descriptor)
+            if '$id' in that_schema:
+                print(f" - $id: {that_schema['$id']}")
+                schema_store[that_schema['$id']] = that_schema
+                schema_files.append(that_file_full_path)
+            else:
+                print(f'WARNING: ignoring file {that_file}, $id is missing')
+
+# # now iterate through the same files to generate the html documentation
+config = GenerationConfiguration(copy_css = True,
+                                 copy_js = True,
+                                 expand_buttons = True,
+                                 collapse_long_descriptions = False)
+                                 
+# # dummy generate to get a copy of css and js
+generate_from_filename(schema_file_name = schema_files[0], result_file_name = 'dummy.html')
+
+for schema_file in schema_files:
+    html = generate_from_schema(schema_file = schema_file, loaded_schemas = schema_store, config = config)
+                                 
+    # file name with version and without .schema.json
+    html_file = os.path.normpath('{}.html'.format(schema_file)).replace('.schema.json', '')
+    print('Generating {}'.format(html_file))
+    with open(html_file, 'w') as file_descriptor:
+        file_descriptor.write(html)
 
 # -- Options for HTML output -------------------------------------------------
 
