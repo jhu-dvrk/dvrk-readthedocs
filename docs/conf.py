@@ -50,6 +50,11 @@ import shutil
 from json_schema_for_humans.generate import generate_from_schema, generate_from_filename, GenerationConfiguration
 import urllib.request
 
+schema_dir = '_schema_build'
+
+if not os.path.exists(schema_dir):
+  os.mkdir(schema_dir)
+
 dvrk_version = '2.3.0'
 for file in ['cisst-component-manager', 
              'cisst-matrices',
@@ -64,7 +69,7 @@ for file in ['cisst-component-manager',
              'dvrk-tool-list']:
     print(f'retrieving JSON schema {file}')
     url = f'https://raw.githubusercontent.com/jhu-dvrk/sawIntuitiveResearchKit/refs/tags/{dvrk_version}/share/schemas/{file}.schema.json'
-    dest = f'_build/{file}.schema.json'
+    dest = f'{schema_dir}/{file}.schema.json'
     urllib.request.urlretrieve(url, dest)
 
 # the following is to be able to locate all possible $ref in schema
@@ -72,9 +77,9 @@ schema_store = {}
 schema_files = []
 
 # find all files in directory
-all_files = os.listdir('_build')
+all_files = os.listdir(schema_dir)
 for that_file in all_files:
-    that_file_full_path = os.path.join('_build', that_file)
+    that_file_full_path = os.path.join(schema_dir, that_file)
     extension = '.schema.json'
     if that_file_full_path[-len(extension):] == extension:
         print(f'Found possible schema file: {that_file}')
