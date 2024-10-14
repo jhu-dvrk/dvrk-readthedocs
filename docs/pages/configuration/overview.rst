@@ -4,6 +4,8 @@
 Overview
 ********
 
+`test <../schemas/dvrk-console.html>`_
+
 The dVRK relies on multiple configurations files.  Some are shared
 across systems and some are specific to each arm or site.  For the
 site specific configuration files, we provide a configuration

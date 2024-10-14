@@ -50,10 +50,10 @@ import shutil
 from json_schema_for_humans.generate import generate_from_schema, generate_from_filename, GenerationConfiguration
 import urllib.request
 
-schema_dir = '_schema_build'
+schema_dir = '_build/html/pages/schemas'
 
 if not os.path.exists(schema_dir):
-  os.mkdir(schema_dir)
+  os.makedirs(schema_dir)
 
 dvrk_version = '2.3.0'
 for file in ['cisst-component-manager', 
@@ -98,8 +98,11 @@ config = GenerationConfiguration(copy_css = True,
                                  expand_buttons = True,
                                  collapse_long_descriptions = False)
                                  
-# # dummy generate to get a copy of css and js
+# dummy generate to get a copy of css and js
 generate_from_filename(schema_file_name = schema_files[0], result_file_name = 'dummy.html')
+# copy css and js files to directory with all files
+shutil.copy('schema_doc.css', schema_dir)
+shutil.copy('schema_doc.min.js', schema_dir)
 
 for schema_file in schema_files:
     html = generate_from_schema(schema_file = schema_file, loaded_schemas = schema_store, config = config)
