@@ -13,6 +13,9 @@ Connectors
 * One DB15 footpedal connector; see :ref:`dMIB I/O <dmib-io>`
 * Seven HD15 expansion connectors and one HD26 expansion connector;
   see :ref:`dMIB I/O <dmib-io>`
+* One SD card slot for the firmware and user applications (V3
+  controllers)
+
 
 .. figure:: /images/controllers/qla-fpga-v1-PSM-controller-back.jpeg
    :width: 600

@@ -1,3 +1,5 @@
+.. _ros1:
+
 *****
 ROS 1
 *****
@@ -96,6 +98,12 @@ Use a ROS launch file to start the dVRK in simulated mode with the patient cart 
    source ~/catkin_ws/devel/setup.bash
    roslaunch dvrk_model patient_cart.launch generation:=Classic
 
+.. figure:: /images/gui/ros2-launch-patient-cart-simulated.png
+   :width: 600
+   :align: center
+
+   dVRK with Classic patient cart simulated in RViz
+
 In a second terminal, use a Python test script to make an arm move
 
 .. code-block:: bash
@@ -112,6 +120,6 @@ Notes
 
 * Don't forget to start a ``roscore`` if you're using ``rosrun``.
   ``roslaunch`` will start a ``roscore`` if needed.
-  
+
 * Don't forget to kill our roscore when you're done.  If you're
   working on a shared computer, other users will thank you.

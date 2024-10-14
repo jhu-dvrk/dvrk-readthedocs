@@ -1,3 +1,5 @@
+.. _firewire:
+
 ********
 FireWire
 ********
@@ -76,7 +78,8 @@ And an example of output for a PCI based chip for much older computers:
 Drivers
 *******
 
-You have to install libraw1394. This has to be done only once per computer by a user with sudo privileges:
+You have to install libraw1394. This has to be done only once per
+computer by a user with sudo privileges:
 
 .. code-block:: bash
 
@@ -86,7 +89,8 @@ You have to install libraw1394. This has to be done only once per computer by a 
 Set permissions for FireWire devices
 ************************************
 
-In order to run the control software without root/sudo permissions, please follow the following steps:
+In order to run the control software without root/sudo permissions,
+please follow the following steps:
 
 * Create ``/etc/udev/rules.d`` folder if it's not there
 * Add rules for ``/dev/fw*`` devices

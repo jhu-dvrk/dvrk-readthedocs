@@ -1,3 +1,5 @@
+.. _ros2:
+
 *****
 ROS 2
 *****
@@ -98,7 +100,7 @@ in. To do so, you should add the following lines at the end of your
    fi
 
 .. note::
-   
+
    There is no need to source ``cisstvars.sh`` for ROS 2.  It is added
    as a hook in the *cisst* ``colcon.pkg`` file.
 
@@ -111,6 +113,12 @@ Use a ROS launch file to start the dVRK in simulated mode with the patient cart 
 
    source ~/ros2_ws/install/setup.bash
    ros2 launch dvrk_model patient_cart.launch generation:=Classic
+
+.. figure:: /images/gui/ros2-launch-patient-cart-simulated.png
+   :width: 600
+   :align: center
+
+   dVRK with Classic patient cart simulated in RViz
 
 In a second terminal, use a Python test script to make an arm move
 

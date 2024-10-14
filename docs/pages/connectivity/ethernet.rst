@@ -1,3 +1,5 @@
+.. _ethernet:
+
 ********
 Ethernet
 ********
@@ -42,9 +44,13 @@ You will need to configure the dVRK dedicated network adapter to use
 Ubuntu
 ======
 
-Start the application ``sudo nm-connection-editor`` (this should work on Ubuntu from 18.04 to 24.04).  Select the Ethernet adapter you want to configure for the dVRK:
+Start the application ``sudo nm-connection-editor`` (this should work
+on Ubuntu from 18.04 to 24.04).  Select the Ethernet adapter you want
+to configure for the dVRK:
 
-* In tab "Ethernet", change MTU to 3000.  The default is 1500 and is not enough if you have a full da Vinci (2 MTMS, 3 PSMs, ECM and SUJ).
+* In tab "Ethernet", change MTU to 3000.  The default is 1500 and is
+  not enough if you have a full da Vinci (2 MTMS, 3 PSMs, ECM and
+  SUJ).
 * In tab "IPv4 Settings", change "method" to "Link-Local Only"
 
 MacOS
@@ -58,7 +64,9 @@ Link-Local by itself.
 Windows
 =======
 
-Running the dVRK on Windows is experimental and currently not very stable. There is no network configuration required because it defaults to "Link-Local" if it cannot be configured using DHCP.
+Running the dVRK on Windows is experimental and currently not very
+stable. There is no network configuration required because it defaults
+to "Link-Local" if it cannot be configured using DHCP.
 
 Virtual machines
 ================
@@ -68,29 +76,35 @@ we're not totally sure how the VM network adapter would impact
 performances.  If you need to use a VM, the following has been used
 for a Linux guest with a Windows host using VMWare:
 
-* Select "Bridged" in virtual machine network settings and check the box "connected directly to the physical network"
+* Select "Bridged" in virtual machine network settings and check the
+  box "connected directly to the physical network"
 * Follow instructions from https://kb.vmware.com/s/article/1020359
 
 Testing connectivity
 ####################
 
-First you should make sure your Ethernet port is properly configured.  On Linux and MacOS you can use ``ifconfig``.  The output for the dVRK dedicated adapter should look like:
+First you should make sure your Ethernet port is properly configured.
+On Linux and MacOS you can use ``ifconfig``.  The output for the dVRK
+dedicated adapter should look like:
 
 .. code-block::
-   
+
    eno1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 3000
         inet 169.254.62.229  netmask 255.255.0.0  broadcast 169.254.255.255
         inet6 fe80::902e:58f9:b2c9:dec3  prefixlen 64  scopeid 0x20<link>
 
-The IP address (``inet``) should start with ``169.254`` for "Link Local".  The netmask should be ``255.255.0.0``.
+The IP address (``inet``) should start with ``169.254`` for "Link
+Local".  The netmask should be ``255.255.0.0``.
 
 ``qladisp``
 ***********
 
-The dVRK utility ``qladisp`` can communicate with the controllers over UDP using the command line option ``-pudp``.  For example ``qladisp -pudp`` should return something like:
+The dVRK utility ``qladisp`` can communicate with the controllers over
+UDP using the command line option ``-pudp``.  For example ``qladisp
+-pudp`` should return something like:
 
 .. code-block::
-   
+
    Trying to detect boards on port:
    Server IP: 169.254.0.100, Port: 1394
    Broadcast IP: 169.254.255.255, Port: 1394
@@ -120,7 +134,7 @@ opposed to FireWire):
   controller).  In this case, a PC is still connected.  This can lead
   to issues so it is recommended to unplug the computer from the
   FireWire chain.
- 
+
 ``ping``
 ********
 
@@ -130,7 +144,7 @@ To test the communication, you can ``ping`` the controllers using
 The output should look like:
 
 .. code-block::
-   
+
    PING 169.254.0.100 (169.254.0.100) 56(84) bytes of data.
    64 bytes from 169.254.0.100: icmp_seq=1 ttl=64 time=0.247 ms
    64 bytes from 169.254.0.100: icmp_seq=2 ttl=64 time=0.308 ms

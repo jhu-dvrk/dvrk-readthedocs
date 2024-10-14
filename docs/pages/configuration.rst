@@ -1,3 +1,5 @@
+.. _configuration:
+
 ###################################
 Configuration files and calibration
 ###################################
