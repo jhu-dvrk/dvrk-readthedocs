@@ -50,7 +50,7 @@ import shutil
 from json_schema_for_humans.generate import generate_from_schema, generate_from_filename, GenerationConfiguration
 import urllib.request
 
-schema_dir = '_build/html/pages/schemas'
+schema_dir = '_build/_schemas/schemas'
 
 if not os.path.exists(schema_dir):
   os.makedirs(schema_dir)
@@ -113,8 +113,6 @@ for schema_file in schema_files:
     with open(html_file, 'w') as file_descriptor:
         file_descriptor.write(html)
 
-html_extra_path = [schema_dir]
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -126,7 +124,7 @@ html_theme = "sphinx_rtd_theme"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['_build/_schemas']
 
 html_css_files = [
     'custom.css',
