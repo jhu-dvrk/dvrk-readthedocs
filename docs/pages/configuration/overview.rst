@@ -4,8 +4,6 @@
 Overview
 ********
 
-`test <../../_static/schemas/dvrk-console.html>`_
-
 The dVRK relies on multiple configurations files.  Some are shared
 across systems and some are specific to each arm or site.  For the
 site specific configuration files, we provide a configuration
@@ -67,16 +65,17 @@ Types of files
   modify these unless they need to add a new instrument (e.g. custom
   built).  They use the JSON file format and the documentation is
   generated from a schema:
-  https://dvrk.lcsr.jhu.edu/documentation/schemas/v2.1/dvrk-tool-list.html
+
+  * `tool list documentation <../../_static/schemas/dvrk-tool-list.html>`_
 
 * **Arm**: These files specify the configuration of a specific arm.
   They are therefore not shared across dVRK sites and their name
   includes the arm's serial number (e.g. ``PSM1-17425.json``).  They
   use the JSON file format and the documentation is generated from a schema:
 
-  * MTM: https://dvrk.lcsr.jhu.edu/documentation/schemas/v2.2/dvrk-mtm.html
-  * PSM: https://dvrk.lcsr.jhu.edu/documentation/schemas/v2.2/dvrk-psm.html
-  * ECM: https://dvrk.lcsr.jhu.edu/documentation/schemas/v2.2/dvrk-ecm.html
+  * `MTM documentation <../../_static/schemas/dvrk-mtm.html>`_
+  * `PSM documentation <../../_static/schemas/dvrk-psm.html>`_
+  * `ECM documentation <../../_static/schemas/dvrk-ecm.html>`_
 
 * **Console**: These files are specific to each site.  They are used
   by the :ref:`sawIntuititiveResearchKit<console>`
@@ -89,7 +88,8 @@ Types of files
   generated <config-generators>` along the arm IO file.  The console
   configuration files use the JSON file format and the documentation
   is generated from a schema:
-  https://dvrk.lcsr.jhu.edu/documentation/schemas/v2.2/dvrk-console.html
+
+  * `console documentation <../../_static/schemas/dvrk-console.html>`_
 
 
 Where are the configuration files
