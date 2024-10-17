@@ -1,3 +1,5 @@
+.. _classic-internal:
+
 Internal layout
 ###############
 

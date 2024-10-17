@@ -1,8 +1,8 @@
 SUJ
-===
+###
 
 Preparation
------------
+***********
 
 The goal is to remove most of the electronics from the back of the
 patient cart.  This is required since the cables coming from the base
@@ -117,7 +117,7 @@ you have a somewhat flat surface to stack the 4 dVRK Si controllers.
 .. _dessj-setup:
 
 dESSJ
------
+*****
 
 The dESSJ boards are custom boards designed to replace the ESSJ in the
 SUJ itself.
@@ -173,7 +173,7 @@ https://github.com/jhu-dvrk/dESSJ-firmware
 .. _dsib-si-setup:
 
 dSIB-Si
--------
+*******
 
 For a full system, you will need 4 dSIB adapter boards, one for each
 dVRK-Si controller (da Vinci Setup Interface Board). These boards are
@@ -186,7 +186,7 @@ base of the patient cart. The dSIB boards are also used to power the
 SUJ brakes.
 
 JHU setup
----------
+*********
 
 The following images show the dVRK Si at Johns Hopkins.  We strongly
 recommend to put labels everywhere to avoid confusing cables,
