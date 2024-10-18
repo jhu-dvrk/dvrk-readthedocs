@@ -57,4 +57,4 @@ Configuration
 -------------
 
 To configure your console, see :ref:`foot pedals configuration
-<config-pedals>`
+<config-pedals-original>`

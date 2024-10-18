@@ -4,9 +4,9 @@ Modifications
 .. toctree::
 
    modifications/adapter
-   modifications/dallas
    modifications/pedals
    modifications/head
    modifications/focus
+   modifications/dallas
    modifications/height
    modifications/dmib-ecm

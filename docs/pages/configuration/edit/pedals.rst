@@ -1,7 +1,8 @@
-.. _config-pedals:
 
 Foot pedals
 ###########
+
+.. _config-pedals-original:
 
 Original and compatible
 ***********************
@@ -34,6 +35,9 @@ If the foot pedals are connected to a MTMR controller with a FPGA version 3 (i.e
         "footpedals": "io/sawRobotIO1394-MTMR-foot-pedals-DQLA.xml"
     }
 
+See also :ref:`dMIB IOs <dmib-io>`.
+
+.. _config-pedals-usb:
 
 USB "joystick"
 **************

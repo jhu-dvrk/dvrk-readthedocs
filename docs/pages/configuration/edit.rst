@@ -8,6 +8,7 @@ Configuration files creation and editing
 
    edit/generators
    edit/pedals
+   edit/head
    edit/focus
    edit/dallas
    edit/dmib-io
