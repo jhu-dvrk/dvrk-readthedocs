@@ -6,7 +6,9 @@ Introduction
 
 This page describes how to use the endoscopic camera focus with the
 dVRK.  This is useful only for the groups with an Intuitive Surgical
-camera (see also :ref:`video pipeline <video-pipeline>`).
+camera from a Classic or S system (see also :ref:`video pipeline
+<video-pipeline>`).  We do not have access to the focus controller for
+Si cameras.
 
 We offer two different ways to control the camera focus with the dVRK:
 
