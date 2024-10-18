@@ -24,3 +24,16 @@ different approaches:
 
    If your dVRK controller was shipped after 2019, you do not need to
    modify anything.
+
+You can test the instrument detection using the command line tool
+``instrument`` provided with the low level software (along ``qladisp``
+in ``AmpIO``).  The ``instrument`` program will dump the memory from
+the instrument in a text file.  Make sure you have an instrument
+properly seated in the sterile adapter before launching the program.
+
+.. code-block:: bash
+
+   instrument [-pP] <board num>
+
+You can also bypass the automatic instrument detection in the
+:ref:`PSM configuration file <config-dallas>`.
