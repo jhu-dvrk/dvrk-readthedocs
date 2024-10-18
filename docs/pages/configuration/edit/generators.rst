@@ -1,11 +1,10 @@
 .. _config-generators:
 
-************************
 Configuration generators
-************************
+########################
 
 Arm IO, arm and arm console
-###########################
+***************************
 
 To get started, you should use the Python based application
 ``dvrk-config-generator.py``.  The script should be in your path after
@@ -60,6 +59,6 @@ There are only 3 possible combinations of generations and hardware/controller ty
      dvrk-config-generator.py -a PSM1 -g Si -H dRA1 -s 123456
 
 Console generator
-#################
+*****************
 
 Future feature!

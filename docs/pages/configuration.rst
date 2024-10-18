@@ -1,4 +1,3 @@
-.. _configuration:
 
 ###################################
 Configuration files and calibration
@@ -9,5 +8,5 @@ Configuration files and calibration
    configuration/overview
    configuration/board-id
    configuration/serial-number
-   configuration/generators
+   configuration/edit
    configuration/calibration

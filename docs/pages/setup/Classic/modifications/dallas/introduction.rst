@@ -2,7 +2,7 @@ Introduction
 ============
 
 The da Vinci instruments can be automatically identified when inserted
-in the sterile adapter using the `add-only` chip embedded in the tool
+in the sterile adapter using the 'add-only' chip embedded in the tool
 (aka Dallas chip, DS2505).  This feature was not supported in early
 versions of the dVRK both from a software and hardware perspective.
 

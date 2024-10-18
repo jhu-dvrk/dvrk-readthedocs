@@ -69,3 +69,9 @@ screws is the trickiest part of the process.
 Once the cover plate is removed, push the round connector in the round
 opening, push the rectangular connector in the rectangular opening and
 you'll be able to pull the cable from under.
+
+Configuration
+-------------
+
+To configure your console, see :ref:`foot pedals configuration
+<config-pedals>`
