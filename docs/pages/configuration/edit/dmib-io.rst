@@ -19,6 +19,13 @@ In the table below:
   (after :). Note that DOF1-DOF7 are HD15 connectors, DOF8 is a HD26
   connector, and FP (footpedal) is a DB15 connector.
 
+.. note::
+
+   For Classic controllers using a DQLA/FPGA V3+, the second board Id
+   is not used.  You need to add 16 to all **I/O** bit numbers for the
+   second board and use the first board.  For example, "2 I:4" will
+   become "1 I:20".
+
 .. csv-table:: dMIB IOs
    :name: dmib-ios-table
    :header: "Board", "I/O", "QLA", "MTM", "PSM", "ECM", "SUJ/dSIB", "dMIB pin"
@@ -61,7 +68,7 @@ Explanation of signals:
 
 * Adaptor indicates whether the sterile adapter is present
 * Tool indicates whether a tool (instrument) is present
-* Arm is an"arm present"signal, which indicates that the arm (MTM,
+* Arm is an "arm present" signal, which indicates that the arm (MTM,
   PSM or ECM) is connected
 * HE Select can be used to select which Hall effect sensor (of the two
   in the MTM gripper) is read by the system. For this to be enabled,

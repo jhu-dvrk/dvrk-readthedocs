@@ -1,3 +1,8 @@
 Head sensor
 ***********
-todo
+
+.. toctree::
+
+   head/introduction
+   head/original
+   head/dvrk
