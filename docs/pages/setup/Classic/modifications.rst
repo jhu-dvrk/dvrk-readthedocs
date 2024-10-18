@@ -9,4 +9,5 @@ Modifications
    modifications/focus
    modifications/dallas
    modifications/height
+   modifications/qla-heat-sink
    modifications/dmib-ecm
