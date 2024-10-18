@@ -1,3 +1,5 @@
+.. _pedals-compatible:
+
 dVRK controller compatible foot pedals
 ======================================
 

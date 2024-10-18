@@ -1,3 +1,5 @@
+.. _pedals-original:
+
 Orginal da Vinci foot pedals
 ============================
 

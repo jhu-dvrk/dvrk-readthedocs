@@ -6,7 +6,34 @@ Foot pedals
 Original and compatible
 ***********************
 
-todo
+The default digital inputs for the daVinci :ref:`Classic foot pedals
+<pedals-original>` (and the :ref:`compatible ones
+<pedals-compatible>`) are defined in share IO configuration files.
+These depends on which controller is used, both :ref:`board Id
+<board-id>` and :ref:`hardware version <controller-classic-exterior>`
+so we provide multiple configuration files.
+
+All the default foot pedal IO configuration files are in the
+*sawIntuitiveResearchKit* repository, under ``io/share``.
+
+For example, if your pedals are connected to a MTML controller with a
+FPGA version 1 or 2, your console JSON file should have:
+
+.. code-block:: JSON
+
+    "io": {
+        "footpedals": "io/sawRobotIO1394-MTML-foot-pedals.xml"
+    }
+
+If the foot pedals are connected to a MTMR controller with a FPGA version 3 (i.e. with DQLA), your console JSON file should have:
+
+.. code-block:: JSON
+
+    "io":
+    {
+        "footpedals": "io/sawRobotIO1394-MTMR-foot-pedals-DQLA.xml"
+    }
+
 
 USB "joystick"
 **************
@@ -19,7 +46,7 @@ you will need to configure the dVRK console to use the *sawJoystick*
 component.  Your ``console.json`` file should contain:
 
 .. code-block:: JSON
-		
+
     "component-manager": {
         "components":
         [
@@ -55,7 +82,7 @@ are mapped to names that match the dVRK foot pedal names
 
 
 .. code-block:: JSON
-		
+
     "converters":
     [
         {

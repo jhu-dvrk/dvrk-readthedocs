@@ -1,3 +1,5 @@
+.. _controller-classic-exterior:
+
 Exterior
 ########
 
