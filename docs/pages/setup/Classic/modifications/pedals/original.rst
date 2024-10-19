@@ -47,13 +47,15 @@ Removing the foot pedal tray
 
 If you're keeping the surgeon's console and display, you can leave the
 foot pedals as-is.  But if you plan to build your own mounting frame,
-you will need to go through the following steps.  First, open the
-cable management bar to free the cable.  Remove the screw at the pivot
-point, flip the bar upside-down and remove the small philips screws.
-At that point, you can remove the black round grommet so you can push
-the round connector inside the base.  The grommet is glued so you'll
-need to pry it out using a flat head screw driver.  Make sure you
-don't damage the cable.
+you will need to remove the cable from the surgeon's console.  The
+cable passes through the base and is a bit hard to remove.  First,
+open the cable management bar to free the cable (black articulated
+arm).  Remove the screw at the pivot point, flip the bar upside-down
+and remove the small philips screws.  At that point, you can remove
+the black round grommet from the base so you can push the round
+connector inside the base.  The grommet is glued so you'll need to pry
+it out using a flat head screw driver.  Make sure you don't damage the
+cable.
 
 .. figure:: /images/Classic/pedals/removing-footpedals-console.jpg
    :width: 400

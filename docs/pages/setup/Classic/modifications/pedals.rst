@@ -1,3 +1,5 @@
+.. _pedals:
+
 Foot pedals
 ***********
 

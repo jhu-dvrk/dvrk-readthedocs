@@ -1,3 +1,5 @@
+.. _head:
+
 Head sensor
 ***********
 

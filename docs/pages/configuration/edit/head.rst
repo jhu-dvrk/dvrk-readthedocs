@@ -56,3 +56,31 @@ the IO foot pedal configuration file (rev 1.5+)
           "interface": "Head" // name of the button you want to use, defined in sawRobotIO1394 configuration file
        }
      }
+
+.. _config-head-goovis:
+
+Goovis head sensor
+==================
+
+For the :ref:`Goovis HMD <goovis>`, we added a lightweight HID class
+to the dVRK code to get access to the head sensor.  The code can be
+found in ``component/code/mtsHIDHeadSensor.cpp``.  The component has a
+default configuration file under ``share/hid/goovis-hd.json`` which
+contains:
+
+.. code-block:: json
+
+   {
+     "id_vendor": "880a",
+     "id_product": "3501",
+     "index_data": 17
+   }
+
+Then in your console's JSON configuration file you should add:
+
+.. code-block:: json
+
+   "operator-present":
+   {
+     "hid": "hid/goovis-hd.json"
+   }

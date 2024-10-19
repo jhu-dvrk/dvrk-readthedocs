@@ -2,8 +2,6 @@
 dVRK controllers
 ****************
 
-Text
-
 .. toctree::
 
    from_JHU/fpga

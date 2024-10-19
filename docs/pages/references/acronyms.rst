@@ -38,6 +38,20 @@ Intuitive Surgical
   Endoscopic Camera Manipulator, 1 on real da Vinci system.
 
 **SUJ**
+See Ikegami HD section, most of the system is similar except the cameras.  Some systems come with the Panasonic Cameras.  The video output is SDI.
+
+### Cameras
+
+![HD endoscope with Panasonic Cameras](/jhu-dvrk/sawIntuitiveResearchKit/wiki/assets/video/video-panasonic-hd-endoscope.jpg)
+
+### CCU front
+
+![HD Panasonic CCUs front](/jhu-dvrk/sawIntuitiveResearchKit/wiki/assets/video/video-panasonic-hd-ccu-front.jpg)
+
+### CCU back
+
+![HD Panasonic CCUs back](/jhu-dvrk/sawIntuitiveResearchKit/wiki/assets/video/video-panasonic-hd-ccu-back.jpg)
+
   Setup Joints, patient cart with 4 passive arm to hold active ECM and PSMs.  Some early versions (Standard, S, Si) came with only three passive arms (missing PSM3)
 
 **HRSV**:
@@ -118,7 +132,7 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
 **dESSJ**
   dVRK specific board that replaces the original **ESSJ** on each setup joint of a S/Si patient cart.  The board is a pass-through for the FireWire signal and uses a BlueTooth Arduino to get (A2D) and send the SUJ joint values to the PC.
 
-
+.. _davinci-generations:
 
 Generations of da Vinci systems
 ###############################
