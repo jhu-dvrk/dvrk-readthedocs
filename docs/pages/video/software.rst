@@ -4,7 +4,7 @@ Software based pipeline
 
 .. toctree::
 
-   software/overview
+   software/introduction
    software/frame-grabbers
    software/ros
    software/calibration
