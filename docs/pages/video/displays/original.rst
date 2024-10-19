@@ -10,7 +10,7 @@ the monitor is not totally standard and each group will have to build
 a custom cable to provide a VGA interface.  One can find instructions
 on the ISI Research Wiki
 (https://research.intusurg.com/index.php/DVRK:Topics:StereoViewer
-**[Password protected]**).
+**[password protected]**).
 
 ISI HD HRSV
 ***********

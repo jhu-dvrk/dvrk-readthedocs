@@ -15,7 +15,7 @@ resolution.
 * 2016: JHU found some replacement parts for old laptops and LCD
   controllers that work fine (see ISI Research Wiki:
   https://research.intusurg.com/index.php/DVRK:Topics:StereoViewerLCD
-  **[Password protected]**).  Unfortunately, some of these parts are
+  **[password protected]**).  Unfortunately, some of these parts are
   getting harder to find online.  Resolution was up to 1400x1050.
 
   .. figure:: /images/video/video-hrsv-dell-15.jpg
