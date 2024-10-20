@@ -11,4 +11,5 @@ This documentation is not ready, use the `dVRK wiki
    introduction/how_to_get_it
    introduction/disclaimers
    introduction/groups
+   introduction/jhu-daVinci
    introduction/manual

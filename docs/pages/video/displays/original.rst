@@ -1,3 +1,5 @@
+.. _displays-original:
+
 HRSV with orginal CRTs
 ######################
 

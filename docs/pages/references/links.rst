@@ -2,7 +2,7 @@
 Links
 *****
 
-See also :ref:`acronyms<references_acronyms>`.
+See also :ref:`acronyms<acronyms>`.
 
 Intuitive Surgical
 ##################

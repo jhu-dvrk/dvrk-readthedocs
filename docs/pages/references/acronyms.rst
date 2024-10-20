@@ -1,4 +1,4 @@
-.. _references_acronyms:
+.. _acronyms:
 
 ********
 Acronyms

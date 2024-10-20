@@ -1,3 +1,5 @@
+.. _height:
+
 Console height adjustement
 **************************
 
