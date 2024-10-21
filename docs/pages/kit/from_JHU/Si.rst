@@ -1,3 +1,5 @@
+.. _controllers-si:
+
 **
 Si
 **
