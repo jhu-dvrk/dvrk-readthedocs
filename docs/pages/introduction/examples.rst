@@ -97,7 +97,7 @@ Examples
 
 * **W:** ECM.
 
-* **X:** Intrument and instrument sterile adapter
+* **X:** Instrument and instrument sterile adapter
 
 * **Y:** PSM cannula and cannula holder
 
