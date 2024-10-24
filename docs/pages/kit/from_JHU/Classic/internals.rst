@@ -20,7 +20,14 @@ LED boards, power supplies and relays.
    :width: 600
    :align: center
 
-   QLA, FPGA V1 based Classic controller internals
+   QLA, FPGA V1 based Classic controller internals (PSM with single
+   motor power supply)
+
+.. note::
+
+   In the picture above, an astute reader might notice that the QLAs
+   are missing the now recommended :ref:`heat-sink and fan
+   <qla-heat-sink>`.
 
 FPGA V3 based
 *************
@@ -29,9 +36,13 @@ The V3 DQLA1-based controllers contain one FPGA V3 and 2 QLA boards, a
 set of DQLA-Q/DQLA-F (connected using 2 flat ribbons), one dMIB (da
 Vinci Manipulator Interface Board), LED boards, power supplies and
 relays.  The FPGA is mounted against the controller's back panel so we
-can use the FireWire and Ethernet ports directly.  Compared to the
-QLA1-based controllers, this greatly reduced the amount of internal
-wiring (Ethernet and FireWire pass-through cables).
+can use the FireWire and Ethernet ports directly.  The DQLA-F board
+mounted under the FPGA is also butting againts the back of the
+comtroller and provides the 4 and 5 pins connecttors for the e-stop.
+
+Compared to the QLA1-based controllers, this greatly reduced the
+amount of internal wiring (Ethernet and FireWire pass-through cables,
+safety relays).
 
 .. figure:: /images/controllers/dqla-controller-diagram.png
    :width: 600
@@ -43,4 +54,5 @@ wiring (Ethernet and FireWire pass-through cables).
    :width: 600
    :align: center
 
-   DQLA, FPGA V3 based Classic controller internals
+   DQLA, FPGA V3 based Classic controller internals (MTM with 2 motor
+   power supplies)

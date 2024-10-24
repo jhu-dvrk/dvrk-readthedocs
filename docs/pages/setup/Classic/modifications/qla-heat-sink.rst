@@ -1,3 +1,5 @@
+.. _qla-heat-sink:
+
 QLA heat sink upgrade
 *********************
 

@@ -84,7 +84,7 @@ General
 
 **SAW**
   Surgical Workstation Assistant: `components based on cisst libraries <https://github.com/jhu-cisst/cisst/wiki/cisst-libraries-and-SAW-components>`_
-  
+
 **CRTK**
   `Collaborative Robotics ToolKit <https://crtk-robotics.readthedocs.io>`_
 
@@ -131,6 +131,10 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
 
 **dESSJ**
   dVRK specific board that replaces the original **ESSJ** on each setup joint of a S/Si patient cart.  The board is a pass-through for the FireWire signal and uses a BlueTooth Arduino to get (A2D) and send the SUJ joint values to the PC.
+
+**LVDS** Low-voltage differential signaling (LVDS) is a signaling
+  method used for high-speed transmission of binary data over copper.
+  This is used to communicate between the ESPM, ESSJ and controller.
 
 .. _davinci-generations:
 
