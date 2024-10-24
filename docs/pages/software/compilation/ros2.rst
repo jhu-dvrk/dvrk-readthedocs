@@ -18,6 +18,7 @@ distributions:
 
 .. code-block:: bash
 
+   sudo apt install python-is-python3 # set Python 3 as default Python
    sudo apt install python3-vcstool python3-colcon-common-extensions # for colcon
    sudo apt install python3-pykdl # for the CRTK Python client library
 
@@ -31,7 +32,7 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
       .. code-block:: bash
 
-         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev python3-pyudev # dVRK
+         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
          sudo apt install ros-galactic-joint-state-publisher* ros-galactic-xacro # ROS
 
    .. tab:: Ubuntu 22.04
@@ -40,7 +41,7 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
       .. code-block:: bash
 
-         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev python3-pyudev gfortran-9 # dVRK
+         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev gfortran-9 # dVRK
          sudo apt install ros-humble-joint-state-publisher* ros-humble-xacro # ROS
 
 Colcon workspace, clone and build

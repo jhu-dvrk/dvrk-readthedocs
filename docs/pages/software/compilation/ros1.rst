@@ -19,7 +19,7 @@ packages for the dVRK software:
 
       .. code-block:: bash
 
-         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev  libbluetooth-dev python-vcstool python-catkin-tools
+         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python-vcstool python-catkin-tools
 
    .. tab:: Ubuntu 20.04
 
@@ -27,7 +27,7 @@ packages for the dVRK software:
 
       .. code-block:: bash
 
-         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev python3-pyudev python3-vcstool python3-catkin-tools python3-osrf-pycommon
+         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev python3-vcstool python3-catkin-tools python3-osrf-pycommon
 
 .. warning::
 
