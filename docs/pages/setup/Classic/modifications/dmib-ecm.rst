@@ -1,5 +1,13 @@
+.. _dmib-ecm-pre-2015:
+
 dMIB modification for setup joints switch ECM pre 2015
 ******************************************************
+
+.. warning::
+
+   The SUJ switch for the ECM is physically connected to the ECM
+   Classic controller. If your ECM controller was manufactured before
+   2015, SUJ switch will not work unless you modify the dMIB
 
 The setup joint switch/button on the ECM is not using the same digital
 input as the setup joint switch on the PSMs.  This was unfortunately
@@ -12,12 +20,21 @@ switch events, i.e. press and release the different buttons on the ECM
 arm for a little bit and monitor the changes in the "Buttons"
 widget/window.
 
-Manipulator switch ![ECM Manipulator switch](/jhu-dvrk/sawIntuitiveResearchKit/wiki/ecm-arm-switch.jpg)
+.. figure:: /images/Classic/ECM/ecm-arm-switch.jpg
+   :width: 400
+   :align: center
 
-SUJ switch ![ECM Arm switch](/jhu-dvrk/sawIntuitiveResearchKit/wiki/ecm-suj-switch.jpg)
+   ECM manipulator switch
 
-IO Widget ![sawRobotIO1394QtConsole IO](/jhu-dvrk/sawIntuitiveResearchKit/wiki/assets/gui/dvrk-gui-ecm-io.png)
+.. figure:: /images/Classic/ECM/ecm-suj-switch.jpg
+   :width: 400
+   :align: center
 
-The Arm (aka manipulator) switch should work and the SUJ shouldn't
-until you hack the dMIB.  To modify the dMIB, follow [these
-instructions](/jhu-dvrk/sawIntuitiveResearchKit/wiki/Full-da-Vinci-dMIB-pre-2015).
+   ECM SUJ switch
+
+.. figure:: /images/gui/dvrk-gui-ecm-io.png
+   :width: 600
+   :align: center
+
+   ECM IO widgets
+

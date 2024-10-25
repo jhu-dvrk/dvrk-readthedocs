@@ -44,9 +44,10 @@ Hardware modifications
 
 * dMIB:
 
-  * [ECM switch for SUJ](/jhu-dvrk/sawIntuitiveResearchKit/wiki/Full-da-Vinci-dMIB-pre-2015)
-  * [PSM Dallas chip for tool detection](/jhu-dvrk/sawIntuitiveResearchKit/wiki/Tool-Detection)
+  * :ref:`ECM switch for SUJ <dmib-ecm-pre-2015>`
+  * :ref:`PSM Dallas chip for tool detection <dallas>`
 
 * QLAs:
 
-  * [Heat sink and fan](/jhu-dvrk/sawIntuitiveResearchKit/wiki/QLA-Heat-Sink)
+   * :ref:`Heat sink and fan <qla-heat-sink>`
+

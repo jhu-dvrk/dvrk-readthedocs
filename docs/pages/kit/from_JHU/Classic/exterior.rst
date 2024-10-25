@@ -37,6 +37,8 @@ Connectors
 
    Back of DQLA, FPGA V3 based Classic controller
 
+.. _classic-leds:
+
 LEDs
 ****
 

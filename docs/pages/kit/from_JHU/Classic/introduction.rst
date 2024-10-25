@@ -2,9 +2,10 @@ Introduction
 ############
 
 Each da Vinci arm (MTM, PSM, ECM) is controlled by a single box. A
-different controller is used for the Setup joints (see below).  There
-are three major major versions of controllers for the da Vinci
-Classic, based on the FPGA version used (V1, V2 or V3).
+different controller is used for the Setup joints (see :ref:`SUJ
+Classic controller <constrollers-suj-classic>`).  There are three
+major major versions of controllers for the da Vinci Classic, based on
+the FPGA version used (V1, V2 or V3).
 
 The V1 and V2 controllers are built around 2 QLA/FPGA stacks.  Both
 boards (QLA and FPGA logic board) were designed by JHU.  Since a QLA
