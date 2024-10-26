@@ -1,3 +1,5 @@
+.. _dvrk-examples:
+
 ********
 Examples
 ********

@@ -3,7 +3,7 @@
 dMIB modification for setup joints switch ECM pre 2015
 ******************************************************
 
-.. warning::
+.. note::
 
    The SUJ switch for the ECM is physically connected to the ECM
    Classic controller. If your ECM controller was manufactured before

@@ -6,6 +6,13 @@ QLA heat sink upgrade
 Introduction
 ============
 
+.. note::
+
+   This page is only relevant for groups that received old Classic
+   (FPGA V1 or V2) or Classic SUJ controllers (see :ref:`controller
+   versions <controller-versions>`.  It is also possible that previous
+   members of your group have already upgraded the QLA heat sinks.
+   
 The dVRK Classic controllers use a JHU designed Quad Linear Amps
 board. The linear amplifiers are all mounted against a large passive
 heat sink (square aluminum bar).  This solution provides some heat

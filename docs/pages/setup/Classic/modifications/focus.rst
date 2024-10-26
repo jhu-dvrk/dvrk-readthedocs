@@ -81,7 +81,7 @@ You will need to make the following custom cable:
     * Focus - signal: dMIB `DOF 2` pin 14 <-> Focus controller pin 1
     * Ground: dMIB `DOF 1` pin 10 and/or `DOF 2` pin 10 <-> Focus
       controller pin 9 (dMIB share ground between `DOF 1` and `DOF2`)
-      
+
   * :download:`PowerPoint cabling diagram
     </images/Classic/focus/FocusControllerWiring.pptx>` (same as
     picture below)
@@ -119,5 +119,9 @@ dVRK focus controller
 Not released yet!
 
   .. figure:: /images/Classic/focus/dvrk-focus-controller-adapter.png
+     :width: 400
+     :align: center
+
+.. figure:: /images/Classic/focus/dVRK-focus-controller-adapter.jpeg
      :width: 400
      :align: center
