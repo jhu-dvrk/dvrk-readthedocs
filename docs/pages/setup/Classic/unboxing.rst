@@ -1,8 +1,8 @@
 Unboxing
-********
+########
 
 Intuitive components
-====================
+********************
 
 When you received a new component from Intuitive Surgical, we strongly recomment to:
 
@@ -34,7 +34,7 @@ When you received a new component from Intuitive Surgical, we strongly recomment
 
 
 dVRK controllers
-================
+****************
 
 * Label everything.  If your controllers are already labeled, it's
   likely someone already opened the controllers and you can skip the

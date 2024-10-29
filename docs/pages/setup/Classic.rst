@@ -6,5 +6,6 @@ Classic
 
 .. toctree::
 
-   Classic/first-steps
+   Classic/unboxing
+   Classic/mount
    Classic/modifications

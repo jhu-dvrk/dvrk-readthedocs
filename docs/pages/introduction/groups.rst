@@ -10,9 +10,9 @@ Map
 <https://mapsengine.google.com/map/embed?mid=z14AfgTT1a9w.ktOc3SMAsVF4>`_.
 
 *CA* stands for Classic Arm controller, *CS* for Classic SUJ
- controller and *SA* for S/Si Arm controller. Details regarding the
- different builds can be found in the :ref:`controller versions
- page<controller-versions>`.
+controller and *SA* for S/Si Arm controller. Details regarding the
+different builds can be found in the :ref:`controller versions
+page<controller-versions>`.
 
 ==== ==== ==================================================================================================================================== ======================= ============= =========== =========
 \    Year University                                                                                                                           PI(s)                   System(s)     Arm         SUJ
