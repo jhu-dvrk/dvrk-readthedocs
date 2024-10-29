@@ -46,7 +46,7 @@ dVRK controllers
   7 actuators.  For the ECM, there's a single 36V power supply for the
   4 motors and 3 brakes.  You can verify which one is which by opening
   the controllers.  See also :ref:`Classic controllers
-  <controller-classic>`.
+  <controllers-classic>`.
 * Once you verified the type of controller, we strongly recommend to
   label the controllers with the name of the arm you plan to control
   along with the board Ids.  The board Ids should follow the
