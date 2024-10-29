@@ -133,8 +133,14 @@ html_context = {
   'github_version': 'main/docs/',
 }
 
+html_logo = 'images/dVRK-square.png'
+
 html_css_files = [
     'custom.css',
 ]
+
+html_theme_options = {
+    'logo_only': True,
+}
 
 html_title = project + ' ' + release
