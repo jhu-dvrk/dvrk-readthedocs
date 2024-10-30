@@ -25,10 +25,12 @@ should match existing screw holes on the column.  You should:
 Connections
 ===========
 
-Don't use the very long cables that were originally used between the
+See also :ref:`MTM Classic connections <mtm-itt>`.
+
+Don't use the very long cables that were originally between the
 patient's cart and the surgeon's console, connect the SUJs directly to
 the dVRK SUJ controller!  When everything is connected, all the
-connectors at the base of the patient cart should be unused.
+connectors at the base of the patient cart should be empty.
 
 
 .. figure:: /images/Classic/patient-cart-arm-suj-plugs.jpg
@@ -46,4 +48,6 @@ long but they should reach the back of dVRK SUJ controller.
    :width: 600
    :align: center
 
-   Classic SUJ mounting point
+   Classic SUJ connections, SUJ connected to the single SUJ controller
+   (black box) and active arms connected to the 4 dVRK Classic
+   controllers in rack.

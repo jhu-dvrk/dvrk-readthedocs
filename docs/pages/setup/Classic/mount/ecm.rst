@@ -10,3 +10,5 @@ Mount
 
 Connections
 ===========
+
+See :ref:`MTM Classic connections <mtm-itt>`.

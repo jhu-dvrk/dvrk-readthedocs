@@ -134,7 +134,8 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
 
 **LVDS** Low-voltage differential signaling (LVDS) is a signaling
   method used for high-speed transmission of binary data over copper.
-  This is used to communicate between the ESPM, ESSJ and controller.
+  This is used to communicate between the ESPM, ESSJ and dVRK Si
+  controller.
 
 .. _davinci-generations:
 
