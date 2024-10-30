@@ -98,8 +98,13 @@ somewhat convoluted -- it is first connected to the HOME7 signal
 also present on the footpedal connector and the jumper plug on the
 footpedal connector routes this signal to pin 9, which is normally not
 used. A jumper wire, soldered on the dMIB (see below), connects
-footpedal pin 9 to the 1-wire signal on the DL-156 connector. The
-actual dongle set and setup on a physical controller box, as an
+footpedal pin 9 to the 1-wire signal on the DL-156 connector.
+
+.. figure:: /images/Classic/tool-detection/dongle-sets.jpg
+   :width: 400
+   :align: center
+
+The actual dongle set and setup on a physical controller box, as an
 example, are shown in the following figures.
 
 .. figure:: /images/Classic/tool-detection/dongle-sets-on-box.jpg

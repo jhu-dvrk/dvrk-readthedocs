@@ -1,45 +1,31 @@
 MTMs
 ****
 
-Mount
-=====
+Newer dVRK groups should have received an original surgeon's console,
+either S or Si with HD monitors.  This section is for groups that
+either didn't receive the original surgeon's console or groups that
+want to replace it.
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-MTM-mount.jpeg
    :width: 400
    :align: center
 
+   MTM Classic mounting bracket
+
 .. figure:: /images/Si/jhu-surgeon-console-goovis-brace.jpeg
    :width: 400
    :align: center
+
+   Custom surgeon's console, bracing
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-under.jpeg
    :width: 400
    :align: center
 
+   Custom surgeon's console, mount for HMD
+
 .. figure:: /images/Si/jhu-surgeon-console-goovis-wheel.jpeg
    :width: 400
    :align: center
 
-.. _mtm-itt:
-
-Connections
-===========	   
-
-The only thing to connect is the large cable with an ITT Cannon 156
-connector that comes from the arm.
-
-When connecting to the dVRK controller, make sure you don't force the
-connector in, the connector should insert without any forces (ZIF -
-Zero Insertion Force) The direction varies between arms, cable coming
-out either on the left or right.
-
-Once the connector is inserted, you need to use a large flat head
-screw driver to secure the it in place.  The screw on the back shell
-is connected to a camshaft to lock the connector to the controller.
-You need to turn by 90 degrees at most (a quarter turn).  If you need
-to remove the connector, don't forget to unscrew it first.
-
-.. warning::
-
-   Failure to lock/screw the arm connector will lead to bad contacts
-   and will prevent the arm from working correctly.
+   Custom surgeon's console, support for casters

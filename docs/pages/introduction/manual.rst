@@ -71,5 +71,7 @@ The usual steps are:
   ROS ``dvrk_robot dvrk_console_json`` node.  We also provide a few
   debugging and calibration utilities.
 
+* **Usage** - todo
+
 * **Development** - :ref:`The development section <devel>` shows how
   to write your own applications on top of the dVRK software stack.

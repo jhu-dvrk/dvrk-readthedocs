@@ -1,8 +1,10 @@
 PSMs
 ****
 
-Mount
-=====
+.. note::
+
+   You can skip this section if you have a full patient's cart since
+   the PSMs are mounted on the SUJ.
 
 The da Vinci Classic PSMs are fairly easy to mount.  There are 4 holes
 at the base of the PSM black bar.  The four holes form a 2" square (2
@@ -14,6 +16,8 @@ you can simply drill and thread 4 holes in an 80-20 standard plate.
    :align: center
 
    PSM Classic mounting plate for 80-20
+
+.. _psm-ecm-position:
 
 For the a clinical system, the PSMs are mounted on the passive setup
 joints (SUJ).  These passive arms allow the user to position each
@@ -42,17 +46,13 @@ different azimuth and altitude.
    :align: center
 
    Schematic view of PSMs and ECM RCM points and base orientation
-   
-To allow all the access angles, one can use a ball head mount for each
-PSM.  Some groups used a Really Right Stuff BH-55 Ball Head.
+
+To allow all the base frames orientations, one can use a ball head
+mount for each PSM.  Some groups used a Really Right Stuff BH-55 Ball
+Head.
 
 .. figure:: /images/Classic/PSM/classic-psm-mount.jpeg
    :width: 400
    :align: center
 
    Ball head mounts used on the dVRK Classic at JHU
-
-Connections
-===========
-
-See :ref:`MTM Classic connections <mtm-itt>`.

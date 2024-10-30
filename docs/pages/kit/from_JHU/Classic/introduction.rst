@@ -3,7 +3,7 @@ Introduction
 
 Each da Vinci arm (MTM, PSM, ECM) is controlled by a single box. A
 different controller is used for the Setup joints (see :ref:`SUJ
-Classic controller <constrollers-suj-classic>`).  There are three
+Classic controller <controllers-suj-classic>`).  There are three
 major major versions of controllers for the da Vinci Classic, based on
 the FPGA version used (V1, V2 or V3).
 
