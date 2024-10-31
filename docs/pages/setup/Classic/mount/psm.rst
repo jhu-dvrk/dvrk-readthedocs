@@ -47,7 +47,7 @@ different azimuth and altitude.
 
    Schematic view of PSMs and ECM RCM points and base orientation
 
-To allow all the base frames orientations, one can use a ball head
+To allow all the base frame's orientations, one can use a ball head
 mount for each PSM.  Some groups used a Really Right Stuff BH-55 Ball
 Head.
 
@@ -56,3 +56,7 @@ Head.
    :align: center
 
    Ball head mounts used on the dVRK Classic at JHU
+
+For further examples of mounting frames for the PSMs, check the
+`Intuitive Research Wiki <Https://research.intusurg.com/>`_ (account
+required).
