@@ -6,6 +6,7 @@ Si
 
 .. toctree::
 
-   Si/mount.rst
-   Si/ESPM.rst
-   Si/SUJ.rst
+   Si/mount
+   Si/connections
+   Si/ESPM
+   Si/SUJ

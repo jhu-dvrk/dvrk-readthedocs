@@ -1,10 +1,18 @@
+.. _setup-si-suj:
+
 SUJ
 ###
+
+The goal is to re-use the internal cables and sensors in the SUJ
+passive arms for the dVRK controllers. This way all the signals from
+the active arms (:ref:`2 D-sub connectors <setup-si-connections>`) can
+be carried all the way to the dSIB and dESSJ at the base of the
+patient's cart.
 
 Preparation
 ***********
 
-The goal is to remove most of the electronics from the back of the
+We first need to remove most of the electronics from the back of the
 patient cart.  This is required since the cables coming from the base
 of the column of the cart are fairly short and need to reach the back
 of the dVRK controllers.

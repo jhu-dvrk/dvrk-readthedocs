@@ -3,8 +3,8 @@ MTMs
 
 Newer dVRK groups should have received an original surgeon's console,
 either S or Si with HD monitors.  This section is for groups that
-either didn't receive the original surgeon's console or groups that
-want to replace it.
+either didn't receive the original surgeon's console or want to
+replace it.
 
 For further examples of mounting frames for the PSMs, check the
 `Intuitive Research Wiki <https://research.intusurg.com/>`_ (account
@@ -12,9 +12,10 @@ required).
 
 The following pictures show an alternative surgeon's console built at
 Johns Hopkins.  It holds two MTMs and their dVRK controllers (top
-shelf) as well as an :ref:`Si CCU <camera-si>` and light source.  The
-dimensions are based on an Si console (spacing between MTMs, width...)
-and the console is narrow enough to go through most doors.
+shelf) as well as an :ref:`Si CCU <camera-si>` and light source
+(bottom shelf).  The dimensions are based on an Si console (spacing
+between MTMs, width...) and the console is narrow enough to go
+through most doors.
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-overview.jpeg
    :width: 400
