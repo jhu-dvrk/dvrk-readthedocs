@@ -1,6 +1,10 @@
 ESPM
 ####
 
+.. note::
+
+   This step is required for all PSMs and ECM Si used with the dVRK
+   controllers, wether they are mounted on the Si SUJ or not.
 
 Introduction
 ************
@@ -41,21 +45,28 @@ by a few clips.
 Connect the ESPM programmer pigtail cable to J22 JTAG on ESPM. There
 are multiple identical connectors on the board. Make sure you
 positively identify the connector on the ESPM by the label ("J22
-JTAG") before you plug the cable in. The connector is keyed and please
-do not force it upside down.
+JTAG") before you plug the cable in. The connector is keyed, **please
+do not force it upside down**.
 
-.. caution:
+.. warning::
 
    The cable between the ESPM and the ESPM programmer has identical
    connectors on both ends but plugging it in backward will not
-   work. If you are confused, look closely at the picture to see which
-   pins are populated (i.e. have a black wire crimped)
+   work. If you are confused, look closely at the pictures to see
+   which pins are populated (i.e. have a black wire crimped).  You can
+   click on the pictures to get a higher resolution view.
 
 .. figure:: /images/Si/ESPM-JTAG.jpg
    :width: 400
    :align: center
 
    ESPM JTAG and ESPM programmer
+
+.. figure:: /images/Si/ESPM-JTAG-closeup.jpeg
+   :width: 400
+   :align: center
+
+   ESPM programmer connected to ESPM JTAG
 
 To hold the ESPM programmer to the arm, you should have received a
 rubber credit card holder with double sided tape.  Place the ESPM
@@ -69,11 +80,13 @@ cover is not pinching the cable.
 
    ESPM programmer on arm
 
-.. note:
+.. note::
 
    If the arm is folded and you can't access the surface to stick the
    holder, you can let it hang until you can power the arm and release
-   the brakes.
+   the brakes.  Alternatively, you can force the arm to move despite
+   the brakes.  This is not something you should do too often but it
+   can help during the setup: `YouTube video <https://www.youtube.com/shorts/wBXQduLbHdE>`_.
 
 Usage
 *****

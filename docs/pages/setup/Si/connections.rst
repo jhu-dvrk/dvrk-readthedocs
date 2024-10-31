@@ -33,6 +33,12 @@ cables are pretty heavy.
 
    Standard D-sub connectors on a PSM Si (same as ECM Si)
 
+.. figure:: /images/Si/PSM-Si-SUJ-connectors.jpeg
+   :width: 400
+   :align: center
+
+   Standard D-sub connectors at the end of the SUJ passive arm
+
 .. figure:: /images/Si/PSM-Si-80-20-connectors.jpeg
    :width: 300
    :align: center

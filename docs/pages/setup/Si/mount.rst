@@ -10,14 +10,26 @@ Mount
       :width: 200
       :align: center
 
-      Full Si patient cart at JHU 
+      Full Si patient cart at JHU
 
 On a full da Vinci Si, each arm on the patient side can be easily
-removed from the SUJ.  The arm is secured using 4 long bolts.  Once
-the bolts are removed, the arm simply slides out using two grooves on
-its internal walls.
+removed from the SUJ.  The arm is secured using 4 long bolts.
 
-.. figure:: /images/Si/PSM-Si-80-20-bolt.jpeg
+.. note::
+
+   If the arm is folded and you can't access the bolts, you can force
+   the arm to move despite the brakes.  This is not something you
+   should do too often but it can help during the setup: `YouTube
+   video <https://www.youtube.com/shorts/wBXQduLbHdE>`_.
+
+Once the bolts are removed, the arm simply slides out using two
+grooves on its internal walls. Please note that the passive arm has
+counter weights in the patient's cart core column.  When you remove
+the active arm (PSM or ECM), the corresponding SUJ passive arm will
+have a tendency to move up despite the brakes.  You might want to
+strap the passive arm to the bottom of the cart to prevent this.
+
+.. figure:: /images/Si/PSM-Si-mounting-bolts.jpeg
    :width: 400
    :align: center
 
@@ -38,7 +50,7 @@ pulled from old clinical systems and are made of steel.
    :align: center
 
    PSM/ECM Si steel mounting bracket and 80-20 plate
-   
+
 There are also some aluminum brackets but these should be rare.
 
 .. figure:: /images/Si/PSM-Si-80-20-bracket-red.jpeg
