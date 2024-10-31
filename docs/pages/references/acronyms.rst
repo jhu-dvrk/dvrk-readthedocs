@@ -38,21 +38,9 @@ Intuitive Surgical
   Endoscopic Camera Manipulator, 1 on real da Vinci system.
 
 **SUJ**
-See Ikegami HD section, most of the system is similar except the cameras.  Some systems come with the Panasonic Cameras.  The video output is SDI.
-
-### Cameras
-
-![HD endoscope with Panasonic Cameras](/jhu-dvrk/sawIntuitiveResearchKit/wiki/assets/video/video-panasonic-hd-endoscope.jpg)
-
-### CCU front
-
-![HD Panasonic CCUs front](/jhu-dvrk/sawIntuitiveResearchKit/wiki/assets/video/video-panasonic-hd-ccu-front.jpg)
-
-### CCU back
-
-![HD Panasonic CCUs back](/jhu-dvrk/sawIntuitiveResearchKit/wiki/assets/video/video-panasonic-hd-ccu-back.jpg)
-
-  Setup Joints, patient cart with 4 passive arm to hold active ECM and PSMs.  Some early versions (Standard, S, Si) came with only three passive arms (missing PSM3)
+  Setup Joints, patient cart with 4 passive arm to hold active
+  ECM and PSMs.  Some early versions (Standard, S, Si) came with only
+  three passive arms (missing PSM3)
 
 **HRSV**:
   High Resolution Stereo Viewer.  At least 3 versions exist, 640x480 CRT (Standard and S), 1024x768 CRT (S HD), LCD (Si/Xi/5).  The Research Kit initially came with the CRT 640x480, recent sites should receive the console from S HD systems.
@@ -106,7 +94,7 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
   Logic board designed by JHU, mated with QLAs or dRAC. Provides 2 FireWire adapters to daisy chain and connect to PC. Versions 2+ also includes an Ethernet adapter.  Version 3+ uses a newer FPGA, 2 FireWire and 2 Ethernet adapters, a dual-core ARM processor boots from a micro-SD card.
 
 **QLA-FPGA**
-  Board set including a QLA and FPGA board.  Used in the Classic arm controllers, up to CA9 (todo: see [controller versions](https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki/Board-Versions)).
+  Board set including a QLA and FPGA board.  Used in the Classic arm controllers, up to CA9 (see :ref:`controller versions <controller-versions>`).
 
 **DQLA**
   Dual QLA setup with a single FPGA board (version 3+).  Used in the Classic arm controllers after CA9.

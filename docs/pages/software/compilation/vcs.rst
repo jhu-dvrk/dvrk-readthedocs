@@ -11,7 +11,7 @@ manage a set of repositories.  The source of all packages based on the
 compilation instructions and vcs files can be found on GitHub:
 https://github.com/jhu-saw/vcs.
 
-The sections below include the ``vcs`` command lines specific to the
-dVRK.
+The following sections include the ``vcs`` command lines specific to
+the dVRK for both ROS 1 and ROS 2.
 
 All the code for the dVRK is compatible with ROS 1 and ROS 2.

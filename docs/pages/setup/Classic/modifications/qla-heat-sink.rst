@@ -10,8 +10,9 @@ Introduction
 
    This page is only relevant for groups that received old Classic
    (FPGA V1 or V2) or Classic SUJ controllers (see :ref:`controller
-   versions <controller-versions>`.  It is also possible that previous
-   members of your group have already upgraded the QLA heat sinks.
+   versions <controller-versions>`).  It is also possible that
+   previous members of your group have already upgraded the QLA heat
+   sinks.
    
 The dVRK Classic controllers use a JHU designed Quad Linear Amps
 board. The linear amplifiers are all mounted against a large passive
@@ -56,7 +57,7 @@ We found that a single Pentium Socket 370 heat sink and fan performs
 very well.  There is very little manufacturing required so users can
 likely upgrade their controllers by themselves.  We uses the StarTech
 FANP1003LD (https://www.amazon.com/dp/B000IXS6DW) with success but
-other heatsinks for Socket 370 might work as well.
+other heat-sinks for Socket 370 might work as well.
 
 .. figure:: /images/qla-heat-sink-socket-370/qla-heat-sink-fan.jpg
    :width: 400

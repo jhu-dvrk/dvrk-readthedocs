@@ -82,7 +82,8 @@ Software
    Most of the code should be downloaded using ``vcs`` (python
    vcstools) instead of ``git`` to make sure all the repositories you
    need are cloned.  ``vcs`` also allows to use a specific branch or
-   tag per repository to ensure compatible versions.
+   tag per repository to enforce checking out compatible versions.
+   See :ref:`VCS instructions <vcs>` for the dVRK.
 
 cisst libraries and SAW components
 ==================================
