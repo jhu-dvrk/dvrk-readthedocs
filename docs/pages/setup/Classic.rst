@@ -8,4 +8,5 @@ Classic
 
    Classic/unboxing
    Classic/mount
+   Classic/connections
    Classic/modifications

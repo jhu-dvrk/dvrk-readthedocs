@@ -12,8 +12,15 @@ out either on the left or right.
 Once the connector is inserted, you need to use a large flat head
 screw driver to secure the it in place.  The screw on the back shell
 is connected to a camshaft to lock the connector to the controller.
-You need to turn by 90 degrees at most (a quarter turn).  If you need
-to remove the connector, don't forget to unscrew it first.
+You need to turn by 90 degrees at most (a quarter turn), clockwise to
+lock and counterclockwise to unlock.  If you need to remove the
+connector, don't forget to unscrew it first.
+
+.. figure:: /images/controllers/Classic-ITT-Cannon-screw.jpeg
+   :width: 400
+   :align: center
+
+   ITT Cannon back shell screw
 
 .. warning::
 
@@ -41,7 +48,7 @@ Arm specific notes:
      controller (black box) and active arms connected to the 4 dVRK
      Classic controllers in rack.
 
-* For the SUJ Don't use the very long cables that were originally
+* For the SUJ, don't use the very long cables that were originally
   between the patient's cart and the surgeon's console, connect the
   SUJs directly to the dVRK SUJ controller!  When everything is
   connected, all the connectors at the base of the patient cart should
@@ -56,4 +63,3 @@ Arm specific notes:
   The cables from the SUJs are pretty short but they should reach the
   back of dVRK SUJ controller when it is mount one the patient cart's
   column.
-
