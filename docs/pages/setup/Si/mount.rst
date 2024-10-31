@@ -3,7 +3,7 @@ Mount
 
 .. note::
 
-   If you have a full Si patient cart (i.e. SUJ with PSMs and ECM),
+   If you have a full Si patient cart (i.e., SUJ with PSMs and ECM),
    you can skip this section unless you plan to remove/swap an arm.
 
    .. figure:: /images/Si/patient-cart-Si-JHU.jpg
@@ -26,7 +26,7 @@ its internal walls.
 There is a mating bracket at the end of each SUJ arm with two side
 rails.  For the connections, there are two D-sub connectors (one for
 motor power, one for data/LVDS) loosely mounted on the SUJ.  When the
-arm put back, the long pins on the SUJ connectors guide the arm's
+arm is put back, the long pins on the SUJ connectors guide the arm's
 D-sub connectors to make sure they properly align.
 
 Intuitive Surgical can provide the mounting brackets so one can create
@@ -72,6 +72,6 @@ More details can found using the following links:
   <https://research.intusurg.com/index.php/DVRK:Topics:PSCFrameDesignSi>`_
 * `CAD on onshape.com
   <https://cad.onshape.com/documents/c392f568b5f487a9c7ad416d/w/f5ef36d6be3d40eeef41b521/e/7445442fedf612c617fdd2fc>`_
-  and :download:`bill or material
+  and :download:`bill of materials
   </images/Si/BOM_dVRK_Si_Short_Frame.xlsx>` (courtesy of Yilin Cai at
   Georgia Tech)
