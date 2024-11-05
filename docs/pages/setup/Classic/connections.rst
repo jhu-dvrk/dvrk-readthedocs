@@ -6,8 +6,8 @@ large cable with an ITT Cannon 156 connector that comes from the arm.
 
 When connecting to the dVRK controller, make sure you don't force the
 connector in, the connector should insert without any forces (ZIF -
-Zero Insertion Force) The direction varies between arms, cable coming
-out either on the left or right.
+Zero Insertion Force). The direction varies between arms, cable coming
+out either on the left or right of the dVRK controller.
 
 Once the connector is inserted, you need to use a large flat head
 screw driver to secure the it in place.  The screw on the back shell
@@ -49,7 +49,7 @@ Arm specific notes:
      Classic controllers in rack.
 
 * For the SUJ, don't use the very long cables that were originally
-  between the patient's cart and the surgeon's console, connect the
+  between the patient's cart and the surgeon's console. Connect the
   SUJs directly to the dVRK SUJ controller!  When everything is
   connected, all the connectors at the base of the patient cart should
   be empty.
@@ -61,5 +61,5 @@ Arm specific notes:
      Empty connectors on Classic patient cart
 
   The cables from the SUJs are pretty short but they should reach the
-  back of dVRK SUJ controller when it is mount one the patient cart's
+  back of dVRK SUJ controller when it is mounted on the patient cart's
   column.
