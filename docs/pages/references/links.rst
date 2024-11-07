@@ -11,7 +11,7 @@ Sites
 *****
 
 * `Intuitive Surgical Inc <https://www.intuitive.com/>`_
-* `Intuitive Foundation <http://www.intuitive-foundation.org/dvrk/>`_ (dVRK hardware applications)
+* `Intuitive Foundation <https://www.intuitive-foundation.org/dvrk/>`_ (dVRK hardware applications)
 * `Intuitive Research wiki for the da Vinci Research Kit community <https://research.intusurg.com/>`_ (account required)
 
 Documents

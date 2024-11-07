@@ -8,7 +8,7 @@ Intuitive Surgical
 ##################
 
 **ISI**
-  Intuitive Surgical Inc.
+  Intuitive Surgical Inc., now known simply as Intuitive (https://wwww.intuitive.com)
 
 **Classic**
   First generation da Vinci. The original da Vinci research kit is based on the Classic. Also know as Standard.
@@ -27,6 +27,9 @@ Intuitive Surgical
 
 **X**
   Similar to Si but with Xi patient side arms.
+
+**5**
+  Latest generation, new surgeon console and patient cart based on Xi systems.  The da Vinci 5 also introduce instruments with force sensing to provide haptic feedback to the operator.
 
 **PSM**
   Patient Side Manipulator, 2 to 3 on a full da Vinci system. Mechanically identical, they're called PSM1, PSM2, PSM3.
@@ -120,44 +123,8 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
 **dESSJ**
   dVRK specific board that replaces the original **ESSJ** on each setup joint of a S/Si patient cart.  The board is a pass-through for the FireWire signal and uses a BlueTooth Arduino to get (A2D) and send the SUJ joint values to the PC.
 
-**LVDS** Low-voltage differential signaling (LVDS) is a signaling
+**LVDS**
+  Low-voltage differential signaling (LVDS) is a signaling
   method used for high-speed transmission of binary data over copper.
   This is used to communicate between the ESPM, ESSJ and dVRK Si
   controller.
-
-.. _davinci-generations:
-
-Generations of da Vinci systems
-###############################
-
-Models
-******
-
-.. csv-table:: da Vinci Generations
-   :name: da-vinci-generations
-   :header: "Model", "Year", "Surgeon's console", "PSM/ECM/USM", "Setup Joints", "Endoscope"
-   :align: center
-
-   "Classic ", "2000", "ver 1 (640x480)", "ver 1 (PSM/ECM)", "ver 1", "ver 1 with SD"
-   "S       ", "2006", "ver 1 (640x480 or 1024x768)", "ver 2 (PSM/ECM)", "ver 2", "ver 1 with SD or HD"
-   "Si      ", "2009", "ver 2 HD", "ver 3 (PSM/ECM)", "ver 2", "ver 2 HD"
-   "X       ", "2017", "ver 2 HD", "ver 4 (USM)    ", "ver 2", "ver 3 HD"
-   "Xi      ", "2014", "ver 2 HD", "ver 4 (USM)    ", "ver 3", "ver 3 HD"
-   "5       ", "2024", "ver 3 ", "ver 4 (USM)    ", "ver 3", "?"
-
-dVRK support
-************
-
-Supported:
-
-* Classic and S MTMs (ver1) with QLA based arm controllers
-* Classic PSMs and ECMs (ver1) with QLA based arm controllers
-* Classic SUJ (ver1) with QLA based SUJ controller
-* Si PSMs and ECMs (ver3) with dRAC based arm controllers
-* S and Si SUJ (ver2) with dESSJ and dRAC based arm controllers
-
-Not supported:
-
-* S PSMs and ECMs (ver2).  Some S came with ver3 PSMs or ECMs which are supported
-* Si MTMs (ver 2)
-* Anything X, Xi or 5
