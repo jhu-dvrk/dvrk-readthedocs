@@ -10,7 +10,7 @@ The following describes an alternative to the original HRSV unit from
 ISI.  The original units use CRT monitors and the maximum resolution
 is 720x1280 over VGA.  The idea is to replace the display using either
 a VR headset or HMD.  Most VR headset require the use of their SDK and
-in most cases, transferring the video over wifi.  We looked for a
+in most cases, transferring the video over WiFi.  We looked for a
 solution that wouldn't require any SDK and simply show up as an extra
 monitor under Linux.  This way we can just drag and drop the video
 windows onto the HMD.  We tried two different units from Goovis, the
@@ -39,16 +39,19 @@ features:
   swaps the left and right channels.
 * "Large" field of view (FOV).  The internal displays are fairly large
   and cover most of the straight view for the user.
+
   .. warning::
 
      The lower-end unit has a smaller FOV and it feels like you're
      looking at a screen far away with a fair amount of black
      surrounding it.
+
 * Head sensor.  The HMD automatically turns off the internal displays
   when the user is not present.  It turns out this signal is carried
   over the USB cable used to power the unit.  We can used this USB HID
   interface to emulate the head sensor.  This is quite convenient to
-  turn on/off the tele-operation.
+  turn on/off the teleoperation.
+
   .. warning::
 
      The lower-end unit (FHD) doesn't have this feature.

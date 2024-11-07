@@ -2,8 +2,9 @@
 Introduction
 ############
 
-This documentation is not ready, use the `dVRK wiki
-<https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki>`_ for now.
+This documentation is not complete yet, you will need to use the `dVRK
+wiki <https://github.com/jhu-dvrk/sawIntuitiveResearchKit/wiki>`_ for
+some older pages.
 
 .. toctree::
 

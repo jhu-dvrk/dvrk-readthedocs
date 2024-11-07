@@ -18,8 +18,8 @@ There are three main source for the :ref:`first part of the kit
 The second part of the kit is the :ref:`dVRK controllers <from_JHU>`.
 If you reached out to the Intuitive Foundation, they will help you
 figure out how to acquire the controllers.  Alternatively, since the
-design are open source, you can manufacture your own controllers.
-This is, by far, a much more difficult approach.
+design is open source, you can manufacture your own controllers.  This
+is, by far, a much more difficult approach.
 
 :ref:`Everything else <from_user>` can be bought on the internet of
 retrieved from GitHub.

@@ -5,8 +5,8 @@ Getting started
 Accounts
 ========
 
-For all users who have access to a dVRK, you will need to create two
-accounts to access some privates resources:
+If you have access to a dVRK, you might need to create two accounts to
+access some privates resources:
 
 * Intuitive Surgical hardware wiki http://research.intusurg.com/dvrk:
   please contact Intuitive to get an account created for each active
@@ -14,16 +14,18 @@ accounts to access some privates resources:
   hardware, including unboxing instructions and wiring fixes.
 * Google group for dVRK users
   https://groups.google.com/d/forum/research-kit-for-davinci and
-  research-kit-for-davinci@googlegroups.com We strongly encourage
+  research-kit-for-davinci@googlegroups.com. We strongly encourage
   users to send questions using this google group.
-
-  How to add new user:
 
   1. Go to
      https://groups.google.com/forum/#!forum/research-kit-for-davinci
   2. Use the *Apply for membership* link to request membership.
-     **Don't forget to mention your group/university so the group
-     admin can identify you**.
+
+     .. note::
+
+	Don't forget to mention your group/university so the group
+	administrators can identify you.  Your application will be
+	rejected if you don't provide this information.
 
 Other readings
 ==============
@@ -47,7 +49,7 @@ started.
 Overview
 ========
 
-The usual steps are:
+The main steps to setup a dVRK are:
 
 * **Compile the software with ROS** - This has to be performed once
   per user, each user should maintain their own version of the
@@ -63,8 +65,8 @@ The usual steps are:
   OS configuration to communicate with the controllers over
   :ref:`FireWire <firewire>` or :ref:`Ethernet <ethernet>`.
 
-* **Configuration** - :ref:`The configuration step <configuration>`
-  has to be performed once per robotic arm.  Once the configuration
+* **Configuration** - :ref:`The configuration steps <configuration>`
+  have to be performed once per robotic arm.  Once the configuration
   has been generated, we strongly recommend you save all your
   configurations files to share between the users in your group.  We
   maintain a GitHub organization (https://github.com/dvrk-config) to

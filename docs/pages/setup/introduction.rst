@@ -36,14 +36,14 @@ them.
    console.  So what is commonly referred to as a "dVRK Si" is usually
    built around the da Vinci Si patient's side (SUJ, PSMs, ECM) and a
    da Vinci S surgeon's console.
-   
+
 To add to the complexity, Intuitive has over the time donated roughly
 3 types of :ref:`endoscopic cameras <video>` and these can be mounted
 on any generation of ECM.
 
 As such, the steps required to set up a dVRK totally depends on which
 :ref:`hardware is available on each site <dvrk-examples>`.  The only
-exception the safety chain (E-Stop) for the dVRK controllers.
+exception is the safety chain (E-Stop) for the dVRK controllers.
 
 The following sections describe how to connect the :ref:`E-Stop chain
 <estop>` and modifications required to set up components from the da
