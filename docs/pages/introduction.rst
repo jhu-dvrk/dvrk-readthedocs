@@ -10,6 +10,7 @@ This documentation is not ready, use the `dVRK wiki
    introduction/what_is_it
    introduction/how_to_get_it
    introduction/disclaimers
+   introduction/acknowledgments
    introduction/groups
    introduction/examples
    introduction/manual

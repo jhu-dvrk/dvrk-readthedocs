@@ -2,24 +2,24 @@
 How to get a dVRK?
 ******************
 
-Intuitive foundation for the daVinci components, JHU for the
-mechatronics, github for all the sources.
+There are three main source for the :ref:`first part of the kit
+<from_ISI>`, i.e. retired parts of da Vinci systems:
 
-You will need to create two accounts to access some privates resources:
+* The vast majority of dVRK groups received their hardware through the
+  `Intuitive Foundation
+  <https://www.intuitive-foundation.org/dvrk/>`_.
+* Some groups also salvaged retired da Vinci directly from an
+  hospital, often affiliated to a university.  If you have any ongoing
+  collaboration with an hospital with a da Vinci system, it's worth
+  asking them what they plan to do with it when it's retired.
+* Finally, it is possible to find full da Vinci or da Vinci parts at a
+  reasonable price on auctions sites such as eBay.
 
-* Intuitive Surgical hardware wiki http://research.intusurg.com/dvrk:
-  please contact ISI to get an account created for each active user.
-  This wiki contains some important documentation regarding the
-  hardware, including unboxing instructions and wiring fixes.
-* Google group for dVRK users
-  https://groups.google.com/d/forum/research-kit-for-davinci and
-  research-kit-for-davinci@googlegroups.com We strongly encourage
-  users to send questions using this google group.
-  
-  How to add new user: 
+The second part of the kit is the :ref:`dVRK controllers <from_JHU>`.
+If you reached out to the Intuitive Foundation, they will help you
+figure out how to acquire the controllers.  Alternatively, since the
+design are open source, you can manufacture your own controllers.
+This is, by far, a much more difficult approach.
 
-  1. Go to
-     https://groups.google.com/forum/#!forum/research-kit-for-davinci
-  2. Use the *Apply for membership* link to request membership.
-     **Don't forget to mention your group/university so the group
-     admin can identify you**.
+:ref:`Everything else <from_user>` can be bought on the internet of
+retrieved from GitHub.

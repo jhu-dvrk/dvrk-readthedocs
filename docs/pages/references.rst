@@ -8,4 +8,3 @@ References
    references/generations
    references/publications
    references/links
-

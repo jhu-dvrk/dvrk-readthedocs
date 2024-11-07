@@ -6,7 +6,7 @@ Disclaimers
   on patients.
 
 * The dVRK doesn't come with any warranty whatsoever.
-  
+
 * The dVRK is not the da Vinci.  These two systems share the same
   mechanical parts but the electronics and software are different.
   Therefore, a defect or flaw identified using a dVRK system should

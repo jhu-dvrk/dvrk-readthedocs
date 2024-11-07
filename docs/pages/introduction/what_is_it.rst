@@ -9,20 +9,20 @@ systems from `Intuitive Surgical Inc
 <https://www.intuitive.com>`_. You can find a more detailed
 description of the `dVRK on the Intuitive Foundation's site
 <https://www.intuitive-foundation.org/dvrk/>`_. The dVRK is now
-deployed in close to :ref:`40 different institutions <groups>`
+deployed in more than :ref:`40 different institutions <groups>`
 worldwide.
 
 The da Vinci
 ============
 
-The first da Vinci systems were developed in the late 20th century
-and approved by the FDA for clinical use at the turn of the century.
-The da Vinci is designed for RAMIS (robotically assisted minimally
-invasive surgery).  The main advantage of a teleoperated laparoscopic
-surgery over a classic minimally invasive surgery are:
+The first da Vinci system was developed in the late 1990s and approved
+by the FDA for clinical use at the turn of the century.  The da Vinci
+is designed for RAMIS (robotically assisted minimally invasive
+surgery).  The main advantages of a teleoperated laparoscopic surgery
+over a classic minimally invasive surgery are:
 
-* Extra dexterity at the end of the instrument (patented by Intuitive
-  as Endo-Wrist).
+* Extra dexterity at the end of the instrument (Intuitive's `EndoWrist
+  <https://www.davincisurgerycommunity.com/instrumentation>`_).
 * Depth perception. Instead of looking at a wall mounted monitor, the
   operator is seated at a console which can provide a stereo display.
 * Motion scaling. Since the patient's side manipulators are
@@ -51,13 +51,20 @@ electronics and software.  These parts are much harder to share with
 the community due to obsolescence and intellectual property issues.
 Fortunately, the mechatronics and software are also a bit easier to
 develop and distribute at a reasonable cost for research
-institutions. To summarize, the :ref:`kit <kit>` comes from:
+institutions. To summarize, the :ref:`kit <kit>` is composed of:
 
-1. Manipulator and other hardware from retired da Vinci systems
+1. Manipulators and other hardware (endoscope, stereo display...) from
+   retired da Vinci systems
 2. Controllers, software and some support from the dVRK group at the
    Johns Hopkins University (all open source)
-3. Computers, setup, configuration and calibration performed by the
+3. Computers are not provided along the dVRK controllers.  PC and
+   hardware setup, configuration and calibration are performed by the
    dVRK owner
 
-Since each dVRK group might receive different, :ref:`each setup is
-different <dvrk-examples>`.
+Since each dVRK group might receive different hardware, :ref:`each
+setup is different <dvrk-examples>`.
+
+Credit/Citation
+===============
+
+See the :ref:`publication section <credit>`.

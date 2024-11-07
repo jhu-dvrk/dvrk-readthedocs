@@ -1,8 +1,8 @@
+.. _from_user:
+
 *************
 User provided
 *************
-
-Text
 
 .. toctree::
 
