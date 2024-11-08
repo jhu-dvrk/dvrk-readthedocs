@@ -7,6 +7,9 @@ There are two MTMs per system, one for the left hand and one for the
 right hand.  The left and right MTMs are identical except for the
 wrist gimbal assembly which are symmetrical.
 
+The MTMs are used to track the position of the surgeon's hand and
+provide some force feedback (i.e. they are haptic devices).
+
 .. figure:: /images/Classic/MTM/MTM-Classic-white-background.jpeg
    :width: 400
    :align: center
@@ -16,6 +19,8 @@ wrist gimbal assembly which are symmetrical.
 Basic information:
 
 * 7 motorized degrees of freedom, 7 actuators with optical encoders
+* The first 4 motors are located on the shoulder and use cable
+  transmission, the last 3 are on the wrist and use gears
 * Some joints (second to fourth) are controlled by multiple actuators
   (actuator to joint coupling matrix)
 * All joints have analog potentiometers, used for both homing and
