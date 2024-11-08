@@ -9,4 +9,3 @@ Components from the da Vinci Classic
    Classic/PSM
    Classic/ECM
    Classic/SUJ
-   Classic/misc
