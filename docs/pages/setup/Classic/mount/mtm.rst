@@ -6,9 +6,9 @@ either S or Si with HD monitors.  This section is for groups that
 either didn't receive the original surgeon's console or want to
 replace it.
 
-For further examples of mounting frames for the PSMs, check the
-`Intuitive Research Wiki <https://research.intusurg.com/>`_ (account
-required).
+For further examples of mounting frames for the :ref:`MTMs <mtm>`,
+check the `Intuitive Research Wiki <https://research.intusurg.com/>`_
+(account required).
 
 The following pictures show an alternative surgeon's console built at
 Johns Hopkins.  It holds two MTMs and their dVRK controllers (top

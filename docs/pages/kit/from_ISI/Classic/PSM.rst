@@ -1,10 +1,13 @@
+.. _psm:
+
 Patient side manipulators
 #########################
 
 Arm
 ===
 
-The da Vinci Classic systems came with either 2 or 3 PSMs.  They are all identical.
+The da Vinci Classic systems came with either 2 or 3 PSMs.  PSM1, PSM2
+and PSM3 are identical.
 
 .. figure:: /images/Classic/PSM/PSM-Classic-white-background.png
    :width: 400
@@ -14,6 +17,8 @@ The da Vinci Classic systems came with either 2 or 3 PSMs.  They are all identic
 
 Basic information:
 
+* The arm is attached to the :ref:`SUJ <suj>` using 4 small screws.
+  The mounting surface can be tilted.
 * 7 motorized degrees of freedom, 7 actuators with optical encoders
 * All motors are located in the first 2 links and use cable transmission
 * All actuators have analog potentiometers, used for both homing and
@@ -37,6 +42,13 @@ Basic information:
 * The base arm has a connector to read a Dallas chip placed in the
   instrument.  This is used to detect if an instrument is present and
   which type of instrument it is.
+
+.. figure:: /images/Classic/PSM/PSM-Classic-white-background-labeled.png
+   :width: 400
+   :align: center
+
+   da Vinci Classic PSM labeled
+
 
 Cannula and sterile adapter
 ===========================

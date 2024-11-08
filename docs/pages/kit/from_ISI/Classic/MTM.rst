@@ -1,4 +1,4 @@
-.. _isi_mtms:
+.. _mtm:
 
 Master Tele Manipulators
 ########################
@@ -18,6 +18,8 @@ provide some force feedback (i.e. they are haptic devices).
 
 Basic information:
 
+* The arm is attached to the surgeon console using 4 bolts.  The first
+  axis (rotation) should be vertical.
 * 7 motorized degrees of freedom, 7 actuators with optical encoders
 * The first 4 motors are located on the shoulder and use cable
   transmission, the last 3 are on the wrist and use gears
@@ -38,4 +40,3 @@ Basic information:
   and provides a large rotational space (SO3)
 * The gripper uses a combination of passive springs to provide some
   feedback
-

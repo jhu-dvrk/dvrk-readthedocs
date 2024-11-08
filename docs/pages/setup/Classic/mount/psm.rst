@@ -6,10 +6,11 @@ PSMs
    You can skip this section if you have a full patient's cart since
    the PSMs are mounted on the SUJ.
 
-The da Vinci Classic PSMs are fairly easy to mount.  There are 4 holes
-at the base of the PSM black bar.  The four holes form a 2" square (2
-inches ~= 5.1 cm).  If you want to mount the PSM in a rigid manner,
-you can simply drill and thread 4 holes in an 80-20 standard plate.
+The da Vinci :ref:`Classic PSMs <psm>` are fairly easy to mount.
+There are 4 holes at the base of the PSM black bar.  The four holes
+form a 2" square (2 inches ~= 5.1 cm).  If you want to mount the PSM
+in a rigid manner, you can simply drill and thread 4 holes in an 80-20
+standard plate.
 
 .. figure:: /images/Classic/PSM/PSM-Classic-80-20-plate.jpeg
    :width: 400
