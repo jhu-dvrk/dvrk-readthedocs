@@ -1,3 +1,5 @@
+.. _davinci-classic:
+
 Introduction
 ############
 

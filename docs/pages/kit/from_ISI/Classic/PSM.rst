@@ -28,8 +28,9 @@ Basic information:
   enforce a RCM point (remote center-of-motion, aka fulcrum point).
   `Google search
   <https://www.google.com/search?q=surgical+robot+center+of+motion+fulcrum+point>`_.
-* The full mechanical is composed of two parts, the arm's base (not
-  sterilized) and a removable instrument (sterilized and disposable)
+* The full mechanical arm is composed of two parts, the arm's base
+  (not sterilized) and a removable instrument (sterilized and
+  disposable)
 * There are many :ref:`different types of instruments
   <instrument-catalogs>` (graspers, needle drivers, scissors...).
 * With most instruments, the arm has 6 degrees of freedom and
@@ -44,7 +45,7 @@ Basic information:
   which type of instrument it is.
 
 .. figure:: /images/Classic/PSM/PSM-Classic-white-background-labeled.png
-   :width: 400
+   :width: 600
    :align: center
 
    da Vinci Classic PSM labeled

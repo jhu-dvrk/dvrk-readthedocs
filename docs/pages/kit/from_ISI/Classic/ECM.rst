@@ -9,7 +9,7 @@ Arm
 The da Vinci Classic systems came with one ECM.
 
 .. figure:: /images/Classic/ECM/ECM-Classic-white-background.jpeg
-   :width: 400
+   :width: 350
    :align: center
 
    da Vinci Classic ECM
@@ -33,7 +33,7 @@ Basic information:
 * There are many different types of endoscopes (straight, 30 degrees down or up)
 
 .. figure:: /images/Classic/ECM/ECM-Classic-white-background-labeled.png
-   :width: 500
+   :width: 600
    :align: center
 
    da Vinci Classic ECM labeled
@@ -110,4 +110,5 @@ the endoscope in the adapter.
 
 .. note::
 
-   Video on YouTube demonstrating how the PSM is prepared:
+   Video on YouTube demonstrating how the ECM (S/Si) is prepared:
+   https://youtu.be/7DCDEeAbb3k
