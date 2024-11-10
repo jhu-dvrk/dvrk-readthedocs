@@ -9,9 +9,9 @@ some older pages.
 .. toctree::
 
    introduction/what_is_it
-   introduction/how_to_get_it
    introduction/disclaimers
-   introduction/acknowledgments
+   introduction/how_to_get_it
    introduction/groups
    introduction/examples
    introduction/manual
+   introduction/acknowledgments

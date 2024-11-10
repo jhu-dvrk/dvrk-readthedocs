@@ -17,8 +17,8 @@ and PSM3 are identical.
 
 Basic information:
 
-* The arm is attached to the :ref:`SUJ <suj>` using 4 small screws.
-  The mounting surface can be tilted.
+* Each PSM arm is attached to the :ref:`SUJ <suj>` using 4 small
+  screws.  The mounting surface can be tilted
 * 7 motorized degrees of freedom, 7 actuators with optical encoders
 * All motors are located in the first 2 links and use cable transmission
 * All actuators have analog potentiometers, used for both homing and
@@ -28,7 +28,7 @@ Basic information:
   enforce a RCM point (remote center-of-motion, aka fulcrum point).
   `Google search
   <https://www.google.com/search?q=surgical+robot+center+of+motion+fulcrum+point>`_.
-* The full mechanical arm is composed of two parts, the arm's base
+* The full kinematic chain is composed of two parts, the arm's base
   (not sterilized) and a removable instrument (sterilized and
   disposable)
 * There are many :ref:`different types of instruments

@@ -13,10 +13,10 @@ Disclaimers
 
 .. warning::
 
-   The dVRK is **not a turnkey system**. The clinical da Vinci is very
-   easy to use as soon as it is delivered.  On the other hand, the
-   dVRK requires some software, mechanical and robotic knowledge to
-   operate!
+   **Assembly required**, the dVRK is not a turnkey system. The
+   clinical da Vinci comes fully configured and is user-friendly.  On
+   the other hand, the dVRK takes time to configure and requires some
+   software, mechanical and robotic knowledge to operate!
 
 .. warning::
 

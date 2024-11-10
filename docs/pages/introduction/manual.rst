@@ -5,17 +5,17 @@ Getting started
 Accounts
 ========
 
-If you have access to a dVRK, you might need to create two accounts to
-access some privates resources:
+Once you know you will have physical access to a dVRK, you might want
+to create two accounts to access some privates resources:
 
 * Intuitive Surgical hardware wiki http://research.intusurg.com/dvrk:
-  please contact Intuitive to get an account created for each active
-  user.  This wiki contains some important documentation regarding the
-  hardware, including unboxing instructions and wiring fixes.
+  please contact Intuitive to get an account created (at least one per
+  site).  This wiki contains some important documentation regarding
+  the hardware, including unboxing instructions and wiring fixes.
 * Google group for dVRK users
   https://groups.google.com/d/forum/research-kit-for-davinci and
   research-kit-for-davinci@googlegroups.com. We strongly encourage
-  users to send questions using this google group.
+  users to send support questions using this google group.
 
   1. Go to
      https://groups.google.com/forum/#!forum/research-kit-for-davinci

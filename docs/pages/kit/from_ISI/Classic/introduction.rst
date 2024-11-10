@@ -6,13 +6,17 @@ Introduction
 History
 =======
 
-The first generation da Vinci, also known as Standard or Classic, was
-developed in the late 1990s.  Intuitive uses the name "Standard" by
-contrast to the second generation which came with a high definition
-:ref:`video pipeline <video-sources>` (standard definition vs. high
-definition).  Since "Standard" is not very descriptive, we call the
-first generation system "Classic".  The da Vinci Classic was retired
-in 2012.
+The first generation da Vinci, IS1200, also known as Standard or
+Classic, was developed in the late 1990s.  It was retired from
+clinical use in 2012.
+
+.. note::
+
+   Intuitive uses the name "Standard" for the first generation by
+   contrast to the second generation da Vinci which came with a high
+   definition :ref:`video pipeline <video-sources>` (standard
+   definition vs. high definition).  We found "Standard" a bit
+   confusing so we tend to call the first generation system "Classic".
 
 .. note::
 
@@ -44,14 +48,15 @@ The following components can be used for the dVRK (see :ref:`dVRK
 setup <setup-classic>`)
 
 * Surgeon's console (Classic and S)
-  
+
   * MTMs: master tele manipulators, the two arms the operator uses to
-    control the patient's side
-  * Foot pedals: pedals used to switch the control modes while operating
+    control the patient's side, 6 dof haptic devices with gripper
+  * Foot pedals: pedals used to switch the control modes while
+    operating, select which PSM or ECM, clutch, focus...
   * HRSV: high resolution stereo viewer, aluminum frame with optics,
     mirrors and CRT monitors for both eyes
   * Head sensor: sensor used to detect if the operator is looking at
-    the stereo display
+    the stereo display and enable the teleoperation
   * Console lift motor: adjustable height for the HRSV for better ergonomic
   * Console frame: can be reused to hold everything as opposed to
     building a custom frame

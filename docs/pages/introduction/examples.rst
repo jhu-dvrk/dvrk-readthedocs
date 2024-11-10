@@ -5,8 +5,8 @@ Examples
 ********
 
 Since the dVRK is the sum of parts assembled based on each site's
-hardware and applications, all the kits are different.  This section
-shows a few illustrative examples.
+hardware and research applications, all the kits are setup
+differently.  This section shows a few illustrative examples.
 
 .. tabs::
 

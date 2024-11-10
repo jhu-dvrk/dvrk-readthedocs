@@ -28,9 +28,11 @@ Basic information:
   enforce a RCM point (remote center-of-motion, aka fulcrum point).
   `Google search
   <https://www.google.com/search?q=surgical+robot+center+of+motion+fulcrum+point>`_.
-* The full mechanical is composed of two parts, the arm's base (not
-  sterilized) and a removable endoscope (sterilized)
-* There are many different types of endoscopes (straight, 30 degrees down or up)
+* The full kinematic chain is composed of two parts, the arm's base
+  with all the actuation (not sterilized) and a removable endoscope
+  (sterilized)
+* There are three different types of endoscopes (straight, 30 degrees
+  down or up)
 
 .. figure:: /images/Classic/ECM/ECM-Classic-white-background-labeled.png
    :width: 600

@@ -17,21 +17,23 @@ and PSM3 are identical.
 
 Basic information:
 
-* The arm is attached to the :ref:`SUJ <suj_si>` using 4 long bolts
-  and slides.
+* Each PSM arm is attached to the :ref:`SUJ <suj_si>` using 4 long bolts
+  and grooves
 * The arm can be tilted forward
 * 7 motorized degrees of freedom, 7 actuators with optical encoders
 * All motors are located in the first 2 links and use cable transmission
 * All actuators have digital potentiometers, used for both homing and
   safety checks
 * 3 electric brakes on the first 3 joints to prevent the arm from
-  falling when not powered (like the :ref:`ECM Classic <ecm>`).
+  falling when not powered (like the :ref:`ECM Classic <ecm>`)
 * The second actuator controls a set of belts used to enforce a RCM
-  point (remote center-of-motion, aka fulcrum point).  `Google search
+  point using complementary angles (remote center-of-motion, aka
+  fulcrum point).  `Google search
   <https://www.google.com/search?q=surgical+robot+center+of+motion+fulcrum+point>`_.
-* The full arm is composed of two parts, the arm's base (not
+* The kinematic chain is composed of two parts, the arm's base (not
   sterilized) and a removable instrument (sterilized and disposable).
-  This design is very similar to the :ref:`PSM Classic <psm>`.
+  This design is very similar to the Classic da Vinci so make sure you
+  read the section for the :ref:`PSM Classic <psm>`
 
 .. figure:: /images/Si/PSM-Si-white-background-labeled.png
    :width: 600
@@ -45,7 +47,8 @@ Cannula and sterile adapter
 
 The design of the last 4 joints and instrument on the Si system is
 very similar to the :ref:`PSM Classic <psm>` so please refer to that
-section.  The parts are a different so we provide some pictures below.
+section.  The main differences are the sterile adapter and cannula
+shapes and the cannula holder is attached to the arm.
 
 There is also video at the end of this section describing the process.
 
@@ -61,7 +64,10 @@ There is also video at the end of this section describing the process.
 
    da Vinci Si PSM with sterile adapter (without drape)
 
-One difference between the PSM Classic and Si is that the cannula holder on the Si is not removable.  The sterile drape comes with a piece of soft molded plastic that fits between the cannula holder and the cannula.
+One difference between the PSM Classic and Si is that the cannula
+holder on the Si is not removable.  The sterile drape comes with a
+piece of soft molded plastic that fits between the cannula holder and
+the cannula.
 
 .. figure:: /images/Si/PSM-Si-cannula-holder.jpeg
    :width: 300
@@ -91,7 +97,8 @@ prevent mechanical, one can use masking tape as a "shim".
 
    da Vinci Si PSM 8mm cannula with "shim"
 
-The cannula is held by the cannula holder (shocking) and secured using two flaps.
+The cannula is held by the cannula holder (shocking) and secured using
+two flaps.
 
 .. figure:: /images/Si/PSM-Si-cannula-with-shim.jpeg
    :width: 250

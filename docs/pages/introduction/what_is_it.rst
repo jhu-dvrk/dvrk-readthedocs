@@ -18,24 +18,28 @@ The da Vinci
 The first da Vinci system was developed in the late 1990s and approved
 by the FDA for clinical use at the turn of the century.  The da Vinci
 is designed for RAMIS (robotically assisted minimally invasive
-surgery).  The main advantages of a teleoperated laparoscopic surgery
-over a classic minimally invasive surgery are:
+surgery).  The main advantages of a teleoperated (robotically
+assisted) laparoscopic surgery over a manual minimally invasive
+surgery are:
 
 * Extra dexterity at the end of the instrument (Intuitive's `EndoWrist
   <https://www.davincisurgerycommunity.com/instrumentation>`_).
 * Depth perception. Instead of looking at a wall mounted monitor, the
   operator is seated at a console which can provide a stereo display.
 * Motion scaling. Since the patient's side manipulators are
-  mechanically decoupled from the motion of the operator's hand, it is
-  possible to scale down the motion.  This allows slower and more
-  precise motions.
+  mechanically decoupled from the operator's hand, it is possible to
+  scale down the motion. This allows operators to perform finner
+  tasks.
 * Hand-eye registration. The system can determine the pose and
   orientation of the patient's side manipulators with respect to the
-  endoscopic camera.  This transformation can then be applied to the
-  motion of the operator with respect to their view to maintain a
-  natural (intuitive) orientation.
-* The operator is seated during most of the surgery instead of
-  standing above the patient.
+  endoscopic camera. Using this information, it is possible to compute
+  the change of orientation (in 3D) to be applied to the surgeon's
+  moves so the directions remain natural. If the surgeon's move
+  to the left, the instrument will move to the left in the stereo
+  display independently of the camera pose.
+* The operator is seated at an ergonomic console during most of the
+  surgery instead of standing above the patient holding instruments
+  and looking at a monitor.
 
 The kit
 =======
@@ -62,7 +66,7 @@ institutions. To summarize, the :ref:`kit <kit>` is composed of:
    dVRK owner
 
 Since each dVRK group might receive different hardware, :ref:`each
-setup is different <dvrk-examples>`.
+"kit" is different <dvrk-examples>`.
 
 Credit/Citation
 ===============
