@@ -8,11 +8,11 @@ Accounts
 Once you know you will have physical access to a dVRK, you might want
 to create two accounts to access some privates resources:
 
-* Intuitive Surgical hardware wiki http://research.intusurg.com/dvrk:
+* Intuitive Surgical hardware wiki, http://research.intusurg.com/dvrk:
   please contact Intuitive to get an account created (at least one per
   site).  This wiki contains some important documentation regarding
   the hardware, including unboxing instructions and wiring fixes.
-* Google group for dVRK users
+* Google group for dVRK users,
   https://groups.google.com/d/forum/research-kit-for-davinci and
   research-kit-for-davinci@googlegroups.com. We strongly encourage
   users to send support questions using this google group.
@@ -40,7 +40,7 @@ started.
   * S Console Disassembly and Vision Testing for the dVRK
 
 * da Vinci User Manuals.  These are extremely useful to understand how
-  the real da Vinci should be setup and used:
+  the real da Vinci should be set up and used:
 
   * :download:`da Vinci Standard <https://dvrk.lcsr.jhu.edu/downloads/manuals/davinci-classic-user-manual.pdf>`
   * :download:`da Vinci Si <https://dvrk.lcsr.jhu.edu/downloads/manuals/davinci-si-user-manual.pdf>`
@@ -49,13 +49,13 @@ started.
 Overview
 ========
 
-The main steps to setup a dVRK are:
+The main steps to set up a dVRK are:
 
 * **Compile the software with ROS** - This has to be performed once
-  per user, each user should maintain their own version of the
+  per user, and each user should maintain their own version of the
   software in their home directory.  The core software for the dVRK
   can be built without ROS but we strongly recommend you use ROS and
-  the catkin build tools.
+  its build tools.
 
   * :ref:`ROS 1 <ros1>`
   * :ref:`ROS 2 <ros2>`
@@ -67,10 +67,10 @@ The main steps to setup a dVRK are:
 
 * **Configuration** - :ref:`The configuration steps <configuration>`
   have to be performed once per robotic arm.  Once the configuration
-  has been generated, we strongly recommend you save all your
-  configurations files to share between the users in your group.  We
+  has been generated, we strongly recommend that you save all your
+  configuration files to share between the users in your group.  We
   maintain a GitHub organization (https://github.com/dvrk-config) to
-  host the configuration files of different groups, let us know if you
+  host the configuration files of different groups; let us know if you
   want a repository for your files! (contact Anton Deguet @ JHU)
 
 * **Hardware setup** - :ref:`The hardware setup section <setup>`
