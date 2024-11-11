@@ -19,9 +19,12 @@ Basic information:
 
 * Each PSM arm is attached to the :ref:`SUJ <suj_si>` using 4 long bolts
   and grooves
-* The arm can be tilted forward
+* The arm can be tilted forward (on Si SUJ; 45 degrees for PSM1 and
+  PSM2, 15 degrees for PSM3)
 * 7 motorized degrees of freedom, 7 actuators with optical encoders
-* All motors are located in the first 2 links and use cable transmission
+* All motors are located in the first 2 links.  The first two links
+  use a mix of gears and belts.  The last five joints use cable
+  transmission
 * All actuators have digital potentiometers, used for both homing and
   safety checks
 * 3 electric brakes on the first 3 joints to prevent the arm from
@@ -109,4 +112,4 @@ two flaps.
 .. note::
 
    Video on YouTube demonstrating how the PSM is prepared:
-   https://youtu.be/yeQKU2_O6uo
+   https://youtu.be/F7cOVPVq_TY

@@ -40,6 +40,7 @@ Basic information:
 
    da Vinci Classic ECM labeled
 
+.. _ecm-adapter:
 
 Cannula and sterile adapter
 ===========================
@@ -112,5 +113,5 @@ the endoscope in the adapter.
 
 .. note::
 
-   Video on YouTube demonstrating how the ECM (S/Si) is prepared:
-   https://youtu.be/7DCDEeAbb3k
+   Video on YouTube demonstrating how the ECM Classic is prepared:
+   https://youtu.be/jx0bB64NaPo
