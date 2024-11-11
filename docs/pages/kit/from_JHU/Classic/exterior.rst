@@ -12,7 +12,7 @@ Connectors
 * Two Ethernet connectors (V2 and V3 controllers)
 * One or two 4 or 5-pin safety chain connectors (depending on
   version); see :ref:`E-Stop <estop>`
-* One DB15 footpedal connector; see :ref:`dMIB I/O <dmib-io>`
+* One DB15 foot pedal connector; see :ref:`dMIB I/O <dmib-io>`
 * Seven HD15 expansion connectors and one HD26 expansion connector;
   see :ref:`dMIB I/O <dmib-io>`
 * One SD card slot for the firmware and user applications (V3
@@ -23,7 +23,7 @@ Connectors
    :width: 600
    :align: center
 
-   Back of QLA, FPGA V1 based Classic controller (no ethernet)
+   Back of QLA, FPGA V1 based Classic controller (no Ethernet)
 
 .. figure:: /images/controllers/qla-fpga-v2-MTM-controller-back.jpeg
    :width: 600
@@ -71,7 +71,7 @@ The LEDs are:
 * Rail A/B: power supplies used for motor control (see details above).
   MTM controllers have two different motor power supplies so the Rail
   A and B LEDs are meaningful, PSM, ECM and SUJ controllers use a
-  single motor power supply so the only meaningfull LED is Rail A.
+  single motor power supply, so the only meaningful LED is Rail A.
   Rail A/B, i.e. motor power, can be turned on/off using a PC and need
   the :ref:`safety chain <estop>` to be closed.
 

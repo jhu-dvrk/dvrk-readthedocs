@@ -7,7 +7,7 @@ The goal of this section is to show how to build some dVRK compatible
 foot pedals.  These can only be used with the dVRK controllers and
 can't be connected directly to a PC.  This can be useful if you're
 splitting your dVRK into two systems (e.g., one MTM/PSM on one
-controller and the other MTM/PSM an another controller) or if you use
+controller and the other MTM/PSM on another controller) or if you use
 a spare PSM with an alternate master arm (e.g., PSM and Force
 Dimension master).
 
@@ -16,7 +16,7 @@ One can use one, two or three pairs as needed.  The wiring allows to
 swap the pedals without any software reconfiguration.  This
 configuration is also pin compatible with the real da Vinci foot
 pedals.  By default, the first pair of foot pedals is wired as the
-right two pedals on the daVinci (from left to right: bi-coag and coag)
+right two pedals on the da Vinci (from left to right: bi-coag and coag)
 and the second pair of pedals is wired as the left two pedals (from
 left to right: clutch and camera):
 

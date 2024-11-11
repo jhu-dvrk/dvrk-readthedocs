@@ -7,7 +7,7 @@ enclosure comes with 4 holes that should match existing screw holes on
 the column.  You should:
 
 * Remove the existing plate
-* Leave the 4 thin grey cables untouched (these are for the
+* Leave the 4 thin gray cables untouched (these are for the
   potentiometers measuring the up/down translations for the SUJ)
 * Use spacers between the column and the dVRK SUJ controller to
   prevent crushing the cables

@@ -42,7 +42,7 @@ Stereo
 ======
 
 The following is based on dVRK provided launch files to capture the
-stereo video using Decklink SDI frame grabbers.  If your frame
+stereo video using DeckLink SDI frame grabbers.  If your frame
 grabbers are different you will have to create your own launch files.
 Note that you have to provide the name of your stereo rig:
 
@@ -75,7 +75,7 @@ video stream is started and you are using the correct rig name.
    rosrun camera_calibration cameracalibrator.py --approximate 0.1 --size 12x10 --square 0.0045 right:=/jhu_daVinci/right/image_raw left:=/jhu_daVinci/left/image_raw left_camera:=/jhu_daVinci/left right_camera:=/jhu_daVinci/right
 
 The command line above assumes you're using a 12x10 calibration grid
-and the size of each square is 4.5mm.  Once the calibration is
+and the size of each square is 4.5 mm.  Once the calibration is
 performed, don't forget to save and commit using the GUI.  You should
 now have two new files in the catkin package you created for the
 stereo rig under ``calibrations``: ``left.yaml`` and ``right.yaml``.
@@ -126,7 +126,7 @@ RViz
 
 Use RViz to display both channels at the same time.  Add image, select
 topic and then drop image to separate screen/eye on the HRSV display.
-You can save your settings so everytime you start RViz you will have
+You can save your settings so every time you start RViz you will have
 both images.
 
 References:

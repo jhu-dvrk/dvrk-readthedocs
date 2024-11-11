@@ -20,7 +20,7 @@ standard plate.
 
 .. _psm-ecm-position:
 
-For the a clinical system, the PSMs are mounted on the passive setup
+For a clinical system, the PSMs are mounted on the passive setup
 joints (SUJ).  These passive arms allow the user to position each
 arm's RCM point at the entry point in the patient.  The RCM point is
 physically located near the large black band on the cannulas.  Ideally
@@ -34,12 +34,12 @@ all the arm's RCM points (PSMs and ECMs) should be located on the
    RCM point on Classic PSM cannula
 
 The PSMs are designed for minimally invasive surgeries and their
-workspace is fairly limited.  Therefore it is very important to
+workspace is fairly limited.  Therefore, it is very important to
 position them optimally to avoid hitting the physical joint limits.
 Ideally, when in zero position (i.e. each joint in the middle of their
 range), the instrument's shaft should be aligned to the normal on the
 "surface" of the patient.  To simply, one can consider that the
-patient is a sphere and the entry points are placed are placed at
+patient is a sphere and the entry points are placed at
 different azimuth and altitude.
 
 .. figure:: /images/general/PSM-ECM-positions.jpg

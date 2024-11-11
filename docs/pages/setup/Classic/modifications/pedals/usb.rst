@@ -13,7 +13,7 @@ USB foot pedals
    compatible.  Some pedals only support "hid".
 
 If your foot pedals are HID compatible only, please reach out to the
-dVRK developpers, we might be able to add support.
+dVRK developers, we might be able to add support.
 
 Compilation
 -----------

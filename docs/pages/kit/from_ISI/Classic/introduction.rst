@@ -16,7 +16,7 @@ clinical use in 2012.
    contrast to the second generation da Vinci which came with a high
    definition :ref:`video pipeline <video-sources>` (standard
    definition vs. high definition).  We found "Standard" a bit
-   confusing so we tend to call the first generation system "Classic".
+   confusing, so we tend to call the first generation system "Classic".
 
 .. note::
 

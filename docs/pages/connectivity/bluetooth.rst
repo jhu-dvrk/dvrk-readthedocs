@@ -9,13 +9,13 @@ Bluetooth (SUJ Si)
 You first need to make sure you have a Bluetooth adapter on your PC
 and said adapter is turned on.  You can use GUI tools for this or the
 command line tool ``hciconfig``.  For the Si SUJ, you will need to
-place your Bluetooth adapter really close to the SUJ so we recommend
+place your Bluetooth adapter really close to the SUJ, so we recommend
 using a USB3 extension cable and a USB Bluetooth dongle.
 
 To test the dESSJ communication itself, you can use the
 ``bluetoothctl`` command line tool.  These tools are also useful to
-find the MAC address of each dESSJ board.  We recommend to power the
-controllers one by one so you can clearly identify with dESSJ BLE MAC
+find the MAC address of each dESSJ board.  We recommend powering the
+controllers one by one, so you can clearly identify with dESSJ BLE MAC
 address correspond to which arm.  Then write down each MAC address and
 stick a label with the last 4 characters of the MAC address on each
 SUJ arm.
@@ -59,8 +59,8 @@ auto-complete works very well.
 * ``select-attribute
   /org/bluez/hci0/dev_68_7E_57_32_FD_63/service000a/char000b``, the
   service name will differ based on the MAC address
-* ``read`` should return the binary result as well as the human
-  readable string.  You can repeat this command multiple times or you
+* ``read`` should return the binary result as well as the human-readable string.
+  You can repeat this command multiple times, or you
   can use ``notify on`` and ``notify off`` to get new values
   automatically
 * ``back`` to get back to previous menu

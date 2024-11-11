@@ -18,13 +18,13 @@ research projects going from machine learning to autonomous motion.
 The PSM has 7 actuators, corresponding to 6 joints used for the
 kinematic chain and one extra to control the jaws:
 
-* Actuators 1 and 2 correspond to the first two joint of the kinematic
+* Actuators 1 and 2 correspond to the first two joints of the kinematic
   chain.  Errors in zero position for these actuators will lead to a
   "rocking" of the reference frame around the RCM point and shouldn't
   affect the relative accuracy of the PSM.  Since most applications
   would require some kind of registration of the PSM with respect to
   the task's coordinate system, the registration method should
-  compensate for these errors.  Therefore we're going to ignore these
+  compensate for these errors.  Therefore, we're going to ignore these
   for now.
 * Actuator 3 corresponds to the instrument insertion stage (roughly
   up/down translation).  There is no obvious mechanical way to
@@ -63,19 +63,18 @@ For this procedure, the idea is to insert an instrument and let the
 PSM rock back and forth around the first joint (side to side) while
 monitoring the absolute position of a given feature on the instrument.
 
-  * For the feature, we picked the first axis of the endo-wrist (joint
-    5).  It is a pretty easy axis to locate and it is rigidly attached
+  * For the feature, we picked the first axis of the EndoWrist (joint
+    5).  It is a pretty easy axis to locate, and it is rigidly attached
     to the shaft so its distance to the RCM point is only affected by
     the 3rd actuator.  The fourth joint (rotation along the shaft) can
     be used to align the 5 joint's axis with the first joint's axis
-    (90 degree rotation from 0)
-  * To track the absolute 3D position of the feature, we recommend to
-    use a camera on a tripod connected to your computer.  This way you
+    (90-degree rotation from 0)
+  * To track the absolute 3D position of the feature, we recommend using a camera on a tripod connected to your computer.  This way you
     can place some "marker" on your screen and make sure the feature
     is not moving
   * To determine the range of the rocking motion, the script provided
     will first let the user rock the PSM by hand and record the
-    minimum and maximum values one can used for the first joint.  This
+    minimum and maximum values one can use for the first joint.  This
     is so each group can adjust the range of motion to the amount of
     free space around their PSM.
   * Finally, while the arm is rocking back and forth, the user can
@@ -90,14 +89,14 @@ Requirements
 * dVRK 2.0 + ROS
 * A working console file for the PSM you need to calibrate
 * A camera on a tripod or fixed mount is recommended.  A basic USB web
-  camera will do fine.  For linux, most USB cameras can be used with
+  camera will do fine.  For Linux, most USB cameras can be used with
   `tvtime`
 * An 8mm da Vinci Classic instrument (e.g. Large Needle Driver,
   DeBakey, Micro Forceps...).  The procedure won't work with S/Si
   instruments since they are too long (see :ref:`instruments
   <instruments-naming>`)
 * An alternative to the cannula to keep the instrument aligned with
-  the RCM point.  Unfortunately the cannula covers the RCM point so
+  the RCM point.  Unfortunately the cannula covers the RCM point, so
   one can't visually track the feature with it.  You can use a rubber
   band as demonstrated in the video or even better, 3D print a
   support: https://github.com/jhu-dvrk/dvrk-cannulas
@@ -147,8 +146,8 @@ Procedure
   the joint 5's axis, press ``d``
 * Save and optionally compare the old and new files using something
   like meld.
-* The script suggest to reboot your dVRK controller.  This is not
-  necessary if your remembered to use the ``-C`` option for the
+* The script suggests rebooting your dVRK controller.  This is not
+  necessary if you remembered to use the ``-C`` option for the
   ``dvrk_console_json`` (introduced with dVRK 2.0.1)
 * Restart your dVRK console application using ``-C`` option and repeat
   the steps above.  Ideally you shouldn't have to adjust the offset
@@ -171,7 +170,7 @@ Requirements
 ------------
 
 * All the requirements for the manual method, plus...
-* Bright pink nail polish to mark the first axis of the endo-wrist
+* Bright pink nail polish to mark the first axis of the EndoWrist
   (joint 5).  If there are any bright pink or red objects directly
   behind the PSM you may need to move them out of the camera's view or
   at least farther away.  Example of pink nail polish and where to
@@ -243,7 +242,7 @@ Procedure
   calibration result.  You can compare the old and new files using
   something like ``meld``.
 * The script suggests rebooting your dVRK controller.  This is not
-  necessary if your remembered to use the ``-C`` option for the
+  necessary if you remembered to use the ``-C`` option for the
   ``dvrk_console_json`` (introduced with dVRK 2.0.1)
 * Restart your dVRK console application using ``-C`` option and repeat
   the steps above.  Ideally the script will produce a calibration
@@ -254,7 +253,7 @@ Effects on positioning accuracy
 
 Positioning accuracy of a PSM was measured, using an NDI Polaris
 optical tracker, with various potentiometer offsets. A mis-calibration
-of 4 mm resulted in over 45% increased RMSE (root mean square error),
+of 4 mm resulted in over 45% increased RMSE (root-mean-square error),
 with typical RMSE of 1.86 mm for a calibrated PSM. For uncalibrated
 dVRK systems, the potentiometer offset error is often 5-10 mm, which
 can result in more than doubling the RMSE. Maximum error across the

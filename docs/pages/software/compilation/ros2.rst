@@ -76,7 +76,7 @@ Compile using ``colcon``:
 
 .. note:: `colcon build` is not as smart as ``catkin build``: you need
    to be in the top directory of your workspace to build (for example
-   ``~/ros2_ws``).  Do not try to build in a sub-directory in your
+   ``~/ros2_ws``).  Do not try to build in a subdirectory in your
    workspace, colcon will create a new set of ``build``, ``install``
    and ``log`` directories.  ``catkin build`` recursively look in
    parent directories until it finds the workspace root, ``colcon``

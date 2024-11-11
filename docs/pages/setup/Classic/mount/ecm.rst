@@ -7,7 +7,7 @@ ECM
    the ECM is mounted on the SUJ.
 
 On a clinical system the :ref:`ECM <ecm>` is mounted on a plate tilted
-forward at a 45 degree angle.  It is recommended to use the same
+forward at a 45-degree angle.  It is recommended to use the same
 mounting angle if you don't have the setup joints and need to build
 your own frame.
 

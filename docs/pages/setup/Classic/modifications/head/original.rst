@@ -69,7 +69,7 @@ Testing with ``qladisp``
 The HD-15 connector can be plugged on one of the "DOF" connectors on
 the back of the dVRK controller.  For the following section, we assume
 the head sensor is connected to "DOF 1" on a PSM3 controller.  This
-means that it will be interfaced using the IOs for a the first axis on
+means that it will be interfaced using the IOs for the first axis on
 the first board on the PSM3 controller, i.e. board ID is 10.  To test
 the head sensor, start ``qladisp 10``.  You can test your head sensor
 on any controller, just replace the ``10`` by the first board ID in

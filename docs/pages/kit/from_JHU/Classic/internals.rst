@@ -35,10 +35,10 @@ FPGA V3 based
 The V3 DQLA1-based controllers contain one FPGA V3 and 2 QLA boards, a
 set of DQLA-Q/DQLA-F (connected using 2 flat ribbons), one dMIB (da
 Vinci Manipulator Interface Board), LED boards, power supplies and
-relays.  The FPGA is mounted against the controller's back panel so we
+relays.  The FPGA is mounted against the controller's back panel, so we
 can use the FireWire and Ethernet ports directly.  The DQLA-F board
-mounted under the FPGA is also butting againts the back of the
-comtroller and provides the 4 and 5 pins connecttors for the e-stop.
+mounted under the FPGA is also butting against the back of the
+controller and provides the 4 and 5 pins connectors for the e-stop.
 
 Compared to the QLA1-based controllers, this greatly reduced the
 amount of internal wiring (Ethernet and FireWire pass-through cables,

@@ -13,7 +13,7 @@ different approaches:
   serially with the DS2480B chip, which then communicates with the
   DS2505 chip in the tool using a 1-wire interface.  The DS2480B chip
   is either on the dMIB (Rev F or greater) or on a dongle that is
-  attached to a connector on the rear of the controller (See
+  attached to a connector on the rear of the controller (see
   requirements below).
 
 * **FPGA 1-wire interface:** In this scenario, the FPGA/QLA

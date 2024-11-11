@@ -23,7 +23,7 @@ The different options for ``tool-detection`` are:
   modified controllers <dallas>`)
 * ``MANUAL``: when a tool is inserted, the user or application has to
   specify which tool to use.  This can be done using the Arm GUI with
-  a drop down menu or using a programmatic interface (e.g. ROS topic).
+  a drop-down menu or using a programmatic interface (e.g. ROS topic).
 * ``FIXED``: fixed type of tool, i.e. there is only one type of tool
   used.  To change tool, you will need to stop the program, change the
   configuration file and restart the program.  The configuration file

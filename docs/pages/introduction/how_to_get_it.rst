@@ -13,7 +13,7 @@ There are three main sources for the :ref:`first part of the kit
   collaboration with a hospital with a da Vinci system, it is worth
   asking them what they plan to do with it when it will be
   retired. Note that all the instruments and other disposable parts are also
-  very useful so it's worth saving as much as possible.
+  very useful, so it's worth saving as much as possible.
 * Finally, it is possible to find full da Vinci systems or da Vinci
   parts at a reasonable price on auctions sites such as eBay.
 
@@ -22,7 +22,7 @@ If you reached out to the Intuitive Foundation for the mechanical
 systems, they will help you figure out how to acquire the
 controllers. Otherwise, you can reach out to the dVRK developers.
 Alternatively, since the design is open source, you can manufacture
-your own controllers.  This is, by far, a much more difficult approach
+your own controllers.  This is, by far, a much more difficult approach,
 but we know of at least one group that went that way (:ref:`#21
 <groups>`).
 

@@ -5,12 +5,12 @@ Examples
 ********
 
 Since the dVRK is the sum of parts assembled based on each site's
-hardware and research applications, all the kits are setup
+hardware and research applications, all the kits are set up
 differently.  This section shows a few illustrative examples.
 
 .. tabs::
 
-   .. tab:: Orginal Kit
+   .. tab:: Original Kit
 
       dVRK Classic original kit at Johns Hopkins. Intuitive provided
       the PSMs, MTMs, HRSV, foot pedals and endoscope. Frame and head
@@ -24,7 +24,7 @@ differently.  This section shows a few illustrative examples.
 
       Full da Vinci Classic at Johns Hopkins. This is a full system,
       previously used with the Intuitive controllers. All arms, SUJ,
-      foot pedals, head sensor, height adjustement and videos are
+      foot pedals, head sensor, height adjustment and videos are
       using the dVRK controllers and software stack. HRSV has been
       upgraded with flat panels.
 
@@ -35,7 +35,7 @@ differently.  This section shows a few illustrative examples.
 
       Si patient cart with Classic MTMs at Johns Hopkins.  This is a
       full system previously used with the Intuitive controllers.  All
-      arms, SUJ, foot pedals, height adjustement and videos are
+      arms, SUJ, foot pedals, height adjustment and videos are
       controlled by the dVRK controllers and software stack.  The HRSV
       is replaced by an HMD (:ref:`Goovis <goovis>`).
 

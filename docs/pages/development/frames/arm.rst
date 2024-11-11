@@ -11,7 +11,7 @@ For each individual arm, the cartesian positions are based on:
 * Tool tip offset (optional):
 
   * Defined in the kinematic JSON file, ``tooltip-offset`` is a
-    constant offset appended at the end of the the kinematic chain
+    constant offset appended at the end of the kinematic chain
     (PSM and ECM only, not MTM).  The tooltip offset for the ECM is
     determined by the type of endoscope (straight, up, down) and
     automatically managed by the ECM arm class.  The PSM tooltip
@@ -35,11 +35,11 @@ https://github.com/jhu-dVRK/sawIntuitiveResearchKit) and has Z
 pointing up, X to the left and Y towards the user.  But the ISI
 convention expects that X points to the left when viewed from the
 stereo display, Y should point up and Z away from the user.
-Furthermore the ISI convention places the origin in the middle of the
+Furthermore, the ISI convention places the origin in the middle of the
 stereo display (i.e. between the operator's eyes).  In practice MTMs
-are always mounted rigidly to a frame so we need to apply a constant
+are always mounted rigidly to a frame, so we need to apply a constant
 rotation and translation to match the ISI convention.  The two masters
-are also mounted apart from each other so there is also a positive X
+are also mounted apart from each other, so there is also a positive X
 translation for MTML and a negative X translation for MTMR.  The
 change of reference frame should be defined using the ``base-frame``
 in the console configuration file (see
@@ -79,9 +79,9 @@ Surgeon's side
 
 The base frames defined in the ``console.json`` are such that the MTM
 tips (grippers) are defined with respect to the stereo display.  By
-default, we assume the stereo display is pointing down with a 60
-degree angle from the horizontal.  This is the orientation of the HRSV
-on the Standard (aka Classic) and S daVinci systems.  If your display
+default, we assume the stereo display is pointing down with a 60-degree
+angle from the horizontal.  This is the orientation of the HRSV
+on the Standard (aka Classic) and S da Vinci systems.  If your display
 is mounted at a different angle, adjust your ``console.json``
 accordingly.
 

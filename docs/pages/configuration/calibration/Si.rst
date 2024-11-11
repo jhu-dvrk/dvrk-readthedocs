@@ -15,7 +15,7 @@ Introduction
 
 The Si arms on the patient side (PSM and ECM) use relative encoders
 and digital potentiometers.  The digital potentiometers are absolute
-position sensors.  They can be used to preload the encoders so these
+position sensors.  They can be used to preload the encoders, so these
 can report absolute positions.  The dVRK implementation relies on the
 fact that there is a limited number of possible values for the digital
 potentiometers (4096) so we can create a lookup table to associate an
@@ -88,8 +88,9 @@ not thoroughly tested. For now, we use the mechanical limits to
 identify the conversion factors from the analog potentiometers to SI
 units. We don't use the "home" grooves on the links except for the
 PSM3 SUJ. There is a joint that moves past the analog potentiometers
-and reports useless values for a certain range of motion. todo Anton needs
-to document this.
+and reports useless values for a certain range of motion.
+
+todo Anton needs to document this.
 
 To be able to move the SUJ freely, you will need to be able to release
 the brakes. For each SUJ arm (e.g. ECM SUJ) you plan to calibrate, you

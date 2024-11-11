@@ -8,7 +8,7 @@ Motor current
    When you are calibrating motor current, it might be simpler to have
    a single controller on the ESTOP chain.  If you prefer to keep all
    your controllers on the ESTOP chain, make sure all the controllers
-   are also connected to the FireWire chain and you will have to use
+   are also connected to the FireWire chain, and you will have to use
    the ``qlacommand -c close-relays`` utility program to enable power.
 
 Introduction
@@ -22,7 +22,7 @@ specified in the XML config file.  The default offset is 65,535
 divided by two, i.e. 32,768.
 
 The same applies for the measured currents (A2D).  For both values,
-the scales is based on the QLA components and we're only calibrating
+the scales is based on the QLA components, and we're only calibrating
 the offsets for ``AmpsToBits`` and ``BitsToAmps`` in the IO XML file:
 
 .. code-block:: xml
@@ -36,7 +36,7 @@ Unfortunately the requested current is not perfect and there is an
 offset caused by the overall system, i.e. the controller and the robot
 itself.  The goal of the calibration procedure is to:
 
-* Power the board but not the actuators so we can read a zero current
+* Power the board but not the actuators, so we can read a zero current
   feedback
 * Compute the measured current offset
 * Power actuators and request a null current on all actuators knowing
@@ -76,7 +76,7 @@ default, should be able to run the program using something like:
    # use the IO XML file corresponding to the arm/controller you're calibrating
    sawRobotIO1394CurrentCalibration -c sawRobotIO1394-MTML-12345.xml
 
-The program takes a few seconds to run and the expected output is
+The program takes a few seconds to run, and the expected output is
 something like:
 
 ::
@@ -162,7 +162,7 @@ Notes:
   power the controllers using the utility ``qladisp``.
 
 * If you are calibrating an MTM, please keep in mind that the last
-  actuator (8) is not powered so you can ignore the last column.
+  actuator (8) is not powered, so you can ignore the last column.
 
 * The values for ``new average in mA`` shouldn't exceed more than a
   few tens of mA.  If you have significantly higher values, DO NOT

@@ -4,7 +4,7 @@ Unboxing
 Intuitive components
 ********************
 
-When you received a new component from Intuitive Surgical, we strongly recomment to:
+When you received a new component from Intuitive Surgical, we strongly recommend to:
 
 * Read the unboxing documentation (`password protected page
   <https://research.intusurg.com/index.php/DVRK:Documentation:Main>`_)
@@ -12,7 +12,7 @@ When you received a new component from Intuitive Surgical, we strongly recomment
   they don't want them back
 * If you're unpacking a Classic PSM, make sure the arm is free to
   move.  Some arms are shipped with a bracket to prevent damage.  The
-  bracket is under the soft cover and is made of white delrin.
+  bracket is under the soft cover and is made of white Delrin.
 
 .. figure:: /images/Classic/PSM/PSM-Classic-transport-bracket.jpeg
    :width: 300
@@ -37,7 +37,7 @@ dVRK controllers
 ****************
 
 * Label everything.  If your controllers are already labeled, it's
-  likely someone already opened the controllers and you can skip the
+  likely someone already opened the controllers, and you can skip the
   following.
 * There are three types of controllers, MTM, PSM and ECM.  It is
   important not to mix them as the MTM controllers use a 24V power
@@ -47,8 +47,8 @@ dVRK controllers
   4 motors and 3 brakes.  You can verify which one is which by opening
   the controllers.  See also :ref:`Classic controllers
   <controllers-classic>`.
-* Once you verified the type of controller, we strongly recommend to
-  label the controllers with the name of the arm you plan to control
+* Once you verified the type of controller, we strongly recommend
+  labeling the controllers with the name of the arm you plan to control
   along with the board Ids.  The board Ids should follow the
   convention described in the :ref:`configuration page <board-id>`.
   For example, a controller for a Classic MTMR using FPGAs V2, the
@@ -58,7 +58,7 @@ dVRK controllers
   connections.  If you find a cable with a loose end or partially
   unplugged you'll have to plug it back.  **This is quite important,
   we've seen controllers that looked like they were delivered using a
-  roller coaster!**.  If you are not confortable replugging the cables
+  roller coaster!**.  If you are not comfortable re-plugging the cables
   by yourself, reach out to the dVRK maintainers.
 * We recommend plugging all your controllers to a single power strip
   with a switch.  This will ensure that all controllers can be turned

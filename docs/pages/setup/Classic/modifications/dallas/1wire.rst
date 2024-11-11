@@ -15,7 +15,7 @@ Prerequisites
 Reading the instrument info via the **FPGA 1-wire interface** requires:
 
 * dMIB Rev F or newer, or a modified dMIB Rev A-E (see below)
-* FPGA Firmware Verion 7 or newer
+* FPGA Firmware Version 7 or newer
 * QLA Version **1.4 or greater**
 * dVRK software 2.0 or higher
 
@@ -69,13 +69,13 @@ the active wires. The DOUT3 signal from QLA #2 (which becomes DOUTB6
 on the dMIB) directly drives the bidirectional 1-wire interface to the
 DS2505 chip inside the da Vinci instrument.  This requires a jumper
 wire (shown in red above) to be soldered on the dMIB inside the
-controller box, as decribed below.
+controller box, as described below.
 
 You need the PSM dVRK controllers, screwdrivers/nut drivers/hex
 wrenches, a piece of small insulated wire or magnet wire, and a
 soldering iron.
 
-**Step 1.** Unplug power. Unplug cables from the dMIB/QLA so you can
+**Step 1.** Unplug power. Unplug cables from the dMIB/QLA, so you can
 work on the back side of the 156-pin ITT Cannon connector (that mates
 with the robot arm connector) or take the dMIB out. Please make sure
 to label the cables as you unplug them.

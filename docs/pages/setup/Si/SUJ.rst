@@ -26,7 +26,7 @@ of the dVRK controllers.
 
 .. warning::
 
-   Once you've setup the Si cart for the dVRK controllers, it's
+   Once you've set up the Si cart for the dVRK controllers, it's
    possible but really difficult to go back to the original
    controllers.
 
@@ -102,7 +102,7 @@ The upper "FireWire" cable (J10) and the bottom cable (J13) plugged into each RA
    The FireWire cable is mounted on the back of the dRAC PCB, label
    J11. There is not much space to unplug it. We strongly recommend
    you detach the RAC (the whole bloc) from the large steel plate
-   holding all 4 RACs so you can unplug the cable without damaging the
+   holding all 4 RACs, so you can unplug the cable without damaging the
    connector.
 
 .. figure:: /images/Si/Si-SUJ-conversion-RAC-connectors.png
@@ -156,7 +156,7 @@ There are 3 different uses for the dESSJ:
    potentiometer connectors (J4, J5 and J6) as well as power
  * For the PSM3: use both LVDS connectors and 4 potentiometer
    connectors (J4, J5, J6 and J7) as well as power
- * For the 5th dESSJ: there is no LVDS but you need to connect the "z
+ * For the 5th dESSJ: there is no LVDS, but you need to connect the "z
    axis only" to the potentiometer cable from the SUJ column. The
    board must be powered using a micro USB connected to the Arduino
    board on the dESSJ.  We don't manufacture an enclosure for the 5th
@@ -175,7 +175,7 @@ There are 3 different uses for the dESSJ:
    shipped without them.
 
 The dESSJ boards should come pre-programmed. If they're not programmed
-or you need to upgrade the firmware, please see
+you need to upgrade the firmware, please see
 https://github.com/jhu-dvrk/dESSJ-firmware
 
 .. _dsib-si-setup:
@@ -188,7 +188,7 @@ dVRK-Si controller (da Vinci Setup Interface Board). These boards are
 plugged between the dVRK Si controllers and the original cables coming
 at the base of the SUJ column. These boards allow us to re-use the
 internal cables in the SUJ arms. The cables coming from the column are
-unfortunately very short so you will have to remove the cover on the
+unfortunately very short, so you will have to remove the cover on the
 back of the SUJ as well as most of the existing electronics at the
 base of the patient cart. The dSIB boards are also used to power the
 SUJ brakes.
@@ -197,7 +197,7 @@ JHU setup
 *********
 
 The following images show the dVRK Si at Johns Hopkins.  We strongly
-recommend to put labels everywhere to avoid confusing cables,
+recommend putting labels everywhere to avoid confusing cables,
 controllers and boards. The labels should have the arm name and, when
 needed, the arm serial number as well as the MAC address of the dESSJ
 board.

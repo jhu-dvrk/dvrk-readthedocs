@@ -5,8 +5,8 @@ Computers
 
 .. warning::
 
-   You will need at least one PC running Linux **but** it is strongly
-   recommended to use two or more if you also need to setup the video
+   You will need at least one PC running Linux, **but** it is strongly
+   recommended to use two or more if you also need to set up the video
    pipeline or if you plan to run some heavy computations along the
    dVRK code.
 
@@ -50,7 +50,7 @@ dVRK connections
 
       * `SYBA Low Profile PCI-Express FireWire
         <https://www.amazon.com/gp/product/B002S53IG8/>`_. This card
-        comes with a regular and a low profile plate so it can also be
+        comes with a regular and a low profile plate, so it can also be
         used in low profile and full size desktop computers. It has
         been used extensively at Johns Hopkins
       * Early dVRK users have tested different cards and the SIIG
@@ -61,7 +61,7 @@ dVRK connections
       * `StartTech pex1394a2v2
         <https://www.startech.com/en-us/cards-adapters/pex1394a2v2>`_
 
-  * You can also check the following document but it's a bit old and
+  * You can also check the following document, but it's a bit old and
     outdated:
     http://support.presonus.com/hc/en-us/article_attachments/203654243/Compatible_Hardware_List_7-12.pdf. Any
     card from the compatible list should work.
@@ -96,7 +96,7 @@ These might be installed on the second PC.
 
     .. warning::
 
-       Make sure the drivers from NVidia are properly installed, "nouveau" drivers tend to disrupt the FireWire communication.  This happens fairly often due to EUFI/Secure Boot option.  To make sure your drivers are installed correctly, try ``nvidia-smi``.
+       Make sure the drivers from NVIDIA are properly installed, "nouveau" drivers tend to disrupt the FireWire communication.  This happens fairly often due to EUFI/Secure Boot option.  To make sure your drivers are installed correctly, try ``nvidia-smi``.
 
 * Frame grabbers
 

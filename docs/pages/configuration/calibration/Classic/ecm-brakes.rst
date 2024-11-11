@@ -11,16 +11,16 @@ Introduction
    Make sure you use an ECM controller, i.e. a controller with a
    single 36V motor power supply for both FPGA-QLA sets.  Controllers
    for the MTMs have two power supplies for the motors, a 24V for the
-   first 4 axis and a 12V for the last 4 axis.  Controllers for the
-   PSMs have a single power supply for all axis but it is only 24V.
+   first 4 axes and a 12V for the last 4 axis.  Controllers for the
+   PSMs have a single power supply for all axis, but it is only 24V.
    On your controller, set the board IDs to 4 and 5 (see
    :ref:`board Ids<board-id>`).  As for the PSMs, you must connect
    the cable that comes directly from the arm to the controller.
 
 The Classic ECM differs from the Classic PSMs, it requires brakes to
-remain in place.  The PSMs are designed with counter weights so if
+remain in place.  The PSMs are designed with counterweights so if
 they loose power, they can fall on or in the patient.  The ECM holds a
-fairly heavy endoscope so brakes are required to prevent unwanted
+fairly heavy endoscope, so brakes are required to prevent unwanted
 motion.  Note that the first 3 joints have brakes but not the 4th
 (roll along the endoscope).
 
@@ -30,7 +30,7 @@ the ECM IO XML configuration file.
 
 * ``ReleaseCurrent``: current required to release the brakes - the
   "Unit" field in the XML file is not read by the software, replacing
-  it by ``mA`` won't have any effect so make sure the specify the
+  it by ``mA`` won't have any effect so make sure to specify the
   ``Value`` in amperes
 * ``ReleaseTime``: amount of time you need to keep the current high to
   release the brakes (in seconds)
@@ -40,7 +40,7 @@ the ECM IO XML configuration file.
 * ``EngagedCurrent``: current required to engage (lock) the brakes.
   On the ECM, always zero.
 
-There is no automated calibration process so users have to manually
+There is no automated calibration process, so users have to manually
 edit values in the XML file.  In the generated configuration file, pay
 attention to the section "AnalogBrake" and the default values.
 
@@ -63,7 +63,7 @@ attention to the section "AnalogBrake" and the default values.
    ECM Classic brake current
 
 Please note that the values provided on this page are hardware
-specific and you must adjust them to your system.  Ideally, you want
+specific, and you must adjust them to your system.  Ideally, you want
 to find the lowest possible current that still work reliably on your
 hardware.
 
@@ -71,7 +71,7 @@ hardware.
 
    You really need to perform this step.  We have no sensor to detect
    if the brakes are released or not.  This means that the system will
-   assume the brakes are released and then apply motor current.  This
+   assume the brakes are released and then apply motor current.  Even though
    the arm might still be blocked by the brakes, the PID controllers
    can apply a fair amount of current and damage the motors.
    
@@ -84,7 +84,7 @@ Procedure
    current feedback <calibration-classic-current-brakes>` (with ``-b``
    command line option).
 
-At that point, we don't have a utility program the automatically
+At that point, we don't have a utility program to automatically
 adjust the parameters specific to the brakes, namely the 4 following
 values in the XML file:
 
@@ -142,7 +142,7 @@ sawRobotIO1394 console program to test the new values.
      hardware is limited by the power supply so make sure you always
      check the current feedback.  If the current feedback doesn't
      increase as you're increasing the requested current (and software
-     maximum current), it means that you have reach the maximum
+     maximum current), it means that you have reached the maximum
      possible with your power supply.
 
 2. Once you've found the proper values for ``ReleaseCurrent``, you can

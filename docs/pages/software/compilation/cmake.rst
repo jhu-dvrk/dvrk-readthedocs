@@ -14,11 +14,11 @@ Introduction
 
 This page contains general guidelines on how to build the dVRK
 software stack without ROS.  These are not precise step-by-step
-intructions.
+instructions.
 
 Most of the code used for the dVRK is portable, i.e. it can be
-compiled on Linux, Windows and MacOS.  The build process relies on
-CMake so it is also portable.
+compiled on Linux, Windows and macOS.  The build process relies on
+CMake, so it is also portable.
 
 :ref:`FireWire <firewire>` support is currently available on Linux
 only.  When using ROS, it is recommended to stick to Ubuntu
@@ -31,14 +31,14 @@ There are some major drawbacks when not using ROS:
 
 * The dVRK becomes a "black box" with no easy way to interface. One
   can use an alternate :ref:`middleware` such as `sawSocketStreamer
-  <udp-json>` or :ref:`sawOpenIGTLink <igtl>` but these are not as
+  <udp-json>` or :ref:`sawOpenIGTLink <igtl>`, but these are not as
   convenient as ROS.
 
 * None of the programs provided along the dVRK relying on ROS will
   work.  That includes many calibration scripts.  So if you plan to
-  use Windows or MacOS for a specific application, you will still need
+  use Windows or macOS for a specific application, you will still need
   to use Linux/ROS to calibrate your system.  The :ref:`configuration
-  files <configuration>` are OS agnostic.
+  files <configuration>` are OS-agnostic.
 
 Dependencies
 ############
@@ -64,7 +64,7 @@ The main repositories for the dVRK project are:
   clone all the *cisst* libraries and *SAW* components.  The main
   advantage of cloning this repository is that it will clone most of
   the repositories needed.  With ``cisst-saw.git``, to switch to the
-  developement branches, you can do the following:
+  development branches, you can do the following:
 
   .. code-block:: bash
 
@@ -98,7 +98,7 @@ need to compile the *cisst/SW* meta repository.  The steps are
 described in the GitHub continuous integration YAML files:
 
 * Windows: https://github.com/jhu-dvrk/dvrk-github-workflow/blob/main/.github/workflows/windows-latest.yaml
-* MacOS: https://github.com/jhu-dvrk/dvrk-github-workflow/blob/main/.github/workflows/macos-13.yaml
+* macOS: https://github.com/jhu-dvrk/dvrk-github-workflow/blob/main/.github/workflows/macos-13.yaml
 
 The `dvrk-github-workflow
 <https://github.com/jhu-dvrk/dvrk-github-workflow>`_ repository also
@@ -144,29 +144,29 @@ Notes:
 * If you want to set the cisst variables once and for all, you can
   modify your ``.bashrc`` or ``.profile`` configuration files.
 
-* On MacOS, you might need something like: ``export
+* On macOS, you might need something like: ``export
   DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/Users/<you>/dVRK/build/cisst-saw/cisst/cisstReflexxesTypeII/lib``
 
 Screenshots
 ###########
 
-Even though it is fairly useless to compile the dVRK stack on MacOS,
+Even though it is fairly useless to compile the dVRK stack on macOS,
 we tried it.
 
 .. figure:: /images/gui/mac-qladisp.png
    :width: 600
    :align: center
 
-   ``qladisp`` on MacOS
+   ``qladisp`` on macOS
 
 .. figure:: /images/gui/mac-simulated-PSM1.png
    :width: 600
    :align: center
 
-   Console with simulated PSM1 on MacOS
+   Console with simulated PSM1 on macOS
 
 .. figure:: /images/gui/mac-PSM1-desktop.png
    :width: 600
    :align: center
 
-   Console with PSM1 over UDP on MacOS
+   Console with PSM1 over UDP on macOS

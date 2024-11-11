@@ -10,7 +10,7 @@ Overview
 The board Id is set by the rotary switch value (4-bit from 0 to F/15)
 on the logic boards FPGA1394 (see :ref:`board-id-selector`).  Each ID
 which should be unique among the daisy-chained controller boards. The
-board Id should be have been set during manufactoring based on the arm
+board Id should have been set during manufacturing based on the arm
 type using the :ref:`default-board-ids`. Not all Research Kit come
 with the ECM, PSM3 or SUJ but the board Ids should be reserved
 nevertheless.  PSMs on da Vinci Standard come with color stickers, so
@@ -21,7 +21,7 @@ red (PSM3).
 Default board Ids
 #################
 
-We strongly recommend to use the following mapping for the board IDs
+We strongly recommend using the following mapping for the board IDs
 and controllers.  Many shared configuration files assume the following
 convention so using custom board Ids should be reserved to very
 specific configurations (e.g. 4 MTMs or 2 ECMs).
@@ -43,7 +43,7 @@ Setting the board Id
 
 To make sure the board Ids are physically set properly, you will have
 to open the controller enclosures.  The board Id can be changed by
-turning the rotary switch with a small flat head screw driver.
+turning the rotary switch with a small flat head screwdriver.
 
 .. _board-id-selector:
 .. figure:: /images/fpga1394/board-id-selector.jpg

@@ -7,7 +7,7 @@ Overview
 The dVRK relies on multiple configurations files.  Some are shared
 across systems and some are specific to each arm or site.  For the
 site specific configuration files, we provide a configuration
-generator that simplify the process but some files have to be create
+generator that simplify the process, but some files have to be created
 by hand.
 
 Types of files
@@ -25,7 +25,7 @@ Types of files
 
   * There is one IO configuration file per active arm (MTM, PSM and
     ECM).  This file is specific to each arm since it will store the
-    results of different calibration steps.  Therefore its name
+    results of different calibration steps.  Therefore, its name
     contains the arm's serial number.  For example,
     ``sawRobotIO1394-PSM1-27425.xml``. These files are not shared
     across systems.
@@ -62,8 +62,8 @@ Types of files
 
 * **Instruments list**: These are shared files listing all the
   available instruments (aka tools).  Most users will never need to
-  modify these unless they need to add a new instrument (e.g. custom
-  built).  They use the JSON file format and the documentation is
+  modify these unless they need to add a new instrument (e.g. custom-built).
+  They use the JSON file format and the documentation is
   generated from a schema:
 
   * `tool list documentation <../../_static/schemas/dvrk-tool-list.html>`_
@@ -102,7 +102,7 @@ All the shared files are under the ``/share`` directory of the main
 dVRK repository:
 https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/share
 
-The sub-directories are:
+The subdirectories are:
 
 * ``io``: IO files for foot pedals, head sensors and focus controller
 * ``pid``: default PID configuration files
@@ -118,11 +118,11 @@ The sub-directories are:
 Site specific files
 *******************
 
-For site specific examples, we recommend to use the JHU configuration
+For site specific examples, we recommend using the JHU configuration
 repository as a template for the files ``CMakeLists.txt`` and
 ``package.xml``: https://github.com/dvrk-config/dvrk_config_jhu
 
-Assuming a site can have multiple systems, we use sub-directory per
+Assuming a site can have multiple systems, we use subdirectory per
 system. Directory names start with the institution name (e.g. jhu for
 Johns Hopkins, isi for Intuitive Surgical) and should contain the
 system name (e.g. JHU has two systems, a research kit: ``jhu-dVRK``,

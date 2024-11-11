@@ -23,7 +23,7 @@ Ethernet adapter
 You will need a network adapter dedicated to the communication with
 the dVRK controllers (e.g., a PCIe Ethernet adapter).  The dVRK
 network port on the computer can't be plugged in to a router or hub
-and used to access the Internet.  Therefore, we recommend to install 2
+and used to access the Internet.  Therefore, we recommend installing 2
 network adapters on your computer, one for the LAN/WAN and one for the
 dVRK.  The dVRK dedicated network adapter will be directly connected
 to one of the dVRK controllers on the FireWire chain.  Please avoid
@@ -33,7 +33,7 @@ Ethernet.
 We recommend a built-in network adapter (e.g., a PCIe Ethernet
 adapter).  We don't have any specific recommendation for the chipset,
 just make sure it is supported by Linux.  USB3/USB-C network adapters
-might work too but we don't have extensive experience with these.
+might work too, but we don't have extensive experience with these.
 
 Configuration
 *************
@@ -49,15 +49,15 @@ on Ubuntu from 18.04 to 24.04).  Select the Ethernet adapter you want
 to configure for the dVRK:
 
 * In tab "Ethernet", change MTU to 3000.  The default is 1500 and is
-  not enough if you have a full da Vinci (2 MTMS, 3 PSMs, ECM and
+  not enough if you have a full da Vinci (2 MTMs, 3 PSMs, ECM and
   SUJ).
 * In tab "IPv4 Settings", change "method" to "Link-Local Only"
 
-MacOS
+macOS
 =====
 
-Running the dVRK on MacOS is experimental and not that useful.  This
-being said, there is no network configuration required on MacOS.
+Running the dVRK on macOS is experimental and not that useful.  This
+being said, there is no network configuration required on macOS.
 Somehow the OS figures out that the adapter should be configured for
 Link-Local by itself.
 
@@ -84,7 +84,7 @@ Testing connectivity
 ####################
 
 First you should make sure your Ethernet port is properly configured.
-On Linux and MacOS you can use ``ifconfig``.  The output for the dVRK
+On Linux and macOS you can use ``ifconfig``.  The output for the dVRK
 dedicated adapter should look like:
 
 .. code-block::
@@ -132,7 +132,7 @@ opposed to FireWire):
 * Message ``node 4 is not a QLA board`` indicates that another
   FireWire device is connected to the FireWire chain (i.e. not a dVRK
   controller).  In this case, a PC is still connected.  This can lead
-  to issues so it is recommended to unplug the computer from the
+  to issues, so it is recommended to unplug the computer from the
   FireWire chain.
 
 ``ping``

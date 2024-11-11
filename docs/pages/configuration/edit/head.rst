@@ -9,7 +9,7 @@ See also :ref:`dMIB IOs <dmib-io>`.
 da Vinci head sensor
 ====================
 
-Once you've build :ref:`your custom cable <head-original>`, you can
+Once you've built :ref:`your custom cable <head-original>`, you can
 modify your console JSON configuration file.
 
 Assuming that you're connecting your head sensor to the MTMR
@@ -25,7 +25,7 @@ the following line in your console JSON configuration file:
 
 .. warning::
 
-   The board numbering on the software side start with index 0
+   The board numbering on the software side starts with index 0
    (e.g. in XML IO configuration file) but the labels on the back of
    the controller start at index 1.  Keep this in mind if you plan to
    connect the head sensor to another "DOF" and create your own XML
@@ -36,7 +36,7 @@ the following line in your console JSON configuration file:
 dVRK head sensor
 ================
 
-Once you've build :ref:`your custom head sensor <head-dvrk>`, you can
+Once you've built :ref:`your custom head sensor <head-dvrk>`, you can
 modify your console JSON configuration file.
 
 There is no specific IO configuration to perform at that point

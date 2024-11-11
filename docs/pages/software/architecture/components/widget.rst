@@ -6,7 +6,7 @@ Widgets
 General information
 *******************
 
-There is some built-in documentation for some of the dVRK widgets, you
+There is some built-in documentation for some dVRK widgets, you
 can see it when you move the mouse over said widget.  There are also a
 few convenient keyboard shortcuts (for example ``ctrl+q`` to quit).
 Moving the mouse over a button will display the corresponding
@@ -59,7 +59,7 @@ t to toggle, c to clear
 
      Pose widget (3D view)
 
-  The rotation is displayed in the middle.  The default is a 3D view
+  The rotation is displayed in the middle.  The default is a 3D view,
   but one can change to a matrix, quaternion or axis/angle using the
   right-click menu.
 
@@ -114,7 +114,7 @@ dVRK console application.  This applies to the plain application
 To change the Qt style, use the option ``-S``.  To figure out which Qt
 styles are available, use a dummy style that doesn't exist: ``-S
 unicorn`` (let's hope no one will ever create a Qt style named
-"unicorn").  The application will fail to launch but it will display a
+"unicorn").  The application will fail to launch, but it will display a
 list of available styles.
 
 To install some extra styles:
@@ -122,7 +122,7 @@ To install some extra styles:
 * Ubuntu 18.04: ``sudo apt install qt5-style-plugins kde-style-oxygen-qt5 kde-style-qtcurve-qt5``
 * Ubuntu 20.04: ``sudo apt install qt5-style*``
 
-Since we use Qt for all GUIs, these options should work on all OSs but
+Since we use Qt for all GUIs these options should work on all OSs, but
 we've only tested them on Linux.
 
 .. figure:: /images/gui/dvrk-style-oxygen.png

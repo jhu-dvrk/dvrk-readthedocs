@@ -10,7 +10,7 @@ The following describes an alternative to the original HRSV unit from
 ISI.  The original units use CRT monitors and the maximum resolution
 is 720x1280 over VGA.  The idea is to replace the display using either
 a VR headset or HMD.  Most VR headset require the use of their SDK and
-in most cases, transferring the video over WiFi.  We looked for a
+in most cases, transferring the video over Wi-Fi.  We looked for a
 solution that wouldn't require any SDK and simply show up as an extra
 monitor under Linux.  This way we can just drag and drop the video
 windows onto the HMD.  We tried two different units from Goovis, the
@@ -27,7 +27,7 @@ Amazon link: https://www.amazon.com/GOOVIS-G3-Max-Most-Advanced-OLED-3D-Cinemati
 
 Head mounted display with dual QHD monitors (2560×1440).  The two
 monitors can slide left/right to adjust to the user's baseline.  There
-are also focus adjustments so users can remove their glasses.  Other
+are also focus adjustments, so users can remove their glasses.  Other
 features:
 
 * Supports HDMI-3D.  We don't have any code for this (yet).
@@ -42,13 +42,13 @@ features:
 
   .. warning::
 
-     The lower-end unit has a smaller FOV and it feels like you're
+     The lower-end unit has a smaller FOV, and it feels like you're
      looking at a screen far away with a fair amount of black
      surrounding it.
 
 * Head sensor.  The HMD automatically turns off the internal displays
   when the user is not present.  It turns out this signal is carried
-  over the USB cable used to power the unit.  We can used this USB HID
+  over the USB cable used to power the unit.  We can use this USB HID
   interface to emulate the head sensor.  This is quite convenient to
   turn on/off the teleoperation.
 
@@ -102,7 +102,7 @@ dropped on the HMD.  At that point, the HMD should be in 2D mode
 eyes.  After the two windows are created (left and right views), you
 can drag them to the HMD and place each on one half of the screen
 (left and right).  If you're using the default window manager for
-Ubuntu, you can drag the windows to the top corners and they will
+Ubuntu, you can drag the windows to the top corners, and they will
 automatically resize to use one half of the display.  You can also
 drag the windows and press the "Windows" key + left or right arrow to
 use the left or right of the display.  This works without having to

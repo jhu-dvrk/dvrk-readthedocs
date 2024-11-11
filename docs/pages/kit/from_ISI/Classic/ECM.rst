@@ -25,7 +25,7 @@ Basic information:
 * All actuators have analog potentiometers, used for both homing and
   safety checks
 * The second actuator controls a mechanical parallelogram used to
-  enforce a RCM point (remote center-of-motion, aka fulcrum point).
+  enforce an RCM point (remote center-of-motion, aka fulcrum point).
   `Google search
   <https://www.google.com/search?q=surgical+robot+center+of+motion+fulcrum+point>`_.
 * The full kinematic chain is composed of two parts, the arm's base
@@ -45,7 +45,7 @@ Basic information:
 Cannula and sterile adapter
 ===========================
 
-Since the endoscpe is removable and there is a barrier (sterile
+Since the endoscope is removable and there is a barrier (sterile
 drape) between the sterile and non-sterile area, there are 2
 distinctive points where the instrument is in contact with the arm.
 The instrument is attached to the base arm at the top of the insertion

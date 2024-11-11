@@ -15,7 +15,7 @@ to create two accounts to access some privates resources:
 * Google group for dVRK users,
   https://groups.google.com/d/forum/research-kit-for-davinci and
   research-kit-for-davinci@googlegroups.com. We strongly encourage
-  users to send support questions using this google group.
+  users to send support questions using this Google group.
 
   1. Go to
      https://groups.google.com/forum/#!forum/research-kit-for-davinci
@@ -54,7 +54,7 @@ The main steps to set up a dVRK are:
 * **Compile the software with ROS** - This has to be performed once
   per user, and each user should maintain their own version of the
   software in their home directory.  The core software for the dVRK
-  can be built without ROS but we strongly recommend you use ROS and
+  can be built without ROS, but we strongly recommend you use ROS and
   its build tools.
 
   * :ref:`ROS 1 <ros1>`
@@ -79,7 +79,7 @@ The main steps to set up a dVRK are:
   the controllers and the PC.
 
 * **Calibration** - Once the controllers are physically connected, the
-  software has been compiled and you have the base configuration
+  software has been compiled, and you have the base configuration
   files, you can proceed to the :ref:`calibration steps <calibration>`
   to identify some values specific to each arm and controller pair.
   The process depends on the generation of arms:

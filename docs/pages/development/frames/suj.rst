@@ -92,7 +92,7 @@ SUJ Fixed
 *********
 
 For groups that don't have access to a SUJ controller but have an ECM,
-we recommend to use the SUJ Fixed class.  This class maintains the
+we recommend using the SUJ Fixed class.  This class maintains the
 transformation graph one would get with a real SUJ but the SUJ
 transformations have to be provided by the user.  These
 transformations are usually the result of a registration.  Using the
@@ -112,7 +112,7 @@ respect to the tracking system.  In this case, the result of the
 registration represent ``/SUJ/PSM{1,2,3}/local/measured_cp`` and
 ``/SUJ/ECM/local/measured_cp``.
 
-If the registration method is an hand-eye registration with respect to
+If the registration method is a hand-eye registration with respect to
 the ECM base (aka ECM RCM), the transformation for
 ``/SUJ/ECM/local/measured_cp`` is identity and ``ECM RCM`` is the same
 as `World` (see https://github.com/jhu-dvrk/dvrk_camera_registration).

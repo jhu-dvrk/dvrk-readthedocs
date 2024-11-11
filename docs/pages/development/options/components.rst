@@ -9,7 +9,7 @@ actually the mechanism we use for the ROS (1 and 2),
 advantage of this approach is performance, i.e. the communication
 between components doesn't require any serialization/de-serialization
 nor sockets.  *cisstMultiTask* also provides non-blocking and
-thread-safe communication mechanisms between threads so you can take
+thread-safe communication mechanisms between threads, so you can take
 advantage of modern CPUs with multi-cores.
 
 Derived components
@@ -25,12 +25,12 @@ component and alter it.  The best way to do so is to derive from the
 default dVRK class.  The main advantages of derived classes are:
 
 * All the interfaces (provided and required) the console expects are
-  already defined so the console can connect the existing ROS bridge
+  already defined, so the console can connect the existing ROS bridge
   (1 or 2), Qt widget, PID, IO, etc.
-* All the existing configuration parameters will still be there so you
+* All the existing configuration parameters will still be there, so you
   can re-use them.
 * The code related the component creation is already defined in the
-  base class so you'll have less code to manage.
+  base class, so you'll have less code to manage.
 
 As of 2023, the dVRK console supports derived classes for the arm and
 the PSM teleoperation.  You can find documented examples for:
@@ -62,18 +62,18 @@ alternate for the MTM:
   (https://github.com/jhu-saw/sawSensablePhantom): The Omni doesn't
   provide a gripper so when used with the default dVRK teleoperation,
   the jaws are ignored.  The two buttons on the stylus can be used to
-  emulated the dVRK for pedals for "operator present" and "clutch".
+  emulate the dVRK foot pedals for "operator present" and "clutch".
 * ForceDimension haptic devices and Novint Falcon using
   *sawForceDimensionSDK*
   (https://github.com/jhu-saw/sawForceDimensionSDK): The
   ForceDimension devices offer different features based on the model.
   We only tested models with 7 degrees of freedom, i.e. position,
   orientation and gripper.  If the orientation is motorized, it can be
-  used like a da Vinci MTM and we can enforce that the MTM orientation
+  used like a da Vinci MTM, and we can enforce that the MTM orientation
   matches the PSM orientation.  ForceDimension devices don't have
   buttons so we either have to use a USB foot pedal or the GUI
   for "operator present" and "clutch".  The Novint Falcon is not as
-  useful for real applications since it doesn't have a wrist but it can
+  useful for real applications since it doesn't have a wrist, but it can
   be used for simple demos and debugging.  See example of
   configuration file
   ``jhu-dVRK-Si-demo/console-Novint-Falcon-PSM1-Teleop.json``
@@ -108,7 +108,7 @@ Process**) sends a *servo_cp* to the actual *PSM* (**PSM Process**):
    write function (*servo_cp*) from its required interface for PSM
 2. The *PSM from ROS* component receives the *servo_cp* command over
    its provided interface emulating a PSM.  When the command is
-   de-queued:
+   dequeued:
 
    1. The payload is converted from a cisst data type to ROS
    2. The *PSM from ROS* component publishes the ROS pose on the topic
@@ -122,7 +122,7 @@ Process**) sends a *servo_cp* to the actual *PSM* (**PSM Process**):
    2. The bridge calls the cisst function *servo_cp* from its
       interface for PSM
 
-5. The *PSM* component de-queues the *servo_cp* command through its
+5. The *PSM* component dequeues the *servo_cp* command through its
    provided interface and can finally execute it on the robot.
 
 .. note::

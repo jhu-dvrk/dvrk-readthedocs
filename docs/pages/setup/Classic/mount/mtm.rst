@@ -12,8 +12,8 @@ check the `Intuitive Research Wiki <https://research.intusurg.com/>`_
 
 The following pictures show an alternative surgeon's console built at
 Johns Hopkins.  It holds two MTMs and their dVRK controllers (top
-shelf) as well as an :ref:`Si CCU <camera-si>` and light source
-(bottom shelf).  The dimensions are based on an Si console (spacing
+shelf) as well as a :ref:`Si CCU <camera-si>` and light source
+(bottom shelf).  The dimensions are based on a Si console (spacing
 between MTMs, width...) and the console is narrow enough to go
 through most doors.
 
@@ -33,7 +33,7 @@ is mated to an aluminum plate mounted on the 80-20 frame.
 
    MTM Classic mounting bracket
 
-The top shelf is braced using standard size 45 degree 40mm profiles
+The top shelf is braced using standard size 45-degree 40 mm profiles
 from 80-20.
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-brace.jpeg
@@ -51,7 +51,7 @@ small Noga arm.
 
    Custom surgeon's console, mount for HMD
 
-The base and vertical post is made of 40x80mm profiles.  We used a
+The base and vertical post is made of 40 by 80 mm profiles.  We used a
 standard 80-20 bracket to support the front casters.  The arm rest can
 slide up and down (Allen wrench required).  All the controllers and
 video equipment are connected to a single power strip for

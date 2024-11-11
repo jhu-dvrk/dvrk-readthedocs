@@ -10,7 +10,7 @@ endoscope.  Users were expected to find a way to mount these are on
 some kind of frame, usually relying on 80/20 aluminum profiles (or
 equivalent).
 
-Later on, some groups acquired full decomissioned da Vinci Classic
+Later on, some groups acquired full decommissioned da Vinci Classic
 (donation, eBay...), including the surgeon's console and the patient's
 cart with its setup joints (SUJ, passive arms supporting the PSMs and
 ECM). These groups didn't need to build any frame to support the

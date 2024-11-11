@@ -17,7 +17,7 @@ Introduction
 The dVRK Classic controllers use a JHU designed Quad Linear Amps
 board. The linear amplifiers are all mounted against a large passive
 heat sink (square aluminum bar).  This solution provides some heat
-dissipation but this is not enough for the dVRK arms.  We
+dissipation, but this is not enough for the dVRK arms.  We
 unfortunately discovered this a bit late and many of the early
 controllers have a tendency to overheat.  This page describes how to
 add a fan on the QLA to resolve this issue.
@@ -29,8 +29,8 @@ requires a fair bit more power.  The second joint itself can draw
 close to 0.5 A continuously.
 
 The MTMs and PSMs can run for- a little while (half hour or so) without
-any issues but for prolonged usage, we strongly recommend to upgrade
-your controllers with a an extra heat sink and fan.
+any issues but for prolonged usage, we strongly recommend upgrading
+your controllers with an extra heat sink and fan.
 
 Power source for the fans
 =========================
@@ -54,8 +54,8 @@ Recommended solution
 ====================
 
 We found that a single Pentium Socket 370 heat sink and fan performs
-very well.  There is very little manufacturing required so users can
-likely upgrade their controllers by themselves.  We uses the StarTech
+very well.  There is very little manufacturing required, so users can
+likely upgrade their controllers by themselves.  We used the StarTech
 FANP1003LD (https://www.amazon.com/dp/B000IXS6DW) with success but
 other heat-sinks for Socket 370 might work as well.
 
@@ -93,7 +93,7 @@ need to gently pull on the wire while pushing on the little metal tab
 on the side of the plug.  Once you've pulled all the pins, you can cut
 the yellow wire and re-insert the other two pins (black and red) to
 match the QLA.  The QLA power plugs are labeled with "12V" and "GND".
-You must reconfigure the fan's plug so the black wire goes to "GND"
+You must reconfigure the fan's plug, so the black wire goes to "GND"
 and the red wire goes to "12V".  Make sure your wiring matches the
 photos below, i.e. the plug is not symmetrical.
 
@@ -113,7 +113,7 @@ You can then screw the fan back on top of the heat sink and plug it.
 There are three 12V connectors on the QLA, all equivalent.  Note that
 one of them might already be used for the whole controller case fan.
 The fan's plug still has room for 3 pins while the QLA plugs only have
-two pins so there are two physical ways to plug the fans.  Make sure
+two pins, so there are two physical ways to plug the fans.  Make sure
 you plug it so the two wires (black and red) and aligned with the QLA
 plug.
 
@@ -146,5 +146,5 @@ This was tested on the SUJ Classic controller, dSIB rev 2.0.
     "on", "0:45", "37 C"
     "on", "0:50", "34 C"
 
-Without the fan the temperature seems stable around 50 C.  With the
+Without the fan the temperature seems stable around 50 C. With the
 fan, the temperature goes down to 34 C.

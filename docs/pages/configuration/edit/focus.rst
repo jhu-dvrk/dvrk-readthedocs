@@ -19,7 +19,7 @@ The example above assumes that:
 
 * You're using the dVRK software **rev 1.6** or above
 * You have connected to the camera focus cable to the MTML controller.
-  If you're connecting the endoscope focus unit to another controller
+  If you're connecting the endoscope focus unit to another controller,
   and you can't find the corresponding configuration file in
   ``sawIntuitiveResearchKit/share/io``, feel free to create one and
   contribute it back to the community

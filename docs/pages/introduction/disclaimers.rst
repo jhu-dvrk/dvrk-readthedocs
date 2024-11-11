@@ -20,7 +20,7 @@ Disclaimers
 
 .. warning::
 
-   **dVRK ≠ daVinci**.  Do not equate the dVRK to the da Vinci.  These
+   **dVRK ≠ da Vinci**.  Do not equate the dVRK to the da Vinci.  These
    two systems share the same mechanical parts but the electronics and
    software are different.  Therefore, a defect or flaw identified
    using a dVRK system should not be used to infer that the da Vinci

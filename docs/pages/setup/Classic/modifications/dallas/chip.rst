@@ -6,7 +6,7 @@ Dallas driver interface
 This section describes the **Dallas driver interface**, which requires
 FPGA Firmware Version 8, because that is expected to become the
 preferred interface. We expect that it will be more robust than the
-FPGA 1-wire interface and it will also work with all versions of
+FPGA 1-wire interface, and it will also work with all versions of
 controller hardware.
 
 Prerequisites
@@ -95,10 +95,10 @@ dMIB) provide a serial interface to the DS2480B, which then drives the
 bidirectional 1-wire interface. The path for the 1-wire signal is
 somewhat convoluted -- it is first connected to the HOME7 signal
 (assuming the jumper on the dongle is installed). The HOME7 signal is
-also present on the footpedal connector and the jumper plug on the
-footpedal connector routes this signal to pin 9, which is normally not
+also present on the foot pedal connector and the jumper plug on the
+foot pedal connector routes this signal to pin 9, which is normally not
 used. A jumper wire, soldered on the dMIB (see below), connects
-footpedal pin 9 to the 1-wire signal on the DL-156 connector.
+foot pedal pin 9 to the 1-wire signal on the DL-156 connector.
 
 .. figure:: /images/Classic/tool-detection/dongle-sets.jpg
    :width: 400
@@ -113,8 +113,8 @@ example, are shown in the following figures.
 
 While it would have been possible to solder the jumper wire directly
 from the DL-156 connector to HOME7 (and eliminate the jumper plug on
-the footpedal connector), the downside of that approach is that the
-modification would interfere with operation of the footpedal
+the foot pedal connector), the downside of that approach is that the
+modification would interfere with operation of the foot pedal
 connector, even if the DS2480B dongle is removed.
 
 This option requires the following modifications:
@@ -123,14 +123,14 @@ This option requires the following modifications:
    below)
 2. Install a dongle on the DOF 7 (HD15) connector on the rear of the
    controller box (see figure above)
-3. Install a jumper plug on the footpedal connector (DB15) on the rear
+3. Install a jumper plug on the foot pedal connector (DB15) on the rear
    of the controller box (see figure above)
 
 You need the PSM dVRK controllers, screwdrivers/nut drivers/hex
 wrenches, a piece of small insulated wire or magnet wire, and a
 soldering iron.
 
-**Step 1.** Unplug power. Unplug cables from the dMIB/QLA so you can
+**Step 1.** Unplug power. Unplug cables from the dMIB/QLA, so you can
 work on the back side of the 156-pin ITT Cannon connector (that mates
 with the robot arm connector) or take the dMIB out. Please make sure
 to label the cables as you unplug them.

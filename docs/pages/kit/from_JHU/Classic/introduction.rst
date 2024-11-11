@@ -4,7 +4,7 @@ Introduction
 Each da Vinci arm (MTM, PSM, ECM) is controlled by a single box. A
 different controller is used for the Setup joints (see :ref:`SUJ
 Classic controller <controllers-suj-classic>`).  There are three
-major major versions of controllers for the da Vinci Classic, based on
+major versions of controllers for the da Vinci Classic, based on
 the FPGA version used (V1, V2 or V3).
 
 The V1 and V2 controllers are built around 2 QLA/FPGA stacks.  Both
@@ -19,7 +19,7 @@ side.  The physical interface between the QLA/FPGA boards is a dMIB
 inputs for the potentiometers and encoders as well as miscellaneous
 digital IOs (foot pedals, buttons...).  For motor control they use
 linear amplifiers with current feedback.  All controllers come with
-FireWire interfaces so they can be daisy chained and communicate with
+FireWire interfaces, so they can be daisy-chained and communicate with
 a computer.
 
 The V2 controllers also come with an Ethernet adapter (supported by

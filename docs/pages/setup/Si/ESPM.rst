@@ -4,7 +4,7 @@ ESPM
 .. note::
 
    This step is required for all PSMs and ECM Si used with the dVRK
-   controllers, wether they are mounted on the Si SUJ or not.
+   controllers, whether they are mounted on the Si SUJ or not.
 
 Introduction
 ************
@@ -19,11 +19,11 @@ Surgical, developed a closed-source FPGA firmware for the ESPM that
 relies on an open protocol. The firmware is publicly available in a
 binary image only.
 
-The ESPM programmer acts as an alternative boot loader when the arm
+The ESPM programmer acts as an alternative bootloader when the arm
 powers-up. The dVRK specific firmware is not persistent. The arm will
 revert to the original firmware after a power cycle if the ESPM
-programmer is removed or de-activated (using switch on ESPM
-programmer). The ESPM programmer uses an SD card so one can easily
+programmer is removed or deactivated (using switch on ESPM
+programmer). The ESPM programmer uses an SD card, so one can easily
 upgrade the dVRK firmware.
 
 Installation
@@ -32,7 +32,7 @@ Installation
 You first need to make sure the arm is not powered.
 
 Then remove the plastic cover on the robot arm. You will need an
-imperial allen wrench to remove the single bolt holding the cover.
+imperial Allen wrench to remove the single bolt holding the cover.
 You will then need to wiggle or pry-out the cover since it's also held
 by a few clips.
 
@@ -69,7 +69,7 @@ do not force it upside down**.
    ESPM programmer connected to ESPM JTAG
 
 To hold the ESPM programmer to the arm, you should have received a
-rubber credit card holder with double sided tape.  Place the ESPM
+rubber credit card holder with double-sided tape.  Place the ESPM
 programmer in the holder, then stick the holder on the robot as shown
 below. Put the plastic cover back on the arm while making sure the
 cover is not pinching the cable.
@@ -82,10 +82,10 @@ cover is not pinching the cable.
 
 .. note::
 
-   If the arm is folded and you can't access the surface to stick the
+   If the arm is folded, and you can't access the surface to stick the
    holder, you can let it hang until you can power the arm and release
    the brakes.  Alternatively, you can force the arm to move despite
-   the brakes.  This is not something you should do too often but it
+   the brakes.  This is not something you should do too often, but it
    can help during the setup: `YouTube video <https://www.youtube.com/shorts/wBXQduLbHdE>`_.
 
 Usage

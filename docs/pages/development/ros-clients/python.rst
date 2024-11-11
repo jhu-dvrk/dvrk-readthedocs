@@ -4,7 +4,7 @@ Python
 Introduction
 ************
 
-The goal of the dVRK Python package is to be enable users to write a
+The goal of the dVRK Python package is to enable users to write a
 simple application in Python that communicates with the dVRK console
 using ROS as :ref:`middleware <devel-middleware>`.
 
@@ -121,7 +121,7 @@ Then in Python:
    goal.M.DoRotX(math.pi * 0.25)
    p.move_cp(goal).wait()
 
-To apply wrenches on MTMs, start ipython and type the following
+To apply wrenches on MTMs, start IPython and type the following
 commands while holding the MTM (otherwise the arm will start moving
 and might bang itself against the console and get damaged).
 
@@ -162,7 +162,7 @@ Performance
 For the dVRK, one can use the classes ``dvrk.arm``, ``dvrk.psm``,
 ``dvrk.mtm``... that use the ``crtk.utils`` to provide as many
 features as possible. This is convenient for general purpose testing,
-for example in combination with iPython to test snippets of code.
+for example in combination with IPython to test snippets of code.
 
 **But**, there is a significant performance penalty when using the
 ``dvrk.xxx`` classes since they subscribe to more topics than
@@ -173,6 +173,6 @@ e.g. ``dvrk-bag-replay.py``.
 
  .. warning::
 
-    By default the dVRK console publishes the state of the dVRK at
+    By default, the dVRK console publishes the state of the dVRK at
     100Hz.  If you need to close the loop at a different frequency,
     use the ``-p`` command line option for the ``dvrk_console_json``.

@@ -23,7 +23,7 @@ Basic information:
 * All motors are located in the first 2 links and use cable transmission
 * All actuators have analog potentiometers, used for both homing and
   safety checks
-* The arm is designed with counter weights to stay as balanced as possible
+* The arm is designed with counterweights to stay as balanced as possible
 * The second actuator controls a mechanical parallelogram used to
   enforce a RCM point (remote center-of-motion, aka fulcrum point).
   `Google search
@@ -111,14 +111,14 @@ quarter turn.
    da Vinci Classic PSM cannula holder in place
 
 The cannula is reusable and sterilizable.  Cannulas come in different
-diameters, 5mm, 8mm... to match the diameter of the shaft of the
+diameters, 5 mm, 8 mm... to match the diameter of the shaft of the
 instrument used.
 
 .. figure:: /images/Classic/PSM/classic-PSM-cannula.jpeg
    :width: 250
    :align: center
 
-   da Vinci Classic PSM 8mm cannula
+   da Vinci Classic PSM 8 mm cannula
 
 The cannula is held by the cannula holder (shocking) and secured using
 two thumbscrews.  When in place, the large black strip etched on the

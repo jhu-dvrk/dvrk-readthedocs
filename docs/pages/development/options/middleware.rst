@@ -36,7 +36,7 @@ Pros
   * CRTK Matlab client: https://github.com/collaborative-robotics/crtk_matlab_client
 
 * Your application will be a different process.  It can even run on a
-  different computer so the computing load will not impact the dVRK
+  different computer, so the computing load will not impact the dVRK
   console.  This might actually be a required if your application is
   very CPU or IO intensive.
 * Since you're using ROS, you can ``rosbag`` everything for further data
@@ -57,23 +57,23 @@ Cons
     frequency at which topics are published.
   * There is also some added latency but mostly likely under a
     millisecond for most messages.  We paid special attention to use
-    ROS messages with a header so you also can rely on the
+    ROS messages with a header, so you also can rely on the
     ``timestamp`` to figure out when the data was generated.
 
 Notes
 =====
 
-* By default the dVRK console publishes both synchronous (events) and
+* By default, the dVRK console publishes both synchronous (events) and
   asynchronous data (state data).  Events (such as ``operating_state``
   are published as fast as possible.  State data (such as
-  ``measured_js``...) is published periodically.  By default the dVRK
+  ``measured_js``...) is published periodically.  By default, the dVRK
   console publishes data at 100Hz (10ms).  This can be increased using
-  the ``-p`` command line argument.  By default the dVRK arm components
-  are running at 1.5KHz so it doesn't make sense to publish at any
+  the ``-p`` command line argument.  The dVRK arm components
+  are running at 1.5KHz, so it doesn't make sense to publish at any
   rate higher than 1.5KHz.
 * We provide a full fledge dVRK client API for both Python (``import
   dvrk``) and Matlab (``dvrk.``).  These are very convenient for quick
-  testing and sending commands from an interactive interpreter but
+  testing and sending commands from an interactive interpreter, but
   they come at a cost.  To provide all the possible features, these
   dVRK clients have to subscribe to all the dVRK topics and this will
   definitely slow down your interpreter.  This is specially true for
@@ -86,14 +86,14 @@ Notes
 Sockets (JSON), OpenIGTLink
 ***************************
 
-ROS is the preferred middleware but we also support UDP socket with
+ROS is the preferred middleware, but we also support UDP socket with
 JSON messages and OpenIGTLink.
 
 Sockets with JSON
 =================
 
 One of the drawbacks of ROS is that it is hard to install on Windows
-or MacOS.  If your application can't easily run on Ubuntu, for example
+or macOS.  If your application can't easily run on Ubuntu, for example
 Unity for HoloLens, you can use the *sawSocketStreamer*
 (https://github.com/jhu-saw/sawSocketStreamer).  This cisst/SAW
 component can be dynamically loaded and configured to connect to any
@@ -103,8 +103,8 @@ cisst/SAW component to:
 * Send commands to the dVRK
 
 All the messages are serialized in JSON.  This way you can use any
-existing JSON parser to serialized/de-serialize the messages.  These
-messages are also somewhat human readable so it makes debugging
+existing JSON parser to serialized/deserialize the messages.  These
+messages are also somewhat human-readable, so it makes debugging
 easier.  The main drawbacks of the text based serialization are the
 computing coast and lost of accuracy for floating point numbers.  We
 found that in most cases, the ease of integration outweighs these

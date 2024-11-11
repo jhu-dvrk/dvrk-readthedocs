@@ -34,7 +34,7 @@ The script has 5 options:
   along your dVRK configuration files for future use.
 * *serial number*: you can find the serial number on the arm itself (aka
   `trk id`).  The serial number doesn't need to be specified for
-  Classic arms since it can be found in the `.cal` file but you need
+  Classic arms since it can be found in the `.cal` file, but you need
   to make sure it matches the number on the arm you're using.
 
 There are only 3 possible combinations of generations and hardware/controller type:
@@ -52,7 +52,7 @@ There are only 3 possible combinations of generations and hardware/controller ty
 
      dvrk-config-generator.py -a MTMR -g Classic -H DQLA -c m23456.cal
 
-* For an Si arm, the controller is always dRA1 based so you need to use:
+* For an Si arm, the controller is always dRA1 based, so you need to use:
 
   .. code-block:: bash
 

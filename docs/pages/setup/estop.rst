@@ -86,7 +86,7 @@ e-stop chain <estop-modular>`, developed at JHU and currently used on
 most systems, and a :ref:`monolithic (hard-wired) e-stop chain
 <estop-monolithic>`, as initially implemented at WPI.  Note that this
 was the intended goal of the systems with two 5-pin connectors, but in
-those systems it is possible to accidentally bypass some of the safety
+those systems it is possible to accidentally bypass some safety
 relays, as described in :ref:`this section below
 <estop-issue-2-5-pins>`.
 
@@ -163,7 +163,7 @@ monolithic connection schemes, it is possible to miswire the e-stop
 chain because the Extension (Daisy-Chain) Cable is not
 straight-through; it connects S1 (pin 3) on one connector to S2
 (pin 4) on the other. Thus, it matters which way the cable is
-connected. Connecting it backwards will cause some of the safety
+connected. Connecting it backwards will cause some safety
 relays to be bypassed, as shown in the figure below.
 
 .. figure:: /images/estop/SafetyChain-Build4.png

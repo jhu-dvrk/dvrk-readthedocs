@@ -7,7 +7,7 @@ gscam
 
 ``gscam`` is a ROS node using the ``gstreamer`` library.  The gstreamer
 library supports a few frame grabbers including the Hauppage one.  The
-gstreamer developement library can be installed using ``apt-get
+gstreamer development library can be installed using ``apt-get
 install``.  Make sure you install gstreamer 1.0, not 0.1.
 
 ROS Ubuntu packages vs build from source
@@ -16,14 +16,14 @@ ROS Ubuntu packages vs build from source
 Use ``apt install`` to install gscam on Ubuntu 18.04 with ROS 1.  The
 package name should be ``ros-melodic-gscam``.  It will install all the
 required dependencies for you.  ``gscam`` is also available as a
-debian package for ROS2 Galatic, Humble... so use ``apt intall`` for
+Debian package for ROS2 Galactic, Humble... so use ``apt intall`` for
 all ROS2 configuration.
 
-On Ubuntu 20.04, gscam binaries for ROS 1 Noetic are not available via
-``apt`` so you will need to compile it in your ROS workspace.  The
-original source code is on github:
+On Ubuntu 20.04 gscam binaries for ROS 1 Noetic are not available via
+``apt``, so you will need to compile it in your ROS workspace.  The
+original source code is on GitHub:
 https://github.com/ros-drivers/gscam.  But you need a different
-version which can be found using the pull request for Noetic Devel.
+version which can be found using the pull request for Noetic devel.
 So you need to clone https://github.com/hap1961/gscam in your
 ``catkin_ws/src``.  Then make sure you switch to the Noetic branch:
 ``cd ~/catkin_ws/src/gscam; git checkout noetic-devel``.  Finally, do
@@ -35,7 +35,7 @@ Using gscam
 
 To start the ``gscam`` node, we provide a couple of ROS launch scripts.
 **Make sure the launch script has been updated to use a working
-gstreamer pipeline** (as descrided above using ``gst-launch-1.01``).
+gstreamer pipeline** (as described above using ``gst-launch-1.01``).
 The main difference is that your pipeline for gscam should end with
 ``videoconvert`` and you need to remove ``autovideosink``.
 
@@ -56,7 +56,7 @@ topics:
 * ``/jhu_daVinci/left/image_raw``
 * ``/jhu_daVinci/right/image_raw``
 
-For a system with a Decklink Duo, the `gscam_config` in a launch script would look like:
+For a system with a DeckLink Duo, the `gscam_config` in a launch script would look like:
 
 .. code-block:: xml
 
@@ -74,17 +74,17 @@ One can use the ``image_view`` node to visualize a single image:
 
 If you prefer GUI, you can use ``rqt_image_view``, a simple program to
 view the different camera topics.  Pick the image to display using the
-drop-down menu on the top left corner.
+drop-down menu in the top left corner.
 
 dVRK launch files
 *****************
 
 At that point, we assume most groups are using SDI frame grabbers and
 the stereo display is using two images.  The following launch files
-will start the frame grabbers using ``gscam`` so one can collect the
+will start the frame grabbers using ``gscam``, so one can collect the
 images over ROS and create 2 windows (left and right views) that can
 be used in your stereo display (drag and drop).  The launch files are
-in ``dvrk_video`` and are provided for both ROS1 (xml) and ROS2
+in ``dvrk_video`` and are provided for both ROS1 (XML) and ROS2
 (Python).
 
 * ``decklink_stereo_1280x1024.launch``: launches 2 ``gscam`` nodes to grab

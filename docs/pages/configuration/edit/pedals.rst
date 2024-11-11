@@ -7,17 +7,17 @@ Foot pedals
 Original and compatible
 ***********************
 
-The default digital inputs for the daVinci :ref:`Classic foot pedals
+The default digital inputs for the da Vinci :ref:`Classic foot pedals
 <pedals-original>` (and the :ref:`compatible ones
 <pedals-compatible>`) are defined in share IO configuration files.
-These depends on which controller is used, both :ref:`board Id
+These depend on which controller is used, both :ref:`board Id
 <board-id>` and :ref:`hardware version <controller-classic-exterior>`
 so we provide multiple configuration files.
 
 All the default foot pedal IO configuration files are in the
 *sawIntuitiveResearchKit* repository, under ``io/share``.
 
-For example, if your pedals are connected to a MTML controller with a
+For example, if your pedals are connected to a MTML controller with an
 FPGA version 1 or 2, your console JSON file should have:
 
 .. code-block:: JSON
@@ -42,7 +42,7 @@ See also :ref:`dMIB IOs <dmib-io>`.
 USB "joystick"
 **************
 
-Ignorxe this section if you are not using a :ref:`USB "joystick" foot
+Ignore this section if you are not using a :ref:`USB "joystick" foot
 pedal <pedals-usb>`.
 
 After you made sure *sawJoystick* is compiled in your ROS workspace,

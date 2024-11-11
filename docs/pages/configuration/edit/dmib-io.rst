@@ -17,7 +17,7 @@ In the table below:
 * **SUJ/dSIB**: use of this I/O for setup joint controller
 * **dMIB pin**: which connector (DOF1-DOF8 or FP) and pin number
   (after :). Note that DOF1-DOF7 are HD15 connectors, DOF8 is a HD26
-  connector, and FP (footpedal) is a DB15 connector.
+  connector, and FP (foot pedal) is a DB15 connector.
 
 .. note::
 
@@ -66,7 +66,7 @@ In the table below:
 
 Explanation of signals:
 
-* Adaptor indicates whether the sterile adapter is present
+* Adapter indicates whether the sterile adapter is present
 * Tool indicates whether a tool (instrument) is present
 * Arm is an "arm present" signal, which indicates that the arm (MTM,
   PSM or ECM) is connected

@@ -11,7 +11,7 @@ The potentiometers on the dVRK are used for:
 * Homing, i.e. they provide an absolute reference to define the zero
   position
 * Safety, i.e. by reading both encoders and potentiometers
-  continuously one can detect discrepencies
+  continuously one can detect discrepancies
 
 The potentiometer values are read as voltages and converted to SI
 positions (radians for revolute joints and meters for prismatic
@@ -93,7 +93,7 @@ For the offsets, we need a physical mechanism to maintain the arm in
 zero position (or any known position).  We currently have a fairly
 easy solution for the last 4 joints of the PSM.  The four metal
 bars/gears are in zero positions when aligned.  We tried different
-methods and got similar results so you should use whatever is the most
+methods and got similar results, so you should use whatever is the most
 convenient for you:
 
  * Calibration template made of plexiglass plate with holes for the
@@ -193,7 +193,7 @@ two videos can give you a sense of the space required around the arm:
 
 .. caution::
 
-   For the scale calibration, we try to use a wide range of positions so the arm will pretty much go from joint limits to joint limits.  Make sure there are no obstacles in the way!
+   For the scale calibration, we try to use a wide range of positions, so the arm will pretty much go from joint limits to joint limits.  Make sure there are no obstacles in the way!
 
 The result should look like:
 
@@ -236,13 +236,13 @@ There is usually no point to save the results of the second pass.
 Calibrating offsets
 ===================
 
-These instructions are for all arms but we only know how to properly
+These instructions are for all arms, but we only know how to properly
 hold the joints at their zero position for the last 4 joints of the
 **PSMs**.  If you need to calibrate offsets on different arms (MTM,
 ECM), you will need to figure out a way to constrain the arm to its
 zero position (mechanical zero).
 
-For the scales calibration, you first need to start the console
+For the scales' calibration, you first need to start the console
 application and power the arm.  If the arm can power with the existing
 potentiometer offsets, home the arm.  You can then either keep the arm
 powered and use the motors to position it close to its mechanical

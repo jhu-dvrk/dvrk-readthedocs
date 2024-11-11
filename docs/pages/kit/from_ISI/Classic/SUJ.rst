@@ -24,7 +24,7 @@ without the active arms.
 
 Basic information:
 
-* The patient cart is on wheels so it can be moved in and out the
+* The patient cart is on wheels, so it can be moved in and out the
   operation room
 * There are three to four passive arms, one to hold the ECM (SUJ-ECM)
   and two to three to hold the PSMs (SUJ-PSM1, SUJ-PSM2 and optionally
@@ -34,7 +34,7 @@ Basic information:
   single power source.
 * SUJ-PSM1 and SUJ-PSM2 have an extra button to control the brakes on
   the passive arm itself.  All the active arms also have a dedicated
-  button to release the brakes but this signal is handled by the arm
+  button to release the brakes, but this signal is handled by the arm
   controller, not the SUJ controller
 
   .. figure:: /images/Classic/SUJ/SUJ-Classic-PSM12-clutch-button.jpeg
@@ -43,10 +43,10 @@ Basic information:
 
      da Vinci Classic, clutch/brake button on SUJ for PSM1 and PSM2
 
-* All the passive arms (except PSM-SUJ3) have counter weights in the
-  central column so they can be moved up and down with minimal effort
+* All the passive arms (except PSM-SUJ3) have counterweights in the
+  central column, so they can be moved up and down with minimal effort
 * The optional SUJ-PSM3 is mounted on front of the column (after
-  thought) and doesn't have a vertical counter weigth.  Instead, there
+  thought) and doesn't have a vertical counter weight.  Instead, there
   is a lift motor mounted at the base of the cart
 
   .. figure:: /images/Classic/SUJ/SUJ-Classic-PSM3-lift-motor.jpeg
@@ -55,7 +55,7 @@ Basic information:
 
      da Vinci Classic, SUJ for PSM3 lift motor
 
-* There is a button attached with a velcro strap to the active arm
+* There is a button attached with a Velcro strap to the active arm
   PSM3.  This button can be toggle up or down to control the height of
   the SUJ-PSM3
 

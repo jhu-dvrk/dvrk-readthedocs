@@ -42,7 +42,7 @@ Catkin workspace, clone and build
 
 If you're using ROS Noetic and the master branch, you can just
 copy/paste the following block of commands in a terminal.  For other
-configurations, make sure your replace ``noetic`` by ``melodic`` or
+configurations, make sure you replace ``noetic`` by ``melodic`` or
 whatever version of ROS you're using.  For the ``devel`` branches,
 replace the version number (e.g. ``2.3.0`` by ``devel``).
 

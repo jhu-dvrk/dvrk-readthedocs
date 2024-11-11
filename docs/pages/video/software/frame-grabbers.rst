@@ -18,13 +18,13 @@ The general steps are:
 * Make sure the frame grabber works (e.g. using tvtime or vendor
   application)
 * Figure out the gstreamer pipeline and test using ``gst-launch-1.0``
-* Create a lauch file for gscam with the gstreamer pipeline you just
+* Create a launch file for gscam with the gstreamer pipeline you just
   tested
 
 .. note::
 
    This page is a collection of notes that might be helpful for the
-   dVRK community but it is in no way exhaustive.  If you need some
+   dVRK community, but it is in no way exhaustive.  If you need some
    help re. gstreamer and gscam, you should probably start searching
    online and/or reach out to the gstreamer and gscam developers.
 
@@ -36,10 +36,10 @@ outputs (see :ref:`S HD <camera-s-hd>` and :ref:`Si <camera-si>`
 endoscopes).  A single card can be used to capture both channels of
 the stereo stream.
 
-You first need to install the drivers from Blackmagic, see
+You first need to install the drivers from BlackMagic, see
 https://www.blackmagicdesign.com/support/family/capture-and-playback
 The drivers are included in the package "Desktop Video".  Once you've
-downloaded the binaries and extracted the files from Blackmagic,
+downloaded the binaries and extracted the files from BlackMagic,
 follow the instructions on their ReadMe.txt.  For 64 bits Ubuntu
 system, install the ``.deb`` files in subfolder ``deb/x86_64`` using
 ``sudo dpkg -i \*.deb``.
@@ -56,7 +56,7 @@ should be installed along the drivers.  You can also select the video
 input using ``BlackmagicDesktopVideoSetup`` (also installed along
 drivers).
 
-If you need to remove all the Blackmagic packages to test a different
+If you need to remove all the BlackMagic packages to test a different
 version, use ``sudo apt remove desktopvideo* mediaexpress*``.
 
 To test if the drivers are working and the cards are working, use
@@ -72,19 +72,19 @@ Once gstreamer is installed, you can use a few command lines to test
 the drivers:
 
 * ``gst-inspect-1.0 decklinkvideosrc`` will show you the different
-  parameters for the Decklink gstreamer plugin
+  parameters for the DeckLink gstreamer plugin
 * ``gst-launch-1.0`` can be used to launch the streamer and pipe it to
   see the video live on the computer.  For example, we used
   ``gst-launch-1.0 -v decklinkvideosrc mode=0 connection=sdi
   device-number=0 ! videoconvert ! autovideosink``.
 
-  * ``mode=0`` is for auto detection and is optional
+  * ``mode=0`` is for auto-detection and is optional
   * ``connection=sdi`` is to force to use an SDI input if your card
     has different types of inputs.  This is optional.
   * ``device-number=0`` is to select which input to use if you have
     multiple inputs
 
-* On a Decklink Duo, we found that one can see the stereo video using two text terminals:
+* On a DeckLink Duo, we found that one can see the stereo video using two text terminals:
 
     * ``gst-launch-1.0 decklinkvideosrc device-number=0 ! videoconvert ! autovideosink``
     * ``gst-launch-1.0 decklinkvideosrc device-number=1 ! videoconvert ! autovideosink``
@@ -144,7 +144,7 @@ The numbering (i.e. which frame grabber is ``/dev/video0`` and which
 one is ``/dev/video1``) depends on the order the grabbers are plugged
 in.  To have a consistent ordering, always plug the frame grabbers in
 the same order, e.g. first the left channel and then the right
-channel.  Alternatively, you can setup ``udev`` rules to automatically
+channel.  Alternatively, you can set up ``udev`` rules to automatically
 assign a device name for a specific frame grabber identified by serial
 number (see below).
 
@@ -162,8 +162,8 @@ If the result shows something like:
    crw-rw----+ 1 root video 81, 0 Nov 14 11:47 /dev/video0
 
 you will need to add your user id to the ``video`` group.  Do not use
-``sudo tvtime``, ``sudo`` might work for ``tvtime`` but it's not going to work
-with ``gscam``.  You should fix the unix file permissions first and make
+``sudo tvtime``, ``sudo`` might work for ``tvtime``, but it's not going to work
+with ``gscam``.  You should fix the Unix file permissions first and make
 sure you can access the video without ``sudo``.
 
 To test each channel one after another:
@@ -192,7 +192,7 @@ S-video cables.  If the color bars show correctly, the problem comes
 from the cables to the endoscope or the endoscope itself.
 
 Once you have the video showing in tvtime, you need to figure out the
-gstreamer options.  There is some information online and you can use
+gstreamer options.  There is some information online, and you can use
 ``gst-inspect-1.0`` (see more details in DeckLink Duo section above).
 You can also use the command line tool ``v4l2-ctl`` to figure out the
 output format of your frame grabber.  The option ``-d0`` is to specify
@@ -243,7 +243,7 @@ system:
 
 Save the file and then do ``sudo udevadm control --reload-rules`` to
 apply the rules.  No need to reboot the computer, just unplug your
-frame grabber, wait a few seconds, replug it and then do ``ls -l
+frame grabber, wait a few seconds, re-plug it and then do ``ls -l
 /dev/video*`` to confirm that the rule worked.  If this didn't work,
 these pages have some useful info for debugging ``udev`` and
 ``video4linux`` rules:

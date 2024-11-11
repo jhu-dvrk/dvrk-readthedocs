@@ -17,14 +17,14 @@ removed from the SUJ.  The arm is secured using 4 long bolts.
 
 .. note::
 
-   If the arm is folded and you can't access the bolts, you can force
+   If the arm is folded, and you can't access the bolts, you can force
    the arm to move despite the brakes.  This is not something you
-   should do too often but it can help during the setup: `YouTube
+   should do too often, but it can help during the setup: `YouTube
    video <https://www.youtube.com/shorts/wBXQduLbHdE>`_.
 
 Once the bolts are removed, the arm simply slides out using two
 grooves on its internal walls. Please note that the passive arm has
-counter weights in the patient's cart core column.  When you remove
+counterweights in the patient's cart core column.  When you remove
 the active arm (PSM or ECM), the corresponding SUJ passive arm will
 have a tendency to move up despite the brakes.  You might want to
 strap the passive arm to the bottom of the cart to prevent this.
@@ -41,7 +41,7 @@ motor power, one for data/LVDS) loosely mounted on the SUJ.  When the
 arm is put back, the long pins on the SUJ connectors guide the arm's
 D-sub connectors to make sure they properly align.
 
-Intuitive Surgical can provide the mounting brackets so one can create
+Intuitive Surgical can provide the mounting brackets, so one can create
 their own mount for the PSMs and ECM.  The most common brackets are
 pulled from old clinical systems and are made of steel.
 
@@ -51,7 +51,7 @@ pulled from old clinical systems and are made of steel.
 
    PSM/ECM Si steel mounting bracket and 80-20 plate
 
-There are also some aluminum brackets but these should be rare.
+There are also some aluminum brackets, but these should be rare.
 
 .. figure:: /images/Si/PSM-Si-80-20-bracket-red.jpeg
    :width: 300
@@ -78,7 +78,7 @@ frame for one ECM and two PSMs using 80-20 profiles.
 
    Si custom patient cart
 
-More details can found using the following links:
+More details can be found using the following links:
 
 * `Intuitive Research wiki
   <https://research.intusurg.com/index.php/DVRK:Topics:PSCFrameDesignSi>`_

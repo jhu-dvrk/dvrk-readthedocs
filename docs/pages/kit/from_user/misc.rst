@@ -16,13 +16,13 @@ Some cables should be shipped with the controllers. If you need more
 cables, maybe longer cables, we **strongly** recommend UniBrain cables
 (FireWire-400 A to A, 6 pins to 6 pins). See UniBrain
 https://www.unibrain.com/products/firewire-400-cables/.  Using random
-FireWire cables found in your lab or on the web is a sure way to loose
+FireWire cables found in your lab or on the web is a sure way to lose
 a fair amount of time debugging connection issues.
 
 USB Bluetooth dongle
 ********************
 
-If you have an Si system with a full cart, you will need a Bluetooth
+If you have a Si system with a full cart, you will need a Bluetooth
 USB adapter with a long USB extension.  The dVRK relies on a 5
 Bluetooth Arduino boards (see :ref:`dESSJ <dessj-setup>`) to read the
 SUJ joint positions.  These boards have pretty weak reception so the

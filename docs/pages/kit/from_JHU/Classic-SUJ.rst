@@ -9,15 +9,15 @@ Introduction
 
 The dVRK Classic SUJ controllers are similar to the :ref:`dVRK Classic
 controllers <controllers-classic>`.  They are build around a single
-QLA/FPGA stack (using a FPGA V1 or V2) and a special baord to
+QLA/FPGA stack (using a FPGA V1 or V2) and a special board to
 interface with the SUJ arms, the dSIB (da Vinci SUJ Interface Board).
 Each controller has 4 156-pin connectors Cannon ITT, one for each SUJ
 arm.  A single dVRK SUJ controller is required per patient cart.
 
 The dVRK SUJ controller supports all the features available on the
-daVinci Classic patient cart, i.e.:
+da Vinci Classic patient cart, i.e.:
 
-* Read joint positions. The dVRK QLA has 4 analog to digital inputs so
+* Read joint positions. The dVRK QLA has 4 analog to digital inputs, so
   it reads the potentiometer values sequentially using a multiplexer
   on the dSIB.
 * Release brakes. The dVRK controller uses the linear amps of the QLA

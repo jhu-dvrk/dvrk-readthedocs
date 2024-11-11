@@ -16,11 +16,11 @@ Important notes
     and **irreversibly** damage the dVRK FPGA board. Make sure you
     respect the direction of the FireWire connector. Think of it as
     old USB connectors, these are not reversible like USB-C,
-    Lightning...  If you have to force it to plug it, visually check
+    Lightning... If you have to force it to plug it, visually check
     that the connector is not upside-down.
 
 
-* There is no such thing as a FireWire to USB adapter so you will need
+* There is no such thing as a FireWire to USB adapter, so you will need
   a computer with a FireWire adapter
 * FireWire is not supported by virtualization software (VMWare Fusion,
   Parallel...) so you will need to use a native Linux OS (we strongly
@@ -140,8 +140,8 @@ the steps described above:
    sudo adduser `whoami` fpgaqla  # add current user to the group
 
 For all additional users, you will need to add the new user to the
-group. To find the user id, one can either use the command id or do an
-ls /home. Once the user id is known, someone with sudo privileges
+group. To find the user Id, one can either use the command ``id`` or do
+``ls /home``. Once the user Id is known, someone with sudo privileges
 should do:
 
 .. code-block::
@@ -151,7 +151,7 @@ should do:
 Once a user has been added to the ``fpgaqla`` group, they need to
 logout/login so the group membership can take effect. To check if the
 group membership is correct, the user can use the shell
-command ``id``. See! It's a mess so you should really use the convenient
+command ``id``. See! It's a mess, so you should really use the convenient
 solution instead :-)
 
 

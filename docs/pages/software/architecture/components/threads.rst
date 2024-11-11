@@ -18,13 +18,13 @@ frequency.  There are a few notable exceptions:
     the number of controllers are used.  This is only possible if a
     single thread manages all the IOs.
   * Avoid simultaneous accesses to the FireWire port from multiple
-    threads (FireWire read/write are thread safe but processes can
+    threads (FireWire read/write are thread safe, but processes can
     hang for a couple seconds).
 
-* The PID components could run in separate threads but this would
+* The PID components could run in separate threads, but this would
   introduce a fair amount of latency since the thread safe
   communication mechanisms in *cisstMultiTask* are based on queues.
-  Assuming a 1 millisecond period for both IO and PID, the PID would
+  Assuming a 1-millisecond period for both IO and PID, the PID would
   read some cached data (position and velocity) from the IO (between
   0+ and 1 millisecond old) and then request a new effort.  This
   request being queued will be acted on between 0+ and 1 millisecond

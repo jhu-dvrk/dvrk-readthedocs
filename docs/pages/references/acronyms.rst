@@ -11,7 +11,7 @@ Intuitive Surgical
   Intuitive Surgical Inc., now known simply as Intuitive (https://wwww.intuitive.com)
 
 **Classic**
-  First generation da Vinci. The original da Vinci research kit is based on the Classic. Also know as Standard.
+  First generation da Vinci. The original da Vinci research kit is based on the Classic. Also known as Standard.
 
 **Standard**
   See above.
@@ -41,15 +41,15 @@ Intuitive Surgical
   Endoscopic Camera Manipulator, 1 on real da Vinci system.
 
 **SUJ**
-  Setup Joints, patient cart with 4 passive arm to hold active
+  Setup Joints, patient cart with 4 passive arms to hold active
   ECM and PSMs.  Some early versions (Standard, S, Si) came with only
   three passive arms (missing PSM3)
 
 **HRSV**:
-  High Resolution Stereo Viewer.  At least 3 versions exist, 640x480 CRT (Standard and S), 1024x768 CRT (S HD), LCD (Si/Xi/5).  The Research Kit initially came with the CRT 640x480, recent sites should receive the console from S HD systems.
+  High Resolution Stereo Viewer.  At least 3 versions exist, 640x480 CRT (Standard and S), 1024x768 CRT (S HD), LCD (Si/Xi/5). The Research Kit initially came with the CRT 640x480, recent sites should receive the console from S HD systems.
 
 **CCU**
-  Camera Control Unit.   The two boxes in the vision cart that are connected to the endoscope cameras.  These usually have either an NTSC or SDI output for frame grabbers.
+  Camera Control Unit. The two boxes in the vision cart that are connected to the endoscope cameras.  These usually have either an NTSC or SDI output for frame grabbers.
 
 **Tray**
   Foot pedal tray: foot pedals including **clutch**, **camera**, **camera focus**, **bi** and **mono** (or **coag**).
@@ -88,13 +88,13 @@ dVRK specific
 All boards are designed by JHU and built specifically for the dVRK unless mentioned otherwise.
 
 **QLA**
-  Motor power board, Quad Linear Amplifier, JHU designed board with power for up to 4 axis.  Used in Classic arm controllers (2 per controller) and Classic SUJ controller.
+  Motor power board, Quad Linear Amplifier, JHU designed board with power for up to 4 axes.  Used in Classic arm controllers (2 per controller) and Classic SUJ controller.
 
 **dRAC**
   Motor power board 10 PWM power lines, JHU designed board to power up to 7 motors and 3 brakes.  Used in Si controllers.
 
 **FPGA**
-  Logic board designed by JHU, mated with QLAs or dRAC. Provides 2 FireWire adapters to daisy chain and connect to PC. Versions 2+ also includes an Ethernet adapter.  Version 3+ uses a newer FPGA, 2 FireWire and 2 Ethernet adapters, a dual-core ARM processor boots from a micro-SD card.
+  Logic board designed by JHU, mated with QLAs or dRAC. Provides 2 FireWire adapters to daisy-chain and connect to PC. Versions 2+ also includes an Ethernet adapter.  Version 3+ uses a newer FPGA, 2 FireWire and 2 Ethernet adapters, a dual-core ARM processor boots from a micro-SD card.
 
 **QLA-FPGA**
   Board set including a QLA and FPGA board.  Used in the Classic arm controllers, up to CA9 (see :ref:`controller versions <controller-versions>`).
@@ -103,7 +103,7 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
   Dual QLA setup with a single FPGA board (version 3+).  Used in the Classic arm controllers after CA9.
 
 **Firmware**
-  In most cases, referes to embedded software running on the FPGA logic board.  For Si systems can also refer to the dESSJ or ESPM board.
+  In most cases, refers to embedded software running on the FPGA logic board.  For Si systems can also refer to the dESSJ or ESPM board.
 
 **dMIB**
   da Vinci Manipulator Interface Board, board designed to interface between the ISI manipulators using an ITT Cannon plus a foot pedal connector and the QLA-FPGA connectors (SCSI and RS cables).  Used in Classic arm controllers.
@@ -121,7 +121,7 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
   Adapter board used to connect the dVRK Si controller to a single arm and its setup joints at the base of the patient cart (either PSM or ECM)
 
 **dESSJ**
-  dVRK specific board that replaces the original **ESSJ** on each setup joint of a S/Si patient cart.  The board is a pass-through for the FireWire signal and uses a BlueTooth Arduino to get (A2D) and send the SUJ joint values to the PC.
+  dVRK specific board that replaces the original **ESSJ** on each setup joint of a S/Si patient cart.  The board is a pass-through for the FireWire signal and uses a Bluetooth Arduino to get (A2D) and send the SUJ joint values to the PC.
 
 **LVDS**
   Low-voltage differential signaling (LVDS) is a signaling

@@ -89,7 +89,7 @@ Notes:
 * Make sure you don't close the gripper past the closed-but-not-tight
   position.  If you do, stop the data collection, do not save the
   results and restart the program.
-* To verify your calibration file, re-run the program and it should
+* To verify your calibration file, re-run the program, and it should
   display a found range from 0 to the maximum value you provided
   (suggested is 60).
 * Since the closed-but-not-tight position depends on the user, it is

@@ -16,7 +16,7 @@ be calibrated for better accuracy.  The initial values in the XML IO
 configuration file are generated from the ``.cal`` file provided by
 ISI.  Unfortunately, these values don't take into account the
 differences between the original ISI controllers and the dVRK
-controllers so it is required to calibrate each set of arm/controller.
+controllers, so it is required to calibrate each set of arm/controller.
 
 There are a number of different calibration steps to perform,
 different for each type of arm. The relevant calibrations for each arm

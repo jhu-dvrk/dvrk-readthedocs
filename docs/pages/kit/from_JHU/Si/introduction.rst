@@ -23,8 +23,8 @@ The dRAC also integrates the safety chain to further reduce the number
 of components.  On the Classic controllers we rely on a separate
 safety relay.
 
-All controllers come with FireWire and Ethernet interfaces so they can
-be daisy chained and communicate with a computer.
+All controllers come with FireWire and Ethernet interfaces, so they can
+be daisy-chained and communicate with a computer.
 
 All Si controllers use a single FPGA board V3.  See also
 :ref:`controller versions <controller-version>`.
