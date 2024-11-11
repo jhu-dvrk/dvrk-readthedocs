@@ -24,7 +24,11 @@ daVinci Classic patient cart, i.e.:
   dedicated to motor control to release the brakes.
 * Lift PSM3. The dVRK FPGA generates a PWM signal sent to the PWM
   power unit included on the dSIB.
-
+* Read the brake/clutch buttons on the SUJ-PSM1 and SUJ-PSM2.  The
+  brake buttons on the active arms themselves are handled by each
+  active arm's controller, not the SUJ controller (see :ref:`Classic
+  SUJ <suj>`)
+  
 See also :ref:`controller versions <controller-version>`.
 
 
@@ -45,6 +49,13 @@ Connectors
    :align: center
 
    Classic SUJ controller
+
+
+.. figure:: /images/Classic/SUJ/SUJ-Classic-controller-ITT-connectors.jpeg
+   :width: 400
+   :align: center
+
+   Classic SUJ controller arm connections
 
 LEDs
 ****
