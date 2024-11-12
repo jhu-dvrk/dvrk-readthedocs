@@ -28,7 +28,7 @@ The general steps are:
    help re. gstreamer and gscam, you should probably start searching
    online and/or reach out to the gstreamer and gscam developers.
 
-PCIs Blackmagic DeckLink Duo SDI frame grabber
+PCIe Blackmagic DeckLink Duo SDI frame grabber
 **********************************************
 
 We recommend these frame grabbers if your endoscopic camera has SDI
