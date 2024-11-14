@@ -56,8 +56,8 @@ Basic information:
      da Vinci Classic, SUJ for PSM3 lift motor
 
 * There is a button attached with a Velcro strap to the active arm
-  PSM3.  This button can be toggle up or down to control the height of
-  the SUJ-PSM3
+  PSM3.  This button can be toggled up or down to control the height
+  of the SUJ-PSM3
 
   .. figure:: /images/Classic/SUJ/SUJ-Classic-PSM3-lift-button.jpeg
      :width: 350
