@@ -57,7 +57,7 @@ page<controller-versions>`.
 \                                                                                                                                              Samuel Au
 29   2017 `University of Texas Austin HeRo <https://sites.utexas.edu/herolab/>`_                                                               Ann Majewicz Fey        dVRK          CA6
 30   2017 `University of Leeds <https://www.stormlabuk.com>`_                                                                                  Pietro Valdastri        da Vinci      CA6         CS1
-31   2017 Hochschule Reutlingen                                                                                                                Lars Schmidt            da Vinci      CA6
+31   2017 Hochschule Reutlingen                                                                                                                Oliver Burgert            da Vinci      CA6
 32   2019 University of Maryland                                                                                                               Axel Krieger            da Vinci      CA7
 33   2019 `University of Alberta <http://www.ece.ualberta.ca/~tbs/pmwiki/>`_                                                                   Mahdi Tavakoli          dVRK          CA7
 34   2019 Purdue University                                                                                                                    Juan Wachs              da Vinci      CA7
