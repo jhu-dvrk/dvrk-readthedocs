@@ -14,6 +14,8 @@ Sites
 * `Intuitive Foundation <https://www.intuitive-foundation.org/dvrk/>`_ (dVRK hardware applications)
 * `Intuitive Research wiki for the da Vinci Research Kit community <https://research.intusurg.com/>`_ (account required)
 
+.. _links-isi-docs:
+
 Documents
 *********
 
@@ -21,8 +23,6 @@ Documents
 
   * :download:`da Vinci Standard <https://dvrk.lcsr.jhu.edu/downloads/manuals/davinci-classic-user-manual.pdf>`
   * :download:`da Vinci Si <https://dvrk.lcsr.jhu.edu/downloads/manuals/davinci-si-user-manual.pdf>`
-
-.. _instrument-catalogs:
 
 * Instrument catalogs
 

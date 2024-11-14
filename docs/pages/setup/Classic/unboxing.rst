@@ -26,7 +26,7 @@ When you received a new component from Intuitive Surgical, we strongly recommend
   connectors with the arm name, board Id and/or serial number.
 
 .. figure:: /images/Classic/MTM/dvrk-dMIB-MTM-ITT-connected.jpeg
-   :width: 400
+   :width: 300
    :align: center
 
    Label on arm connector (bad label! Should be MTMR or MTML)

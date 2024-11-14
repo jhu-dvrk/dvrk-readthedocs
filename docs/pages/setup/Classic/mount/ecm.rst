@@ -12,7 +12,7 @@ mounting angle if you don't have the setup joints and need to build
 your own frame.
 
 .. figure:: /images/Classic/ECM/ECM-Classic-mount-SUJ.jpeg
-   :width: 400
+   :width: 350
    :align: center
 
 To position the ECM correctly, please read the :ref:`PSM Classic mount

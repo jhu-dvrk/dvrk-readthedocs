@@ -31,7 +31,7 @@ plastic cover under the stereo display.  This plastic cover is holding
 with clips, so you just have to pull it away.
 
 .. figure:: /images/Classic/pedals/master-console-pedals-cable.jpg
-   :width: 400
+   :width: 300
    :align: center
 
    Foot pedals original connection at base of console
@@ -42,7 +42,7 @@ cable
 (e.g. https://smile.amazon.com/Monoprice-6ft-DB15-Molded-Cable/dp/B002LWJ7TA).
 
 .. figure:: /images/Classic/pedals/removing-footpedals-overview.jpeg
-   :width: 500
+   :width: 300
    :align: center
 
    Foot pedals connected to dVRK Classic controller on a full

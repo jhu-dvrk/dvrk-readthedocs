@@ -45,8 +45,10 @@ pedals (i.e., without the optional 3rd foot pedal for camera +/-) can
 be seen in the following picture (credit: Christian Hernandez):
 
 .. figure:: /images/Classic/pedals/dVRK-foot-pedal-wiring.jpg
-   :width: 600
+   :width: 400
    :align: center
+
+   da Vinci compatible foot pedals, internal wiring
 
 The complete wiring can be found in this :download:`PDF file
 </images/Classic/pedals/dVRK-foot-pedal-wiring.pdf>` or in

@@ -1,4 +1,4 @@
-.. _psm_si:
+.. _psm-si:
 
 Patient side manipulators
 #########################
@@ -17,7 +17,7 @@ and PSM3 are identical.
 
 Basic information:
 
-* Each PSM arm is attached to the :ref:`SUJ <suj_si>` using 4 long bolts
+* Each PSM arm is attached to the :ref:`SUJ <suj-si>` using 4 long bolts
   and grooves
 * The arm can be tilted forward (on Si SUJ; 45 degrees for PSM1 and
   PSM2, 15 degrees for PSM3)

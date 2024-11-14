@@ -15,7 +15,7 @@ the column.  You should:
   controller to run the SUJ-PSM1 and SUJ-ECM cables under it.
 
 .. figure:: /images/controllers/suj-controller-mount.jpg
-   :width: 400
+   :width: 300
    :align: center
 
    Classic SUJ mounting point

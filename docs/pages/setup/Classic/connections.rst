@@ -17,7 +17,7 @@ lock and counterclockwise to unlock.  If you need to remove the
 connector, don't forget to unscrew it first.
 
 .. figure:: /images/controllers/Classic-ITT-Cannon-screw.jpeg
-   :width: 400
+   :width: 300
    :align: center
 
    ITT Cannon back shell screw
@@ -41,7 +41,7 @@ Arm specific notes:
   Hopkins <dvrk-examples>`.
 
   .. figure:: /images/Classic/SUJ/SUJ-Classic-connections.jpeg
-     :width: 600
+     :width: 400
      :align: center
 
      Classic SUJ connections, SUJs connected to the single SUJ
@@ -55,7 +55,7 @@ Arm specific notes:
   be empty.
 
   .. figure:: /images/Classic/patient-cart-arm-suj-plugs.jpg
-     :width: 400
+     :width: 300
      :align: center
 
      Empty connectors on Classic patient cart

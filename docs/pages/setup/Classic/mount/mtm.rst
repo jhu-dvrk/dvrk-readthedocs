@@ -18,7 +18,7 @@ between MTMs, width...) and the console is narrow enough to go
 through most doors.
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-overview.jpeg
-   :width: 400
+   :width: 300
    :align: center
 
    Alternative surgeon's console at JHU with :ref:`Goovis HMD
@@ -28,7 +28,7 @@ The MTMs come with a steel bracket and 4 mounting holes.  This bracket
 is mated to an aluminum plate mounted on the 80-20 frame.
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-MTM-mount.jpeg
-   :width: 400
+   :width: 300
    :align: center
 
    MTM Classic mounting bracket
@@ -37,7 +37,7 @@ The top shelf is braced using standard size 45-degree 40 mm profiles
 from 80-20.
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-brace.jpeg
-   :width: 400
+   :width: 300
    :align: center
 
    Custom surgeon's console, bracing
@@ -46,7 +46,7 @@ The HMD (:ref:`Goovis <goovis>`) is mounted to the console using a
 small Noga arm.
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-under.jpeg
-   :width: 400
+   :width: 300
    :align: center
 
    Custom surgeon's console, mount for HMD
@@ -58,7 +58,7 @@ video equipment are connected to a single power strip for
 convenience.
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-wheel.jpeg
-   :width: 400
+   :width: 300
    :align: center
 
    Custom surgeon's console, support for casters

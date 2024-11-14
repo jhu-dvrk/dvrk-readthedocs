@@ -35,5 +35,6 @@ Supported:
 Not supported:
 
 * S PSMs and ECMs (ver2).  Some S came with ver3 PSMs or ECMs which are supported
+* Si patient cart motorized base
 * Si MTMs (ver 2)
 * Anything X, Xi or 5

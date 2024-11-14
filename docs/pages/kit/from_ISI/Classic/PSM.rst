@@ -31,8 +31,8 @@ Basic information:
 * The full kinematic chain is composed of two parts, the arm's base
   (not sterilized) and a removable instrument (sterilized and
   disposable)
-* There are many :ref:`different types of instruments
-  <instrument-catalogs>` (graspers, needle drivers, scissors...).
+* There are many :ref:`different types of instruments <instruments>`
+  (graspers, needle drivers, scissors...).
 * With most instruments, the arm has 6 degrees of freedom and
   actuation for the instrument's jaws. The first three degrees of
   freedom are in the arm's base. The last three and jaws are part of

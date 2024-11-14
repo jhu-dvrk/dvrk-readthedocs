@@ -13,7 +13,7 @@ in a rigid manner, you can simply drill and thread 4 holes in an 80-20
 standard plate.
 
 .. figure:: /images/Classic/PSM/PSM-Classic-80-20-plate.jpeg
-   :width: 400
+   :width: 300
    :align: center
 
    PSM Classic mounting plate for 80-20
@@ -28,7 +28,7 @@ all the arm's RCM points (PSMs and ECMs) should be located on the
 "surface" of the patient.
 
 .. figure:: /images/Classic/PSM/classic-PSM-cannula-installed.jpeg
-   :width: 400
+   :width: 250
    :align: center
 
    RCM point on Classic PSM cannula
@@ -53,7 +53,7 @@ mount for each PSM.  Some groups used a Really Right Stuff BH-55 Ball
 Head.
 
 .. figure:: /images/Classic/PSM/classic-psm-mount.jpeg
-   :width: 400
+   :width: 300
    :align: center
 
    Ball head mounts used on the dVRK Classic at JHU
