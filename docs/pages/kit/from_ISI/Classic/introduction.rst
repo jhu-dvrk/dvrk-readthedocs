@@ -28,13 +28,13 @@ clinical use in 2012.
 Main components
 ===============
 
-.. figure:: /images/general/ISI-da-Vinci-Classic-overview.jpeg
+.. figure:: /images/general/ISI-da-Vinci-Classic-overview-labeled.png
    :width: 600
    :align: center
 
    da Vinci Classic: surgeon's console, video tower and patient's cart
 
-.. figure:: /images/general/ISI-da-Vinci-S-overview.jpeg
+.. figure:: /images/general/ISI-da-Vinci-S-overview-labeled.png
    :width: 600
    :align: center
 
