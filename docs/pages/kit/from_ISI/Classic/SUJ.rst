@@ -45,8 +45,9 @@ Basic information:
 
 * All the passive arms (except PSM-SUJ3) have counterweights in the
   central column, so they can be moved up and down with minimal effort
-* The optional SUJ-PSM3 is mounted on front of the column (after
-  thought) and doesn't have a vertical counterweight.  Instead, there
+* The optional SUJ-PSM3 is mounted on front of the column and doesn't
+  have a vertical counterweight  (maybe
+  the third PSM was an afterthought).  Instead, there
   is a lift motor mounted at the base of the cart
 
   .. figure:: /images/Classic/SUJ/SUJ-Classic-PSM3-lift-motor.jpeg
