@@ -61,7 +61,8 @@ institutions. To summarize, the :ref:`kit <kit>` is composed of:
    retired da Vinci systems
 2. Controllers, software and some support from the dVRK group at the
    Johns Hopkins University (all open source)
-3. Computers are not provided with the dVRK controllers.  PC and
+3. Linux PCs users pick and buy on their own.  They are not provided
+   with the dVRK controllers.  PC and
    hardware setup, configuration and calibration are performed by the
    dVRK owner
 
