@@ -35,7 +35,7 @@ Basic information:
   <https://www.google.com/search?q=surgical+robot+center+of+motion+fulcrum+point>`_.
 * The kinematic chain is composed of two parts, the arm's base (not
   sterilized) and a removable instrument (sterilized and disposable).
-  This design is very similar to the Classic da Vinci so make sure you
+  This design is inherited from the Classic da Vinci so make sure you
   read the section for the :ref:`PSM Classic <psm>`
 
 .. figure:: /images/Si/PSM-Si-white-background-labeled.png
@@ -49,8 +49,7 @@ Cannula and sterile adapter
 ===========================
 
 The design of the last 4 joints and instrument on the Si system is
-very similar to the :ref:`PSM Classic <psm>` so please refer to that
-section.  The main differences are the sterile adapter and cannula
+very similar to the :ref:`PSM Classic <psm>`.  The main differences are the sterile adapter and cannula
 shapes and the cannula holder is attached to the arm.
 
 There is also video at the end of this section describing the process.
@@ -71,16 +70,6 @@ One difference between the PSM Classic and Si is that the cannula
 holder on the Si is not removable.  The sterile drape comes with a
 piece of soft molded plastic that fits between the cannula holder and
 the cannula.
-
-.. figure:: /images/Si/PSM-Si-cannula-holder.jpeg
-   :width: 300
-   :align: center
-
-   da Vinci Si PSM cannula holder
-
-The cannula holder comes taped to the drape (second opening) and must
-be securely attached to the arm by turning the locking mechanism a
-quarter turn.
 
 .. figure:: /images/Si/PSM-Si-cannula-holder.jpeg
    :width: 300
