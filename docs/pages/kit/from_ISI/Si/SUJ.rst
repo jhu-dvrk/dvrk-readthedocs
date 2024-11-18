@@ -19,8 +19,8 @@ Basic information:
   to hold the PSMs (SUJ-PSM1, SUJ-PSM2 and SUJ-PSM3).  A two PSMs
   model was also available, the da Vinci Si-E (no PSM3)
 * Each joint has an electric brake.  The brakes are controlled per
-  arm.  For example, all the brakes on SUJ-PSM1 are connected to a
-  single power source.
+  arm.  For example, all the brakes on SUJ-PSM1 are released at the
+  same time
 * The passive arm SUJ-PSM3 can be positioned on either side of the
   patient cart.  The SUJ-PSM3 has latches on the back of the cart, one
   for the left position and one for the right position.  In the

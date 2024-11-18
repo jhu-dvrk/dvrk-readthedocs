@@ -30,8 +30,8 @@ Basic information:
   and two to three to hold the PSMs (SUJ-PSM1, SUJ-PSM2 and optionally
   SUJ-PSM3)
 * Each joint has an electric brake.  The brakes are controlled per
-  arm.  For example, all the brakes on SUJ-PSM1 are connected to a
-  single power source.
+  arm.  For example, all the brakes on SUJ-PSM1 are released at the
+  same time
 * SUJ-PSM1 and SUJ-PSM2 have an extra button to control the brakes on
   the passive arm itself.  All the active arms also have a dedicated
   button to release the brakes, but this signal is handled by the arm
