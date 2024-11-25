@@ -113,7 +113,7 @@ Use a ROS launch file to start the dVRK in simulated mode with the patient cart 
 .. code-block:: bash
 
    source ~/ros2_ws/install/setup.bash
-   ros2 launch dvrk_model patient_cart.launch generation:=Classic
+   ros2 launch dvrk_model patient_cart.launch.py generation:=Classic
 
 .. figure:: /images/gui/ros2-launch-patient-cart-simulated.png
    :width: 600
