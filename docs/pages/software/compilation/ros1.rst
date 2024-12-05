@@ -50,7 +50,7 @@ replace the version number (e.g. ``2.3.0`` by ``devel``).
 
    # this depends on the ROS version you're using
    source /opt/ros/noetic/setup.bash
-   mkdir ~/catkin_ws                  # create the catkin workspace
+   mkdir -p ~/catkin_ws/src           # create the catkin workspace
    cd ~/catkin_ws                     # go in the workspace
    catkin init                        # create files for catkin build tool
    catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release # all code should be compiled in release mode
