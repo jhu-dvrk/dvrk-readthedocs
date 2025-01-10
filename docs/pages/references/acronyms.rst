@@ -11,7 +11,7 @@ Intuitive Surgical
   Intuitive Surgical Inc., now known simply as Intuitive (https://wwww.intuitive.com)
 
 **Classic**
-  First generation da Vinci. The original da Vinci research kit is based on the Classic. Also known as Standard.
+  First generation da Vinci. The original da Vinci research kit is based on the Classic. Also known as Standard.  Patient cart came with either 2 or 3 PSMs.
 
 **Standard**
   See above.
@@ -21,6 +21,9 @@ Intuitive Surgical
 
 **Si**
   Third generation da Vinci. New surgeon console (MTMs, dual console, display, simulator...). Patient cart is similar to second generation. Supported by the dRAC based dVRK controllers.
+
+**Si-E**
+  Same as Si but with only two PSMs on the patient cart (PSM3 not included).
 
 **Xi**
   Fourth generation da Vinci.  New setup joints, new arm to replace both PSMs and ECM (now known as USMs) can be used to hold tools or camera.  Surgeon console and stereo display similar to Si.
