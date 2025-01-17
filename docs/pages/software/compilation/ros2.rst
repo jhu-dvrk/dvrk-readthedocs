@@ -5,8 +5,8 @@ ROS 2
 *****
 
 This code hasn't been tested extensively.  We welcome any feedback.
-The following has been tested on Ubuntu 20.04 with ROS 2 Galactic and
-Ubuntu 22.04 with ROS 2 Humble.
+The following has been tested on Ubuntu 20.04 with ROS 2 Galactic,
+Ubuntu 22.04 with ROS 2 Humble and Ubuntu 24.04 with ROS 2 Jazzy.
 
 Ubuntu packages
 ###############
@@ -41,8 +41,17 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
       .. code-block:: bash
 
-         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev gfortran-9 # dVRK
+         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
          sudo apt install ros-humble-joint-state-publisher* ros-humble-xacro # ROS
+
+   .. tab:: Ubuntu 24.04
+
+      Ubuntu 24.04 with ROS Jazzy:
+
+      .. code-block:: bash
+
+         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
+         sudo apt install ros-jazzy-joint-state-publisher* ros-jazzy-xacro # ROS
 
 Colcon workspace, clone and build
 #################################
@@ -56,7 +65,7 @@ Create your ROS 2 workspace and clone all repositories using ``vcs``:
    mkdir -p ~/ros2_ws/src
    cd ~/ros2_ws/src
    # make sure you use the correct vcs file
-   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-2.3.0.vcs --recursive
+   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-2.3.1.vcs --recursive
 
 To use the development branches, replace the vcs line with:
 
