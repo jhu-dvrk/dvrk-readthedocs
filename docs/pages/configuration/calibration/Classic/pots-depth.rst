@@ -126,7 +126,7 @@ Procedure
    .. code-block:: bash
 		   
       roscd dvrk_config/<my-config-dir>
-      rosrun dvrk_robot dvrk_calibrate_potentiometer_psm.py -a PSM1 -c sawRobotIO1394-PSMx-xxxxx.xml
+      rosrun dvrk_python dvrk_calibrate_potentiometer_psm.py -a PSM1 -c sawRobotIO1394-PSMx-xxxxx.xml
 
 * Follow the script instructions to find the maximum range of motion
   for your PSM.  This step is required to accommodate PSMs installed
@@ -211,7 +211,7 @@ Procedure
   .. code-block:: bash
 		  
      roscd dvrk_config/<my-config-dir>
-     rosrun dvrk_robot dvrk_calibrate_potentiometer_psm_cv.py -a PSM1 -c sawRobotIO1394-PSMx-xxxxx.xml
+     rosrun dvrk_python dvrk_calibrate_potentiometer_psm_cv.py -a PSM1 -c sawRobotIO1394-PSMx-xxxxx.xml
 
 * Follow the script's instructions to find the maximum range of motion
   for your PSM.  This step is required to accommodate PSMs installed
