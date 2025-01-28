@@ -161,7 +161,7 @@ command line:
 .. code-block:: bash
 
    # In directory <my-config-dir>
-   rosrun dvrk_robot dvrk_calibrate_potentiometers.py -t scales -a PSM2 -c sawRobotIO1394-PSM2-00000.xml
+   rosrun dvrk_python dvrk_calibrate_potentiometers.py -t scales -a PSM2 -c sawRobotIO1394-PSM2-00000.xml
 
 Make sure you use the same ``sawRobotIO1394-XXX-00000.xml`` for the
 calibration script and the console application!  The file name can be
@@ -259,7 +259,7 @@ command line:
 .. code-block:: bash
 
    # In directory <my-config-dir>
-   rosrun dvrk_robot dvrk_calibrate_potentiometers.py -t offsets -a PSM2 -c sawRobotIO1394-PSM2-00000.xml
+   rosrun dvrk_python dvrk_calibrate_potentiometers.py -t offsets -a PSM2 -c sawRobotIO1394-PSM2-00000.xml
 
 Follow the instructions and place the calibration template (either
 Lego bars or plexiglass plate) when prompted to.  The result should
