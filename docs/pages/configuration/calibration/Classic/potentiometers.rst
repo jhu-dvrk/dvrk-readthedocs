@@ -125,10 +125,10 @@ Calibrating scales
 
 These instructions are for all arms, PSMs, MTMs and ECM.  For the
 calibration, one needs to start the ``dvrk_console_json`` application
-for the arm to be calibrated.  Since we also need the low level data
-(potentiometer values), we have to provide the ``-i`` option.  For
-example, to calibrate a PSM2, command line options for
-``dvrk_console_json`` should look like:
+for the arm to be calibrated (see :ref:`dVRK console <console>`).
+Since we also need the low level data (potentiometer values), we have
+to provide the ``-i`` option.  For example, to calibrate a PSM2,
+command line options for ``dvrk_console_json`` should look like:
 
 .. code-block:: bash
 
@@ -155,8 +155,8 @@ specific.  There is no need to specify the full path for the ROS IO
 files since the dVRK application use a search path that includes the
 ``share`` directory.
 
-In a separate shell, start the calibration script using the following
-command line:
+In a separate shell, start the :ref:`potentiometer calibration script
+<dvrk_calibrate_potentiometers>` using the following command line:
 
 .. code-block:: bash
 
