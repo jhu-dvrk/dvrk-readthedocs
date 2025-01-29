@@ -3,6 +3,8 @@
 Configuration generators
 ########################
 
+.. _io-config-generator-use:
+
 Arm IO, arm and arm console
 ***************************
 

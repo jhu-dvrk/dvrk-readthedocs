@@ -9,7 +9,8 @@ Motor current
    a single controller on the ESTOP chain.  If you prefer to keep all
    your controllers on the ESTOP chain, make sure all the controllers
    are also connected to the FireWire chain, and you will have to use
-   the ``qlacommand -c close-relays`` utility program to enable power.
+   the ``qlacommand -c close-relays`` :ref:`utility program
+   <qlacommand>` to enable power.
 
 Introduction
 ============
@@ -50,8 +51,9 @@ Procedure
 =========
 
 The program to calibrate the requested current is called
-`sawRobotIO1394CurrentCalibration`.  To use it you will need an
-existing XML configuration file.  The command line options are:
+:ref:`sawRobotIO1394CurrentCalibration
+<sawrobotiocurrentcalibration>`.  To use it you will need an existing
+XML configuration file.  The command line options are:
 
 ::
 
