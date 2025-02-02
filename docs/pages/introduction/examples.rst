@@ -31,7 +31,7 @@ differently.  This section shows a few illustrative examples.
       .. figure:: /images/general/overview-da-Vinci-JHU-labels.jpg
 	 :align: center
 
-   .. tab:: Si cart and MTMs
+   .. tab:: Si cart and Classic MTMs
 
       Si patient cart with Classic MTMs at Johns Hopkins.  This is a
       full system previously used with the Intuitive controllers.  All
