@@ -1,4 +1,4 @@
-.. _console:
+.. _console_component:
 
 Console
 #######

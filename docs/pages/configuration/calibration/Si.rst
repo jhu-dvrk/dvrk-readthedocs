@@ -7,8 +7,11 @@ Si
 
    This section is for the Si arms only!
 
-PSMs and ECM
-************
+
+.. _calibration-si-psm-ecm-pots:
+
+PSMs and ECM potentiometers
+***************************
 
 Introduction
 ============
@@ -54,12 +57,13 @@ To calibrate the potentiometers, use:
 
    sawIntuitiveResearchKitSPotentiometersCalibration -c sawRobotIO1394-ECM-123456.xml  # use the xml file for your arm!
 
-The program will try to power the arm and release the brakes.  At that
-point, you need to move each and every joint from one limit to the
-other.  It's important to get values as close as possible to the
-mechanical limits so hit each limit a couple of times (not too
-brutally, see videos below).  To release the brakes, press the clutch
-button (white on top of arm).
+The :ref:`calibration program
+<sawintuitiveresearchkitsipotentiometerscalibration>` will try to
+power the arm and release the brakes.  At that point, you need to move
+each and every joint from one limit to the other.  It's important to
+get values as close as possible to the mechanical limits so hit each
+limit a couple of times (not too brutally, see videos below).  To
+release the brakes, press the clutch button (white on top of arm).
 
 .. warning::
    There is no gravity compensation so make sure you keep one hand on the endoscope holder.
@@ -80,8 +84,10 @@ will get an error message. You will have to repeat the procedure
 making sure you hit all the joint limits.
 
 
-SUJs
-****
+.. _calibration-si-suj-pots:
+
+SUJ potentiometers
+******************
 
 The SUJ Si are fairly new for the dVRK and the calibration process is
 not thoroughly tested. For now, we use the mechanical limits to
@@ -110,8 +116,9 @@ voltages using ROS topics.  For example:
    ros2 topic echo /SUJ/PSM1/primary_voltages/measured_js
    ros2 topic echo /SUJ/ECM/secondary_voltages/measured_js
 
-The calibration script is ``dvrk_calibrate_suj.py``.  It can be found
-in the ROS package ``dvrk_python``.
+The :ref:`calibration script <dvrk_calibrate_suj>` is
+``dvrk_calibrate_suj.py``.  It can be found in the ROS package
+``dvrk_python``.
 
 * ROS 1: ``source ~/catkin_ws/devel/setup.bash`` and ``rosrun dvrk_python dvrk_calibrate_suj.py``
 * ROS 2: ``source ~/ros2_ws/install/setup.bash`` and ``ros2 run dvrk_python dvrk_calibrate_suj.py``
