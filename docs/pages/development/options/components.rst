@@ -12,6 +12,8 @@ nor sockets.  *cisstMultiTask* also provides non-blocking and
 thread-safe communication mechanisms between threads, so you can take
 advantage of modern CPUs with multi-cores.
 
+.. _components-derived:
+
 Derived components
 ******************
 
@@ -46,11 +48,14 @@ the PSM teleoperation.  You can find documented examples for:
   bridge (ROS 1) so one can communicate with the derived class with
   custom messages.
 
+.. _components-generic:
+
 Generic components
 ******************
+.. _components-alternative-hardware:
 
-Alternate hardware
-==================
+Alternative hardware
+====================
 
 The dVRK console also supports generic arms, i.e. one can use a
 different type of hardware as long as there is a cisst/SAW component
