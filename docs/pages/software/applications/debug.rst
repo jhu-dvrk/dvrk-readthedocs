@@ -27,7 +27,7 @@ qladisp documentation goes here
 * https://github.com/jhu-saw/sawRobotIO1394/tree/main/core/applications/Qt
 
 Used for Classic ECM and Si ECM/PSMs :ref:`current brake calibration
-<calibration-classic-ecm>`.
+<calibration-classic-ecm>` with *direct control*.
 
 Also ``robot_io robot_io_console`` for ROS topics.  Can be used to
 create your own application directly on top of IO component.
@@ -42,5 +42,5 @@ create your own application directly on top of IO component.
 * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications
 
 Can be used to tune PID without any other component running.  No
-built-in homing procedure so user have to use direct control in IO
+built-in homing procedure sos user have to use *direct control* in IO
 widget to preload the encoders if they want absolute positions.

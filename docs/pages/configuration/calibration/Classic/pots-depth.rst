@@ -1,6 +1,6 @@
 .. _calibration-classic-pots-depth:
 
-PSM third joint potentiometer offset 
+PSM third joint potentiometer offset
 ************************************
 
 Introduction
@@ -82,7 +82,7 @@ monitoring the absolute position of a given feature on the instrument.
 
 Since a picture is worth a thousand words, we provide a short `video
 describing the procedure <https://youtu.be/jejdnB8irSA>`_.
- 
+
 Requirements
 ------------
 
@@ -107,7 +107,7 @@ Procedure
 * Start console with ``-C`` option!  For example:
 
   .. code-block:: bash
-  
+
      roscd dvrk_config
      qlacommand -c close-relays
      rosrun dvrk_robot dvrk_console_json -j <my-config-dir>/console-PSM1.json -C
@@ -118,13 +118,14 @@ Procedure
 * Start your camera and position it so you have a close view of the
   RCM point.  Then run ``tvtime`` in a second terminal to get the video
   feed on your dVRK computer (or another computer if you prefer)
-* In a third terminal, launch the calibration script
+* In a third terminal, launch the :ref:`calibration script
+  <dvrk_calibrate_potentiometer_psm>`
   (``dvrk_calibrate_potentiometer_psm_cv.py``) with the
   ``sawRobotIO1394-PSMx-xxxxx.xml`` corresponding to your PSM,
   something like:
-  
+
    .. code-block:: bash
-		   
+
       roscd dvrk_config/<my-config-dir>
       rosrun dvrk_python dvrk_calibrate_potentiometer_psm.py -a PSM1 -c sawRobotIO1394-PSMx-xxxxx.xml
 
@@ -193,11 +194,11 @@ Procedure
 * Start console with ``-C option``!  For example:
 
   .. code-block:: bash
-  
+
      roscd dvrk_config
      qlacommand -c close-relays
      rosrun dvrk_robot dvrk_console_json -j <my-config-dir>/console-PSM1.json -C
-   
+
   Replace ``<my-config-dir>`` and PSM name for your configuration.
 * Home the PSM and make sure a dVRK supported Classic 8mm instrument
   is inserted
@@ -209,7 +210,7 @@ Procedure
   like:
 
   .. code-block:: bash
-		  
+
      roscd dvrk_config/<my-config-dir>
      rosrun dvrk_python dvrk_calibrate_potentiometer_psm_cv.py -a PSM1 -c sawRobotIO1394-PSMx-xxxxx.xml
 
@@ -260,7 +261,7 @@ can result in more than doubling the RMSE. Maximum error across the
 PSMs range of motion also decreased significantly with proper
 calibration.
 
-.. figure:: /images/Classic/PSM/psm-pot-calib-effect.png 
+.. figure:: /images/Classic/PSM/psm-pot-calib-effect.png
    :width: 400
    :align: center
 

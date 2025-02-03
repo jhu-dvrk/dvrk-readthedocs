@@ -1,7 +1,7 @@
 .. _calibration-classic-gripper:
 
-MTM grippers
-************
+MTM gripper
+***********
 
 Introduction
 ============
@@ -39,8 +39,9 @@ gripper (the robot doesn't have to be turned on) before starting the
 calibration to learn how strong the two springs are and repeatedly
 find the closed-but-not-tight position.
 
-The gripper calibration program uses the same parameters as the
-current calibration program.  A typical run looks like:
+The :ref:`gripper calibration program
+<sawintuitiveresearchkitgrippercalibration>` uses the same parameters
+as the current calibration program.  A typical run looks like:
 
 ::
 
