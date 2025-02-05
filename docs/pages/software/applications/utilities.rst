@@ -85,7 +85,7 @@ teleoperation.
 ``hrsv_widget``
 ********************
 
-* C+ ROS application with Qt widgets, doesn't depend on cisst/SAW
+* C++ ROS application with Qt widgets, doesn't depend on cisst/SAW
 * ROS package ``dvrk_hrsv_widget``
 * Compatible with **all dVRK setups**
 * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/ros/dvrk_hrsv_widget
@@ -114,3 +114,26 @@ The scripts waits for an SD card to be inserted in the PC.  It will
 then mount it, copy the files and unmount so the user can safely
 remove the card.  The user can insert all their SD cards one after
 another without restarting the script.
+
+.. _dvrk_teleoperation:
+
+``dvrk_teleoperation.py``
+*************************
+
+* ROS Python script
+* Compatible with **all dVRK setups**
+* https://github.com/jhu-dvrk/dvrk_python/tree/devel/scripts
+
+Script for Python/ROS-based teleoperation, useful as an example/template of how the dVRK teleoperation can be customized. See also :ref:`derived components <components-derived>` for an example of customizing the C++ teleoperation component directly. The script is given ROS namespaces for an MTM and PSM to begin teleoperation with, which could be an actual dVRK MTM and PSM, or the MTM could instead be a haptic device such as a `ForceDimension <https://github.com/jhu-saw/sawForceDimensionSDK>`_. When running, teleoperation works very similarly to the built-in dVRK teleoperation.
+
+To run teleoperation, first start a :doc:`dVRK console <console>` for the arms you want to teleoperate. This should be a console that *doesn't* include a built-in teleoperation componenent, such as::
+
+   ros2 run dvrk_robot dvrk_console_json -j console-MTML-PSM2.json
+
+Next, start the teleoperation script with your chosen arms::
+
+   ros2 run dvrk_python dvrk_teleoperation.py -m <MTM> -p <PSM>
+
+If you don't have dVRK foot pedals, you can use the ``-c <cluch topic>`` and ``-o <operator pedal>`` topics to use a different source (these topics should each provide ``sensors_msgs/msg/Joy`` with one button). Alternatively, you can set ``-o`` to disable the operator pedal, note however that in this mode teleoperation will begin as soon as any MTM activity is detected so please be careful.
+
+If you are using a haptic device (e.g. ForceDimension/Falcon) as your MTM which has an unactuated wrist, the teleoperation script will not be able to align the MTM to match the PSM orientation. In this case, you must use the ``-n`` option to skip alignment.
