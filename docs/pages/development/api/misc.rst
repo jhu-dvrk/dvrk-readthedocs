@@ -1,0 +1,66 @@
+Miscellaneous
+#############
+
+Focus controller
+****************
+
+Using original focus controller from Intuitive Surgical.
+
+* ``endoscope_focus/locked``
+
+  * *cisst*: event write ``bool``
+  * *ROS*: publisher ``std_msgs/Bool``
+  * dVRK specific.
+
+* ``endoscope_focus/focusing_in``
+
+  * *cisst*: event write ``bool``
+  * *ROS*: publisher ``std_msgs/Bool``
+  * dVRK specific
+
+* ``endoscope_focus/focusing_out``
+
+  * *cisst*: event write ``bool``
+  * *ROS*: publisher ``std_msgs/Bool``
+  * dVRK specific
+
+* ``endoscope_focus/lock``
+
+  * *cisst*: command write ``bool``
+  * *ROS*: subscriber ``std_msgs/Bool``
+  * dVRK specific.
+
+* ``endoscope_focus/focus_in``
+
+  * *cisst*: command write ``bool``
+  * *ROS*: subscriber ``std_msgs/Bool``
+  * dVRK specific. Start focusing in
+
+* ``endoscope_focus/focus_out``
+
+  * *cisst*: command write ``bool``
+  * *ROS*: subscriber ``std_msgs/Bool``
+  * dVRK specific. Start focusing out
+
+Audio
+*****
+
+Starting with the dVRK 1.6 we added some audio feedback for some
+console events (operator present, pedal pressed...).  The dVRK
+applications rely on the `*sawTextToSpeech* component
+<https://github.com/jhu-saw/sawTextToSpeech>`_ for both text-to-speech
+and beeps.  These commands are exposed by the ROS node under the
+topics:
+
+* ``/console/string_to_speech``
+
+  * *cisst*: command write ``std::string``
+  * *ROS*: subscriber ``std_msgs/String``
+  * dVRK specific. Expects a plain string.
+
+* ``/console/beep``
+
+  * *cisst*: command write ``vctDouble3``
+  * *ROS*: subscriber ``std_msgs/Float64MultiArray`` with 3 values
+  * dVRK specific.  Expects 3 values: duration (in seconds), frequency
+    and volume (0 to 1).  For example: ``data: [0.5, 3000.0, 1.0]``

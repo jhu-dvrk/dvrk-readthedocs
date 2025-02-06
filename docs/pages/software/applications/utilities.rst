@@ -63,7 +63,6 @@ example:
 
 * ROS Python script with a text based interface, it depends on
   CRTK/dVRK Python to communicate with the dVRK console.
-  ...``
 * ROS package ``dvrk_python``
 * Compatible with **all dVRK setups**
 * https://github.com/jhu-dvrk/dvrk_python/tree/devel/scripts
@@ -73,9 +72,7 @@ console <console>`), move the MTMs at their zero position, move the
 PSM's shaft rotation to zero and restart the teleoperation.  The goal
 of the script is to "reset" the kinematic for both the MTMs and PSMs.
 This is useful when the arms get into odd poses after a bit of
-teleoperation.
-
-::
+teleoperation.::
 
    usage: dvrk_reset_teleoperation.py [-h] -m {MTML,MTMR} [{MTML,MTMR} ...] [-p {PSM1,PSM2,PSM3} [{PSM1,PSM2,PSM3} ...]]
 
@@ -121,6 +118,7 @@ another without restarting the script.
 *************************
 
 * ROS Python script
+* ROS package ``dvrk_python``
 * Compatible with **all dVRK setups**
 * https://github.com/jhu-dvrk/dvrk_python/tree/devel/scripts
 

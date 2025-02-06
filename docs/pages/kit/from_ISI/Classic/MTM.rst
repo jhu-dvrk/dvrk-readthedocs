@@ -36,7 +36,7 @@ Basic information:
 
   * Fine tune the gravity compensation
   * Enforce the wrist orientation to match the PSM's orientation
-    (:ref:`teleoperation <teleoperation>`).
+    (:ref:`teleoperation <teleop-psm>`).
   * Provide some force feedback to reflect mechanical limits on the
     patient's side
 * The 7th degree of freedom allows the wrist platform to move around
