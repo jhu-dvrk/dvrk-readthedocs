@@ -6,8 +6,7 @@ PID
 Functionalities
 ***************
 
-The class ``mtsPID`` is part of the `sawControllers
-<https://github.com/jhu-saw/sawControllers>`_ library.
+The class ``mtsPID`` is part of the |sawControllers|_ library.
 
 It provides:
 

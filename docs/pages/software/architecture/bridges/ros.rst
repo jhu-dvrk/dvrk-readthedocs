@@ -1,4 +1,4 @@
-.. _ros:
+.. _bridge-ros:
 
 ROS
 ###

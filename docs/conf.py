@@ -148,3 +148,43 @@ html_title = project + ' ' + release
 
 # for :: quote sections
 highlight_language = 'none'
+
+rst_prolog = """
+
+.. |sawKeyboard| replace:: *sawKeyboard*
+.. _sawKeyboard: https://github.com/jhu-saw/sawKeyboard
+
+.. |sawTextToSpeech| replace:: *sawTextToSpeech*
+.. _sawTextToSpeech: https://github.com/jhu-saw/sawTextToSpeech
+
+.. |sawControllers| replace:: *sawControllers*
+.. _sawControllers: https://github.com/jhu-saw/sawControllers
+
+.. |sawRobotIO1394| replace:: *sawRobotIO1394*
+.. _sawRobotIO1394: https://github.com/jhu-saw/sawRobotIO1394
+
+.. |sawIntuitiveResearchKit| replace:: *sawIntuitiveResearchKit*
+.. _sawIntuitiveResearchKit: https://github.com/jhu-dvrk/sawIntuitiveResearchKit
+
+.. |sawSocketStreamer| replace:: *sawSocketStreamer*
+.. _sawSocketStreamer: https://github.com/jhu-saw/sawSocketStreamer
+
+.. |sawOpenIGTLink| replace:: *sawOpenIGTLink*
+.. _sawOpenIGTLink: https://github.com/jhu-saw/sawOpenIGTLink
+
+.. |CRTK| replace:: *CRTK*
+.. _CRTK: https://crtk-robotics.readthedocs.io
+
+.. |cisstDataGenerator| replace:: *cisstDataGenerator*
+.. _cisstDataGenerator: https://github.com/jhu-cisst/cisst/wiki/cisstCommon-Data-Generator
+
+.. |cisstRobot| replace:: *cisstRobot*
+.. _cisstRobot: https://github.com/jhu-cisst/cisst/tree/main/cisstRobot
+
+.. |cisstRobotManipulator| replace:: *cisstRobot*, class *robManipulator*
+.. _cisstRobotManipulator: https://github.com/jhu-cisst/cisst/wiki/cisstRobot-robManipulator
+
+.. |cisstMultiTask| replace:: *cisstMultiTask*
+.. _cisstMultiTask: https://github.com/jhu-cisst/cisst/wiki/cisstMultiTask-tutorial
+
+"""
