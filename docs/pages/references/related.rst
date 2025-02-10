@@ -5,7 +5,7 @@ Related systems
 ***************
 
 .. warning::
-   
+
    In no specific order, not endorsed, likely incomplete, incorrect
    and outdated!
 
@@ -52,7 +52,7 @@ Commercial
   * Notes: Up to 5 patient side manipulators on separate wheeled-cart,
     physical RCM.  Surgeon's side with 3D flat panel and glasses,
     7-dof haptic arms?
-    
+
 **Cornerstone Robotics: Sentire**
 
   * https://www.csrbtx.com/en/product_center/
@@ -126,7 +126,15 @@ Commercial
   * Notes: up to four patient manipulators, software RCM, uses
     off-the-shelf instruments (no articulated wrist?).  Surgeon's side
     use 2 haptic devices and flat panel display
-    
+
+**Revo Surgical: Revi-i**
+
+  * http://revosurgical.com
+  * https://www.linkedin.com/showcase/revo-surgical-solution
+  * Seoul, South Korea
+  * RAMIS, teleoperated
+  * Notes: similar to da Vinci Si
+
 **Surgical Science: FlexVR**
 
   * https://surgicalscience.com/simulators/flexvr/
@@ -189,4 +197,3 @@ Research systems
   * Notes: daVinci S/Si instruments mounted on serial manipulator
     (Kinova).  Surgeon’s side uses off-the-shelf haptic devices
     (ForceDimension). No camera nor display
-
