@@ -1,3 +1,5 @@
+.. _devel-options-intro:
+
 Introduction
 ############
 
