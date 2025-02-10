@@ -12,6 +12,9 @@ Related systems
 Commercial
 ##########
 
+RAMIS
+*****
+
 **Medtronic: Hugo RAS**
 
   * https://www.medtronic.com/covidien/en-au/robotic-assisted-surgery/hugo-ras-system.html
@@ -127,13 +130,16 @@ Commercial
     off-the-shelf instruments (no articulated wrist?).  Surgeon's side
     use 2 haptic devices and flat panel display
 
-**Revo Surgical: Revi-i**
+**Revo Surgical: Revo-i**
 
   * http://revosurgical.com
   * https://www.linkedin.com/showcase/revo-surgical-solution
   * Seoul, South Korea
   * RAMIS, teleoperated
   * Notes: similar to da Vinci Si
+
+Simulation
+**********
 
 **Surgical Science: FlexVR**
 
@@ -142,22 +148,31 @@ Commercial
   * Location: Göteborg, Sweden
   * Type: RAMIS simulator
 
-**AcuSurgical:Luca**
+Haptic systems
+**************
 
-  * https://acusurgical.com
-  * https://www.linkedin.com/company/acusurgical/
-  * Location: Montpellier, France
-  * Type: Eye surgery, teleoperated
-  * Notes: 2 patient side manipulators
+**ForceDimension: Sigma, Omega**
 
-**MMI: Symani**
+  * https://www.forcedimension.com
+  * https://www.linkedin.com/company/forcedimension
+  * Location: Switzerland
+  * Types: haptic devices using parallel platform for position, gripper is motorized, up to 7 dofs motorized
 
-  * https://www.mmimicro.com/our-technology/symani-surgical-system/
-  * https://www.linkedin.com/company/mmimicro/
-  * Location: Jacksonville, Florida, USA
-  * Type: Open microsurgery
-  * Notes: 2 patient side manipulators with wrist (7 dofs), direct
-    line of sight, free hand joysticks?
+**Haption: Virtuoso**
+
+  * https://www.haption.com
+  * https://www.linkedin.com/company/haption
+  * Location: France
+  * Types: haptic devices using serial arm, up to 6 dofs motorized
+
+**Quanser: HD2**
+
+  * https://www.quanser.com/products/hd2-high-definition-haptic-device
+  * https://www.linkedin.com/company/quanser
+  * Location: Ontario, Canada
+
+Orthopedic
+**********
 
 **Stryker:Mako**
 
@@ -177,6 +192,25 @@ Commercial
   * Location: Freemont, California, USA
   * Type: Open orthopedic surgery, knee
 
+Other
+*****
+
+**AcuSurgical:Luca**
+
+  * https://acusurgical.com
+  * https://www.linkedin.com/company/acusurgical/
+  * Location: Montpellier, France
+  * Type: Eye surgery, teleoperated
+  * Notes: 2 patient side manipulators
+
+**MMI: Symani**
+
+  * https://www.mmimicro.com/our-technology/symani-surgical-system/
+  * https://www.linkedin.com/company/mmimicro/
+  * Location: Jacksonville, Florida, USA
+  * Type: Open microsurgery
+  * Notes: 2 patient side manipulators with wrist (7 dofs), direct
+    line of sight, free hand joysticks?
 
 Research systems
 ################
