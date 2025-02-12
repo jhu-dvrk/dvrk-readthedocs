@@ -15,3 +15,10 @@ The following sections include the ``vcs`` command lines specific to
 the dVRK for both ROS 1 and ROS 2.
 
 All the code for the dVRK is compatible with ROS 1 and ROS 2.
+
+.. note::
+   The main repository for the dVRK software stack is
+   |sawIntuitiveResearchKit|_.  This follows the naming convention used for
+   all cisst/SAW components, i.e. ``<manufacturer><product>``. This is
+   quite a long name and the acronym is not great: IRK. Hence the
+   name dVRK.
