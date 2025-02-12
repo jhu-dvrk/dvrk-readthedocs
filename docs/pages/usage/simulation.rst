@@ -10,12 +10,12 @@ on any computer as there is no need for a FireWire adapter.
 
 The kinematic simulation mode uses the same software components and
 configuration files as the real arm except that the PID controller
-doesn't communicate with the hardware.  Instead, measured position in
-the joint space are based on the last commanded joint values.  This
-mode allows user to test their code with simple motion commands.  In
+doesn't communicate with the hardware. Instead, measured position in
+the joint space are based on the last commanded joint values. This
+mode allows user to test their code with simple motion commands. In
 kinematic simulation mode, the dVRK software retains most of the
 graphical user interface (IO widgets are not available of course) as
-well as the ROS topics.  One can use Rviz to visualize the arms in a
+well as the ROS topics. One can use Rviz to visualize the arms in a
 virtual environment.
 
 Compilation
@@ -59,13 +59,13 @@ Configuration and launch files
 ##############################
 
 The dVRK kinematics simulation uses a simulated low-level hardware
-class and reuses rest of the code including the main executable
+class and reuses the rest of the code including the main executable
 ``dvrk_console_json``, which can run a real or a simulated arm based
 on a configuration file in JSON format.
 
 The console example JSON configuration files are located in
 |sawIntuitiveResearchKit|_ under ``share/console`` folder. The
-simulated arm configuration files are under ``share/arm``.  ```
+simulated arm configuration files are under ``share/arm``.
 
 
 Usage
