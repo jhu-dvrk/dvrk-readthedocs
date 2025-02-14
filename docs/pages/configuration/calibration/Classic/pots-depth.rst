@@ -94,7 +94,7 @@ Requirements
 * An 8mm da Vinci Classic instrument (e.g. Large Needle Driver,
   DeBakey, Micro Forceps...).  The procedure won't work with S/Si
   instruments since they are too long (see :ref:`instruments
-  <instruments-naming>`)
+  <instruments>`)
 * An alternative to the cannula to keep the instrument aligned with
   the RCM point.  Unfortunately the cannula covers the RCM point, so
   one can't visually track the feature with it.  You can use a rubber

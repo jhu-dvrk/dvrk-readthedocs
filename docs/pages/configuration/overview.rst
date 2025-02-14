@@ -56,11 +56,11 @@ Types of files
   specific to a given instrument, i.e. kinematic of the last 3 joints,
   jaw angle and torque limits...  These are shared across all dVRK
   sites unless you are creating your :ref:`custom
-  instrument<custom-instrument>`.  They used the JSON file format and
-  the filename follows the naming convention
+  instrument<config-custom-instruments>`.  They used the JSON file
+  format and the filename follows the naming convention
   ``<TOOL_NAME>_<MODEL_NUMBER>.json``
   (e.g. ``LARGE_NEEDLE_DRIVER_400006.json``).  See :ref:`instrument
-  naming<instrument-naming>`.
+  naming<instruments>`.
 
 * **Instruments list**: These are shared files listing all the
   available instruments (aka tools).  Most users will never need to

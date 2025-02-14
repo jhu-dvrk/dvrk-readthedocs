@@ -515,14 +515,14 @@ C++ class is ``mtsIntuitiveResearchKitArmPSM``.
   * dVRK specific: indicate which tool is currently in use.  Note that
     the tool type can be determined in different ways depending on
     your hardware and configuration files.  See :ref:`instrument
-    detection<instrument-detection>`..
+    detection<config-dallas>`..
 
 * ``tool_type_request``
 
   * *cisst*: event void
   * *ROS*: publisher ``std_msgs/Empty``
   * dVRK specific: when using ``MANUAL`` :ref:`instrument detection
-    <instrument-detection>`, event that indicates that a new tool has
+    <config-dallas>`, event that indicates that a new tool has
     been detected and the software needs to know which type of tool it
     is.  The tool type can also be set using the dropdown menu on the
     GUI PSM widget.
@@ -532,7 +532,7 @@ C++ class is ``mtsIntuitiveResearchKitArmPSM``.
   * *cisst*: write command ``std::string``
   * *ROS*: subscriber ``std_msgs/String``
   * dVRK specific: when using ``MANUAL`` :ref:`instrument
-    detection<instrument-detection>`' set the tool type.  Possible
+    detection<config-dallas>`, set the tool type.  Possible
     values are defined in file
     ``components/code/mtsIntuitiveResearchKitToolTypes.cdg`` (see
     |cisstDataGenerator|_).  A tool description file with a filename

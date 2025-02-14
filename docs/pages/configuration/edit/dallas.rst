@@ -33,6 +33,6 @@ The different options for ``tool-detection`` are:
   ``LARGE_NEEDLE_DRIVER:420006[12]``).
 
 The ``FIXED`` setting is useful if you :ref:`modified an existing
-instrument <custom-instrument>`.  In this case, you can force which
+instrument <config-custom-instruments>`.  In this case, you can force which
 instrument definition will be loaded using your own instrument's name
 and model number.

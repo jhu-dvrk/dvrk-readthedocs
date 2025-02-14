@@ -11,4 +11,5 @@ Configuration files creation and editing
    edit/head
    edit/focus
    edit/dallas
+   edit/custom-instruments
    edit/dmib-io
