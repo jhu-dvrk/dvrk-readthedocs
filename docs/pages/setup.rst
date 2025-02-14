@@ -10,3 +10,4 @@ Hardware setup
    setup/estop
    setup/Classic
    setup/Si
+   setup/instruments
