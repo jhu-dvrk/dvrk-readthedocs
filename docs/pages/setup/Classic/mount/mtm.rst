@@ -10,6 +10,11 @@ For further examples of mounting frames for the :ref:`MTMs <mtm>`,
 check the `Intuitive Research Wiki <https://research.intusurg.com/>`_
 (account required).
 
+.. note::
+   The cables coming from the MTMs are fairly short, make sure you
+   can place the dVRK controllers really close to your surgeon's
+   console.
+
 The following pictures show an alternative surgeon's console built at
 Johns Hopkins.  It holds two MTMs and their dVRK controllers (top
 shelf) as well as a :ref:`Si CCU <camera-si>` and light source
