@@ -1,14 +1,14 @@
 .. _mtm:
 
-Master Tele Manipulators
-########################
-
 .. admonition:: Show/hide context
    :collapsible: closed
 
    .. figure:: /images/general/logic-view-classic-arm.gif
       :width: 600
       :align: center
+
+Master Tele Manipulators
+########################
 
 There are two MTMs per system, one for the left hand and one for the
 right hand.  The left and right MTMs are identical except for the
