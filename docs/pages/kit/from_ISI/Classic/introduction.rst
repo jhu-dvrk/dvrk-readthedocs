@@ -44,14 +44,6 @@ Main components
 dVRK integration
 =================
 
-.. hint::
-   :collapsible: closed
-
-   .. figure:: /images/general/logic-view-classic-arm.gif
-      :width: 400
-      :align: center
-
-
 The following components can be used for the dVRK (see :ref:`dVRK
 setup <setup-classic>`)
 
