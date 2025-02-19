@@ -1,6 +1,6 @@
 .. _mtm:
 
-.. admonition:: Show/hide context
+.. admonition:: Click to show/hide context
    :collapsible: closed
 
    .. figure:: /images/general/logic-view-classic-arm.gif
