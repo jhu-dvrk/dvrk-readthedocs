@@ -3,7 +3,7 @@
 Master Tele Manipulators
 ########################
 
-.. admonition:: Click for context
+.. admonition:: Show/hide context
    :collapsible: closed
 
    .. figure:: /images/general/logic-view-classic-arm.gif
