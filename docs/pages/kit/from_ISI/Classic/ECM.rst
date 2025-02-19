@@ -3,7 +3,7 @@
 Endoscopic Camera Manipulator
 #############################
 
-.. hint:: Click for context
+.. admonition:: Click for context
    :collapsible: closed
 
    .. figure:: /images/general/logic-view-classic-arm.gif
