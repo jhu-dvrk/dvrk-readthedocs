@@ -3,7 +3,7 @@
 Console
 #######
 
-
+.. _console-component-teleops:
 
 Selecting teleoperation pairs
 *****************************

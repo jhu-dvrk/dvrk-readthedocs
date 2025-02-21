@@ -7,7 +7,7 @@ Console
 
    console/io
    console/head
-   console/pedals
    console/focus
    console/arms
    console/teleops
+   console/components

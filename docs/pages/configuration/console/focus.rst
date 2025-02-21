@@ -3,13 +3,11 @@
 Focus controller
 ****************
 
-See also :ref:`dMIB IOs <dmib-io>`.
-
 Once you've build :ref:`your custom cable <focus-original>`, you can
 modify your console JSON configuration file and add:
 
 .. code-block:: JSON
-		
+
     "endoscope-focus": {
         // replace the MTML part in the filename by
         // whatever controller you're connecting the cable to
@@ -21,7 +19,7 @@ The example above assumes that:
 * You have connected to the camera focus cable to the MTML controller.
   If you're connecting the endoscope focus unit to another controller,
   and you can't find the corresponding configuration file in
-  ``sawIntuitiveResearchKit/share/io``, feel free to create one and
+  |sawIntuitiveResearchKit| ``share/io``, feel free to create one and
   contribute it back to the community
 * You have the da Vinci foot pedal connected with the Camera +/-
   toggle pedal properly working.  You can check in the Qt graphical

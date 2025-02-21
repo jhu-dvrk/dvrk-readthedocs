@@ -56,6 +56,5 @@ tuning using *sawIntuitiveResearchKitQtPID*.
 
 .. note::
 
-   For the dVRK, we use the :ref:`same thread<thread>` for the IO and
+   For the dVRK, we use the :ref:`same thread<threads>` for the IO and
    PID components, so there is no timing widget in the PID widget.
-   

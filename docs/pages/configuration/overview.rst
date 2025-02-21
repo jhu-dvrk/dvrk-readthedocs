@@ -102,8 +102,7 @@ Shared files
 ************
 
 All the shared files are under the ``/share`` directory of the main
-dVRK repository:
-https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/share
+dVRK repository: |sawIntuitiveResearchKit|.
 
 The subdirectories are:
 

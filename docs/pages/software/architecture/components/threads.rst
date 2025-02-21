@@ -1,4 +1,4 @@
-.. _thread:
+.. _threads:
 
 Threads
 #######

@@ -150,7 +150,7 @@ the rotation offset reflects the difference of orientation when the
 teleoperation enters the follow mode.
 
 The rotation offset is display in the Qt widget and published over ROS.
-https://githu
+
 Gripper and jaws
 ****************
 
