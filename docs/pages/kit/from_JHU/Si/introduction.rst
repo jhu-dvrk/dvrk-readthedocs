@@ -1,4 +1,5 @@
-Introduction
+.. include:: /includes/logic-view-Si-controller.rst
+
 ############
 
 Each patient-side da Vinci Si arm (PSM, ECM) is controlled by a single

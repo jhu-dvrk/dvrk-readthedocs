@@ -1,5 +1,7 @@
 .. _devel-options-intro:
 
+.. include:: /includes/logic-view-user-app.rst
+
 Introduction
 ############
 

@@ -1,7 +1,7 @@
 
-###################################
-Configuration files and calibration
-###################################
+###################
+Configuration files
+###################
 
 .. toctree::
 
@@ -9,4 +9,3 @@ Configuration files and calibration
    configuration/board-id
    configuration/serial-number
    configuration/edit
-   configuration/calibration

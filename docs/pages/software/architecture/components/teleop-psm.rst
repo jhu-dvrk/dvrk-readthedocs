@@ -1,5 +1,7 @@
 .. _teleop-psm:
 
+.. include:: /includes/logic-view-soft-teleop.rst
+
 PSM teleoperation
 #################
 

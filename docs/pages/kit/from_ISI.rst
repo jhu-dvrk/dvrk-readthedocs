@@ -1,5 +1,7 @@
 .. _from_ISI:
 
+.. include:: /includes/logic-view-from-isi.rst
+
 ******************
 daVinci components
 ******************

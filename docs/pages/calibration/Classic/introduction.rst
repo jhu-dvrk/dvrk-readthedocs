@@ -1,3 +1,5 @@
+.. include:: /includes/logic-view-classic-io.rst
+
 Introduction
 ************
 

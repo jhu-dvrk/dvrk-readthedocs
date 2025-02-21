@@ -1,7 +1,8 @@
 .. _calibration_classic:
 
+*******
 Classic
-#######
+*******
 
 .. toctree::
 

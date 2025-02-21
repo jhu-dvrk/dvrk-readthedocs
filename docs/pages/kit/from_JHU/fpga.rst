@@ -1,10 +1,5 @@
 
-.. admonition:: Click to show/hide context
-   :collapsible: closed
-
-   .. figure:: /images/general/logic-view-fpga.gif
-      :width: 600
-      :align: center
+.. include:: /includes/logic-view-classic-arm.rst
 
 ******************
 Logic board (FPGA)

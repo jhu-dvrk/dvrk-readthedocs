@@ -1,5 +1,7 @@
 .. _io:
 
+.. include:: /includes/logic-view-soft-io.rst
+
 Low level IOs
 #############
 

@@ -1,5 +1,7 @@
 .. _pid:
 
+.. include:: /includes/logic-view-soft-pid.rst
+
 PID
 ###
 

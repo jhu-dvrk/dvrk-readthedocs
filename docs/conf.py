@@ -186,5 +186,4 @@ rst_prolog = """
 
 .. |cisstMultiTask| replace:: *cisstMultiTask*
 .. _cisstMultiTask: https://github.com/jhu-cisst/cisst/wiki/cisstMultiTask-tutorial
-
 """
