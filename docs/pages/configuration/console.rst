@@ -5,6 +5,7 @@ Console
 
 .. toctree::
 
+   console/io
    console/head
    console/pedals
    console/focus
