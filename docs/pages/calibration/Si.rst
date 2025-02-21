@@ -1,5 +1,7 @@
 .. _calibration_si:
 
+.. include:: /includes/logic-view-Si-io.rst
+
 **
 Si
 **

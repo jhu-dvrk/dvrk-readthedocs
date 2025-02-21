@@ -1,7 +1,12 @@
-.. _config-dallas:
+
+***
+Arm
+***
 
 Instrument detection
 ####################
+
+.. _config-dallas:
 
 In your PSM configuration file (for example ``PSM1-12345.json``), you
 can set the tool detection to be manual, automatic or fixed:

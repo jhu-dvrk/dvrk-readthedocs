@@ -1,6 +1,8 @@
 .. include:: /includes/logic-view-Si-controller.rst
 
 ############
+Introduction
+############
 
 Each patient-side da Vinci Si arm (PSM, ECM) is controlled by a single
 box.  There is no dVRK support for the Si/Xi surgeon's console
