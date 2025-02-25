@@ -16,7 +16,7 @@ with overline, for chapters
 Title -- Number Signs
 #####################
 
-Suptitle -- Asterisks
+Subtitle -- Asterisks
 *********************
 
 Section -- Equal Signs

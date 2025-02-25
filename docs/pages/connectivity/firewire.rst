@@ -158,7 +158,10 @@ solution instead :-)
 Testing connectivity
 ####################
 
-.. _qladisp:
+The number of expected logic boards depends on each setup, see
+:ref:`number of FPGAs <nb-fpgas>` section.
+
+.. _firewire-qladisp:
 
 ``qladisp``
 ***********
