@@ -1,3 +1,5 @@
+.. include:: /includes/logic-view-classic-controller.rst
+
 Introduction
 ############
 

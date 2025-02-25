@@ -114,18 +114,32 @@ CRTK
 dVRK
 ====
 
-  * Main site: `dVRK <https://dvrk.lcsr.jhu.edu>`_
-  * Documentation `dvrk.readthedocs.io <https://dvrk.readthedocs.io>`_
-  * `YouTube channel <https://www.youtube.com/channel/UCxZyIKTjk2coKGZslIOfblw>`_
-  * Core components: `sawIntuitiveResearchKit <https://github.com/jhu-dvrk/sawIntuitiveResearchKit>`_
-  * Python ROS client library and examples: `dvrk_python <https://github.com/jhu-dvrk/dvrk_python>`_
-  * Matlab ROS client library and examples: `dvrk_matlab <https://github.com/jhu-dvrk/dvrk_matlab>`_
-  * ROS URDF and launch files: `dvrk_model <https://github.com/jhu-dvrk/dvrk_model>`_
-  * ROS launch files for video: `dvrk_video <https://github.com/jhu-dvrk/dvrk_video>`_
-  * Configuration files from JHU: `dvrk_config_jhu <https://github.com/dvrk-config/dvrk_config_jhu>`_
-  * Gravity compensation for MTMs: `dvrk-gravity-compensation <https://github.com/jhu-dvrk/dvrk-gravity-compensation>`_
-  * Documentation source: `dvrk-readthedocs <https://github.com/jhu-dvrk/dvrk-readthedocs>`_
-  * Continuous integration: `dvrk-github-workflow <https://github.com/jhu-dvrk/dvrk-github-workflow>`_
+  * General
+    
+    * Main site: `dVRK <https://dvrk.lcsr.jhu.edu>`_
+    * Documentation: `dvrk.readthedocs.io <https://dvrk.readthedocs.io>`_
+    * `YouTube channel <https://www.youtube.com/channel/UCxZyIKTjk2coKGZslIOfblw>`_
+
+  * Code
+    
+    * Core components: `sawIntuitiveResearchKit <https://github.com/jhu-dvrk/sawIntuitiveResearchKit>`_
+    * Python ROS client library and examples: `dvrk_python <https://github.com/jhu-dvrk/dvrk_python>`_
+    * Matlab ROS client library and examples: `dvrk_matlab <https://github.com/jhu-dvrk/dvrk_matlab>`_
+    * Gravity compensation for MTMs: `dvrk-gravity-compensation <https://github.com/jhu-dvrk/dvrk-gravity-compensation>`_
+    * PSM to camera registration: `dvrk_camera_registration <https://github.com/jhu-dvrk/dvrk_camera_registration>`_
+
+  * Configuration
+    
+    * Configuration files from JHU: `dvrk_config_jhu <https://github.com/dvrk-config/dvrk_config_jhu>`_
+    * GitHub organization for all dVRK sites: `github.com:/dvrk-config <https://github.com/dvrk-config>`_
+      
+    * ROS URDF and launch files: `dvrk_model <https://github.com/jhu-dvrk/dvrk_model>`_
+    * ROS launch files for video: `dvrk_video <https://github.com/jhu-dvrk/dvrk_video>`_
+
+  * Other
+    
+    * Documentation source: `dvrk-readthedocs <https://github.com/jhu-dvrk/dvrk-readthedocs>`_
+    * Continuous integration: `dvrk-github-workflow <https://github.com/jhu-dvrk/dvrk-github-workflow>`_
 
 
 CAD

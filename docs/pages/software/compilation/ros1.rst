@@ -50,13 +50,13 @@ replace the version number (e.g. ``2.3.0`` by ``devel``).
 
    # this depends on the ROS version you're using
    source /opt/ros/noetic/setup.bash
-   mkdir ~/catkin_ws                  # create the catkin workspace
+   mkdir -p ~/catkin_ws/src           # create the catkin workspace
    cd ~/catkin_ws                     # go in the workspace
    catkin init                        # create files for catkin build tool
    catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release # all code should be compiled in release mode
    cd src                             # go in source directory to pull code
    # make sure you use the correct vcs file
-   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros1-dvrk-2.3.0.vcs --recursive
+   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros1-dvrk-2.3.1.vcs --recursive
    catkin build --summary             # ... and finally compile everything
    source ~/catkin_ws/devel/setup.bash
 

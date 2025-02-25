@@ -94,10 +94,9 @@ Sockets with JSON
 
 One of the drawbacks of ROS is that it is hard to install on Windows
 or macOS.  If your application can't easily run on Ubuntu, for example
-Unity for HoloLens, you can use the *sawSocketStreamer*
-(https://github.com/jhu-saw/sawSocketStreamer).  This cisst/SAW
-component can be dynamically loaded and configured to connect to any
-cisst/SAW component to:
+Unity for HoloLens, you can use the |sawSocketStreamer|_.  This
+cisst/SAW component can be dynamically loaded and configured to
+connect to any cisst/SAW component to:
 
 * Get data from the dVRK
 * Send commands to the dVRK
@@ -110,7 +109,7 @@ computing coast and lost of accuracy for floating point numbers.  We
 found that in most cases, the ease of integration outweighs these
 drawbacks.
 
-To use the *sawSocketStreamer*, clone the repository in your ROS
+To use the |sawSocketStreamer|_, clone the repository in your ROS
 workspace, under ``src/cisst-saw```.  Note that the
 *sawSocketStreamer* can run along ROS 1 and ROS 2.  You can then build
 it using ``catkin build`` (ROS 1), ``colcon build`` (ROS 2) or with
@@ -134,11 +133,9 @@ OpenIGTLink
 
 We also implemented an OpenIGTLink
 (https://github.com/openigtlink/OpenIGTLink) bridge for cisst/SAW
-components: *sawOpenIGTLink*
-(https://github.com/jhu-saw/sawOpenIGTLink).  The main application for
-IGTL is Slicer3D (https://www.slicer.org).  If you use ROS 2, you
-might also consider the SlicerROS2 module
-(https://slicerros2.readthedocs.io).
+components: |sawOpenIGTLink|_.  The main application for IGTL is
+Slicer3D (https://www.slicer.org).  If you use ROS 2, you might also
+consider the SlicerROS2 module (https://slicerros2.readthedocs.io).
 
 The main difference between *sawSocketStreamer* and *sawOpenIGTLink*
 is that we use the OpenIGTLink sockets and serialization instead of

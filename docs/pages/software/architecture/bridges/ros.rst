@@ -1,4 +1,6 @@
-.. _ros:
+.. _bridge-ros:
+
+.. include:: /includes/logic-view-soft-bridge.rst
 
 ROS
 ###

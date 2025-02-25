@@ -1,5 +1,7 @@
 .. _ecm-si:
 
+.. include:: /includes/logic-view-Si-arm.rst
+
 Endoscopic Camera Manipulator
 #############################
 

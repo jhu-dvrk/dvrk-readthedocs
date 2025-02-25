@@ -1,3 +1,7 @@
 ###############
 Troubleshooting
 ###############
+
+.. toctree::
+
+   troubleshooting/potentiometers

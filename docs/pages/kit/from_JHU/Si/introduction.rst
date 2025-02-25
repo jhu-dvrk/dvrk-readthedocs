@@ -1,3 +1,6 @@
+.. include:: /includes/logic-view-Si-controller.rst
+
+############
 Introduction
 ############
 

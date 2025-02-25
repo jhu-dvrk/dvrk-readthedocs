@@ -3,6 +3,16 @@
 Si HD
 #####
 
+Camera
+======
+
+.. figure:: /images/video/video-si-hd-camera-labeled.jpg
+   :width: 400
+   :align: center
+
+   Si HD camera mounted on ECM
+
+
 CCUs
 ====
 
@@ -15,3 +25,10 @@ ight.
    :align: center
 
    Si HD CCU back
+
+
+.. figure:: /images/video/video-si-hd-ccu-front-light-source.jpeg
+   :width: 400
+   :align: center
+
+   Si HD CCU (bottom) and light source (top)

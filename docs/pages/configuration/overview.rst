@@ -10,6 +10,8 @@ site specific configuration files, we provide a configuration
 generator that simplify the process, but some files have to be created
 by hand.
 
+.. _configuration-files-types:
+
 Types of files
 ##############
 
@@ -54,11 +56,11 @@ Types of files
   specific to a given instrument, i.e. kinematic of the last 3 joints,
   jaw angle and torque limits...  These are shared across all dVRK
   sites unless you are creating your :ref:`custom
-  instrument<custom-instrument>`.  They used the JSON file format and
-  the filename follows the naming convention
+  instrument<config-custom-instruments>`.  They used the JSON file
+  format and the filename follows the naming convention
   ``<TOOL_NAME>_<MODEL_NUMBER>.json``
   (e.g. ``LARGE_NEEDLE_DRIVER_400006.json``).  See :ref:`instrument
-  naming<instrument-naming>`.
+  naming<instruments>`.
 
 * **Instruments list**: These are shared files listing all the
   available instruments (aka tools).  Most users will never need to
@@ -78,16 +80,17 @@ Types of files
   * `ECM documentation <../../_static/schemas/dvrk-ecm.html>`_
 
 * **Console**: These files are specific to each site.  They are used
-  by the :ref:`sawIntuititiveResearchKit<console>`
-  ``mtsIntuitiveResearchKitConsole`` component to define the
+  by the :ref:`console applications<console>` to define the
   combination of arms you're using as well as a few other parameters
   such as IO parameters (period, port), head sensor used, foot pedal,
   teleoperation component.  The most basic console file contains a
   single arm and uses the default options for everything else.  The
-  single arm console files are :ref:`automatically
-  generated <config-generators>` along the arm IO file.  The console
-  configuration files use the JSON file format and the documentation
-  is generated from a schema:
+  single arm console files are :ref:`automatically generated
+  <config-generators>` along the arm IO file.  The console
+  configuration files are parsed by the ``Configure`` method of the
+  :ref:`sawIntuititiveResearchKit<console-component>`
+  ``mtsIntuitiveResearchKitConsole`` component, they use the JSON file
+  format and the documentation is generated from a schema:
 
   * `console documentation <../../_static/schemas/dvrk-console.html>`_
 
@@ -99,8 +102,7 @@ Shared files
 ************
 
 All the shared files are under the ``/share`` directory of the main
-dVRK repository:
-https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/share
+dVRK repository: |sawIntuitiveResearchKit|.
 
 The subdirectories are:
 

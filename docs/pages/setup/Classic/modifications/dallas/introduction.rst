@@ -4,10 +4,17 @@ Introduction
 The da Vinci instruments can be automatically identified when inserted
 in the sterile adapter using the 'add-only' chip embedded in the tool
 (aka Dallas chip, DS2505).  This feature was not supported in early
-versions of the dVRK both from a software and hardware perspective.
+versions of the dVRK Classic both from a software and hardware
+perspective.
 
-To retrieve the instrument tool type, the dVRK hardware can use two
-different approaches:
+.. note::
+
+   Instrument detection is supported without any modification for all
+   dVRK Si controllers and any dVRK Classic controller shipped
+   after 2019.
+
+To retrieve the instrument tool type, the dVRK Classic controllers can
+use two different approaches:
 
 * **Dallas driver interface (DS2480B):** The FPGA communicates
   serially with the DS2480B chip, which then communicates with the
@@ -19,11 +26,6 @@ different approaches:
 * **FPGA 1-wire interface:** In this scenario, the FPGA/QLA
   communicates directly with the tool's DS2505 chip.  This method
   requires QLA Version 1.4 or greater.
-
-.. note::
-
-   If your dVRK controller was shipped after 2019, you do not need to
-   modify anything.
 
 You can test the instrument detection using the command line tool
 ``instrument`` provided with the low level software (along ``qladisp``

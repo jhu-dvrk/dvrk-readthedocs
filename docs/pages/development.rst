@@ -8,4 +8,5 @@ Development
 
    development/options
    development/frames
+   development/api
    development/ros-clients

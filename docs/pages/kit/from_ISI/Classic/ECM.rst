@@ -1,5 +1,7 @@
 .. _ecm:
 
+.. include:: /includes/logic-view-classic-arm.rst
+
 Endoscopic Camera Manipulator
 #############################
 

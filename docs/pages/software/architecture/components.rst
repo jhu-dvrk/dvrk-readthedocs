@@ -1,3 +1,5 @@
+.. _architecture-components:
+   
 **********
 Components
 **********

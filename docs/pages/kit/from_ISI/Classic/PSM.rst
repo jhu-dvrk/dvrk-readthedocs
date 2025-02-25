@@ -1,5 +1,7 @@
 .. _psm:
 
+.. include:: /includes/logic-view-classic-arm.rst
+
 Patient side manipulators
 #########################
 

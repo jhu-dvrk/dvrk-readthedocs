@@ -30,9 +30,9 @@ components.
 There are some major drawbacks when not using ROS:
 
 * The dVRK becomes a "black box" with no easy way to interface. One
-  can use an alternate :ref:`middleware` such as `sawSocketStreamer
-  <udp-json>` or :ref:`sawOpenIGTLink <igtl>`, but these are not as
-  convenient as ROS.
+  can use an alternate :ref:`middleware` such as
+  :ref:`sawSocketStreamer <udp-json>` or :ref:`sawOpenIGTLink <igtl>`,
+  but these are not as convenient as ROS.
 
 * None of the programs provided along the dVRK relying on ROS will
   work.  That includes many calibration scripts.  So if you plan to
@@ -81,8 +81,8 @@ The main repositories for the dVRK project are:
   repository is included as a submodule of ``cisst-saw.git``
 
 * https://github.com/jhu-saw/....  - repositories for
-  *sawRobotIO1394*, sawKeyboard*, *sawControllers*...  All included
-  as submodules of ``cisst-saw.git``
+  |sawRobotIO1394|_, |sawKeyboard|_, |sawControllers|_...  All
+  included as submodules of ``cisst-saw.git``
 
 * http://github.com/jhu-dvrk/sawIntuitiveResearchKit - *SAW*
   components specific to the dVRK. Included as submodule of

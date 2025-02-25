@@ -1,12 +1,15 @@
+.. _configuration:
 
-###################################
-Configuration files and calibration
-###################################
+###################
+Configuration files
+###################
 
 .. toctree::
 
    configuration/overview
-   configuration/board-id
-   configuration/serial-number
-   configuration/edit
-   configuration/calibration
+   configuration/identifiers
+   configuration/generators
+   configuration/console
+   configuration/arm
+   configuration/custom-instruments
+   configuration/dmib-io

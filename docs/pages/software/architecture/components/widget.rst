@@ -92,6 +92,8 @@ todo
 
 todo
 
+.. _widgets-customization:
+
 Customization
 *************
 
