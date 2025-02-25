@@ -1,5 +1,7 @@
 .. _troubleshooting-potentiometers:
 
+.. include:: /includes/logic-view-classic-io.rst
+
 **************
 Potentiometers
 **************

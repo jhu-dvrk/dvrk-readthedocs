@@ -1,5 +1,7 @@
 .. _board-id:
 
+.. include:: /includes/logic-view-fpga.rst
+
 ********
 Board Id
 ********

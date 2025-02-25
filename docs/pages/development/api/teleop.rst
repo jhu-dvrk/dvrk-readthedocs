@@ -1,5 +1,7 @@
 .. _api-teleoperation:
 
+.. include:: /includes/logic-view-soft-teleop.rst
+
 Teleoperation
 #############
 

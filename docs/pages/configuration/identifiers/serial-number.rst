@@ -1,5 +1,7 @@
 .. _serial-number:
 
+.. include:: /includes/logic-view-from-isi.rst
+
 *****************
 Arm serial number
 *****************

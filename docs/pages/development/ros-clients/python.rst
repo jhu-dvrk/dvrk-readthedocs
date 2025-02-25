@@ -1,3 +1,5 @@
+.. include:: /includes/logic-view-user-app.rst
+
 Python
 ######
 
