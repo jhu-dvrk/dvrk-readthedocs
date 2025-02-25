@@ -13,4 +13,5 @@ Classic
    Classic/pots-depth
    Classic/gripper
    Classic/mtm-gravity-compensation
+   Classic/suj
 
