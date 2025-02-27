@@ -11,7 +11,7 @@ Introduction
 
 .. warning::
 
-   This page is for the first generation daVinci arms (aka Classic,
+   This page is for the first generation da Vinci arms (aka Classic,
    Standard).  If you have Si arms (ECM, PSM), this page is
    irrelevant.
 

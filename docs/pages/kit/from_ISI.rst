@@ -2,9 +2,9 @@
 
 .. include:: /includes/logic-view-from-isi.rst
 
-******************
-daVinci components
-******************
+*******************
+da Vinci components
+*******************
 
 .. toctree::
 

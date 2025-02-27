@@ -1,6 +1,6 @@
 .. _head-original:
 
-daVinci Head Sensor
+da Vinci Head Sensor
 ===================
 
 Wiring
@@ -15,7 +15,7 @@ forming a diamond shape on each side.
    :width: 400
    :align: center
 
-   da Vinci Classic head sensor 
+   da Vinci Classic head sensor
 
 Under the cover, there's a long cable going to the ISI controller at
 the base of the master console.  There's also a short cable going

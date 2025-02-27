@@ -22,7 +22,7 @@ RAMIS
   * Location: USA
   * Type: RAMIS, teleoperated
   * Notes: Wheeled separate patient side manipulators, physical
-    RCM. Surgeon’s side controllers similar to daVinci (7-dofs,
+    RCM. Surgeon’s side controllers similar to da Vinci (7-dofs,
     cartesian), flat panel display
 
 **Medicaroid: Hinotori**
@@ -34,7 +34,7 @@ RAMIS
   * Notes: Four patient side manipulators, software RCM, mounted on
     single serial robot for positioning.  Surgeon's side with fixed
     stereo display (ala HMD), two 7-dofs haptic arms (similar to
-    daVinci)
+    da Vinci)
 
 **CMR Surgical: Versius**
 
@@ -62,7 +62,7 @@ RAMIS
   * https://www.linkedin.com/company/cornerstone-robotics-limited/
   * Location: Hong Kong
   * Type: RAMIS, teleoperated
-  * Notes: Similar to daVinci X
+  * Notes: Similar to da Vinci X
 
 **Moon surgical: Maestro**
 
@@ -108,7 +108,7 @@ RAMIS
   * Type: RAMIS, teleoperated
   * Notes: Table-mounted separate patient side serial manipulators,
     software RCM Based on snapshots, stereo display with eye piece
-    (ala daVinci)
+    (ala da Vinci)
 
 **Virtuoso Surgical: Virtuoso**
 
@@ -220,7 +220,7 @@ Research systems
   * https://robotsguide.com/robots/ravensurgical
   * https://applieddexterity.com/
   * Type: RAMIS
-  * Notes: Patient side, physical RCM, compatible with daVinci
+  * Notes: Patient side, physical RCM, compatible with da Vinci
     instruments. Surgeon’s side uses off-the-shelf haptic devices
     (ForceDimension). No camera nor display
 
@@ -228,6 +228,6 @@ Research systems
 
   * https://www.kinovarobotics.com/resource/enhancing-robotic-surgery-with-a-plug-and-play-multi-robot-surgical-platforms
   * Type: RAMIS
-  * Notes: daVinci S/Si instruments mounted on serial manipulator
+  * Notes: da Vinci S/Si instruments mounted on serial manipulator
     (Kinova).  Surgeon’s side uses off-the-shelf haptic devices
     (ForceDimension). No camera nor display
