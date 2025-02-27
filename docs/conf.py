@@ -22,7 +22,8 @@ copyright = '2012-2025, Johns Hopkins University (Baltimore, USA)'
 author = 'Anton Deguet, Peter Kazanzides'
 
 # The full version, including alpha/beta/rc tags
-release = '2.3.0'
+# release = '2.3.1'
+release = 'devel'
 
 # -- General configuration ---------------------------------------------------
 
@@ -69,7 +70,10 @@ for file in ['cisst-component-manager',
              'dvrk-teleop-psm',
              'dvrk-tool-list']:
     print(f'retrieving JSON schema {file}')
-    url = f'https://raw.githubusercontent.com/jhu-dvrk/sawIntuitiveResearchKit/refs/tags/{dvrk_version}/share/schemas/{file}.schema.json'
+    if release != 'devel':
+      url = f'https://raw.githubusercontent.com/jhu-dvrk/sawIntuitiveResearchKit/refs/tags/{dvrk_version}/share/schemas/{file}.schema.json'
+    else:
+      url = f'https://raw.githubusercontent.com/jhu-dvrk/sawIntuitiveResearchKit/refs/heads/devel/share/schemas/{file}.schema.json'
     dest = f'{schema_dir}/{file}.schema.json'
     urllib.request.urlretrieve(url, dest)
 
