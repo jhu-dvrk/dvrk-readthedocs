@@ -127,14 +127,14 @@ These instructions are for all arms, PSMs, MTMs and ECM.  For the
 calibration, one needs to start the ``dvrk_console_json`` application
 for the arm to be calibrated (see :ref:`dVRK console <console>`).
 Since we also need the low level data (potentiometer values), we have
-to provide the ``-i`` option.  For example, to calibrate a PSM2,
+to provide the ``-K`` option.  For example, to calibrate a PSM2,
 command line options for ``dvrk_console_json`` should look like:
 
 .. code-block:: bash
 
    # In directory <my-config-dir>
    # directory with your sawRobotIO1394-PSM2-00000.xml configuration files
-   rosrun dvrk_robot dvrk_console_json -j <my-config-dir>/console-PSM2.json -i ros-io-PSM2.json -C
+   rosrun dvrk_robot dvrk_console_json -j <my-config-dir>/console-PSM2.json -K -C
 
 .. note::
 
@@ -148,12 +148,7 @@ command line options for ``dvrk_console_json`` should look like:
    on poor potentiometer values) on the next run.
 
 The file ``console-PSM2.json`` is specific to each system since it
-points to your ``sawRobotIO1394-PSM2-00000.xml`` file.  On the other
-hand, the file ``ros-io-PSM2.json`` can be found in the
-``sawIntuitiveResearchKit/share`` directory since it isn't system
-specific.  There is no need to specify the full path for the ROS IO
-files since the dVRK application use a search path that includes the
-``share`` directory.
+points to your ``sawRobotIO1394-PSM2-00000.xml`` file.
 
 In a separate shell, start the :ref:`potentiometer calibration script
 <dvrk_calibrate_potentiometers>` using the following command line:

@@ -1,7 +1,7 @@
 .. _head-original:
 
 da Vinci Head Sensor
-===================
+====================
 
 Wiring
 ------

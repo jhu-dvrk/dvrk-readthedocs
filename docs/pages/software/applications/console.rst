@@ -90,7 +90,7 @@ Shared options
 ``-D, --dark-mode``
   *replaces the default Qt palette with darker colors (optional)*
 
-  
+
 ROS extra options
 =================
 
@@ -100,15 +100,20 @@ ROS extra options
 ``-P <value>, --tf-ros-period <value>``
   *period in seconds to read all components and broadcast tf2 (default 0.02, 20 ms, 50Hz).  There is no point to have a period higher than the arm component's period (optional)*
 
-``-i, --ros-io-config``
-  *json config file to configure ROS bridges to collect low level data (IO) (optional)*
-
 ``-s, --suj-voltages``
   *add ROS topics for SUJ voltages (optional)*
 
-``-I, --pid-topics``
+``-I, --pid-topics-read-only``
   *add some extra publishers to monitor PID state (optional)*
 
+``-J, --pid-topics-read-write``
+  *add all PID topics (use with caution!) (optional)*
+
+``-K, --io-topics-read-only``
+  *add some extra publishers to monitor IO state (optional)*
+
+``-L, --io-topics-read-write``
+  *add all IO topics (use with caution!) (optional)*
 
 .. _console-configuration-file:
 
@@ -117,7 +122,7 @@ Configuration file
 
 `dVRK console JSON schema <../../../_static/schemas/dvrk-console.html>`_.
 
- 
+
 .. _console-dynamic-components:
 
 Dynamic components
@@ -144,4 +149,3 @@ such as:
 The full syntax for the *cisstMultiTask* component manager
 configuration files is documented in this `JSON schema
 <../../../_static/schemas/cisst-component-manager.html>`_.
-    
