@@ -155,6 +155,15 @@ html_title = project + ' ' + release
 highlight_language = 'none'
 
 rst_prolog = """
+.. |FPGA| replace:: :ref:`FPGA<fpga>`
+
+.. |QLA| replace:: :ref:`QLA<qla>`
+
+.. |QLA1| replace:: :ref:`QLA1<qla>`
+
+.. |dRAC| replace:: :ref:`FPGA<drac>`
+
+
 
 .. |sawKeyboard| replace:: *sawKeyboard*
 .. _sawKeyboard: https://github.com/jhu-saw/sawKeyboard

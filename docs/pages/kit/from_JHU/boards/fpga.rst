@@ -2,9 +2,9 @@
 
 .. include:: /includes/logic-view-fpga.rst
 
-******************
-Logic board (FPGA)
-******************
+****************
+Logic board FPGA
+****************
 
 Introduction
 ############

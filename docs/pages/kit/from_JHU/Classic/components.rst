@@ -7,8 +7,8 @@ Custom boards (PCBs)
 ********************
 
 * :ref:`Component versions <controller-versions>` by build/date.
-* The FPGA and QLA designs are open source and available on GitHub:
-  https://jhu-cisst.github.io/mechatronics.
+* The |FPGA| and |QLA| designs are open source and available on
+  GitHub: https://jhu-cisst.github.io/mechatronics.
 * For the DQLA based controller, the DQLA-Q and DQLA-F designs are
   open source and available on GitHub:
   https://github.com/jhu-dvrk/dvrk-DQLA

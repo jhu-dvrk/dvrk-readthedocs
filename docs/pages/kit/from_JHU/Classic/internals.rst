@@ -9,8 +9,8 @@ FPGA V1/V2 based
 ****************
 
 Internally, each V1 or V2 QLA1-based controller box contains two
-FPGA/QLA board sets, one dMIB (da Vinci Manipulator Interface Board),
-LED boards, power supplies and relays.
+|FPGA|\/|QLA| board sets, one dMIB (da Vinci Manipulator Interface
+Board), LED boards, power supplies and relays.
 
 .. figure:: /images/controllers/qla1-controller-diagram.png
    :width: 600
