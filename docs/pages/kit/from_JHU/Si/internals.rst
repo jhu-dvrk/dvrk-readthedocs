@@ -1,6 +1,6 @@
 .. _si-internal:
 
-.. include:: /includes/logic-view-drac.rst
+.. include:: /includes/logic-view-Si-controller.rst
 
 Internal layout
 ###############

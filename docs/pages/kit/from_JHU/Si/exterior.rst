@@ -1,5 +1,7 @@
 .. _controller-si-exterior:
 
+.. include:: /includes/logic-view-Si-controller.rst
+
 Exterior
 ########
 

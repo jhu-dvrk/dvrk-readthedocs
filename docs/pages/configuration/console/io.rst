@@ -1,5 +1,7 @@
 .. _config-io:
 
+.. include:: /includes/logic-view-console.rst
+
 IOs
 ***
 
@@ -50,7 +52,7 @@ In **version 1.4** and higher, you can also specify the FireWire
 protocol used to communicate between the PC and the controllers:
 
 .. code-block:: JSON
-		
+
    "io": {
       "firewire-protocol": "sequential-read-broadcast-write" // default
     }
@@ -77,7 +79,7 @@ The following protocols are supported:
   You will have to test it on your hardware to see if it supports this
   protocol or not.
 
-  
+
 Period
 ======
 
@@ -115,4 +117,3 @@ fast enough.  The maximum value for the watchdog time-out is 300 ms.
 Setting the time-out to zero turns off the watchdog and is not
 recommended.  This field is optional and it is recommended to not
 override the default.
-

@@ -1,5 +1,6 @@
-
 .. _config-pedals-usb:
+
+.. include:: /includes/logic-view-console.rst
 
 USB "joystick" foot pedals
 **************************

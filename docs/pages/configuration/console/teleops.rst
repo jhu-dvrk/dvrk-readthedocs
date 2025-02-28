@@ -52,5 +52,3 @@ parameters. For example, if one wants to disable all jaw motions:
        }
      }
    ]
-
-     

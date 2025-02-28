@@ -1,5 +1,7 @@
 .. _config-head:
 
+.. include:: /includes/logic-view-console.rst
+
 Head sensor
 ***********
 

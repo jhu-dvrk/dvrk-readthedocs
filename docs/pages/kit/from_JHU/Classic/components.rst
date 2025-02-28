@@ -1,3 +1,5 @@
+.. include:: /includes/logic-view-classic-controller.rst
+
 Components
 ##########
 
@@ -50,4 +52,3 @@ Hardware modifications
 * QLAs:
 
    * :ref:`Heat sink and fan <qla-heat-sink>`
-

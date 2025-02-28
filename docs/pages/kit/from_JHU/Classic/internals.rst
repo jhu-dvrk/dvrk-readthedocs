@@ -1,5 +1,7 @@
 .. _classic-internal:
 
+.. include:: /includes/logic-view-classic-controller.rst
+
 Internal layout
 ###############
 

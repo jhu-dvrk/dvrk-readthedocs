@@ -1,3 +1,5 @@
+.. include:: /includes/logic-view-console.rst
+
 cisst/SAW components
 ####################
 
@@ -119,7 +121,7 @@ Process**) sends a *servo_cp* to the actual *PSM* (**PSM Process**):
    2. The *PSM from ROS* component publishes the ROS pose on the topic
       ``/PSM/servo_cp``
 
-3. ROS passes the message along (ROS cloud in the figure above)  
+3. ROS passes the message along (ROS cloud in the figure above)
 4. The *ROS PSM* bridge in the **PSM Process** subscribes to the topic
    ``/PSM/servo_cp``.  In its callback:
 

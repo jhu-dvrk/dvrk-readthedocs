@@ -1,5 +1,7 @@
 .. _controller-classic-exterior:
 
+.. include:: /includes/logic-view-classic-controller.rst
+
 Exterior
 ########
 

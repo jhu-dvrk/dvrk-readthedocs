@@ -1,5 +1,7 @@
 .. _config-focus:
 
+.. include:: /includes/logic-view-console.rst
+
 Focus controller
 ****************
 

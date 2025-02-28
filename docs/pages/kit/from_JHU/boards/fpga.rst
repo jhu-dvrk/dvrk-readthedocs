@@ -1,5 +1,6 @@
+.. _fpga:
 
-.. include:: /includes/logic-view-classic-arm.rst
+.. include:: /includes/logic-view-fpga.rst
 
 ******************
 Logic board (FPGA)
