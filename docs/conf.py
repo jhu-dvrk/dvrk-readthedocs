@@ -131,12 +131,13 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_build/_schemas']
 
-html_context = {
-  'display_github': True,
-  'github_user': 'jhu-dvrk',
-  'github_repo': 'dvrk-readthedocs',
-  'github_version': 'main/docs/',
-}
+if release == 'devel':
+  html_context = {
+    'display_github': True,
+    'github_user': 'jhu-dvrk',
+    'github_repo': 'dvrk-readthedocs',
+    'github_version': 'devel/docs/',
+  }
 
 html_logo = 'images/dVRK-square.png'
 
