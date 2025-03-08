@@ -37,9 +37,9 @@ Power supplies
   * 24V Motor Power Supply (For MTM):
     https://www.digikey.com/product-detail/en/cui-inc/VGS-75-24/102-1943-ND/2045674
   * 24V Motor Power Supply (For PSM):
-    https://www.astrodynetdi.com/ecatalog/power-supplies/PMK225S-24U
+    https://store.astrodynetdi.com/225w-u-channel-power-supply-24vpmk225s-24u.html
   * 36V Motor Power Supply (For ECM):
-    https://www.astrodynetdi.com/ecatalog/power-supplies/PMK225S-36U
+    https://store.astrodynetdi.com/225w-u-channel-power-supply-36vpmk225s-36u.html
 
 Hardware modifications
 **********************
