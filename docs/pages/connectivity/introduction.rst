@@ -56,7 +56,7 @@ todo
 Bluetooth
 =========
 
-For the dVRK Si, the communication between the SUJ and the PC relies
+For the dVRK-Si, the communication between the SUJ and the PC relies
 on Bluetooth.  This was the cheapest and fastest solution to read the
 SUJ potentiometers without adding external wires.  This solution works
 fine but is a bit tricky to set up.

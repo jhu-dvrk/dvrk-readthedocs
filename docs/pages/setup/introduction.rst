@@ -33,7 +33,7 @@ them.
 .. note::
 
    As of 2024, there is no dVRK support for the Si/Xi surgeon's
-   console.  So what is commonly referred to as a "dVRK Si" is usually
+   console.  So what is commonly referred to as a "dVRK-Si" is usually
    built around the da Vinci Si patient's side (SUJ, PSMs, ECM) and a
    da Vinci S surgeon's console.
 

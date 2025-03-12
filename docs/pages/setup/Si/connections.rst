@@ -5,7 +5,7 @@ Connections
 
 For a system without SUJ, we provide two custom cables with D-sub
 connectors at both ends.  At one end, they plug in the arm itself (see
-paragraph below) and the other end is connected to the :ref:`dVRK Si
+paragraph below) and the other end is connected to the :ref:`dVRK-Si
 controllers <controller-si-exterior>`.
 
 For users with an original patient cart (SUJ), the connectors for the

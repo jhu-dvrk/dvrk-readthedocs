@@ -34,7 +34,7 @@ Supported:
 * Classic PSMs and ECMs (ver1) with QLA based arm controllers
 * Classic SUJ (ver1) with QLA based SUJ controller
 * Si PSMs (ver2) and ECMs (ver3) with dRAC based arm controllers
-* S and Si SUJ (ver2) with dESSJ and dRAC based arm controllers
+* S and Si SUJ (ver2) with dSIB and dRAC based arm controllers
 
 Not supported:
 

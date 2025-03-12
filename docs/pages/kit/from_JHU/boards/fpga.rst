@@ -49,7 +49,7 @@ nodes) depends on the :ref:`controllers versions
 <controller-versions>` and the number of arms.  The dVRK Classic
 controllers with FPGA V1 or V2 each have two logic boards (aka QLA1).
 The dVRK Classic controllers with FPGA V3 (DQLA), the Classic SUJ
-controllers (QLA1) and dVRK Si controllers (dRA1) all use a single
+controllers (QLA1) and dVRK-Si controllers (dRA1) all use a single
 logic board.  There is no dVRK-specific FPGA board used for the Si
 SUJ.
 

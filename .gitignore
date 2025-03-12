@@ -13,3 +13,6 @@
 .env
 *~
 _build
+docs/dummy.html
+docs/schema_doc.css
+docs/schema_doc.min.js

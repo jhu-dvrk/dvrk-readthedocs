@@ -10,7 +10,7 @@ Teleoperation
    Make sure you can detect the :ref:`operator's presence
    <config-head>`.
 
-You can define multiple tele-operation components for different pairs
+You can define multiple teleoperation components for different pairs
 of MTM/PSMs. You can use the same PSM or MTM in different
 teleoperation pairs (see console :ref:`component
 <console-component-teleops>` and :ref:`API<api-console>`).
@@ -35,7 +35,7 @@ teleoperation pairs (see console :ref:`component
 Note that "ecm-teleop" requires an ECM.  This feature is
 available in version 1.6.0 and above.
 
-For release **1.6** and above, there is a new scope for tele-operation
+For release **1.6** and above, there is a new scope for teleoperation
 components called "configure-parameter". In this scope, one can define
 the teleoperation scale, misc. thresholds and other configuration
 parameters. For example, if one wants to disable all jaw motions:

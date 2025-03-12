@@ -84,7 +84,7 @@ Usage is described in the :ref:`Classic MTM gripper calibration
 ******************************************************
 
 * C+ application with a text based interface, it depends on cisst/SAW
-* Compatible with **dVRK Si PSM and ECM only**
+* Compatible with **dVRK-Si PSM and ECM only**
 * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/si-potentiometers-calibration
 
 This application is used to calibrate the digital potentiometers on
@@ -103,11 +103,11 @@ calibration <calibration-si-psm-ecm-pots>` section.
   CRTK/dVRK Python to communicate with the dVRK console.  The dVRK
   console must be running at the same time, with the options ``-s``
 * ROS package ``dvrk_python``
-* Compatible with **dVRK Si SUJ only**
+* Compatible with **dVRK-Si SUJ only**
 * https://github.com/jhu-dvrk/dvrk_python/tree/devel/scripts
 
 This script is used to calibrate the potentiometers for the 4 SUJ arms
-of the dVRK Si.  The script relies on mechanical limits to compute the
+of the dVRK-Si.  The script relies on mechanical limits to compute the
 scales and offsets used for the conversion from voltages to SI
 positions.
 

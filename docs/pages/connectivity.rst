@@ -9,4 +9,3 @@ Connectivity
    connectivity/introduction
    connectivity/firewire
    connectivity/ethernet
-   connectivity/bluetooth

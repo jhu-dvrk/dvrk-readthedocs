@@ -19,7 +19,7 @@ The default digital inputs for the da Vinci :ref:`Classic foot pedals
 <pedals-compatible>`) are defined in shared IO configuration files.
 These depend on which controller is used, both :ref:`board Id
 <board-id>` and :ref:`hardware version <controller-classic-exterior>`
-so we provide multiple configuration files.
+so, we provide multiple configuration files.
 
 All the default foot pedal IO configuration files are in the
 |sawIntuitiveResearchKit| repository, under ``io/share``.
@@ -115,5 +115,5 @@ motors.  This is used if the physical communication is lost (unplugged
 wire) or if the application has crashed or is not sending commands
 fast enough.  The maximum value for the watchdog time-out is 300 ms.
 Setting the time-out to zero turns off the watchdog and is not
-recommended.  This field is optional and it is recommended to not
+recommended.  This field is optional, and it is recommended to not
 override the default.

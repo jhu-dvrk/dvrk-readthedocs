@@ -10,7 +10,7 @@ Introduction
 On the patient's side, the PSM arms are designed to use
 interchangeable instruments depending on the task (e.g. needle driver,
 scissor, grasper...).  These instruments are sterilizable and
-disposible.  Each instrument has a maximum number of uses based on its
+disposable.  Each instrument has a maximum number of uses based on its
 mechanical properties and expected usage.  After multiple uses (and
 required sterilization between uses), the internal mechanisms are more
 likely to break.  This can lead to injuries, hence a set maximum
@@ -82,7 +82,7 @@ The main differences between the first generation of instruments
   shaft (5.08 cm longer).
 * Shape of the instrument disk plate and sterile adapter: since both
   the Classic and S/Si were commercially available at the same time,
-  the instruments have a different base plate to make sure a Classic
+  the instruments have a different base-plate to make sure a Classic
   instrument can't be accidentally inserted on a S/Si PSM and a S/Si
   instrument can't be inserted on a Classic PSM.
 
@@ -103,10 +103,10 @@ The main differences between the first generation of instruments
    Since the da Vinci classic has been retired in 2012, it is getting
    harder to find instruments for this model.  Fortunately, when
    Intuitive Surgical introduced the da Vinci S (and later Si) the
-   instruments remained **almost** unchanged so it is possible to use
+   instruments remained **almost** unchanged, so it is possible to use
    S/Si instruments with the dVRK Classic PSMs with a :ref:`modified
    Classic sterile adapter <classic-adapter-si>`.  Classic instruments
-   can not be used on the dVRK Si.
+   can not be used on the dVRK-Si.
 
 EndoWrist
 #########
@@ -174,7 +174,7 @@ Newer Si instruments
 ISI introduced a new mechanism for the instrument's roll sometime
 around 2020.  Instead of using a cable, the roll is now controlled
 using a gear.  This affects the coupling matrix used to convert
-actuator to joint values.  The scaling factor is different and the
+actuator to joint values.  The scaling factor is different, and the
 direction is reversed.  It is very important to make sure you have the
 correct instrument definition file.  You can check if you have a
 "geared" instrument by looking at the mating disks or the revision
@@ -196,5 +196,5 @@ number on the cover.
 .. warning::
 
    If you are using a "geared" instrument and the cartesian motion
-   doesn't make any sense, it might be because the dVRK developpers
+   doesn't make any sense, it might be because the dVRK developers
    are not aware of this new revision.  Let us know!

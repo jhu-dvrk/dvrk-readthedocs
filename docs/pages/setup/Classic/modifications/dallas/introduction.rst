@@ -10,7 +10,7 @@ perspective.
 .. note::
 
    Instrument detection is supported without any modification for all
-   dVRK Si controllers and any dVRK Classic controller shipped
+   dVRK-Si controllers and any dVRK Classic controller shipped
    after 2019.
 
 To retrieve the instrument tool type, the dVRK Classic controllers can

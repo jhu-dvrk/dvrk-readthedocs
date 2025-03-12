@@ -18,7 +18,7 @@ doesn't need to process any low power signals since the embedded ESPM
 does.  The ESPM converts all the low power signals (encoder,
 potentiometer, buttons, instrument Id, LEDs) and communicate with the
 dVRK controllers over a serial digital connection (LVDS).  To
-communicate with the arm, the dVRK Si controllers use two standard
+communicate with the arm, the dVRK-Si controllers use two standard
 D-Sub connectors, one for the LVDS communication and one for the 10
 power lines.  The connectors are the same used in the PSMs and ECMs.
 

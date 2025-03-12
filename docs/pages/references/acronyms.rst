@@ -106,7 +106,7 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
   Dual QLA setup with a single FPGA board (version 3+).  Used in the Classic arm controllers after CA9.
 
 **Firmware**
-  In most cases, refers to embedded software running on the FPGA logic board.  For Si systems can also refer to the dESSJ or ESPM board.
+  In most cases, refers to embedded software running on the FPGA logic board.  For Si systems can also refer to the ESSJ or ESPM boards.
 
 **dMIB**
   da Vinci Manipulator Interface Board, board designed to interface between the ISI manipulators using an ITT Cannon plus a foot pedal connector and the QLA-FPGA connectors (SCSI and RS cables).  Used in Classic arm controllers.
@@ -121,13 +121,10 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
   Board used to boot a Si PSM or ECM with a custom dVRK firmware.  The firmware is stored on a micro-SD card.
 
 **dSIB-Si**
-  Adapter board used to connect the dVRK Si controller to a single arm and its setup joints at the base of the patient cart (either PSM or ECM)
-
-**dESSJ**
-  dVRK specific board that replaces the original **ESSJ** on each setup joint of a S/Si patient cart.  The board is a pass-through for the FireWire signal and uses a Bluetooth Arduino to get (A2D) and send the SUJ joint values to the PC.
+  Adapter board used to connect the dVRK-Si controller to a single arm and its setup joints at the base of the patient cart (either PSM or ECM)
 
 **LVDS**
   Low-voltage differential signaling (LVDS) is a signaling
   method used for high-speed transmission of binary data over copper.
-  This is used to communicate between the ESPM, ESSJ and dVRK Si
+  This is used to communicate between the ESPM, ESSJ and dVRK-Si
   controller.

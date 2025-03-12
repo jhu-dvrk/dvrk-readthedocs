@@ -22,7 +22,7 @@ Connectors
    :width: 600
    :align: center
 
-   dVRK Si controller
+   dVRK-Si controller
 
 LEDs
 ****

@@ -59,7 +59,7 @@ dVRK Classic arm controllers
 dVRK-Si arm controllers
 #######################
 
-.. csv-table:: dVRK Si arm controller versions
+.. csv-table:: dVRK-Si arm controller versions
    :name: si-arm-controller-version-table
    :header: "Build", "Year", "FPGA", "S/N", "dRAC", "S/N"
    :align: center

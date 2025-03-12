@@ -12,7 +12,7 @@ head is facing the display. On the first versions of dVRKs, we didn't
 have a head sensor so we used one of the foot pedals as a deadman
 switch. The operator was considered present if and only if the "COAG"
 pedal was pressed.  Having to press the pedal continuously is quite
-inconvenient so we came up with a few alternatives.
+inconvenient, so we came up with a few alternatives.
 
 .. note::
 

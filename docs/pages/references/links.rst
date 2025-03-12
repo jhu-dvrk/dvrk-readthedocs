@@ -64,7 +64,6 @@ Electronics
   * `Front panel LEDs <https://github.com/jhu-dvrk/dvrk-si-front-panel-led>`_
   * `ESPM programmer <https://github.com/jhu-dvrk/espm-programmer-pcba>`_
   * `dSIB <https://github.com/jhu-dvrk/dSIB-Si-pcba>`_
-  * `dESSJ <https://github.com/jhu-dvrk/dESSJ-pcba>`_
 
 Firmware/Software
 =================
@@ -73,7 +72,6 @@ Firmware/Software
 * Client library and tools for all FPGA1394: `mechatronics-software <https://github.com/jhu-cisst/mechatronics-software>`_
 * Embedded software for Zynq PS on FPGA1394 v3: `mechatronics-embedded <https://github.com/jhu-cisst/mechatronics-embedded>`_
 * `dSIB Si <https://github.com/jhu-dvrk/dSIB-Si-firmware>`_ (FPGA)
-* `dESSJ Si <https://github.com/jhu-dvrk/dESSJ-firmware>`_ (Arduino)
 
 Software
 ********
