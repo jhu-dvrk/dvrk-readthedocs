@@ -14,7 +14,7 @@ firmware source is freely available on GitHub.
 Different boards are used on different configuration and generations of dVRK
 controllers.
 
-.. figure:: /images/controllers/dVRK-signals-all-controllers.svg
+.. figure:: /images/controllers/dVRK-signals-all-controllers.*
    :width: 600
    :align: center
 
