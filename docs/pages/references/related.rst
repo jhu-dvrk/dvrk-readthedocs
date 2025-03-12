@@ -15,6 +15,13 @@ Commercial
 RAMIS
 *****
 
+**Intuitive: da Vinci**
+
+  * https://www.intuitive.com/en-us/products-and-services/da-vinci
+  * https://www.linkedin.com/company/intuitivesurgical
+  * Location: California, USA
+  * Type: RAMIS, teleoperated
+
 **Medtronic: Hugo RAS**
 
   * https://www.medtronic.com/covidien/en-au/robotic-assisted-surgery/hugo-ras-system.html
@@ -171,10 +178,27 @@ Haptic systems
   * https://www.linkedin.com/company/quanser
   * Location: Ontario, Canada
 
+Bronchoscopy
+************
+
+**Noah Medical: Galaxy**
+
+  * https://www.noahmed.com/
+  * https://www.linkedin.com/company/noahmed
+  * Location: California, USA
+  * Type: flexible robot, used with C-Arm/CBCT
+
+**Intuitive: Ion**
+
+  * https://www.intuitive.com/en-us/products-and-services/da-vinci
+  * https://www.linkedin.com/company/intuitivesurgical
+  * Location: California, USA
+  * Type: flexible robot, used with C-Arm/CBCT
+
 Orthopedic
 **********
 
-**Stryker:Mako**
+**Stryker: Mako**
 
   * https://www.stryker.com/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview.html
   * https://www.linkedin.com/showcase/stryker-joint-replacement
@@ -195,7 +219,7 @@ Orthopedic
 Other
 *****
 
-**AcuSurgical:Luca**
+**AcuSurgical: Luca**
 
   * https://acusurgical.com
   * https://www.linkedin.com/company/acusurgical/
