@@ -1,6 +1,6 @@
 .. admonition:: Click to show/hide context
    :collapsible: closed
 
-   .. figure:: /images/general/logic-view-soft-teleop.gif
+   .. figure:: /images/general/logic-view-soft-teleop.*
       :width: 600
       :align: center

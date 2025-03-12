@@ -28,3 +28,12 @@ Polytechnic Institute (OISE 1927275, 2019-2024).
 Starting with Version 2.0.0, the dVRK software has also been supported
 by the Multi-Scale Medical Robotics Center (MRC), InnoHK, Hong Kong,
 China.
+
+The following individuals have contributed in one way or another to the dVRK:
+Juan Barragan Nogera, Dale Bergman, Brendan Burkhart, Jonathan Bohren, Guido
+Caccianiga, Preetham Chalasani, Zihan Chen, Tommaso Da Col, Anton Deguet,
+Claudia D'Ettorre, Simon DiMaio, Kyle Ettinger, Gregory Fischer, Alessandro
+Gozzi, Ankur Kapoor, Peter Kazanzides, Simon Leonard, Kapi Ketan Mehta, Adnan
+Munawar, Chris Nourse, Nicole Ortega, Youri Tan, Russell Taylor, Paul
+Tienphrapa, Kollin Tierling, Ugur Tumerdem, Tian Xia, Keshuai Xu, Hao Yang,
+Zerui Wang, Nural Yilmaz, Jie Ying Wu, Haoying Zhou...
