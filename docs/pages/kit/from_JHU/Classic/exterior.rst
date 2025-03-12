@@ -51,13 +51,13 @@ and Card(s).
    :width: 600
    :align: center
 
-   Front of QLA, FPGA V2 based Classic controller (2 board Ids)
+   Front of QLA, FPGA V2 based Classic controller (2 board IDs)
 
 .. figure:: /images/controllers/dqla-controller-MTM-front-view.jpeg
    :width: 600
    :align: center
 
-   Front of DQLA, FPGA V3 based Classic controller (1 board Id)
+   Front of DQLA, FPGA V3 based Classic controller (1 board ID)
 
 Power
 =====

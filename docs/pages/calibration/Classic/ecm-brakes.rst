@@ -127,7 +127,7 @@ sawRobotIO1394 console program to test the new values.
    * In the XML file, set all the ``ReleasedCurrent`` (NOTE:
      **releaseD** current) to zero and the ``ReleaseTime`` to 10
      seconds.  Start from a low value for the ``ReleaseCurrent`` for
-     all 3 brakes.  values (~0.1 for 100 mA).
+     all 3 brakes.  Values are provided in amperes (~0.1 for 100 mA).
 
    * Start the sawRobotIO1394 console and click *Enable All* to power
      the actuators and brakes.
@@ -184,7 +184,7 @@ after you calibrated your brakes:
 
    We found that the power requirements are close to the maximum
    amount of power a 24V power supply initially installed can deliver.
-   There is some variability between different systems and brakes so
+   There is some variability between different systems and brakes, so
    you might need to upgrade the power supply to 36V in the controller
    enclosure.  To check if you have reached the maximum deliverable
    power, keep an eye on the current feedback.  These values should be

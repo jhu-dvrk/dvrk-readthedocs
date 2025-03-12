@@ -17,7 +17,9 @@ controllers can be daisy-chained with the PC.  Generation two introduces an
 Ethernet port per logic board.  V2 boards can directly communicate with a PC.
 They can also be used to bridge between a FireWire chain of controllers and a PC
 over Ethernet (see :ref:`connectivity<connectivity>`).  All versions of FPGA
-boards (from 2012 on) are supported by the latest dVRK firmware and software. 
+boards (from 2012 on) are supported by the latest dVRK firmware and software.
+All FPGA boards are uniquely identified on the FireWire or Ethernet chain by
+their :ref:`board ID<board-id>`.
 
 On the robotic arm's side, the FPGA boards will send requested motor power to
 the "power" board, i.e. either QLA (da Vinci Classic) or dRAC (da Vinci Si). The

@@ -23,7 +23,7 @@ When you received a new component from Intuitive Surgical, we strongly recommend
 * Visually check what you've received to make sure there is no obvious
   damage (e.g. broken cables on PSM or MTM)
 * As quickly as possible, start printing and sticking labels on the
-  connectors with the arm name, board Id and/or serial number.
+  connectors with the arm name, board ID and/or serial number.
 
 .. figure:: /images/Classic/MTM/dvrk-dMIB-MTM-ITT-connected.jpeg
    :width: 300
@@ -49,7 +49,7 @@ dVRK controllers
   <controllers-classic>`.
 * Once you verified the type of controller, we strongly recommend
   labeling the controllers with the name of the arm you plan to control
-  along with the board Ids.  The board Ids should follow the
+  along with the board IDs.  The board IDs should follow the
   convention described in the :ref:`configuration page <board-id>`.
   For example, a controller for a Classic MTMR using FPGAs V2, the
   label should read ``MTMR (board IDs 2 - 3)``.  It is worth sticking
