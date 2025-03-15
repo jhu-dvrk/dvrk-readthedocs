@@ -52,8 +52,8 @@ the computer and all the other dVRK controllers.
 
 .. note::
 
-   The FPGA V2 has a 100Mb ethernet adapter while the FPGA V3 has a
-   2Gb adapter.  Therefore, if you have both available, you should use
+   The FPGA V2 has a 100Mb ethernet adapter while the FPGA V3 has 2
+   1Gb adapters.  Therefore, if you have both available, you should use
    the controller with an FPGA V3 as Ethernet bridge.
 
 Ethernet only
