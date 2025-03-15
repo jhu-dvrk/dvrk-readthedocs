@@ -25,8 +25,8 @@ the controllers are daisy-chained using FireWire and the computer is
 also on the FireWire chain.  This approach works will all generations
 of dVRK controllers and is the most reliable approach.
 
-.. figure:: /images/connectivity/PC-FireWire-Controllers.png
-   :width: 400
+.. figure:: /images/connectivity/PC-controllers-firewire-only.*
+   :width: 600
    :align: center
 
    FireWire only
@@ -36,29 +36,31 @@ FireWire with Ethernet bridge
 
 Starting with dVRK Software Version 2.0, Ethernet/UDP is also
 supported. To use Ethernet/UDP, you will need to use firmware 7+ on
-all your dVRK controllers, and you will need at least one FPGA V2.x
-board (with Ethernet jack, see :ref:`FPGA versions<fpga-versions>`). In
-this scenario, the controllers are daisy-chained using FireWire, but
-the computer is not on the FireWire chain. Instead, the computer is
-connected via Ethernet to one of the dVRK controllers. Said dVRK
-controller becomes the "bridge" between the computer and all the other
-dVRK controllers.
+all your dVRK controllers, and you will need at least one FPGA V2 or
+V3 board (with Ethernet jack, see :ref:`FPGA
+versions<fpga-versions>`). In this scenario, the controllers are
+daisy-chained using FireWire, but the computer is not on the FireWire
+chain. Instead, the computer is connected via Ethernet to one of the
+dVRK controllers. Said dVRK controller becomes the "bridge" between
+the computer and all the other dVRK controllers.
 
-.. figure:: /images/connectivity/PC-Ethernet-Controllers.png
-   :width: 400
+.. figure:: /images/connectivity/PC-controllers-ethernet-bridge.*
+   :width: 600
    :align: center
 
    FireWire with Ethernet bridge
 
+.. note::
+
+   The FPGA V2 has a 100Mb ethernet adapter while the FPGA V3 has a
+   2Gb adapter.  Therefore, if you have both available, you should use
+   the controller with an FPGA V3 as Ethernet bridge.
+
 Ethernet only
 =============
 
-todo
+.. figure:: /images/connectivity/PC-controllers-ethernet-only.*
+   :width: 400
+   :align: center
 
-Bluetooth
-=========
-
-For the dVRK-Si, the communication between the SUJ and the PC relies
-on Bluetooth.  This was the cheapest and fastest solution to read the
-SUJ potentiometers without adding external wires.  This solution works
-fine but is a bit tricky to set up.
+   FireWire only
