@@ -116,9 +116,10 @@ RAMIS
     (off-the-shelf ForceDimension?), flat panel display.  Patient side
     single port, two manipulators, articulated stereo camera
 
-**Johnson & Johnson: Ottava**
+**Johnson & Johnson MedTech: Ottava**
 
   * https://thenext.jnjmedtech.com/surgical-robotics
+  * https://www.linkedin.com/company/johnson-&-johnson-medtech/
   * Type: RAMIS, teleoperated
   * Notes: Table-mounted separate patient side serial manipulators,
     software RCM Based on snapshots, stereo display with eye piece
@@ -200,6 +201,13 @@ Bronchoscopy
   * https://www.intuitive.com/en-us/products-and-services/da-vinci
   * https://www.linkedin.com/company/intuitivesurgical
   * Location: California, USA
+  * Type: flexible robot, used with C-Arm/CBCT
+
+**Johnson & Johnson MedTech: Monarch Quest**
+
+  * https://thenext.jnjmedtech.com
+  * https://www.linkedin.com/company/johnson-&-johnson-medtech/
+  * Location: New Jersey, USA
   * Type: flexible robot, used with C-Arm/CBCT
 
 Orthopedic
