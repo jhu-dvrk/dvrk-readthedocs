@@ -21,18 +21,29 @@ boards (from 2012 on) are supported by the latest dVRK firmware and software.
 All FPGA boards are uniquely identified on the FireWire or Ethernet chain by
 their :ref:`board ID<board-id>`.
 
-On the robotic arm's side, the FPGA boards will send requested motor power to
-the "power" board, i.e. either QLA (da Vinci Classic) or dRAC (da Vinci Si). The
-requested motor power can be either current or voltage (for recent dVRK
-controllers). The logic board also receives signals from the robot through the
-"power" board. For example, the QLA power boards have both specialized chips for
-encoder reading and analog to digital converters (ADC) to read the potentiometer
-and Hall effect sensors.  The dRAC power board doesn't need to convert signals
-coming from the arm since these arms contain their own conversion board, ESPM
-(Electronic Serializer for Patient Manipulator). The ESPM board comes from
-Intuitive, but the firmware is specific to the dVRK.  It uses a custom
-communication protocol to send data (encoders, potentiometers...) to the dVRK-Si
-controllers.
+On the robotic arm's side, all FPGA boards are mounted on top of a "power" board
+(QLA or dRAC). The connection is made through standoff connectors placed under
+the FPGA board. All versions of the FPGA boards use the same layout for the
+connection to the "power" board to ensure backward compatibility.
+
+The FPGA boards send requested motor power to the "power" board, i.e. either QLA
+(da Vinci Classic) or dRAC (da Vinci Si). The requested motor power can be
+either current or voltage (for recent dVRK controllers). The logic board also
+receives signals from the robot through the "power" board. For example, the QLA
+power boards have both specialized chips for encoder reading and analog to
+digital converters (ADC) to read the potentiometer and Hall effect sensors.  The
+dRAC power board doesn't need to convert signals coming from the arm since these
+arms contain their own conversion board, ESPM (Electronic Serializer for Patient
+Manipulator). The ESPM board comes from Intuitive, but the firmware is specific
+to the dVRK.  It uses a custom communication protocol to send data (encoders,
+potentiometers...) to the dVRK-Si controllers.
+
+Starting with the FPGA V3, we now have access to a dual-core ARM 32 processor
+embedded on the same chip as the FPGA. This arm processor can run Linux along
+with some user code while having fast access to the FPGA data. We plan to take
+advantage of this feature for embedded computing (e.g. PID) and fast data
+collection.  See also `embedded mechatronics
+<https://github.com/jhu-cisst/mechatronics-embedded>`_.
 
 .. _fpga-versions:
 
@@ -46,7 +57,18 @@ Main versions of logic boards and core features:
   * until to 2015
   * based on FPGA Xilinx Spartan 6
   * two FireWire ports for daisy-chaining
-  * See
+
+  .. figure:: /images/fpga1394/fpga-v1-top.*
+     :width: 300
+     :align: center
+
+     FPGA V1 top view
+
+  .. figure:: /images/fpga1394/fpga-v1-bottom.*
+     :width: 300
+     :align: center
+
+     FPGA V1 bottom view
 
 * FPGA V2 (https://github.com/jhu-cisst/FPGA1394)
 
@@ -54,12 +76,36 @@ Main versions of logic boards and core features:
   * based on FPGA Xilinx Spartan 6
   * added one Ethernet port (100MB)
 
+  .. figure:: /images/fpga1394/fpga-v2-top.*
+     :width: 300
+     :align: center
+
+     FPGA V2 top view
+
+  .. figure:: /images/fpga1394/fpga-v2-bottom.*
+     :width: 300
+     :align: center
+
+     FPGA V2 bottom view
+
 * FPGA V3 (https://github.com/jhu-cisst/FPGA1394V3)
 
   * from 2023
   * based on Xilinx Zynq System on Chip (SoC), XC7Z020
   * embedded dual-core ARM 32 processor
   * added another Ethernet port (two ports, 1GB)
+
+  .. figure:: /images/fpga1394/fpga-v3-top.*
+     :width: 300
+     :align: center
+
+     FPGA V3 top view
+
+  .. figure:: /images/fpga1394/fpga-v3-bottom.*
+     :width: 300
+     :align: center
+
+     FPGA V3 bottom view
 
 See also the :ref:`controller versions page <controller-versions>` to
 determine which FPGA version is used.
