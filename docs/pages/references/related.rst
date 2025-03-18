@@ -231,6 +231,13 @@ Orthopedic
   * Location: Freemont, California, USA
   * Type: Open orthopedic surgery, knee
 
+**Curexo: Cuvis (joint/spine)
+
+  * https://www.curexo.com/
+  * https://www.linkedin.com/company/curexo
+  * Seoul, Korea
+  * Type: Open surgery, knee and spine (different robotic systems)
+
 Other
 *****
 
