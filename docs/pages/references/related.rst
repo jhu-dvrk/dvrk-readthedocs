@@ -79,6 +79,13 @@ RAMIS
   * Type: RAMIS, collaborative control (and autonomous)
   * Notes: ScoPilot (similar to AESOP) assistant holding endoscope for manual surgery
 
+**Revolve Surgical: R1**
+
+  * https://www.revolvesurgical.com
+  * https://www.linkedin.com/company/revolve-surgical
+  * Type: RAMIS, collaborative control
+  * Wristed instruments held by mechanical RCMs.  Surgeon holds the instruments using wristed handle
+
 **Vicarious Surgical Inc**
 
   * https://www.vicarioussurgical.com/
