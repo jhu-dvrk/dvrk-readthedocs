@@ -58,24 +58,35 @@ if not os.path.exists(schema_dir):
   os.makedirs(schema_dir)
 
 dvrk_version = release
-for file in ['cisst-component-manager',
-             'cisst-matrices',
-             'dvrk-arm',
-             'dvrk-console',
-             'dvrk-ecm',
-             'dvrk-interface-button',
-             'dvrk-mtm',
-             'dvrk-psm',
-             'dvrk-teleop-ecm',
-             'dvrk-teleop-psm',
-             'dvrk-tool-list']:
+
+schema_files = [
+  'cisst-component-manager',
+  'cisst-matrices',
+  'dvrk-arm',
+  'dvrk-console',
+  'dvrk-ecm',
+  'dvrk-interface-button',
+  'dvrk-mtm',
+  'dvrk-psm',
+  'dvrk-teleop-ecm',
+  'dvrk-teleop-psm',
+  'dvrk-tool-list'
+]
+
+for file in schema_files:
     print(f'retrieving JSON schema {file}')
     if release != 'devel':
       url = f'https://raw.githubusercontent.com/jhu-dvrk/sawIntuitiveResearchKit/refs/tags/{dvrk_version}/share/schemas/{file}.schema.json'
     else:
       url = f'https://raw.githubusercontent.com/jhu-dvrk/sawIntuitiveResearchKit/refs/heads/devel/share/schemas/{file}.schema.json'
     dest = f'{schema_dir}/{file}.schema.json'
-    urllib.request.urlretrieve(url, dest)
+    try:
+      urllib.request.urlretrieve(url, dest)
+    except urllib.error.HTTPError as e:
+      if e.code == 404:
+        print(f'    !! could not find this schema !! - assuming it is optional and continuing\n')
+      else:
+        raise e
 
 # the following is to be able to locate all possible $ref in schema
 schema_store = {}
