@@ -16,9 +16,9 @@ Types of files
 ##############
 
 * **IO (input/output):** These files are used by the
-  :ref:`*sawRobotIO1394*<io>` software components.  They specify
-  which signals coming in and out of the dVRK controllers a device needs
-  to use and how to convert them to something useful.  For example a
+  :ref:`sawRobotIO1394<io>` software components.  They specify which
+  signals coming in and out of the dVRK controllers a device needs to
+  use and how to convert them to something useful.  For example a
   digital input low/high can be converted to a pedal pressed or
   released, an analog input can be converted to a potentiometer position
   in SI units, an analog output can be used to send a desired motor

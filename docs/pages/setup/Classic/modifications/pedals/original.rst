@@ -41,16 +41,22 @@ cable is rather short, so one might consider investing in an extension
 cable
 (e.g. https://smile.amazon.com/Monoprice-6ft-DB15-Molded-Cable/dp/B002LWJ7TA).
 
+
+.. figure:: /images/Classic/pedals/controller-footpedals-connection.jpeg
+   :width: 300
+   :align: center
+
+   Foot pedals connected to dVRK Classic controller
+
+Removing the foot pedal tray
+----------------------------
+
 .. figure:: /images/Classic/pedals/removing-footpedals-overview.jpeg
    :width: 300
    :align: center
 
    Foot pedals connected to dVRK Classic controller on a full
    surgeon's console
-
-
-Removing the foot pedal tray
-----------------------------
 
 If you're keeping the surgeon's console and display, you can leave the
 foot pedals as-is.  But if you plan to build your own mounting frame,

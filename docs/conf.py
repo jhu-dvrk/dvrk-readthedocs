@@ -175,7 +175,7 @@ rst_prolog = """
 
 .. |dRAC| replace:: :ref:`FPGA<drac>`
 
-
+.. |qladisp| replace:: :ref:`qladisp<qladisp>`
 
 .. |sawKeyboard| replace:: *sawKeyboard*
 .. _sawKeyboard: https://github.com/jhu-saw/sawKeyboard
