@@ -65,6 +65,7 @@ schema_files = [
   'dvrk-arm',
   'dvrk-console',
   'dvrk-ecm',
+  'dvrk-hid',
   'dvrk-interface-button',
   'dvrk-mtm',
   'dvrk-psm',
