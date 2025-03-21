@@ -4,7 +4,7 @@ Introduction
 
 To schematize, robot control requires:
 
-**1** Robot sensors to measure the state of the robot, including limit switches,
+**1** Robot sensors to measure the state of the robot, including potentiometers, encoders, limit switches...
 
   **2** Digital serialization of analog signals provided by the sensors using ADC, encoder chips...
 
