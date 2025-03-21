@@ -9,6 +9,9 @@ Logic board FPGA
 Introduction
 ############
 
+Overview
+========
+
 The "logic" board, also known as "FPGA" board is used to process and pass data
 between the robotic arm and the computer.
 
@@ -22,9 +25,21 @@ All FPGA boards are uniquely identified on the FireWire or Ethernet chain by
 their :ref:`board ID<board-id>`.
 
 On the robotic arm's side, all FPGA boards are mounted on top of a "power" board
-(QLA or dRAC). The connection is made through standoff connectors placed under
+(QLA, QLA via DQLA or dRAC). The connection is made through standoff connectors placed under
 the FPGA board. All versions of the FPGA boards use the same layout for the
 connection to the "power" board to ensure backward compatibility.
+
+.. figure:: /images/fpga1394/fpga-V1-above-QLA.*
+   :width: 300
+   :align: center
+
+   FPGA V1 ready to install on QLA (note internal black FireWire cables)
+
+.. figure:: /images/fpga1394/fpga-V1-mated-to-QLA.*
+   :width: 300
+   :align: center
+
+   FPGA V1 mated to QLA
 
 The FPGA boards send requested motor power to the "power" board, i.e. either QLA
 (da Vinci Classic) or dRAC (da Vinci Si). The requested motor power can be
@@ -38,17 +53,55 @@ Manipulator). The ESPM board comes from Intuitive, but the firmware is specific
 to the dVRK.  It uses a custom communication protocol to send data (encoders,
 potentiometers...) to the dVRK-Si controllers.
 
-Starting with the FPGA V3, we now have access to a dual-core ARM 32 processor
-embedded on the same chip as the FPGA. This arm processor can run Linux along
-with some user code while having fast access to the FPGA data. We plan to take
-advantage of this feature for embedded computing (e.g. PID) and fast data
-collection.  See also `embedded mechatronics
-<https://github.com/jhu-cisst/mechatronics-embedded>`_.
+V3 specificities
+================
+
+The FPGA V3 also adds a dual-core ARM 32 processor embedded on the same chip as
+the FPGA. This arm processor can run Linux along with some user code while
+having fast access to the FPGA data. We plan to take advantage of this feature
+for embedded computing (e.g. PID) and fast data collection.  See also `embedded
+mechatronics <https://github.com/jhu-cisst/mechatronics-embedded>`_.
+
+The FPGA V3 has a SD card slot used to:
+
+* Load the FPGA chip's firmware
+* Boot the ARM processors
+* Store user data
+
+The FPGA V3 has significantly more I/Os and gates than the FPGA V1/V2 therefore
+they are able to manage more than one QLA board at a time. To use a single logic
+board with 2 QLA, we introduced a set of boards to bridge two QLAs to a single
+FPGA.  We call this board set DQLA.
+
+.. figure:: /images/fpga1394/fpga-V3-DQLA-overview.*
+   :width: 300
+   :align: center
+
+   DQLA set of boards and flat cables between the 2 QLAs (bottom left and right)
+   and the FPGA (top right)
+
+Finally, with the FPGA V3, all new dVRK controllers are designed so the logic
+board is installed against the side of the controllers so all the ports
+(Ethernet, FireWire, SD card) can be accessed without internal pass-through
+cables.
+
+.. figure:: /images/fpga1394/fpga-V3-DQLA-controller.*
+   :width: 300
+   :align: center
+
+   FPGA V3 against the back of DQLA controller
+
+.. figure:: /images/fpga1394/fpga-V3-dRAC-controller.*
+   :width: 300
+   :align: center
+
+   FPGA V3 against front of dRAC controller
+
 
 .. _fpga-versions:
 
-Versions
-########
+Details
+#######
 
 Main versions of logic boards and core features:
 
