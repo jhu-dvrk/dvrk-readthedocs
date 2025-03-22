@@ -16,7 +16,7 @@ dVRK API uses the CRTK naming convention as much as possible, so you
 should familiarize yourself with `CRTK
 <https://crtk-robotics.readthedocs.io>`_.
 
-.. figure:: /images/software/dVRK-component-standard.png
+.. figure:: /images/software/dVRK-component-standard.*
    :width: 400
    :align: center
 

@@ -86,7 +86,7 @@ alternate for the MTM:
   ``jhu-dVRK-Si-demo/console-Novint-Falcon-PSM1-Teleop.json``
   (https://github.com/dvrk-config/dvrk_config_jhu).
 
-.. figure:: /images/software/dVRK-component-ForceDimension.png
+.. figure:: /images/software/dVRK-component-ForceDimension.*
    :width: 400
    :align: center
 
@@ -102,7 +102,7 @@ need your teleoperation to work across the network.  The black
 diagram shows the "PSM over ROS" coming from an actual dVRK but could
 be any other device as long as the ROS topics are the same.
 
-.. figure:: /images/software/dVRK-component-PSM-from-ROS.png
+.. figure:: /images/software/dVRK-component-PSM-from-ROS.*
    :width: 400
    :align: center
 

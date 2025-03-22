@@ -17,7 +17,7 @@ The simplest way to write an application for the dVRK is to use ROS.
 The dVRK ROS node ``dvrk_robot dvrk_console_json`` exposes most of the
 dVRK features as topics.
 
-.. figure:: /images/software/dVRK-component-ROS-teleop.png
+.. figure:: /images/software/dVRK-component-ROS-teleop.*
    :width: 400
    :align: center
 

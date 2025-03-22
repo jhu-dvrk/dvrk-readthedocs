@@ -20,7 +20,7 @@ All C++ components are based on the *cisst*\ /*SAW* libraries, more specifically
   * Part 1 (30 min): https://youtu.be/SSo2MPsfBlk
   * Part 2 (45 min): https://youtu.be/XD0S4GzvfM8
 
-.. figure:: /images/software/dVRK-component-thread-view.png
+.. figure:: /images/software/dVRK-component-thread-view.*
    :align: center
 
    Main components of the dVRK software stack

@@ -48,7 +48,7 @@ frequency.  There are a few notable exceptions:
 * Qt manages its own thread(s)
 * The ROS bridges (cisst-ros) also use multiple threads
 
-.. figure:: /images/software/dVRK-component-thread-view.png
+.. figure:: /images/software/dVRK-component-thread-view.*
    :align: center
 
    Main components and threads for the dVRK software stack
