@@ -32,6 +32,9 @@ RAMIS
     RCM. Surgeon’s side controllers similar to da Vinci (7-dofs,
     cartesian), flat panel display
 
+    .. figure:: /images/related/medtronics-hugo.*
+       :height: 150
+
 **Medicaroid: Hinotori**
 
   * https://www.medicaroid.com
@@ -43,6 +46,9 @@ RAMIS
     stereo display (ala HMD), two 7-dofs haptic arms (similar to
     da Vinci)
 
+    .. figure:: /images/related/medicaroid-hinotori.*
+       :height: 150
+
 **CMR Surgical: Versius**
 
   * https://us.cmrsurgical.com/
@@ -52,6 +58,9 @@ RAMIS
   * Notes: Wheeled separate patient side manipulators, software RCM.
     Surgeon’s side controllers in cartesian space, flat panel display
     and stereo glasses
+
+    .. figure:: /images/related/cmr-versius.*
+       :height: 150
 
 **SSII: Mantra**
 
@@ -63,6 +72,9 @@ RAMIS
     physical RCM.  Surgeon's side with 3D flat panel and glasses,
     7-dof haptic arms?
 
+    .. figure:: /images/related/ssi-mantra.*
+       :height: 150
+
 **Cornerstone Robotics: Sentire**
 
   * https://www.csrbtx.com/en/product_center/
@@ -70,6 +82,9 @@ RAMIS
   * Location: Hong Kong
   * Type: RAMIS, teleoperated
   * Notes: Similar to da Vinci X
+
+    .. figure:: /images/related/cornerstone-sentire.*
+       :height: 150
 
 **Moon surgical: Maestro**
 
@@ -79,12 +94,18 @@ RAMIS
   * Type: RAMIS, collaborative control (and autonomous)
   * Notes: ScoPilot (similar to AESOP) assistant holding endoscope for manual surgery
 
+    .. figure:: /images/related/moon-maestro.*
+       :height: 150
+
 **Revolve Surgical: R1**
 
   * https://www.revolvesurgical.com
   * https://www.linkedin.com/company/revolve-surgical
   * Type: RAMIS, collaborative control
   * Wristed instruments held by mechanical RCMs.  Surgeon holds the instruments using wristed handle
+
+    .. figure:: /images/related/revolve-r1.*
+       :height: 150
 
 **Vicarious Surgical Inc**
 
@@ -95,6 +116,9 @@ RAMIS
   * Notes: Surgeon’s side controllers in cartesian space
     (off-the-shelf ForceDimension?), flat panel display.  Patient side
     single port, two manipulators, folded stereo camera
+
+    .. figure:: /images/related/vicarious.*
+       :height: 150
 
 **Asensus Surgical: Senhance, LUNA**
 
@@ -116,6 +140,9 @@ RAMIS
     (off-the-shelf ForceDimension?), flat panel display.  Patient side
     single port, two manipulators, articulated stereo camera
 
+    .. figure:: /images/related/titan-enos.*
+       :height: 150
+
 **Johnson & Johnson MedTech: Ottava**
 
   * https://thenext.jnjmedtech.com/surgical-robotics
@@ -135,6 +162,9 @@ RAMIS
     Surgeon’s side manipulator emulate laparoscopic instruments (not
     cartesian)
 
+    .. figure:: /images/related/virtuoso.*
+       :height: 150
+
 **Rob Surgical: Bitrack**
 
   * https://www.robsurgical.com/
@@ -145,6 +175,9 @@ RAMIS
     off-the-shelf instruments (no articulated wrist?).  Surgeon's side
     use 2 haptic devices and flat panel display
 
+    .. figure:: /images/related/rob-surgical-bitrack.*
+       :height: 150
+
 **Revo Surgical: Revo-i**
 
   * http://revosurgical.com
@@ -152,6 +185,9 @@ RAMIS
   * Seoul, South Korea
   * RAMIS, teleoperated
   * Notes: similar to da Vinci Si
+
+    .. figure:: /images/related/revo-i.*
+       :height: 150
 
 Simulation
 **********
