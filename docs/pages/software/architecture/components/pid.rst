@@ -41,6 +41,7 @@ By default the widget is used for display only.  One can change which
 axis is used for the plotting section.
 
 .. figure:: /images/gui/gui-Classic-MTM-pid.png
+   :width: 600
    :align: center
 
    PID widget for MTM
