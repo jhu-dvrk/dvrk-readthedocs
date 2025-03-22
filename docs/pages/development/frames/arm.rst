@@ -85,7 +85,7 @@ on the Standard (aka Classic) and S da Vinci systems.  If your display
 is mounted at a different angle, adjust your ``console.json``
 accordingly.
 
-.. figure:: /images/transformations/dVRK-transformations-surgeon-console.png
+.. figure:: /images/transformations/dVRK-transformations-surgeon-console.*
    :width: 600
    :align: center
 
@@ -100,7 +100,7 @@ calibration method:
 https://github.com/jhu-dvrk/dvrk_camera_registration.  If you have an
 ECM, see :ref:`SUJ <frames_SUJ>`.
 
-.. figure:: /images/transformations/dVRK-transformations-PSMs-kit.png
+.. figure:: /images/transformations/dVRK-transformations-PSMs-kit.*
    :width: 600
    :align: center
 

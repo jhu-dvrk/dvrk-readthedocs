@@ -82,7 +82,7 @@ dVRK SUJ controller.  These controllers (on Classic or Si) can read
 the potentiometers of the SUJ and therefore allow us to compute the
 forward kinematics of each SUJ arm.
 
-.. figure:: /images/transformations/dVRK-transformations-SUJ.png
+.. figure:: /images/transformations/dVRK-transformations-SUJ.*
    :width: 600
    :align: center
 
@@ -99,7 +99,7 @@ transformations are usually the result of a registration.  Using the
 SUJ Fixed class allows user to control the PSMs with respect to the
 ECM even when the ECM moves (e.g. ECM teleoperation).
 
-.. figure:: /images/transformations/dVRK-transformations-SUJ-Fixed.png
+.. figure:: /images/transformations/dVRK-transformations-SUJ-Fixed.*
    :width: 600
    :align: center
 
@@ -117,7 +117,7 @@ the ECM base (aka ECM RCM), the transformation for
 ``/SUJ/ECM/local/measured_cp`` is identity and ``ECM RCM`` is the same
 as `World` (see https://github.com/jhu-dvrk/dvrk_camera_registration).
 
-.. figure:: /images/transformations/dVRK-transformations-SUJ-Fixed-hand-eye-calibration.png
+.. figure:: /images/transformations/dVRK-transformations-SUJ-Fixed-hand-eye-calibration.*
    :width: 600
    :align: center
 
