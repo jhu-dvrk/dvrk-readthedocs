@@ -13,7 +13,7 @@ mounted against the back of the controllers to expose the 2 D-sub and
 e-stop connectors.  This design greatly reduces the amount of internal
 wiring compared to the dVRK Classic controllers.
 
-.. figure:: /images/controllers/drac-controller-diagram.png
+.. figure:: /images/controllers/drac-controller-diagram.*
    :width: 600
    :align: center
 

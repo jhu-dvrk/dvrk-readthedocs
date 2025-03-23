@@ -12,13 +12,13 @@ Internally, each V1 or V2 QLA1-based controller box contains two
 |FPGA|\/|QLA| board sets, one dMIB (da Vinci Manipulator Interface
 Board), LED boards, power supplies and relays.
 
-.. figure:: /images/controllers/qla1-controller-diagram.png
+.. figure:: /images/controllers/qla1-controller-diagram.*
    :width: 600
    :align: center
 
    QLA, FPGA V1 based Classic controller layout
 
-.. figure:: /images/controllers/qla1-controller-layout.jpg
+.. figure:: /images/controllers/qla1-controller-layout.*
    :width: 600
    :align: center
 
@@ -46,13 +46,13 @@ Compared to the QLA1-based controllers, this greatly reduced the
 amount of internal wiring (Ethernet and FireWire pass-through cables,
 safety relays).
 
-.. figure:: /images/controllers/dqla-controller-diagram.png
+.. figure:: /images/controllers/dqla-controller-diagram.*
    :width: 600
    :align: center
 
    DQLA, FPGA V# based Classic controller layout
 
-.. figure:: /images/controllers/dqla-controller-layout.png
+.. figure:: /images/controllers/dqla-controller-layout.*
    :width: 600
    :align: center
 
