@@ -51,6 +51,11 @@ Overview
 
 The main steps to set up a dVRK are:
 
+* **Hardware setup** - :ref:`The hardware setup section <setup>`
+  describes the few hardware modifications required and physical
+  connections between the controllers and the arms as well as between
+  the controllers and the PC.
+
 * **Compile the software with ROS** - This has to be performed once
   per user, and each user should maintain their own version of the
   software in their home directory.  The core software for the dVRK
@@ -72,11 +77,6 @@ The main steps to set up a dVRK are:
   maintain a GitHub organization (https://github.com/dvrk-config) to
   host the configuration files of different groups; let us know if you
   want a repository for your files! (contact Anton Deguet @ JHU)
-
-* **Hardware setup** - :ref:`The hardware setup section <setup>`
-  describes the few hardware modifications required and physical
-  connections between the controllers and the arms as well as between
-  the controllers and the PC.
 
 * **Calibration** - Once the controllers are physically connected, the
   software has been compiled, and you have the base configuration

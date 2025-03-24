@@ -34,6 +34,8 @@ Documents
 Open source
 ###########
 
+.. _links-open-source:
+
 General
 *******
 

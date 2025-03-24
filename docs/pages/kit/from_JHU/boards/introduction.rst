@@ -28,7 +28,8 @@ and motor/brake power for: QLA for da Vinci Classic (for **2** and **6**) and
 dRAC for da Vinci Si (for **6**).  The custom electronic components (FPGA, QLA
 and dRAC) are all designed by the Johns Hopkins group under the direction of Dr.
 Peter Kazanzides. The board designs, bills of materials, and all the firmware
-source is freely available on GitHub.
+source is freely available on GitHub (see :ref:`links in reference
+section<links-open-source>`).
 
 Different boards are used on different configuration and generations of dVRK
 controllers. Some boards are specific to each da Vinci version and are described

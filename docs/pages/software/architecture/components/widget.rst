@@ -35,62 +35,141 @@ The dVRK components use a few widgets included in the *cisst* libraries.
 Timing
 ======
 
-todo
+The timing widget is used to display statistics for periodic tasks (i.e.
+components). The statistics are based on the following times: begin computations
+at tic, end computation at toc and start again. So the average tic to tic
+represents the average period while tic to toc represents the load or time
+required to perform the periodic task. Statistics are recalculated every second.
+
+.. figure:: /images/gui/gui-timing.*
+   :width: 300
+   :align: center
+
+   Timing widget
+   
+The first column displays (1) the average period and standard deviation, (2) the
+corresponding frequency in Hertz and (3) the minimum and maximum interval
+between tics.
+
+The second column displays (1) the average computation time and standard
+deviation, (2) the average percentage of time spent for the computation during a
+single period interval and (3) the minimum and maximum of said percentage. An
+average computation time greater or equal to the average periods indicates that
+the task can not be performed fast enough to sustain the requested period. The
+maximum percentage shows what are the worst outliers, i.e. period overrun.
+
+The third column displays (1) the time window used to compute the statistics, 1
+second, (2) the number of iterations performed during the time window, similar
+to period frequence and (3) the number of time the computation took longer than
+the average period, number of outliers. 
+
+One can mouse over each element of the widget for a brief description.
 
 Messages
 ========
 
-todo
+The message widget can display messages from multiple components. Each message
+is timestamped. Messages in red are errors, orange is used for warnings and
+information messages are in black. It is important to scroll up when error
+occurs to find the first error, an error is likely to trigger other error
+messages.
 
-t to toggle, c to clear
+.. figure:: /images/gui/gui-messages.*
+   :width: 600
+   :align: center
+
+   Messages widget
+
+There are two keyboard shortcuts, ``c`` can be used to clear the displayed
+messages. ``t`` can be used to drop a tag in the logs. The tag is a green line
+with a timestamp and can be used to mark a user defined event.
+
+Messages are also logged in the ``cisstLog*.txt`` file. When using ROS, all
+messages are also forwarded to the standard ROS logs.  User defined tags are not
+saved in the ``cisstLog*.txt`` nor sent to the ROS logs. 
 
 3D pose
 =======
 
-  On top, from left to right, the widget display the names of the
-  moving and reference frames (e.g. PSM1/ECM).  If the cartesian pose
-  is meaningless (e.g. arm not homed, no instrument on PSM), the
-  widget will show *Invalid* in red.  The time displayed along the
-  status is the time the pose was computed since the program started.
+On top, from left to right, the widget display the names of the moving and
+reference frames (e.g. PSM1/ECM).  If the cartesian pose is meaningless (e.g.
+arm not homed, no instrument on PSM), the widget will show *Invalid* in red. The
+time displayed along the status is the time the pose was computed since the
+program started.
 
-  .. figure:: /images/gui/gui-pose-3D.png
-     :width: 200
-     :align: center
+.. figure:: /images/gui/gui-pose-3D.*
+   :width: 250
+   :align: center
 
-     Pose widget (3D view)
+   Pose widget (3D view)
 
-  The rotation is displayed in the middle.  The default is a 3D view,
-  but one can change to a matrix, quaternion or axis/angle using the
-  right-click menu.
+The rotation is displayed in the middle.  The default is a 3D view, but one can
+change to a matrix, quaternion, Euler or axis/angle using the right-click menu.
 
-  The position vector is displayed at the bottom, in millimeters.
+The position vector is displayed at the bottom, in millimeters.
 
-  .. figure:: /images/gui/gui-pose-axis-angle.png
-     :width: 200
-     :align: center
+.. figure:: /images/gui/gui-pose-axis-angle.*
+   :width: 250
+   :align: center
 
-     Pose widget (axis/angle view)
+   Pose widget (axis/angle view)
+
+When in 3D view, the mouse can be used to rotate the view. The reference frame
+is displayed using dashed lines. Red is used for the X axis, green for Y and
+blue for Z. One can reset the orientation of the view using the keyboard
+shortcut ``z``.
 
 Wrench
 ======
 
-todo
+The wrench widget can be used to visualize a wrench, 3D force and torque. This
+widget provides three views, 3D or 2D plot and plain text. To toggle between
+modes, use the mouse right click. views, use the 
 
-  .. figure:: /images/gui/gui-wrench-3D.png
-     :width: 200
-     :align: center
+.. figure:: /images/gui/gui-wrench-3D.png
+   :width: 250
+   :align: center
 
-     Wrench (3D view)
+   Wrench widget (3D view)
 
-  .. figure:: /images/gui/gui-wrench-2D.png
-     :align: center
+In 3D mode, the torque is not displayed.  The minimum and maximum and maximum
+forces encountered are shown in the top-left corner of the widget.  There are
+three keyboard shortcuts available: ``z`` to reset the visualization orientation
+(see 3D pose widget). ``a`` to enable/disable auto-resizing. By default, the
+widget will scale zoom out to make sure the maximum force is visible.  ``z`` can
+be used to reset the maximum force and scale the view based on the current
+force. 
 
-     Wrench (time plot)
+ .. figure:: /images/gui/gui-wrench-2D.png
+   :width: 500
+   :align: center
+
+   Wrench widget (2D plot)
+
+In 2D view, the information is shown over time. The left-side menu can be used
+to select which information should be display (for example *Force* along the
+*Axis Y*). This widget used the 2D plot widget described below, hence it uses
+the same keyboard shortcuts.
 
 2D plot
 =======
 
-todo
+The 2D plotting widget is hoping to overthrow the government. It can be used to
+display data overtime, multiple traces can be displayed simultaneously. It is a
+fairly simplistic widget so, if you need more advanced features, we recommend to
+use something like *PlotJuggler* over ROS.
+
+.. figure:: /images/gui/gui-plot.png
+   :width: 500
+   :align: center
+
+   Plot widget
+
+The widget displays the minimum and maximum values in the bottom-left and
+top-left corners. The right-click menu allows user to set the auto-scaling
+parameters. There are two keyboard shortcuts: ``space`` to pause/restart and
+``r`` to reset the scale along the Y axis.
+
 
 .. _widgets-customization:
 
