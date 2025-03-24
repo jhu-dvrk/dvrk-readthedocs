@@ -5,7 +5,7 @@ Connections
 
 For a system without SUJ, we provide two custom cables with D-sub
 connectors at both ends.  At one end, they plug in the arm itself (see
-paragraph below) and the other end is connected to the :ref:`dVRK-Si
+paragraph below) and the other end is connected to the :ref:`dVRK-*Si*
 controllers <controller-si-exterior>`.
 
 For users with an original patient cart (SUJ), the connectors for the
@@ -13,14 +13,14 @@ active arms are not accessible.  Therefore, we use the internal wiring
 in the SUJ arm to bring all the signals to the base of the cart.  An
 additional card (dSIB) is used to interface between the internal
 connectors at the base of the cart and the dVRK controllers (see
-:ref:`Si SUJ <setup-si-suj>`).
+:ref:`*Si* SUJ <setup-si-suj>`).
 
-.. figure:: /images/Si/Si-connections-overview.png
+.. figure:: /images/controllers/dVRK-signals-Si.*
    :width: 600
    :align: center
 
-   Overview of wiring between the active arms and the controllers in 3
-   scenarios: original, dVRK with and without SUJ
+   Overview of wiring between the active arms and the controllers in 2
+   scenarios: with and without SUJ
 
 For all custom frames, the mounting brackets have an open space at the
 bottom for the D-sub connectors.  The connectors can hold without

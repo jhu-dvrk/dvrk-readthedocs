@@ -4,16 +4,23 @@ Connections
 The only cable to connect for the Classic MTMs, PSMs and ECM is the
 large cable with an ITT Cannon 156 connector that comes from the arm.
 
-When connecting to the dVRK controller, make sure you don't force the
-connector in, the connector should insert without any forces (ZIF -
-Zero Insertion Force). The direction varies between arms, cable coming
-out either on the left or right of the dVRK controller.
+.. figure:: /images/controllers/dVRK-signals-Classic.*
+   :width: 600
+   :align: center
+
+   Overview of wiring between the active arms or SUJs and the dVRK Classic
+   controllers
+
+When connecting to the dVRK controller, make sure you don't force the connector
+in, the connector should insert without any forces (ZIF - Zero Insertion Force).
+The direction varies between arms, cable coming out either on the left or right
+of the dVRK controller.
 
 Once the connector is inserted, you need to use a large flat head
 screwdriver to secure it in place.  The screw on the back shell
 is connected to a camshaft to lock the connector to the controller.
 You need to turn by 90 degrees at most (a quarter turn), clockwise to
-lock and counterclockwise to unlock.  If you need to remove the
+clock and counterclockwise to unlock.  If you need to remove the
 connector, don't forget to unscrew it first.
 
 .. figure:: /images/controllers/Classic-ITT-Cannon-screw.jpeg
@@ -26,7 +33,6 @@ connector, don't forget to unscrew it first.
 
    Failure to lock/screw the arm connector will lead to bad contacts
    and will prevent the arm from working correctly.
-
 
 Arm specific notes:
 

@@ -35,6 +35,8 @@ RAMIS
     .. figure:: /images/related/medtronics-hugo.*
        :height: 150
 
+       Source: Medtronic
+
 **Medicaroid: Hinotori**
 
   * https://www.medicaroid.com
@@ -49,6 +51,8 @@ RAMIS
     .. figure:: /images/related/medicaroid-hinotori.*
        :height: 150
 
+       Source: Medicaroid
+
 **CMR Surgical: Versius**
 
   * https://us.cmrsurgical.com/
@@ -61,6 +65,8 @@ RAMIS
 
     .. figure:: /images/related/cmr-versius.*
        :height: 150
+
+       Source: CMR 
 
 **SSII: Mantra**
 
@@ -75,6 +81,8 @@ RAMIS
     .. figure:: /images/related/ssi-mantra.*
        :height: 150
 
+       Source: SSI Mantra (linkedin)
+
 **Cornerstone Robotics: Sentire**
 
   * https://www.csrbtx.com/en/product_center/
@@ -85,6 +93,8 @@ RAMIS
 
     .. figure:: /images/related/cornerstone-sentire.*
        :height: 150
+
+       Source: `CUHK <https://www.focus.cuhk.edu.hk/en/20241023/building-a-network-of-surgical-robots/051-science-engineering-technology-en/>`_
 
 **Moon surgical: Maestro**
 
@@ -97,6 +107,8 @@ RAMIS
     .. figure:: /images/related/moon-maestro.*
        :height: 150
 
+       Source: Moon Surgical
+
 **Revolve Surgical: R1**
 
   * https://www.revolvesurgical.com
@@ -106,6 +118,8 @@ RAMIS
 
     .. figure:: /images/related/revolve-r1.*
        :height: 150
+
+       Source: Revolve Surgical
 
 **Vicarious Surgical Inc**
 
@@ -119,6 +133,8 @@ RAMIS
 
     .. figure:: /images/related/vicarious.*
        :height: 150
+
+       Source: Annual Report 2023 Form 10-K (NYSE:RBOT)
 
 **Asensus Surgical: Senhance, LUNA**
 
@@ -143,6 +159,8 @@ RAMIS
     .. figure:: /images/related/titan-enos.*
        :height: 150
 
+       Source: `moby <https://www.moby.co/blog/titan-medical-a-strong-penny-stock-over-the-very-long-term>`_
+
 **Johnson & Johnson MedTech: Ottava**
 
   * https://thenext.jnjmedtech.com/surgical-robotics
@@ -165,6 +183,8 @@ RAMIS
     .. figure:: /images/related/virtuoso.*
        :height: 150
 
+       Source: Virtuoso
+
 **Rob Surgical: Bitrack**
 
   * https://www.robsurgical.com/
@@ -178,6 +198,8 @@ RAMIS
     .. figure:: /images/related/rob-surgical-bitrack.*
        :height: 150
 
+       Source: Rob Surgical
+
 **Revo Surgical: Revo-i**
 
   * http://revosurgical.com
@@ -188,6 +210,8 @@ RAMIS
 
     .. figure:: /images/related/revo-i.*
        :height: 150
+
+       Source: Revo Surgical
 
 Simulation
 **********
@@ -209,6 +233,11 @@ Haptic systems
   * Location: Switzerland
   * Types: haptic devices using parallel platform for position, gripper is motorized, up to 7 dofs motorized
 
+    .. figure:: /images/related/force-dimension.*
+       :height: 120
+
+       Source: Force Dimension
+
 **Haption: Virtuoso**
 
   * https://www.haption.com
@@ -216,11 +245,21 @@ Haptic systems
   * Location: France
   * Types: haptic devices using serial arm, up to 6 dofs motorized
 
+    .. figure:: /images/related/haption.*
+       :height: 150
+
+       Source: Haption
+
 **Quanser: HD2**
 
   * https://www.quanser.com/products/hd2-high-definition-haptic-device
   * https://www.linkedin.com/company/quanser
   * Location: Ontario, Canada
+
+    .. figure:: /images/related/quanser.*
+       :height: 150
+
+       Source: Quanser
 
 Bronchoscopy
 ************

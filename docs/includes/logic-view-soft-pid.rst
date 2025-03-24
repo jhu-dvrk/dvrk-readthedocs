@@ -2,5 +2,5 @@
    :collapsible: closed
 
    .. figure:: /images/general/logic-view-soft-pid.*
-      :width: 600
+      :width: 400
       :align: center
