@@ -310,8 +310,15 @@ Orthopedic
 
   * https://www.curexo.com/
   * https://www.linkedin.com/company/curexo
-  * Seoul, South Korea
+  * Location: Seoul, South Korea
   * Type: Open surgery, knee and spine (different robotic systems)
+
+**eCential Robotics**
+
+  * https://www.ecential-robotics.com/en-us
+  * https://www.linkedin.com/company/ecential-robotics
+  * Location: Grenoble, France
+  * Type: Open surgery, seems to use Kuka medical arm and optical tracker
 
 Other
 *****
