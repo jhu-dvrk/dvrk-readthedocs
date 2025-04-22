@@ -80,7 +80,7 @@ Compile using ``colcon``:
 .. code-block:: bash
 
    cd ~/ros2_ws
-   colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+   colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --symlink-install
    source ~/ros2_ws/install/setup.bash
 
 .. note:: `colcon build` is not as smart as ``catkin build``: you need
