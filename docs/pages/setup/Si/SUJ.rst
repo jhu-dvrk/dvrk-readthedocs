@@ -7,7 +7,7 @@ The goal is to re-use the internal cables and sensors in the SUJ
 passive arms for the dVRK controllers. This way all the signals from
 the active arms (:ref:`2 D-sub connectors <setup-si-connections>`) can
 be carried all the way to the dSIB and ESSJ at the base of the
-patient's cart.
+patient cart.
 
 Preparation
 ***********
@@ -20,7 +20,7 @@ of the dVRK controllers.
 .. warning::
 
    Most of the cables we need to reconnect to the dVRK controllers are
-   plugged on the 4 RACs, on the front of the patient cart.  There is
+   plugged into the 4 RACs, on the front of the patient cart.  There is
    one lone exception, a Z-axis cable.  Make sure you keep track
    of this cable. All needed cables come out from a cutout in the vertical column.
 
@@ -31,7 +31,7 @@ of the dVRK controllers.
    controllers.
 
 The first step is to remove the cover (2 parts) on the back of the
-cart.  The cover hold with 2 screws (use 3/16 hex wrench) and some pressure clips.
+cart.  The cover is held with 2 screws (use 3/16 hex wrench) and some pressure clips.
 
 .. figure:: /images/Si/Si-SUJ-conversion-top-screws.png
    :width: 400
@@ -67,12 +67,12 @@ panels, bracket, cover, battery, electronics... will be removed.
    SUJ Si open, front view
 
 On the top view, you can find the "Z-AXIS" connector. Make sure you
-squeeze the tab to unplug it.  Keep that cable aside. it will be
-connected to the 5th dSIB-Z-Si.
+squeeze the tab to unplug it.  Keep that cable aside. It will be
+connected to the dSIB-Z-Si.
 
-On the front view, you can see 4 RACs, i.e. one per active arm. Their cables 
+On the front view, you can see 4 RACs, i.e., one per active arm. Their cables 
 are labeled SJA2, SJX, SJC and SJA1.  They will need to be
-plugged in the dSIB for the PSM2, PSM3, ECM and PSM1 respectively.
+plugged into the dSIB for the PSM2, PSM3, ECM and PSM1 respectively.
 
 See next section for the :ref:`dSIB<dsib-si-setup>` descriptions.
 
@@ -92,9 +92,9 @@ The upper "FireWire" cable (J10) and the bottom cable (J13) plugged into each RA
 
 .. caution::
 
-   The FireWire cable is mounted on the back of the dRAC PCB, label
+   The FireWire cable is mounted on the back of the dRAC PCB, labeled
    J11. There is not much space to unplug it. We strongly recommend
-   you detach the RAC (the whole bloc) from the large steel plate
+   you detach the RAC (the whole block) from the large steel plate
    holding all 4 RACs, so you can unplug the cable without damaging the
    connector.
 
@@ -104,9 +104,9 @@ The upper "FireWire" cable (J10) and the bottom cable (J13) plugged into each RA
 
    SUJ Si RAC connections
 
-Once you've disconnected of the cables we need to preserve for the
-dVRK, you can remove all the electronic, bracket, battery... from the
-patient cart.  Ideally there should be noting above the "shoulders" so
+Once you've disconnected all of the cables we need to preserve for the
+dVRK, you can remove all the electronics, bracket, battery... from the
+patient cart.  Ideally, there should be nothing above the "shoulders" so
 you have a somewhat flat surface to stack the 4 dVRK-Si controllers.
 
 .. figure:: /images/Si/Si-SUJ-conversion-RAC-mapping.png
