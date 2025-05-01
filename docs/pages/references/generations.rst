@@ -58,3 +58,13 @@ Not supported:
 * Si patient cart motorized base
 * Si MTMs
 * Anything X, Xi or 5
+
+Overall, the following components from da Vinci systems are valuable
+for the dVRK community.
+
+.. figure:: /images/general/dVRK-compatibility-part-numbers.png
+   :align: center
+   :width: 500
+
+   dVRK supported Classic, S/Si parts
+
