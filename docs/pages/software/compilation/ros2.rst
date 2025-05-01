@@ -137,13 +137,19 @@ In a second terminal, use a Python test script to make an arm move
    source ~/ros2_ws/install/setup.bash
    ros2 run dvrk_python dvrk_arm_test.py -a PSM1
 
-The main dVRK ROS node is ``dvrk_console_json`` from the
-``dvrk_robot``.  This node requires configuration files specific to
-your system.
+The main :ref:`dVRK ROS node<console>` is ``dvrk_console_json`` from
+the ``dvrk_robot``.  This node requires configuration files specific
+to your system.
+
+You can also find more launch examples in the :ref:`Usage/Simulation
+section<usage-simulation>`.
 
 Notes
 *****
 
-* ROS2 will broadcast on your subnet.  That means that other computers
-  on the same subnet might send ROS messages you don't want.  To
-  prevent this, google ROS_LOCALHOST_ONLY or ROS_DOMAIN_ID.
+* ROS2 will broadcast on your subnet. That means that other computers
+  on the same subnet might send ROS messages you don't
+  want. Reciprocally, your topics will be broadcasted to others. To
+  prevent this, you can use the environment variables
+  ``ROS_AUTOMATIC_DISCOVERY_RANGE`` or ``ROS_DOMAIN_ID``. These are
+  documented on docs.ros.org.

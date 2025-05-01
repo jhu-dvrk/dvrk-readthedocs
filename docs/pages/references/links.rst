@@ -57,7 +57,7 @@ Electronics
   * `QLA test board <https://github.com/jhu-cisst/FPGA1394-QLA-Test>`_
   * `DQLA <https://github.com/jhu-dvrk/dvrk-DQLA>`_
   * `dMIB <https://github.com/jhu-dvrk/dvrk-pcb-dMIB>`_
-  * `dSIB <https://github.com/jhu-dvrk/dvrk-pcb-dSIB>`_
+  * `dSIB <https://github.com/jhu-dvrk/dvrk-pcb-dSIB>`__
   * `Intrument detection Dallas retrofit dongle <https://github.com/jhu-dvrk/dvrk_Dallas_Dongle>`_
 
 * Si
@@ -65,7 +65,7 @@ Electronics
   * Motor power board: `dRAC <https://github.com/jhu-dvrk/drac>`_
   * `Front panel LEDs <https://github.com/jhu-dvrk/dvrk-si-front-panel-led>`_
   * `ESPM programmer <https://github.com/jhu-dvrk/espm-programmer-pcba>`_
-  * `dSIB <https://github.com/jhu-dvrk/dSIB-Si-pcba>`_
+  * `dSIB <https://github.com/jhu-dvrk/dSIB-Si-pcba>`__
 
 Firmware/Software
 =================
