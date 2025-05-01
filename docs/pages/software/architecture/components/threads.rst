@@ -50,5 +50,6 @@ frequency.  There are a few notable exceptions:
 
 .. figure:: /images/software/dVRK-component-thread-view.*
    :align: center
+   :width: 700
 
    Main components and threads for the dVRK software stack
