@@ -118,10 +118,10 @@ dVRK focus controller
 
 Not released yet!
 
-  .. figure:: /images/Classic/focus/dvrk-focus-controller-adapter.png
-     :width: 400
-     :align: center
+.. figure:: /images/Classic/focus/dvrk-focus-controller-adapter.png
+   :width: 400
+   :align: center
 
 .. figure:: /images/Classic/focus/dVRK-focus-controller-adapter.jpeg
-     :width: 400
-     :align: center
+   :width: 400
+   :align: center

@@ -52,6 +52,7 @@ axes.  By default, this widget only has two active buttons, *Direct
 control* and *Plot position*.
 
 .. figure:: /images/gui/gui-Classic-MTM-io.png
+   :width: 600
    :align: center
 
    IO widget for an arm without brakes (MTM)
@@ -81,6 +82,7 @@ doing so since there will be no position controller running (PID).
 The arm will likely fall under its own weight.
 
 .. figure:: /images/gui/gui-Classic-ECM-io.png
+   :width: 600
    :align: center
 
    IO widget for an arm without brakes (MTM)
@@ -95,6 +97,7 @@ used for the Classic SUJ controller.  In this case it is powered, but
 the 4 axes are used to drive the SUJ brakes.
 
 .. figure:: /images/gui/gui-Classic-MTML-gripper-io.png
+   :width: 600
    :align: center
 
    IO widget for a single analog input (MTM gripper)
@@ -105,6 +108,7 @@ is useful to check if there are any issue with either the
 potentiometers or encoders.
 
 .. figure:: /images/gui/gui-Classic-MTML-io-plot.png
+   :width: 600
    :align: center
 
    IO widget plotting function to compare encoders and potentiometers

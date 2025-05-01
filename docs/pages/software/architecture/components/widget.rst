@@ -46,7 +46,7 @@ required to perform the periodic task. Statistics are recalculated every second.
    :align: center
 
    Timing widget
-   
+
 The first column displays (1) the average period and standard deviation, (2) the
 corresponding frequency in Hertz and (3) the minimum and maximum interval
 between tics.
@@ -61,7 +61,7 @@ maximum percentage shows what are the worst outliers, i.e. period overrun.
 The third column displays (1) the time window used to compute the statistics, 1
 second, (2) the number of iterations performed during the time window, similar
 to period frequence and (3) the number of time the computation took longer than
-the average period, number of outliers. 
+the average period, number of outliers.
 
 One can mouse over each element of the widget for a brief description.
 
@@ -86,7 +86,7 @@ with a timestamp and can be used to mark a user defined event.
 
 Messages are also logged in the ``cisstLog*.txt`` file. When using ROS, all
 messages are also forwarded to the standard ROS logs.  User defined tags are not
-saved in the ``cisstLog*.txt`` nor sent to the ROS logs. 
+saved in the ``cisstLog*.txt`` nor sent to the ROS logs.
 
 3D pose
 =======
@@ -124,7 +124,7 @@ Wrench
 
 The wrench widget can be used to visualize a wrench, 3D force and torque. This
 widget provides three views, 3D or 2D plot and plain text. To toggle between
-modes, use the mouse right click. views, use the 
+modes, use the mouse right click. views, use the
 
 .. figure:: /images/gui/gui-wrench-3D.png
    :width: 250
@@ -138,7 +138,7 @@ three keyboard shortcuts available: ``z`` to reset the visualization orientation
 (see 3D pose widget). ``a`` to enable/disable auto-resizing. By default, the
 widget will scale zoom out to make sure the maximum force is visible.  ``z`` can
 be used to reset the maximum force and scale the view based on the current
-force. 
+force.
 
  .. figure:: /images/gui/gui-wrench-2D.png
    :width: 500
@@ -188,6 +188,7 @@ dVRK console application.  This applies to the plain application
 ``dvrk_robot/dvrk_console_json``.
 
 .. figure:: /images/gui/dvrk-style-dark.png
+   :width: 600
    :align: center
 
    "dark" style
@@ -207,16 +208,19 @@ Since we use Qt for all GUIs these options should work on all OSs, but
 we've only tested them on Linux.
 
 .. figure:: /images/gui/dvrk-style-oxygen.png
+   :width: 600
    :align: center
 
    Oxygen style on Ubuntu 18.04
 
 .. figure:: /images/gui/dvrk-style-qt-curve.png
+   :width: 600
    :align: center
 
    QtCurve style on Ubuntu 18.04
 
 .. figure:: /images/gui/dvrk-style-ukui-dark.png
+   :width: 600
    :align: center
 
    ukui-dark style on Ubuntu 20.04

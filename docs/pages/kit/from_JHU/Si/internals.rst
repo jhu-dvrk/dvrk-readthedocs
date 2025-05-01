@@ -21,8 +21,7 @@ mounted against the back of the controllers to expose the 2 D-sub and
 e-stop connectors.  This design greatly reduces the amount of internal
 wiring compared to the dVRK Classic controllers.
 
-.. figure:: /images/fpga1394
-   /fpga-V3-dRAC-overview.*
+.. figure:: /images/fpga1394/fpga-V3-dRAC-overview.*
    :width: 400
    :align: center
 

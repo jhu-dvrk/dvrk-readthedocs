@@ -86,17 +86,17 @@ The main differences between the first generation of instruments
   instrument can't be accidentally inserted on a S/Si PSM and a S/Si
   instrument can't be inserted on a Classic PSM.
 
-.. figure:: /images/instruments/instrument-Classic-vs-Si-housing.jpeg
-   :width: 400
-   :align: center
+  .. figure:: /images/instruments/instrument-Classic-vs-Si-housing.jpeg
+     :width: 400
+     :align: center
 
-   Housing differences between Classic (left) and S/Si instruments (right)
+     Housing differences between Classic (left) and S/Si instruments (right)
 
-   .. figure:: /images/instruments/instrument-Classic-vs-Si-disc-face.jpeg
-      :width: 400
-      :align: center
+  .. figure:: /images/instruments/instrument-Classic-vs-Si-disc-face.jpeg
+     :width: 400
+     :align: center
 
-   Disc plate differences between Classic (left) and S/Si instruments (right)
+     Disc plate differences between Classic (left) and S/Si instruments (right)
 
 .. note::
 

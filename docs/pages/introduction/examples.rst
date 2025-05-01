@@ -18,6 +18,7 @@ differently.  This section shows a few illustrative examples.
       and software.
 
       .. figure:: /images/general/overview-dVRK-JHU-labels.jpg
+	 :width: 500
 	 :align: center
 
    .. tab:: da Vinci Classic
@@ -29,6 +30,7 @@ differently.  This section shows a few illustrative examples.
       upgraded with flat panels.
 
       .. figure:: /images/general/overview-da-Vinci-JHU-labels.jpg
+	 :width: 500
 	 :align: center
 
    .. tab:: Si cart and Classic MTMs
@@ -41,6 +43,7 @@ differently.  This section shows a few illustrative examples.
 
 
       .. figure:: /images/general/overview-da-Vinci-JHU-Si-labels.jpg
+	 :width: 500
 	 :align: center
 
 

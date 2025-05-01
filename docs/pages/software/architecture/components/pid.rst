@@ -51,6 +51,7 @@ settings and PID setpoints.  This mode should be used only for PID
 tuning using *sawIntuitiveResearchKitQtPID*.
 
 .. figure:: /images/gui/gui-Classic-MTM-pid-direct.png
+   :width: 600
    :align: center
 
    PID widget for MTM in *Direct control* mode
