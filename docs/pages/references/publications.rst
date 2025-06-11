@@ -9,23 +9,23 @@ Publications
 Credit/Citation
 ###############
 
-If you use the dVRK in your research, please cite the following papers:
+If you use the dVRK in your research, please cite the following paper:
 
   | :download:`An Open-Source Research Kit for the da Vinci Surgical System </publications/kazanzides-chen-etal-icra-2014.pdf>`
   | Peter Kazanzides and Zihan Chen and Anton Deguet and Gregory S. Fischer and Russell H. Taylor and Simon P. DiMaio
   | IEEE International Conference on Robotics and Automation (ICRA 2014), Hong Kong, China, May 2014.
   | :download:`bibtex </publications/kazanzides-chen-etal-icra-2014.bib>`
 
-  | dVRK-Si: The Next Generation da Vinci Research Kit
-  | Xu, Keshuai and Wu, Jie Ying and Deguet, Anton and Kazanzides, Peter
-  | IEEE International Symposium on Medical Robotics (ISMR 2025), Atlanta, Georgia, USA, May 2025.
-  | :download:`bibtex </publications/Xu2025ISMR.bib>`
-
 For posters and videos, please include the `dVRK logo
 <https://github.com/jhu-dvrk/dvrk-logo>`_ if possible.
 
 dVRK
 ####
+
+* | dVRK-Si: The Next Generation da Vinci Research Kit
+  | Xu, Keshuai and Wu, Jie Ying and Deguet, Anton and Kazanzides, Peter
+  | IEEE International Symposium on Medical Robotics (ISMR 2025), Atlanta, Georgia, USA, May 2025.
+  | :download:`bibtex </publications/Xu2025ISMR.bib>`
 
 
 * | :download:`Software Architecture of the da Vinci Research Kit </publications/chen-deguet-etal-irc-2017.pdf>`
