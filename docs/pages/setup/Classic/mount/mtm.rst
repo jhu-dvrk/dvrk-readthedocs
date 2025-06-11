@@ -1,6 +1,9 @@
 MTMs
 ****
 
+Overview
+--------
+
 Newer dVRK groups should have received an original surgeon's console,
 either S or Si with HD monitors.  This section is for groups that
 either didn't receive the original surgeon's console or want to
@@ -30,7 +33,7 @@ through most doors.
    <goovis>`
 
 The MTMs come with a steel bracket and 4 mounting holes.  This bracket
-is mated to an aluminum plate mounted on the 80-20 frame.
+is mated to an aluminum plate mounted on the 8020 frame.
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-MTM-mount.jpeg
    :width: 300
@@ -39,7 +42,7 @@ is mated to an aluminum plate mounted on the 80-20 frame.
    MTM Classic mounting bracket
 
 The top shelf is braced using standard size 45-degree 40 mm profiles
-from 80-20.
+from 8020.
 
 .. figure:: /images/Si/jhu-surgeon-console-goovis-brace.jpeg
    :width: 300
@@ -57,7 +60,7 @@ small Noga arm.
    Custom surgeon's console, mount for HMD
 
 The base and vertical post is made of 40 by 80 mm profiles.  We used a
-standard 80-20 bracket to support the front casters.  The arm rest can
+standard 8020 bracket to support the front casters.  The arm rest can
 slide up and down (Allen wrench required).  All the controllers and
 video equipment are connected to a single power strip for
 convenience.
@@ -67,3 +70,26 @@ convenience.
    :align: center
 
    Custom surgeon's console, support for casters
+
+
+Resources
+---------
+
+The initial frame at Johns Hopkins was built using a fair amount of
+spare parts found in the lab.  If you plan to build a cart from
+scratch, we recommend to use the design provided by Hao Yang from
+Vanderbilt University.
+
+ * Overall view
+
+   .. figure:: /images/Classic/surgeon-cart-8080-illustration.png
+      :width: 300
+      :align: center
+
+ * Actual bill of material.  Please note that the 4 support beams
+   mounted at 45 degree angle are not shown but they are listed as
+   extra parts in the BOM. The same applies for the 2 aluminum plates
+   used to mount the MTMs. :download:`- PDF -</images/Classic/surgeon-cart-8020-BOM.pdf>`
+
+ * Design file for IdeaBuilder, online application provided on
+   8020.net to design your structure and order parts. :download:`- JSON -</images/Classic/surgeon-cart-8020.json>`
