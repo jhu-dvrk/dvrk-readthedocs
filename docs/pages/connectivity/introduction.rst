@@ -31,6 +31,10 @@ of dVRK controllers and is the most reliable approach.
 
    FireWire only
 
+.. hint::
+
+   The port setting for this configuration is ``fw``.
+
 FireWire with Ethernet bridge
 =============================
 
@@ -50,6 +54,10 @@ the computer and all the other dVRK controllers.
 
    FireWire with Ethernet bridge
 
+.. hint::
+
+   The port setting for this configuration is ``udpfw``.
+
 .. note::
 
    The FPGA V2 has a 100Mb Ethernet adapter while the FPGA V3 has 2
@@ -68,3 +76,7 @@ any FireWire connection.
    :align: center
 
    FireWire only
+
+.. hint::
+
+   The port setting for this configuration is ``udp``.
