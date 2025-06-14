@@ -7,7 +7,7 @@ Introduction
 ************
 
 The goal of the dVRK Python package is to enable users to write a
-simple application in Python that communicates with the dVRK console
+simple application in Python that communicates with the dVRK system
 using ROS as :ref:`middleware <devel-middleware>`.
 
 If you retrieved the dVRK software stack using the :ref:`compilation
@@ -31,7 +31,7 @@ The Python packages main features are:
   ``rospy`` or ``rclpy``.
 * Wrappers around the ROS Python libraries so the user doesn't have to
   deal with creating ROS publishers, subscribers...
-* Simple classes to interact with the dVRK arms, console, foot
+* Simple classes to interact with the dVRK arms, system, foot
   pedals... and methods to access most features
 * Conversion to convenient data types, PyKDL for cartesian data and
   numpy for vectors and matrices
@@ -39,8 +39,8 @@ The Python packages main features are:
 The ROS package ``dvrk_python`` contains:
 
 * ``src/dvrk`` Python module: defines the base class ``dvrk.arm`` as well as
-  classes for the PSMs, MTMs, ECMs, console, foot pedals... which use
-  the dVRK ROS topics to communicate with the ``dvrk_console_json``
+  classes for the PSMs, MTMs, ECMs, system, foot pedals... which use
+  the dVRK ROS topics to communicate with the ``dvrk_system``
   application included in the ``dvrk_robot`` ROS package
 * ``scripts``: collection of scripts used to calibrate and test the
   dVRK as well as examples
@@ -48,19 +48,19 @@ The ROS package ``dvrk_python`` contains:
 Usage
 *****
 
-You will first need to start the dVRK console application.
+You will first need to start the dVRK system application.
 
-* ROS 1: ``rosrun dvrk_robot dvrk_console_json -j your_console_config_file.json``
-* ROS 2: ``ros2 run dvrk_robot dvrk_console_json -j your_console_config_file.json``
+* ROS 1: ``rosrun dvrk_robot dvrk_system -j your_system_config_file.json``
+* ROS 2: ``ros2 run dvrk_robot dvrk_system -j your_system_config_file.json``
 
-Once the console is running, you can check which arms are available by
+Once the system is running, you can check which arms are available by
 listing the available ROS topics.
 
 * ROS 1: ``rostopic list``
 * ROS 2: ``ros2 topic list``
 
 You should see one namespace per arm, e.g. ``/PSM1``, ``/MTML`` and/or
-``/ECM``... based on your console configuration as well as ``/console``.
+``/ECM``... based on your system configuration as well as ``/console``.
 
 Then in Python:
 
@@ -128,7 +128,7 @@ commands while holding the MTM (otherwise the arm will start moving
 and might bang itself against the console and get damaged).
 
 .. code-block:: python
-		
+
    # load and define the MTM
    from dvrk import mtm
    import crtk
@@ -175,6 +175,6 @@ e.g. ``dvrk-bag-replay.py``.
 
  .. warning::
 
-    By default, the dVRK console publishes the state of the dVRK at
+    By default, the dVRK system publishes the state of the dVRK at
     100Hz.  If you need to close the loop at a different frequency,
-    use the ``-p`` command line option for the ``dvrk_console_json``.
+    use the ``-p`` command line option for the ``dvrk_system``.

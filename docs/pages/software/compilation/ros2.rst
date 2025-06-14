@@ -137,7 +137,7 @@ In a second terminal, use a Python test script to make an arm move
    source ~/ros2_ws/install/setup.bash
    ros2 run dvrk_python dvrk_arm_test.py -a PSM1
 
-The main :ref:`dVRK ROS node<console>` is ``dvrk_console_json`` from
+The main :ref:`dVRK ROS node<system>` is ``dvrk_system`` from
 the ``dvrk_robot``.  This node requires configuration files specific
 to your system.
 

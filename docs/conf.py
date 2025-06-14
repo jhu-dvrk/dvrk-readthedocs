@@ -58,20 +58,25 @@ if not os.path.exists(schema_dir):
   os.makedirs(schema_dir)
 
 dvrk_version = release
+dvrk_version = 'devel'
 
 schema_files = [
   'cisst-component-manager',
   'cisst-matrices',
+  'cisst-terminal',
   'dvrk-arm',
   'dvrk-console',
   'dvrk-ecm',
   'dvrk-hid',
   'dvrk-interface-button',
+  'dvrk-IO-configuration',
+  'dvrk-IO',
   'dvrk-mtm',
   'dvrk-psm',
-  'dvrk-teleop-ecm',
-  'dvrk-teleop-psm',
-  'dvrk-tool-list'
+  'dvrk-system',
+  'dvrk-teleop-ECM',
+  'dvrk-teleop-PSM',
+  'dvrk-tool-list',
 ]
 
 for file in schema_files:

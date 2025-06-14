@@ -15,4 +15,4 @@ Components
    components/suj
    components/teleop-psm
    components/teleop-ecm
-   components/console
+   components/system

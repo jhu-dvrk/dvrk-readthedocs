@@ -106,13 +106,13 @@ interface and control the robot using the IO widget.
 
    IO widget, text view
 
-Start the console application and configure the system without homing:
+Start the system application and configure the system without homing:
 
 * Do not hit **Power On** nor **Home** buttons. If you have, just
   hit **Power Off**
 * Select the **IO** tab corresponding to your arm
 * In the **IO** tab, check **Direct control** and approve
-* If you just started the console application and the arm hasn't
+* If you just started the system application and the arm hasn't
   been moved, both **Joint position** and **Actuator position** rows
   should be close to zero
 * The **Potentiometer** values will be oscillating but should be
@@ -147,7 +147,7 @@ If the values are not consistent within a few degrees/millimeters
 encoder or potentiometers.
 
 If you're using a recent dVRK version (2.1+), there is an option to
-plot the encoder and potentiometer values directly in the console
+plot the encoder and potentiometer values directly in the system
 application.  In the IO tab, under "Service", check "Plot position".
 You can then select which joint/actuator to display using the drop
 down menu on the left.  This can be used to get a sense of what the
@@ -183,10 +183,11 @@ section:
 
 The first parameter to increase should be the **Latency**.  The value
 is given in seconds.  Try to increase it progressively by doubling it
-and restart the console (no need to power on/off the controllers).  If
-the system is still not stable, double the **Latency** and try again.
-If the system is still not stable with a **Latency** of 1 seconds
-(``1.0``), try the same approach with the **Distance** parameter.
+and restart the dVRK application (no need to power on/off the
+controllers).  If the system is still not stable, double the
+**Latency** and try again.  If the system is still not stable with a
+**Latency** of 1 seconds (``1.0``), try the same approach with the
+**Distance** parameter.
 
 Summary
 #######

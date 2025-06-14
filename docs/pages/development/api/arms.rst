@@ -547,7 +547,7 @@ C++ class is ``mtsIntuitiveResearchKitArmPSM``.
 
   * *cisst*: write command ``bool``
   * *ROS*: subscriber ``std_msgs/Bool``
-  * dVRK specific: tell the console that the sterile adapter is
+  * dVRK specific: tell the system that the sterile adapter is
     present without any actual hardware detection of the adapter.
     This can be used to force engaging a non-dVRK modified sterile
     adapter. **Use with caution**, this can lead to undesired motions

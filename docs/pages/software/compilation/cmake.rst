@@ -163,10 +163,10 @@ we tried it.
    :width: 600
    :align: center
 
-   Console with simulated PSM1 on macOS
+   System with simulated PSM1 on macOS
 
 .. figure:: /images/gui/mac-PSM1-desktop.png
    :width: 600
    :align: center
 
-   Console with PSM1 over UDP on macOS
+   System with PSM1 over UDP on macOS

@@ -14,7 +14,7 @@ ROS
 ***
 
 The simplest way to write an application for the dVRK is to use ROS.
-The dVRK ROS node ``dvrk_robot dvrk_console_json`` exposes most of the
+The dVRK ROS node ``dvrk_robot dvrk_system`` exposes most of the
 dVRK features as topics.
 
 .. figure:: /images/software/dVRK-component-ROS-teleop.*
@@ -39,7 +39,7 @@ Pros
 
 * Your application will be a different process.  It can even run on a
   different computer, so the computing load will not impact the dVRK
-  console.  This might actually be a required if your application is
+  system.  This might actually be a required if your application is
   very CPU or IO intensive.
 * Since you're using ROS, you can ``rosbag`` everything for further data
   analysis.  You can also use tools such as RViz and PlotJuggler to
@@ -65,11 +65,11 @@ Cons
 Notes
 =====
 
-* By default, the dVRK console publishes both synchronous (events) and
+* By default, the dVRK system publishes both synchronous (events) and
   asynchronous data (state data).  Events (such as ``operating_state``
   are published as fast as possible.  State data (such as
   ``measured_js``...) is published periodically.  By default, the dVRK
-  console publishes data at 100Hz (10ms).  This can be increased using
+  system publishes data at 100Hz (10ms).  This can be increased using
   the ``-p`` command line argument.  The dVRK arm components
   are running at 1.5KHz, so it doesn't make sense to publish at any
   rate higher than 1.5KHz.
@@ -118,7 +118,7 @@ it using ``catkin build`` (ROS 1), ``colcon build`` (ROS 2) or with
 CMake/make.
 
 Once you have the *sawSocketStreamer* compiled, you will need at least
-two files.  The first file is used to tell the dVRK console which
+two files.  The first file is used to tell the dVRK system which
 components should be dynamically created (by the *cisstMultiTask*
 component manager).  The command line parameter to indicate which
 component manager configuration files need to be used is ``-m``.  You

@@ -124,30 +124,30 @@ Calibrating scales
 ==================
 
 These instructions are for all arms, PSMs, MTMs and ECM.  For the
-calibration, one needs to start the ``dvrk_console_json`` application
-for the arm to be calibrated (see :ref:`dVRK console <console>`).
+calibration, one needs to start the ``dvrk_system`` application
+for the arm to be calibrated (see :ref:`dVRK system <system>`).
 Since we also need the low level data (potentiometer values), we have
 to provide the ``-K`` option.  For example, to calibrate a PSM2,
-command line options for ``dvrk_console_json`` should look like:
+command line options for ``dvrk_system`` should look like:
 
 .. code-block:: bash
 
    # In directory <my-config-dir>
    # directory with your sawRobotIO1394-PSM2-00000.xml configuration files
-   rosrun dvrk_robot dvrk_console_json -j <my-config-dir>/console-PSM2.json -K -C
+   rosrun dvrk_robot dvrk_system -j <my-config-dir>/system-PSM2.json -K -C
 
 .. note::
 
    The ``-C`` command line otion (added in release 2.0.1) allows to
-   run the dVRK console without the potentiometer safety checks
+   run the dVRK system without the potentiometer safety checks
    (**C**\ alibration mode).  Otherwise, with very poorly calibrated
    potentiometer parameters, the application would keep shutting down,
    preventing users to calibrate their potentiometer parameters.  With
-   ``-C``, the console application also resets the encoder preloads on
+   ``-C``, the system application also resets the encoder preloads on
    exit.  This is to avoid using bad encoder preloaded values (based
    on poor potentiometer values) on the next run.
 
-The file ``console-PSM2.json`` is specific to each system since it
+The file ``system-PSM2.json`` is specific to each system since it
 points to your ``sawRobotIO1394-PSM2-00000.xml`` file.
 
 In a separate shell, start the :ref:`potentiometer calibration script
@@ -159,17 +159,17 @@ In a separate shell, start the :ref:`potentiometer calibration script
    rosrun dvrk_python dvrk_calibrate_potentiometers.py -t scales -a PSM2 -c sawRobotIO1394-PSM2-00000.xml
 
 Make sure you use the same ``sawRobotIO1394-XXX-00000.xml`` for the
-calibration script and the console application! The file name can be
-found in the console-PSM2.json file you're using.
+calibration script and the system application! The file name can be
+found in the system-PSM2.json file you're using.
 
 The calibration script will query the arm serial number from the XML
-file and will display it.  The console application will do the same
+file and will display it.  The system application will do the same
 and display the serial number in the IO Qt widget.  This ensures that
 both applications are using an XML file specific to the arm you are
 trying to calibrate.  But, if you happen to use different copies of
 the configuration file for your arm, the current system has no way to
 detect it.  So, make sure you are using the same file for both
-applications (console and calibration script).
+applications (system and calibration script).
 
 You will have to acknowledge a few prompt messages, including a
 warning regarding large motions during the calibration.  The following
@@ -209,7 +209,7 @@ You can review the changes with `meld` or your preferred diff tool.
 If the changes make sense, replace your default XML configuration file
 with the new one:
 
-Then stop the dVRK console application and restart it with the updated
+Then stop the dVRK system application and restart it with the updated
 XML file to re-run the calibration script.  The results should
 improve:
 
@@ -237,7 +237,7 @@ hold the joints at their zero position for the last 4 joints of the
 ECM), you will need to figure out a way to constrain the arm to its
 zero position (mechanical zero).
 
-For the scales' calibration, you first need to start the console
+For the scales' calibration, you first need to start the system
 application and power the arm.  If the arm can power with the existing
 potentiometer offsets, home the arm.  You can then either keep the arm
 powered and use the motors to position it close to its mechanical
@@ -277,7 +277,7 @@ offsets, the script will prompt you to figure out if you should save
 all the joints or only the last 4.  If you are using the Lego bars or
 template describe above, **DO NOT** save all, just save the last 4.
 
-Then stop the console application, make sure you restart it with the
+Then stop the system application, make sure you restart it with the
 updated XML file and re-run the calibration script.  The results
 should improve:
 

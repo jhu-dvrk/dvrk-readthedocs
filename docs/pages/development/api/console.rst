@@ -1,9 +1,9 @@
-.. _api-console:
+.. _api-system:
 
-Console
-#######
+System
+######
 
-C++ class is ``mtsIntuitiveResearchKitConsole``.
+C++ class is ``dvrk::system``.
 
 General
 *******
@@ -128,7 +128,7 @@ Tele-operation
   * *cisst*: write command ``double``
   * *ROS*: subscriber ``std_msgs/Float64``
   * dVRK specific: set the scale for all the tele-operation components
-    declared in the console configuration file.
+    declared in the system configuration file.
 
 * ``console/teleop/teleop_psm_selected``
 
@@ -156,7 +156,7 @@ Tele-operation
     console code to mimic the behavior of a clinical da Vinci system.
     A quick-tap on the clutch pedal will trigger a
     ``cycle_teleop_psm_by_mtm`` for the MTM that has been used for two
-    PSM tele-operations declared in the console configuration file.
+    PSM tele-operations declared in the system configuration file.
 
 * ``console/teleop/select_teleop_psm``
 

@@ -46,7 +46,7 @@ Audio
 *****
 
 Starting with the dVRK 1.6 we added some audio feedback for some
-console events (operator present, pedal pressed...).  The dVRK
+system events (operator present, pedal pressed...).  The dVRK
 applications rely on the |sawTextToSpeech|_ component for both
 text-to-speech and beeps.  These commands are exposed by the ROS node
 under the topics:

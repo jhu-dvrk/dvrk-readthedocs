@@ -101,9 +101,9 @@ Validation
 ==========
 
 Once you calibrated your MTM gripper, you can visually check the
-results using the dVRK console application (either
-``sawIntuitiveResearchKitQtConsoleJSON`` or ROS ``dvrk_robot
-dvrk_console_json``).  Open the GUI tab for your MTM gripper and in
+results using the dVRK system application (either
+``sawIntuitiveResearchKitSystem`` or ROS ``dvrk_robot
+dvrk_system``).  Open the GUI tab for your MTM gripper and in
 the **Service** section, select **Plot position**.  You don't need to
 power or home the arm for this step.
 

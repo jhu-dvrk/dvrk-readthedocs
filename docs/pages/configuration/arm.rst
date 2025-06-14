@@ -18,9 +18,9 @@ can set the tool detection to be manual, automatic or fixed:
    
    {
      "kinematic": "kinematic/psm.json",
-     "tool-detection": "AUTOMATIC"
-     // "tool-detection": "MANUAL"
-     // "tool-detection": "FIXED",
+     "tool_detection": "AUTOMATIC"
+     // "tool_detection": "MANUAL"
+     // "tool_detection": "FIXED",
      // "tool": "LARGE_NEEDLE_DRIVER:400006"
    }
 

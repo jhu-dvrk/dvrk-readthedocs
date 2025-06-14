@@ -26,7 +26,7 @@ Please see :ref:`compilation instructions<compilation>`.
 Run the simulation
 ##################
 
-Please see :ref:`dVRK console<console>` for more details.  Make sure
+Please see :ref:`dVRK system<system>` for more details.  Make sure
 you source your ROS workspace's ``setup.bash``.  You can use ROS
 launch files for a single arm, a full patient cart or the surgeon's
 console (2 MTMs).
@@ -59,20 +59,20 @@ Configuration and launch files
 ##############################
 
 The dVRK kinematics simulation uses a simulated low-level hardware
-class and reuses the rest of the code including the main executable
-``dvrk_console_json``, which can run a real or a simulated arm based
-on a configuration file in JSON format.
+class and reuses the rest of the code including the main ROS node
+``dvrk_robot dvrk_system``, which can run a real or a simulated arm
+based on a configuration file in JSON format.
 
-The console example JSON configuration files are located in
-|sawIntuitiveResearchKit|_ under ``share/console`` folder. The
+The system example JSON configuration files are located in
+|sawIntuitiveResearchKit|_ under ``share/system`` folder. The
 simulated arm configuration files are under ``share/arm``.
 
 
 Usage
 #####
 
-Once the simulated dVRK console and RViz are started, you can
-interact with the robot using the console's GUI.  Besides "Homing" the
+Once the simulated dVRK system and RViz are started, you can
+interact with the robot using the system's GUI.  Besides "Homing" the
 system, you can also use the arm's widget with *direct control*.
 
 You can also communicate with the simulated robot using ROS topics

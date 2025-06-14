@@ -93,7 +93,7 @@ The main steps to set up a dVRK are:
 * **Applications** - :ref:`The applications section <applications>`
   shows how to run the different examples provided with the dVRK.
   Once your system is set up and calibrated, you will mostly use the
-  ROS ``dvrk_robot dvrk_console_json`` node.  We also provide a few
+  ROS ``dvrk_robot dvrk_system`` node.  We also provide a few
   debugging and calibration utilities.
 
 * **Usage** - todo

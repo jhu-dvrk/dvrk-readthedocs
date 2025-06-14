@@ -37,7 +37,7 @@ Usage is described in the :ref:`configuration generators
 * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/config-generator
 
 Script used to locate and delete log and backup files. Everytime a
-cisst/SAW based application (like the dVRK main console program) is
+cisst/SAW based application (like the dVRK main system program) is
 started, a log file is created (named ``cisstLog-xxx.txt``). After a
 while, you will find that your home directory is cluttered with these
 log files and it would be nice to remove them. The script
@@ -62,13 +62,13 @@ example:
 *******************************
 
 * ROS Python script with a text based interface, it depends on
-  CRTK/dVRK Python to communicate with the dVRK console.
+  CRTK/dVRK Python to communicate with the dVRK system.
 * ROS package ``dvrk_python``
 * Compatible with **all dVRK setups**
 * https://github.com/jhu-dvrk/dvrk_python/tree/devel/scripts
 
 This scripts will stop the teleoperation components (see :ref:`dVRK
-console <console>`), move the MTMs at their zero position, move the
+system <system>`), move the MTMs at their zero position, move the
 PSM's shaft rotation to zero and restart the teleoperation.  The goal
 of the script is to "reset" the kinematic for both the MTMs and PSMs.
 This is useful when the arms get into odd poses after a bit of
@@ -88,9 +88,9 @@ teleoperation.::
 * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/ros/dvrk_hrsv_widget
 
 This application creates two small widgets which display the current
-state of the dVRK console. It will show if the operator is present, if
+state of the dVRK system. It will show if the operator is present, if
 the clutch or camera pedal is pressed as well as which PSM is
-teleoperated by which MTM.  ROS is used to track the console's state.
+teleoperated by which MTM.  ROS is used to track the system's state.
 The two widgets can be dragged on top of the left and right views in
 the stereo display. This is a poor man's version of the UI in a
 clinical system but it can still help users who are not familiar with
@@ -124,9 +124,9 @@ another without restarting the script.
 
 Script for Python/ROS-based teleoperation, useful as an example/template of how the dVRK teleoperation can be customized. See also :ref:`derived components <components-derived>` for an example of customizing the C++ teleoperation component directly. The script is given ROS namespaces for an MTM and PSM to begin teleoperation with, which could be an actual dVRK MTM and PSM, or the MTM could instead be a haptic device such as a `ForceDimension <https://github.com/jhu-saw/sawForceDimensionSDK>`_. When running, teleoperation works very similarly to the built-in dVRK teleoperation.
 
-To run teleoperation, first start a :doc:`dVRK console <console>` for the arms you want to teleoperate. This should be a console that *doesn't* include a built-in teleoperation componenent, such as::
+To run teleoperation, first start a :doc:`dVRK system <system>` for the arms you want to teleoperate. This should be a system that *doesn't* include a built-in teleoperation componenent, such as::
 
-   ros2 run dvrk_robot dvrk_console_json -j console-MTML-PSM2.json
+   ros2 run dvrk_robot dvrk_system -j system-MTML-PSM2.json
 
 Next, start the teleoperation script with your chosen arms::
 

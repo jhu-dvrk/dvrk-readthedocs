@@ -11,8 +11,8 @@ topics or services under the same name.  Starting with the dVRK
 release 2.0, we are using the |CRTK|_ naming convention.  There are
 also some commands very specific to the dVRK not covered by CRTK.  ROS
 bridge for the dVRK specific commands can be found in
-``dvrk_console.cpp``
-(https://github.com/jhu-dvrk/sawIntuitiveResearchKit/blob/main/ros/dvrk_robot/src/dvrk_console.cpp)
+``dvrk_system.cpp``
+(https://github.com/jhu-dvrk/sawIntuitiveResearchKit/blob/main/ros/dvrk_robot/src/dvrk_system.cpp)
 
 For the CRTK commands, the cisst to ROS CRTK bridge
 (https://github.com/jhu-cisst/cisst-ros/tree/main/cisst_ros_crtk) is

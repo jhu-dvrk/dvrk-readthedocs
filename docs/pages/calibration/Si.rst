@@ -104,14 +104,14 @@ todo Anton needs to document this.
 To be able to move the SUJ freely, you will need to be able to release
 the brakes. For each SUJ arm (e.g. ECM SUJ) you plan to calibrate, you
 need to power on the dVRK controller for the corresponding active arm
-(e.g. ECM) and turn on the ``dvrk_console_json``.  If you want to
-calibrate all the SUJ arms at the same time, you will need a console
+(e.g. ECM) and turn on the ``dvrk_system``.  If you want to
+calibrate all the SUJ arms at the same time, you will need a system
 configuration file with all the active arms.
 
-The console configuration must include the SUJ Si and the main ROS
-node (``dvrk_robot/dvrk_console_json``) must be launched with the
+The system configuration must include the SUJ Si and the main ROS
+node (``dvrk_robot/dvrk_system``) must be launched with the
 extra command line option ``-s`` (or ``--suj-voltages``).  Once the
-dVRK console is started, you should be able to see the potentiometer
+dVRK system is started, you should be able to see the potentiometer
 voltages using ROS topics.  For example:
 
 ::

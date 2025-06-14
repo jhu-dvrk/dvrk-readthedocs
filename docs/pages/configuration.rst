@@ -9,7 +9,7 @@ Configuration files
    configuration/overview
    configuration/identifiers
    configuration/generators
-   configuration/console
+   configuration/system
    configuration/arm
    configuration/custom-instruments
    configuration/dmib-io

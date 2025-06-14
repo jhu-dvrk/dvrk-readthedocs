@@ -1,46 +1,46 @@
-.. _console:
+.. _system:
 
-Console
+System
 #######
 
 Overview
 ********
 
-The dVRK console application is the main way to interact with a dVRK
+The dVRK system application is the main way to interact with a dVRK
 system. It comes in two versions:
 
-* ``dvrk_robot dvrk_console_json``
+* ``dvrk_robot dvrk_system``
 
   * C+ application with a Qt based GUI and ROS interface, it depends on cisst/SAW
   * Compatible with all dVRK controllers
   * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/ros/dvrk_robot
 
-* ``sawIntuitiveResearchKitQtConsoleJSON``
+* ``sawIntuitiveResearchKitSystem``
 
   * C+ application with a Qt based GUI, it depends on cisst/SAW
   * Compatible with all dVRK controllers (including for Windows/MacOS over UDP)
   * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications
 
 
-For ROS, start the node ``dvrk_console_json`` from the package
+For ROS, start the node ``dvrk_system`` from the package
 ``dvrk_robot``.
 
 ::
 
-   ros2 run dvrk_robot dvrk_console_json
+   ros2 run dvrk_robot dvrk_system
 
 The non-ROS version is an executable found in the dVRK path.
 
 ::
 
-   sawIntuitiveResearchKitQtConsoleJSON
+   sawIntuitiveResearchKitSystem
 
 
 Command line options
 ********************
 
-``dvrk_console_json`` supports all the command line options of
-``sawIntuitiveResearchKitQtConsoleJSON`` as well as options to
+``dvrk_system`` supports all the command line options of
+``sawIntuitiveResearchKitSystem`` as well as options to
 configure the ROS publish rates and some optional ROS topics.
 
 
@@ -50,15 +50,15 @@ Shared options
 ``-j <value>, --json-config <value>``
   *json configuration file (required)*
 
-  Full path to the :ref:`console configuration
-  file<console-configuration-file>`. This is the only required
+  Full path to the :ref:`system configuration
+  file<system-configuration-file>`. This is the only required
   option.
 
 ``-t, --text-only``
   *text only interface, do not create Qt widgets
   (optional)*
 
-  This is rarely needed, the dVRK console
+  This is rarely needed, the dVRK system
   would have to be controlled and monitored over some kind of
   middleware (for example ROS, OpenIGTL...).
 
@@ -80,7 +80,7 @@ Shared options
   *JSON files to configure component manager (optional)*
 
   See :ref:`dynamic components
-  <console-dynamic-components>`.
+  <system-dynamic-components>`.
 
 ``-S <value>, --qt-style <value>``
   *Qt style, use this option with a random name to see available styles (optional)*
@@ -115,22 +115,22 @@ ROS extra options
 ``-L, --io-topics-read-write``
   *add all IO topics (use with caution!) (optional)*
 
-.. _console-configuration-file:
+.. _system-configuration-file:
 
 Configuration file
 ******************
 
-`dVRK console JSON schema <../../../_static/schemas/dvrk-console.html>`_.
+`dVRK system JSON schema <../../../_static/schemas/dvrk-system.html>`_.
 
 
-.. _console-dynamic-components:
+.. _system-dynamic-components:
 
 Dynamic components
 ******************
 
 The command line option ``-m`` can be used to load one or more
 configuration files for the cisst component manager.  One can also use
-the field ``"component-manager": {}`` in the dVRK console
+the field ``"component-manager": {}`` in the dVRK system
 configuration file itself.
 
 This allows users to dynamically load and connect custom components

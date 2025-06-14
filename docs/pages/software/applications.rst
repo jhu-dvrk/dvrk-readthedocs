@@ -16,7 +16,7 @@ executable.
 
 .. toctree::
 
-   applications/console
+   applications/system
    applications/debug
    applications/calibration
    applications/utilities

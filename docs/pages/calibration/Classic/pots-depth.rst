@@ -87,7 +87,7 @@ Requirements
 ------------
 
 * dVRK 2.0 + ROS
-* A working console file for the PSM you need to calibrate
+* A working system file for the PSM you need to calibrate
 * A camera on a tripod or fixed mount is recommended.  A basic USB web
   camera will do fine.  For Linux, most USB cameras can be used with
   `tvtime`
@@ -104,13 +104,13 @@ Requirements
 Procedure
 ---------
 
-* Start console with ``-C`` option!  For example:
+* Start system with ``-C`` option!  For example:
 
   .. code-block:: bash
 
      roscd dvrk_config
      qlacommand -c close-relays
-     rosrun dvrk_robot dvrk_console_json -j <my-config-dir>/console-PSM1.json -C
+     rosrun dvrk_robot dvrk_system -j <my-config-dir>/system-PSM1.json -C
 
   Replace ``<my-config-dir>`` and PSM name for your configuration.
 * Home the PSM and make sure a dVRK supported Classic 8mm instrument
@@ -149,8 +149,8 @@ Procedure
   like meld.
 * The script suggests rebooting your dVRK controller.  This is not
   necessary if you remembered to use the ``-C`` option for the
-  ``dvrk_console_json`` (introduced with dVRK 2.0.1)
-* Restart your dVRK console application using ``-C`` option and repeat
+  ``dvrk_system`` (introduced with dVRK 2.0.1)
+* Restart your dVRK system application using ``-C`` option and repeat
   the steps above.  Ideally you shouldn't have to adjust the offset
 
 Automatic method
@@ -191,13 +191,13 @@ Requirements
 Procedure
 ---------
 
-* Start console with ``-C option``!  For example:
+* Start system with ``-C option``!  For example:
 
   .. code-block:: bash
 
      roscd dvrk_config
      qlacommand -c close-relays
-     rosrun dvrk_robot dvrk_console_json -j <my-config-dir>/console-PSM1.json -C
+     rosrun dvrk_robot dvrk_system -j <my-config-dir>/system-PSM1.json -C
 
   Replace ``<my-config-dir>`` and PSM name for your configuration.
 * Home the PSM and make sure a dVRK supported Classic 8mm instrument
@@ -244,8 +244,8 @@ Procedure
   something like ``meld``.
 * The script suggests rebooting your dVRK controller.  This is not
   necessary if you remembered to use the ``-C`` option for the
-  ``dvrk_console_json`` (introduced with dVRK 2.0.1)
-* Restart your dVRK console application using ``-C`` option and repeat
+  ``dvrk_system`` (introduced with dVRK 2.0.1)
+* Restart your dVRK system application using ``-C`` option and repeat
   the steps above.  Ideally the script will produce a calibration
   within +/-0.1-0.2 mm.
 

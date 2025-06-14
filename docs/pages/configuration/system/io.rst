@@ -8,7 +8,6 @@ IOs
 Port
 ====
 
-
 .. _config-pedals-original:
 
 Foot pedals
@@ -25,22 +24,38 @@ All the default foot pedal IO configuration files are in the
 |sawIntuitiveResearchKit| repository, under ``io/share``.
 
 For example, if your pedals are connected to a MTML controller with an
-FPGA version 1 or 2, your console JSON file should have:
+FPGA version 1 or 2, your system JSON file should have:
 
 .. code-block:: JSON
 
-    "io": {
-        "footpedals": "io/sawRobotIO1394-MTML-foot-pedals.xml"
-    }
+    "consoles":
+    [
+        {
+            "name": "console1",
+            "input_type": "PEDALS_ONLY",
+            "IO_pedals": {
+                "IO": "IO_1",
+                "IO_file": "io/sawRobotIO1394-MTML-foot-pedals.xml"
+            }
+        }
+    ]
 
-If the foot pedals are connected to a MTMR controller with a FPGA version 3 (i.e. with DQLA), your console JSON file should have:
+If the foot pedals are connected to a MTMR controller with a FPGA version 3 (i.e. with DQLA), your system JSON file should have:
 
 .. code-block:: JSON
 
-    "io":
-    {
-        "footpedals": "io/sawRobotIO1394-MTMR-foot-pedals-DQLA.xml"
-    }
+    "consoles":
+    [
+        {
+            "name": "console1",
+            "input_type": "PEDALS_ONLY",
+            "IO_pedals": {
+                "IO": "IO_1",
+                "IO_file": "io/sawRobotIO1394-MTMR-foot-pedals-DQLA.xml"
+            }
+        }
+    ]
+
 
 See also :ref:`dMIB IOs <dmib-io>`.
 

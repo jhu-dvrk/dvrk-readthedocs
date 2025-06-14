@@ -27,3 +27,11 @@ If you need to use the original foot pedals of the da Vinci Classic
 https://smile.amazon.com/Monoprice-6ft-DB15-Molded-Cable/dp/B002LWJ7TA).
 See also foot pedals :ref:`hardware <pedals>` and :ref:`software
 <config-pedals-original>`.
+
+SD card reader
+**************
+
+For all the controllers released after 2024, i.e. dRAC or DQLA based,
+the firmware is loaded from a SD card.  To upgrade the firmware, you
+will need a SD card reader. We strongly recommend to have one on your
+dVRK computer (under Linux).

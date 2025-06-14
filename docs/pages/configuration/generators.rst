@@ -5,7 +5,7 @@ Configuration generators
 
 .. _io-config-generator-use:
 
-Arm IO, arm and arm console
+Arm IO, arm and arm system
 ***************************
 
 To get started, you should use the Python based application
@@ -16,7 +16,7 @@ your build and source your ``devel/setup.bash`` (ROS 1) or
 This script will generate a "blank" IO XML configuration file for the
 arm identified by its :ref:`serial number<serial-number>`.  This file
 will be updated by the different calibration steps.  The script also
-generates a sample arm configuration file as well as a console file
+generates a sample arm configuration file as well as a system file
 with a single arm.
 
 The script has 5 options:
@@ -61,7 +61,7 @@ There are only 3 possible combinations of generations and hardware/controller ty
 
      dvrk-config-generator.py -a PSM1 -g Si -H dRA1 -s 123456
 
-Console generator
-*****************
+System configuration generator
+******************************
 
 Future feature!

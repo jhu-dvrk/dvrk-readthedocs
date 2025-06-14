@@ -6,7 +6,7 @@ Focus controller
 ****************
 
 Once you've build :ref:`your custom cable <focus-original>`, you can
-modify your console JSON configuration file and add:
+modify your system JSON configuration file and add:
 
 .. code-block:: JSON
 

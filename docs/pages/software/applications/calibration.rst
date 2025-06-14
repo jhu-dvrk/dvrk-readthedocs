@@ -25,8 +25,8 @@ Usage is described in the :ref:`Classic motor current calibration
 ************************************
 
 * ROS Python script with a text based interface, it depends on
-  CRTK/dVRK Python to communicate with the dVRK console.  The dVRK
-  console must be running at the same time, with the options ``-C -i
+  CRTK/dVRK Python to communicate with the dVRK system.  The dVRK
+  system must be running at the same time, with the options ``-C -i
   ...``
 * ROS package ``dvrk_python``
 * Compatible with **dVRK Classic active arm controllers only** (not SUJ or anything dVRK-Si)
@@ -47,8 +47,8 @@ Usage is described in the :ref:`Classic potentiometer calibration
 ***************************************
 
 * ROS Python script with a text based interface, it depends on
-  CRTK/dVRK Python to communicate with the dVRK console.  The dVRK
-  console must be running at the same time, with the options ``-C -i
+  CRTK/dVRK Python to communicate with the dVRK system.  The dVRK
+  system must be running at the same time, with the options ``-C -i
   ...``
 * ROS package ``dvrk_python``
 * Compatible with **dVRK Classic PSM only** (not SUJ, MTM, ECM or anything dVRK-Si)
@@ -100,8 +100,8 @@ calibration <calibration-si-psm-ecm-pots>` section.
 *************************
 
 * ROS Python script with a text based interface, it depends on
-  CRTK/dVRK Python to communicate with the dVRK console.  The dVRK
-  console must be running at the same time, with the options ``-s``
+  CRTK/dVRK Python to communicate with the dVRK system.  The dVRK
+  system must be running at the same time, with the options ``-s``
 * ROS package ``dvrk_python``
 * Compatible with **dVRK-Si SUJ only**
 * https://github.com/jhu-dvrk/dvrk_python/tree/devel/scripts

@@ -20,12 +20,12 @@ For each individual arm, the cartesian positions are based on:
   * Most users should never deal with these, they are predefined for
     given PSM tools and ECM endoscopes
 
-* Base Frame (``base-frame`` in your console JSON file):
+* Base Frame (``base_frame`` in your system JSON file):
 
   * Prepended to the whole kinematic chain
   * Can be:
 
-    * defined in the console JSON configuration per arm using ``base-frame``
+    * defined in the system JSON configuration per arm using ``base_frame``
     * set at runtime by command or ROS topic ``set_base_frame``
 
 For example, the MTM kinematic (DH parameters) start from the link 0,
@@ -41,9 +41,9 @@ are always mounted rigidly to a frame, so we need to apply a constant
 rotation and translation to match the ISI convention.  The two masters
 are also mounted apart from each other, so there is also a positive X
 translation for MTML and a negative X translation for MTMR.  The
-change of reference frame should be defined using the ``base-frame``
-in the console configuration file (see
-``jhu-dVRK/console-MTMR-PSM1-MTML-PSM2-Teleop.json`` in
+change of reference frame should be defined using the ``base_frame``
+in the system configuration file (see
+``jhu-dVRK/system-MTMR-PSM1-MTML-PSM2-Teleop.json`` in
 https://github.com/dvrk-config/dvrk_config_jhu).
 
 For a change of reference frame at runtime one should use the
@@ -54,7 +54,7 @@ robot).
 
 To summarize:
 
-* When used with the setup joints, the console class propagates the
+* When used with the setup joints, the system class propagates the
   different base frames to make sure the PSMs are defined with respect
   to the camera frame (see :ref:`SUJ <frames_SUJ>`).
 * If you have an ECM **and** don't have access to the setup joints
@@ -62,11 +62,11 @@ To summarize:
   should use the SUJ Fixed class.  We offer a simple method to
   register the PSMs to the ECM:
   https://github.com/jhu-dvrk/dvrk_camera_registration
-* Finally, if the camera is fixed, you can use ``base-frame`` in your
-  console configuration (similar to MTMs, see
-  ``jhu-dVRK/console-MTMR-PSM1-MTML-PSM2-Teleop.json`` in
+* Finally, if the camera is fixed, you can use ``base_frame`` in your
+  system configuration (similar to MTMs, see
+  ``jhu-dVRK/system-MTMR-PSM1-MTML-PSM2-Teleop.json`` in
   https://github.com/dvrk-config/dvrk_config_jhu).  Note that the
-  ``base-frame`` depends on where your PSMs are mounted with respect
+  ``base_frame`` depends on where your PSMs are mounted with respect
   to your fixed camera.
 
 There are two possible cartesian positions to query:
@@ -77,12 +77,12 @@ There are two possible cartesian positions to query:
 Surgeon's side
 **************
 
-The base frames defined in the ``console.json`` are such that the MTM
+The base frames defined in the ``system.json`` are such that the MTM
 tips (grippers) are defined with respect to the stereo display.  By
 default, we assume the stereo display is pointing down with a 60-degree
 angle from the horizontal.  This is the orientation of the HRSV
 on the Standard (aka Classic) and S da Vinci systems.  If your display
-is mounted at a different angle, adjust your ``console.json``
+is mounted at a different angle, adjust your ``system.json``
 accordingly.
 
 .. figure:: /images/transformations/dVRK-transformations-surgeon-console.*
@@ -94,7 +94,7 @@ accordingly.
 Patient's side
 **************
 
-The base frames defined in your ``console.json`` depend on how your
+The base frames defined in your ``system.json`` depend on how your
 PSMs are mounted.  If you have a fixed camera, you can use or hand-eye
 calibration method:
 https://github.com/jhu-dvrk/dvrk_camera_registration.  If you have an

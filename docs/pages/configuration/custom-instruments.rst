@@ -38,8 +38,8 @@ in a separate tab to browse through the example files.
 
 The main files are:
 
-* **Console file:** See comments in
-  ``console-PSM1-Custom-Dummy.json``.  By default the console
+* **System file:** See comments in
+  ``system-PSM1-Custom-Dummy.json``.  By default the system
   application will infer the arm configuration file name from the
   ``name`` and ``serial`` fields by concatenating them
   (``<name>-<serial>.json``).  In the example for a custom instrument,
@@ -58,7 +58,7 @@ The main files are:
 
   #. ``custom-tool-index`` is used to point to your list of custom
      instruments.  This list will be added to the default list of
-     instruments loaded by the console
+     instruments loaded by the system
      (i.e. ``share/tool/index.json``).
   #. ``kinematic`` can be used to overwrite the default behavior of
      the PSM itself (first 3 joints).  This can be used to change the
@@ -193,7 +193,7 @@ When you design your new instrument, there might be a few different issues to ke
     suggest you ignore the cartesian API and only use the joint API.
     You can then implement your own forward/inverse kinematic in a
     separate ROS node (C++/Python/Matlab) and send/receive joint
-    states to/from the dVRK console.  If you need a tighter level of
+    states to/from the dVRK system.  If you need a tighter level of
     integration, you will need to derive the
     ``mtsIntuitiveResearchKitPSM`` class.  Reach out to the dVRK
     developers if you get to that point.

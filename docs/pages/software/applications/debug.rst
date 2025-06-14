@@ -34,8 +34,8 @@ create your own application directly on top of IO component.
 
 .. _sawintuitiveresearchkitqtpid:
 
-``sawIntuitiveResearchKitQtPID``
-********************************
+``sawIntuitiveResearchKitPID``
+******************************
 
 * C+ application with a Qt based GUI, it depends on cisst/SAW
 * Compatible with all dVRK active arm controllers (not SUJ)

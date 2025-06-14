@@ -28,19 +28,33 @@ da Vinci head sensor
 ====================
 
 If you've built :ref:`your custom cable <head-original>` to interface
-with the original head sensor, you can modify your console JSON
+with the original head sensor, you can modify your system JSON
 configuration file.
 
 Assuming that you're connecting your head sensor to the MTMR
 controller, always on the ``DOF 1`` connector, you just need to add
-the following line in your console JSON configuration file:
+the following line in your system JSON configuration file:
 
 .. code-block:: json
 
-   "operator-present": {
-     "io": "io/sawRobotIO1394-MTMR-dv-head-sensor.xml"
-   }
-
+    "consoles":
+    [
+        {
+            "name": "console",
+            "input_type": "PEDALS_ISI_HEAD_SENSOR",
+            "IO_pedals" :
+            {
+                "IO": "IO_1",
+                "IO_file": "io/sawRobotIO1394-MTMR-foot-pedals.xml"
+            }
+            ,
+            "IO_head_sensor":
+            {
+                "IO": "IO_1",
+                "IO_file": "io/sawRobotIO1394-MTMR-dv-head-sensor.xml"
+            }
+        }
+    ]
 
 .. warning::
 
@@ -70,15 +84,24 @@ contains:
      "index_data": 17
    }
 
-Then in your console's JSON configuration file you should add:
+Then in your system's JSON configuration file you should add:
 
 .. code-block:: json
 
-   "operator-present":
-   {
-     "hid": "hid/goovis-hd.json"
-   }
-
+    "consoles":
+    [
+        {
+            "name": "console",
+            "input_type": "PEDALS_GOOVIS_HEAD_SENSOR",
+            "IO_pedals" :
+            {
+                "IO": "IO_1",
+                "IO_file": "io/sawRobotIO1394-MTML-foot-pedals.xml"
+            }
+            ,
+            "HID_file": "hid/goovis-hd.json"
+        }
+    ]
 
 .. _config-head-dvrk:
 
@@ -86,7 +109,7 @@ dVRK head sensor
 ================
 
 Assuming you've built :ref:`your custom head sensor <head-dvrk>`, you can
-modify your console JSON configuration file.
+modify your system JSON configuration file.
 
 There is no specific IO configuration to perform at that point
 provided that you connect the head sensor on the same controller as
@@ -97,11 +120,23 @@ in the IO foot pedal XML files)
 Update your JSON config file to set the presence sensor or point to
 the IO foot pedal configuration file (rev 1.5+)
 
-  .. code-block:: json
+.. code-block:: json
 
-     "console-inputs": {
-       "operator-present": {
-          "component": "io",  // hard coded in source code, file mtsIntuitiveResearchKitConsole.cpp
-          "interface": "Head" // name of the button you want to use, defined in sawRobotIO1394 configuration file
-       }
-     }
+    "consoles":
+    [
+        {
+            "name": "console",
+            "input_type": "PEDALS_DVRK_HEAD_SENSOR",
+            "IO_pedals" :
+            {
+                "IO": "IO_1",
+                "IO_file": "io/sawRobotIO1394-MTMR-foot-pedals.xml"
+            }
+            ,
+            "IO_head_sensor":
+            {
+                "IO": "IO_1",
+                "IO_file": "io/sawRobotIO1394-MTMR-dVRK-head-sensor.xml"
+            }
+        }
+    ]

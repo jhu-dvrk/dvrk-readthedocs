@@ -79,20 +79,20 @@ Types of files
   * `PSM documentation <../../_static/schemas/dvrk-psm.html>`_
   * `ECM documentation <../../_static/schemas/dvrk-ecm.html>`_
 
-* **Console**: These files are specific to each site.  They are used
-  by the :ref:`console applications<console>` to define the
+* **System**: These files are specific to each site.  They are used
+  by the :ref:`system applications<system>` to define the
   combination of arms you're using as well as a few other parameters
   such as IO parameters (period, port), head sensor used, foot pedal,
-  teleoperation component.  The most basic console file contains a
+  teleoperation component.  The most basic system file contains a
   single arm and uses the default options for everything else.  The
-  single arm console files are :ref:`automatically generated
-  <config-generators>` along the arm IO file.  The console
+  single arm system files are :ref:`automatically generated
+  <config-generators>` along the arm IO file.  The system
   configuration files are parsed by the ``Configure`` method of the
-  :ref:`sawIntuititiveResearchKit<console-component>`
-  ``mtsIntuitiveResearchKitConsole`` component, they use the JSON file
+  :ref:`sawIntuititiveResearchKit<system-component>`
+  ``dvrk::system`` component, they use the JSON file
   format and the documentation is generated from a schema:
 
-  * `console documentation <../../_static/schemas/dvrk-console.html>`_
+  * `system documentation <../../_static/schemas/dvrk-system.html>`_
 
 
 Where are the configuration files
@@ -114,7 +114,7 @@ The subdirectories are:
   (``index.json``)
 * ``arm``: definition of arm that are not site specific, mostly
   simulated arms
-* ``console``: definition of console using no site specific arms,
+* ``system``: definition of system using no site specific arms,
   mostly for simulation
 
 Site specific files
@@ -141,13 +141,13 @@ Each directory should contain:
     original ``.cal`` files provided by Intuitive Surgical since they
     are needed to re-generate the IO XML files (for Classic arms only)
   * your arms configuration files
-  * your console configuration files since these refer to your system
+  * your system configuration files since these refer to your system
     specific IO configuration files
 
 Site specific directories should **NOT** contain any of the shared
 files.  If you make a copy of the shared file in your directory, it
 will be used in place of the default one.  dVRK applications use a
-search path that includes the directory containing the console JSON
+search path that includes the directory containing the system JSON
 file, the current working directory and then the dVRK shared
 directory.  The ``cisstLog-xxx.txt`` file generated when you run the
 dVRK code should log the path of each configuration file loaded.
@@ -160,11 +160,11 @@ and PID configuration files since these are shared.
 
 For the site specific files, we provide a configuration generator
 (Python based) that will generate a blank IO configuration file for an
-arm, as well as the arm configuration file and a console configuration
+arm, as well as the arm configuration file and a system configuration
 file for said arm.  See :ref:`configuration generators
 <config-generators>`.
 
-We are working on a console configuration file generator but
+We are working on a system configuration file generator but
 meanwhile, you will have to start from existing configuration files
 and edit by hand.  Since the JHU configurations files are usually
 up-to-date, we recommend to look at

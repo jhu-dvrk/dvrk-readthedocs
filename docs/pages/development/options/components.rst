@@ -5,7 +5,7 @@ cisst/SAW components
 
 Instead of using a middleware and implement the end-user application's
 logic in a separate process, you can also add cisst/SAW components,
-either existing ones or your own, to the dVRK console.  This is
+either existing ones or your own, to the dVRK system.  This is
 actually the mechanism we use for the ROS (1 and 2),
 |sawSocketStreamer|_ and |sawOpenIGTLink|_ described above.  The main
 advantage of this approach is performance, i.e. the communication
@@ -28,15 +28,15 @@ changes are modest, it might be easier to start from the existing
 component and alter it.  The best way to do so is to derive from the
 default dVRK class.  The main advantages of derived classes are:
 
-* All the interfaces (provided and required) the console expects are
-  already defined, so the console can connect the existing ROS bridge
+* All the interfaces (provided and required) the system expects are
+  already defined, so the system can connect the existing ROS bridge
   (1 or 2), Qt widget, PID, IO, etc.
 * All the existing configuration parameters will still be there, so you
   can re-use them.
 * The code related the component creation is already defined in the
   base class, so you'll have less code to manage.
 
-As of 2023, the dVRK console supports derived classes for the arm and
+As of 2023, the dVRK system supports derived classes for the arm and
 the PSM teleoperation.  You can find documented examples for:
 
 * Derived ``mtsTeleOperationPSM`` in
@@ -59,7 +59,7 @@ Generic components
 Alternative hardware
 ====================
 
-The dVRK console also supports generic arms, i.e. one can use a
+The dVRK system also supports generic arms, i.e. one can use a
 different type of hardware as long as there is a cisst/SAW component
 for it and the component has a *provided interface* that matches the
 dVRK arm it is meant to replace.  We've successfully integrated some
@@ -83,7 +83,7 @@ alternate for the MTM:
   useful for real applications since it doesn't have a wrist, but it can
   be used for simple demos and debugging.  See example of
   configuration file
-  ``jhu-dVRK-Si-demo/console-Novint-Falcon-PSM1-Teleop.json``
+  ``jhu-dVRK-Si-demo/system-Novint-Falcon-PSM1-Teleop.json``
   (https://github.com/dvrk-config/dvrk_config_jhu).
 
 .. figure:: /images/software/dVRK-component-ForceDimension.*
@@ -96,7 +96,7 @@ ROS component
 =============
 
 The ROS component ``dvrk_arm_from_ros`` can be treated as an example
-of alternate hardware.  When used, the console uses ROS to communicate
+of alternate hardware.  When used, the system uses ROS to communicate
 with a generic arm (e.g. PSM or substitute).  This can be used if you
 need your teleoperation to work across the network.  The black
 diagram shows the "PSM over ROS" coming from an actual dVRK but could
@@ -140,6 +140,6 @@ Process**) sends a *servo_cp* to the actual *PSM* (**PSM Process**):
    all the existing topics and check which nodes subscribe and publish
    to them.
 
-You can find an example of dVRK console configuration file
-``jhu-dVRK/console-MTML-PSM1_ROS-Teleop.json``
+You can find an example of dVRK system configuration file
+``jhu-dVRK/system-MTML-PSM1_ROS-Teleop.json``
 (https://github.com/dvrk-config/dvrk_config_jhu).
