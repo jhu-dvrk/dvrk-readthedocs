@@ -22,7 +22,10 @@ with a single arm.
 The script has 5 options:
 
 * *arm name*: MTMR, MTML, PSM1, PSM2, PSM3 or ECM.
-* *generation*: either Classic or Si.
+* *generation*: either Classic or Si.  As of 2024, all MTMs are
+  Classic.  The PSMs and ECMs can be either Classic or Si (:ref:`PSM
+  Classic <psm>`, :ref:`ECM Classic <ecm>`, :ref:`PSM Si <psm-si>` and
+  :ref:`ECM Si <ecm-si>`).
 * *hardware*: this depends on the controllers you have.  All
   controllers for Classic arms delivered before 2022 are ``QLA1``
   based.  All controllers for Classic arms delivered after 2022 are
@@ -60,6 +63,12 @@ There are only 3 possible combinations of generations and hardware/controller ty
   .. code-block:: bash
 
      dvrk-config-generator.py -a PSM1 -g Si -H dRA1 -s 123456
+
+.. important::
+   
+   Once you've generated your arm's configuration files, you will need
+   to perform all the :ref:`calibration steps <calibration>` based on
+   the arm's type and generation!
 
 System configuration generator
 ******************************

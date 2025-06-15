@@ -3,7 +3,7 @@
 Set Up Joints
 #############
 
-See :ref":`SUJ Classic <suj>` for overview.
+See :ref:`SUJ Classic <suj>` for overview.
 
 .. figure:: /images/Si/RViz-Si-SUJ.png
    :width: 400

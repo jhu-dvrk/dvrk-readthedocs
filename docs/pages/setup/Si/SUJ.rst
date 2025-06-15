@@ -9,13 +9,22 @@ the active arms (:ref:`2 D-sub connectors <setup-si-connections>`) can
 be carried all the way to the dSIB and ESSJ at the base of the
 patient cart.
 
+.. warning::
+
+   The dSIB-Si should be connected directly to the dRAC based
+   controller.  You might have received some custom cables to connect
+   to arm to the controller.  Even though they use the same
+   connectors, they don't carry all the signals required with the SUJ
+   and ESSJ.  So, **don't use the custom cables** between the dSIB and
+   the controller (:ref:`see also <setup-si-connections>`).
+
 Preparation
 ***********
 
 We first need to remove most of the electronics from the back of the
 patient cart.  This is required since the cables coming from the base
-of the column of the cart are fairly short and need to reach the back
-of the dVRK controllers.
+of the column of the cart are fairly short and need to reach the dSIBs
+mounted directly on the back of the dVRK controllers.
 
 .. warning::
 
@@ -24,7 +33,7 @@ of the dVRK controllers.
    one lone exception, a Z-axis cable.  Make sure you keep track
    of this cable. All needed cables come out from a cutout in the vertical column.
 
-.. warning::
+.. note::
 
    Once you've set up the Si cart for the dVRK controllers, it's
    possible but really difficult to go back to the original
@@ -70,7 +79,7 @@ On the top view, you can find the "Z-AXIS" connector. Make sure you
 squeeze the tab to unplug it.  Keep that cable aside. It will be
 connected to the dSIB-Z-Si.
 
-On the front view, you can see 4 RACs, i.e., one per active arm. Their cables 
+On the front view, you can see 4 RACs, i.e., one per active arm. Their cables
 are labeled SJA2, SJX, SJC and SJA1.  They will need to be
 plugged into the dSIB for the PSM2, PSM3, ECM and PSM1 respectively.
 
@@ -138,6 +147,18 @@ recommend putting labels everywhere to avoid confusing cables,
 controllers and boards. The labels should have the arm name and, when
 needed, the arm serial number.
 
+.. figure:: /images/Si/Si-SUJ-JHU-example.jpeg
+   :width: 300
+   :align: center
+
+   Side view of the patient's cart with dVRK controllers.
+
+In the picture above, the controllers are very low on the cart. This
+is the only way to connect the existing, short cables from the SUJ
+columns to the dSIB mounted on the back of the dVRK controllers. You
+will unfortunately have to remove most of the old electronic
+components of the original patient's cart to fit the dVRK controllers.
+
 .. figure:: /images/Si/Si-controllers-SUJ-front-labeled.jpg
    :width: 400
    :align: center
@@ -149,6 +170,11 @@ needed, the arm serial number.
    :align: center
 
    Stack of dVRK-Si controllers with dSIB-Si (back)
+
+.. note::
+
+   The dSIBs are mounted directly on the back of the controllers,
+   don't use any extension cables between the dSIB and the controller!
 
 .. figure:: /images/Si/PSM-Si-label-labeled.jpg
    :width: 300
