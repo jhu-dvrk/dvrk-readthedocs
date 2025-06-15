@@ -7,13 +7,41 @@ Overview
 The dVRK relies on multiple configurations files.  Some are shared
 across systems and some are specific to each arm or site.  For the
 site specific configuration files, we provide a configuration
-generator that simplify the process, but some files have to be created
-by hand.
+generator that simplify the process, but some files still have to be
+created by hand.
 
 .. _configuration-files-types:
 
 Types of files
 ##############
+
+Site specific files
+*******************
+
+* **System**: These files are specific to each site.  They are used
+  by the :ref:`dVRK system applications<system>` to define the
+  combination of arms you're using as well as a few other parameters
+  such as IO parameters (period, port), head sensor used, foot pedal,
+  teleoperation component. The most basic system file contains a
+  single arm and uses the default options for everything else. The
+  single arm system files are :ref:`automatically generated
+  <config-generators>` along the arm IO file. The system
+  configuration files are parsed by the ``Configure`` method of the
+  :ref:`sawIntuititiveResearchKit<system-component>`
+  ``dvrk::system`` component, they use the JSON file
+  format and the documentation is generated from a schema:
+
+  * `system documentation <../../_static/schemas/dvrk-system.html>`_
+
+* **Arm**: These files specify the configuration of a specific arm
+  (e.g. MTML, PSM2...).  They are therefore not shared across dVRK
+  sites and their name includes the arm's serial number
+  (e.g. ``PSM1-17425.json``).  They use the JSON file format and the
+  documentation is generated from a schema:
+
+  * `MTM documentation <../../_static/schemas/dvrk-mtm.html>`_
+  * `PSM documentation <../../_static/schemas/dvrk-psm.html>`_
+  * `ECM documentation <../../_static/schemas/dvrk-ecm.html>`_
 
 * **IO (input/output):** These files are used by the
   :ref:`sawRobotIO1394<io>` software components.  They specify which
@@ -36,15 +64,8 @@ Types of files
     and can be shared across sites.  For example, IOs used for the
     foot pedals, head sensors, focus controller...
 
-* **PID**: These files are used by the
-  :ref:`sawControllers<pid>` ``mtsPID`` component.  They
-  contain the default `PID
-  <https://en.wikipedia.org/wiki/Proportional-integral-derivative_controller>`_
-  parameters, use the JSON file format and follow the naming
-  convention ``sawControllersPID-<arm>.json``. For example
-  ``sawControllersPID-MTMR.json``. Note that the file name doesn't
-  contain the arm serial number since these are shared across arms of
-  the same type (e.g. ``MTML``, ``ECM``, ``PSM-Si``).
+Shared files
+************
 
 * **Kinematics**: These files are used by the
   :ref:`sawIntuititiveResearchKit<arms>` arm
@@ -70,65 +91,35 @@ Types of files
 
   * `tool list documentation <../../_static/schemas/dvrk-tool-list.html>`_
 
-* **Arm**: These files specify the configuration of a specific arm.
-  They are therefore not shared across dVRK sites and their name
-  includes the arm's serial number (e.g. ``PSM1-17425.json``).  They
-  use the JSON file format and the documentation is generated from a schema:
-
-  * `MTM documentation <../../_static/schemas/dvrk-mtm.html>`_
-  * `PSM documentation <../../_static/schemas/dvrk-psm.html>`_
-  * `ECM documentation <../../_static/schemas/dvrk-ecm.html>`_
-
-* **System**: These files are specific to each site.  They are used
-  by the :ref:`system applications<system>` to define the
-  combination of arms you're using as well as a few other parameters
-  such as IO parameters (period, port), head sensor used, foot pedal,
-  teleoperation component.  The most basic system file contains a
-  single arm and uses the default options for everything else.  The
-  single arm system files are :ref:`automatically generated
-  <config-generators>` along the arm IO file.  The system
-  configuration files are parsed by the ``Configure`` method of the
-  :ref:`sawIntuititiveResearchKit<system-component>`
-  ``dvrk::system`` component, they use the JSON file
-  format and the documentation is generated from a schema:
-
-  * `system documentation <../../_static/schemas/dvrk-system.html>`_
+* **PID**: These files are used by the
+  :ref:`sawControllers<pid>` ``mtsPID`` component.  They
+  contain the default `PID
+  <https://en.wikipedia.org/wiki/Proportional-integral-derivative_controller>`_
+  parameters, use the JSON file format and follow the naming
+  convention ``sawControllersPID-<arm>.json``. For example
+  ``sawControllersPID-MTMR.json``. Note that the file name doesn't
+  contain the arm serial number since these are shared across arms of
+  the same type (e.g. ``MTML``, ``ECM``, ``PSM-Si``).
 
 
 Where are the configuration files
 #################################
 
-Shared files
-************
-
-All the shared files are under the ``/share`` directory of the main
-dVRK repository: |sawIntuitiveResearchKit|.
-
-The subdirectories are:
-
-* ``io``: IO files for foot pedals, head sensors and focus controller
-* ``pid``: default PID configuration files
-* ``kinematics``: kinematics (DH and maximum torques) for all dVRK
-  arms
-* ``tools``: all instrument definition files as well as main list
-  (``index.json``)
-* ``arm``: definition of arm that are not site specific, mostly
-  simulated arms
-* ``system``: definition of system using no site specific arms,
-  mostly for simulation
-
 Site specific files
 *******************
 
 For site specific examples, we recommend using the JHU configuration
-repository as a template for the files ``CMakeLists.txt`` and
-``package.xml``: https://github.com/dvrk-config/dvrk_config_jhu
+repository as a template for the files ``CMakeLists.txt``,
+``package.xml`` and ``colcon.pkg``:
+https://github.com/dvrk-config/dvrk_config_jhu
 
 Assuming a site can have multiple systems, we use subdirectory per
 system. Directory names start with the institution name (e.g. jhu for
 Johns Hopkins, isi for Intuitive Surgical) and should contain the
-system name (e.g. JHU has two systems, a research kit: ``jhu-dVRK``,
-and a full da Vinci: ``jhu-daVinci``).
+system name (e.g. JHU has four systems, an original research kit:
+``jhu-dVRK``, a full da Vinci Classic: ``jhu-daVinci``, a system with
+a S console and Si patient cart: ``jhu-daVinci-Si`` and a spare PSM
+Si: ``jhu-dVRK-Si``).
 
 We strongly encourage each dVRK site to use their own configuration
 repository under https://github.com/dvrk-config.  If you need a new
@@ -151,6 +142,26 @@ search path that includes the directory containing the system JSON
 file, the current working directory and then the dVRK shared
 directory.  The ``cisstLog-xxx.txt`` file generated when you run the
 dVRK code should log the path of each configuration file loaded.
+
+Shared files
+************
+
+All the shared files are under the ``/share`` directory of the main
+dVRK repository: |sawIntuitiveResearchKit|.
+
+The subdirectories are:
+
+* ``io``: IO files for foot pedals, head sensors, focus controller...
+* ``pid``: default PID configuration files
+* ``kinematics``: kinematics (DH and maximum torques) for all dVRK
+  arms
+* ``tools``: all instrument definition files as well as main list
+  (``index.json``)
+* ``arm``: definition of arm that are not site specific, mostly
+  simulated arms
+* ``system``: definition of systems using no site specific arms,
+  mostly for simulation
+
 
 How to create the configuration files
 #####################################
@@ -176,3 +187,9 @@ https://github.com/dvrk-config/dvrk_config_jhu.
    units as we used different ones in different sections!  Older files
    might use millimeters and degrees.  Most other files use SI units,
    i.e. meters and radians.
+
+.. caution::
+
+   For Si PSMs and ECMs, the serial number is used to identify
+   calibration files. If you ever have to edit configuration files for
+   these arms by hand, make sure the serial numbers are correct!

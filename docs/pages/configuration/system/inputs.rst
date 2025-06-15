@@ -1,6 +1,62 @@
+.. include:: /includes/logic-view-console.rst
+
+.. _config-input:
+
+Foot pedals
+***********
+
+.. _config-pedals-original:
+
+The default digital inputs for the da Vinci :ref:`Classic foot pedals
+<pedals-original>` (and the :ref:`compatible ones
+<pedals-compatible>`) are defined in shared IO configuration files.
+These depend on which controller is used, both :ref:`board Id
+<board-id>` and :ref:`hardware version <controller-classic-exterior>`
+so, we provide multiple configuration files.
+
+All the default foot pedal IO configuration files are in the
+|sawIntuitiveResearchKit| repository, under ``share/io``.
+
+For example, if your pedals are connected to a MTML controller with an
+FPGA version 1 or 2, your system JSON file should have:
+
+.. code-block:: JSON
+
+    "consoles":
+    [
+        {
+            "name": "console1",
+            "input_type": "PEDALS_ONLY",
+            "IO_pedals": {
+                "IO": "IO_1",
+                "IO_file": "io/sawRobotIO1394-MTML-foot-pedals.xml"
+            }
+        }
+    ]
+
+If the foot pedals are connected to a MTMR controller with a FPGA version 3 (i.e. with DQLA), your system JSON file should have:
+
+.. code-block:: JSON
+
+    "consoles":
+    [
+        {
+            "name": "console1",
+            "input_type": "PEDALS_ONLY",
+            "IO_pedals": {
+                "IO": "IO_1",
+                "IO_file": "io/sawRobotIO1394-MTMR-foot-pedals-DQLA.xml"
+            }
+        }
+    ]
+
+
+See also :ref:`dMIB IOs <dmib-io>`.
+
+
+
 .. _config-head:
 
-.. include:: /includes/logic-view-console.rst
 
 Head sensor
 ***********

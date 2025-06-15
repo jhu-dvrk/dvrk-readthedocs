@@ -5,71 +5,55 @@
 IOs
 ***
 
+`Documention based on schema
+<../../../_static/schemas/dvrk-IO.html>`_ is also
+available for reference.
+
+Name
+====
+
+The name of the IO component is required. It is needed by the arms,
+inputs and any other component that need to know which IO port should
+be used. There is no default name but we recommend using something
+short like "IO", "IO_1"...
+
 Port
 ====
 
-.. _config-pedals-original:
+The port defines the type of :ref:`connection between the PC and the
+dVRK controllers <connectivity>`. For anyone using FireWire for all
+the communications, the setting should be ``fw``.  If your system uses
+FireWire between the dVRK controller and Ethernet to bridge to the PC,
+use ``udpfw``. Finally, if your system is recent (post 2024) and only
+uses :ref:`FPGA V3 <fpga>`, you can connect everything using Ethernet
+cables and use ``udp``.
 
-Foot pedals
-===========
+If you have multiple FireWire or Ethernet adapters on your PC, you
+will need to add the FireWire port number or Ethernet IP address after
+the port's type (e.g. ``fw:1``).
 
-The default digital inputs for the da Vinci :ref:`Classic foot pedals
-<pedals-original>` (and the :ref:`compatible ones
-<pedals-compatible>`) are defined in shared IO configuration files.
-These depend on which controller is used, both :ref:`board Id
-<board-id>` and :ref:`hardware version <controller-classic-exterior>`
-so, we provide multiple configuration files.
+Having multiple IOs is very convenient to handle systems with multiple
+surgeon's consoles. For example, one might want a system with 2 MTMLs
+and 2 MTMRs. This issue is that each arm assumes a default :ref:`board
+Id <board-id>` based on the arm's type. Therefore, both MTMLs would
+use the same board Id(s) and create a conflict if used on the same IO
+port.
 
-All the default foot pedal IO configuration files are in the
-|sawIntuitiveResearchKit| repository, under ``io/share``.
+.. caution::
 
-For example, if your pedals are connected to a MTML controller with an
-FPGA version 1 or 2, your system JSON file should have:
-
-.. code-block:: JSON
-
-    "consoles":
-    [
-        {
-            "name": "console1",
-            "input_type": "PEDALS_ONLY",
-            "IO_pedals": {
-                "IO": "IO_1",
-                "IO_file": "io/sawRobotIO1394-MTML-foot-pedals.xml"
-            }
-        }
-    ]
-
-If the foot pedals are connected to a MTMR controller with a FPGA version 3 (i.e. with DQLA), your system JSON file should have:
-
-.. code-block:: JSON
-
-    "consoles":
-    [
-        {
-            "name": "console1",
-            "input_type": "PEDALS_ONLY",
-            "IO_pedals": {
-                "IO": "IO_1",
-                "IO_file": "io/sawRobotIO1394-MTMR-foot-pedals-DQLA.xml"
-            }
-        }
-    ]
-
-
-See also :ref:`dMIB IOs <dmib-io>`.
-
+   Do no declare multiple IOs using the same port in a single system
+   configuration file!
 
 FireWire protocol
 =================
 
-In **version 1.4** and higher, you can also specify the FireWire
-protocol used to communicate between the PC and the controllers:
+You can also specify the FireWire protocol used to communicate between
+the controllers:
 
 .. code-block:: JSON
 
-   "io": {
-      "firewire-protocol": "sequential-read-broadcast-write" // default
+    {
+      "protocol": "sequential-read-broadcast-write" // default
     }
 
 The following protocols are supported:
@@ -98,7 +82,7 @@ The following protocols are supported:
 Period
 ======
 
-One can change the refresh rate (in this example, 1/2 millisecond).
+One can change the default refresh rate (in this example, 1/2 millisecond).
 It is recommended to not override this option and use the default
 value.
 
@@ -108,19 +92,19 @@ changing the IO period also changes the PID period.  See
 
 .. code-block:: json
 
-   "io": {
+   {
      "period": 0.0005 // in seconds
    }
 
 Watchdog time-out
 =================
 
-In **version 1.5** and higher, you can specify the watchdog time-out using:
+You can override the watchdog time-out using:
 
 .. code-block:: json
 
-   "io": {
-     "watchdog-timeout": 0.03 // in seconds
+   {
+     "watchdog_timeout": 0.03 // in seconds
    }
 
 The watchdog time-out is set on the FPGA-QLA controllers.  If the
@@ -132,3 +116,13 @@ fast enough.  The maximum value for the watchdog time-out is 300 ms.
 Setting the time-out to zero turns off the watchdog and is not
 recommended.  This field is optional, and it is recommended to not
 override the default.
+
+
+Extra configuration files
+=========================
+
+The IO component can also be configured to support custom hardware
+using the controllers spare digital and analog IOs (see :ref:`dMIB IOs
+<dmib-io>`). This setting shouldn't be used for the hardware supported
+by the dVRK software stack such as foot pedals, head sensor, focus
+controller...
