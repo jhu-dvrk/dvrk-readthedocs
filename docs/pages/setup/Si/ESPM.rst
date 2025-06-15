@@ -94,15 +94,33 @@ cover is not pinching the cable.
 Usage
 *****
 
-Make sure that the switch on the ESPM programmer is set to "enable",
-and that the micro SD card is present.
+Make sure that the switch on the ESPM programmer is set to "enable"
+(very small switch located on the ESPM programmer) and that the micro
+SD card is present. Then power the dVRK Si controller to start both
+the dVRK controller and the ESPM.
 
 Troubleshooting
 ***************
 
-The blue or white LED indicates normal operation. After powering up, expect the blue or white light to flash rapidly (may appear dimly lit) for a couple seconds, followed by solid on for 2 seconds, then off.
+The ESPM is powered through the dVRK Si controller.  If the ESPM
+programmer doesn't power on, check your wiring (custom cables for 8020
+mounted arm, ESSJ and dSIB with SUJs).
 
-On error, you will see blinking yellow LED. Count the number of blinks between the 2-second intervals::
+When you power the dVRK controller, its front LEDs (PL,
+PS, ESPM, COM, 48V and AMP) will flash green from left to right until
+the firmware is found on the SD card.  Once the dVRK controller has
+booted, the PL LED should blink green.  The ESPM LED should be solid
+green unless there is an issue between the dVRK
+controller and the ESPM.
+
+On the ESPM programmer, the blue or white LED indicates normal
+operation when starting. After powering up, expect the blue or white
+light to flash rapidly (may appear dimly lit) for a couple seconds,
+followed by solid on for 2 seconds, then all LEDs on the ESPM
+programmer turn off.
+
+On error, you will see blinking yellow LED on the programmer. Count
+the number of blinks between the 2-second intervals::
 
    2: SD card hardware or filesystem problem
       /* Try re-inserting the card. Then try formatting and re-flashing the card. */
@@ -115,4 +133,13 @@ On error, you will see blinking yellow LED. Count the number of blinks between t
    8: XSVF_ERROR_ILLEGALSTATE
    9: XSVF_ERROR_DATAOVERFLOW
 
-The most common user errors are 2 and 3. Other errors indicate problems with the firmware image. The firmware flashing is completely open loop. A successful firmware flash reported by ESPM Programmer (blue/white light for 2 seconds) does not indicate a working ESPM.
+The most common user errors are 2 and 3. Other errors indicate
+problems with the firmware image.
+
+The firmware flashing is completely open loop. A successful firmware
+flash reported by ESPM Programmer (blue/white light for 2 seconds)
+does not indicate a working ESPM.  But the custom ESPM firmware will
+trigger the two LEDs on the arm itself (by the sterile adapter) to
+blink a pinkish light back and forth.  This is one way to check if
+the arm is booted using the dVRK firmware.
+
