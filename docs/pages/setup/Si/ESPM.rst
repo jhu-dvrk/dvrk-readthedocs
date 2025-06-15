@@ -96,8 +96,11 @@ Usage
 
 Make sure that the switch on the ESPM programmer is set to "enable"
 (very small switch located on the ESPM programmer) and that the micro
-SD card is present. Then power the dVRK Si controller to start both
-the dVRK controller and the ESPM.
+SD card is present. You should also have the latest firmwares on the
+SD card (see :ref:`dvrk-sd-card-updater <sd-card-adapter>`).
+
+Finally, power the dVRK Si controller to start both the dVRK
+controller and the ESPM.
 
 Troubleshooting
 ***************

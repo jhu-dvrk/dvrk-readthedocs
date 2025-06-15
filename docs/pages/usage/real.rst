@@ -25,3 +25,5 @@ ECM prep for each endoscope
 Tips for better accuracy
 
 Teleoperation logic
+
+dvrk-remove-logs.py -f ; reset ;
