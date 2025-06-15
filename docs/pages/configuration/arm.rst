@@ -6,10 +6,17 @@
 Arm
 ***
 
+For all dVRK native or derived arms, `documention based on schema
+<../../_static/schemas/dvrk-arm.html>`_ is also available for
+reference.
+
+
 Instrument detection
 ####################
 
 .. _config-dallas:
+
+`PSM only <../../_static/schemas/dvrk-psm.html>`_
 
 In your PSM configuration file (for example ``PSM1-12345.json``), you
 can set the tool detection to be manual, automatic or fixed:
@@ -17,14 +24,14 @@ can set the tool detection to be manual, automatic or fixed:
 .. code-block::
    
    {
-     "kinematic": "kinematic/psm.json",
+     "kinematic": "kinematic/PSM.json",
      "tool_detection": "AUTOMATIC"
      // "tool_detection": "MANUAL"
      // "tool_detection": "FIXED",
      // "tool": "LARGE_NEEDLE_DRIVER:400006"
    }
 
-The different options for ``tool-detection`` are:
+The different options for ``tool_detection`` are:
 
 * ``AUTOMATIC``: this will rely on the Dallas chip query (this will
   work with all Si PSMs as well as :ref:`Classic PSMs with a recent or
