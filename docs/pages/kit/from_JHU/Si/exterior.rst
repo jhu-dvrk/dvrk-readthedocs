@@ -48,3 +48,6 @@ Once the firmware is found and started:
   are off, solid green if any amplifier is on. The LED will blink red
   if the controller has to shutdown (e.g. communication watchdog
   timeout)
+
+The LEDs on the back of the controller are directly mounted on the
+FPGA logic board.
