@@ -31,7 +31,7 @@ Site specific files
   ``dvrk::system`` component, they use the JSON file
   format and the documentation is generated from a schema:
 
-  * `system documentation <../../_static/schemas/dvrk-system.html>`_
+  * `system documentation <../../schemas/dvrk-system.html>`_
 
 * **Arm**: These files specify the configuration of a specific arm
   (e.g. MTML, PSM2...).  They are therefore not shared across dVRK
@@ -39,9 +39,9 @@ Site specific files
   (e.g. ``PSM1-17425.json``).  They use the JSON file format and the
   documentation is generated from a schema:
 
-  * `MTM documentation <../../_static/schemas/dvrk-mtm.html>`_
-  * `PSM documentation <../../_static/schemas/dvrk-psm.html>`_
-  * `ECM documentation <../../_static/schemas/dvrk-ecm.html>`_
+  * `MTM documentation <../../schemas/dvrk-mtm.html>`_
+  * `PSM documentation <../../schemas/dvrk-psm.html>`_
+  * `ECM documentation <../../schemas/dvrk-ecm.html>`_
 
 * **IO (input/output):** These files are used by the
   :ref:`sawRobotIO1394<io>` software components.  They specify which
@@ -89,7 +89,7 @@ Shared files
   They use the JSON file format and the documentation is
   generated from a schema:
 
-  * `tool list documentation <../../_static/schemas/dvrk-tool-list.html>`_
+  * `tool list documentation <../../schemas/dvrk-tool-list.html>`_
 
 * **PID**: These files are used by the
   :ref:`sawControllers<pid>` ``mtsPID`` component.  They

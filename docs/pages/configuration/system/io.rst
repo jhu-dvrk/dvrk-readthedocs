@@ -6,9 +6,13 @@ IOs
 ***
 
 `Documention based on schema
-<../../../_static/schemas/dvrk-IO.html>`_ is also
+<../../../schemas/dvrk-IO.html>`_ is also
 available for reference.
 
+.. raw:: html
+
+    <iframe style="width: 100%; height: 80vh" frameBorder="0" src="../../../schemas/dvrk-IO.html"></iframe>
+    
 Name
 ====
 

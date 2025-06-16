@@ -7,7 +7,7 @@ Arm
 ***
 
 For all dVRK native or derived arms, `documention based on schema
-<../../_static/schemas/dvrk-arm.html>`_ is also available for
+<../../schemas/dvrk-arm.html>`_ is also available for
 reference.
 
 
@@ -16,7 +16,7 @@ Instrument detection
 
 .. _config-dallas:
 
-`PSM only <../../_static/schemas/dvrk-psm.html>`_
+`PSM only <../../schemas/dvrk-psm.html>`_
 
 In your PSM configuration file (for example ``PSM1-12345.json``), you
 can set the tool detection to be manual, automatic or fixed:

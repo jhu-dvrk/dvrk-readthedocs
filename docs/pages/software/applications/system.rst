@@ -120,7 +120,7 @@ ROS extra options
 Configuration file
 ******************
 
-`dVRK system JSON schema <../../../_static/schemas/dvrk-system.html>`_.
+`dVRK system JSON schema <../../../schemas/dvrk-system.html>`_.
 
 
 .. _system-dynamic-components:
@@ -148,4 +148,4 @@ such as:
 
 The full syntax for the *cisstMultiTask* component manager
 configuration files is documented in this `JSON schema
-<../../../_static/schemas/cisst-component-manager.html>`_.
+<../../../schemas/cisst-component-manager.html>`_.
