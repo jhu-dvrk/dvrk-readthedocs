@@ -5,7 +5,7 @@
 Arms
 ****
 
-`Documention based on schema </schemas/dvrk-system.html#arms>`_ is
+`Documention based on schema <../../../schemas/dvrk-system.html#arms>`_ is
 also available for reference (including examples).
 
 List of arms declared in the system.  Most arms are "native",
