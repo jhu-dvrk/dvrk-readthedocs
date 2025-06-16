@@ -5,9 +5,8 @@
 Arms
 ****
 
-:download:`Documention based on schema
-</_build/schemas/dvrk-system.html>` is also available for
-reference (including examples).
+`Documention based on schema <schemas/dvrk-system.html#arms>`_ is
+also available for reference (including examples).
 
 List of arms declared in the system.  Most arms are "native",
 i.e. classes used to interface with the Intuitive arms with a dVRK
