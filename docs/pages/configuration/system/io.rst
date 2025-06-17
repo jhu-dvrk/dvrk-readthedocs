@@ -11,7 +11,7 @@ available for reference.
 
 .. raw:: html
 
-    <iframe style="width: 100%; height: 80vh" frameBorder="0" src="../../../schemas/dvrk-IO.html"></iframe>
+    <iframe style="width: 100%; height: 70vh" frameBorder="1" src="../../../schemas/dvrk-IO.html"></iframe>
     
 Name
 ====
