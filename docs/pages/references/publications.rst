@@ -22,7 +22,7 @@ For posters and videos, please include the `dVRK logo
 dVRK
 ####
 
-* | dVRK-Si: The Next Generation da Vinci Research Kit
+* | :download:`dVRK-Si: The Next Generation da Vinci Research Kit </publications/xu-wu-deguet-kazanzides-dVRK-Si-ISMR-2025.pdf>`
   | Xu, Keshuai and Wu, Jie Ying and Deguet, Anton and Kazanzides, Peter
   | IEEE International Symposium on Medical Robotics (ISMR 2025), Atlanta, Georgia, USA, May 2025.
   | :download:`bibtex </publications/Xu2025ISMR.bib>`
