@@ -18,30 +18,24 @@ Types of files
 Site specific files
 *******************
 
-* **System**: These files are specific to each site.  They are used
-  by the :ref:`dVRK system applications<system>` to define the
+* **System**: These files are specific to each site.  They are used by
+  the :ref:`dVRK system applications<system>` to define the
   combination of arms you're using as well as a few other parameters
   such as IO parameters (period, port), head sensor used, foot pedal,
   teleoperation component. The most basic system file contains a
   single arm and uses the default options for everything else. The
   single arm system files are :ref:`automatically generated
-  <config-generators>` along the arm IO file. The system
-  configuration files are parsed by the ``Configure`` method of the
-  :ref:`sawIntuititiveResearchKit<system-component>`
-  ``dvrk::system`` component, they use the JSON file
-  format and the documentation is generated from a schema:
-
-  * `system documentation <../../schemas/dvrk-system.html>`_
+  <config-generators>` along the arm IO file. The system configuration
+  files are parsed by the ``Configure`` method of the
+  :ref:`sawIntuititiveResearchKit<system-component>` ``dvrk::system``
+  component, they use the JSON file format.  See :ref:`system
+  configuration files <config-system>`
 
 * **Arm**: These files specify the configuration of a specific arm
   (e.g. MTML, PSM2...).  They are therefore not shared across dVRK
   sites and their name includes the arm's serial number
-  (e.g. ``PSM1-17425.json``).  They use the JSON file format and the
-  documentation is generated from a schema:
-
-  * `MTM documentation <../../schemas/dvrk-mtm.html>`_
-  * `PSM documentation <../../schemas/dvrk-psm.html>`_
-  * `ECM documentation <../../schemas/dvrk-ecm.html>`_
+  (e.g. ``PSM1-17425.json``).  They use the JSON file format. See
+  :ref:`arm configuration files <config-arm>`.
 
 * **IO (input/output):** These files are used by the
   :ref:`sawRobotIO1394<io>` software components.  They specify which
@@ -161,7 +155,6 @@ The subdirectories are:
   simulated arms
 * ``system``: definition of systems using no site specific arms,
   mostly for simulation
-
 
 How to create the configuration files
 #####################################

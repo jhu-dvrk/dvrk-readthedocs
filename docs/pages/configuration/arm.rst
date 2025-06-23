@@ -10,6 +10,10 @@ For all dVRK native or derived arms, `documention based on schema
 <../../schemas/dvrk-arm.html>`_ is also available for
 reference.
 
+  * `MTM documentation <../../schemas/dvrk-mtm.html>`_
+  * `PSM documentation <../../schemas/dvrk-psm.html>`_
+  * `ECM documentation <../../schemas/dvrk-ecm.html>`_
+
 
 Instrument detection
 ####################
