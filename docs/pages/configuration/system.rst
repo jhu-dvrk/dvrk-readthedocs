@@ -6,6 +6,7 @@ System
 .. toctree::
 
    system/overview
+   system/settings
    system/io
    system/arms
    system/inputs

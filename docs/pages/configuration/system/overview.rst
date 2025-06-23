@@ -38,7 +38,7 @@ For example, given the following configuration file:
      "IOs":
       [
         {
-          "name": "IO_1",
+          "name": "IO1",
           "port": "fw",
           "protocol": "broadcast-query-read-write"
         }
@@ -49,7 +49,7 @@ For example, given the following configuration file:
         {
           "name": "PSM1",
           "type": "PSM",
-          "IO": "IO_1",
+          "IO": "IO1",
           "serial": "28007"
         }
       ]
@@ -57,13 +57,13 @@ For example, given the following configuration file:
 
 The dVRK system application will:
 
-* create the IO component **IO_1** to communicate with dVRK
+* create the IO component **IO1** to communicate with dVRK
   controllers over FireWire (``fw``) and configure it to use the
   fastest protocol available (``broadcast-query-read-write``)
 
 * create all the components for a PSM arm (``type``), including:
 
-  * configuring the IO **IO_1** with the arm's IO configuration file
+  * configuring the IO **IO1** with the arm's IO configuration file
     ``sawRobotIO1394-PSM1-28007`` based on the arm's **name** and
     **serial** number
 
@@ -84,3 +84,10 @@ pedals, head sensor, focus controller, teleoperation... the dVRK
 application will create, configure and connect tens of components. The
 system configuration file, while a bit complex, greatly simplify the
 process.
+
+Schema based documentation
+==========================
+
+.. raw:: html
+
+    <iframe style="width: 100%; height: 70vh" frameBorder="1" src="../../../schemas/dvrk-system.html"></iframe>
