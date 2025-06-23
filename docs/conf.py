@@ -74,6 +74,8 @@ schema_files = [
   'dvrk-mtm',
   'dvrk-psm',
   'dvrk-system',
+  'dvrk-system-arm',
+  'dvrk-system-settings',
   'dvrk-teleop-ECM',
   'dvrk-teleop-PSM',
   'dvrk-tool-list',

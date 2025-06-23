@@ -93,7 +93,7 @@ External devices
 Foot pedals
 ===========
 
-See :ref:`da Vinci original foot pedals <config-pedals-original>`.
+See :ref:`da Vinci original foot pedals <config-system-console>`.
 
 .. csv-table:: Foot pedals IOs
    :name: foot-pedals-ios-table
@@ -110,7 +110,7 @@ See :ref:`da Vinci original foot pedals <config-pedals-original>`.
 da Vinci head sensor
 ====================
 
-See :ref:`da Vinci original head sensor <config-head-original>`.
+See :ref:`da Vinci original head sensor <config-system-console>`.
 
 .. csv-table:: da Vinci head sensor IOs
    :name: davinci-head-sensor-ios-table
@@ -126,7 +126,7 @@ See :ref:`da Vinci original head sensor <config-head-original>`.
 dVRK head sensor
 ================
 
-See :ref:`dVRK head sensor <config-head-dvrk>`.
+See :ref:`dVRK head sensor <config-system-console>`.
 
 .. csv-table:: dVRK head sensor IOs
    :name: dvrk-head-sensor-ios-table
@@ -147,3 +147,13 @@ See :ref:`da Vinci focus controller <config-focus>`.
 
    "1", "O:0", "EndoscopeFocusIn"
    "1", "O:1", "EndoscopeFocusOut"
+
+
+Labels on dVRK Classic controllers
+==================================
+
+The board numbering on the software side starts with index 0 (e.g. in
+XML IO configuration file) but the labels on the back of the
+controller start at index 1.  Keep this in mind if you plan to connect
+the head sensor to another "DOF" and create your own XML configuration
+files.

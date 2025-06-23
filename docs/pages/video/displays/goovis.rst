@@ -91,7 +91,8 @@ device 15:
 As you place your head in and out the HMD you should see the values
 changing in your terminal.  The head sensor status is the 17th value.
 
-Once the permissions are set correctly, you can :ref:`edit your system JSON configuration file <config-head-goovis>` to use it.
+Once the permissions are set correctly, you can :ref:`edit your system
+JSON configuration file <config-system-console>` to use it.
 
 Low-tech solution to stream the endoscope video
 ***********************************************

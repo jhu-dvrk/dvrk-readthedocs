@@ -72,4 +72,4 @@ Configuration
 -------------
 
 To configure your console, see :ref:`head sensor configuration
-<config-head-dvrk>`
+<config-system-console>`.

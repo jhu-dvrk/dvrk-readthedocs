@@ -9,7 +9,6 @@ System
    system/settings
    system/io
    system/arms
-   system/inputs
-   system/teleops
+   system/console
    system/focus
    system/components

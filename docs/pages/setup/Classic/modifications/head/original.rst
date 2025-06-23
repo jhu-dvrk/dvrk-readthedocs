@@ -91,4 +91,4 @@ Configuration
 -------------
 
 To configure your console, see :ref:`head sensor configuration
-<config-head-original>`
+<config-system-console>`.

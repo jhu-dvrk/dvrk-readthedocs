@@ -1,16 +1,15 @@
-.. _config-arms:
+.. _config-system-arms:
 
 .. include:: /includes/logic-view-soft-arm.rst
 
 Arms
 ****
 
-`Documention based on schema <../../../schemas/dvrk-system.html#arms>`_ is
-also available for reference (including examples).
+Schema based documentation
+==========================
 
-List of arms declared in the system.  Most arms are "native",
-i.e. classes used to interface with the Intuitive arms with a dVRK
-controller. One can also add a derived or generic arm (see development
-options).
+.. raw:: html
+
+    <iframe style="width: 100%; height: 70vh" frameBorder="1" src="../../../schemas/dvrk-system-arm.html"></iframe>
 
 

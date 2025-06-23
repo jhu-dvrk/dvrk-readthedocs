@@ -26,7 +26,7 @@ If you need to use the original foot pedals of the da Vinci Classic
 (or S) surgeon, you need to buy a DB15 extension cable (for example
 https://smile.amazon.com/Monoprice-6ft-DB15-Molded-Cable/dp/B002LWJ7TA).
 See also foot pedals :ref:`hardware <pedals>` and :ref:`software
-<config-pedals-original>`.
+<config-system-console>`.
 
 SD card reader
 **************
