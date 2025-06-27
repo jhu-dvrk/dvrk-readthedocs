@@ -5,8 +5,7 @@
 Arms
 ****
 
-Schema based documentation
-==========================
+**Schema based documentation**
 
 .. raw:: html
 

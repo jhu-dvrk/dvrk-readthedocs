@@ -5,6 +5,8 @@
 Overview
 ********
 
+**Example**
+
 The main configuration file for the dVRK is the system configuration
 (``system-abc-xyz.json``). It is used to list all the elements of the
 kit one wants to use for a given application. For example, one could
@@ -85,8 +87,21 @@ application will create, configure and connect tens of components. The
 system configuration file, while a bit complex, greatly simplify the
 process.
 
-Schema based documentation
-==========================
+The system configuration file main sections are:
+
+* ``IOs`` used to identify and configure one or more IO ports
+
+* ``arms`` used to declare and configure arms used in the system.
+  Native arms will have to refer to IOs declared in the first section
+
+* ``consoles`` used to define one or more surgeon's consoles,
+  i.e. which signals to use for the clutch and camera pedals as well
+  as the sensor to detect operator presence.  Each ``console`` also
+  includes two lists of teleoperation components to be created.  Each
+  teleoperation component will refer to arms created in the ``arms``
+  section.
+  
+**Schema based documentation**
 
 .. raw:: html
 

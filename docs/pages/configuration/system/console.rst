@@ -3,8 +3,7 @@
 Consoles
 ********
 
-Schema based documentation
-==========================
+**Schema based documentation**
 
 .. _config-system-console:
 

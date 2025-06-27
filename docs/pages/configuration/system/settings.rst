@@ -5,8 +5,7 @@
 Settings
 ********
 
-Schema based documentation
-==========================
+**Schema based documentation**
 
 .. raw:: html
 
