@@ -23,7 +23,7 @@ author = 'Anton Deguet, Peter Kazanzides'
 
 # The full version, including alpha/beta/rc tags
 # release = '2.3.1'
-release = 'devel'
+release = 'main'
 
 # -- General configuration ---------------------------------------------------
 
@@ -58,7 +58,7 @@ if not os.path.exists(schema_dir):
   os.makedirs(schema_dir)
 
 dvrk_version = release
-dvrk_version = 'devel'
+dvrk_version = 'main'
 
 schema_files = [
   'cisst-component-manager',
@@ -83,10 +83,10 @@ schema_files = [
 
 for file in schema_files:
     print(f'retrieving JSON schema {file}')
-    if release != 'devel':
+    if release != 'main':
       url = f'https://raw.githubusercontent.com/jhu-dvrk/sawIntuitiveResearchKit/refs/tags/{dvrk_version}/share/schemas/{file}.schema.json'
     else:
-      url = f'https://raw.githubusercontent.com/jhu-dvrk/sawIntuitiveResearchKit/refs/heads/devel/share/schemas/{file}.schema.json'
+      url = f'https://raw.githubusercontent.com/jhu-dvrk/sawIntuitiveResearchKit/refs/heads/main/share/schemas/{file}.schema.json'
     dest = f'{schema_dir}/{file}.schema.json'
     try:
       urllib.request.urlretrieve(url, dest)
@@ -160,12 +160,12 @@ html_theme = "sphinx_rtd_theme"
 # html_static_path = []
 html_extra_path = ['_build/_schemas']
 
-if release == 'devel':
+if release == 'main':
   html_context = {
     'display_github': True,
     'github_user': 'jhu-dvrk',
     'github_repo': 'dvrk-readthedocs',
-    'github_version': 'devel/docs/',
+    'github_version': 'main/docs/',
   }
 
 html_logo = 'images/dVRK-square.png'
