@@ -2,6 +2,12 @@
 Acknowledgments
 ***************
 
+The dVRK would not have been possible without `Intuitive Surgical
+<https://www.intuitive.com>`_ and the `Intuitive Foundation
+<https://www.intuitive-foundation.org/>`_. They have actively
+supported both the dVRK developpers and the dVRK community since the
+project's inception.
+
 The `cisst software <https://www.cisst.org>`_ has been developed with
 the support of the National Science Foundation, EEC 9731748, EEC
 0646678, and MRI 0722943.
