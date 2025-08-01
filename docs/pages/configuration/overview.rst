@@ -129,6 +129,10 @@ Each directory should contain:
   * your system configuration files since these refer to your system
     specific IO configuration files
 
+It is recommended to use tags or branches to maintain your configurations files for each version of the dVRK.  For example, files for the dVRK 2.4 are different from 2.3 but you might need both at a given time.
+
+Before checking in files, you should clean your configuration directory, i.e. remove the temporary and log files (see :ref:`dvrk-remove-logs.py <remove-logs>`).
+
 Site specific directories should **NOT** contain any of the shared
 files.  If you make a copy of the shared file in your directory, it
 will be used in place of the default one.  dVRK applications use a
