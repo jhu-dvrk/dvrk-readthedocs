@@ -10,6 +10,8 @@ specific to the dVRK, i.e. they can be applied to all `cisst/SAW
 components
 <https://github.com/jhu-cisst/cisst/wiki/cisst-libraries-and-SAW-components>`_.
 
+.. _bridge-ros:
+
 ROS
 ***
 
@@ -65,15 +67,21 @@ Cons
 Notes
 =====
 
-* By default, the dVRK system publishes both synchronous (events) and
-  asynchronous data (state data).  Events (such as ``operating_state``
-  are published as fast as possible.  State data (such as
-  ``measured_js``...) is published periodically.  By default, the dVRK
-  system publishes data at 100Hz (10ms).  This can be increased using
-  the ``-p`` command line argument.  The dVRK arm components
-  are running at 1.5KHz, so it doesn't make sense to publish at any
-  rate higher than 1.5KHz.
-* We provide a full fledge dVRK client API for both Python (``import
+* The dVRK system publishes both synchronous (events) and asynchronous data
+  (state data).  Events (such as ``operating_state`` are published as fast as
+  possible.  State data (such as ``measured_js``...) is published periodically.
+  By default, the dVRK system publishes data at 100Hz (10ms).  This can be
+  increased using the ``-p`` command line argument.  The dVRK arm components are
+  running at 1.5KHz, so it doesn't make sense to publish at any rate higher than
+  1.5KHz.
+* The dVRK uses the cisst ROS CRTK component to provide both ROS 1 and ROS 2
+  interfaces (see `https://github.com/jhu-cisst/cisst-ros/`). This component
+  uses multiple threads to reduce the latency of any synchronous message (i.e.
+  publishing events or subscribing to commands).
+* It is possible to configure which ROS topics are available. The dVRK ROS
+  system node can expose topics from both the IO and PID components in read-only
+  or read-write mode (see :ref:`system appication<system>`).
+* We provide a dVRK client API over ROS for both Python (``import
   dvrk``) and Matlab (``dvrk.``).  These are very convenient for quick
   testing and sending commands from an interactive interpreter, but
   they come at a cost.  To provide all the possible features, these
@@ -85,11 +93,14 @@ Notes
   ``crtk.utils`` to configure your client to use only the topics you
   need.
 
+
 Sockets (JSON), OpenIGTLink
 ***************************
 
 ROS is the preferred middleware, but we also support UDP socket with
 JSON messages and OpenIGTLink.
+
+.. _udp-json:
 
 Sockets with JSON
 =================
@@ -129,6 +140,8 @@ specify which command to bridge (using the name and payload type).
 You can find some examples of configuration files, usage and a simple
 python client for the dVRK in ``share/socket-streamer``
 (https://github.com/jhu-dvrk/sawIntuitiveResearchKit).
+
+.. _igtl:
 
 OpenIGTLink
 ===========
