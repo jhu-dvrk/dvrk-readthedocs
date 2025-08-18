@@ -130,7 +130,9 @@ Use a ROS launch file to start the dVRK in simulated mode with the patient cart 
 
    dVRK with Classic patient cart simulated in RViz
 
-In a second terminal, use a Python test script to make an arm move
+In the dVRK GUI, open the `Arm` `PSM1` tab and select an instrument to use.
+
+In a second terminal, use a Python test script to make an arm move:
 
 .. code-block:: bash
 

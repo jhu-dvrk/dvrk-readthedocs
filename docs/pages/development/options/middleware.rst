@@ -1,6 +1,6 @@
-.. _devel-middleware:
-
 .. include:: /includes/logic-view-soft-bridge.rst
+
+.. _devel-middleware:
 
 Middleware
 ##########

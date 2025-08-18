@@ -30,7 +30,7 @@ components.
 There are some major drawbacks when not using ROS:
 
 * The dVRK becomes a "black box" with no easy way to interface. One
-  can use an alternate :ref:`middleware` such as
+  can use an alternate :ref:`devel-middleware` such as
   :ref:`sawSocketStreamer <udp-json>` or :ref:`sawOpenIGTLink <igtl>`,
   but these are not as convenient as ROS.
 

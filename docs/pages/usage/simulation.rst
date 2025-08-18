@@ -18,6 +18,13 @@ graphical user interface (IO widgets are not available of course) as
 well as the ROS topics. One can use Rviz to visualize the arms in a
 virtual environment.
 
+.. warning::
+
+   In simulation mode, there is no way to physically detect which instrument is
+   used for the PSM. You need to open the `Arm` `PSM` tab in the GUI and specify
+   which instrument is used. Without an instrument, one can not control the PSM
+   in cartesian space since the kinematic chain is incomplete.
+
 Compilation
 ###########
 

@@ -26,7 +26,7 @@ generations of daVincis.
 
 To do a full swap, say from MTMR/PSM1 & MTML/PSM2 to MTMR/PSM2 &
 MTML/PSM1 you will need to use ROS topics (see :ref:`console
-API<api-console>`).
+API<api-system>`).
 
 We use the ``diagnostic_msgs::KeyValue`` which is a pair of strings to
 represent the MTM/PSM pair.
