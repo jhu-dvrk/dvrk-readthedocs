@@ -90,6 +90,25 @@ those systems it is possible to accidentally bypass some safety
 relays, as described in :ref:`this section below
 <estop-issue-2-5-pins>`.
 
+.. _estop-parts:
+
+Parts used for the e-stop
+#########################
+
+If you are missing some e-stop cables or want to build more to split
+your dVRK in multiple systems, you can use the following parts:
+
+* Any AWG 22 cable with 2 wires plus ground
+* 4 and 5 pin connectors. From Digikey:
+
+  * 277-1013-ND (aka Phoenix 1757035 4-pin)
+  * 277-8670-ND (aka Phoenix 1752399 5-pin)
+
+.. figure:: /images/estop/e-stop-connectors.jpg
+   :width: 400
+   :align: center
+
+
 .. _estop-modular:
 
 Modular E-stop chain (recommended)
@@ -208,17 +227,17 @@ via the e-stop. The figure below shows the wiring with the 5-pin
 safety connector, but similar wiring can be done with the single 4-pin
 connector.
 
-Connect the modified connector to the controller box you want to debug and run the ''qladisp'' program: 
+Connect the modified connector to the controller box you want to debug and run the ''qladisp'' program:
 
 .. code-block:: bash
-		
-   # assume we are testing MTML box 
-   $ qladisp 0 1  
+
+   # assume we are testing MTML box
+   $ qladisp 0 1
 
    # Press 'p' to turn on power
    #   - 'p' first turns on the QLA relays (this step does NOT matter, since those relays are bypassed)
    #   - then turns on board and amplifier power
-   # The mv-good and all amplifiers should be turned on at this time 
+   # The mv-good and all amplifiers should be turned on at this time
    #   - if not, check the power system physical connections
 
 
@@ -240,9 +259,9 @@ Alternatively, for a single 4-pin or 5-pin connector, modify the cable
 to attach 12V to S1 and S2 to EN.
 
 .. code-block:: bash
-		
+
    # assume we are testing MTML box
-   # relays are serial chained, so connect to 0 and 1 at the same time  
+   # relays are serial chained, so connect to 0 and 1 at the same time
    $ qladisp 0 1
 
    # Press 'p' to turn on power
@@ -271,7 +290,7 @@ ON.
 Assume we test board 0 first:
 
 * Do a continuity test between T1 and T2. It should be open; if not, contact us. (No power)
-  
+
 * Turn on relay now
 
  * ``$ qladisp 0``
@@ -301,7 +320,7 @@ while the relays are ON.
 Assume we are testing MTML board 0 and 1:
 
 * Do a continuity test between S1 and S2. Should be open.
-* Turn on relay now
+xs* Turn on relay now
 
   * ``$ qladisp 0 1``
   * Press 'p' to turn on relay
