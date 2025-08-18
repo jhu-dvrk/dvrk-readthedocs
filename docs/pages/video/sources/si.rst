@@ -6,7 +6,7 @@ Si HD
 Camera
 ======
 
-.. figure:: /images/video/video-si-hd-camera-labeled.jpg
+.. figure:: /images/video/video-si-hd-camera-labeled.*
    :width: 400
    :align: center
 
