@@ -61,6 +61,26 @@ console (2 MTMs).
    # dVRK only support Classic MTMs so no need to specify generation
    ros2 launch dvrk_model surgeon_console.launch.py
 
+In a second terminal, use a Python test script to make any arm move:
+
+.. code-block:: bash
+
+   source ~/ros2_ws/install/setup.bash
+   ros2 run dvrk_python dvrk_arm_test.py -a MTML
+
+You can also start to investigate which ROS topics are available using:
+
+.. code-block:: bash
+
+   source ~/ros2_ws/install/setup.bash
+   ros2 topic list
+
+.. warning::
+
+   In kinematic simulation mode, some commands are meaningless since there is no
+   IO nor forces measured. The kinematic simulation mode is useful only to test
+   simple scripts using position control. There is no simulation of the
+   interactions between the robots and their environment.
 
 Configuration and launch files
 ##############################
