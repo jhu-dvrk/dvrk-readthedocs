@@ -82,6 +82,13 @@ If the boards are not found, please check the sections for testing connectivity
 for :ref:`Ethernet<ethernet>` or :ref:`FireWire<firewire>`. You won't be able to
 use the dVRK until you figure out the connection issue(s).
 
+.. hint::
+
+   There is a know issue regarding FireWire discovery. After you power your
+   controllers, you might need to unplug, wait 5 seconds and, re-plug the
+   FireWire cable between your PC and the first dVRK controller. You can
+   disconnect that cable from the PC or from the first controller.
+
 See also:
 
 * :ref:`Connectivity<connectivity>` section
