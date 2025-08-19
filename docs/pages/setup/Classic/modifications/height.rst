@@ -1,7 +1,7 @@
 .. _height:
 
-Console height adjustement
-**************************
+Console height adjustment
+*************************
 
 Introduction
 ============
@@ -34,7 +34,7 @@ simple motor controller.  For this you will need:
 * A power supply, ideally providing 24V DC.  You can use an old laptop
   power supply.
 * A PWM motor controller, ideally adjustable, so you can drive the lift
-  up AND down.  We used the following from Amazo,n but there are tons
+  up AND down.  We used the following from Amazon but there are tons
   of alternatives:
   https://www.amazon.com/EPLZON-Controller-Adjustable-Electric-Regulator/dp/B0BVBKDY1Q/
 

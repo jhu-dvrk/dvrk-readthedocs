@@ -60,6 +60,13 @@ dVRK controllers
   we've seen controllers that looked like they were delivered using a
   roller coaster!**.  If you are not comfortable re-plugging the cables
   by yourself, reach out to the dVRK maintainers.
+
+  .. figure:: /images/general/dgist-dqla-loose.jpg
+     :width: 300
+     :align: center
+
+     Loose DQLA board after shipping
+
 * We recommend plugging all your controllers to a single power strip
   with a switch.  This will ensure that all controllers can be turned
   on or off using a single button.

@@ -3,6 +3,7 @@ Modifications
 
 .. toctree::
 
+   modifications/surgeon-console
    modifications/adapter
    modifications/pedals
    modifications/head

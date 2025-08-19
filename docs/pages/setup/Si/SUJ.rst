@@ -9,6 +9,15 @@ the active arms (:ref:`2 D-sub connectors <setup-si-connections>`) can
 be carried all the way to the dSIB and ESSJ at the base of the
 patient cart.
 
+The overall flow is shown at the bottom of the following figure. More details
+can be found in the :ref:`dVRK electronic introduction <boards-intro>`.
+
+.. figure:: /images/controllers/dVRK-signals-all-controllers.*
+   :width: 600
+   :align: center
+
+   dVRK Si controllers integration with SUJ (bottom)
+
 .. warning::
 
    The dSIB-Si should be connected directly to the dRAC based
@@ -41,6 +50,12 @@ mounted directly on the back of the dVRK controllers.
 
 The first step is to remove the cover (2 parts) on the back of the
 cart.  The cover is held with 2 screws (use 3/16 hex wrench) and some pressure clips.
+
+.. figure:: /images/Si/dgist-original-patient-cart.jpg
+   :width: 300
+   :align: center
+
+   SUJ Si top cover overview
 
 .. figure:: /images/Si/Si-SUJ-conversion-top-screws.png
    :width: 400
@@ -181,3 +196,23 @@ components of the original patient's cart to fit the dVRK controllers.
    :align: center
 
    Label on each active Si arm
+
+
+DGIST setup
+***********
+
+The following images show the dVRK-Si at DGIST.
+
+
+.. figure:: /images/Si/dgist-patient-cart-controllers-front.jpg
+   :width: 300
+   :align: center
+
+   PSM and ECM Si controllers, front with FireWire chain
+
+.. figure:: /images/Si/dgist-patient-cart-controllers-back.jpg
+   :width: 300
+   :align: center
+
+   PSM and ECM Si controllers, back with dSIB-Si and dSIB-Z-Si
+
