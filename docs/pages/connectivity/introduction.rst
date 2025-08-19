@@ -1,4 +1,4 @@
-.. _connectivity:
+.. _connectivity_intro:
 
 ************
 Introduction

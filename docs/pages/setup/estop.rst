@@ -320,7 +320,7 @@ while the relays are ON.
 Assume we are testing MTML board 0 and 1:
 
 * Do a continuity test between S1 and S2. Should be open.
-xs* Turn on relay now
+* Turn on relay now
 
   * ``$ qladisp 0 1``
   * Press 'p' to turn on relay

@@ -4,7 +4,13 @@
 Simulation
 **********
 
-This page documents how to run kinematics simulation of da Vinci
+
+This section assumes that you compiled the dVRK software, you don't need any hardware.
+
+For first time users, we have some :ref:`tips<usage-tips>`.
+
+
+This section documents how to run kinematics simulation of da Vinci
 Research Kit (dVRK). It is possible to run the dVRK in simulation mode
 on any computer as there is no need for a FireWire adapter.
 
@@ -68,7 +74,7 @@ In a second terminal, use a Python test script to make any arm move:
    source ~/ros2_ws/install/setup.bash
    ros2 run dvrk_python dvrk_arm_test.py -a MTML
 
-You can also start to investigate which ROS topics are available using:
+You can also start investigating which ROS topics are available using:
 
 .. code-block:: bash
 
