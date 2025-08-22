@@ -4,11 +4,11 @@
 Real robot
 **********
 
-This section assumes that your dVRK is fully setup, i.e. controllers are
-connected, software is compiled and all the configuration files have been
-generated and calibrated.
+This section describes a typical sequence to use the dVRK. It assumes that your
+dVRK is fully setup, i.e. controllers are connected, software is compiled and
+all the configuration files have been generated and calibrated.
 
-For first time users, we have some :ref:`tips<usage-tips>`.
+For first time users, we also have some :ref:`tips<usage-tips>`.
 
 Powering on controllers
 #######################
@@ -116,10 +116,20 @@ Testing motor power
 ###################
 
 Once you started the :ref:`dVRK system application<system>`, try to turn on
-motor power on the controllers. If everything goes well, the graphical user
-interface should display green buttons in the IO tabs (except for the MTM
-gripper since it is not powered). The LEDs on the front of the dVRK controllers
-should also indicate that the motor power is on.
+motor power on the controllers.
+
+
+
+.. figure:: /images/gui/gui-power-on-button.*
+   :width: 300
+   :align: center
+
+   Power On button in dVRK GUI
+
+If everything goes well, the graphical user interface should display green
+buttons in the IO tabs (except for the MTM gripper since it is not powered). The
+LEDs on the front of the dVRK controllers should also indicate that the motor
+power is on.
 
 .. note::
 
@@ -131,6 +141,7 @@ should also indicate that the motor power is on.
    **motor** power as much as possible.
 
 
+If you can not turn on motor power, 
 
 todo
 ####

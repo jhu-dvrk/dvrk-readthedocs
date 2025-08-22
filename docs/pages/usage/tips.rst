@@ -22,8 +22,8 @@ Terminal
   complete your command or present options. **This is extremely useful.** For
   example, you can just type ``dvr`` followed by 2 **Tab** and you will see all
   the commands starting with ``dvr``. Most applications provided along the dVRK
-  start with ``dvr``, ``qla`` or ``saw``. Type these prefixes followed by
-  **Tab** and, you'll get access to most dVRK related commands.
+  start with ``dvr``, ``qla`` or ``saw``. Type any of these prefixes followed by
+  **Tab** and, you'll get lists of available commands.
 
 * Auto-completion works with ROS. For example, type ``ros2`` followed by a
   **space** and **Tab**, the different options will be shown.  If you type

@@ -7,7 +7,7 @@ Simulation
 
 This section assumes that you compiled the dVRK software, you don't need any hardware.
 
-For first time users, we have some :ref:`tips<usage-tips>`.
+For first time users, we also have some :ref:`tips<usage-tips>`.
 
 
 This section documents how to run kinematics simulation of da Vinci
