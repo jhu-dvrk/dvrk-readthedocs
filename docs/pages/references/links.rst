@@ -60,6 +60,7 @@ Electronics/Enclosures
   * `dSIB <https://github.com/jhu-dvrk/dvrk-pcb-dSIB>`__
   * `Intrument detection Dallas retrofit dongle <https://github.com/jhu-dvrk/dvrk_Dallas_Dongle>`_
   * `dVRK Classic controller test board <https://github.com/jhu-dvrk/dvrk-controller-test-board>`_
+  * `dVRK Classic SUJ controller assembly instructions <https://github.com/jhu-dvrk/dVRK-Classic-SUJ-Controller>`_
 
 * Si
 
