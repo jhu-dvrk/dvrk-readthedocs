@@ -45,8 +45,8 @@ General
 Mechatronics
 ************
 
-Electronics
-===========
+Electronics/Enclosures
+======================
 
 * Logic board version 1 and 2: `FPGA1394 <https://github.com/jhu-cisst/FPGA1394>`_
 * Logic board version 3: `FPGA1394V3 <https://github.com/jhu-cisst/FPGA1394V3>`_
@@ -59,13 +59,16 @@ Electronics
   * `dMIB <https://github.com/jhu-dvrk/dvrk-pcb-dMIB>`_
   * `dSIB <https://github.com/jhu-dvrk/dvrk-pcb-dSIB>`__
   * `Intrument detection Dallas retrofit dongle <https://github.com/jhu-dvrk/dvrk_Dallas_Dongle>`_
+  * `dVRK Classic controller test board <https://github.com/jhu-dvrk/dvrk-controller-test-board>`_
 
 * Si
 
   * Motor power board: `dRAC <https://github.com/jhu-dvrk/drac>`_
   * `Front panel LEDs <https://github.com/jhu-dvrk/dvrk-si-front-panel-led>`_
   * `ESPM programmer <https://github.com/jhu-dvrk/espm-programmer-pcba>`_
-  * `dSIB <https://github.com/jhu-dvrk/dSIB-Si-pcba>`__
+  * `dSIB <https://github.com/jhu-dvrk/dSIB-Si-pcba>`_
+  * `dVRK Si controller test board <https://github.com/jhu-dvrk/dvrk-si-test-board>`_
+  * `dVRK Si controller bill of materials and assembly instructions <https://github.com/jhu-dvrk/dVRK-Si-Controller>`_
 
 Firmware/Software
 =================

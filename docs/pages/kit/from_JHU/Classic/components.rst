@@ -31,14 +31,14 @@ Power supplies
 
 * Replacement power supplies:
 
-  * 12V Logic Power Supply (For All) & 12V Motor Power Supply (For
-    MTM):
-    https://www.digikey.com/product-detail/en/cui-inc/VGS-50-12/102-1935-ND/2045666
-  * 24V Motor Power Supply (For MTM):
+  * 12V logic power supply (For All) & 12V Motor Power Supply (For
+    MTM): https://www.digikey.com/en/products/detail/mean-well-usa-inc/LRS-50-12/7705044
+    (obsolete: https://www.digikey.com/product-detail/en/cui-inc/VGS-50-12/102-1935-ND/2045666)
+  * 24V motor power supply (For MTM):
     https://www.digikey.com/product-detail/en/cui-inc/VGS-75-24/102-1943-ND/2045674
-  * 24V Motor Power Supply (For PSM):
+  * 24V motor power supply (For PSM):
     https://store.astrodynetdi.com/225w-u-channel-power-supply-24vpmk225s-24u.html
-  * 36V Motor Power Supply (For ECM):
+  * 36V motor power supply (For ECM):
     https://store.astrodynetdi.com/225w-u-channel-power-supply-36vpmk225s-36u.html
 
 Hardware modifications
