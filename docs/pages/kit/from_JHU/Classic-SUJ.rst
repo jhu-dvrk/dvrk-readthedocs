@@ -110,3 +110,9 @@ Hardware modifications
 * QLAs:
 
   * :ref:`Heat sink and fan <qla-heat-sink>`
+
+Details of components and assembly
+**********************************
+
+This information is stored in a separate GitHub repository:
+https://github.com/jhu-dvrk/dVRK-Classic-SUJ-Controller
