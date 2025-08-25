@@ -128,7 +128,7 @@ The upper "FireWire" cable (J10) and the bottom cable (J13) plugged into each RA
 
    SUJ Si RAC connections
 
-Once you've disconnected all of the cables we need to preserve for the
+Once you've disconnected all the cables we need to preserve for the
 dVRK, you can remove all the electronics, bracket, battery... from the
 patient cart.  Ideally, there should be nothing above the "shoulders" so
 you have a somewhat flat surface to stack the 4 dVRK-Si controllers.

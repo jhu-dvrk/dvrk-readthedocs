@@ -35,7 +35,22 @@ The Python packages main features are:
   pedals... and methods to access most features
 * Conversion to convenient data types, PyKDL for cartesian data and
   numpy for vectors and matrices
+* All methods used to retrieve the robot's state (`measured`, `setpoint`...)
+  return a tuple with both the data (array, frame...) and a timestamp. The
+  timestamp will be set to 0 if the data is considered invalid. For example,
+  cartesian pose for a PSM without an instrument. Proper code should retrive both and then test the ts, i.e. 
+  
+  .. code-block:: python
 
+     p, ts = robot.measured_jp()
+     if ts != 0.0:
+         do_something_useful()
+     else:
+         handle_invalid_data()
+
+  But if you don't want to handle error cases, you can use the ``_`` Python
+  dummy variable name and ignore it: ``p, _ = robot.measured_jp()``.
+  
 The ROS package ``dvrk_python`` contains:
 
 * ``src/dvrk`` Python module: defines the base class ``dvrk.arm`` as well as
@@ -87,17 +102,17 @@ Then in Python:
    p.enable()
    p.home()
 
-   # retrieve current info (numpy.array)
+   # retrieve current info (numpy.array) with timestamps
    p.measured_jp()
    p.measured_jv()
    p.measured_jf()
 
-   # retrieve PID desired position and effort computed
+   # retrieve PID desired position and effort computed with timestamps
    p.setpoint_jp()
    p.setpoint_jf()
 
    # retrieve cartesian current and desired positions
-   # PyKDL.Frame
+   # PyKDL.Frame with timestamps
    p.measured_cp()
    p.setpoint_cp()
 
@@ -110,15 +125,15 @@ Then in Python:
 
    # move in cartesian space
    import PyKDL
-   # start position
-   goal = p.setpoint_cp()
+   # start position and timestamp (ignored using variable _)
+   goal, _ = p.setpoint_cp()
    # move 5cm in z direction
    goal.p[2] += 0.05
    p.move_cp(goal).wait()
 
    import math
    # start position
-   goal = p.setpoint_cp()
+   goal, _ = p.setpoint_cp()
    # rotate tool tip frame by 25 degrees
    goal.M.DoRotX(math.pi * 0.25)
    p.move_cp(goal).wait()
