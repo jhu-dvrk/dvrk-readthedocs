@@ -33,5 +33,6 @@ This information is stored in a separate GitHub repository:
 https://github.com/jhu-dvrk/dVRK-Si-Controller
 
 There is also a test board designed for the dVRK Si controllers:
+
 * `PCB <https://github.com/jhu-dvrk/dvrk-si-test-board>`_
 * `Test program <https://github.com/jhu-dvrk/dvrk-mfg-test/>`_ 
