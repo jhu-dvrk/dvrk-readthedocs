@@ -46,13 +46,13 @@ as the current calibration program.  A typical run looks like:
 ::
 
    adeguet1@lcsr-dvrk-09:~/ros2_ws/src/dvrk/dvrk_config_jhu/jhu-daVinci$
-     sawIntuitiveResearchKitGripperCalibration -c sawRobotIO1394-MTML-gripper-34863.xml
+     sawIntuitiveResearchKitGripperCalibration -c sawRobotIO1394-MTML-gripper-34863.json
 
-   Configuration file: sawRobotIO1394-MTML-gripper-34863.xml
+   Configuration file: sawRobotIO1394-MTML-gripper-34863.json
    Port: fw:0
    Make sure:
    - your computer is connected to the firewire controller.
-   - the MTM arm corresponding to the configuration file "sawRobotIO1394-MTML-gripper-34863.xml" is connected to the controller.
+   - the MTM arm corresponding to the configuration file "sawRobotIO1394-MTML-gripper-34863.json" is connected to the controller.
    - the E-Stop is opened, this program doesn't require powered actuators.
    - you have no other device connected to the firewire chain.
    - you have no other program trying to communicate with the controller.
@@ -74,12 +74,12 @@ as the current calibration program.  A typical run looks like:
    Do you want to update the config file with these values? [Y/y]
    Enter the new desired max for the gripper, 60 (degrees) is recommended to match the maximum tool opening.
    60
-   Status: offset and scale in XML configuration file: 261.267 -74.922
+   Status: offset and scale in JSON configuration file: 261.267 -74.922
    Status: new offset and scale:                   	333.594 -102.033
 
    Do you want to save these values? [S/s]
-   Existing IO config file has been renamed sawRobotIO1394-MTML-gripper-34863.xml-backup-2024-10-01-14-06-26
-   Results saved in IO config file sawRobotIO1394-MTML-gripper-34863.xml
+   Existing IO config file has been renamed sawRobotIO1394-MTML-gripper-34863.json-backup-2024-10-01-14-06-26
+   Results saved in IO config file sawRobotIO1394-MTML-gripper-34863.json
 
 
 Notes:
