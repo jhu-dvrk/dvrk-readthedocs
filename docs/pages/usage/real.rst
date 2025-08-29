@@ -32,7 +32,7 @@ simultaneously.
    FireWire cable to the PC before powering the controllers.
 
 Once the controllers are powered, you need to make sure they booted properly. On
-Classic controllers, the LEDs **A** and **B** should be going back and forth
+Classic controllers, the LEDs **A** and **B** (and **C** and **D**) should be going back and forth
 from green to red. On Si controllers the **PL** LED should be blinking green.
 The booting process takes a bit longer on newer controllers (FPGA 3 based). Once
 all your controllers are ready, you can check the connection with your PC.
