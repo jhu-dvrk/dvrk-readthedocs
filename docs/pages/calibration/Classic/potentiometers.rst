@@ -19,8 +19,8 @@ joints). The conversion is a linear function based on an offset and a
 scale, i.e. ``position = offset + scale * voltage``.  Intuitive
 Surgical performed an initial calibration for all arms and can provide
 these values in a ``.cal`` file.  Using these ``.cal`` file and the
-dVRK config generator, we get the IO XML
-``sawRobotIO1394-<arm>-<serial>.xml`` files used for the dVRK.  See
+dVRK config generator, we get the IO JSON
+``sawRobotIO1394-<arm>-<serial>.json`` files used for the dVRK.  See
 :ref:`configuration generators<config-generators>`.
 
 The problem is that these values are partially based on the
@@ -74,6 +74,10 @@ identify a zero position based on mechanical properties.
 
    It is important to calibrate the potentiometer scales before the
    offsets!
+
+.. note::
+
+   If your original calibration files are way off, the original offsets might prevent the dVRK from working (even with the ``-C`` option). You might have to do a rough offset calibration to get an initial position closer to zero. 
 
 Requirements
 ============
@@ -138,17 +142,14 @@ command line options for ``dvrk_system`` should look like:
 
 .. note::
 
-   The ``-C`` command line otion (added in release 2.0.1) allows to
+   The ``-C`` command line option (added in release 2.0.1) allows to
    run the dVRK system without the potentiometer safety checks
    (**C**\ alibration mode).  Otherwise, with very poorly calibrated
    potentiometer parameters, the application would keep shutting down,
-   preventing users to calibrate their potentiometer parameters.  With
-   ``-C``, the system application also resets the encoder preloads on
-   exit.  This is to avoid using bad encoder preloaded values (based
-   on poor potentiometer values) on the next run.
+   preventing users to calibrate their potentiometer parameters.
 
 The file ``system-PSM2.json`` is specific to each system since it
-points to your ``sawRobotIO1394-PSM2-00000.xml`` file.
+points to your ``sawRobotIO1394-PSM2-00000.json`` file.
 
 In a separate shell, start the :ref:`potentiometer calibration script
 <dvrk_calibrate_potentiometers>` using the following command line:
@@ -156,16 +157,18 @@ In a separate shell, start the :ref:`potentiometer calibration script
 .. code-block:: bash
 
    # In directory <my-config-dir>
-   rosrun dvrk_python dvrk_calibrate_potentiometers.py -t scales -a PSM2 -c sawRobotIO1394-PSM2-00000.xml
+   rosrun dvrk_python dvrk_calibrate_potentiometers.py -t scales -a PSM2 -c sawRobotIO1394-PSM2-00000.json -i IO1
 
-Make sure you use the same ``sawRobotIO1394-XXX-00000.xml`` for the
+Make sure you use the same ``sawRobotIO1394-XXX-00000.json`` for the
 calibration script and the system application! The file name can be
 found in the system-PSM2.json file you're using.
 
-The calibration script will query the arm serial number from the XML
+The ``-i`` option is required and should match the IO name in the system JSON configuration file.  The name is also used for the IO tab in the GUI.
+
+The calibration script will query the arm serial number from the JSON
 file and will display it.  The system application will do the same
 and display the serial number in the IO Qt widget.  This ensures that
-both applications are using an XML file specific to the arm you are
+both applications are using an JSON file specific to the arm you are
 trying to calibrate.  But, if you happen to use different copies of
 the configuration file for your arm, the current system has no way to
 detect it.  So, make sure you are using the same file for both
@@ -204,13 +207,11 @@ The result should look like:
   6    | -79.427331 | -79.140566 |  1.003623
 
 In this case you can see corrections as high as 2% on the third joint
-(index 2).  Press `y[enter]` to save the results in a new XML file.
+(index 2).  Press `y[enter]` to save the results in a new JSON file.
 You can review the changes with `meld` or your preferred diff tool.
-If the changes make sense, replace your default XML configuration file
-with the new one:
 
 Then stop the dVRK system application and restart it with the updated
-XML file to re-run the calibration script.  The results should
+JSON IO file to re-run the calibration script.  The results should
 improve:
 
 ::
@@ -254,7 +255,7 @@ command line:
 .. code-block:: bash
 
    # In directory <my-config-dir>
-   rosrun dvrk_python dvrk_calibrate_potentiometers.py -t offsets -a PSM2 -c sawRobotIO1394-PSM2-00000.xml
+   rosrun dvrk_python dvrk_calibrate_potentiometers.py -t offsets -a PSM2 -c sawRobotIO1394-PSM2-00000.json -i IO1
 
 Follow the instructions and place the calibration template (either
 Lego bars or plexiglass plate) when prompted to.  The result should
@@ -278,7 +279,7 @@ all the joints or only the last 4.  If you are using the Lego bars or
 template describe above, **DO NOT** save all, just save the last 4.
 
 Then stop the system application, make sure you restart it with the
-updated XML file and re-run the calibration script.  The results
+updated JSON IO file and re-run the calibration script.  The results
 should improve:
 
 ::
