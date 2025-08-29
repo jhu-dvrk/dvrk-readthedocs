@@ -121,13 +121,13 @@ Procedure
 * In a third terminal, launch the :ref:`calibration script
   <dvrk_calibrate_potentiometer_psm>`
   (``dvrk_calibrate_potentiometer_psm_cv.py``) with the
-  ``sawRobotIO1394-PSMx-xxxxx.xml`` corresponding to your PSM,
+  ``sawRobotIO1394-PSMx-xxxxx.json`` corresponding to your PSM,
   something like:
 
    .. code-block:: bash
 
       roscd dvrk_config/<my-config-dir>
-      rosrun dvrk_python dvrk_calibrate_potentiometer_psm.py -a PSM1 -c sawRobotIO1394-PSMx-xxxxx.xml
+      rosrun dvrk_python dvrk_calibrate_potentiometer_psm.py -a PSM1 -c sawRobotIO1394-PSMx-xxxxx.json
 
 * Follow the script instructions to find the maximum range of motion
   for your PSM.  This step is required to accommodate PSMs installed
@@ -206,13 +206,13 @@ Procedure
   inches is ideal) of the RCM point.
 * In a second terminal, launch the calibration script
   (``dvrk_calibrate_potentiometer_psm_cv.py``) with the
-  ``sawRobotIO1394-PSMx-xxxxx.xml`` corresponding to your PSM, something
+  ``sawRobotIO1394-PSMx-xxxxx.json`` corresponding to your PSM, something
   like:
 
   .. code-block:: bash
 
      roscd dvrk_config/<my-config-dir>
-     rosrun dvrk_python dvrk_calibrate_potentiometer_psm_cv.py -a PSM1 -c sawRobotIO1394-PSMx-xxxxx.xml
+     rosrun dvrk_python dvrk_calibrate_potentiometer_psm_cv.py -a PSM1 -c sawRobotIO1394-PSMx-xxxxx.json
 
 * Follow the script's instructions to find the maximum range of motion
   for your PSM.  This step is required to accommodate PSMs installed
