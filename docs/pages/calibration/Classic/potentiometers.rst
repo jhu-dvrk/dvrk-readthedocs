@@ -137,7 +137,7 @@ command line options for ``dvrk_system`` should look like:
 .. code-block:: bash
 
    # In directory <my-config-dir>
-   # directory with your sawRobotIO1394-PSM2-00000.xml configuration files
+   # directory with your sawRobotIO1394-PSM2-00000.json configuration files
    rosrun dvrk_robot dvrk_system -j <my-config-dir>/system-PSM2.json -K -C
 
 .. note::

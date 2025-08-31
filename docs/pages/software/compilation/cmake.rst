@@ -47,7 +47,6 @@ Dependencies
 * Linux for IEEE-1394 (FireWire): ``libraw1394`` (and ``libraw1394-dev``)
 * CMake for build and configuration
 * C++ compiler, either gcc or clang
-* libxml2: for parsing XML config files, optional, the code can also use Qt XML
 * Qt5
 * libncurses5-dev: curses based test GUI for 1394
 * flite: for some experimental text to speech

@@ -165,29 +165,39 @@ Configuration files
 We found that some potentiometers can be "somewhat" working so it is
 possible to tweak (increase) the parameters used to trigger an error
 by modifying the IO configuration file.  Locate the file
-``sawRobotIO1394-xxx-11111.xml`` for your arm and open it using your
-preferred text editor.  In that file, find the **Potentiometers**
+``sawRobotIO1394-xxx-11111.json`` for your arm and open it using your
+preferred text editor.  In that file, find the **potentiometers**
 section:
 
-.. code-block:: XML
+.. code-block:: JSON
 
-   <Potentiometers>
-         <Tolerance Axis="0" Distance="5.00" Latency="0.01" Unit="deg" />
-         <Tolerance Axis="1" Distance="5.00" Latency="0.01" Unit="deg" />
-         <Tolerance Axis="2" Distance="5.00" Latency="0.01" Unit="deg" />
-         <Tolerance Axis="3" Distance="5.00" Latency="0.01" Unit="deg" />
-         <Tolerance Axis="4" Distance="5.00" Latency="0.01" Unit="deg" />
-         <Tolerance Axis="5" Distance="5.00" Latency="0.01" Unit="deg" />
-         <Tolerance Axis="6" Distance="0.00" Latency="0.00" Unit="deg" />
-   </JointToActuatorPosition>
+   "potentiometers": {
+      "potentiometers_type": "ANALOG",
+      "tolerances": [
+        {
+          "axis_id": 0,
+          "distance": 0.08726646259971647,
+          "latency": 0.01
+        },
+        {
+          "axis_id": 1,
+          "distance": 0.08726646259971647,
+          "latency": 0.01
+        },
+        {
+          "axis_id": 2,
+          "distance": 0.005,
+          "latency": 0.01
+        }
 
-The first parameter to increase should be the **Latency**.  The value
+
+The first parameter to increase should be the **latency**.  The value
 is given in seconds.  Try to increase it progressively by doubling it
 and restart the dVRK application (no need to power on/off the
 controllers).  If the system is still not stable, double the
-**Latency** and try again.  If the system is still not stable with a
-**Latency** of 1 seconds (``1.0``), try the same approach with the
-**Distance** parameter.
+**latency** and try again.  If the system is still not stable with a
+**latency** of 1 seconds (``1.0``), try the same approach with the
+**distance** parameter.
 
 Summary
 #######
@@ -199,7 +209,7 @@ positions, you can determine if the issue is:
 * Vertical offset or "stretch", you should probably recalibrate your
   potentiometers
 * Horizontal offset.  The potentiometer is likely too slow and you can
-  fix this by increasing the "Latency" in the XML configuration file
+  fix this by increasing the "latency" in the JSON configuration file
 
 .. figure:: /images/gui/encoder-pots-plot.png
    :width: 600

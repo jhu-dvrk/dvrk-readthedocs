@@ -58,7 +58,7 @@ To calibrate the potentiometers, use:
 
 .. code-block:: bash
 
-   sawIntuitiveResearchKitSPotentiometersCalibration -c sawRobotIO1394-ECM-123456.xml  # use the xml file for your arm!
+   sawIntuitiveResearchKitSPotentiometersCalibration -c sawRobotIO1394-ECM-123456.json  # use the json file for your arm!
 
 The :ref:`calibration program
 <sawintuitiveresearchkitsipotentiometerscalibration>` will try to

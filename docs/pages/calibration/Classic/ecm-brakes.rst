@@ -25,7 +25,7 @@ Introduction
    :ref:`dvrk-config-generator.py <io-config-generator>`) should work
    for most systems. Users will likely not need to calibrate their
    brakes.
-      
+
 The Classic ECM differs from the Classic PSMs, it requires brakes to
 remain in place.  The PSMs are designed with counterweights so if
 they loose power, they can fall on or in the patient.  The ECM holds a
@@ -35,35 +35,43 @@ motion.  Note that the first 3 joints have brakes but not the 4th
 
 There are 4 important values that will need to be tweaked to control
 the 3 ECM brakes.  These are hardware specific and therefore store in
-the ECM IO XML configuration file.
+the ECM IO JSON configuration file.
 
-* ``ReleaseCurrent``: current required to release the brakes - the
-  "Unit" field in the XML file is not read by the software, replacing
-  it by ``mA`` won't have any effect so make sure to specify the
-  ``Value`` in amperes
-* ``ReleaseTime``: amount of time you need to keep the current high to
+* ``release_current``: current required to release the brakes in amperes
+* ``release_time``: amount of time you need to keep the current high to
   release the brakes (in seconds)
-* ``ReleasedCurrent``: current required to maintain the brakes
+* ``released_current``: current required to maintain the brakes
   released.  This value should be significantly lower than the current
   to initially release the brakes
-* ``EngagedCurrent``: current required to engage (lock) the brakes.
+* ``engaged_current``: current required to engage (lock) the brakes.
   On the ECM, always zero.
 
 There is no automated calibration process, so users have to manually
-edit values in the XML file.  In the generated configuration file, pay
+edit values in the JSON file.  In the generated configuration file, pay
 attention to the section "AnalogBrake" and the default values.
 
-.. code-block:: xml
+.. code-block:: json
 
-   <AnalogBrake AxisID="0" BoardID="5">
-      <AmpsToBits Offset="32819" Scale="5242.88"/>
-      <BitsToFeedbackAmps Offset="-6.25" Scale="0.000190738"/>
-      <MaxCurrent Unit="A" Value="0.300"/>
-      <ReleaseCurrent Unit="A" Value="0.300"/>
-      <ReleaseTime Value="2.000"/>
-      <ReleasedCurrent Unit="A" Value="0.080"/>
-      <EngagedCurrent Unit="A" Value="0.000"/>
-   </AnalogBrake>
+   "brakes": [
+     {
+       "axis_id": 0,
+       "board_id": 5,
+       "drive": {
+             "bits_to_current": {
+               "offset": -6.282572138151098,
+               "scale": 0.00019073486328125
+             },
+             "current_to_bits": {
+               "offset": 32986.383288733305,
+                "scale": 5242.88
+             },
+             "maximum_current": 0.25
+       },
+       "engaged_current": 0,
+       "release_current": 0.25,
+       "release_time": 2,
+       "released_current": 0.09
+     },
 
 .. figure:: /images/Classic/ECM/brake_current_graph.png
    :width: 400
@@ -95,24 +103,24 @@ Procedure
 
 At that point, we don't have a utility program to automatically
 adjust the parameters specific to the brakes, namely the 4 following
-values in the XML file:
+values in the JSON file:
 
-* ``ReleaseCurrent`` and ``ReleaseTime``
-* ``ReleasedCurrent``
-* ``EngagedCurrent``, though this one is easy, it should be set to 0.
+* ``release_current`` and ``release_time``
+* ``released_current``
+* ``engaged_current``, though this one is easy, it should be set to 0.
 
   .. warning::
 
    Based on specification sheets that we believe correspond to the
    solenoid used for the 3rd brake (insertion) on the Classic and S/Si
    ECMs, we should not exceed 13W for 7 seconds or 1.3W for continuous
-   drive.  That would translate to 1.48A for the ``ReleaseCurrent`` and
-   0.465A for the ``ReleasedCurrent``.
+   drive.  That would translate to 1.48A for the ``release_current`` and
+   0.465A for the ``released_current``.
 
 For this procedure we will use the
 :ref:`sawRobotIO1394QtConsole<sawrobotioqtconsole>` program along with
-the ECM XML configuration file for your arm.  You will need to
-manually edit the XML file and between changes, quit and restart the
+the ECM JSON configuration file for your arm.  You will need to
+manually edit the JSON file and between changes, quit and restart the
 sawRobotIO1394 console program to test the new values.
 
 .. figure:: /images/gui/gui-Classic-ECM-io.png
@@ -122,29 +130,29 @@ sawRobotIO1394 console program to test the new values.
    sawRobotIO console for an ECM
 
 
-1. The first step is to determine the ``ReleaseCurrent``.
+1. The first step is to determine the ``release_current``.
 
-   * In the XML file, set all the ``ReleasedCurrent`` (NOTE:
-     **releaseD** current) to zero and the ``ReleaseTime`` to 10
-     seconds.  Start from a low value for the ``ReleaseCurrent`` for
+   * In the JSON file, set all the ``released_current`` (NOTE:
+     **releaseD** current) to zero and the ``release_time`` to 10
+     seconds.  Start from a low value for the ``release_current`` for
      all 3 brakes.  Values are provided in amperes (~0.1 for 100 mA).
 
    * Start the sawRobotIO1394 console and click *Enable All* to power
      the actuators and brakes.
 
    * Press the *Release* button for the brakes.  You should see the
-     requested current move to the value set in the XML file and a
+     requested current move to the value set in the JSON file and a
      current feedback close to it.  After 10 seconds (or whatever
-     ``ReleaseTime`` you've set in the XML file), current should go
-     back to ``ReleasedCurrent`` value (i.e. 0 for now).
+     ``release_time`` you've set in the JSON file), current should go
+     back to ``released_current`` value (i.e. 0 for now).
 
    * During these 10 seconds, try to move the ECM, joint by joint.  If
      you stand close to the arm, you should even hear a click if the
      brakes get released.
 
    * If a given brake is not released, quit the application, increase
-     the value of ``ReleaseCurrent`` (and ``MaximumCurrent`` if
-     needed) for the corresponding joint in the XML file and try
+     the value of ``release_current`` (and ``maximum_current`` if
+     needed) for the corresponding joint in the JSON file and try
      again.
 
    * You can increase the requested current to an extent, i.e. the
@@ -154,13 +162,13 @@ sawRobotIO1394 console program to test the new values.
      maximum current), it means that you have reached the maximum
      possible with your power supply.
 
-2. Once you've found the proper values for ``ReleaseCurrent``, you can
-   decrease the ``ReleaseTime`` value, ideally all the way down to 2.0
+2. Once you've found the proper values for ``release_current``, you can
+   decrease the ``release_time`` value, ideally all the way down to 2.0
    seconds.
 
-3. The last step is to find the lowest possible for ``ReleasedCurrent``.
-   This is the current applied ``ReleaseTime`` seconds after
-   ``ReleaseCurrent`` to keep the brakes from re-engaging.  It's
+3. The last step is to find the lowest possible for ``released_current``.
+   This is the current applied ``release_time`` seconds after
+   ``release_current`` to keep the brakes from re-engaging.  It's
    **IMPORTANT** to find the lowest possible value.  Again, start from
    a low value and increase progressively until you find settings such
    that the brakes stay released.

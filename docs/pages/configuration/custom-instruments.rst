@@ -46,7 +46,7 @@ The main files are:
   we added two fields.
 
   #. ``system`` is used to help locate configuration files for the
-     arm, namely the ``sawRobotIO1394-<name>-<serial>.xml`` by adding
+     arm, namely the ``sawRobotIO1394-<name>-<serial>.json`` by adding
      ``share/<system>`` to the search path.
   #. ``arm`` to overwrite the default rule to locate the arm
      configuration file.  We recommend to follow the convention
@@ -151,7 +151,7 @@ torque itself is capped using the ``ftmax`` value defined for the
 ``jaw`` in the instrument definition file.  The following is not
 recommended but you can also increase the value for ``ftmax``.  Keep
 in mind than the IO level will then apply another cap defined in the
-``sawRobotIO1394-PSMx-xxxxx.xml`` file (defined in amps).
+``sawRobotIO1394-PSMx-xxxxx.json`` file (defined in amps).
 
 Disable the engage procedure
 ============================

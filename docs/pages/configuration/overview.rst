@@ -44,14 +44,14 @@ Site specific files
   digital input low/high can be converted to a pedal pressed or
   released, an analog input can be converted to a potentiometer position
   in SI units, an analog output can be used to send a desired motor
-  current...  IO files use the XML language and follow the naming
-  convention ``sawRobotIO1394-xxxx.xml``.
+  current...  IO files use the JSON language and follow the naming
+  convention ``sawRobotIO1394-xxxx.json``.
 
   * There is one IO configuration file per active arm (MTM, PSM and
     ECM).  This file is specific to each arm since it will store the
     results of different calibration steps.  Therefore, its name
     contains the arm's serial number.  For example,
-    ``sawRobotIO1394-PSM1-27425.xml``. These files are not shared
+    ``sawRobotIO1394-PSM1-27425.json``. These files are not shared
     across systems.
 
   * Some of the IO configuration files don't require any calibration
@@ -121,17 +121,22 @@ repository or access to an existing one, contact the dVRK maintainers.
 
 Each directory should contain:
 
-  * your IO configuration files, ``sawRobotIO1394-xxxxx.xml``, for
+  * your IO configuration files, ``sawRobotIO1394-xxxxx.json``, for
     each arm identified by its number.  You should also store the
     original ``.cal`` files provided by Intuitive Surgical since they
-    are needed to re-generate the IO XML files (for Classic arms only)
+    are needed to re-generate the IO JSON files (for Classic arms only)
   * your arms configuration files
   * your system configuration files since these refer to your system
     specific IO configuration files
 
-It is recommended to use tags or branches to maintain your configurations files for each version of the dVRK.  For example, files for the dVRK 2.4 are different from 2.3 but you might need both at a given time.
+It is recommended to use tags or branches to maintain your
+configurations files for each version of the dVRK.  For example, files
+for the dVRK 2.4 are different from 2.3 but you might need both at a
+given time.
 
-Before checking in files, you should clean your configuration directory, i.e. remove the temporary and log files (see :ref:`dvrk-remove-logs.py <remove-logs>`).
+Before checking in files, you should clean your configuration
+directory, i.e. remove the temporary and log files (see
+:ref:`dvrk-remove-logs.py <remove-logs>`).
 
 Site specific directories should **NOT** contain any of the shared
 files.  If you make a copy of the shared file in your directory, it

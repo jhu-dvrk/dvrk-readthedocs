@@ -14,7 +14,7 @@ Before you get started, make make sure you've setup the dVRK arms first:
 * :ref:`Configuration files <configuration-overview>`
 
 The dVRK Classic arms use a fair amount of analog signals that need to
-be calibrated for better accuracy.  The initial values in the XML IO
+be calibrated for better accuracy.  The initial values in the JSON IO
 configuration file are generated from the ``.cal`` file provided by
 ISI.  Unfortunately, these values don't take into account the
 differences between the original ISI controllers and the dVRK

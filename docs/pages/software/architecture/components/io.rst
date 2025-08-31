@@ -28,12 +28,11 @@ used for all digital inputs and outputs.
 Configuration files
 *******************
 
-Configuration files use XML or JSON (future versions).  Most files are
-specific to each arm identified by its :ref:`serial number
-<serial-number>`.  There are a few files than can be shared across
-sites.  These are used for digital IOs and therefore do not require any
-calibration.  They can be found in the main dVRK repository under
-``share/io``.
+Configuration files use JSON.  Most files are specific to each arm
+identified by its :ref:`serial number <serial-number>`.  There are a
+few files than can be shared across sites.  These are used for digital
+IOs and therefore do not require any calibration.  They can be found
+in the main dVRK repository under ``share/io``.
 
 Applications
 ************
