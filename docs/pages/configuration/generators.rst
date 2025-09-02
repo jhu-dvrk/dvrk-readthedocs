@@ -19,7 +19,7 @@ will be updated by the different calibration steps.  The script also
 generates a sample arm configuration file as well as a system file
 with a single arm.
 
-The script has 5 options:
+The script has 6 options:
 
 * *arm name*: MTMR, MTML, PSM1, PSM2, PSM3 or ECM.
 * *generation*: either Classic or Si.  As of 2024, all MTMs are
@@ -42,6 +42,10 @@ The script has 5 options:
   (aka `trk id`).  The serial number doesn't need to be specified for
   Classic arms since it can be found in the `.cal` file, but you need
   to make sure it matches the number on the arm you're using.
+* *port*: port used to connect to the dVRK controllers. It is optional
+  and the default is ``fw``.  If you are using FireWire between the
+  controllers and Ethernet to connect between the PC and the first dVRK
+  controller, use ``-p udpfw``.
 
 There are only 3 possible combinations of generations and hardware/controller type:
 

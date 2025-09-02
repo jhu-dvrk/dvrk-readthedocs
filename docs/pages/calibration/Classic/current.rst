@@ -75,9 +75,10 @@ only.  **For the ECM, the procedure needs to be executed twice, once
 for the brakes (with ``-b``) and once for the actuators (without
 ``-b``)**.
 
-For most users, the default port (FireWire 0) should.  If you're using
-Ethernet for your controller data connection, use ``-p udp``.  By
-default, should be able to run the program using something like:
+For most users, the default port (FireWire 0, i.e. ``-p fw``) should work.  If you're using
+Ethernet for all your controllers data connection, use ``-p udp``.  If you're
+using Ethernet between the PC and the first dVRK controller and then FireWire
+between the controllers, use ``-p udpfw``.  You should be able to run the program using something like:
 
 .. code-block:: bash
 
