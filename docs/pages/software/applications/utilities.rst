@@ -17,12 +17,12 @@ the FireWire or UDP bus.  Commands include ``reboot``,
 
 .. _io-config-generator:
 
-``dvrk-config-generator.py``
+``dvrk-io-config-generator.py``
 *****************************
 
 * Python script with text interface (not ROS)
 * Compatible with **all dVRK active arms**
-* https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/config-generator
+* https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/io-config-generator
 
 Usage is described in the :ref:`configuration generators
 <io-config-generator-use>` section.
