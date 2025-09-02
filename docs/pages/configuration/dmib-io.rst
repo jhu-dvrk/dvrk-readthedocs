@@ -153,7 +153,7 @@ Labels on dVRK Classic controllers
 ==================================
 
 The board numbering on the software side starts with index 0 (e.g. in
-XML IO configuration file) but the labels on the back of the
+JSON IO configuration file) but the labels on the back of the
 controller start at index 1.  Keep this in mind if you plan to connect
-the head sensor to another "DOF" and create your own XML configuration
+the head sensor to another "DOF" and create your own JSON configuration
 files.
