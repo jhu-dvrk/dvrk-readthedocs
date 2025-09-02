@@ -41,7 +41,9 @@ find the closed-but-not-tight position.
 
 The :ref:`gripper calibration program
 <sawintuitiveresearchkitgrippercalibration>` uses the same parameters
-as the current calibration program.  A typical run looks like:
+as the current calibration program.  You will need to specify the port
+if you're not using the default (i.e. ``fw``).  To specify another
+port, use ``-p`` (e.g. ``-p udpfw``). A typical run looks like:
 
 ::
 
