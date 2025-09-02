@@ -9,7 +9,7 @@ Arm IO, arm and arm system
 ***************************
 
 To get started, you should use the Python based application
-``dvrk-config-generator.py``.  The script should be in your path after
+``dvrk-io-config-generator.py``.  The script should be in your path after
 your build and source your ``devel/setup.bash`` (ROS 1) or
 ``install/setup.bash`` (ROS 2).
 
@@ -51,19 +51,19 @@ There are only 3 possible combinations of generations and hardware/controller ty
 
   .. code-block:: bash
 
-     dvrk-config-generator.py -a MTMR -g Classic -H QLA1 -c m23456.cal
+     dvrk-io-config-generator.py -a MTMR -g Classic -H QLA1 -c m23456.cal
 
 * For a Classic arm with a DQLA based controller, you would use:
 
   .. code-block:: bash
 
-     dvrk-config-generator.py -a MTMR -g Classic -H DQLA -c m23456.cal
+     dvrk-io-config-generator.py -a MTMR -g Classic -H DQLA -c m23456.cal
 
 * For an Si arm, the controller is always dRA1 based, so you need to use:
 
   .. code-block:: bash
 
-     dvrk-config-generator.py -a PSM1 -g Si -H dRA1 -s 123456
+     dvrk-io-config-generator.py -a PSM1 -g Si -H dRA1 -s 123456
 
 .. important::
    
