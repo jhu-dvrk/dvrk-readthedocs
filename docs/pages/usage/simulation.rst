@@ -44,6 +44,12 @@ you source your ROS workspace's ``setup.bash``.  You can use ROS
 launch files for a single arm, a full patient cart or the surgeon's
 console (2 MTMs).
 
+.. figure:: /images/gui/ros2-launch-patient-cart-simulated.png
+   :width: 600
+   :align: center
+
+   dVRK with Classic patient cart simulated in RViz
+
 .. code-block:: bash
 
    # assuming default ROS2 workspace
