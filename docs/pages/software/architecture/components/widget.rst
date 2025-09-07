@@ -32,6 +32,8 @@ Generic widgets
 
 The dVRK components use a few widgets included in the *cisst* libraries.
 
+.. _timing-widget:
+
 Timing
 ======
 
@@ -65,6 +67,8 @@ the average period, number of outliers.
 
 One can mouse over each element of the widget for a brief description.
 
+.. _messages-widgets:
+
 Messages
 ========
 
@@ -87,6 +91,8 @@ with a timestamp and can be used to mark a user defined event.
 Messages are also logged in the ``cisstLog*.txt`` file. When using ROS, all
 messages are also forwarded to the standard ROS logs.  User defined tags are not
 saved in the ``cisstLog*.txt`` nor sent to the ROS logs.
+
+.. _pose-widget:
 
 3D pose
 =======
@@ -118,6 +124,8 @@ When in 3D view, the mouse can be used to rotate the view. The reference frame
 is displayed using dashed lines. Red is used for the X axis, green for Y and
 blue for Z. One can reset the orientation of the view using the keyboard
 shortcut ``z``.
+
+.. _wrench_widget:
 
 Wrench
 ======

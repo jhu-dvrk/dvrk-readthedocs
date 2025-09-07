@@ -37,7 +37,7 @@ Overview of safety chain
 Each controller box contains one or two connectors to support a
 "safety chain". The basic concept is that the safety chain must be
 unbroken (i.e., electrically closed) for the motor power supplies in
-all of the connected controller boxes to be enabled.  If any device on
+all of connected controller boxes to be enabled.  If any device on
 the safety chain breaks electrical continuity, then all motor power
 supplies in all connected controller boxes are disabled.  Devices in
 the safety chain include manually operated switches, such as the
@@ -176,14 +176,13 @@ E-stop chain <estop-modular>`.
 Issue with two 5-pin connectors
 ###############################
 
-The Build #4 controller boxes contain two 5-pin safety
-connectors. While the intent was to enable both the modular and
-monolithic connection schemes, it is possible to miswire the e-stop
-chain because the Extension (Daisy-Chain) Cable is not
-straight-through; it connects S1 (pin 3) on one connector to S2
-(pin 4) on the other. Thus, it matters which way the cable is
-connected. Connecting it backwards will cause some safety
-relays to be bypassed, as shown in the figure below.
+The Build #4 controller boxes contain two 5-pin safety connectors. While the
+intent was to enable both the modular and monolithic connection schemes, it is
+possible to incorrectly wire the e-stop chain because the Extension
+(Daisy-Chain) Cable is not straight-through; it connects S1 (pin 3) on one
+connector to S2 (pin 4) on the other. Thus, it matters which way the cable is
+connected. Connecting it backwards will cause some safety relays to be bypassed,
+as shown in the figure below.
 
 .. figure:: /images/estop/SafetyChain-Build4.png
    :width: 600
