@@ -50,14 +50,14 @@ The best way to check the connection between the controllers and your PC is to
 use ``qladisp`` in a terminal. If your controllers are connected using FireWire
 only, use:
 
-.. code-block: bash
+.. code-block:: bash
 
    qladisp -pfw
 
 If you are using an Etherner connection to the first controller and then
 FireWire between the controllers, use:
 
-.. code-block: bash
+.. code-block:: bash
 
    qladisp -pudpfw
 
