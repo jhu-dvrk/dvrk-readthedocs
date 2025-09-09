@@ -26,14 +26,14 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
 .. tabs::
 
-   .. tab:: Ubuntu 20.04
+   .. tab:: Ubuntu 24.04 (**recommended**)
 
-      Ubuntu 20.04 with ROS Galactic:
+      Ubuntu 24.04 with ROS Jazzy:
 
       .. code-block:: bash
 
-         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
-         sudo apt install ros-galactic-joint-state-publisher* ros-galactic-xacro # ROS
+         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
+         sudo apt install ros-jazzy-joint-state-publisher* ros-jazzy-xacro # ROS
 
    .. tab:: Ubuntu 22.04
 
@@ -44,14 +44,15 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
          sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
          sudo apt install ros-humble-joint-state-publisher* ros-humble-xacro # ROS
 
-   .. tab:: Ubuntu 24.04
+   .. tab:: Ubuntu 20.04
 
-      Ubuntu 24.04 with ROS Jazzy:
+      Ubuntu 20.04 with ROS Galactic:
 
       .. code-block:: bash
 
-         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
-         sudo apt install ros-jazzy-joint-state-publisher* ros-jazzy-xacro # ROS
+         sudo apt install libxml2-dev libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
+         sudo apt install ros-galactic-joint-state-publisher* ros-galactic-xacro # ROS
+
 
 Colcon workspace, clone and build
 #################################

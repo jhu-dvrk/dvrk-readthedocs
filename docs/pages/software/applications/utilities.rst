@@ -27,6 +27,20 @@ the FireWire or UDP bus.  Commands include ``reboot``,
 Usage is described in the :ref:`configuration generators
 <io-config-generator-use>` section.
 
+
+.. _system_wizard:
+
+``dvrk-system-config-wizard``
+*****************************
+
+* C++ application with a Qt based graphical user interface (no ROS dependencies)
+* Compatible with **all dVRK active arms**
+* https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/system-config-wizard
+
+Usage is described in the :ref:`configuration generators <system-wizard-use>`
+section.
+
+
 .. _remove-logs:
 
 ``dvrk-remove-logs.py``
@@ -36,14 +50,14 @@ Usage is described in the :ref:`configuration generators
 * Compatible with **all dVRK setups**
 * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/config-generator
 
-Script used to locate and delete log and backup files. Everytime a
+Script used to locate and delete log and backup files. Every time a
 cisst/SAW based application (like the dVRK main system program) is
 started, a log file is created (named ``cisstLog-xxx.txt``). After a
 while, you will find that your home directory is cluttered with these
-log files and it would be nice to remove them. The script
+log files, and it would be nice to remove them. The script
 ``dvrk-remove-logs.py`` can be used to locate all the log files in the
-current directory (and sub-directories) and delete them.  This script
-also looks for backup files created by some of the dVRK calibration
+current directory (and subdirectories) and delete them.  This script
+also looks for backup files created by some dVRK calibration
 applications. By default, the script displays the list of files found
 and prompts the user to confirm deletion.  With the ``-f`` (force)
 option, files are automatically deleted without any prompt.  For
@@ -93,7 +107,7 @@ the clutch or camera pedal is pressed as well as which PSM is
 teleoperated by which MTM.  ROS is used to track the system's state.
 The two widgets can be dragged on top of the left and right views in
 the stereo display. This is a poor man's version of the UI in a
-clinical system but it can still help users who are not familiar with
+clinical system, but it can still help users who are not familiar with
 the system.
 
 .. _sd-card-updater:
@@ -107,8 +121,8 @@ the system.
 
 Script used to download, uncompress and copy the latest firmwares for
 the DQLA and dRAC based controllers as well as the ESPM programmers.
-The scripts waits for an SD card to be inserted in the PC.  It will
-then mount it, copy the files and unmount so the user can safely
+The script waits for an SD card to be inserted in the PC.  It will
+then mount it, copy the files and unmount, so the user can safely
 remove the card.  The user can insert all their SD cards one after
 another without restarting the script.
 
@@ -122,9 +136,18 @@ another without restarting the script.
 * Compatible with **all dVRK setups**
 * https://github.com/jhu-dvrk/dvrk_python/tree/devel/scripts
 
-Script for Python/ROS-based teleoperation, useful as an example/template of how the dVRK teleoperation can be customized. See also :ref:`derived components <components-derived>` for an example of customizing the C++ teleoperation component directly. The script is given ROS namespaces for an MTM and PSM to begin teleoperation with, which could be an actual dVRK MTM and PSM, or the MTM could instead be a haptic device such as a `ForceDimension <https://github.com/jhu-saw/sawForceDimensionSDK>`_. When running, teleoperation works very similarly to the built-in dVRK teleoperation.
+Script for Python/ROS-based teleoperation, useful as an example/template of how
+the dVRK teleoperation can be customized. See also :ref:`derived components
+<components-derived>` for an example of customizing the C++ teleoperation
+component directly. The script is given ROS namespaces for an MTM and PSM to
+begin teleoperation with, which could be an actual dVRK MTM and PSM, or the MTM
+could instead be a haptic device such as a `ForceDimension
+<https://github.com/jhu-saw/sawForceDimensionSDK>`_. When running, teleoperation
+works very similarly to the built-in dVRK teleoperation.
 
-To run teleoperation, first start a :doc:`dVRK system <system>` for the arms you want to teleoperate. This should be a system that *doesn't* include a built-in teleoperation componenent, such as::
+To run teleoperation, first start a :doc:`dVRK system <system>` for the arms you
+want to teleoperate. This should be a system that *doesn't* include a built-in
+teleoperation component, such as::
 
    ros2 run dvrk_robot dvrk_system -j system-MTML-PSM2.json
 
@@ -132,6 +155,14 @@ Next, start the teleoperation script with your chosen arms::
 
    ros2 run dvrk_python dvrk_teleoperation.py -m <MTM> -p <PSM>
 
-If you don't have dVRK foot pedals, you can use the ``-c <cluch topic>`` and ``-o <operator pedal>`` topics to use a different source (these topics should each provide ``sensors_msgs/msg/Joy`` with one button). Alternatively, you can set ``-o`` to disable the operator pedal, note however that in this mode teleoperation will begin as soon as any MTM activity is detected so please be careful.
+If you don't have dVRK foot pedals, you can use the ``-c <cluch topic>`` and
+``-o <operator pedal>`` topics to use a different source (these topics should
+each provide ``sensors_msgs/msg/Joy`` with one button). Alternatively, you can
+set ``-o`` to disable the operator pedal, note however that in this mode
+teleoperation will begin as soon as any MTM activity is detected, so please be
+careful.
 
-If you are using a haptic device (e.g. ForceDimension/Falcon) as your MTM which has an unactuated wrist, the teleoperation script will not be able to align the MTM to match the PSM orientation. In this case, you must use the ``-n`` option to skip alignment.
+If you are using a haptic device (e.g. ForceDimension/Falcon) as your MTM which
+has an un-actuated wrist, the teleoperation script will not be able to align the
+MTM to match the PSM orientation. In this case, you must use the ``-n`` option
+to skip alignment.

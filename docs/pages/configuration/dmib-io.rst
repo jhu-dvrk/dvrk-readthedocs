@@ -3,6 +3,10 @@
 dMIB IOs reference
 ##################
 
+This page describes the different IOs used by the dVRK peripheral devices
+(pedals, head sensor...).  Make sure you don't re-use these if you need to
+:ref:`create a custom IO cable<Classic-custom-ios>`.
+
 Controllers
 ***********
 

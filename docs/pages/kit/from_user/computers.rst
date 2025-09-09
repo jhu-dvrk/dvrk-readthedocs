@@ -110,12 +110,22 @@ These might be installed on the second PC.
 OS
 **
 
-Recommended OS and ROS version for latest version (2.3.0): Ubuntu
-22.04 and ROS Humble.
-
 Software and OS requirements:
 
-* dVRK 2.x:
+* dVRK 2.4 and main
+
+  * ROS 2 (**recommended**):
+
+    * Ubuntu 24.04 (**recommended**), 22.04 or 20.04
+    * ROS Jazzy on Ubuntu 24.04 (**recommended**), Galactic on Ubuntu 20.04, and Humble on Ubuntu 22.04
+
+  * ROS 1:
+
+    * Ubuntu 20.04
+    * ROS Noetic on Ubuntu 20.04
+
+  
+* dVRK up to 2.3.1:
 
   * ROS 1:
 

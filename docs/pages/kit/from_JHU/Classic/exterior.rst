@@ -39,6 +39,14 @@ Connectors
 
    Back of DQLA, FPGA V3 based Classic controller
 
+.. note::
+  
+   The *Foot Pedal* and *DOF* connectors can be used to connect peripheral devices using digital
+   inputs and outputs such as focus controller, head sensors... (:ref:`dVRK Classic custom IOs<Classic-custom-IOs>`).
+   Furthermore, since the dVRK arms use only 7 out of the 8 axis on the
+   FPGA/QLA, it is possible to use the 8th DOF to control an extra motor
+   (spare power, encoder, potentiometer and home/limit switches).
+
 .. _classic-leds:
 
 LEDs

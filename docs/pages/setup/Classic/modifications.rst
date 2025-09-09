@@ -11,4 +11,5 @@ Modifications
    modifications/dallas
    modifications/height
    modifications/qla-heat-sink
+   modifications/custom-ios
    modifications/dmib-ecm

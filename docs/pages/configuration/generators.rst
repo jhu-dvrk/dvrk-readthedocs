@@ -42,7 +42,7 @@ The script has 6 options:
   (aka `trk id`).  The serial number doesn't need to be specified for
   Classic arms since it can be found in the `.cal` file, but you need
   to make sure it matches the number on the arm you're using.
-* *port*: port used to connect to the dVRK controllers. It is optional
+* *port*: port used to connect to the dVRK controllers. It is optional,
   and the default is ``fw``.  If you are using FireWire between the
   controllers and Ethernet to connect between the PC and the first dVRK
   controller, use ``-p udpfw``.
@@ -74,7 +74,34 @@ There are only 3 possible combinations of generations and hardware/controller ty
    to perform all the :ref:`calibration steps <calibration>` based on
    the arm's type and generation!
 
+
+.. _system-wizard-use:
+
 System configuration generator
 ******************************
 
-Try ``dvrk-system-config-wizard``.
+The IO configuration generator will also generate a simple system configuration
+file.  This system configuration is designed to use a single arm, the one for
+which the script created the IO file.
+
+Once you created all the IO files and calibrated your arms, you will likely
+want to combine multiple arms, foot pedals, header sensors... in a single system
+configuration file.
+
+The file format for the :ref:`dVRK system applications <system>` is described in
+the :ref:`system configuration section <config-system>`. You can create and edit
+the JSON system configuration files with your favorite text editor.  But it
+might be easier to use the dVRK system wizard.  To do so, go in the directory
+with **your** dVRK configuration files and start: 
+
+.. code-block:: bash
+
+   dvrk-system-config-wizard
+
+The application will scan the current directory and identify all the arms
+available. From there you can configure the IO, arms and console sections using
+the GUI.  The console section will include whatever teleoperation components you
+wish to use.
+
+The system wizard can also be used to open and edit an existing system
+configuration file.
