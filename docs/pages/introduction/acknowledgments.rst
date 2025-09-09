@@ -2,11 +2,10 @@
 Acknowledgments
 ***************
 
-The dVRK would not have been possible without `Intuitive Surgical
-<https://www.intuitive.com>`_ and the `Intuitive Foundation
-<https://www.intuitive-foundation.org/>`_. They have actively
-supported both the dVRK developpers and the dVRK community since the
-project's inception.
+First and foremost, the dVRK would not have been possible without `Intuitive
+Surgical <https://www.intuitive.com>`_ and the `Intuitive Foundation
+<https://www.intuitive-foundation.org/>`_. They have actively supported both the
+dVRK developers and the dVRK community since the project's inception.
 
 The `cisst software <https://www.cisst.org>`_ has been developed with
 the support of the National Science Foundation, EEC 9731748, EEC
@@ -39,8 +38,8 @@ The following individuals have contributed in one way or another to the dVRK:
 Juan Barragan Nogera, Dale Bergman, Brendan Burkhart, Jonathan Bohren, Guido
 Caccianiga, Preetham Chalasani, Zihan Chen, Tommaso Da Col, Anton Deguet,
 Claudia D'Ettorre, Simon DiMaio, Noah Drakes, Kyle Ettinger, Gregory Fischer,
-Alessandro Gozzi, Ankur Kapoor, Peter Kazanzides, Stefan Kohlgrueber, Simon
-Leonard, Kapi Ketan Mehta, Omid Mohareri, Adnan Munawar, Chris Nourse, Nicole
-Ortega, Youri Tan, Russell Taylor, Paul Tienphrapa, Kollin Tierling, Ugur
-Tumerdem, Tian Xia, Keshuai Xu, Hao Yang, Zerui Wang, Nural Yilmaz, Jie Ying Wu,
-Haoying Zhou...
+Alessandro Gozzi, Ankur Kapoor, Peter Kazanzides, Stefan Kohlgrueber, Aravind S.
+Kumar, Simon Leonard, Kapi Ketan Mehta, Omid Mohareri, Adnan Munawar, Chris
+Nourse, Nicole Ortega, Youri Tan, Russell Taylor, Paul Tienphrapa, Kollin
+Tierling, Ugur Tumerdem, Tian Xia, Keshuai Xu, Hao Yang, Zerui Wang, Nural
+Yilmaz, Jie Ying Wu, Haoying Zhou...

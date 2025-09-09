@@ -6,9 +6,9 @@ Introduction
 History
 =======
 
-The first generation da Vinci, IS1200, also known as Standard or
-Classic, was developed in the late 1990s.  It was retired from
-clinical use in 2012.
+The first generation da Vinci, IS1000 and IS1200 (also known as Standard or
+Classic) was developed in the late 1990s.  It was retired from clinical use in
+2012.
 
 .. note::
 
@@ -49,10 +49,10 @@ setup <setup-classic>`)
 
 * Surgeon's console (Classic and S)
 
-  * MTMs: master tele manipulators, the two arms the operator uses to
-    control the patient's side, 6 dof haptic devices with gripper
+  * MTMs: master tele manipulators, the two arms the operator uses to control
+    the patient's side, 7 dof haptic devices with gripper (passive)
   * Foot pedals: pedals used to switch the control modes while
-    operating, select which PSM or ECM, clutch, focus...
+    operating, select which PSM or ECM to use, clutch, focus...
   * HRSV: high resolution stereo viewer, aluminum frame with optics,
     mirrors and CRT monitors for both eyes
   * Head sensor: sensor used to detect if the operator is looking at

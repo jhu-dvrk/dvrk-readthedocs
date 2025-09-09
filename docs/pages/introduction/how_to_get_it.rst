@@ -5,10 +5,9 @@ How to get a dVRK?
 There are three main sources for the :ref:`first part of the kit
 <from_ISI>`, i.e., retired parts of da Vinci systems:
 
-* The vast majority of dVRK groups received their hardware through the
-  `Intuitive Foundation
-  <https://www.intuitive-foundation.org/dvrk/>`_.
-* Some groups also salvaged a retired da Vinci directly from a hospital
+* The vast majority of dVRK groups received their retired robots through the
+  `Intuitive Foundation <https://www.intuitive-foundation.org/dvrk/>`_.
+* Some groups also salvaged retired da Vincis directly from a hospital
   (often affiliated to their university). If you have any ongoing
   collaboration with a hospital with a da Vinci system, it is worth
   asking them what they plan to do with it when it will be

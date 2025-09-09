@@ -56,19 +56,18 @@ The main steps to set up a dVRK are:
   connections between the controllers and the arms as well as between
   the controllers and the PC.
 
-* **Compile the software with ROS** - This has to be performed once
-  per user, and each user should maintain their own version of the
-  software in their home directory.  The core software for the dVRK
-  can be built without ROS, but we strongly recommend you use ROS and
-  its build tools.
+* **Compile the software with ROS** - This has to be performed once per user.
+  Each user should maintain their own version of the software in their home
+  directory.  The core software for the dVRK can be built without ROS, but we
+  strongly recommend you use ROS and its build tools.
 
+  * :ref:`ROS 2 <ros2>` **preferred**
   * :ref:`ROS 1 <ros1>`
-  * :ref:`ROS 2 <ros2>`
 
-* **Controller connectivity** - This has to be performed once per
-  computer.  The goal is to make sure you have the proper hardware and
-  OS configuration to communicate with the controllers over
-  :ref:`FireWire <firewire>` or :ref:`Ethernet <ethernet>`.
+* **Controller connectivity** - This has to be performed once per computer.  The
+  goal is to make sure you have the proper hardware and OS configuration to
+  communicate with the controllers over FireWire or Ethernet (see
+  :ref:`connectivity introduction<connectivity_intro>`).
 
 * **Configuration** - :ref:`The configuration steps <configuration>`
   have to be performed once per robotic arm.  Once the configuration
@@ -90,13 +89,15 @@ The main steps to set up a dVRK are:
   This should be a one time step.  Don't forget to save the results of
   the calibration under git.
 
-* **Applications** - :ref:`The applications section <applications>`
-  shows how to run the different examples provided with the dVRK.
-  Once your system is set up and calibrated, you will mostly use the
-  ROS ``dvrk_robot dvrk_system`` node.  We also provide a few
-  debugging and calibration utilities.
+* **Applications** - :ref:`The applications section <applications>` lists the
+  different programs provided with the dVRK. Once your system is set up and
+  calibrated, you will mostly use the ROS ``dvrk_robot dvrk_system`` node.  We
+  also provide a few debugging and calibration utilities.
 
-* **Usage** - todo
+* **Usage** - :ref:`How to use the dVRK<usage-real>` once it is configured. The
+  dVRK stack can also be used with different mechanical arms (haptic devices, 3D
+  trackers...) or :ref:`purely simulated <usage-simulation>` (without any
+  hardware). 
 
 * **Development** - :ref:`The development section <devel>` shows how
   to write your own applications on top of the dVRK software stack.

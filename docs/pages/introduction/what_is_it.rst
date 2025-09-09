@@ -30,11 +30,15 @@ surgery are:
   mechanically decoupled from the operator's hand, it is possible to
   scale down the motion. This allows operators to perform finer
   tasks.
+* Many hands. The operator can control up to 3 instruments and the camera. Foot
+  pedals are used to select which arms are active on the patient's side at any
+  given time. When inactive, instruments and camera are held in place.  There is
+  no need for an assistant to handle the endoscope or a third instrument. 
 * Hand-eye registration. The system can determine the pose and
   orientation of the patient side manipulators with respect to the
   endoscopic camera. Using this information, it is possible to compute
   the change of orientation (in 3D) to be applied to the surgeon's
-  moves so the directions remain natural. If the surgeon moves
+  moves, so the directions remain natural. If the surgeon moves
   to the left, the instrument will move to the left in the stereo
   display regardless of the camera pose.
 * The operator is seated at an ergonomic console during most of the
