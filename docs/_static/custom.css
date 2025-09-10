@@ -1,0 +1,9 @@
+/* Removes the max-width on the main content area */
+.wy-nav-content {
+    max-width: none !important;
+}
+/* Adjusts the padding of the main body to use more space */
+.wy-nav-content-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+}
