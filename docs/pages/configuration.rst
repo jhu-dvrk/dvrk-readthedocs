@@ -11,5 +11,6 @@ Configuration files
    configuration/generators
    configuration/system
    configuration/arm
+   configuration/suj
    configuration/custom-instruments
    configuration/dmib-io

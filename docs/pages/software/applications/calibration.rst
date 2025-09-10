@@ -121,3 +121,6 @@ calibration <calibration-si-suj-pots>` section.
 *******************************
 
 * https://github.com/jhu-dvrk/dvrk_camera_registration
+
+ROS Python script, see documentation in ``dvrk_camera_registration`` GitHub
+repository.
