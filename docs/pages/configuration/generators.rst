@@ -74,6 +74,14 @@ There are only 3 possible combinations of generations and hardware/controller ty
    to perform all the :ref:`calibration steps <calibration>` based on
    the arm's type and generation!
 
+.. note::
+
+   The arm configuration file created for the MTMs (``MTMx-12345.json``) will
+   assume that you already have a configuration file for gravity compensation
+   (something like ``gc-MTMx-12345.json``). If you don't have such a file
+   already, you should comment out (``//``) the line with
+   ``"gravity_compensation"`` in the MTM arm configuration file. 
+
 
 .. _system-wizard-use:
 
@@ -92,7 +100,7 @@ The file format for the :ref:`dVRK system applications <system>` is described in
 the :ref:`system configuration section <config-system>`. You can create and edit
 the JSON system configuration files with your favorite text editor.  But it
 might be easier to use the dVRK system wizard.  To do so, go in the directory
-with **your** dVRK configuration files and start: 
+with **your** dVRK configuration files and start:
 
 .. code-block:: bash
 
