@@ -1,5 +1,7 @@
 .. include:: /includes/logic-view-user-app.rst
 
+.. _CRTK-Python-client:
+
 Python
 ######
 

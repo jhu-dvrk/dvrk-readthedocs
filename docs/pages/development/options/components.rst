@@ -145,6 +145,8 @@ You can find an example of dVRK system configuration file
 (https://github.com/dvrk-config/dvrk_config_jhu).
 
 
+.. _components-IRE:
+
 Embedded Python interpreter 
 ****************************
 
