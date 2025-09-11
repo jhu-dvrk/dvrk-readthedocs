@@ -26,7 +26,7 @@ If you decide to use ROS and treat the dVRK system as a "black box", you will
 end-up with two (or more processes).  ROS is one example of middleware between
 the processes, we also provide some support for OpenIGTLink and plain UDP
 sockets.  You can write your ROS nodes using ROS directly or use the :ref:`CRTK
-Python Client < CRTK-Python-client>`.  The latter offers a simple Python API
+Python Client <CRTK-Python-client>`.  The latter offers a simple Python API
 that doesn't require any ROS knowledge.
 
 Alternatively, you can opt to implement your application's logic using a new
