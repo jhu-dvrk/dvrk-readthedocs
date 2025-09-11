@@ -249,8 +249,8 @@ Positioning your PSMs and ECM
 You must pay attention to the initial position of your PSMs and ECM with respect
 to the workspace.  Ideally, you should avoid being close to any joint limit on
 your arm when the tip is close to the center of your workspace.  You also want
-to fan out our arms so, they don't collide with each other (see :ref:'PSM
-mounting<psm-ecm-position>'). When all the patient's side arms are in place, all
+to fan out our arms so, they don't collide with each other (see :ref:`PSM
+mounting <psm-ecm-position>`). When all the patient's side arms are in place, all
 the RCM points should form a sphere.  The center of the sphere being the center
 of the workspace and the diameter should be about 15~20 centimeters.
 
