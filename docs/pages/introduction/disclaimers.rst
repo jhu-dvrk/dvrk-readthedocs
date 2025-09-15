@@ -9,7 +9,7 @@ Disclaimers
 
 .. warning::
 
-   The dVRK comes with **no warranty whatsoever**.
+   The dVRK software, firmware and hardware come with **no warranty whatsoever**.
 
 .. warning::
 
