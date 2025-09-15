@@ -32,7 +32,7 @@ The main parts of a da Vinci instrument are:
      :width: 250
      :align: center
 
-     Instrument's base
+     Instrument's base without its cover
 
 * two release levers, used to remove the instrument from the sterile
   adapter
