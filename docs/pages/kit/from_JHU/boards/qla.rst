@@ -57,7 +57,7 @@ flat flex cables (FFC). The DQLA-Q board is mounted across both QLAs.
    :align: center
    :width: 400
  
-   DQLA boards and flat flex ribbon cables between two QLAs and one FPGA1394V3
+   DQLA boards and flat flex cables between two QLAs and one FPGA1394V3
 
 Links:
 
