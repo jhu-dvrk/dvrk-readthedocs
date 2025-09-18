@@ -165,7 +165,7 @@ To summarize, the IRE can:
 * Using the mirrored interface's commands, the IRE can create callable
   objects able to trigger said commands
 
-The end result is a Python object that mimics all the available commands of the
+The end result is a Python object that can invoke all the available commands of the
 C++ component (proxy).  And, this Python object uses thread-safe queues to
 communicate with all the components running in the same process. There is no
 middleware, no dependency on ROS whatsoever.
@@ -174,7 +174,7 @@ To use the IRE, you need to install a few extra packages:
 
 .. code-block:: bash
 
-   sudo apt install sudo apt install ipython3 python3-ipython python3-wxgtk*
+   sudo apt install ipython3 python3-ipython python3-wxgtk*
 
 Once these packages are installed, start the :ref:`dVRK system
 application<system>` with ``-e`` (or ``--embedded-python``) with either
@@ -188,7 +188,7 @@ application<system>` with ``-e`` (or ``--embedded-python``) with either
 At that point, you will have all the usual dVRK components started (logic,
 widgets, ROS) but the main terminal will now be IPython.  In IPython you can use
 ``dir()`` to find proxies for all the components available or explore the proxy's
-features (``dir(ECM``). You can also take advantage of wxPython and IPython
+features (``dir(ECM)``). You can also take advantage of wxPython and IPython
 auto-complete and history.
 
 Following are some examples of commands you can use in the IRE:
