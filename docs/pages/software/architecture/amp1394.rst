@@ -2,3 +2,62 @@
 
 Amp1394
 #######
+
+Overview
+========
+
+*Amp1394*, also known as mechatronics software, includes:
+
+* A core library (*libAmp1394*) with the FPGA1394-based dVRK controllers, either
+  over FireWire (libraw1394) or Ethernet (UDP socket).
+
+* Programs to interface with the controllers.  Most of these are rarely used by
+  dVRK end-users except for :ref:`qladisp<qladisp>`,
+  :ref:`qlacommand<qlacommand>` and pgm1394.
+
+This library is designed to be generic, it can be used with any robot controller
+using QLA/FPGA1394 board. Nevertheless, there are a few features specific to the
+dVRK such as reading the Dallas chip on the PSM's instrument.
+
+The mechatronics software is portable, it can be compiled on Linux, Windows and
+MacOS. FireWire support requires *libraw1394* and is therefore only available on
+Linux. The build uses CMake for portability. We provide a GitHub action/workflow
+to test the compilation on all OSs automatically.
+
+.. important::
+
+   The code from mechatronics software is automatically compiled along the dVRK
+   software.  The code is pulled as a git submodule of |sawRobotIO1394| and
+   included in the build using CMake ``add_directory`` (see
+   ``sawRobotIO1394/core/component/code``).
+
+The core library handles:
+
+  * The type of ports used, i.e. FireWire (``fw``), UDP (``udp``) or a
+    combination (``udpfw``).  See :ref:`connectivity<connectivity_intro>`. 
+
+  * The communication protocol. The simplest approach is to query information
+    from each controller one after another and then write commands back
+    sequentially. FireWire also supports sending a single message to all
+    FPGA1394 boards, i.e. broadcast write. Finally, it is also possible to read
+    the information from all the FPGA1394 boards using a single query/request,
+    all the answers are collated in a single message read by the computer. See
+    also :ref:`system configuration, IO<config-IO>`.
+
+  * Serialization and deserialization of data packets into usable values.
+    Voltages and currents are reported using integers since the conversion
+    factors depend on the power board (:ref:`QLA<qla>` or :ref:`dRAC<drac>`).
+    All encoder values are reported in counts since they depend on the robot
+    sensors. Time intervals are defined in seconds, using ``double``.  All
+    conversions to SI units are handled by |sawRobotIO1394|.
+
+Links
+=====
+
+* GitHub repository: https://github.com/jhu-cisst/mechatronics-software
+
+* Documentation on GitHub wiki, including structure of packets used over
+  FireWire/Ethernet: https://github.com/jhu-cisst/mechatronics-software/wiki
+
+* Automatic builds on GitHub:
+  https://github.com/jhu-cisst/mechatronics-software/actions
