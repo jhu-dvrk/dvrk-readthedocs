@@ -119,12 +119,13 @@ the system.
 * Compatible with **dVRK DQLA-based Classic controllers and all Si controllers**
 * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/sd-card-updater
 
-Script used to download, uncompress and copy the latest firmwares for
-the DQLA and dRAC based controllers as well as the ESPM programmers.
-The script waits for an SD card to be inserted in the PC.  It will
-then mount it, copy the files and unmount, so the user can safely
-remove the card.  The user can insert all their SD cards one after
-another without restarting the script.
+Script used to download, uncompress and copy the latest firmware files for the
+DQLA and dRAC based controllers as well as the ESPM programmers. The script
+waits for an SD card to be inserted in the PC.  It will then mount it, copy the
+files and unmount, so the user can safely remove the card.  The user can insert
+all their SD cards one after another without restarting the script.
+
+Usage described in :ref:`dVRK firmware <firmware>` section.
 
 .. _dvrk_teleoperation:
 

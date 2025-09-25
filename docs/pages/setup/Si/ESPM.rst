@@ -1,6 +1,8 @@
 
 .. include:: /includes/logic-view-espm.rst
 
+.. _espm:
+
 ESPM
 ####
 

@@ -5,6 +5,8 @@
 Internal layout
 ###############
 
+.. _classic-internal-v12:
+
 FPGA V1/V2 based
 ****************
 
@@ -30,6 +32,9 @@ Board), LED boards, power supplies and relays.
    In the picture above, an astute reader might notice that the QLAs
    are missing the now recommended :ref:`heat-sink and fan
    <qla-heat-sink>`.
+
+
+.. _classic-internal-v3:
 
 FPGA V3 based
 *************

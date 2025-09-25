@@ -9,6 +9,7 @@ dVRK
    pages/introduction
    pages/kit
    pages/setup
+   pages/firmware
    pages/software
    pages/connectivity
    pages/configuration
