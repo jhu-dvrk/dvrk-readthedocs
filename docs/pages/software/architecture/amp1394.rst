@@ -8,7 +8,7 @@ Overview
 
 *Amp1394*, also known as mechatronics software, includes:
 
-* A core library (*libAmp1394*) with the FPGA1394-based dVRK controllers, either
+* A core C++ library (*libAmp1394*) with the FPGA1394-based dVRK controllers, either
   over FireWire (libraw1394) or Ethernet (UDP socket).
 
 * Programs to interface with the controllers.  Most of these are rarely used by
@@ -19,21 +19,21 @@ This library is designed to be generic, it can be used with any robot controller
 using QLA/FPGA1394 board. Nevertheless, there are a few features specific to the
 dVRK such as reading the Dallas chip on the PSM's instrument.
 
-The mechatronics software is portable, it can be compiled on Linux, Windows and
-MacOS. FireWire support requires *libraw1394* and is therefore only available on
-Linux. The build uses CMake for portability. We provide a GitHub action/workflow
-to test the compilation on all OSs automatically.
+The mechatronics software is portable, it compiles on Linux, Windows and MacOS.
+FireWire support requires *libraw1394* and is therefore only available on Linux.
+The build uses CMake for portability. We provide a GitHub action/workflow to
+test the compilation on all OSs automatically.
 
 .. important::
 
    The code from mechatronics software is automatically compiled along the dVRK
    software.  The code is pulled as a git submodule of |sawRobotIO1394| and
-   included in the build using CMake ``add_directory`` (see
-   ``sawRobotIO1394/core/component/code``).
+   included in the build using CMake ``add_directory`` (under the source directory
+   ``src/cisst-saw/sawRobotIO1394/core/component/code``).
 
 The core library handles:
 
-  * The type of ports used, i.e. FireWire (``fw``), UDP (``udp``) or a
+  * The type of port(s) used, i.e. FireWire (``fw``), UDP (``udp``) or a
     combination (``udpfw``).  See :ref:`connectivity<connectivity_intro>`. 
 
   * The communication protocol. The simplest approach is to query information

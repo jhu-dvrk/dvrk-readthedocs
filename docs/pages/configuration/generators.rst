@@ -111,5 +111,13 @@ available. From there you can configure the IO, arms and console sections using
 the GUI.  The console section will include whatever teleoperation components you
 wish to use.
 
+
+.. figure:: /images/software/system-wizard.png
+   :width: 700
+   :align: center
+
+   dVRK system configuration wizard, loading an existing file
+
+
 The system wizard can also be used to open and edit an existing system
 configuration file.

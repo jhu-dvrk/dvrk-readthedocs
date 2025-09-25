@@ -200,6 +200,13 @@ Following are some examples of commands you can use in the IRE:
    console_MTMR_PSM1.set_scale(0.5)
    ECM.measured_cp().Position().GetTranslation()
 
+
+.. figure:: /images/software/system-with-IPython.png
+    :width: 700
+    :align: center
+
+    dVRK system GUI with IPython in shell
+
 You can also execute any Python script with the IPython magic command ``%run``.
 While you run your Python commands and scripts, you can still monitor the dVRK
 using the GUI and ROS topics!

@@ -76,6 +76,14 @@ Shared options
   steps <calibration>`. It shouldn't be used on a regular basis since
   this disables some safety checks.
 
+``-e <value>, --embedded-python <value>``
+  *start an embedded Python shell to access all dVRK software components (optional)*
+
+  This will start an embedded Python interpreter along all the dVRK software
+  components. The embedded interpreter can be either IPython (``IRE_IPYTHON``
+  **recommended**) or wxPython (``IRE_WXPYTHON`` **experimental**).  See also
+  :ref:`development options<components-IRE>`.
+
 ``-m, --component-manager``
   *JSON files to configure component manager (optional)*
 
@@ -97,6 +105,14 @@ ROS extra options
 ``-p <value>, --ros-period <value>``
   *period in seconds to read all arms/teleop components and publish (default 0.01, 10 ms, 100Hz).  There is no point to have a period higher than the arm component's period (optional)*
 
+  When you're using :ref:`ROS as middleware <bridge-ros>`, publishers for events
+  and subscribers for commands are processed in a fast thread, processing
+  messages as fast as possible. For all the robot's state topics (e.g. joint,
+  kinematic... aka ``measured_js``, ``setpoint_cp``...) there is a periodic
+  thread publishing the state at a constant rate. If your application can
+  process message at a higher rate, you can increase the period used to publish
+  to the robot's state.
+
 ``-P <value>, --tf-ros-period <value>``
   *period in seconds to read all components and broadcast tf2 (default 0.02, 20 ms, 50Hz).  There is no point to have a period higher than the arm component's period (optional)*
 
@@ -106,21 +122,29 @@ ROS extra options
 ``-I, --pid-topics-read-only``
   *add some extra publishers to monitor PID state (optional)*
 
+  This option is mostly for debugging purposes.
+
 ``-J, --pid-topics-read-write``
   *add all PID topics (use with caution!) (optional)*
+
+  This option is dangerous as it allows you to send commands directly to the PID components.
 
 ``-K, --io-topics-read-only``
   *add some extra publishers to monitor IO state (optional)*
 
+  This option is used for both debugging and :ref:`calibration<calibration>`.
+
 ``-L, --io-topics-read-write``
   *add all IO topics (use with caution!) (optional)*
 
+  This option is dangerous as it allows you to send commands directly to the IO components.
+  
 .. _system-configuration-file:
 
 Configuration file
 ******************
 
-`dVRK system JSON schema <../../../schemas/dvrk-system.html>`_.
+See section *System* in :ref:`configuration files<config-system>`.
 
 
 .. _system-dynamic-components:

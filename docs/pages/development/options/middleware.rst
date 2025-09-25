@@ -67,13 +67,13 @@ Cons
 Notes
 =====
 
-* The dVRK system publishes both synchronous (events) and asynchronous data
-  (state data).  Events (such as ``operating_state`` are published as fast as
-  possible.  State data (such as ``measured_js``...) is published periodically.
-  By default, the dVRK system publishes data at 100Hz (10ms).  This can be
-  increased using the ``-p`` command line argument.  The dVRK arm components are
-  running at 1.5KHz, so it doesn't make sense to publish at any rate higher than
-  1.5KHz.
+* The :ref:`dVRK system <system>` publishes both synchronous (events) and
+  asynchronous data (state data).  Events (such as ``operating_state`` are
+  published as fast as possible.  State data (such as ``measured_js``...) is
+  published periodically. By default, the dVRK system publishes data at 100Hz
+  (10ms).  This can be increased using the ``-p`` command line argument.  The
+  dVRK arm components are running at 1.5KHz, so it doesn't make sense to publish
+  at any rate higher than 1.5KHz.
 * The dVRK uses the cisst ROS CRTK component to provide both ROS 1 and ROS 2
   interfaces (see `https://github.com/jhu-cisst/cisst-ros/`). This component
   uses multiple threads to reduce the latency of any synchronous message (i.e.

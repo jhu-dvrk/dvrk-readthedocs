@@ -40,7 +40,7 @@ The Python packages main features are:
 * All methods used to retrieve the robot's state (`measured`, `setpoint`...)
   return a tuple with both the data (array, frame...) and a timestamp. The
   timestamp will be set to 0 if the data is considered invalid. For example,
-  cartesian pose for a PSM without an instrument. Proper code should retrive both and then test the ts, i.e. 
+  cartesian pose for a PSM without an instrument. Proper code should retrieve both and then test the ts, i.e. 
   
   .. code-block:: python
 
