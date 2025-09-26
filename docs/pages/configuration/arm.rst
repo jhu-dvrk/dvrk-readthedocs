@@ -6,9 +6,13 @@
 Arm
 ***
 
-For all dVRK native or derived arms, `documention based on schema
-<../../schemas/dvrk-arm.html>`_ is also available for
-reference.
+For all dVRK native or derived arms, documentation is based on JSON schema.
+
+All arms are derived from a base class with shared configuration parameters:
+
+  * `Arm documentation <../../schemas/dvrk-arm.html>`_
+
+For all derived arm classes:
 
   * `MTM documentation <../../schemas/dvrk-mtm.html>`_
   * `PSM documentation <../../schemas/dvrk-psm.html>`_
