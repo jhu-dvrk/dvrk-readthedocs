@@ -156,15 +156,15 @@ Motion queries
 
   * *cisst*: qualified read command
 
-    * ``vctDoubleVec``
-    * ``vctFrm4x4``
+    * ``prmForwardKinematicsRequest``
+    * ``prmForwardKinematicsResponse``
 
-  * *ROS*: service ``cisst_msgs/QueryForwardKinematics``
+  * *ROS*: service ``crtk_msgs/QueryForwardKinematics``
 
-    * ``sensor_msgs/JointState jp``
-    * ``geometry_msgs/PoseStamped cp``
+    * ``sensor_msgs/JointState jp``, ``geometry_msgs/Pose cp``
+    * ``geometry_msgs/Pose cp``, ``bool result``, ``string message``
 
-  * dVRK specific: compute forward kinematic based on joint values
+  * |CRTK|_: compute forward kinematic based on joint values
     provided.  The length of the vector of joint positions determines
     which frame should be computed along the kinematic chain.  For
     ROS, the field ``jp.position`` is used to store joint positions.
@@ -174,21 +174,50 @@ Motion queries
 
   * *cisst*: qualified read command
 
-    * ``vctDoubleVec``
-    * ``vctFrm4x4``
+    * ``prmForwardKinematicsRequest``
+    * ``prmForwardKinematicsResponse``
 
-  * *ROS*: service ``cisst_msgs/QueryForwardKinematics``
+  * *ROS*: service ``crtk_msgs/QueryForwardKinematics``
 
-    * ``sensor_msgs/JointState jp``
-    * ``geometry_msgs/PoseStamped cp``
+    * ``sensor_msgs/JointState jp``, ``geometry_msgs/Pose cp``
+    * ``geometry_msgs/Pose cp``, ``bool result``, ``string message``
 
-  * dVRK specific: compute forward kinematic based on joint values
+  * |CRTK|_: compute forward kinematic based on joint values
     provided.  The length of the vector of joint positions determines
     which frame should be computed along the kinematic chain.  For
     ROS, the field ``jp.position`` is used to store joint positions.
 
+* ``inverse_kinematics``:
+
+  * *cisst*: qualified read command
+
+    * ``prmInverseKinematicsRequest``
+    * ``prmInverseKinematicsResponse``
+
+  * *ROS*: service ``crtk_msgs/QueryInverseKinematics``
+
+    * ``geometry_msgs/Pose cp``, ``sensor_msgs/JointState jp``
+    * ``sensor_msgs/JointState jp``, ``bool result``, ``string message``
+
+  * |CRTK|_: compute inverse kinematic based on cartesian goal and joint values
+    provided. This method prepends the base frame for the arm to the result.
+
 Motion commands
 ===============
+
+* ``hold``
+
+  * *cisst*: void command
+  * *ROS*: subscriber ``std_msgs/Empty``
+  * |CRTK|_: keep the arm in position, equivalent to ``servo_jp(setpoint_jp)``
+    or ``servo_cp(setpoint_cp)``.
+
+* ``free``
+
+  * *cisst*: void command
+  * *ROS*: subscriber ``std_msgs/Empty``
+  * |CRTK|_: free the arm, equivalent to ``servo_jf(0)`` or ``servo_cp(0)`` with
+    gravity compensation activated.
 
 * ``servo_cp``
 

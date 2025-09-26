@@ -8,6 +8,6 @@ API
 
    api/introduction
    api/arms
-   api/teleop
    api/console
+   api/teleop
    api/misc

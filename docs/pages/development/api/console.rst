@@ -8,13 +8,13 @@ C++ class is ``dvrk::system``.
 General
 *******
 
-* ``console/power_off``
+* ``system/power_off``
 
   * *cisst*: void command
   * *ROS*: subscriber ``std_msgs/Empty``
   * dVRK specific: trigger power off sequence for the whole system.
 
-* ``console/power_on``
+* ``system/power_on``
 
   * *cisst*: void command
   * *ROS*: subscriber ``std_msgs/Empty``
@@ -22,32 +22,36 @@ General
     some arms are in ``FAULT`` state, this method will first
     ``disable`` them.
 
-* ``console/home``
+* ``system/home``
 
   * *cisst*: void command
   * *ROS*: subscriber ``std_msgs/Empty``
-  * dVRK specific: triggers homing procedure for the whole system,
-    including powering if the system is not yet powered.  Note that
-    "homing" means findind where the arm is.  It doesn't always imply
-    moving to the zero position.
+  * dVRK specific: triggers homing procedure for the whole system, including
+    powering if the system is not yet powered.  Note that "homing" means finding
+    where the arm is (absolute position).  It doesn't always imply moving to the
+    zero position.
 
-* ``console/camera``
+Per console
+***********
+
+One can have multiple consoles, in this case the namespace can be ``console1/``,
+``console2/``... instead of ``console/``. * ``console/camera``
 
   * *cisst*: event write ``prmEventButton``
   * *ROS*: publisher ``sensor_msgs/Joy``
   * dVRK specific: indicate if the console assumes it should
-    tele-operate the ECM if all conditions are met: operator is
-    present and tele-operation is enabled.  When in camera mode, the
-    console disables the PSM tele-operation components (if any) and
-    enables the ECM tele-operation component (if present).
+    teleoperate the ECM if all conditions are met: operator is
+    present and teleoperation is enabled.  When in camera mode, the
+    console disables the PSM teleoperation components (if any) and
+    enables the ECM teleoperation component (if present).
 
 * ``console/clutch``
 
   * *cisst*: event write ``prmEventButton``
   * *ROS*: publisher ``sensor_msgs/Joy``
   * dVRK specific: indicate if the console assumes it should clutch
-    the active tele-operation components.  The console component
-    simple passes the clutch state to the tele-operation components
+    the active teleoperation components.  The console component
+    simple passes the clutch state to the teleoperation components
     who then have to handle the clutch.
 
 * ``console/operator_present``
@@ -76,99 +80,88 @@ General
   * *ROS*: subscriber ``sensor_msgs/Joy``
   * dVRK specific: emulate the operator presence sensor.
 
-Tele-operation
-**************
-
 * ``console/teleop/enabled``
 
   * *cisst*: event write ``bool``
   * *ROS*: publisher ``std_msgs/Bool``
-  * dVRK specific: indicate if the tele-operation is enabled at the
+  * dVRK specific: indicate if the teleoperation is enabled at the
     console level.
 
 * ``console/teleop/enable``
 
   * *cisst*: write command ``bool``
   * *ROS*: subscriber ``std_msgs/Bool``
-  * dVRK specific: enable or disable the tele-operation at the console
-    level.  When tele-operation is enabled for the console, the
-    console will manage with tele-operation components should be
+  * dVRK specific: enable or disable the teleoperation at the console
+    level.  When teleoperation is enabled for the console, the
+    console will manage with teleoperation components should be
     enabled using the following logic:
 
-    * Tele-operation components must be declared in the console JSON
-      configuration file: ``MTMR-PSM1``, ``MTML-PSM2``, ``MTMR-PSM3``,
-      ``MTML-MTMR-ECM``...
-    * For PSM tele-operation, the pair (e.g. ``MTMR-PSM1``) also needs
+    * Teleoperation components must be declared in the console JSON
+      configuration file: ``MTMR_PSM1``, ``MTML_PSM2``, ``MTMR_PSM3``,
+      ``MTML_MTMR_ECM``...
+    * For PSM teleoperation, the pair (e.g. ``MTMR_PSM1``) also needs
       to be selected (there should be one pair per MTM selected by
       default when the console starts).
-    * Finally the console determines which type of tele-operation
+    * Finally, the console determines which type of teleoperation
       component should be enabled based on the *camera* input:
 
       * If the *camera* input is off (i.e. *camera* foot pedal not
-        pressed), the console will enable the PSM tele-operation
+        pressed), the console will enable the PSM teleoperation
         components that have been selected.
       * If the *camera* input is on, the console will enable the ECM
-        tele-operation component (if declared in the console
+        teleoperation component (if declared in the console
         configuration file)
 
-    * When a tele-operation is enabled, it will perform its own logic
+    * When a teleoperation is enabled, it will perform its own logic
       before getting into ``following`` mode...
 
 * ``console/teleop/scale``
 
   * *cisst*: event write ``double``
   * *ROS*: publisher ``std_msgs::Float64``
-  * dVRK specific: last scale sent to all tele-operation components.
-    If a scale is set directly for a specific tele-operation component
-    (i.e. not using the console tele-operation scale), said component
+  * dVRK specific: last scale sent to all teleoperation components.
+    If a scale is set directly for a specific teleoperation component
+    (i.e. not using the console teleoperation scale), said component
     can potentially use a different scale from the others.
 
 * ``console/teleop/set_scale``
 
   * *cisst*: write command ``double``
   * *ROS*: subscriber ``std_msgs/Float64``
-  * dVRK specific: set the scale for all the tele-operation components
+  * dVRK specific: set the scale for all the teleoperation components
     declared in the system configuration file.
 
-* ``console/teleop/teleop_psm_selected``
+* ``console/teleop/teleop_selected``
 
-  * *cisst*: event write ``prmKeyValue``
-  * *ROS*: publisher ``diagnostic_msgs/KeyValue``
-  * dVRK specific: indicate which pairs of MTM-PSMs are currently
-    selected (PSM tele-operation components).
+  * *cisst*: event write ``std::string``
+  * *ROS*: publisher ``std_msgs::String``
+  * dVRK specific: indicate which pairs of MTMs/PSMs are currently
+    selected (PSM and ECM teleoperation components).
 
-* ``console/teleop/teleop_psm_unselected``
+* ``console/teleop/teleop_unselected``
 
-  * *cisst*: event write ``prmKeyValue``
-  * *ROS*: publisher ``diagnostic_msgs/KeyValue``
-  * dVRK specific: indicate which pairs of MTM-PSMs are currently
-    unselected (PSM tele-operation components).
+  * *cisst*: event write ``std::string``
+  * *ROS*: publisher ``std_msgs::String``
+  * dVRK specific: indicate which pairs of MTMs/PSMs are currently
+    unselected (PSM and ECM teleoperation components).
 
-* ``console/teleop/cycle_teleop_psm_by_mtm``
+* ``console/teleop/select_teleop``
 
   * *cisst*: write command ``std::string``
-  * *ROS*: subscriber ``std_msgs/String``
-  * dVRK specific: cycle PSM tele-operation for a given MTM.  For
-    example, if the console has the pairs ``MTML-PSM2`` and
-    ``MTML-PSM3`` and ``MTML-PSM2`` is currently selected, using
-    ``cycle_teleop_by_mtm(MTML)`` will unselect ``MTML-PSM2`` and
-    select ``MTML-PSM3``.  There is a special case hard-coded in the
-    console code to mimic the behavior of a clinical da Vinci system.
-    A quick-tap on the clutch pedal will trigger a
-    ``cycle_teleop_psm_by_mtm`` for the MTM that has been used for two
-    PSM tele-operations declared in the system configuration file.
+  * *ROS*: subscriber ``std_msgs::String``
+  * dVRK specific: select a specific PSM or ECM teleoperation.  The string
+    message is the name of the teleoperation component to select (``MTMR_PSM1``,
+    ``MTMR1_MTML1_ECM``...).  If there is any conflict between the newly
+    selected teleoperation and a previously selected teleoperation, the
+    previously selected teleoperation is automatically unselected.  A conflict
+    is defined by any arm (surgeon's or patient's side) used by both
+    teleoperation components.
 
-* ``console/teleop/select_teleop_psm``
+* ``console/teleop/unselect_teleop``
 
-  * *cisst*: write command ``prmKeyValue``
-  * *ROS*: subscriber ``diagnostic_msgs/KeyValue``
-  * dVRK specific: select a specific MTM-PSM tele-operation.  The
-    KeyValue message allows to send two strings, i.e. the names of the
-    MTM and PSM for the tele-operation component to select.  If the
-    MTM is currently associated to a selected pair, said pair will
-    first be unselected.  If the second value of the message is an
-    empty string, the command deactivates the tele-operation currently
-    using the MTM (first value in message)
+  * *cisst*: write command ``std::string``
+  * *ROS*: subscriber ``std_msgs::String``
+  * dVRK specific: unselect a specific PSM or ECM teleoperation.
 
 Foot pedals
 ***********
