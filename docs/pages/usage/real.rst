@@ -255,10 +255,3 @@ the RCM points should form a sphere.  The center of the sphere being the center
 of the workspace and the diameter should be about 15~20 centimeters.
 
 A video is worth a thousand words: https://youtu.be/nUsEUC4xOYc (YouTube)
-
-todo
-####
-
-teleop logic
-caveats: joint limits...
-accuracy

@@ -10,7 +10,7 @@ For all dVRK native or derived arms, documentation is based on JSON schema.
 
 All arms are derived from a base class with shared configuration parameters:
 
-  * `Arm documentation <../../schemas/dvrk-arm.html>`_
+  * `Base arm class documentation <../../schemas/dvrk-arm.html>`_
 
 For all derived arm classes:
 
