@@ -64,7 +64,7 @@ FPGA1394V3, ESPM and ESSJ
 
 To avoid any confusion between all the different firmware files on SD cards, we
 provide a single Zip file that includes the firmware for the FPGA1394V3, ESPM
-and ESSJ. The loader find the correct firmware by name. This way, users can put
+and ESSJ. The loader finds the correct firmware by name. This way, users can put
 any SD card in any dVRK component. 
 
 Remove all the SD cards from your system:
