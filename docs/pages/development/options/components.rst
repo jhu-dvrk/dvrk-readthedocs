@@ -211,6 +211,16 @@ You can also execute any Python script with the IPython magic command ``%run``.
 While you run your Python commands and scripts, you can still monitor the dVRK
 using the GUI and ROS topics!
 
+By default, not all the dVRK components are wrapped and made accessible through proxies
+in the embedded Python interpreter. To create a new proxy, you need to know the name of the component and the interface you need access to. For example, to access the PSM1 PID component's provided interface "Controller", use:
+
+.. code-block:: python
+
+   # long version
+   PSM1_PID = cisstMultiTask.mtsCreateClientInterface(clientName = 'system_Python', serverName = 'PSM1_PID', interfaceName = 'Controller')
+   # short version
+   PSM2_PID = cisstMultiTask.mtsCreateClientInterface('system_Python', 'PSM2_PID', 'Controller')
+
 .. note::
 
    This is an awesome but fairly new feature of the dVRK. Give it a try and
