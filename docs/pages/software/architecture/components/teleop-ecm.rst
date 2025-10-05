@@ -14,12 +14,11 @@ applications.  As much as we would like to have an implementation as
 good as the teleoperation provided by Intuitive Surgical on their
 clinical systems, this is not (yet) the case.
 
-If you need to write a new teleoperation logic or build upon the
-existing one, take a look at the :ref:`application development section
-<devel-options-intro>`.  Using the current implementations as base
-classes will allow you to focus on the teleoperation itself while all
-the state transitions can be inherited from the base class but you can
-also write one from scratch.
+If you need to write a new teleoperation logic or build upon the existing one,
+take a look at the :ref:`application development section <devel-options>`.
+Using the current implementations as base classes will allow you to focus on the
+teleoperation itself while all the state transitions can be inherited from the
+base class but you can also write one from scratch.
 
 Behavior
 ********

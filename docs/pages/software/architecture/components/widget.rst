@@ -62,8 +62,8 @@ maximum percentage shows what are the worst outliers, i.e. period overrun.
 
 The third column displays (1) the time window used to compute the statistics, 1
 second, (2) the number of iterations performed during the time window, similar
-to period frequence and (3) the number of time the computation took longer than
-the average period, number of outliers.
+to period frequency and (3) the number of time the computation took longer than
+the average period, number of outliers. 
 
 One can mouse over each element of the widget for a brief description.
 
@@ -140,7 +140,7 @@ modes, use the mouse right click. views, use the
 
    Wrench widget (3D view)
 
-In 3D mode, the torque is not displayed.  The minimum and maximum and maximum
+In 3D mode, the torque is not displayed.  The minimum and maximum
 forces encountered are shown in the top-left corner of the widget.  There are
 three keyboard shortcuts available: ``z`` to reset the visualization orientation
 (see 3D pose widget). ``a`` to enable/disable auto-resizing. By default, the
@@ -154,7 +154,7 @@ force.
 
    Wrench widget (2D plot)
 
-In 2D view, the information is shown over time. The left-side menu can be used
+In 2D view, the wrench is shown over time. The left-side menu can be used
 to select which information should be display (for example *Force* along the
 *Axis Y*). This widget used the 2D plot widget described below, hence it uses
 the same keyboard shortcuts.

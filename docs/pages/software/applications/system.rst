@@ -165,7 +165,7 @@ such as:
 
 * custom applications/components (optionally with widgets and ROS
   bridges), either with :ref:`components derived from existing
-  ones<components-derived>` or :ref:`generic ones<components-generic>`
+  ones<components-derived>` or :ref:`custom ones<components-custom>`
 
 * :ref:`alternative devices<components-alternative-hardware>` for the
   MTM, PSM, foot pedals, head sensor...
