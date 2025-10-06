@@ -66,11 +66,6 @@ You can also execute any Python script with the IPython magic command ``%run``.
 While you run your Python commands and scripts, you can still monitor the dVRK
 using the GUI and ROS topics!
 
-.. note::
-
-   This is an awesome but fairly new feature of the dVRK. Give it a try and
-   don't hesitate to create issues in GitHub if needed.
-
 By default, not all the dVRK components are wrapped and made accessible through
 proxies in the embedded Python interpreter. To create a new proxy, you need to
 know the name of the component and the interface you need access to. For
