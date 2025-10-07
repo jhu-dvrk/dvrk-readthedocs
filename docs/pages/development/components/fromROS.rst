@@ -3,11 +3,17 @@
 ROS component
 #############
 
-The ROS component ``dvrk_arm_from_ros`` can be treated as an example
-of alternate hardware.  When used, the system uses ROS to communicate
-with a generic arm (e.g. PSM or substitute).  This can be used if you
-need your teleoperation to work across the network.  The black
-diagram shows the "PSM over ROS" coming from an actual dVRK but could
+The ROS component ``dvrk_arm_from_ros`` can be treated as an example of
+alternate hardware.  When used, the system uses ROS to communicate with a
+generic arm (e.g. PSM or substitute) that happen to have a CRTK compatible ROS
+interface.
+
+This is the favored approach to communicate with a simulation environment such
+as AMBF, IsaacSim... We then expect the virtual patient's cart provides an ECM
+and PSMs with ROS interfaces compatible with the physical dVRK arms.
+
+This can also be used if you need your teleoperation to work across the network.
+The black diagram shows the "PSM over ROS" coming from an actual dVRK but could
 be any other device as long as the ROS topics are the same.
 
 .. figure:: /images/software/dVRK-component-PSM-from-ROS.*
