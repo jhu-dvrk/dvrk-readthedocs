@@ -66,13 +66,15 @@ Create your ROS 2 workspace and clone all repositories using ``vcs``:
    mkdir -p ~/ros2_ws/src
    cd ~/ros2_ws/src
    # make sure you use the correct vcs file
-   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-2.3.1.vcs --recursive
+   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-main.vcs --recursive
 
-To use the stable code between releases, replace the vcs line with:
+.. note:: To update an existing source directory, simply go in the directory (``cd ~/ros2_ws/src``) and call ``vcs pull``.  This will update all the repositories checked out under ``src``.
+
+To use a specific release, replace the vcs line with:
 
 .. code-block:: bash
 
-   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-main.vcs --recursive
+   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-2.3.1.vcs --recursive
 
 .. warning:: If you forgot the ``--recursive`` option, go in ``~/ros2_ws/src/cisst-saw/sawRobotIO1394`` and run ``git submodule init; git submodule update`` (this is to pull the "AmpIO" code).
 
