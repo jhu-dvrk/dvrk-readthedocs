@@ -62,15 +62,15 @@ replace the version number (e.g. ``2.3.0`` by ``main``).
    catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release # all code should be compiled in release mode
    cd src                             # go in source directory to pull code
    # make sure you use the correct vcs file
-   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros1-dvrk-2.3.1.vcs --recursive
+   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros1-dvrk-main.vcs --recursive
    catkin build --summary             # ... and finally compile everything
    source ~/catkin_ws/devel/setup.bash
 
-To use the stable code between releases, replace the vcs line with:
+To use a specific release, replace the vcs line with:
 
 .. code-block:: bash
 
-   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros1-dvrk-main.vcs --recursive
+   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros1-dvrk-2.3.1.vcs --recursive
 
 Testing
 #######
