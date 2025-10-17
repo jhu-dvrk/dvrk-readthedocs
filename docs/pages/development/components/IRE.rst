@@ -79,6 +79,20 @@ use:
    # short version
    PSM2_PID = cisstMultiTask.mtsCreateClientInterface('system_Python', 'PSM2_PID', 'Controller')
 
+The IRE provides access to the |cisstMultiTask| Local Component Manager (LCM). To get a list of all available components, use:
+
+.. code-block:: python
+
+   LCM.GetNamesOfComponents()
+
+For a specific component, such as PSM1_PID, you can get access to the component and list all its provided interfaces as follows:
+
+.. code-block:: python
+
+   LCM.GetComponent('PSM1_PID').GetNamesOfInterfacesProvided()
+
+This list will include a provided interface named "Controller", which was used above.
+
 .. note::
 
    This is an awesome but fairly new feature of the dVRK. Give it a try and
