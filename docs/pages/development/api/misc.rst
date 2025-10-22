@@ -1,10 +1,71 @@
 Miscellaneous
 #############
 
+.. _API-collectors:
+
+Collectors
+**********
+
+See also cisstMultiTask state :ref:`collectors <collectors>`.
+
+
+* ``collectors/start``
+
+  * *cisst*: command write ``double``
+  * *ROS*: subscriber ``std_msgs/Float64``
+  * dVRK specific. Start data collection in `delay` seconds.  To start now, send
+    0 as delay.
+
+* ``collectors/stop``
+
+  * *cisst*: command write ``double``
+  * *ROS*: subscriber ``std_msgs/Float64``
+  * dVRK specific. Stop data collection in `delay` seconds.  To stop now, send
+    0 as delay.
+
+* ``collectors/set_working_directory``
+
+  * *cisst*: command write ``std::string``
+  * *ROS*: subscriber ``std_msgs/String``
+  * dVRK specific. Set the directory to save data collection files.
+
+* ``collectors/set_output_to_default``
+
+  * *cisst*: command void
+  * *ROS*: subscriber ``std_msgs/Empty``
+  * dVRK specific. Reset the file names for data collection.  Stop followed by
+    start doesn't change the file used for data collection.  To create a new
+    file, you need to use ``set_output_to_default``.  It this method is called
+    while data collection is ongoing, the collectors will automatically stop,
+    save the remaining data in the current file, open a new file and restart the
+    collection.
+
+* ``collectors/started``
+
+  * *cisst*: event write ``bool``
+  * *ROS*: publisher ``std_msgs/Bool``
+  * dVRK specific. Each collector will emit an event when started (payload is
+    ``true``) or stopped (``false``). If you have *n* state table collectors
+    configured, you should get *n* events when the collection starts or stops.
+
+* ``collectors/progress``
+
+  * *cisst*: event write ``size_t``
+  * *ROS*: publisher ``std_msgs/UInt64``
+  * dVRK specific. Each collector will emit an event when a batch of data is
+    being saved to a file. The event includes the number of rows (i.e. time
+    indices) saved. If you have a single state collector working on a component
+    running at 1KHz with a sampling equal to 1, the sum of the progress event's
+    payload should be close to 1000 per second.  
+
+
+.. _API-focus:
+
 Focus controller
 ****************
 
-Using original focus controller from Intuitive Surgical.
+Using :ref:`original focus controller <focus-original>` from Intuitive
+Surgical.
 
 * ``endoscope_focus/locked``
 
@@ -41,6 +102,9 @@ Using original focus controller from Intuitive Surgical.
   * *cisst*: command write ``bool``
   * *ROS*: subscriber ``std_msgs/Bool``
   * dVRK specific: start focusing out
+
+
+.. _API-audio:
 
 Audio
 *****

@@ -1,6 +1,6 @@
 .. include:: /includes/logic-view-console.rst
 
-.. collectors_
+.. _collectors:
 
 Collectors
 ##########
@@ -115,8 +115,8 @@ The description file provides the path to the CSV file, the data and time of the
 collection reference's time (start time). For each data element, you get the
 name and type (``d`` for double, ``str`` for string...)
 
-Widget
-======
+Control
+=======
 
 There is a default widget to control all state collectors at the same time.
 
@@ -125,6 +125,9 @@ There is a default widget to control all state collectors at the same time.
    :align: center
 
    Collector control widget
+
+There are also :ref:`ROS topics to control the state collectors
+<API-collectors>`.
 
 Drawbacks
 =========

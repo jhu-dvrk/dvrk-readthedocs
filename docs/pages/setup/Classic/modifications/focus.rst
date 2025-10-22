@@ -110,7 +110,8 @@ Configuration
 -------------
 
 To configure your console, see :ref:`focus controller configuration
-<config-focus>`
+<config-focus>`.  You can also use :ref:`ROS topics <API-focus>` to interact
+with the focus controller.
 
 
 dVRK focus controller
