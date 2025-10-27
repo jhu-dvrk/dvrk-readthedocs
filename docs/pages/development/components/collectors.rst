@@ -18,13 +18,24 @@ is asynchronous, i.e. not all the internal states can be saved.
 
 Since the dVRK components all use the cisst/SAW cisstMultiTask library, it is
 possible to use the functionalities that come with |cisstMultiTask|_ to collect
-data. Internally, components can use a "state table" (class ``mtsStateTable``)
-to store their state. State tables are circular buffers containing a short
-history of the state and are advanced at each iteration (time tic).
+data, i.e. the *mtsCollectorState* and *mtsCollectorEvent*.
+
+* State collectors: internally, components can use a "state table" (class
+  ``mtsStateTable``) to store their state. State tables are circular buffers
+  containing a short history of the state and are advanced at each iteration
+  (time tic).
+
+* Event collectors: components that can dynamically create required interfaces
+  to observe event, with (*write*) or without payload (*void*).
+
+To manage multiple collectors at once, |cisstMultiTask|_ also provides
+*mtsCollectorFactory*. The factory can create multiple collectors based on user
+provided JSON configuration files. It comes with a Qt widget and ROS topics for
+the :ref:`dVRK system applications <system>`.
 
 .. note:: 
     
-    The state collectors are totally independent of ROS and can therefore
+    The collectors are totally independent of ROS and can therefore
     be used with both main :ref:`system applications <system>`, node ``dvrk_robot
     dvrk_system`` and executable ``sawIntuitiveResearchKitSystem``.
 
@@ -43,7 +54,7 @@ collected.
 .. code-block:: json
 
    {
-      "state-collectors":
+      "state_collectors":
       [
          {
             "component": "MTML",
@@ -70,6 +81,32 @@ collected.
          }
       ]
    }
+
+For the event collector, users can specify either:
+
+* A component: in this case, all provided interfaces and their events will be
+  collected (``component``)
+* A component and a list of provided interfaces: in this case, all the events
+  from the interfaces listed will be collected (``interfaces``)
+* A component, interfaces and lists of events: in this case, only the events
+  listed will be collected (``events_write`` and ``events_void``)
+
+.. code-block:: json
+
+    {
+      "event_collectors":
+      [
+         {
+            "component": "PSM1",
+            "interfaces": [
+                {
+                    "name": "Arm",
+                    "events_write": ["operating_state", "tool_type", "goal_reached"]
+                }
+            ]
+        }
+      ]
+   }  
 
 Output
 ======
@@ -115,10 +152,34 @@ The description file provides the path to the CSV file, the data and time of the
 collection reference's time (start time). For each data element, you get the
 name and type (``d`` for double, ``str`` for string...)
 
+For the event collector, the CSV file contains the description of all the types
+of events received and sets a type Id for each one.  Then each line starts with the
+time the event was received followed by the event type Id and the payload (if
+any).
+
+::
+
+   # Date & time        : 2025-10-27-16-35-50
+   # Total event count : 3
+   # Data format        : Text (CSV)
+   #
+   # TimeEventReceived, Id: 1 Event write: "PSM1::Arm::operating_state(prmOperatingState)",Timestamp:{d},AutomaticTimestamp:{b},Valid:{b},StateprmOperatingState::StateType,SubState:{str},IsHomed:{b},IsBusy:{b}
+   # TimeEventReceived, Id: 2 Event write: "PSM1::Arm::tool_type(mtsStdString)",-timestamp,-automatic-timestamp,-valid,-data
+   # TimeEventReceived, Id: 3 Event write: "PSM1::Arm::goal_reached(mtsBool)",-timestamp,-automatic-timestamp,-valid,-data
+   6.82399955,1,6.823984546,1,1,2,ENABLED,0,0
+   8.374589916,1,8.374564128,1,1,2,HOMED,1,0
+   8.375486588,2,0,1,1,LARGE_NEEDLE_DRIVER:400006[..]
+   8.375498866,1,8.375485771,1,1,2,HOMED,1,0
+
+Note that event's payload might contain their own timestamp. It corresponds to
+the time the event was emitted. This timestamp is more precise than the time
+received and should be used when available.
+
 Control
 =======
 
-There is a default widget to control all state collectors at the same time.
+There is a default widget to control all the state and event collectors at the
+same time.
 
 .. figure:: /images/gui/collectors.*
    :width: 600
@@ -126,7 +187,7 @@ There is a default widget to control all state collectors at the same time.
 
    Collector control widget
 
-There are also :ref:`ROS topics to control the state collectors
+There are also :ref:`ROS topics to control the state and event collectors
 <API-collectors>`.
 
 Drawbacks
