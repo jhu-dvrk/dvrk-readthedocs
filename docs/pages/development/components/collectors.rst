@@ -25,11 +25,11 @@ data, i.e. the *mtsCollectorState* and *mtsCollectorEvent*.
   containing a short history of the state and are advanced at each iteration
   (time tic).
 
-* Event collectors: components that can dynamically create required interfaces
-  to observe event, with (*write*) or without payload (*void*).
+* Event collectors: component that can dynamically create required interfaces
+  to observe events, with (*write*) or without payload (*void*).
 
 To manage multiple collectors at once, |cisstMultiTask|_ also provides
-*mtsCollectorFactory*. The factory can create multiple collectors based on user
+*mtsCollectorFactory*. The factory can create multiple collectors, state and events, based on user
 provided JSON configuration files. It comes with a Qt widget and ROS topics for
 the :ref:`dVRK system applications <system>`.
 
