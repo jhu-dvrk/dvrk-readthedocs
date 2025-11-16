@@ -141,10 +141,12 @@ Stereo
 ======
 
 .. code-block:: bash
+
    ROS 1
    roslaunch dvrk_video decklink_stereo_goovis.launch stereo_rig_name:=jhu_daVinci stereo_proc:=True
 
 .. code-block:: bash
+
    ROS 2
    ros2 launch dvrk_video decklink_stereo_goovis.launch.py stereo_rig_name:=${RIG}
 
