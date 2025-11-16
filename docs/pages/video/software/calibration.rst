@@ -1,17 +1,18 @@
 Calibration
 ###########
 
-Create a catkin package
-***********************
+Where to save the calibration results
+*************************************
 
 With ROS1, the simplest way to save and retrieve the results of a
 camera calibration is to create a dummy ROS package.  The package name
 will allow other ROS nodes to find the results of the camera
-calibration later on.  As far as we know, there is no equivalent in
-ROS2.
+calibration later on.  For ROS2, we suggest to use the ``dvrk_video`` source directory to save the calibration results.
 
 Stereo
 ======
+
+ROS1 only!
 
 You will need to create a new package to store the calibration results.  At that point, choose a name for your camera (aka stereo rig).  For this example, we will use "jhu_daVinci":
 
@@ -25,6 +26,8 @@ You will need to create a new package to store the calibration results.  At that
 
 Mono
 ====
+
+ROS1 only!
 
 There is no difference but for sake of demonstration, we will create the package under a different name, say "depstech", a familiar brand of cheap USB cameras.
 
@@ -48,7 +51,14 @@ Note that you have to provide the name of your stereo rig:
 
 .. code-block:: bash
 
-   roslaunch dvrk_video decklink_stereo_1280x1024.launch stereo_rig_name:=jhu_daVinci
+   # ROS1
+   roslaunch dvrk_video decklink_stereo_goovis.launch stereo_rig_name:=jhu_daVinci
+
+.. code-block:: bash
+
+   # ROS2, save the rig name as environment variable
+   export RIG=jhu_dVRK
+   ros2 launch dvrk_video decklink_stereo_goovis.launch.py stereo_rig_name:=${RIG}
 
 Mono
 ====
@@ -72,11 +82,12 @@ video stream is started and you are using the correct rig name.
 
 .. code-block:: bash
 
+   # ROS 1
    rosrun camera_calibration cameracalibrator.py --approximate 0.1 --size 12x10 --square 0.0045 right:=/jhu_daVinci/right/image_raw left:=/jhu_daVinci/left/image_raw left_camera:=/jhu_daVinci/left right_camera:=/jhu_daVinci/right
 
 The command line above assumes you're using a 12x10 calibration grid
 and the size of each square is 4.5 mm.  Once the calibration is
-performed, don't forget to save and commit using the GUI.  You should
+performed, don't forget to "save" and "commit" using the GUI.  You should
 now have two new files in the catkin package you created for the
 stereo rig under ``calibrations``: ``left.yaml`` and ``right.yaml``.
 
@@ -87,6 +98,26 @@ that it's 10 times the claimed square size in mm.  Also to note, the
 checkerboard size (e.g. 12x10) is based on the number of corners
 between the squares.  For example, the 12x10 actually has 13x11
 squares.
+
+For ROS 2, there are a few differences:
+
+.. code-block:: bash
+
+   # ROS 2
+   ros2 run camera_calibration cameracalibrator -c ${RIG} --approximate 0.1 --size 8x5 --square 0.01 --no-service-check --ros-args --remap right:=/${RIG}/right/image_raw --remap left:=/${RIG}/left/image_raw
+
+Once the calibration is finished (keep an eye on the terminal behind the GUI), make sure you save the results (big ugly round button on the right).  After the results are saved, do:
+
+.. code-block:: bash
+
+   # create a directory in existing package
+   mkdir -p ~/ros2_ws/src/dvrk/dvrk_video/calibrations/${RIG}
+   # extract the results in the new directory
+   cd ~/ros2_ws/src/dvrk/dvrk_video/calibrations/${RIG}
+   tar zxvf /tmp/calibrationdata.tar.gz
+   # rebuild
+   cd ~/ros2_ws
+   colcon build
 
 Mono
 ====
@@ -110,8 +141,12 @@ Stereo
 ======
 
 .. code-block:: bash
+   ROS 1
+   roslaunch dvrk_video decklink_stereo_goovis.launch stereo_rig_name:=jhu_daVinci stereo_proc:=True
 
-   roslaunch dvrk_video decklink_stereo_1280x1024.launch stereo_rig_name:=jhu_daVinci stereo_proc:=True
+.. code-block:: bash
+   ROS 2
+   ros2 launch dvrk_video decklink_stereo_goovis.launch.py stereo_rig_name:=${RIG}
 
 
 Mono
