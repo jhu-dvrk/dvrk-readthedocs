@@ -19,6 +19,9 @@ If you use the dVRK in your research, please cite the following paper:
 For posters and videos, please include the `dVRK logo
 <https://github.com/jhu-dvrk/dvrk-logo>`_ if possible.
 
+If you have published some work using the dVRK (hardware or software), please add a reference to the `dVRK community publications
+<https://github.com/jhu-dvrk/community-publications>`_.
+
 dVRK
 ####
 
@@ -58,4 +61,4 @@ dVRK community
 
 Considering the exponential growth of dVRK related publications, these
 are now compiled in a BibTeX file hosted on GitHub:
-https://github.com/jhu-dvrk/community-publications.
+https://github.com/jhu-dvrk/community-publications.  You can see the existing publications on https://dvrk.lcsr.jhu.edu/publications/index.html
