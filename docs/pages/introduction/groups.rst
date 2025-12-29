@@ -10,9 +10,9 @@ Map
 <https://mapsengine.google.com/map/embed?mid=z14AfgTT1a9w.ktOc3SMAsVF4>`_.
 
 Publications related to the dVRK are listed in the :ref:`publications
-page<publications>`.  This page includes the dVRK community publications
+page<publications>`.  This page includes the `dVRK community publications
 <https://github.com/jhu-dvrk/community-publications>`_ (work using
-the dVRK).
+the dVRK). 
 
 .. note::
 
@@ -64,7 +64,7 @@ the dVRK).
 \                                                                                                                                              Samuel Au
 29   2017 `University of Texas Austin HeRo <https://sites.utexas.edu/herolab/>`_                                                               Ann Majewicz Fey        dVRK          CA6
 30   2017 `University of Leeds <https://www.stormlabuk.com>`_                                                                                  Pietro Valdastri        da Vinci      CA6         CS1
-31   2017 Hochschule Reutlingen                                                                                                                Oliver Burgert            da Vinci      CA6
+31   2017 Hochschule Reutlingen                                                                                                                Oliver Burgert          da Vinci      CA6
 32   2019 University of Maryland                                                                                                               Axel Krieger            da Vinci      CA7
 33   2019 `University of Alberta <http://www.ece.ualberta.ca/~tbs/pmwiki/>`_                                                                   Mahdi Tavakoli          dVRK          CA7
 34   2019 Purdue University                                                                                                                    Juan Wachs              da Vinci      CA7
@@ -74,11 +74,13 @@ the dVRK).
 37   2021 University of Illinois, Chicago                                                                                                      Liaohai Leo Chen        da Vinci      CA8         CS1
 38   2021 University of Twente                                                                                                                 Sarthak Misra           dVRK          CA8
 39   2021 University of Torino                                                                                                                 Alberto Arezzo          da Vinci      CA8         CS1
-40   2022 `New York University <https://wp.nyu.edu/meriit/>`_                                                                                  S. Farokh Atashzar      dVRK          CA8
+40   2022 `New York University <https://wp.nyu.edu/meriit/>`_                                                                                  S\. Farokh Atashzar     dVRK          CA8
 41   2022 `The University of Utah <https://arm.cs.utah.edu>`_                                                                                  Alan Kuntz              dVRK          CA8 CA9
 42   2022 `Vanderbilt University MAPLE <https://my.vanderbilt.edu/maple-lab/>`_                                                                Jie Ying Wu             dVRK-Si       CA9 SA1
 43   2023 `Max Planck Institute <https://hi.is.mpg.de>`_                                                                                       Guido Caccianiga        da Vinci      CA9
 \                                                                                                                                                                      da Vinci Si   CA9 SA1     SS1
+44   2025  Yonsei University                                                                                                                   Jongsoo Lee             da Vinci Si   
+\                                                                                                                                              Jongeun Choi
 ==== ==== ==================================================================================================================================== ======================= ============= =========== =========
 
 
