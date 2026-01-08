@@ -50,7 +50,7 @@ If you're using ROS Noetic and the master branch, you can just
 copy/paste the following block of commands in a terminal.  For other
 configurations, make sure you replace ``noetic`` by ``melodic`` or
 whatever version of ROS you're using.  For the ``main`` branches,
-replace the version number (e.g. ``2.3.0`` by ``main``).
+replace the version number (e.g. ``2.4.0`` by ``main``).
 
 .. code-block:: bash
 
@@ -70,7 +70,7 @@ To use a specific release, replace the vcs line with:
 
 .. code-block:: bash
 
-   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros1-dvrk-2.3.1.vcs --recursive
+   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros1-dvrk-2.4.0.vcs --recursive
 
 Testing
 #######
