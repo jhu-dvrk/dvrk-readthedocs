@@ -41,6 +41,10 @@ Terminal
 * ROS commands tend to mess the terminal. You can type ``reset`` in the terminal
   to reset to the default settings.
 
+* ROS2 tends to broadcast across subnets.  If you want to control this, use ``ROS_AUTOMATIC_DISCOVERY_RANGE``.
+  In a shell, you can do ``export ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST``. To set automatically for all users,
+  create the file ``/etc/environment.d/99-ROS.conf`` with content: ``ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST``.
+
 dVRK
 ####
 
