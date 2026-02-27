@@ -32,7 +32,7 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
       .. code-block:: bash
 
-         sudo apt install libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
+         sudo apt install libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev libgraphviz-dev # dVRK
          sudo apt install ros-jazzy-joint-state-publisher* ros-jazzy-xacro # ROS
 
    .. tab:: Ubuntu 22.04
@@ -68,15 +68,17 @@ Create your ROS 2 workspace and clone all repositories using ``vcs``:
    # make sure you use the correct vcs file
    vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-main.vcs --recursive
 
-.. note:: To update an existing source directory, simply go in the directory (``cd ~/ros2_ws/src``) and call ``vcs pull``.  This will update all the repositories checked out under ``src``.
+.. warning:: If you get some errors related to access denied, it is possible GitHub blocks you because vcs uses multiple threads.  If this is the case, try something like: ``vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-main.vcs --recursive --retry 10 --workers 1``.
+
+.. note:: If you forgot the ``--recursive`` option, go in ``~/ros2_ws/src/cisst-saw/sawRobotIO1394`` and run ``git submodule init; git submodule update`` (this is to pull the "AmpIO" code).
+
+.. hint:: To update an existing source directory, simply go in the directory (``cd ~/ros2_ws/src``) and call ``vcs pull``.  This will update all the repositories checked out under ``src``.
 
 To use a specific release, replace the vcs line with:
 
 .. code-block:: bash
 
    vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-2.4.0.vcs --recursive
-
-.. warning:: If you forgot the ``--recursive`` option, go in ``~/ros2_ws/src/cisst-saw/sawRobotIO1394`` and run ``git submodule init; git submodule update`` (this is to pull the "AmpIO" code).
 
 Compile using ``colcon``:
 
