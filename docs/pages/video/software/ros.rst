@@ -1,9 +1,9 @@
-ROS
-###
+ROS/gscam
+#########
 
 
-gscam
-*****
+Introduction
+************
 
 ``gscam`` is a ROS node using the ``gstreamer`` library.  The gstreamer
 library supports a few frame grabbers including the Hauppage one.  The

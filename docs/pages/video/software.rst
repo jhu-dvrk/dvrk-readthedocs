@@ -6,5 +6,6 @@ Software based pipeline
 
    software/introduction
    software/frame-grabbers
+   software/dvrk
    software/ros
    software/calibration
