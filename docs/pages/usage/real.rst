@@ -135,7 +135,7 @@ To start the main dVRK system application:
 .. code-block:: bash
 
    # assuming you are in your configuration files directory
-   ros2 run dvrk_robot dvrk_system sytem-XXX.json # replace XXX with your configuration
+   ros2 run dvrk_robot dvrk_system -j sytem-XXX.json # replace XXX with your configuration
 
 See also:
 

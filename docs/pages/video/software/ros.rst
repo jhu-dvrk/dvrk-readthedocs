@@ -39,18 +39,15 @@ gstreamer pipeline** (as described above using ``gst-launch-1.01``).
 The main difference is that your pipeline for gscam should end with
 ``videoconvert`` and you need to remove ``autovideosink``.
 
-For a stereo system with the USB frame grabbers, use:
+For a stereo system with the Decklink frame grabbers, use:
 
 .. code-block:: bash
 
-   sh roslaunch dvrk_robot gscam_stereo.launch rig_name:=jhu_daVinci
+   ros2 launch dvrk_video gscam_decklink_stereo.launch.py stereo_rig_name:=jhu_daVinci
 
-Where ``jhu_daVinci`` is a name you want to give to your camera rig.  This
+Where ``jhu_daVinci`` is a name you want to give to your camera rig. This
 name will be used to define the ROS namespace for all the data
-published.  It is also used to define a directory to save the results
-of your camera calibration or load said camera calibration
-(i.e. ``dvrk_robot/data/<rig_name>``).  If you don't have a calibration
-for your rig, you can still render both video channels using the ROS
+published. The left/right camera outputs are available via the ROS
 topics:
 
 * ``/jhu_daVinci/left/image_raw``
@@ -69,7 +66,7 @@ One can use the ``image_view`` node to visualize a single image:
 
 .. code-block:: bash
 
-   rosrun image_view image_view image:=/jhu_daVinci/right/image_raw
+   ros2 run image_view image_view image:=/jhu_daVinci/right/image_raw
 
 
 If you prefer GUI, you can use ``rqt_image_view``, a simple program to
