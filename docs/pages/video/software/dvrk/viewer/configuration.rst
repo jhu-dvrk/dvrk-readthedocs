@@ -1,7 +1,7 @@
 Configuration Schema
 ====================
 
-The ``dvrk_stereo_viewer`` heavily relies on a well-defined JSON schema (``sv::stereo_viewer_config@1.0.0``) to control the dimensions, color-balancing arrays, and geometry.
+The ``dvrk_display`` heavily relies on a well-defined JSON schema (``sv::dvrk_display_config@1.0.0``) to control the dimensions, color-balancing arrays, and geometry.
 
 Getting Started
 ---------------
@@ -11,8 +11,8 @@ To create a new configuration, start with a minimal JSON file containing only th
 .. code-block:: json
 
    {
-     "type": "sv::stereo_viewer_config@1.0.0",
-     "name": "dvrk_stereo_viewer",
+     "type": "sv::dvrk_display_config@1.0.0",
+     "name": "dvrk_display",
      "left_stream": "v4l2src device=/dev/video0 ! video/x-raw,width=1920,height=1080",
      "right_stream": "v4l2src device=/dev/video1 ! video/x-raw,width=1920,height=1080"
    }
@@ -27,8 +27,8 @@ After tuning with the configurator, a complete configuration file will look like
 .. code-block:: json
 
    {
-     "type": "sv::stereo_viewer_config@1.0.0",
-     "name": "dvrk_stereo_viewer",
+     "type": "sv::dvrk_display_config@1.0.0",
+     "name": "dvrk_display",
      "dvrk_console_namespace": "console",
      "ros_image_publishers": ["stereo"],
      "overlay_alpha": 0.7,
@@ -59,10 +59,10 @@ Field Reference
      - Description
    * - ``type``
      - string
-     - **Required.** Must be ``"sv::stereo_viewer_config@1.0.0"``. Validated on startup.
+     - **Required.** Must be ``"sv::dvrk_display_config@1.0.0"``. Validated on startup.
    * - ``name``
      - string
-     - Name of the viewer instance. Used as the ROS node name. Default: ``"dvrk_stereo_viewer"``.
+     - Name of the viewer instance. Used as the ROS node name. Default: ``"dvrk_display"``.
    * - ``left_stream``
      - string
      - **Required.** GStreamer pipeline fragment for the left camera source. Must end with a raw video pad.
@@ -129,7 +129,7 @@ Example Configurations
 
 The package ships example configuration files under ``share/``:
 
-- ``stereo_viewer.json`` — basic configuration template for standard V4L2 stereo sources.
+- ``dvrk_display.json`` — basic configuration template for standard V4L2 stereo sources.
 - ``decklink_gooviz.json`` — pre-configured for Blackmagic Decklink capture cards with Gooviz displays.
-- ``stereo_viewer_config.schema.json`` — the formal JSON Schema definition for validation.
+- ``dvrk_display_config.schema.json`` — the formal JSON Schema definition for validation.
 

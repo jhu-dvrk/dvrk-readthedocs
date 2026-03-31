@@ -6,7 +6,7 @@ Stereo Viewer
 .. warning::
    The dVRK stereo viewer and associated `configurator` tools are exclusively supported on ROS 2. ROS 1 is **not** supported.
 
-The ``dvrk_stereo_viewer`` package provides a lightweight, pure C++ application designed to intercept, compose, and display stereo video feeds using native GStreamer elements. 
+The ``dvrk_display`` package provides a lightweight, pure C++ application designed to intercept, compose, and display stereo video feeds using native GStreamer elements. 
 
 GStreamer Native Rendering & Low Latency
 ----------------------------------------

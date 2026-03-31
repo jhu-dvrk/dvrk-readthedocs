@@ -71,11 +71,11 @@ This metadata is stored in the sidecar JSON and enables :doc:`extract` to split 
 Stereo Pipeline Configurator
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the ``stereo_configurator`` utility to interactively tune a side-by-side stereo stream and generate a copy/paste ``stream`` string for ``record`` JSON configs.
+Use the ``stereo_calibration`` utility to interactively tune a side-by-side stereo stream and generate a copy/paste ``stream`` string for ``record`` JSON configs.
 
 .. code-block:: bash
 
-    ros2 run data_collection stereo_configurator \
+    ros2 run dvrk_display stereo_calibration \
   -f "v4l2src device=/dev/video0 ! video/x-raw,width=1280,height=720,framerate=30/1" \
   -s "v4l2src device=/dev/video1 ! video/x-raw,width=1280,height=720,framerate=30/1"
 

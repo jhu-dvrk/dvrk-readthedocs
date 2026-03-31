@@ -1,7 +1,7 @@
 Configurator Tool
 =================
 
-Tuning the stereoscopic pipeline is executed interactively via the bundled Python-based ``configurator`` script within the `dvrk_stereo_viewer` architecture.
+Tuning the stereoscopic pipeline is executed interactively via the bundled Python-based ``configurator`` script within the `dvrk_display` architecture.
 
 Launching the Configurator
 --------------------------
@@ -10,13 +10,13 @@ To execute a fresh mapping, supply an existing (or entirely new) JSON file direc
 
 .. code-block:: bash
 
-   ros2 run dvrk_stereo_viewer configurator -c my_settings.json
+   ros2 run dvrk_display configurator -c my_settings.json
 
 Alternatively, display left and right eyes directly to entirely decoupled window panes using the ``-s`` or ``--split`` argument (highly advantageous on modern HDR tiled displays):
 
 .. code-block:: bash
 
-   ros2 run dvrk_stereo_viewer configurator -c my_settings.json -s
+   ros2 run dvrk_display configurator -c my_settings.json -s
 
 Interactive Controls
 --------------------
