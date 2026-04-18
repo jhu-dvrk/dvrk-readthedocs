@@ -51,7 +51,8 @@ to configure for the dVRK:
 * In tab "Ethernet", change MTU to 3000.  The default is 1500 and is
   not enough if you have a full da Vinci (2 MTMs, 3 PSMs, ECM and
   SUJ).
-* In tab "IPv4 Settings", change "method" to "Link-Local Only"
+* In tab "IPv4 Settings", change "method" to "Link-Local Only".
+* In tab "IPv6 Settings", change to "Disabled"
 
 macOS
 =====
