@@ -4,10 +4,6 @@
 ROS 2
 *****
 
-This code hasn't been tested extensively.  We welcome any feedback.
-The following has been tested on Ubuntu 20.04 with ROS 2 Galactic,
-Ubuntu 22.04 with ROS 2 Humble and Ubuntu 24.04 with ROS 2 Jazzy.
-
 Ubuntu packages
 ###############
 
@@ -65,7 +61,7 @@ Create your ROS 2 workspace and clone all repositories using ``vcs``:
 .. code-block:: bash
 
    # this depends on the ROS version you're using
-   source /opt/ros/galactic/setup.bash
+   source /opt/ros/jazzy/setup.bash
    mkdir -p ~/ros2_ws/src
    cd ~/ros2_ws/src
    # make sure you use the correct vcs file
