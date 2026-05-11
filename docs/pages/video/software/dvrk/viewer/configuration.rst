@@ -8,7 +8,7 @@ Getting Started
 ---------------
 
 To create a new configuration, start with a minimal JSON file containing only
-the essential fields.  The ``camera.size``, ``camera.left.stream``, and
+the essential fields.  The ``camera.left.stream``, and
 ``camera.right.stream`` keys are required:
 
 .. code-block:: json
@@ -18,7 +18,6 @@ the essential fields.  The ``camera.size``, ``camera.left.stream``, and
      "name": "dvrk_display",
      "sinks": ["glimage"],
      "camera": {
-       "size": { "width": 640, "height": 480 },
        "left":  { "stream": "v4l2src device=/dev/video0" },
        "right": { "stream": "v4l2src device=/dev/video1" }
      }

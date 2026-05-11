@@ -17,7 +17,7 @@ temporarily with ``-l`` and ``-r``:
 
    ros2 run dvrk_display calibration -c my_settings.json
 
-Display each eye in a separate window with ``-s`` / ``--split`` (recommended for
+Display each eye in a separate window with ``-s`` / ``--split`` (not recommended for
 Gooviz or other side-by-side displays):
 
 .. code-block:: bash
