@@ -4,9 +4,9 @@ Stereo Viewer
 =============
 
 .. warning::
-   The dVRK stereo viewer and associated `configurator` tools are exclusively supported on ROS 2. ROS 1 is **not** supported.
+   The dVRK stereo viewer and associated `calibration` tools are exclusively supported on ROS 2. ROS 1 is **not** supported.
 
-The ``dvrk_display`` package provides a lightweight, pure C++ application designed to intercept, compose, and display stereo video feeds using native GStreamer elements. 
+The ``dvrk_display`` package provides a lightweight, pure C++ application designed to intercept, compose, and display stereo video feeds using native GStreamer elements. You can launch the viewer using the ``stereo`` (or ``mono``) executable, for example: ``ros2 run dvrk_display stereo``.
 
 GStreamer Native Rendering & Low Latency
 ----------------------------------------
@@ -20,5 +20,5 @@ In addition to rendering the video feed natively, the viewer displays discrete i
 .. toctree::
 
    configuration
-   configurator_tool
+   calibration_tool
    pipeline

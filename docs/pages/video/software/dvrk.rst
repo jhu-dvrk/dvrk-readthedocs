@@ -1,5 +1,5 @@
-dVRK Applications
-=================
+dVRK software
+=============
 
 .. toctree::
 
