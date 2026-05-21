@@ -71,7 +71,7 @@ Motion queries
 
   * *cisst*: read command ``prmPositionCartesianGet``
   * *ROS*: publisher ``geometry_msgs/TransformStamped``
-  * |CRTK|_: measured cartesian position.https://github.com/jhu-cisst/cisst-ros/tree/main/cisst_ros_crtk
+  * |CRTK|_: measured cartesian position.
 
 * ``measured_cv``
 
