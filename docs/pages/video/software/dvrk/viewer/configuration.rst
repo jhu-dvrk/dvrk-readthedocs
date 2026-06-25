@@ -1,15 +1,16 @@
 Configuration Schema
 ====================
 
-The ``dvrk_display`` stereo executable uses a JSON configuration file validated
-against the ``dd::display_config@1.0.0`` schema.
+The ``dvrk_display`` executables use a JSON configuration file validated against a specific schema. The ``stereo`` executable uses the ``dd::display_config@1.0.0`` schema, while the ``mono`` executable uses the ``dd::mono_config@1.0.0`` schema.
 
 Getting Started
 ---------------
 
-To create a new configuration, start with a minimal JSON file containing only
-the essential fields.  The ``camera.left.stream``, and
-``camera.right.stream`` keys are required:
+To create a new configuration, start with a minimal JSON file containing only the essential fields.
+
+For **Stereo Viewer** (uses ``dd::display_config@1.0.0``):
+
+The ``camera.size``, ``camera.left.stream``, and ``camera.right.stream`` fields are required:
 
 .. code-block:: json
 
@@ -18,21 +19,33 @@ the essential fields.  The ``camera.left.stream``, and
      "name": "dvrk_display",
      "sinks": ["glimage"],
      "camera": {
+       "size": { "width": 640, "height": 480 },
        "left":  { "stream": "v4l2src device=/dev/video0" },
        "right": { "stream": "v4l2src device=/dev/video1" }
      }
    }
 
-Most other fields (crop dimensions, alignment shifts, color calibration, display
-offset, etc.) are best adjusted interactively using the :doc:`calibration_tool`
-rather than edited by hand.  The calibration tool will populate and update the
-remaining fields in the JSON file automatically.
+For **Mono Viewer** (uses ``dd::mono_config@1.0.0``):
+
+The ``camera.stream`` field is required:
+
+.. code-block:: json
+
+   {
+     "type": "dd::mono_config@1.0.0",
+     "name": "dvrk_display_mono",
+     "sinks": ["glimage"],
+     "camera": {
+       "stream": "v4l2src device=/dev/video0"
+     }
+   }
+
+Most stereo-specific fields (crop dimensions, alignment shifts, color calibration, display offset, etc.) are best adjusted interactively using the :doc:`calibration_tool` rather than edited by hand. The calibration tool will populate and update these fields in the JSON file automatically.
 
 Full Configuration Reference
 ----------------------------
 
-After tuning with the calibration tool, a complete configuration file will look
-like:
+**Stereo Configuration Example:**
 
 .. code-block:: json
 
@@ -40,7 +53,6 @@ like:
      "type": "dd::display_config@1.0.0",
      "name": "dvrk_display",
      "dvrk_console_namespace": "console",
-     "ros_image_publishers": ["stereo"],
      "overlay_alpha": 0.7,
      "preserve_size": true,
      "display_horizontal_offset_px": 18,
@@ -63,6 +75,27 @@ like:
      }
    }
 
+**Mono Configuration Example:**
+
+.. code-block:: json
+
+   {
+     "type": "dd::mono_config@1.0.0",
+     "name": "dvrk_display_mono",
+     "dvrk_console_namespace": "console",
+     "overlay_alpha": 0.7,
+     "sinks": ["glimage"],
+     "unixfdsinks": [
+       { "stream": "raw", "name": "raw_output" },
+       { "stream": "overlay", "name": "overlay_output" }
+     ],
+     "camera": {
+       "stream": "v4l2src device=/dev/video0",
+       "size": { "width": 640, "height": 480 },
+       "color": { "brightness": 0.0, "contrast": 1.0, "saturation": 1.0, "hue": 0.0 }
+     }
+   }
+
 Top-Level Field Reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -75,7 +108,7 @@ Top-Level Field Reference
      - Description
    * - ``type``
      - string
-     - **Required.** Must be ``"dd::display_config@1.0.0"``.  Validated on startup.
+     - **Required.** Must be ``"dd::display_config@1.0.0"`` (stereo) or ``"dd::mono_config@1.0.0"`` (mono). Validated on startup.
    * - ``name``
      - string
      - Name of the viewer instance used as the ROS node name. Default: ``"dvrk_display"``.
@@ -83,45 +116,47 @@ Top-Level Field Reference
      - string
      - ROS namespace of the dVRK console, used to discover teleop and PSM topics for
        the HUD overlay. Default: ``"console"``.
-   * - ``ros_image_publishers``
-     - array
-     - List of ROS image streams to publish. Accepted values: ``"left"``, ``"right"``,
-       ``"stereo"``. Default: ``[]`` (none).
    * - ``overlay_alpha``
      - number
      - Opacity of the HUD overlay icons (0.0 = transparent, 1.0 = opaque). Default: ``0.7``.
    * - ``preserve_size``
      - boolean
-     - When ``true``, upscales the cropped image back to the original frame dimensions
+     - **Stereo only.** When ``true``, upscales the cropped image back to the original frame dimensions
        without black borders. Default: ``true``.
    * - ``display_horizontal_offset_px``
      - integer
-     - Horizontal pixel offset applied symmetrically to each eye's crop window so that
-       the stereo display presents content at the surgeon's working depth.  Set by the
+     - **Stereo only.** Horizontal pixel offset applied symmetrically to each eye's crop window so that
+       the stereo display presents content at the surgeon's working depth. Set by the
        calibration tool (``[`` / ``]`` keys). Default: ``0``.
    * - ``sinks``
      - array
-     - Display output sinks. ``"glimage"`` opens a single side-by-side stereo window;
-       ``"glimages"`` opens two separate per-eye windows. Default: ``[]``.
+     - Display output sinks. ``"glimage"`` opens a single window (side-by-side stereo for stereo; standard window for mono);
+       ``"glimages"`` opens two separate per-eye windows (stereo only). Default: ``[]``.
    * - ``unixfdsinks``
      - array
-     - Zero-copy shared-memory outputs via Unix file-descriptor sockets.  Each entry is
-       an object with a mandatory ``"stream"`` key (``"left"``, ``"right"``, ``"stereo"``,
-       or ``"overlay"``), an optional ``"name"`` label, and an optional ``"socket_path"``
-       (auto-generated from ``name`` and username when omitted).
+     - Zero-copy shared-memory outputs via Unix file-descriptor sockets. Each entry is
+       an object with a mandatory ``"stream"`` key, an optional ``"name"`` label, and an optional
+       ``"socket_path"`` (auto-generated from ``name`` and username when omitted).
+       
+       * **Stereo streams:** ``"left"``, ``"right"``, ``"stereo"``, or ``"overlay"``.
+       * **Mono streams:** ``"raw"`` or ``"overlay"``.
    * - ``unixfd_socket_path``
      - string
-     - *Deprecated shorthand.*  Sets a single stereo unixfd socket path.  Prefer
+     - *Deprecated shorthand.* Sets a single stereo/mono unixfd socket path. Prefer
        ``unixfdsinks`` for new configurations.
    * - ``extra_streams``
      - object
-     - Optional picture-in-picture streams composited into the bottom of each eye.
+     - **Stereo only.** Optional picture-in-picture streams composited into the bottom of each eye.
        See `Extra Streams`_ below.
+
 
 ``camera`` Object
 ~~~~~~~~~~~~~~~~~
 
-The required ``camera`` object groups all camera-related settings:
+The required ``camera`` object groups all camera-related settings. Its fields differ depending on whether you are configuring a Stereo or Mono viewer.
+
+Stereo Camera Settings (Required for ``stereo``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :header-rows: 1
@@ -163,6 +198,28 @@ The required ``camera`` object groups all camera-related settings:
        between the two cameras.  Set by the calibration tool (↑ / ↓ arrow keys).
        Default: ``0``.
 
+Mono Camera Settings (Required for ``mono``)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 10 60
+
+   * - Field
+     - Type
+     - Description
+   * - ``camera.stream``
+     - string
+     - **Required.** GStreamer pipeline fragment for the mono camera.
+   * - ``camera.size.width`` / ``camera.size.height``
+     - integer
+     - (Optional) Frame dimensions in pixels.
+   * - ``camera.color``
+     - object
+     - Color correction applied via a ``videobalance`` GStreamer element.  Fields:
+       ``brightness`` (−1.0–1.0, default 0.0), ``contrast`` (0.0–2.0, default 1.0),
+       ``saturation`` (0.0–2.0, default 1.0), ``hue`` (−1.0–1.0, default 0.0).
+
 Extra Streams
 ~~~~~~~~~~~~~
 
@@ -190,8 +247,8 @@ picture-in-picture strip at the bottom of each eye.  At most two extra streams
      - Fraction of eye height reserved for the extra-stream strip (0.01–0.99).
        Default: ``0.3`` (30 %).
 
-Geometric Scaling & Size Preservation
---------------------------------------
+Geometric Scaling & Size Preservation (Stereo Only)
+---------------------------------------------------
 
 GStreamer crops each eye by computing asymmetric left/right and top/bottom crop
 values from ``camera.alignment.horizontal_shift_px``,
@@ -209,11 +266,9 @@ with no ``xpos`` adjustments.
 Color Calibration
 ------------------
 
-``camera.left.color`` and ``camera.right.color`` inject ``videobalance``
-GStreamer elements per eye.  Adjusting ``brightness``, ``contrast``,
-``saturation``, and ``hue`` corrects manufacturing differences or lighting
-imbalances between the two lenses.  Use the :doc:`calibration_tool` ``c`` key to
-cycle through automatic matching modes.
+Color correction is applied via ``videobalance`` GStreamer elements. For the stereo viewer, this uses ``camera.left.color`` and ``camera.right.color`` per eye. For the mono viewer, this uses ``camera.color``.
+
+Adjusting ``brightness``, ``contrast``, ``saturation``, and ``hue`` corrects manufacturing differences or lighting imbalances. For the stereo viewer, use the :doc:`calibration_tool` ``c`` key to cycle through automatic matching modes.
 
 Example Configurations
 -----------------------
@@ -227,4 +282,6 @@ The package ships ready-to-use configuration files under ``share/``:
   per-eye displays.
 - ``doc_stereo_simple.json`` / ``doc_stereo_complex.json`` — Minimal and
   feature-complete documentation templates.
-- ``stereo_config.schema.json`` — Formal JSON Schema for offline validation.
+- ``test_mono.json`` — Simple test configuration for the mono viewer.
+- ``stereo_config.schema.json`` — Formal JSON Schema for offline stereo validation.
+- ``mono_config.schema.json`` — Formal JSON Schema for offline mono validation.
