@@ -1,12 +1,12 @@
 Integration & Pipeline
 ======================
 
-The package provides two executables, ``stereo`` (built from ``main_stereo.cpp``) and ``mono`` (built from ``main_mono.cpp``), which construct custom GStreamer topologies from their designated JSON schemas.
+The package provides the ``stereo`` executable (built from ``main_stereo.cpp``), which constructs custom GStreamer topologies from its designated JSON schema.
 
 Hardware Acceleration
 ---------------------
 
-Stereo/mono hardware sources bypass standard memory copying entirely whenever possible.
+Stereo hardware sources bypass standard memory copying entirely whenever possible.
 
 By passing variables like ``preserve_size`` and exact coordinate subsets directly down to standard elements (``videocrop``, ``videoscale``), the pipeline resolves spatial padding locally before issuing payloads up to complex multi-sinks (e.g. ``glimagesink``, OpenGL texture mappers, or generic ``appsink`` drop zones).
 
@@ -18,8 +18,7 @@ To support modular and flexible multi-process architectures without incurring th
 When configured via ``unixfdsinks`` in the JSON configuration:
 
 * The viewer exports video frames directly as Unix file descriptors (shared memory buffers) over Unix domain sockets.
-* For the **Stereo Viewer**, you can route the ``left``, ``right``, ``stereo`` (side-by-side composition), or ``overlay`` (composed with HUD) streams.
-* For the **Mono Viewer**, you can route the ``raw`` or ``overlay`` streams.
+* You can route the ``left``, ``right``, ``stereo`` (side-by-side composition), or ``overlay`` (composed with HUD) streams.
 * Other local processes (such as custom machine-vision or video recording nodes) can connect to these Unix sockets to consume the video streams with near-zero latency.
 
 ROS Integration via gscam
@@ -53,7 +52,7 @@ This approach allows external vision processing, recording, or ROS-based visuali
 Overlay HUD
 ------------
 
-The viewer renders a real-time heads-up display (HUD) directly onto the video feed using a GStreamer ``cairooverlay`` element (named ``stereo_overlay`` or ``mono_overlay``). The overlay subscribes to the :ref:`dVRK System Node <system>` ROS topics (via the ``dvrk_console_namespace``) and reflects the current operational state. The overlay opacity is controlled by the ``overlay_alpha`` configuration field.
+The viewer renders a real-time heads-up display (HUD) directly onto the video feed using a GStreamer ``cairooverlay`` element (named ``stereo_overlay``). The overlay subscribes to the :ref:`dVRK System Node <system>` ROS topics (via the ``dvrk_console_namespace``) and reflects the current operational state. The overlay opacity is controlled by the ``overlay_alpha`` configuration field.
 
 The following indicators are displayed:
 
@@ -80,3 +79,24 @@ The following indicators are displayed:
 
    - **Filled** when the ECM ``following`` state is active.
    - **Outlined** when the ECM teleop is selected but not following.
+
+Augmented Reality (AR) Overlay Pipeline
+----------------------------------------
+
+When AR is enabled (``ar.enabled: true``), the stereo pipeline constructs a dual-layer video composition for each eye using hardware-accelerated ``glvideomixer`` elements (named ``left_ar_mix`` and ``right_ar_mix``).
+
+**Architecture**
+
+* **Layer 1 (Background):** The live left and right endoscope camera streams.
+* **Layer 2 (Foreground Overlay):** The AR overlay streams pulled from the UNIX domain sockets via ``unixfdsrc`` elements (``left_ar_src`` and ``right_ar_src``).
+
+**Color Keying (Chroma Keying)**
+
+If a ``color_key`` (RGB) is specified in the configuration, the viewer automatically injects a GStreamer ``alpha`` element set to ``method=custom`` targeting the specified color. This converts matching background pixels in the AR stream to transparent alpha, allowing the background endoscope video to show through.
+
+**Dynamic Frame Rate & Synchronization**
+
+To allow external AR generators (e.g. AI inference or complex calculation scripts) to run at variable frame rates without lagging or freezing the main display, the viewer attaches GStreamer pad probes to the ``src`` pad of the AR sources. These probes rewrite the Presentation Timestamp (PTS) of incoming AR frames using the pipeline's current running time:
+
+* This decouples the display framerate from the AR inference framerate.
+* The ``glvideomixer`` will continuously render the latest available AR frame over the live, full-frame-rate background feed.

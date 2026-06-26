@@ -6,7 +6,7 @@ Stereo Viewer
 .. warning::
    The dVRK stereo viewer and associated `calibration` tools are exclusively supported on ROS 2. ROS 1 is **not** supported.
 
-The ``dvrk_display`` package provides a lightweight, pure C++ application designed to intercept, compose, and display stereo video feeds using native GStreamer elements. You can launch the viewer using the ``stereo`` (or ``mono``) executable, for example: ``ros2 run dvrk_display stereo``.
+The ``dvrk_display`` package provides a lightweight, pure C++ application designed to intercept, compose, and display stereo video feeds using native GStreamer elements. You can launch the viewer using the ``stereo`` executable, for example: ``ros2 run dvrk_display stereo``.
 
 See a video demonstration of the stereo viewer and its overlay features on the `@dvrk-robot <https://www.youtube.com/@dvrk-robot>`_ YouTube channel: `dVRK Stereo Display Example <https://youtu.be/NyHr2-rO-T0?si=KeEKETHXyHFg2tmx>`_.
 
@@ -22,12 +22,11 @@ In addition to rendering the video feed natively, the viewer displays discrete i
 Running the Viewer
 ------------------
 
-The package provides two executables: ``stereo`` for 3D displays (such as the surgeon's console) and ``mono`` for standard flat panels. They can be launched via ROS 2:
+The package provides the ``stereo`` executable for 3D displays (such as the surgeon's console). It can be launched via ROS 2:
 
 .. code-block:: bash
 
    ros2 run dvrk_display stereo -c <config.json> [--grid] [-g <0|1|2|3>]
-   ros2 run dvrk_display mono -c <config.json> [-g <0|1|2|3>]
 
 Command-Line Options
 ~~~~~~~~~~~~~~~~~~~~
