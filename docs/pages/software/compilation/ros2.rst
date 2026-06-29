@@ -87,6 +87,31 @@ Compile using ``colcon``:
    colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --symlink-install
    source ~/ros2_ws/install/setup.bash
 
+.. note:: If you don't want to type the ``--cmake-args`` and ``--symlink-install`` flags every time, you can create a default configuration file for ``colcon``.
+
+   To apply these settings globally to all workspaces for the current user, create the file at ``~/.colcon/defaults.yaml``:
+
+   .. code-block:: bash
+
+      mkdir -p ~/.colcon
+      cat <<EOF > ~/.colcon/defaults.yaml
+      build:
+        symlink-install: true
+        cmake-args:
+          - "-DCMAKE_BUILD_TYPE=Release"
+      EOF
+
+   To apply these settings only to the current workspace, create a file named ``colcon_defaults.yaml`` in the root of your workspace (e.g., ``~/ros2_ws/colcon_defaults.yaml``):
+
+   .. code-block:: bash
+
+      cat <<EOF > ~/ros2_ws/colcon_defaults.yaml
+      build:
+        symlink-install: true
+        cmake-args:
+          - "-DCMAKE_BUILD_TYPE=Release"
+      EOF
+
 .. note:: `colcon build` is not as smart as ``catkin build``: you need
    to be in the top directory of your workspace to build (for example
    ``~/ros2_ws``).  Do not try to build in a subdirectory in your
