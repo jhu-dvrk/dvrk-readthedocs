@@ -108,7 +108,36 @@ teleoperated by which MTM.  ROS is used to track the system's state.
 The two widgets can be dragged on top of the left and right views in
 the stereo display. This is a poor man's version of the UI in a
 clinical system, but it can still help users who are not familiar with
-the system.
+the system.  We recommend to use ``dvrk_display stereo`` instead.
+
+.. _dvrk_display_stereo:
+
+``dvrk_display stereo``
+***********************
+
+* C++ ROS 2 application using GTK and GStreamer
+* ROS package ``dvrk_display``
+* Compatible with **dVRK setups using stereo video displays**
+* https://github.com/jhu-dvrk/dvrk_display
+
+Stereo video viewer for dVRK systems. It renders the endoscope video
+feed and optional dVRK overlays using native GStreamer pipelines. See
+the :doc:`dVRK stereo viewer documentation
+</pages/video/software/dvrk/viewer/index>` for configuration and usage.
+
+.. _dvrk_display_control_panel:
+
+``dvrk_display control_panel``
+******************************
+
+* C++ ROS 2 application using GTK
+* ROS package ``dvrk_display``
+* Compatible with **all dVRK setups**
+* https://github.com/jhu-dvrk/dvrk_display
+
+Control panel for dVRK systems. It provides a touchscreen-friendly
+interface to monitor arm states and interact with common console
+controls.
 
 .. _sd-card-updater:
 
