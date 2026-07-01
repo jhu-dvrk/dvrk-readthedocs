@@ -105,7 +105,8 @@ Compile using ``colcon``:
 
    .. code-block:: bash
 
-      cat <<EOF > ~/ros2_ws/colcon_defaults.yaml
+      cd ~/ros2_ws
+      cat <<EOF > ./colcon_defaults.yaml
       build:
         symlink-install: true
         cmake-args:
