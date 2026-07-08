@@ -1,12 +1,22 @@
 Record
 ======
 
-The recording application is the core component of this project. It captures multi-stream video and audio while preserving each source's native timestamps, and it also records ROS2 topics.
+The ``record`` application is the data collection entry point in
+``dvrk_data``.  It captures multi-stream video and audio through GStreamer,
+preserves each source's native timestamps, and can record ROS 2 topics into
+bags during the same session.
+
+Video acquisition is intentionally independent of ROS image topics.  Video
+sources are described as GStreamer snippets, and streams can come directly from
+hardware or from another local process through ``unixfdsrc``.  This keeps the
+high-bandwidth image path local to GStreamer while ROS 2 is used for command,
+status, and lower-bandwidth robot messages.
 
 Examples and configuration files
 --------------------------------
 
-Define your video sources in a JSON file. The configuration format is defined in the JSON schema.
+Define your video sources, ROS 2 topics, and optional stages in a JSON file.
+The configuration format is defined in the JSON schema.
 
 **Example config.json:**
 
@@ -48,7 +58,9 @@ Define your video sources in a JSON file. The configuration format is defined in
 Stereo Video Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For side-by-side stereo video sources (e.g., two cameras composited horizontally), use the ``side_by_side`` field to indicate the layout:
+For side-by-side stereo video sources, including streams created by another
+GStreamer process and delivered through ``unixfd``, use the ``side_by_side``
+field to indicate the layout:
 
 .. code-block:: json
 
@@ -68,40 +80,43 @@ For side-by-side stereo video sources (e.g., two cameras composited horizontally
 
 This metadata is stored in the sidecar JSON and enables :doc:`extract` to split the video into separate left/right channels using the ``-S`` option.
 
-Stereo Pipeline Configurator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Stereo Alignment Utility
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the ``stereo_calibration`` utility to interactively tune a side-by-side stereo stream and generate a copy/paste ``stream`` string for ``record`` JSON configs.
+Use the ``stereo_alignment_calibration`` utility to interactively tune a stereo
+stream and save alignment values in a JSON config.  This utility belongs to the
+``dvrk_data`` transport layer; the surgeon-console display calibration is
+documented separately with ``dvrk_console``.
 
 .. code-block:: bash
 
-    ros2 run dvrk_display stereo_calibration \
-  -f "v4l2src device=/dev/video0 ! video/x-raw,width=1280,height=720,framerate=30/1" \
-  -s "v4l2src device=/dev/video1 ! video/x-raw,width=1280,height=720,framerate=30/1"
+    ros2 run dvrk_data stereo_alignment_calibration -c stereo_alignment.json \
+      -l "v4l2src device=/dev/video0 ! video/x-raw,width=1280,height=720,framerate=30/1" \
+      -r "v4l2src device=/dev/video1 ! video/x-raw,width=1280,height=720,framerate=30/1"
 
 The tool provides:
 
 - Keyboard controls only (OpenCV window), no Tk/GUI dependency.
-- Inputs must be GStreamer source snippets for both ``--first`` and ``--second``.
+- Inputs must be GStreamer source snippets for both ``--left`` and ``--right``.
 - **+/-**: resize the crop rectangle (aspect ratio preserved, no scaling stage in pipeline).
 - **Left/Right arrows**: change horizontal baseline in pixels.
 - **Up/Down arrows**: change vertical offset between the left and right images.
-- **t**: preview-only left/right swap to help identify channels.
 - **f**: toggle fullscreen preview and stretch to fill the screen (preview only).
 
-The generated value can be pasted into the ``stream`` field, for example (``side_by_side`` remains ``LR``):
+The saved alignment values can be reused with the same left and right stream definitions, for example:
 
 .. code-block:: json
 
     {
-      "videos": [
-        {
-          "name": "stereo_camera",
-          "stream": "<paste generated stream string>",
-          "side_by_side": "LR",
-          "record": true
-        }
-      ]
+      "type": "dvrk_data:stereo_alignment@1.0.0",
+      "name": "stereo_alignment",
+      "camera": {
+        "size": { "width": 1280, "height": 720 },
+        "left": { "stream": "v4l2src device=/dev/video0" },
+        "right": { "stream": "v4l2src device=/dev/video1" },
+        "crop": { "width": 1200, "height": 675 },
+        "alignment": { "horizontal_shift_px": 0, "vertical_shift_px": 0 }
+      }
     }
 
 The initial resize is 100% (no zoom).
@@ -140,7 +155,7 @@ After building your workspace, run the record using ``ros2 run``:
 
 .. code-block:: bash
 
-    ros2 run data_collection record -c config.json
+    ros2 run dvrk_data record -c config.json
 
 **Note:** Configuration file paths can be relative to your current working directory or absolute paths.
 The application will strictly check for the existence of all provided configuration files and abort with a CRITICAL error if any are missing.
@@ -163,7 +178,7 @@ If the ``stages`` field is provided in the configuration, a "Stages" list will a
 ROS integration
 ---------------
 
-The record functions as a ROS2 node named ``record``.
+The record functions as a ROS 2 node named ``record``.
 
 Control Topics
 ~~~~~~~~~~~~~~
@@ -178,7 +193,7 @@ Topic                  Type                   Direction    Description
 Command Line Examples
 ~~~~~~~~~~~~~~~~~~~~~
 
-Ensure you have sourced your ROS2 environment (e.g., ``source /opt/ros/humble/setup.bash``).
+Ensure you have sourced your ROS 2 environment (e.g., ``source /opt/ros/humble/setup.bash``).
 
 **Start Recording:**
 

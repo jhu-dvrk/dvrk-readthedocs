@@ -13,7 +13,7 @@ The tool requires the session's configuration file and a specific video file fro
 
 .. code-block:: bash
 
-    ros2 run data_collection video_tag -v 2026/02/18_025457/camera_1_220117_153206.mp4 -c config.json
+    ros2 run dvrk_data video_tag -v 2026/02/18_025457/camera_1_220117_153206.mp4 -c config.json
 
 The application will strictly check for the existence of all provided parameters and abort with a CRITICAL error if the video or configuration file is missing.
 

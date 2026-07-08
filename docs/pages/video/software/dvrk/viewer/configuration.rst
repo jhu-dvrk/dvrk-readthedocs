@@ -1,22 +1,27 @@
 Configuration Schema
 ====================
 
-The ``dvrk_display`` executable uses a JSON configuration file validated against a specific schema. The ``stereo`` executable uses the ``dd::display_config@1.0.0`` schema.
+The ``dvrk_console stereo_display`` executable uses a JSON configuration file
+validated against the ``dvrk_console:stereo_display@1.0.0`` schema.  This
+configuration describes the surgeon-console display: camera input streams,
+stereo alignment, display sinks, HUD overlays, picture-in-picture streams,
+optional AR overlays, and optional ``unixfd`` outputs for other local processes.
 
 Getting Started
 ---------------
 
-To create a new configuration, start with a minimal JSON file containing only the essential fields.
+To create a new configuration, start with a minimal JSON file containing only
+the essential display fields.
 
-For **Stereo Viewer** (uses ``dd::display_config@1.0.0``):
+For **Stereo Viewer** (uses ``dvrk_console:stereo_display@1.0.0``):
 
 The ``camera.size``, ``camera.left.stream``, and ``camera.right.stream`` fields are required:
 
 .. code-block:: json
 
    {
-     "type": "dd::display_config@1.0.0",
-     "name": "dvrk_display",
+     "type": "dvrk_console:stereo_display@1.0.0",
+     "name": "dvrk_console",
      "sinks": ["glimage"],
      "camera": {
        "size": { "width": 640, "height": 480 },
@@ -35,8 +40,8 @@ Full Configuration Reference
 .. code-block:: json
 
    {
-     "type": "dd::display_config@1.0.0",
-     "name": "dvrk_display",
+     "type": "dvrk_console:stereo_display@1.0.0",
+     "name": "dvrk_console",
      "dvrk_console_namespace": "console",
      "overlay_alpha": 0.7,
      "preserve_size": true,
@@ -72,10 +77,10 @@ Top-Level Field Reference
      - Description
    * - ``type``
      - string
-     - **Required.** Must be ``"dd::display_config@1.0.0"``. Validated on startup.
+     - **Required.** Must be ``"dvrk_console:stereo_display@1.0.0"``. Validated on startup.
    * - ``name``
      - string
-     - Name of the viewer instance used as the ROS node name. Default: ``"dvrk_display"``.
+     - Name of the viewer instance used as the ROS node name.
    * - ``dvrk_console_namespace``
      - string
      - ROS namespace of the dVRK console, used to discover teleop and PSM topics for

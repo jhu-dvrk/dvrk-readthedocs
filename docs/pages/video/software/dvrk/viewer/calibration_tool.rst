@@ -1,8 +1,8 @@
 Calibration Tool
 ================
 
-The ``calibration`` script is an interactive Python tool for tuning the
-``dvrk_display`` stereo pipeline.  It previews the live stereo feed in an
+The ``stereo_calibrate`` script is an interactive Python tool for tuning the
+``dvrk_console`` stereo pipeline.  It previews the live stereo feed in an
 OpenCV window and writes all calibrated values back into the JSON configuration
 file on exit.
 
@@ -15,21 +15,21 @@ temporarily with ``-l`` and ``-r``:
 
 .. code-block:: bash
 
-   ros2 run dvrk_display calibration -c my_settings.json
+   ros2 run dvrk_console stereo_calibrate -c my_settings.json
 
 Display each eye in a separate window with ``-s`` / ``--split`` (not recommended for
 Gooviz or other side-by-side displays):
 
 .. code-block:: bash
 
-   ros2 run dvrk_display calibration -c my_settings.json -s
+   ros2 run dvrk_console stereo_calibrate -c my_settings.json -s
 
 To oscillate a PSM arm while adjusting the display offset (useful for depth
 verification), add ``-p <PSM name>``:
 
 .. code-block:: bash
 
-   ros2 run dvrk_display calibration -c my_settings.json -p PSM1
+   ros2 run dvrk_console stereo_calibrate -c my_settings.json -p PSM1
 
 Interactive Controls
 --------------------

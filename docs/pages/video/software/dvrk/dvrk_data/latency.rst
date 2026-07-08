@@ -17,7 +17,7 @@ To run the latency estimation:
 
 .. code-block:: bash
 
-    ros2 run data_collection video_latency -c config.json
+    ros2 run dvrk_data video_latency -c config.json
 
 Once the estimated latency is identified and saved in the configuration file, it can be used during extraction to adjust timestamps and improve alignment with ROS topics and other data sources.
 

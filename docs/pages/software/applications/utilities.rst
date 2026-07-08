@@ -108,36 +108,39 @@ teleoperated by which MTM.  ROS is used to track the system's state.
 The two widgets can be dragged on top of the left and right views in
 the stereo display. This is a poor man's version of the UI in a
 clinical system, but it can still help users who are not familiar with
-the system.  We recommend to use ``dvrk_display stereo`` instead.
+the system.  We recommend to use ``dvrk_console stereo_display``
+instead.
 
-.. _dvrk_display_stereo:
+.. _dvrk_console_stereo_display:
 
-``dvrk_display stereo``
-***********************
+``dvrk_console stereo_display``
+*******************************
 
 * C++ ROS 2 application using GTK and GStreamer
-* ROS package ``dvrk_display``
+* ROS package ``dvrk_console``
 * Compatible with **dVRK setups using stereo video displays**
-* https://github.com/jhu-dvrk/dvrk_display
+* https://github.com/jhu-dvrk/dvrk_console
 
 Stereo video viewer for dVRK systems. It renders the endoscope video
-feed and optional dVRK overlays using native GStreamer pipelines. See
+feed and optional dVRK overlays on the surgeon's console using native
+GStreamer pipelines. See
 the :doc:`dVRK stereo viewer documentation
 </pages/video/software/dvrk/viewer/index>` for configuration and usage.
 
-.. _dvrk_display_control_panel:
+.. _dvrk_console_control_panel:
 
-``dvrk_display control_panel``
+``dvrk_console control_panel``
 ******************************
 
 * C++ ROS 2 application using GTK
-* ROS package ``dvrk_display``
+* ROS package ``dvrk_console``
 * Compatible with **all dVRK setups**
-* https://github.com/jhu-dvrk/dvrk_display
+* https://github.com/jhu-dvrk/dvrk_console
 
-Control panel for dVRK systems. It provides a touchscreen-friendly
-interface to monitor arm states and interact with common console
-controls.
+Simplified control panel for dVRK systems. It provides a
+touchscreen-friendly interface to monitor arm states and interact with common
+console controls.  It is intended as an operator-facing UI; the main
+``dvrk_system`` UI remains the debug/engineering interface.
 
 .. _sd-card-updater:
 

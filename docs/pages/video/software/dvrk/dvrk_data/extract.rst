@@ -11,13 +11,13 @@ To process a recorded session directory:
 
 .. code-block:: bash
 
-    ros2 run data_collection extract -d 20260117_153206
+    ros2 run dvrk_data extract -d 20260117_153206
 
 To list the videos in a session without processing:
 
 .. code-block:: bash
 
-    ros2 run data_collection extract -d 20260117_153206 -l
+    ros2 run dvrk_data extract -d 20260117_153206 -l
 
 Stereo Video Splitting
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -26,7 +26,7 @@ For videos recorded with ``side_by_side`` set to ``"LR"`` or ``"RL"`` in the con
 
 .. code-block:: bash
 
-    ros2 run data_collection extract -d 20260117_153206 -S
+    ros2 run dvrk_data extract -d 20260117_153206 -S
 
 This will create separate ``_left`` and ``_right`` output files (either MP4 videos or image sequences depending on the ``-f`` format option).
 
@@ -39,6 +39,6 @@ The ``encord_to_tags`` script allows importing labels from the Encord platform i
 
 .. code-block:: bash
 
-    ros2 run data_collection encord_to_tags --encord path/to/encord.json --sidecar path/to/video_sidecar.json
+    ros2 run dvrk_data encord_to_tags --encord path/to/encord.json --sidecar path/to/video_sidecar.json
 
 This ensures that cloud-based annotations can be used seamlessly with the local extraction and curation tools.

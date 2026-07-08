@@ -1,7 +1,12 @@
 Integration & Pipeline
 ======================
 
-The package provides the ``stereo`` executable (built from ``main_stereo.cpp``), which constructs custom GStreamer topologies from its designated JSON schema.
+The ``dvrk_console`` package provides the ``stereo_display`` executable, which
+constructs custom GStreamer topologies from its JSON configuration.  The display
+pipeline is the visualization end of the architecture: it renders video for the
+surgeon's console and can expose selected streams for other local processes, but
+session recording and extraction are handled by
+:doc:`/pages/video/software/dvrk/dvrk_data/index`.
 
 Hardware Acceleration
 ---------------------
@@ -13,20 +18,25 @@ By passing variables like ``preserve_size`` and exact coordinate subsets directl
 Zero-Copy IPC via Unix FD Sinks
 -------------------------------
 
-To support modular and flexible multi-process architectures without incurring the high CPU and latency overhead of copying high-definition frames over ROS, the viewer supports zero-copy video routing using ``unixfdsink`` elements. 
+To support modular multi-process architectures without incurring the high CPU
+and latency overhead of copying high-definition frames over ROS, the viewer
+supports zero-copy video routing using ``unixfdsink`` elements.  This is the
+same local video transport mechanism used by ``dvrk_data`` utilities.
 
 When configured via ``unixfdsinks`` in the JSON configuration:
 
 * The viewer exports video frames directly as Unix file descriptors (shared memory buffers) over Unix domain sockets.
 * You can route the ``left``, ``right``, ``stereo`` (side-by-side composition), or ``overlay`` (composed with HUD) streams.
-* Other local processes (such as custom machine-vision or video recording nodes) can connect to these Unix sockets to consume the video streams with near-zero latency.
+* Other local processes, such as custom machine-vision tools or ``dvrk_data``
+  recording pipelines, can connect to these Unix sockets to consume video
+  streams with near-zero latency.
 
 ROS Integration via gscam
 -------------------------
 
-Although ``dvrk_display`` does not publish ROS image topics directly, you can easily bridge any configured Unix FD sink back to ROS using the ``gscam`` package. This is done by creating a ``gscam`` GStreamer pipeline that uses the ``unixfdsrc`` source element.
+Although ``dvrk_console`` does not publish ROS image topics directly, you can easily bridge any configured Unix FD sink back to ROS using the ``gscam`` package. This is done by creating a ``gscam`` GStreamer pipeline that uses the ``unixfdsrc`` source element.
 
-For example, to publish an uncalibrated stereo pair over ROS alongside the ``dvrk_display stereo`` application:
+For example, to publish an uncalibrated stereo pair over ROS alongside the ``dvrk_console stereo_display`` application:
 
 1. Configure two ``unixfdsinks`` in the JSON configuration file, one for the ``left`` stream and one for the ``right`` stream:
 
@@ -41,10 +51,12 @@ For example, to publish an uncalibrated stereo pair over ROS alongside the ``dvr
 
    .. code-block:: bash
 
-      export GSCAM_CONFIG="unixfdsrc socket-path=/tmp/dvrk_display_left_raw_<user>.sock ! capsfilter caps=\"video/x-raw,format=I420,width=640,height=480,framerate=30/1\" ! videoconvert"
+      export GSCAM_CONFIG="unixfdsrc socket-path=/tmp/dvrk_console_left_raw_<user>.sock ! capsfilter caps=\"video/x-raw,format=I420,width=640,height=480,framerate=30/1\" ! videoconvert"
       ros2 run gscam gscam_node --ros-args --remap /camera/image_raw:=/left/image_raw
 
-This approach allows external vision processing, recording, or ROS-based visualization nodes to access the individual streams concurrently without affecting the primary low-latency surgeon's display.
+This approach allows external vision processing, recording, or ROS-based
+visualization nodes to access individual streams concurrently without affecting
+the primary low-latency surgeon's display.
 
 .. note::
    You will likely need to change the gstreamer caps for ``gscam`` to match the actual format of the video stream.

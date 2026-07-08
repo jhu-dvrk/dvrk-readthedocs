@@ -1,38 +1,64 @@
 .. _stereo-viewer:
 
-Stereo Viewer
-=============
+Surgeon Console Visualization
+=============================
 
 .. warning::
-   The dVRK stereo viewer and associated `calibration` tools are exclusively supported on ROS 2. ROS 1 is **not** supported.
+   The dVRK surgeon console visualization tools are exclusively supported on ROS 2. ROS 1 is **not** supported.
 
-The ``dvrk_display`` package provides a lightweight, pure C++ application designed to intercept, compose, and display stereo video feeds using native GStreamer elements. You can launch the viewer using the ``stereo`` executable, for example: ``ros2 run dvrk_display stereo``.
+The ``dvrk_console`` package contains applications intended for the surgeon's
+console.  It is focused on visualization and operator interaction, not on
+offline data collection.  The main tools are:
+
+* ``stereo_display``: a low-latency stereo display pipeline for the HRSV and
+  other stereo displays.  It renders the endoscope feed, optional dVRK status
+  overlays, picture-in-picture streams, and AR overlays using native GStreamer
+  elements.
+* ``control_panel``: a simplified operator-facing control panel.  It is meant
+  for common console interactions and status checks, while the main
+  ``dvrk_system`` UI remains the more complete debug/engineering interface.
+
+You can launch the viewer using the ``stereo_display`` executable, for example:
+``ros2 run dvrk_console stereo_display``.
 
 See a video demonstration of the stereo viewer and its overlay features on the `@dvrk-robot <https://www.youtube.com/@dvrk-robot>`_ YouTube channel: `dVRK Stereo Display Example <https://youtu.be/NyHr2-rO-T0?si=KeEKETHXyHFg2tmx>`_.
 
-GStreamer Native Rendering & Low Latency
-----------------------------------------
+Console-Oriented Rendering
+--------------------------
 
-Using GStreamer directly provides dramatically lower latency compared to routing massive, high-definition stereo streams entirely through ROS architectures. At its core, the viewer constructs direct OpenGL hardware displays to drive the master console natively.
+Using GStreamer directly provides dramatically lower latency compared to
+routing high-definition stereo streams through ROS image topics.  At its core,
+``stereo_display`` constructs a native display pipeline for the master console.
+The display consumes configured camera streams, composes the stereo image and
+overlays, and renders directly through GStreamer sinks.
 
-The architecture still provides immense modular flexibility by isolating separate viewer stages into distinct executables via ``unixfd`` inter-process video routing. Because ``unixfd`` strictly passes local descriptors natively, all video rendering and frame grabbing **must** be executed on a single, unified computer. 
+The broader ROS 2 video architecture still supports modular multi-process
+pipelines through ``dvrk_data`` and ``unixfd`` inter-process video routing.
+Because ``unixfd`` passes local file descriptors, processes exchanging video in
+this way must run on the same computer.
 
-In addition to rendering the video feed natively, the viewer displays discrete icons and textual overlays to cleanly visualize the operational state of the overarching :ref:`dVRK System Node <system>` within the master console. However, because the layout overlays depend strictly on lightweight data strings, the master dVRK system node can safely exist on an entirely separate remote computer—the viewer will naturally extract the console's state seamlessly utilizing its integrated ROS 2 topic listener.
+In addition to rendering the video feed, ``stereo_display`` displays icons and
+textual overlays that summarize the operational state of the
+:ref:`dVRK System Node <system>` within the surgeon's console.  These overlays
+subscribe to lightweight ROS 2 status topics, so the main dVRK system node can
+run on a separate computer when the video path remains local to the display
+computer.
 
 Running the Viewer
 ------------------
 
-The package provides the ``stereo`` executable for 3D displays (such as the surgeon's console). It can be launched via ROS 2:
+The package provides the ``stereo_display`` executable for 3D displays such as
+the HRSV in the surgeon's console. It can be launched via ROS 2:
 
 .. code-block:: bash
 
-   ros2 run dvrk_display stereo -c <config.json> [--grid] [-g <0|1|2|3>]
+   ros2 run dvrk_console stereo_display -c <config.json> [--grid] [-g <0|1|2|3>]
 
 Command-Line Options
 ~~~~~~~~~~~~~~~~~~~~
 
 * **``-c <config.json>``**: (Required) Path to the JSON configuration file.
-* **``--grid``**: (Optional, ``stereo`` only) Displays a calibration grid and white circle overlay to help align/fuse the display horizontally.
+* **``--grid``**: (Optional, ``stereo_display`` only) Displays a calibration grid and white circle overlay to help align/fuse the display horizontally.
 * **``-g <level>`` / ``--dot <level>``**: (Optional) Dumps the constructed GStreamer pipeline graph as a Graphviz ``.dot`` file. To use this feature, the ``GST_DEBUG_DUMP_DOT_DIR`` environment variable must be set (e.g. ``export GST_DEBUG_DUMP_DOT_DIR=/tmp``).
   
   Available detail levels:
@@ -52,4 +78,3 @@ Environment Variables
    configuration
    calibration_tool
    pipeline
-
