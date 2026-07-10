@@ -52,7 +52,7 @@ The configuration files should have been created using something like:
 .. code-block:: bash
 
    cd <where_ever_you_want_your_files>
-   dvrk-config-generator.py -a ECM -g Si -H dRA1 -s 123456  # replace 123456 by your serial number and ECM by PSM1, PSM2 or PSM3 if needed
+   dvrk-io-config-generator.py -a ECM -g Si -H dRA1 -s 123456  # replace 123456 by your serial number and ECM by PSM1, PSM2 or PSM3 if needed
 
 To calibrate the potentiometers, use:
 
