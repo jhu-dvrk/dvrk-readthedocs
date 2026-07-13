@@ -30,7 +30,14 @@ The ``camera.size``, ``camera.left.stream``, and ``camera.right.stream`` fields 
      }
    }
 
-Most fields (crop dimensions, alignment shifts, color calibration, display offset, etc.) are best adjusted interactively using the :doc:`calibration_tool` rather than edited by hand. The calibration tool will populate and update these fields in the JSON file automatically.
+Most fields (crop dimensions, alignment shifts, color calibration, display offset,
+etc.) are best adjusted interactively using the :doc:`calibration_tool` rather than
+edited by hand. The calibration tool will populate and update these fields in the
+JSON file automatically.
+
+.. note::
+   Use ``ros2 run dvrk_data gscam_socket`` to list active ``@dvrk_gst`` sockets and
+   launch ``gscam_node`` for any stream — see :doc:`pipeline` for details.
 
 Full Configuration Reference
 ----------------------------
@@ -48,8 +55,8 @@ Full Configuration Reference
      "display_horizontal_offset_px": 18,
      "sinks": ["glimage"],
      "unixfdsinks": [
-       { "stream": "stereo" }
-     ],
+        { "socket": "stereo" }
+      ],
      "camera": {
        "size": { "width": 640, "height": 480 },
        "left": {
@@ -103,11 +110,12 @@ Top-Level Field Reference
        ``"glimages"`` opens two separate per-eye windows. Default: ``[]``.
    * - ``unixfdsinks``
      - array
-     - Zero-copy shared-memory outputs via Unix file-descriptor sockets. Each entry is
-       an object with a mandatory ``"stream"`` key, an optional ``"name"`` label, and an optional
-       ``"socket_path"`` (auto-generated from ``name`` and username when omitted).
-       
-       * **Stereo streams:** ``"left"``, ``"right"``, ``"stereo"``, or ``"overlay"``.
+     - Zero-copy shared-memory outputs via Unix file-descriptor sockets using
+       the ``@dvrk_gst`` abstract socket naming convention.  Each entry is an
+       object with a mandatory ``"socket"`` key whose value is a stream name
+       (``"left"``, ``"right"``, ``"stereo"``, or ``"overlay"``).  The
+       corresponding abstract socket is registered automatically by the
+       application when the pipeline starts.
    * - ``extra_streams``
      - object
      - Optional picture-in-picture streams composited into the bottom of each eye.

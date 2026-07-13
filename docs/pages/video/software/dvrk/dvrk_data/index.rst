@@ -33,9 +33,11 @@ Package Layout
 
 Video transport and utility executables include ``stereo_source``,
 ``stereo_alignment``, ``stereo_alignment_calibration``,
-``video_configurator``, and ``gscam.launch.py``.  They can be used to build
-local GStreamer pipelines, publish selected streams through ``unixfd`` sockets,
-calibrate stereo alignment, or bridge a stream back into ROS when needed.
+``video_configurator``, ``gscam_socket``, and ``gscam.launch.py``.  They can be
+used to build local GStreamer pipelines, publish selected streams through
+``@dvrk_gst`` abstract Unix sockets, calibrate stereo alignment, or bridge a
+stream back into ROS when needed.  Use ``gscam_socket`` to list active sockets
+and launch a ``gscam_node`` with a single command.
 
 Data collection executables include ``record``, ``video_tag``,
 ``video_latency``, ``extract``, and ``encord_to_tags``.  These tools share JSON

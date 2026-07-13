@@ -34,32 +34,88 @@ When configured via ``unixfdsinks`` in the JSON configuration:
 ROS Integration via gscam
 -------------------------
 
-Although ``dvrk_console`` does not publish ROS image topics directly, you can easily bridge any configured Unix FD sink back to ROS using the ``gscam`` package. This is done by creating a ``gscam`` GStreamer pipeline that uses the ``unixfdsrc`` source element.
+Although ``dvrk_console`` does not publish ROS image topics directly, any active
+``@dvrk_gst`` abstract socket can be bridged into ROS image topics using the
+``gscam_socket`` helper from ``dvrk_data``.  Sockets are created by
+``stereo_source``, ``stereo_alignment``, ``stereo_display``, or any other
+application that writes to the abstract Unix-socket transport.
 
-For example, to publish an uncalibrated stereo pair over ROS alongside the ``dvrk_console stereo_display`` application:
+Discovering available sockets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Configure two ``unixfdsinks`` in the JSON configuration file, one for the ``left`` stream and one for the ``right`` stream:
+Run ``gscam_socket`` with no arguments to list every active ``@dvrk_gst`` socket
+on the local machine:
 
-   .. code-block:: json
+.. code-block:: bash
 
-      "unixfdsinks": [
-        { "stream": "left", "name": "left_raw" },
-        { "stream": "right", "name": "right_raw" }
-      ]
+   ros2 run dvrk_data gscam_socket
 
-2. Launch ``gscam`` nodes configured to read from these sockets. The corresponding GStreamer pipeline for ``gscam`` would look like:
+Example output::
+
+   Available @dvrk_gst sockets:
+     [1] @dvrk_gst:stereo_source:left
+     [2] @dvrk_gst:stereo_source:right
+     [3] @dvrk_gst:stereo_alignment:stereo
+
+   Usage: gscam_socket <socket>
+   Example: gscam_socket @dvrk_gst:stereo_source:left
+
+Launching a gscam node
+~~~~~~~~~~~~~~~~~~~~~~
+
+Pass the desired socket to ``gscam_socket``; it verifies the socket is live and
+then starts a ``gscam_node`` under a namespace derived from the socket's role
+and name (``<role>/<name>``):
+
+.. code-block:: bash
+
+   # Short name — uses stereo_source as the default role
+   ros2 run dvrk_data gscam_socket left
+
+   # role:name form
+   ros2 run dvrk_data gscam_socket stereo_alignment:stereo
+
+   # Fully-qualified
+   ros2 run dvrk_data gscam_socket @dvrk_gst:stereo_display:overlay
+
+For ``gscam_socket left`` the image is published at
+``/stereo_source/left/image_raw`` and camera info at
+``/stereo_source/left/camera_info``.
+
+The namespace, TF ``frame_id``, and ``camera_name`` can be overridden:
+
+.. code-block:: bash
+
+   ros2 run dvrk_data gscam_socket left \
+     --namespace left_camera \
+     --frame-id left_optical_frame
+
+Configuring unixfdsinks
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Any process that exposes abstract sockets will make them available to
+``gscam_socket``.  For ``stereo_display``, add ``unixfdsinks`` entries to the
+JSON configuration with the stream name identified by a ``"socket"`` key:
+
+.. code-block:: json
+
+   "unixfdsinks": [
+     { "socket": "stereo" },
+     { "socket": "overlay" }
+   ]
+
+For ``stereo_source`` or ``stereo_alignment`` the same ``"socket"`` key is used
+in their respective configuration files (see
+:doc:`/pages/video/software/dvrk/dvrk_data/index`).
+
+.. note::
+   ``gscam_socket`` calls ``ros2 launch dvrk_data gscam.launch.py`` internally.
+   The launch file can also be invoked directly with a fully-qualified socket
+   name when scripting or integrating with other launch files:
 
    .. code-block:: bash
 
-      export GSCAM_CONFIG="unixfdsrc socket-path=/tmp/dvrk_console_left_raw_<user>.sock ! capsfilter caps=\"video/x-raw,format=I420,width=640,height=480,framerate=30/1\" ! videoconvert"
-      ros2 run gscam gscam_node --ros-args --remap /camera/image_raw:=/left/image_raw
-
-This approach allows external vision processing, recording, or ROS-based
-visualization nodes to access individual streams concurrently without affecting
-the primary low-latency surgeon's display.
-
-.. note::
-   You will likely need to change the gstreamer caps for ``gscam`` to match the actual format of the video stream.
+      ros2 launch dvrk_data gscam.launch.py socket:=@dvrk_gst:stereo_source:left
 
 Overlay HUD
 ------------
