@@ -17,9 +17,10 @@ Run it with a :doc:`stereo-display-configuration`:
 Options
 *******
 
-``--grid`` displays the calibration grid.  ``-g 0`` through ``-g 3`` writes a
-GStreamer Graphviz pipeline at increasing detail when
-``GST_DEBUG_DUMP_DOT_DIR`` is set.
+``--grid`` displays the calibration grid.
+
+For a graph of the negotiated display pipeline, see
+:ref:`dvrk-gstreamer-dot-files`.
 
 ``gtkglsink`` requires GLX.  Unless ``GDK_BACKEND`` is already set, the
 application selects ``x11`` so it can run through XWayland in a Wayland
@@ -83,8 +84,8 @@ window per eye; it is selected automatically for a ``glimages`` configuration.
 Launching the complete video path
 *********************************
 
-``da_vinci.launch.py`` starts the standard three-process video pipeline in
-dependency order:
+``stereo_video_pipeline.launch.py`` starts the standard three-process stereo
+video pipeline in dependency order:
 
 .. code-block:: text
 
@@ -96,7 +97,7 @@ With all files in one directory:
 
 .. code-block:: bash
 
-   ros2 launch dvrk_console da_vinci.launch.py \
+   ros2 launch dvrk_console stereo_video_pipeline.launch.py \
      config_dir:=/path/to/video/config
 
 The default names are ``stereo_source.json``, ``stereo_alignment.json``, and
@@ -107,7 +108,7 @@ A system-directory layout can also be selected:
 
 .. code-block:: bash
 
-   ros2 launch dvrk_console da_vinci.launch.py \
+   ros2 launch dvrk_console stereo_video_pipeline.launch.py \
      config_parent:=/path/to/systems \
      system:=jhu-daVinci
 
@@ -142,9 +143,3 @@ This uses ``/path/to/systems/jhu-daVinci`` as the base directory.
 All three paths are checked before starting a process.  The fixed delays aid
 startup ordering but are not readiness checks; inspect active sockets with
 ``ros2 run dvrk_data gscam_socket`` when troubleshooting.
-
-.. important::
-
-   Despite its filename, ``da_vinci.launch.py`` starts only the video source,
-   alignment, and display applications.  It does not start ``dvrk_system``,
-   robot arms, or ``control_panel``.

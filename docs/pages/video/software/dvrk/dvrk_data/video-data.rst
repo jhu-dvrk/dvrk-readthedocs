@@ -169,3 +169,38 @@ to save.  Add ``--split`` to open one preview window per eye.
 Stereo alignment makes corresponding image content coincide.  It does not
 create hardware camera synchronization; the two source timestamps remain
 available so their acquisition separation can be inspected.
+
+.. _dvrk-gstreamer-dot-files:
+
+Creating GStreamer dot files
+****************************
+
+The dVRK video applications can write full-detail GStreamer pipeline graphs
+without application-specific command-line options.  Create an output
+directory, set GStreamer's standard ``GST_DEBUG_DUMP_DOT_DIR`` environment
+variable, and start the application from the same shell:
+
+.. code-block:: bash
+
+   mkdir -p /tmp/dvrk-gst-dot
+   GST_DEBUG_DUMP_DOT_DIR=/tmp/dvrk-gst-dot \
+     ros2 run dvrk_data stereo_alignment -c stereo_alignment.json
+
+The snapshot is requested after preroll or shortly after a live pipeline
+reaches ``PLAYING``.  Its pad labels therefore include negotiated caps, which
+are often the most useful information when diagnosing conversions or failed
+links.  Filenames include a timestamp and use the application name.
+
+The mechanism is available for ``stereo_source``, ``stereo_alignment``,
+``record``, ``dvrk_console/stereo_display``, and the control panel's embedded
+video pipeline.  ``record`` creates one graph for each video pipeline and one
+for audio when audio is enabled.
+
+Render a generated dot file with Graphviz, for example:
+
+.. code-block:: bash
+
+   dot -Tsvg /tmp/dvrk-gst-dot/<pipeline>.dot -o pipeline.svg
+
+Unset ``GST_DEBUG_DUMP_DOT_DIR`` to disable graph generation.  The variable
+must be set before starting the application.

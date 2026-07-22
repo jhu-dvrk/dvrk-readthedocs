@@ -18,7 +18,10 @@ Useful options are:
    -c <file>           add a configuration file
    -j <threads>        set the maximum encoding worker count
    -p <topic>          change the start/stop trigger topic
-   -g <0|1|2|3>       write GStreamer pipeline graphs at the selected detail
+
+For negotiated pipeline graphs, see :ref:`dvrk-gstreamer-dot-files`.
+The recorder produces a separate graph for each video stream and for audio
+when it is enabled.
 
 Configuration
 *************

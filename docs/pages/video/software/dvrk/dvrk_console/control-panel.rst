@@ -92,6 +92,9 @@ to the computer hosting the video producer.  It does not subscribe to a ROS
 image topic.  If no source is configured or discovered, the video pane is
 hidden and the robot controls remain usable.
 
+For a graph of the negotiated preview pipeline, see
+:ref:`dvrk-gstreamer-dot-files`.
+
 Relationship to the stereo display
 ***********************************
 
