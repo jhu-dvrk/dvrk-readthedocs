@@ -121,11 +121,11 @@ instead.
 * Compatible with **dVRK setups using stereo video displays**
 * https://github.com/jhu-dvrk/dvrk_console
 
-Stereo video viewer for dVRK systems. It renders the endoscope video
+Stereo video display for dVRK systems. It renders the endoscope video
 feed and optional dVRK overlays on the surgeon's console using native
 GStreamer pipelines. See
-the :doc:`dVRK stereo viewer documentation
-</pages/video/software/dvrk/viewer/index>` for configuration and usage.
+the :doc:`dVRK stereo display documentation
+</pages/video/software/dvrk/dvrk_console/index>` for configuration and usage.
 
 .. _dvrk_console_control_panel:
 

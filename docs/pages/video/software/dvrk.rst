@@ -1,18 +1,40 @@
-dVRK software
-=============
+.. _dvrk-video-software:
 
-The ROS 2 dVRK video tools are split into two packages with distinct roles:
+dVRK video software
+###################
 
-* ``dvrk_data`` provides the video transport and data collection tools.  It
-  focuses on GStreamer-based acquisition, multi-process video routing with
-  ``unixfd`` sockets, timestamp preservation, session recording, video tagging,
-  extraction, and ROS 2 bag capture.
-* ``dvrk_console`` provides applications intended for the surgeon's console:
-  ``stereo_display`` for the HRSV/stereo display pipeline and
-  ``control_panel`` for a simplified operator-facing UI.  This is separate from
-  the main ``dvrk_system`` UI, which remains the debug/engineering interface.
+The dVRK video stack is divided into two packages.  ``dvrk_data`` owns
+video acquisition, local transport, stereo alignment, timing, recording, and
+extraction.  ``dvrk_console`` consumes those streams for the surgeon display
+and provides a simplified operator control panel.
+
+The normal video path keeps large image buffers in GStreamer and uses Linux
+``unixfd`` sockets between processes.  ROS 2 carries robot state, commands,
+and recorded telemetry; image topics are added only when a ROS image consumer
+requires them.
+
+.. code-block:: text
+
+   cameras
+      |
+      v
+   stereo_source -- left/right unixfd --> stereo_alignment
+                                               |
+                                      aligned stereo unixfd
+                                               |
+                         +---------------------+------------------+
+                         |                     |                  |
+                       record           stereo_display     other consumers
+                                               |
+                                         control_panel
+                                         optional preview
+
+.. warning::
+
+   These packages support ROS 2 only.  ROS 1 is not supported.
 
 .. toctree::
+   :maxdepth: 2
 
-   dvrk/viewer/index
    dvrk/dvrk_data/index
+   dvrk/dvrk_console/index
