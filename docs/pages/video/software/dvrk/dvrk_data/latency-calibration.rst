@@ -27,8 +27,8 @@ Procedure
 #. Choose whether to write the mean to the video's ``estimated_latency`` field.
 
 The configuration stores seconds.  :doc:`record` copies the value to the video
-sidecar as ``estimated_latency_ms`` and :doc:`extract` applies it when
-correlating acquisition ranges.
+sidecar as ``estimated_latency_ms`` for traceability.  Extraction does not
+currently subtract this value when correlating acquisition ranges.
 
 This is an empirical end-to-end estimate for the tested arrangement.  Display
 refresh, exposure, capture buffering, and pipeline processing all contribute,

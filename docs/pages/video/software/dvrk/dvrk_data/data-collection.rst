@@ -17,14 +17,15 @@ The collection tools are designed as a sequence:
                                           |
                              timestamped media and CSV
 
-Use :doc:`latency-calibration` before the final experiment when video must be
-correlated closely with robot telemetry.  The measured value is stored in the
-same video entry consumed by :doc:`record`.
+Use :doc:`latency-calibration` before the final experiment when an empirical
+video latency estimate should be recorded with the session.  The measured
+value is stored in the same video entry consumed by :doc:`record`.
 
 The applications do not force every source onto a shared clock or trigger.
-They preserve source-specific observations and apply declared latency
-corrections during extraction.  Hardware synchronization, PTP clock alignment,
-or experiment-specific correlation signals remain separate concerns.
+They preserve source-specific observations and use explicit frame timestamps
+for extraction.  Hardware synchronization, PTP clock alignment, empirical
+latency compensation, or experiment-specific correlation signals remain
+separate concerns.
 
 The principal tools are:
 

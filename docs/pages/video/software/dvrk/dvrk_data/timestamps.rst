@@ -45,15 +45,14 @@ values belong to the clock domains declared in the sidecar:
 * Stream time describes position in the media stream.
 * GStreamer clock time is not assumed to use the Unix epoch.
 
-Derived capture time
+Annotation timestamp
 ********************
 
-Downstream tools need one Unix-epoch value for correlation.  The recorder
-therefore writes ``derived.preferred_capture_time_ns`` while retaining every
-original observation.  The current preference order is:
+Downstream tools need one Unix-epoch value for range selection, output names,
+and tag conversion.  The sidecar does not store a derived timestamp; each tool
+selects an annotation timestamp from the explicit observations in the frame.
+The current preference order is:
 
-#. overlay output
-#. stereo output
 #. mono source
 #. midpoint of left and right source observations
 #. left source
@@ -68,11 +67,12 @@ Recording and extraction
 ************************
 
 The recorder writes one ``dvrk_data:video_sidecar@1.0.0`` JSON file next to
-each MP4 segment.  :doc:`extract` uses preferred capture time for correlation
-and output names, but uses GStreamer PTS to locate the encoded frame.  This
+each MP4 segment.  :doc:`extract`, :doc:`tagging`, and ``encord_to_tags`` use
+the annotation timestamp for correlation and output names.  Extraction uses
+the recorded ``frame_index`` to locate frames in the encoded video.  This
 separation avoids treating a Unix timestamp as a media seek position.
 
 ``estimated_latency`` is a separate empirical correction.  It is stored in a
-record configuration in seconds, copied to the sidecar in milliseconds, and
-subtracted by extraction when correlating acquisition ranges.  It does not
-alter the original observations or natively synchronize independent sources.
+record configuration in seconds and copied to the sidecar in milliseconds.
+It does not alter the original observations, is not applied by extraction,
+and does not natively synchronize independent sources.

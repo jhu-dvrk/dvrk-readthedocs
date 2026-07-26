@@ -45,11 +45,11 @@ the detected CPU count.
 How frames are correlated
 *************************
 
-The sidecar provides two complementary values.  Preferred capture time is the
-Unix-epoch observation used for range selection and output names.  GStreamer
-PTS is converted to an encoded-video frame index for seeking.  The configured
-latency is subtracted when comparing a stream with a requested acquisition
-range.
+The sidecar provides complementary frame timing values.  Extraction selects an
+annotation timestamp from explicit CPU realtime observations for range
+selection and output names: mono source first, then the midpoint of left and
+right source observations, either source alone, and finally recorder
+reception.  The recorded ``frame_index`` is used for encoded-video seeking.
 
 ROS bag messages in the same range are flattened by topic and written to CSV
 with their original bag timestamps.  Tagged extraction creates a numbered

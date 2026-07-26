@@ -23,8 +23,8 @@ Encord conversion
 *****************
 
 ``encord_to_tags`` converts an Encord classification export into the native
-video-tag format using a dVRK video sidecar to map frame ranges to preferred
-capture timestamps:
+video-tag format using a dVRK video sidecar to map frame ranges to explicit
+annotation timestamps:
 
 .. code-block:: bash
 

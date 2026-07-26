@@ -120,7 +120,6 @@ JSON files, an optional ROS bag, and optional audio and tag files.  Each video
 sidecar records:
 
 * all observed timestamps and their clock domains;
-* the preferred capture time chosen for correlation;
 * timestamp provenance statistics;
 * frames recorded and queue overruns;
 * stereo eye order and calibrated latency;
