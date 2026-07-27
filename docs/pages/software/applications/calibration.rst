@@ -99,9 +99,10 @@ calibration <calibration-si-psm-ecm-pots>` section.
 ``dvrk_calibrate_suj.py``
 *************************
 
-* ROS Python script with a text based interface, it depends on
+* ROS Python script with a Qt interface, it depends on
   CRTK/dVRK Python to communicate with the dVRK system.  The dVRK
-  system must be running at the same time, with the options ``-s``
+  system must be running at the same time with ``-s`` or
+  ``--suj-voltages``.
 * ROS package ``dvrk_python``
 * Compatible with **dVRK-Si SUJ only**
 * https://github.com/jhu-dvrk/dvrk_python/tree/devel/scripts
@@ -109,7 +110,9 @@ calibration <calibration-si-psm-ecm-pots>` section.
 This script is used to calibrate the potentiometers for the 4 SUJ arms
 of the dVRK-Si.  The script relies on mechanical limits to compute the
 scales and offsets used for the conversion from voltages to SI
-positions.
+positions.  It updates the matching
+``sawRobotIO1394-SUJ-Si-<arm>-<serial>.json`` file in the current
+directory after creating a timestamped backup.
 
 Usage is described in the :ref:`Si SUJ potentiometers
 calibration <calibration-si-suj-pots>` section.

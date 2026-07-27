@@ -92,14 +92,11 @@ making sure you hit all the joint limits.
 SUJ potentiometers
 ******************
 
-The SUJ Si are fairly new for the dVRK and the calibration process is
-not thoroughly tested. For now, we use the mechanical limits to
-identify the conversion factors from the analog potentiometers to SI
-units. We don't use the "home" grooves on the links except for the
-PSM3 SUJ. There is a joint that moves past the analog potentiometers
-and reports useless values for a certain range of motion.
-
-todo Anton needs to document this.
+The Si SUJ calibration computes the scale and offset used to convert
+the primary and secondary analog potentiometer voltages into SI joint
+positions.  The script records the minimum and maximum voltage seen
+while each setup joint is moved through its mechanical range, then
+maps that voltage range to the expected Si SUJ joint limits.
 
 To be able to move the SUJ freely, you will need to be able to release
 the brakes. For each SUJ arm (e.g. ECM SUJ) you plan to calibrate, you
@@ -110,14 +107,28 @@ configuration file with all the active arms.
 
 The system configuration must include the SUJ Si and the main ROS
 node (``dvrk_robot/dvrk_system``) must be launched with the
-extra command line option ``-s`` (or ``--suj-voltages``).  Once the
-dVRK system is started, you should be able to see the potentiometer
-voltages using ROS topics.  For example:
+extra command line option ``-s`` (or ``--suj-voltages``).  The SUJ Si
+configuration also uses one IO calibration file per mounted arm, named
+``sawRobotIO1394-SUJ-Si-<arm>-<serial>.json``.  These files are
+created by the IO configuration generator when generating Si PSM or
+ECM configuration files.  Run the calibration script from the
+directory containing these files so it can find and update them.
+
+For example, in a ROS 2 workspace:
+
+.. code-block:: bash
+
+   source ~/ros2_ws/install/setup.bash
+   cd <my-config-dir>
+   ros2 run dvrk_robot dvrk_system -j system-SUJ-ECM-PSM1-PSM2-PSM3.json -s
+
+Once the dVRK system is started, you should be able to see the
+potentiometer voltages using ROS topics.  For example:
 
 ::
 
-   ros2 topic echo /SUJ/PSM1/primary_voltages/measured_js
-   ros2 topic echo /SUJ/ECM/secondary_voltages/measured_js
+   ros2 topic echo /SUJ/PSM1/primary_voltage/measured_js
+   ros2 topic echo /SUJ/ECM/secondary_voltage/measured_js
 
 The :ref:`calibration script <dvrk_calibrate_suj>` is
 ``dvrk_calibrate_suj.py``.  It can be found in the ROS package
@@ -126,25 +137,34 @@ The :ref:`calibration script <dvrk_calibrate_suj>` is
 * ROS 1: ``source ~/catkin_ws/devel/setup.bash`` and ``rosrun dvrk_python dvrk_calibrate_suj.py``
 * ROS 2: ``source ~/ros2_ws/install/setup.bash`` and ``ros2 run dvrk_python dvrk_calibrate_suj.py``
 
-Since SUJ calibration relies on the joint limits, i.e. you will have
-to move each joint from its minimum to maximum limit.  The
-potentiometer readings are fairly slow so make sure you stay at the
-position limit for a second or so.  As you move the SUJs around, each
-potentiometer range displayed in the GUI should increase.  Start with
-one SUJ, move each joint from one mechanical limit to the other.
+The script opens a Qt window with one row for each primary and
+secondary potentiometer set.  Each joint column shows the minimum and
+maximum voltage observed so far and the current measured range.  The
+``Save ECM``, ``Save PSM1``, ``Save PSM2``, and ``Save PSM3`` buttons
+are enabled only when the matching
+``sawRobotIO1394-SUJ-Si-<arm>-<serial>.json`` file is present in the
+current directory.
 
-You can at any point see the results of the calibration by hitting the
-**Show** button.  When you hit **Show**, the result of the calibration
-are displayed in the terminal, in JSON format.  You can then select
-the lines corresponding to the SUJ arm you just calibrated and
-copy/paste them in your SUJ Si JSON configuration files (replace the
-existing lines in the file).
+Calibrate one SUJ arm at a time:
+
+#. Release the brakes for the arm.
+#. Move each setup joint from one mechanical limit to the other.
+#. Stay at each limit for about one second so the voltage readings can
+   settle.
+#. Confirm in the GUI that the displayed range increased for every
+   primary and secondary potentiometer on that arm.
+#. Press the matching ``Save <arm>`` button.
+
+When saving, the script computes new ``primary_measured_js`` and
+``secondary_measured_js`` scale/offset entries, renames the old JSON
+file with a timestamped ``-backup-`` suffix, and writes the updated
+calibration to the original filename.  Restart ``dvrk_system`` after
+saving so the new calibration is loaded.
 
 .. caution::
 
-   There is a potentiometer dead-zone on the third joint of the SUJ
-   PSM3.  Past a certain point, the values reported in the GUI are
-   meaningless.  For this specific joint, you have to identify the
-   dead-zone and avoid it during the calibration.  The range of motion
-   to calibrate this joint should be from the lower mechanical limit
-   to the point where the hash marks (grooves) line up.
+   The PSM3 SUJ has a potentiometer dead-zone on its fifth joint.  Past
+   a certain point, the values reported in the GUI are meaningless.
+   Identify the dead-zone and avoid it during calibration.  The GUI
+   provides ``Reset PSM3 joint 5`` to reset the observed range for that
+   joint after returning to a valid position.  The script assumes the user will move the joint between the mechanical limit and the point where the etch marks on the joint are aligned.

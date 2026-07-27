@@ -32,12 +32,26 @@ Examples can be found in ``dvrk/dvrk_config_jhu/jhu-daVinci``.
 Si
 ===
 
-Example: ``dvrk/dvrk_config_jhu/jhu-daVinci/suj-si.json``.
+Examples can be found in ``dvrk/dvrk_config_jhu/jhu-daVinci-Si``.
 
-There is no IO file for the Si SUJ.
+The system file contains one ``SUJ_Si`` arm entry whose ``arm_file``
+points to the Si SUJ kinematic configuration, for example:
 
-The JSON configuration file contains the DH parameters for all the SUJs as well
-as the calibration results for the potentiometers to joint values conversion.
+.. code-block:: json
+
+   {
+       "name": "SUJ",
+       "type": "SUJ_Si",
+       "arm_file": "kinematic/suj-si.json"
+   }
+
+The kinematic configuration contains the DH parameters for all the SUJ arms.
+For real Si SUJ hardware, each mounted ECM or PSM also has a per-arm IO
+calibration file named ``sawRobotIO1394-SUJ-Si-<arm>-<serial>.json``.  These
+files contain the ``primary_measured_js`` and ``secondary_measured_js``
+scale/offset values used to convert SUJ potentiometer voltages to joint
+positions.  They are generated along with the Si arm IO files and updated by
+the :ref:`Si SUJ potentiometer calibration <calibration-si-suj-pots>` script.
 
 Fixed
 =====
