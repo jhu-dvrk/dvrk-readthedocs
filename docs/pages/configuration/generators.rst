@@ -19,6 +19,32 @@ will be updated by the different calibration steps.  The script also
 generates a sample arm configuration file as well as a system file
 with a single arm.
 
+For every supported arm, the generator creates:
+
+* ``sawRobotIO1394-<arm>-<serial>.json``: IO configuration for the
+  arm controller.  For Classic arms, ``<serial>`` is read from the
+  ``.cal`` file unless explicitly provided.  For Si arms, ``<serial>``
+  comes from the ``-s`` or ``--serial`` option.
+* ``<arm>-<serial>.json``: arm configuration file used by the system
+  configuration.  It references the default kinematic file for the
+  selected arm and generation.
+* ``system-<arm>.json``: minimal system configuration containing one
+  IO entry and the generated arm.
+
+Some arms create additional files:
+
+* MTM arms also create
+  ``sawRobotIO1394-<arm>-gripper-<serial>.json`` for the MTM gripper
+  Hall-effect sensor calibration.
+* Si PSM and ECM arms also create
+  ``sawRobotIO1394-SUJ-Si-<arm>-<serial>.json``.  This is the per-arm
+  Si SUJ IO calibration file updated by the
+  :ref:`Si SUJ potentiometer calibration <calibration-si-suj-pots>`
+  script.
+
+If one of these files already exists, the generator renames the old
+file with a timestamped ``-backup-`` suffix before writing the new one.
+
 The script has 6 options:
 
 * *arm name*: MTMR, MTML, PSM1, PSM2, PSM3 or ECM.
