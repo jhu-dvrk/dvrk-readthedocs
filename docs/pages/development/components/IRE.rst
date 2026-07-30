@@ -29,11 +29,18 @@ To use the IRE, you need to install a few extra packages:
 
 .. code-block:: bash
 
-   sudo apt install ipython3 python3-ipython python3-wxgtk*
+   sudo apt install ipython3 python3-ipython python3-wxgtk* python3-ipykernel
+
+If you want to connect to the embedded Jupyter kernel, you will also need a
+Jupyter client such as ``jupyter-console`` or ``notebook``:
+
+.. code-block:: bash
+
+   sudo apt install jupyter-console jupyter-notebook
 
 Once these packages are installed, start the :ref:`dVRK system
-application<system>` with ``-e`` (or ``--embedded-python``) with either
-``IRE_IPYTHON`` or ``IRE_WXPYTHON``. For example:
+application<system>` with ``-e`` (or ``--embedded-python``) with
+``IRE_IPYTHON``, ``IRE_WXPYTHON`` or ``IRE_JUPYTER``. For example:
 
 .. code-block:: bash
   
@@ -65,6 +72,62 @@ Following are some examples of commands you can use in the IRE:
 You can also execute any Python script with the IPython magic command ``%run``.
 While you run your Python commands and scripts, you can still monitor the dVRK
 using the GUI and ROS topics!
+
+Jupyter kernel
+**************
+
+The ``IRE_JUPYTER`` shell starts an embedded Jupyter kernel in the dVRK system
+process.  This is useful when you want to connect a Jupyter client to the same
+Python interpreter that has direct access to the dVRK components.
+
+First start the dVRK system with ``IRE_JUPYTER``:
+
+.. code-block:: bash
+
+   cd ~/ros2_ws/src/cisst-saw/sawIntuitiveResearchKit/share/system
+   ros2 run dvrk_robot dvrk_system -j system-full-system-simulated.json -e IRE_JUPYTER
+
+The dVRK process will create a Jupyter connection file in the Jupyter runtime
+directory.  In another terminal, connect a Jupyter console to the most recently
+created kernel:
+
+.. code-block:: bash
+
+   jupyter console --existing
+
+If you have multiple kernels running, list the runtime directory and pass the
+dVRK kernel connection file explicitly:
+
+.. code-block:: bash
+
+   jupyter --runtime-dir
+   jupyter console --existing /path/to/kernel-xxxxxxxx.json
+
+To work from a notebook, start Jupyter in another terminal:
+
+.. code-block:: bash
+
+   jupyter notebook
+
+Then create a Python notebook and connect to the embedded dVRK kernel from a
+cell.  Replace ``/path/to/kernel-xxxxxxxx.json`` with the dVRK kernel
+connection file:
+
+.. code-block:: python
+
+   import jupyter_client
+
+   connection_file = "/path/to/kernel-xxxxxxxx.json"
+   client = jupyter_client.BlockingKernelClient(connection_file=connection_file)
+   client.load_connection_file()
+   client.start_channels()
+
+   client.execute_interactive("system.home()")
+   client.execute_interactive("ECM.measured_cp().Position().GetTranslation()")
+
+The notebook's own Python kernel acts as a client in this case.  The commands
+executed with ``client.execute_interactive`` run in the embedded dVRK process,
+where the IRE proxies such as ``system`` and ``ECM`` are defined.
 
 By default, not all the dVRK components are wrapped and made accessible through
 proxies in the embedded Python interpreter. To create a new proxy, you need to

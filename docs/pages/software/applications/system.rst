@@ -80,9 +80,10 @@ Shared options
   *start an embedded Python shell to access all dVRK software components (optional)*
 
   This will start an embedded Python interpreter along all the dVRK software
-  components. The embedded interpreter can be either IPython (``IRE_IPYTHON``
-  **recommended**) or wxPython (``IRE_WXPYTHON`` **experimental**).  See also
-  :ref:`development options<components-IRE>`.
+  components. The embedded interpreter can be IPython (``IRE_IPYTHON``
+  **recommended**), wxPython (``IRE_WXPYTHON`` **experimental**) or a Jupyter
+  kernel (``IRE_JUPYTER`` **experimental**).  See also :ref:`development
+  options<components-IRE>`.
 
 ``-m, --component-manager``
   *JSON files to configure component manager (optional)*
