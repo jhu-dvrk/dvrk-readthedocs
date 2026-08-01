@@ -124,8 +124,8 @@ instead.
 Stereo video display for dVRK systems. It renders the endoscope video
 feed and optional dVRK overlays on the surgeon's console using native
 GStreamer pipelines. See
-the :doc:`dVRK stereo display documentation
-</pages/video/software/dvrk/dvrk_console/index>` for configuration and usage.
+the :ref:`dVRK stereo display documentation <dvrk-console>` for configuration
+and usage.
 
 .. _dvrk_console_control_panel:
 
@@ -178,7 +178,7 @@ could instead be a haptic device such as a `ForceDimension
 <https://github.com/jhu-saw/sawForceDimensionSDK>`_. When running, teleoperation
 works very similarly to the built-in dVRK teleoperation.
 
-To run teleoperation, first start a :doc:`dVRK system <system>` for the arms you
+To run teleoperation, first start a :ref:`dVRK system <system>` for the arms you
 want to teleoperate. This should be a system that *doesn't* include a built-in
 teleoperation component, such as::
 

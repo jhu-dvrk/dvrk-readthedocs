@@ -76,6 +76,18 @@ At most two entries across ``extra_streams.monos`` and
 ``extra_streams.stereos`` are used.  Additional entries are discarded with a
 warning.  Scale is clamped to 0.01 through 0.99.
 
+If your extra stream come from the SlicerGStreamer plugin (https://github.com/rosmed/SlicerGStreamer), you can use something like:
+
+.. code-block:: json
+
+   {
+     "extra_streams": {
+       "monos": [
+         "unixfdsrc socket-path=/tmp/slicer_gstreamer_View1_lconnol8.sock do-timestamp=true ! videoconvert"
+       ]
+     }
+   }
+
 AR configuration
 ****************
 

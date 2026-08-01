@@ -115,6 +115,9 @@ known:
    ros2 launch dvrk_data gscam.launch.py \
      socket:=@dvrk_gst:stereo_source:left
 
+If ``socket`` is omitted, the launch file lists currently active
+``@dvrk_gst`` sockets and exits without launching ``gscam_node``.
+
 The launch arguments are:
 
 .. list-table::
@@ -124,8 +127,8 @@ The launch arguments are:
      - Required
      - Default
    * - ``socket``
-     - yes
-     - none
+     - no
+     - empty (list active sockets and exit) or ``@dvrk_gst:<role>:<name>``
    * - ``namespace``
      - no
      - ``<role>/<name>``
