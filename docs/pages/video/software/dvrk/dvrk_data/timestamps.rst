@@ -1,3 +1,5 @@
+.. _dvrk-timestamps:
+
 Video timestamps
 ################
 
@@ -67,7 +69,7 @@ Recording and extraction
 ************************
 
 The recorder writes one ``dvrk_data:video_sidecar@1.0.0`` JSON file next to
-each MP4 segment.  :doc:`extract`, :doc:`tagging`, and ``encord_to_tags`` use
+each MP4 segment.  :ref:`dvrk-extract`, :ref:`dvrk-tagging`, and ``encord_to_tags`` use
 the annotation timestamp for correlation and output names.  Extraction uses
 the recorded ``frame_index`` to locate frames in the encoded video.  This
 separation avoids treating a Unix timestamp as a media seek position.

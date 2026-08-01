@@ -1,8 +1,10 @@
+.. _dvrk-video-configuration:
+
 Video configuration
 ###################
 
 All video applications require a versioned JSON ``type``.  Socket fields use
-the naming rules in :doc:`video-data`.  The installed schemas are under
+the naming rules in :ref:`dvrk-video-data`.  The installed schemas are under
 ``share/dvrk_data/schemas``.
 
 Stereo source

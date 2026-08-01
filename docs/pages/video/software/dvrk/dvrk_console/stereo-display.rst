@@ -8,7 +8,7 @@ and other surgeon-console stereo displays.  It consumes an already aligned
 side-by-side stream, adds optional video and dVRK status overlays, and renders
 through GStreamer OpenGL sinks.
 
-Run it with a :doc:`stereo-display-configuration`:
+Run it with a :ref:`dvrk-stereo-display-configuration`:
 
 .. code-block:: bash
 
@@ -40,8 +40,8 @@ and ECM teleoperation.  These are small ROS messages; the video itself remains
 outside ROS.
 
 Optional ``unixfdsinks`` expose the unannotated ``stereo`` stream or rendered
-``overlay`` stream for recording, :doc:`control-panel`, or other local
-consumers.  See :doc:`/pages/video/software/dvrk/dvrk_data/timestamps` for the
+``overlay`` stream for recording, :ref:`dvrk-control-panel`, or other local
+consumers.  See :ref:`dvrk-timestamps` for the
 additional stereo and overlay output observations attached to these buffers.
 
 Extra and AR streams

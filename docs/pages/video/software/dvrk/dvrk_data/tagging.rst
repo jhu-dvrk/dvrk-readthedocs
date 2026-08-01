@@ -1,3 +1,5 @@
+.. _dvrk-tagging:
+
 Tagging and curation
 ####################
 

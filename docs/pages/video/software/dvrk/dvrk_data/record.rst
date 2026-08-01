@@ -1,3 +1,5 @@
+.. _dvrk-record:
+
 Record
 ######
 
@@ -55,7 +57,7 @@ topics:
 For a video entry, ``socket`` takes precedence over ``stream``.  A direct
 ``stream`` is a GStreamer source fragment.  ``side_by_side`` records whether
 the first half is the left eye (``LR``) or right eye (``RL``), allowing
-:doc:`extract` to split it later.
+:ref:`dvrk-extract` to split it later.
 
 The recorder probes NVENC, NVIDIA V4L2, and VAAPI encoders before falling back
 to ``x264enc``.  Availability of a plugin alone does not guarantee that the
@@ -125,4 +127,4 @@ sidecar records:
 * stereo eye order and calibrated latency;
 * the configuration files used for the session.
 
-See :doc:`timestamps` for the meaning of individual fields.
+See :ref:`dvrk-timestamps` for the meaning of individual fields.

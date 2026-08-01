@@ -1,3 +1,5 @@
+.. _dvrk-latency-calibration:
+
 Video latency calibration
 #########################
 
@@ -26,7 +28,7 @@ Procedure
 #. Review the mean and standard deviation.
 #. Choose whether to write the mean to the video's ``estimated_latency`` field.
 
-The configuration stores seconds.  :doc:`record` copies the value to the video
+The configuration stores seconds.  :ref:`dvrk-record` copies the value to the video
 sidecar as ``estimated_latency_ms`` for traceability.  Extraction does not
 currently subtract this value when correlating acquisition ranges.
 

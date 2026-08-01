@@ -84,6 +84,32 @@ The most recently selected source is restored when it is available.
 
 The installed ``control_panel.schema.json`` describes this format.
 
+Persisted user settings
+***********************
+
+The panel stores display and user preferences in an INI-style file under the
+user configuration directory:
+
+.. code-block:: text
+
+    ~/.config/dvrk_display/<name>_control_panel_gui.ini
+
+``<name>`` comes from the control-panel configuration field ``name`` (default
+``dvrk_display``).  Non-alphanumeric characters are normalized to ``_`` for the
+filename.
+
+Current persisted keys include:
+
+* ``[window] monitor``: selected monitor index.
+* ``[window] fullscreen``: fullscreen state.
+* ``[appearance] dark_mode``: light/dark mode selection.
+* ``[video] source``: last selected fully qualified video socket.
+* ``[touchscreen] monitor_N``: per-monitor touchscreen flag (``N`` is monitor
+   index).
+
+The panel saves settings when options are changed and again during normal
+application exit.
+
 Video preview
 *************
 
@@ -95,19 +121,29 @@ hidden and the robot controls remain usable.
 For a graph of the negotiated preview pipeline, see
 :ref:`dvrk-gstreamer-dot-files`.
 
-Relationship to the stereo display
-***********************************
+Touchscreen support
+*******************
 
-For an operator preview with HUD annotations, configure ``stereo_display`` to
-publish its ``overlay`` output:
+The wrench menu provides a per-monitor touchscreen toggle:
 
-.. code-block:: json
+* ``Touchscreen -> Is touchscreen``
+* ``Touchscreen -> Not a touchscreen``
 
-   {
-     "unixfdsinks": [
-       {"socket": "overlay"}
-     ]
-   }
+This flag is stored per monitor index in the user settings file.  When enabled,
+the panel attempts to map the first detected touchscreen pointer device to the
+current monitor output using ``xinput map-to-output``.
 
-Then select ``stereo_display:overlay`` in the panel.  Use the unannotated
-``stereo_display:stereo`` output when the HUD is not wanted.
+Runtime behavior:
+
+* Mapping is applied for monitors marked as touchscreen.
+* Mapping is re-applied when moving the window to another monitor.
+* Monitor changes are polled periodically while the panel is running.
+* Mapping failures are non-fatal and reported as warnings on stderr.
+
+Implementation notes for deployment:
+
+* Automatic mapping relies on ``xrandr`` and ``xinput``.
+* The current implementation matches monitor geometry against ``xrandr`` output
+   and uses the first matching touchscreen-like pointer device (excluding
+   touchpads).
+

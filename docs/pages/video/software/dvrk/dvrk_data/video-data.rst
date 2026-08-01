@@ -40,8 +40,8 @@ stereo frame.  It preserves the source observations and adds a
    ros2 run dvrk_data stereo_alignment -c stereo_alignment.json
 
 Its conventional output is
-``@dvrk_gst:stereo_alignment:stereo``.  :doc:`/pages/video/software/dvrk/dvrk_console/stereo-display`
-and :doc:`record` normally consume this socket independently.
+``@dvrk_gst:stereo_alignment:stereo``.  :ref:`dvrk-stereo-display`
+and :ref:`dvrk-record` normally consume this socket independently.
 
 Why video is not transported as ROS images
 *******************************************

@@ -17,9 +17,9 @@ The collection tools are designed as a sequence:
                                           |
                              timestamped media and CSV
 
-Use :doc:`latency-calibration` before the final experiment when an empirical
+Use :ref:`dvrk-latency-calibration` before the final experiment when an empirical
 video latency estimate should be recorded with the session.  The measured
-value is stored in the same video entry consumed by :doc:`record`.
+value is stored in the same video entry consumed by :ref:`dvrk-record`.
 
 The applications do not force every source onto a shared clock or trigger.
 They preserve source-specific observations and use explicit frame timestamps
@@ -29,7 +29,7 @@ separate concerns.
 
 The principal tools are:
 
-* :doc:`record` for acquisition and session metadata.
-* :doc:`extract` for images, video ranges, and ROS-topic CSV files.
-* :doc:`latency-calibration` for empirical video latency.
-* :doc:`tagging` for optional post-recording curation.
+* :ref:`dvrk-record` for acquisition and session metadata.
+* :ref:`dvrk-extract` for images, video ranges, and ROS-topic CSV files.
+* :ref:`dvrk-latency-calibration` for empirical video latency.
+* :ref:`dvrk-tagging` for optional post-recording curation.

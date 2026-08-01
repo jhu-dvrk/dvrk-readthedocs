@@ -255,3 +255,67 @@ the RCM points should form a sphere.  The center of the sphere being the center
 of the workspace and the diameter should be about 15~20 centimeters.
 
 A video is worth a thousand words: https://youtu.be/nUsEUC4xOYc (YouTube)
+
+Visualization
+#############
+
+For a standard stereo visualization workflow, use the launch file provided by
+``dvrk_console``:
+
+For a detailed explanation of this launch sequence, see
+:ref:`dvrk-stereo-display`.
+
+.. code-block:: bash
+
+   ros2 launch dvrk_console stereo_video_pipeline.launch.py
+
+Run this command from the directory containing your video configuration files.
+By default, the launch file resolves the following files relative to the
+current working directory:
+
+* ``stereo_source.json``
+* ``stereo_alignment.json``
+* ``stereo_display.json``
+
+These configuration files are described in
+:ref:`dvrk-video-configuration` and
+:ref:`dvrk-stereo-display-configuration`.
+
+This launch sequence starts:
+
+* ``dvrk_data stereo_source``
+* ``dvrk_data stereo_alignment``
+* ``dvrk_console stereo_display``
+
+The nodes are started in order (source, then alignment, then display) with a
+short delay between each process.
+
+You can also provide explicit paths or alternate filenames:
+
+.. code-block:: bash
+
+   ros2 launch dvrk_console stereo_video_pipeline.launch.py \
+     source_config:=/path/to/stereo_source.json \
+     alignment_config:=/path/to/stereo_alignment.json \
+     display_config:=/path/to/stereo_display.json
+
+Optionally, run the control panel ROS 2 node in a separate terminal
+(implemented in ``main_control_panel.cpp`` as executable ``control_panel``):
+
+.. code-block:: bash
+
+   ros2 run dvrk_console control_panel
+
+or with a control-panel configuration file:
+
+.. code-block:: bash
+
+   ros2 run dvrk_console control_panel -c control_panel.json
+
+For more details, see:
+
+* :ref:`dvrk-video-data`
+* :ref:`dvrk-stereo-display`
+* :ref:`dvrk-stereo-display-configuration`
+* :ref:`dvrk-control-panel`
+

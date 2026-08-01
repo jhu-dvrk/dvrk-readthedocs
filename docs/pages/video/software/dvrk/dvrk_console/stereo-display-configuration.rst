@@ -1,3 +1,5 @@
+.. _dvrk-stereo-display-configuration:
+
 Stereo display configuration
 ############################
 
@@ -18,7 +20,7 @@ The display consumes a side-by-side stereo stream produced by
    }
 
 ``stereo.socket`` accepts the three socket forms described in
-:doc:`/pages/video/software/dvrk/dvrk_data/video-data`.  A raw GStreamer source
+:ref:`dvrk-video-data`.  A raw GStreamer source
 fragment can instead be supplied as ``stereo.stream``.  ``eye_size`` is one
 eye's dimensions; the older ``stereo.size`` form describes the total
 side-by-side width.

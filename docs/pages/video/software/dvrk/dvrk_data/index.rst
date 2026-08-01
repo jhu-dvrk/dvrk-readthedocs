@@ -15,15 +15,15 @@ stereo alignment, display, recording, and ROS bridging can run in separate
 processes while sharing local buffers through ``unixfd`` sockets.  Frame
 metadata carries timing observations through these stages.
 
-Start with :doc:`video-data`, then use :doc:`video-configuration` and
-:doc:`timestamps` as references.
+Start with :ref:`dvrk-video-data`, then use :ref:`dvrk-video-configuration` and
+:ref:`dvrk-timestamps` as references.
 
 Data collection tools
 *********************
 
 The collection workflow combines MP4 video and per-frame timestamp sidecars
-with optional audio and ROS 2 bags.  The principal tools are :doc:`record`,
-:doc:`extract`, and :doc:`latency-calibration`.  :doc:`tagging` describes the
+with optional audio and ROS 2 bags.  The principal tools are :ref:`dvrk-record`,
+:ref:`dvrk-extract`, and :ref:`dvrk-latency-calibration`.  :ref:`dvrk-tagging` describes the
 optional curation tools.
 
 .. toctree::
