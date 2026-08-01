@@ -23,9 +23,9 @@ two streams on abstract Unix sockets.
 
    ros2 run dvrk_data stereo_source -c stereo_source.json
 
-When no matching outputs are listed, it creates the conventional sockets
-``@dvrk_gst:stereo_source:left`` and
-``@dvrk_gst:stereo_source:right``.
+When no outputs are specified in the camera endpoints, it creates the
+conventional sockets ``@dvrk:stereo_source:left`` and
+``@dvrk:stereo_source:right``.
 
 ``stereo_alignment``
 ====================
@@ -40,7 +40,7 @@ stereo frame.  It preserves the source observations and adds a
    ros2 run dvrk_data stereo_alignment -c stereo_alignment.json
 
 Its conventional output is
-``@dvrk_gst:stereo_alignment:stereo``.  :ref:`dvrk-stereo-display`
+``@dvrk:stereo_alignment:stereo``.  :ref:`dvrk-stereo-display`
 and :ref:`dvrk-record` normally consume this socket independently.
 
 Why video is not transported as ROS images
@@ -72,20 +72,24 @@ actually required.
 Socket names and discovery
 **************************
 
-Every dVRK GStreamer socket uses the Linux abstract namespace and follows:
+Every dVRK-managed GStreamer socket uses the Linux abstract namespace and
+follows:
 
 .. code-block:: text
 
-   @dvrk_gst:<role>:<name>
+   @dvrk:<role>:<name>
 
-Configuration accepts a short name, a role and name, or the fully qualified
-form:
+Configuration fields named ``gst_input`` and ``gst_output`` use the canonical
+form for dVRK-managed sockets:
 
 .. code-block:: json
 
-   {"socket": "left"}
-   {"socket": "stereo_alignment:stereo"}
-   {"socket": "@dvrk_gst:stereo_alignment:stereo"}
+   {"gst_input": "@dvrk:stereo_source:left"}
+   {"gst_output": "@dvrk:stereo_alignment:stereo"}
+
+Short names and unprefixed ``role:name`` values are not dVRK socket
+references.  A plain GStreamer pipeline may still be supplied in a
+``gst_input`` field when no dVRK socket is involved.
 
 Abstract sockets do not create files under ``/tmp`` and are reclaimed by the
 kernel when their file descriptors close.  They work only between processes on
@@ -105,7 +109,7 @@ Bridging a socket to ROS images
 
 .. code-block:: bash
 
-   ros2 run dvrk_data gscam_socket stereo_source:left
+   ros2 run dvrk_data gscam_socket @dvrk:stereo_source:left
 
 The launch file can also be invoked directly when the fully qualified name is
 known:
@@ -113,10 +117,10 @@ known:
 .. code-block:: bash
 
    ros2 launch dvrk_data gscam.launch.py \
-     socket:=@dvrk_gst:stereo_source:left
+     socket:=@dvrk:stereo_source:left
 
-If ``socket`` is omitted, the launch file lists currently active
-``@dvrk_gst`` sockets and exits without launching ``gscam_node``.
+If ``socket`` is omitted, the launch file lists currently active ``@dvrk``
+sockets and exits without launching ``gscam_node``.
 
 The launch arguments are:
 
@@ -128,7 +132,7 @@ The launch arguments are:
      - Default
    * - ``socket``
      - no
-     - empty (list active sockets and exit) or ``@dvrk_gst:<role>:<name>``
+     - empty (list active sockets and exit) or ``@dvrk:<role>:<name>``
    * - ``namespace``
      - no
      - ``<role>/<name>``

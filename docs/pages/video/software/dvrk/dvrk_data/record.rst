@@ -39,7 +39,7 @@ topics:
      "videos": [
        {
          "name": "stereo",
-         "socket": "stereo_alignment:stereo",
+         "gst_input": "@dvrk:stereo_alignment:stereo",
          "record": true,
          "side_by_side": "LR",
          "encoding": {
@@ -54,10 +54,10 @@ topics:
      ]
    }
 
-For a video entry, ``socket`` takes precedence over ``stream``.  A direct
-``stream`` is a GStreamer source fragment.  ``side_by_side`` records whether
-the first half is the left eye (``LR``) or right eye (``RL``), allowing
-:ref:`dvrk-extract` to split it later.
+For a video entry, ``gst_input`` is either a canonical dVRK socket reference or
+a plain GStreamer source fragment.  ``side_by_side`` records whether the first
+half is the left eye (``LR``) or right eye (``RL``), allowing :ref:`dvrk-extract`
+to split it later.
 
 The recorder probes NVENC, NVIDIA V4L2, and VAAPI encoders before falling back
 to ``x264enc``.  Availability of a plugin alone does not guarantee that the

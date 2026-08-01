@@ -15,8 +15,8 @@ Select the video by its configured name:
    ros2 run dvrk_data video_latency -c record.json -s endoscope
 
 Running without ``-s`` lists available names and exits.  The selected entry
-must currently provide ``stream``; the latency tool does not construct its
-input from the recorder's ``socket`` field.
+must provide ``gst_input``.  This can be a plain GStreamer source fragment or
+a canonical ``@dvrk:role:name`` socket reference.
 
 Procedure
 *********

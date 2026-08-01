@@ -39,10 +39,12 @@ teleoperations, following state, instrument names, invalid PSM pose status,
 and ECM teleoperation.  These are small ROS messages; the video itself remains
 outside ROS.
 
-Optional ``unixfdsinks`` expose the unannotated ``stereo`` stream or rendered
-``overlay`` stream for recording, :ref:`dvrk-control-panel`, or other local
-consumers.  See :ref:`dvrk-timestamps` for the
-additional stereo and overlay output observations attached to these buffers.
+An optional root-level ``gst_output`` in the configuration exposes the
+composed stereo output through a canonical dVRK socket for recording,
+:ref:`dvrk-control-panel`, or other local consumers.  The display HUD is an
+internal rendering overlay; it does not have a separate configured socket.
+See :ref:`dvrk-timestamps` for the timestamp observations attached to the
+video pipeline.
 
 Extra and AR streams
 ********************
@@ -76,7 +78,7 @@ Run the display calibration only after ``stereo_source`` and
 
    ros2 run dvrk_console stereo_display_calibration -c stereo_display.json
 
-The script requires ``stereo.socket`` and its per-eye size.  Use left and right
+The script requires root-level ``gst_input`` and ``eye_size``.  Use left and right
 arrows to change the offset, ``g`` to toggle the grid, ``f`` for fullscreen,
 and ``q`` to finish and choose whether to save.  Add ``--split`` to preview one
 window per eye; it is selected automatically for a ``glimages`` configuration.

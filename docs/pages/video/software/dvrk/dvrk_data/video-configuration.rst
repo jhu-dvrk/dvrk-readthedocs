@@ -15,24 +15,24 @@ Stereo source
    {
      "type": "dvrk_data:stereo_source@1.0.0",
      "name": "endoscope",
-     "unixfdsinks": [
-       {"socket": "left"},
-       {"socket": "right"}
-     ],
      "camera": {
        "size": {"width": 1920, "height": 1080},
        "left": {
-         "stream": "v4l2src device=/dev/video-left ! video/x-raw,width=1920,height=1080,framerate=30/1"
+         "gst_input": "v4l2src device=/dev/video-left ! video/x-raw,width=1920,height=1080,framerate=30/1",
+         "gst_output": "@dvrk:stereo_source:left"
        },
        "right": {
-         "stream": "v4l2src device=/dev/video-right ! video/x-raw,width=1920,height=1080,framerate=30/1"
+         "gst_input": "v4l2src device=/dev/video-right ! video/x-raw,width=1920,height=1080,framerate=30/1",
+         "gst_output": "@dvrk:stereo_source:right"
        }
      }
    }
 
-The ``stream`` values are GStreamer source fragments, not complete pipelines
-with sinks.  Add device-specific elements such as ``deinterlace`` to the
-fragment when required.
+The ``gst_input`` values are GStreamer source fragments, not complete
+pipelines with sinks.  Add device-specific elements such as ``deinterlace`` to
+the fragment when required.  ``gst_output`` is optional; when omitted,
+``stereo_source`` publishes the conventional ``@dvrk:stereo_source:left`` and
+``@dvrk:stereo_source:right`` sockets.
 
 Stereo alignment
 ****************
@@ -43,16 +43,11 @@ Stereo alignment
      "type": "dvrk_data:stereo_alignment@1.0.0",
      "name": "endoscope",
      "preserve_size": true,
-     "unixfdsources": [
-       {"socket": "left"},
-       {"socket": "right"}
-     ],
-     "unixfdsinks": [
-       {"socket": "stereo"}
-     ],
+     "gst_output": "@dvrk:stereo_alignment:stereo",
      "camera": {
        "size": {"width": 1920, "height": 1080},
        "left": {
+         "gst_input": "@dvrk:stereo_source:left",
          "color": {
            "brightness": 0.0,
            "contrast": 1.0,
@@ -61,6 +56,7 @@ Stereo alignment
          }
        },
        "right": {
+         "gst_input": "@dvrk:stereo_source:right",
          "color": {
            "brightness": 0.0,
            "contrast": 1.0,
@@ -76,11 +72,10 @@ Stereo alignment
      }
    }
 
-If ``camera.left.stream`` and ``camera.right.stream`` are absent,
-``stereo_alignment`` resolves the left and right entries in
-``unixfdsources`` against the ``stereo_source`` role.  Direct GStreamer source
-fragments can be supplied instead for a single-process acquisition/alignment
-pipeline.
+The ``camera.left.gst_input`` and ``camera.right.gst_input`` values can be
+canonical dVRK socket references or direct GStreamer source fragments.
+``gst_output`` is optional; when omitted, ``stereo_alignment`` publishes
+``@dvrk:stereo_alignment:stereo``.
 
 With ``preserve_size`` enabled, the aligned crop is scaled back to the declared
 per-eye camera size after maintaining its aspect ratio.  Disable it to publish

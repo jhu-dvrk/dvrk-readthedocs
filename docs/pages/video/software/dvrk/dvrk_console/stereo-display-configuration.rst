@@ -12,18 +12,14 @@ The display consumes a side-by-side stereo stream produced by
      "type": "dvrk_console:stereo_display@1.0.0",
      "name": "surgeon_display",
      "dvrk_console_namespace": "console",
-     "stereo": {
-       "socket": "stereo_alignment:stereo",
-       "eye_size": {"width": 1920, "height": 1080}
-     },
+     "gst_input": "@dvrk:stereo_alignment:stereo",
+     "eye_size": {"width": 1920, "height": 1080},
      "sinks": ["glimage"]
    }
 
-``stereo.socket`` accepts the three socket forms described in
-:ref:`dvrk-video-data`.  A raw GStreamer source
-fragment can instead be supplied as ``stereo.stream``.  ``eye_size`` is one
-eye's dimensions; the older ``stereo.size`` form describes the total
-side-by-side width.
+``gst_input`` accepts a canonical dVRK socket reference or a plain GStreamer
+source fragment.  ``eye_size`` is one eye's dimensions; the side-by-side input
+is twice this width.
 
 Top-level fields
 ****************
@@ -37,14 +33,18 @@ Top-level fields
      - Display instance and persisted-settings name.
    * - ``dvrk_console_namespace``
      - Console namespace used by the HUD; default ``console``.
+   * - ``gst_input``
+     - Main side-by-side input: a canonical ``@dvrk:role:name`` socket or a plain GStreamer source fragment.
+   * - ``gst_output``
+     - Optional canonical dVRK socket for the composed stereo output.
+   * - ``eye_size``
+     - Width and height of one eye.
    * - ``overlay_alpha``
      - HUD opacity from 0.0 to 1.0; default 0.7.
    * - ``display_horizontal_offset_px``
      - Working-depth calibration written by ``stereo_display_calibration``.
    * - ``sinks``
      - Any combination of ``glimage`` and ``glimages``.
-   * - ``unixfdsinks``
-     - ``stereo`` or ``overlay`` local output sockets.
 
 Example outputs and picture-in-picture
 **************************************
@@ -57,35 +57,32 @@ Example outputs and picture-in-picture
      "dvrk_console_namespace": "console",
      "overlay_alpha": 0.7,
      "display_horizontal_offset_px": 18,
-     "stereo": {
-       "socket": "stereo_alignment:stereo",
-       "eye_size": {"width": 1920, "height": 1080}
-     },
+     "gst_input": "@dvrk:stereo_alignment:stereo",
+     "gst_output": "@dvrk:stereo_display:stereo",
+     "eye_size": {"width": 1920, "height": 1080},
      "sinks": ["glimages"],
-     "unixfdsinks": [
-       {"socket": "stereo"},
-       {"socket": "overlay"}
-     ],
-     "extra_streams": {
+     "pip_gst_inputs": {
        "monos": [
-         "videotestsrc pattern=ball is-live=true ! video/x-raw,width=640,height=480,framerate=10/1"
+         {"gst_input": "videotestsrc pattern=ball is-live=true ! video/x-raw,width=640,height=480,framerate=10/1"}
        ],
        "scale": 0.3
      }
    }
 
-At most two entries across ``extra_streams.monos`` and
-``extra_streams.stereos`` are used.  Additional entries are discarded with a
-warning.  Scale is clamped to 0.01 through 0.99.
+At most two entries across ``pip_gst_inputs.monos`` and
+``pip_gst_inputs.stereos`` are used.  Additional entries are discarded with a
+warning.  Each entry contains a ``gst_input`` field, which may be a plain
+GStreamer source fragment or a canonical ``@dvrk:role:name`` socket.  Scale is
+clamped to 0.01 through 0.99.
 
 If your extra stream come from the SlicerGStreamer plugin (https://github.com/rosmed/SlicerGStreamer), you can use something like:
 
 .. code-block:: json
 
    {
-     "extra_streams": {
+     "pip_gst_inputs": {
        "monos": [
-         "unixfdsrc socket-path=/tmp/slicer_gstreamer_View1_lconnol8.sock do-timestamp=true ! videoconvert"
+         {"gst_input": "unixfdsrc socket-path=/tmp/slicer_gstreamer_View1_lconnol8.sock do-timestamp=true ! videoconvert"}
        ]
      }
    }
@@ -98,14 +95,14 @@ AR configuration
    {
      "ar": {
        "enabled": true,
-       "left": "stereo_source:left_ar",
-       "right": "stereo_source:right_ar",
+       "left": {"gst_input": "@dvrk:stereo_source:left_ar"},
+       "right": {"gst_input": "@dvrk:stereo_source:right_ar"},
        "color_key": [0, 255, 0]
      }
    }
 
-The current field names are ``left`` and ``right``.  Older documentation that
-uses ``left_socket`` or ``right_socket`` does not match the parser.
+The current field names are ``left`` and ``right``; each is an endpoint object
+with a ``gst_input`` field.
 
-The installed ``stereo_config.schema.json`` is the authoritative structural
+The installed ``stereo_display.schema.json`` is the authoritative structural
 reference for these fields.

@@ -15,7 +15,7 @@ replace the engineering interface.
 Starting the panel
 ******************
 
-The panel can discover active ``@dvrk_gst`` sockets without a configuration:
+The panel can discover active ``@dvrk`` sockets without a configuration:
 
 .. code-block:: bash
 
@@ -35,7 +35,7 @@ For example:
 
    ros2 run dvrk_console control_panel \
      -C console \
-     -s stereo_display:overlay
+     -s @dvrk:stereo_display:stereo
 
 Operator functions
 ******************
@@ -70,16 +70,16 @@ versioned ``type`` property:
      "name": "surgeon_console",
      "console": "console",
      "video_source": [
-       "stereo_display:overlay"
+       "@dvrk:stereo_display:stereo"
      ]
    }
 
 ``name`` is also used as the key for persisted display settings.  ``console``
-selects the ROS namespace.  Each ``video_source`` entry accepts a short name,
-``role:name``, or a fully qualified abstract socket.
+selects the ROS namespace.  Each ``video_source`` entry is a canonical dVRK
+abstract socket name.
 
 Configured sources are added first.  At startup the panel scans for every
-other active ``@dvrk_gst`` socket and adds those choices without duplication.
+other active ``@dvrk`` socket and adds those choices without duplication.
 The most recently selected source is restored when it is available.
 
 The installed ``control_panel.schema.json`` describes this format.
@@ -146,4 +146,3 @@ Implementation notes for deployment:
 * The current implementation matches monitor geometry against ``xrandr`` output
    and uses the first matching touchscreen-like pointer device (excluding
    touchpads).
-
