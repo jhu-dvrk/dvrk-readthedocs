@@ -28,7 +28,7 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
       .. code-block:: bash
 
-         sudo apt install libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev libgraphviz-dev # dVRK
+         sudo apt install libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libhidapi-dev python3-pyudev libgraphviz-dev # dVRK
          sudo apt install ros-jazzy-joint-state-publisher* ros-jazzy-xacro ros-jazzy-camera-info-manager ros-jazzy-image-transport ros-jazzy-image-transport-plugins # ROS
          sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libcairo2-dev libjsoncpp-dev python3-opencv python3-numpy libgtk-3-dev libgtkmm-3.0-dev # stereo viewer & data collection
 
@@ -38,7 +38,7 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
       .. code-block:: bash
 
-         sudo apt install libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
+         sudo apt install libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev libqt5xmlpatterns5-dev libhidapi-dev python3-pyudev # dVRK
          sudo apt install ros-humble-joint-state-publisher* ros-humble-xacro ros-humble-camera-info-manager ros-humble-image-transport ros-humble-image-transport-plugins # ROS
          sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libcairo2-dev libjsoncpp-dev python3-opencv python3-numpy libgtk-3-dev libgtkmm-3.0-dev # stereo viewer & data collection
 
@@ -48,7 +48,7 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
       .. code-block:: bash
 
-         sudo apt install libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libbluetooth-dev libhidapi-dev python3-pyudev # dVRK
+         sudo apt install libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libhidapi-dev python3-pyudev # dVRK
          sudo apt install ros-galactic-joint-state-publisher* ros-galactic-xacro # ROS
          sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libcairo2-dev libjsoncpp-dev python3-opencv python3-numpy libgtk-3-dev # stereo viewer & data collection
 
