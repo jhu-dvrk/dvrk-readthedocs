@@ -47,7 +47,7 @@ Dependencies
 * Linux for IEEE-1394 (FireWire): ``libraw1394`` (and ``libraw1394-dev``)
 * CMake for build and configuration
 * C++ compiler, either gcc or clang
-* Qt5
+* Qt5 or Qt6, depending on the ROS distribution and cisst/SAW configuration
 * libncurses5-dev: curses based test GUI for 1394
 * flite: for some experimental text to speech
 * gfortran for our netlib code (optional, one can use the C version)
