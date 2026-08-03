@@ -106,6 +106,8 @@ Current persisted keys include:
 * ``[video] source``: last selected fully qualified video socket.
 * ``[touchscreen] monitor_N``: per-monitor touchscreen flag (``N`` is monitor
    index).
+* ``[touchscreen] device_name``: optional persisted XInput device name; an
+   empty value selects automatic detection.
 
 The panel saves settings when options are changed and again during normal
 application exit.
@@ -124,14 +126,17 @@ For a graph of the negotiated preview pipeline, see
 Touchscreen support
 *******************
 
-The wrench menu provides a per-monitor touchscreen toggle:
+The wrench menu provides a per-monitor touchscreen toggle and input-device
+selection:
 
 * ``Touchscreen -> Is touchscreen``
 * ``Touchscreen -> Not a touchscreen``
+* ``Touchscreen -> Input device -> Automatic`` or a specific XInput pointer
+  device
 
 This flag is stored per monitor index in the user settings file.  When enabled,
-the panel attempts to map the first detected touchscreen pointer device to the
-current monitor output using ``xinput map-to-output``.
+the panel maps the selected touchscreen pointer device to the current monitor
+output using the XInput coordinate transformation matrix.
 
 Runtime behavior:
 
@@ -142,7 +147,9 @@ Runtime behavior:
 
 Implementation notes for deployment:
 
-* Automatic mapping relies on ``xrandr`` and ``xinput``.
-* The current implementation matches monitor geometry against ``xrandr`` output
-   and uses the first matching touchscreen-like pointer device (excluding
-   touchpads).
+* Automatic mapping enumerates XInput2 slave pointer devices directly. Devices
+  exposing touch or absolute-valuator classes are preferred, followed by names
+  containing touch, digitizer, stylus, tablet, or known controller identifiers
+  such as WDT.
+* The selected device name is persisted in the user settings file. XInput
+  numeric IDs are discovered at runtime because they can change between boots.
