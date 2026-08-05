@@ -12,6 +12,13 @@ engineering view used for system configuration, detailed component state,
 diagnostics, and debugging.  ``control_panel`` complements it; it does not
 replace the engineering interface.
 
+.. figure:: /images/gui/control_panel_dark.png
+   :width: 400px
+   :align: center
+
+   Control panel GUI (dark mode)
+
+
 Starting the panel
 ******************
 

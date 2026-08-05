@@ -30,14 +30,28 @@ Rendering and outputs
 *********************
 
 ``glimage`` opens one side-by-side window.  ``glimages`` opens one window per
-eye.  The control window reports sink frame rates, toggles the status overlay,
+eye.  The control window toggles the status overlay,
 and adjusts the extra-stream scale when those streams are configured.
+
+.. figure:: /images/gui/stereo_overlay_gui.png
+   :width: 400px
+   :align: center
+
+   Stereo display control window
+
 
 The HUD subscribes to the configured dVRK console namespace and presents
 operator presence, camera and clutch pedals, focus/coag inputs, selected
 teleoperations, following state, instrument names, invalid PSM pose status,
 and ECM teleoperation.  These are small ROS messages; the video itself remains
 outside ROS.
+
+.. figure:: /images/gui/stereo_overlay_side_by_side_gooviz.png
+   :width: 400px
+   :align: center
+
+   Side-by-side stereo display with status overlay (Goovis format)
+
 
 An optional root-level ``gst_output`` in the configuration exposes the
 composed stereo output through a canonical dVRK socket for recording,
