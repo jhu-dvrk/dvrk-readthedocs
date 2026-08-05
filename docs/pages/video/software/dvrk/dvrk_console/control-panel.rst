@@ -126,6 +126,10 @@ For a graph of the negotiated preview pipeline, see
 Touchscreen support
 *******************
 
+.. figure:: /images/dvrk_console/dvrk_console_remote_control_touch.jpeg
+   :width: 600
+   :align: center
+
 The wrench menu provides a per-monitor touchscreen toggle and input-device
 selection:
 
