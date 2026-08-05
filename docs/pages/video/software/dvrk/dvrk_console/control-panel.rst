@@ -127,8 +127,10 @@ Touchscreen support
 *******************
 
 .. figure:: /images/dvrk_console/dvrk_console_remote_control_touch.jpeg
-   :width: 600
+   :width: 400px
    :align: center
+
+   Control panel with touchscreen at JHU
 
 The wrench menu provides a per-monitor touchscreen toggle and input-device
 selection:
