@@ -8,7 +8,7 @@ Middleware
 All the middleware solutions described in this section are not
 specific to the dVRK, i.e. they can be applied to all `cisst/SAW
 components
-<https://github.com/jhu-cisst/cisst/wiki/cisst-libraries-and-SAW-components>`_.
+<https://cisst.readthedocs.io/en/main/libraries/overview.html>`_.
 
 .. _bridge-ros:
 
@@ -30,7 +30,7 @@ Pros
 
 * There is no need to understand the internal dVRK components nor
   learn anything about the
-  `cisst libraries <https://github.com/jhu-cisst/cisst/wiki>`_
+  `cisst libraries <https://cisst.readthedocs.io>`_
 * For your ROS node, you can use any programming language ROS
   supports, C++, Python, Java...
 * If you're using either Python or Matlab, we also provide some

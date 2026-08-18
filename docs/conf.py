@@ -219,14 +219,14 @@ rst_prolog = """
 .. _CRTK: https://crtk-robotics.readthedocs.io
 
 .. |cisstDataGenerator| replace:: *cisstDataGenerator*
-.. _cisstDataGenerator: https://github.com/jhu-cisst/cisst/wiki/cisstCommon-Data-Generator
+.. _cisstDataGenerator: https://cisst.readthedocs.io/en/main/libraries/cisstCommon/data-generator.html
 
 .. |cisstRobot| replace:: *cisstRobot*
-.. _cisstRobot: https://github.com/jhu-cisst/cisst/tree/main/cisstRobot
+.. _cisstRobot: https://cisst.readthedocs.io/en/main/libraries/cisstRobot/index.html
 
 .. |cisstRobotManipulator| replace:: *cisstRobot*, class *robManipulator*
-.. _cisstRobotManipulator: https://github.com/jhu-cisst/cisst/wiki/cisstRobot-robManipulator
+.. _cisstRobotManipulator: https://cisst.readthedocs.io/en/main/libraries/cisstRobot/manipulator.html
 
 .. |cisstMultiTask| replace:: *cisstMultiTask*
-.. _cisstMultiTask: https://github.com/jhu-cisst/cisst/wiki/cisstMultiTask-tutorial
+.. _cisstMultiTask: https://cisst.readthedocs.io/en/main/libraries/cisstMultiTask/tutorial.html
 """

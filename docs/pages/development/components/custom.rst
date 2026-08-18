@@ -12,7 +12,7 @@ Derived components
 
 Since the dVRK stack relies on *cisstMultiTask* components (see
 `tutorial
-<https://github.com/jhu-cisst/cisst/wiki/cisstMultiTask-concepts>`_),
+<https://cisst.readthedocs.io/en/main/libraries/cisstMultiTask/concepts.html>`_),
 one can technically replace any existing component by their own.  It's
 possible but not necessarily easy nor the best approach.  If your
 changes are modest, it might be easier to start from the existing

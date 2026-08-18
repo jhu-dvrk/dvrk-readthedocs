@@ -31,7 +31,7 @@ frequency.  There are a few notable exceptions:
   later.  Overall, the time between read and write could be as high as
   2 milliseconds.  Instead, we used the *cisstMultiTask*
   ExecIn/ExecOut feature (see `cisstMultiTask concepts
-  <https://github.com/jhu-cisst/cisst/wiki/cisstMultiTask-concepts>`_)
+  <https://cisst.readthedocs.io/en/main/libraries/cisstMultiTask/concepts.html>`_)
   which allows to attach a component to another.  Effectively, the
   parent thread now runs the child's computation whenever needed.  In
   pseudo code:

@@ -94,7 +94,7 @@ cisst libraries and SAW components
 ==================================
 
   * `cisst repository <https://github.com/jhu-cisst/cisst>`_
-  * `cisst documentation <https://github.com/jhu-cisst/cisst/wiki>`_
+  * `cisst documentation <https://cisst.readthedocs.io>`_
   * `cisst netlib <https://github.com/jhu-cisst/cisstNetlib>`_
   * `cisst-ros <https://github.com/jhu-cisst/cisst-ros>`_ ROS 1 and 2 bridge for SAW components
   * `vcs files <https://github.com/jhu-saw/vcs>`_ for cisst, SAW components and dVRK

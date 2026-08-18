@@ -77,7 +77,7 @@ General
   Computer-Integrated Surgical Systems and Technology: `NSF ERC CISST <https://cisst.org>`_ and `cisst libraries <https://github.com/jhu-cisst>`_
 
 **SAW**
-  Surgical Workstation Assistant: `components based on cisst libraries <https://github.com/jhu-cisst/cisst/wiki/cisst-libraries-and-SAW-components>`_
+  Surgical Workstation Assistant: `components based on cisst libraries <https://cisst.readthedocs.io/en/main/libraries/overview.html>`_
 
 **CRTK**
   `Collaborative Robotics ToolKit <https://crtk-robotics.readthedocs.io>`_

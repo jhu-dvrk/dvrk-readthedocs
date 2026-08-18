@@ -6,11 +6,11 @@ Introduction
 
 All C++ components are based on the *cisst*\ /*SAW* libraries, more specifically the *cisstMultiTask* framework:
 
-* *cisst* libraries: https://github.com/jhu-cisst/cisst/wiki
+* *cisst* libraries: https://cisst.readthedocs.io
 * *cisstMultiTask*
 
-  * Tutorial: https://github.com/jhu-cisst/cisst/wiki/cisstMultiTask-tutorial
-  * Concepts: https://github.com/jhu-cisst/cisst/wiki/cisstMultiTask-concepts
+  * Tutorial: https://cisst.readthedocs.io/en/main/libraries/cisstMultiTask/tutorial.html
+  * Concepts: https://cisst.readthedocs.io/en/main/libraries/cisstMultiTask/concepts.html
 
 * Overall architecture: :download:`JHU LCSR 09/2021 internal meeting
   presentation <https://dvrk.lcsr.jhu.edu/downloads/presentations/LCSR-cisst-SAW-SoftwareInfrastructure-lab-meeting-09-2021.pptx>`
