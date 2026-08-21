@@ -93,11 +93,11 @@ Compilation
 For all OSs, you need to first compile *cisstNetlib*.  It is
 recommended to compile the C version of *cisstNetlib* unless you have
 access to a old Fortran compiler (gfortran 9 or lower).  You will then
-need to compile the *cisst/SW* meta repository.  The steps are
+need to compile the *cisst/SAW* meta repository.  The steps are
 described in the GitHub continuous integration YAML files:
 
 * Windows: https://github.com/jhu-dvrk/dvrk-github-workflow/blob/main/.github/workflows/windows-latest.yaml
-* macOS: https://github.com/jhu-dvrk/dvrk-github-workflow/blob/main/.github/workflows/macos-13.yaml
+* macOS: https://github.com/jhu-dvrk/dvrk-github-workflow/blob/main/.github/workflows/macos-latest.yaml
 
 The `dvrk-github-workflow
 <https://github.com/jhu-dvrk/dvrk-github-workflow>`_ repository also
@@ -112,7 +112,7 @@ CMake variables should be defined as follows:
 * ``CISST_HAS_JSON``: ``ON``
 * ``CISST_BUILD_SHARED_LIB``: ``ON``
 * ``CISST_USE_SI_UNITS``: ``ON``
-* ``CISST_HAS_QT5``: ``ON``
+* ``CISST_HAS_QT``: ``ON``
 * ``CISST_cisstRobot``: ``ON``
 * ``SAW_sawControllers``: ``ON``
 * ``SAW_sawIntuitiveResearchKit``
