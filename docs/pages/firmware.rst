@@ -89,4 +89,8 @@ https://github.com/jhu-cisst/mechatronics-embedded/releases/latest.
 dSIB-Si and dSIB-Si-Z
 *********************
 
-Program over USB using Arduino IDE.  See https://github.com/jhu-dvrk/dSIB-Si-firmware.
+See:
+
+* `dSIB-Si-firmware <https://github.com/jhu-dvrk/dSIB-Si-firmware>`_
+* `dSIB-Z-Si-firmware <https://github.com/jhu-dvrk/dSIB-Z-Si-firmware>`_
+* `Windows based tool for dSIB manufacturer <https://github.com/jhu-dvrk/dvrk-si-suj-mfg-tool>`_
