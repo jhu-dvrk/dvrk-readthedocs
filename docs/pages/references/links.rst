@@ -66,8 +66,9 @@ Electronics/Enclosures
 
   * Motor power board: `dRAC <https://github.com/jhu-dvrk/drac>`_
   * `Front panel LEDs <https://github.com/jhu-dvrk/dvrk-si-front-panel-led>`_
-  * `ESPM programmer <https://github.com/jhu-dvrk/espm-programmer-pcba>`_
+  * `ESxx programmer <https://github.com/jhu-dvrk/esxx-programmer-pcba>`_
   * `dSIB <https://github.com/jhu-dvrk/dSIB-Si-pcba>`_
+  * `dSIB Z <https://github.com/jhu-dvrk/dSIB-Z-Si-pcba>`_
   * `dVRK Si controller test board <https://github.com/jhu-dvrk/dvrk-si-test-board>`_
   * `dVRK Si controller bill of materials and assembly instructions <https://github.com/jhu-dvrk/dVRK-Si-Controller>`_
 
@@ -77,7 +78,9 @@ Firmware/Software
 * Firmware for all dVRK logic boards (aka FPGA1394): `mechatronics-firmware <https://github.com/jhu-cisst/mechatronics-firmware>`_
 * Client library and tools for all FPGA1394: `mechatronics-software <https://github.com/jhu-cisst/mechatronics-software>`_
 * Embedded software for Zynq PS on FPGA1394 v3: `mechatronics-embedded <https://github.com/jhu-cisst/mechatronics-embedded>`_
-* `dSIB Si <https://github.com/jhu-dvrk/dSIB-Si-firmware>`_ (FPGA)
+* `ESxx programmer <https://github.com/jhu-dvrk/esxx-programmer-firmware>`_ (STM32)
+* `dSIB Si <https://github.com/jhu-dvrk/dSIB-Si-firmware>`_ (STM32)
+* `dSIB Z Si <https://github.com/jhu-dvrk/dSIB-Z-Si-firmware>`_ (STM32)
 
 Software
 ********
@@ -149,7 +152,7 @@ dVRK
 CAD
 ***
 
-  * Files used for ROS ``dvrk_model``: `dvrk_cad <https://github.com/jhu-dvrk/dvrk_cad>`_
+  * Files used for ROS ``dvrk_model``: `dvrk_cad <https://github.com/jhu-dvrk/dvrk_cad>`_  This repository now includes high definition models of instruments.
   * High resolution instrument models: `instrument-cad <https://github.com/jhu-dvrk/instrument-cad>`_
   * Small parts used for calibration: `dvrk-calibration-parts <https://github.com/jhu-dvrk/dvrk-calibration-parts>`_ (Classic)
   * Cannula replacement: `dvrk-cannulas <https://github.com/jhu-dvrk/dvrk-cannulas>`_ (Classic)

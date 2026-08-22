@@ -141,8 +141,8 @@ you have a somewhat flat surface to stack the 4 dVRK-Si controllers.
 
 .. _dsib-si-setup:
 
-dSIB-Si
-*******
+dSIB-Si and dSIB-Z-Si
+*********************
 
 For a full system, you will need 4 dSIB adapter boards, one for each
 dVRK-Si controller (da Vinci Setup Interface Board). These boards are
@@ -153,6 +153,8 @@ unfortunately very short, so you will have to remove the cover on the
 back of the SUJ as well as most of the existing electronics at the
 base of the patient cart. The dSIB boards are also used to power the
 SUJ brakes.
+
+The dSIB-Z-Si board is used for the linear potentiometers for all SUJs. It reads the potentiometers for all four translations stages. It is connected to a single large connector that comes from the SUJ column on one end. On the other end, it uses 4 serial ports to communicate with the dSIB-Si boards. These 4 ports are labeled, make sure you connect them to the correct dSIB/controller.
 
 JHU setup
 *********
@@ -175,28 +177,33 @@ will unfortunately have to remove most of the old electronic
 components of the original patient's cart to fit the dVRK controllers.
 
 .. figure:: /images/Si/Si-controllers-SUJ-front-labeled.jpg
-   :width: 400
+   :width: 600
    :align: center
 
    Stack of dVRK-Si controllers with data cables (front)
 
 .. figure:: /images/Si/Si-controllers-SUJ-back-labeled.jpg
-   :width: 400
+   :width: 600
    :align: center
 
    Stack of dVRK-Si controllers with dSIB-Si (back)
 
-.. note::
+.. warning::
 
    The dSIBs are mounted directly on the back of the controllers,
    don't use any extension cables between the dSIB and the controller!
 
-.. figure:: /images/Si/PSM-Si-label-labeled.jpg
-   :width: 300
+.. figure:: /images/Si/dSIB-Si-connected-labeled.png
+   :width: 400
    :align: center
 
-   Label on each active Si arm
+   The PSM1 controller and mated dSIB-Si with all its cables connected.
 
+.. figure:: /images/Si/dSIB-Z-Si-connected-labeled.jpg
+   :width: 400
+   :align: center
+
+   The dSIB-Z-Si board with all its cables connected.
 
 DGIST setup
 ***********

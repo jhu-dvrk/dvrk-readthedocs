@@ -46,6 +46,11 @@ Basic information:
 
    da Vinci Si PSM labeled
 
+.. figure:: /images/Si/PSM-Si-RCM-patent.jpeg
+   :width: 400
+   :align: center
+
+   Patent drawing of the RCM mechanism
 
 Cannula and sterile adapter
 ===========================
