@@ -79,7 +79,7 @@ To use a specific release, replace the vcs line with:
 
 .. code-block:: bash
 
-   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-2.4.0.vcs --recursive
+   vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-2.5.0.vcs --recursive
 
 Compile using ``colcon``:
 

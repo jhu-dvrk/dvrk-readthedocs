@@ -6,6 +6,11 @@ ROS 1
 
 .. warning::
 
+   **Important:** ROS1 has not been tested with dVRK software version 2.5.0
+   or later. Use ROS2 for dVRK software 2.5.0 and later.
+
+.. warning::
+
    ROS1 itself is not maintained anymore, we strongly recommend to use ROS2.
    The dVRK support for ROS1 will likely be dropped after release 2.4 (end of
    2025).

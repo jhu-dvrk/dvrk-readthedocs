@@ -7,6 +7,9 @@ Firmware
 Introduction
 ############
 
+The recommended FPGA firmware version is **v10**. It is backward compatible
+with all dVRK controllers.
+
 .. note::
 
    This section is an overview, please follow the links provided below for in depth documentation.
