@@ -62,31 +62,36 @@ See instructions on the `mechatronics-firmware wiki
 <https://github.com/jhu-cisst/mechatronics-firmware/wiki/FPGA-Program>`_.
 
 
-FPGA1394V3, ESPM and ESSJ
-*************************
+FPGA1394V3
+**********
 
-To avoid any confusion between all the different firmware files on SD cards, we
-provide a single Zip file that includes the firmware for the FPGA1394V3, ESPM
-and ESSJ. The loader finds the correct firmware by name. This way, users can put
-any SD card in any dVRK component. 
+FPGA1394V3 is used for the dVRK-Si PSM and ECM controllers, and for the newer generation
+of dVRK MTM controller with DQLA (dual QLA). It can also be used as a replacement
+for FPGA1394V1 or FPGA1394V2 in an older generation dVRK controller, though this is not
+normally done.
+We provide a single Zip file that includes the firmware for all supported uses of FPGA1394V3.
+The loader finds the correct firmware by name. This way, users can put
+the SD card into any dVRK/dVRK-Si controller that has an SD slot. 
 
 Remove all the SD cards from your system:
 
 * For dVRK Classic V3 controllers, card slot is located on the back
 * For dVRK Si controllers, card slot is on the front
-* For the ESPM and ESSJ, the SD card is on the programmer itself
 
 The simplest approach is to use the :ref:`dVRK SD card updater
 <sd-card-updater>` to download all the dVRK firmware files to one or more SD
-card(s). This script downloads the latest firmware files, unzip them and wait
+card(s). This script downloads the latest firmware files, unzips them and waits
 for an SD card to be inserted in the PC.  When an SD card is inserted, it
 detects and mounts the card.  The script then moves the existing files on the SD card to a
 backup directory and installs the new files. It then unmounts the SD card and waits
 for the next one to update. 
 
 Alternatively, you can download all the latest firmware files in a Zip file,
-uncompress and copy all the files to the SD card. Last version can be found in
+uncompress and copy all the files to the SD card. The latest version can be found in
 https://github.com/jhu-cisst/mechatronics-embedded/releases/latest.
+
+If the controllers are connected to the PC via Ethernet, it is also possible to
+update the SD card using `scp`.
 
 
 dSIB-Si and dSIB-Si-Z
