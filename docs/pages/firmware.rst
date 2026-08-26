@@ -44,10 +44,8 @@ There are a few boards with embedded firmware used for the dVRK, either Classic 
    *FPGA* and *firmware* is used to reference the FPGA1394 board and firmware
    unless specified otherwise.
 
-
 Upgrade
 #######
-
 
 FPGA1394V1 and V2
 *****************
@@ -60,7 +58,6 @@ There are 3 main ways to upgrade the firmware for the dVRK Classic controllers F
 
 See instructions on the `mechatronics-firmware wiki
 <https://github.com/jhu-cisst/mechatronics-firmware/wiki/FPGA-Program>`_.
-
 
 FPGA1394V3
 **********
@@ -93,7 +90,6 @@ https://github.com/jhu-cisst/mechatronics-embedded/releases/latest.
 If the controllers are connected to the PC via Ethernet, it is also possible to
 update the SD card using `scp`.
 
-
 dSIB-Si and dSIB-Si-Z
 *********************
 
@@ -101,4 +97,4 @@ See:
 
 * `dSIB-Si-firmware <https://github.com/jhu-dvrk/dSIB-Si-firmware>`_
 * `dSIB-Z-Si-firmware <https://github.com/jhu-dvrk/dSIB-Z-Si-firmware>`_
-* `Windows based tool for dSIB manufacturer <https://github.com/jhu-dvrk/dvrk-si-suj-mfg-tool>`_
+
