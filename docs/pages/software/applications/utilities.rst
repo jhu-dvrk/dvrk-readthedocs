@@ -151,8 +151,8 @@ console controls.  It is intended as an operator-facing UI; the main
 * Compatible with **dVRK DQLA-based Classic controllers and all Si controllers**
 * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/sd-card-updater
 
-Script used to download, uncompress and copy the latest firmware files for the
-DQLA and dRAC based controllers as well as the ESPM programmers. The script
+Script used to download, decompress and copy the latest firmware files for the
+DQLA and dRAC based controllers. The script
 waits for an SD card to be inserted in the PC.  It will then mount it, copy the
 files and unmount, so the user can safely remove the card.  The user can insert
 all their SD cards one after another without restarting the script.

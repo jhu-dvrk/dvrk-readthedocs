@@ -1,10 +1,11 @@
-Mount
-#####
+Mounting options
+################
 
 .. note::
 
    If you have a full Si patient cart (i.e., SUJ with PSMs and ECM),
-   you can skip this section unless you plan to remove/swap an arm.
+   you can skip this section and go directly to the :ref:`SUJ setup
+   <setup-si-suj>`, unless you plan to remove/swap an arm.
 
    .. figure:: /images/Si/patient-cart-Si-JHU.jpg
       :width: 200

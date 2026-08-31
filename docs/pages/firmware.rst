@@ -84,7 +84,7 @@ backup directory and installs the new files. It then unmounts the SD card and wa
 for the next one to update. 
 
 Alternatively, you can download all the latest firmware files in a Zip file,
-uncompress and copy all the files to the SD card. The latest version can be found in
+decompress and copy all the files to the SD card. The latest version can be found in
 https://github.com/jhu-cisst/mechatronics-embedded/releases/latest.
 
 If the controllers are connected to the PC via Ethernet, it is also possible to

@@ -5,8 +5,8 @@ SUJ
 
 The goal is to re-use the internal cables and sensors in the SUJ
 passive arms for the dVRK controllers. This way all the signals from
-the active arms (:ref:`2 D-sub connectors <setup-si-connections>`) can
-be carried all the way to the dSIB and ESSJ at the base of the
+the active arm ESPMs (:ref:`2 D-sub connectors <setup-si-connections>`) can
+be carried all the way through the ESSJs o the dSIBs at the base of the
 patient cart.
 
 The overall flow is shown at the bottom of the following figure. More details
@@ -23,8 +23,8 @@ can be found in the :ref:`dVRK electronic introduction <boards-intro>`.
    The dSIB-Si should be connected directly to the dRAC based
    controller.  You might have received some custom cables to connect
    to arm to the controller.  Even though they use the same
-   connectors, they don't carry all the signals required with the SUJ
-   and ESSJ.  So, **don't use the custom cables** between the dSIB and
+   connectors, they don't carry all the signals required for the SUJ
+   and ESSJs.  So, **don't use the custom cables** between the dSIB and
    the controller (:ref:`see also <setup-si-connections>`).
 
 Preparation
@@ -73,7 +73,7 @@ on the cover.
 
    SUJ Si top cover
 
-Once the covers are removed, you should familiarize yourself with the
+With the covers removed, you should familiarize yourself with the
 different cables you will need to unplug from the original electronics
 and re-plug to the dVRK controllers.  Ultimately, the RACs, back
 panels, bracket, cover, battery, electronics... will be removed.
@@ -107,6 +107,13 @@ black cable, a "FireWire B" cable (used for LVDS) and a grounding cable with
 a ring terminal.  Bundle all these cables together and label with the name of the arm.
 
 The upper "FireWire" cable (J10) and the bottom cable (J13) plugged into each RAC are not needed for dVRK.
+
+.. note::
+
+   Although physical FireWire (IEEE-1394) cables and connectors are used
+   internally for the ESPM, ESSJ, and dSIB-Si wiring, they only serve as
+   a physical medium for custom point-to-point LVDS communication. They
+   do **not** use the FireWire (IEEE-1394) protocol.
 
 .. figure:: /images/Si/Si-SUJ-conversion-RAC-cables-labels.png
    :width: 300

@@ -6,7 +6,6 @@ Si
 
 .. toctree::
 
-   Si/mount
-   Si/connections
-   Si/ESPM
+   Si/single_arm
    Si/SUJ
+   Si/ESPM_and_ESSJ

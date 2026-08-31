@@ -11,7 +11,7 @@ controllers <controller-si-exterior>`.
 For users with an original patient cart (SUJ), the connectors for the
 active arms are not accessible.  Therefore, we use the internal wiring
 in the SUJ arm to bring all the signals to the base of the cart.  An
-additional card (dSIB) is used to interface between the internal
+additional card (dSIB-Si) is used to interface between the internal
 connectors at the base of the cart and the dVRK controllers (see
 :ref:`Si SUJ <setup-si-suj>`).
 
