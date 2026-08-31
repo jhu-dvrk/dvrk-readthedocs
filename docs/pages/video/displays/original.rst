@@ -1,14 +1,14 @@
 .. _displays-original:
 
-HRSV with orginal CRTs
-######################
+HRSV with original CRTs
+########################
 
 SD HRSV
 *******
 
-The da Vinci Classic came with two SD CRT (Cathodic Ray Tube)
+The da Vinci Classic came with two SD CRT (Cathode Ray Tube)
 monitors, their resolution is 640x480.  The connectors on the back of
-the monitor is not totally standard, each group will have to build
+the monitors are not totally standard, each group will have to build
 a custom cable to provide a VGA interface.  One can find instructions
 on the ISI Research Wiki
 (https://research.intusurg.com/index.php/DVRK:Topics:StereoViewer

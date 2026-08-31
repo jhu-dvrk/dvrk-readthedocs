@@ -26,7 +26,7 @@ Labels
 To use the SUJs with the dVRK controller and/or the dVRK software, the main
 challenge is to determine the current position of each joint. This has to be
 done if you have the dVRK controllers (for calibration) or if you plan to use
-the SUJs in simulation mode. Unfortunaltely, there are no graduation on the SUJ
+the SUJs in simulation mode. Unfortunately, there are no graduations on the SUJ
 joints. To help with this task, we provide some custom labels that can be
 attached to each joint of the SUJs.
 

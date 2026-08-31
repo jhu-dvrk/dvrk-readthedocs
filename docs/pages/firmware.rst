@@ -17,7 +17,7 @@ with all dVRK controllers.
 There are a few boards with embedded firmware used for the dVRK, either Classic or Si:
 
 * :ref:`FPGA1394 <fpga>`: FPGA based, designed at JHU for generic robot controllers. dVRK
-  :ref:`Classic <controllers-classic>` and :ref:`Si <controllers-Si>`, located
+  :ref:`Classic <controllers-classic>` and :ref:`Si <controllers-si>`, located
   in dVRK controllers. Both the board design and firmware are open-sourced.
   FPGA1394V1 and FPGA1394V2 boot from EPROM. FPGA1394V3 boots from a SD card.
 
@@ -28,7 +28,7 @@ There are a few boards with embedded firmware used for the dVRK, either Classic 
   to dVRK and is not open-sourced. Boots from EPROM or custom dVRK bootloader
   with SD card.
 
-* ESSJ: FPGA based, designed by Intuitive Surgical. dVRK Si with SUJ only,
+* :ref:`ESSJ <essj>`: FPGA based, designed by Intuitive Surgical. dVRK Si with SUJ only,
   located in SUJ arms. Board design is not open-sourced, firmware is specific to
   dVRK and is not open-sourced.  Boots from EPROM or custom dVRK bootloader
   with SD card.
@@ -53,7 +53,7 @@ FPGA1394V1 and V2
 There are 3 main ways to upgrade the firmware for the dVRK Classic controllers FPGA1394V1 and FPGA1394V2:
 
 * For most users: over FireWire
-* For most users with a bricked controller: using a OpenOCD with a JTAG adaper
+* For most users with a bricked controller: using OpenOCD with a JTAG adapter
 * For advanced users, FPGA programmers: using Xilinx ISE 
 
 See instructions on the `mechatronics-firmware wiki

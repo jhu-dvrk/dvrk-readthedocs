@@ -42,7 +42,7 @@ The core library handles:
     FPGA1394 boards, i.e. broadcast write. Finally, it is also possible to read
     the information from all the FPGA1394 boards using a single query/request,
     all the answers are collated in a single message read by the computer. See
-    also :ref:`system configuration, IO<config-IO>`.
+    also :ref:`system configuration, IO <config-io>`.
 
   * Serialization and deserialization of data packets into usable values.
     Voltages and currents are reported using integers since the conversion

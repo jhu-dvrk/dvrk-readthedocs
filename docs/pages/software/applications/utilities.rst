@@ -188,9 +188,9 @@ Next, start the teleoperation script with your chosen arms::
 
    ros2 run dvrk_python dvrk_teleoperation.py -m <MTM> -p <PSM>
 
-If you don't have dVRK foot pedals, you can use the ``-c <cluch topic>`` and
+If you don't have dVRK foot pedals, you can use the ``-c <clutch topic>`` and
 ``-o <operator pedal>`` topics to use a different source (these topics should
-each provide ``sensors_msgs/msg/Joy`` with one button). Alternatively, you can
+each provide ``sensor_msgs/msg/Joy`` with one button). Alternatively, you can
 set ``-o`` to disable the operator pedal, note however that in this mode
 teleoperation will begin as soon as any MTM activity is detected, so please be
 careful.

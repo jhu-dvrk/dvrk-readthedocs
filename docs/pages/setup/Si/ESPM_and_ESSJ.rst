@@ -53,7 +53,7 @@ by a few clips.
 
    If the arm is folded, and you can't access the surface, you can force the arm to move despite
    the brakes.  This is not something you should do too often, but it
-   can help during the setup: `YouTube video <https://www.youtube.com/shorts/wBXQduLbHdE>`_.
+   can help during the setup: `moving an unpowered Si arm (YouTube video) <https://www.youtube.com/shorts/wBXQduLbHdE>`_.
 
 To program the ESPM, connect an :ref:`ESXX programmer <esxx>` to the JTAG port on the ESPM board. Once programmed, the ESXX programmer should be removed and the cover reinstalled.
 
@@ -91,7 +91,7 @@ The ESXX programmer replaces the obsolete ESPM programmer. It is a **one-time us
 
 The ESXX programmer uses a micro SD card containing the custom firmware images (see :ref:`dvrk-sd-card-updater <sd-card-updater>`).
 
-Video tutorial: `YouTube video <https://youtu.be/yIdvk0Wox8w>`_
+Video tutorial: `ESXX programmer tutorial (YouTube video) <https://youtu.be/yIdvk0Wox8w>`_
 
 JTAG Connections
 ****************

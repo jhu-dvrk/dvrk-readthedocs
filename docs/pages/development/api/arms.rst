@@ -350,7 +350,7 @@ Configuration
   * dVRK specific: when using ``body/servo_cf``, reference frame to
     apply the wrench is the end effector frame.  This makes sense for
     the position but can be confusing for the orientation.  For
-    example, using the MTM, applying a contant force in Z direction
+    example, using the MTM, applying a constant force in the Z direction
     feels like holding a rocket in your hand, the direction of the
     force will change as the user rotates the gripper.  To feel a
     force in a constant direction, independently of the hand's
@@ -363,14 +363,14 @@ Configuration
   * dVRK specific: ratio applied to both maximum velocity and
     acceleration used for joint trajectory generation.  If a user
     overrides the ratio using either the velocity or acceleration
-    specific ratio, this value in undefined.  See
+    specific ratio, this value is undefined.  See
     ``trajectory_j/set_ratio``.
 
 * ``trajectory_j/ratio_a``
 
   * *cisst*: event write ``double``
   * *ROS*: publisher ``std_msgs/Float64``
-  * dVRK specific: atio applied to maximum acceleration used for joint
+  * dVRK specific: ratio applied to maximum acceleration used for joint
     trajectory generation.  See ``trajectory_j/set_ratio_a``.
 
 * ``trajectory_j/ratio_v``

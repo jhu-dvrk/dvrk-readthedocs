@@ -11,14 +11,16 @@ Overview
 
 The board ID is set by the rotary switch value (4-bit from 0 to F/15)
 on the logic boards FPGA1394 (see :ref:`board-id-selector`).  Each ID
-which should be unique among the daisy-chained controller boards. The
+should be unique among the daisy-chained controller boards. The
 board ID should have been set during manufacturing based on the arm
-type using the :ref:`default-board-ids`. Not all Research Kit come
+type using the :ref:`default-board-ids`. Not all Research Kits come
 with the ECM, PSM3 or SUJ but the board IDs should be reserved
 nevertheless.  PSMs on da Vinci Standard come with color stickers, so
 might be identified by their color: yellow (PSM1), green (PSM2) and
 red (PSM3).
 
+
+.. _default-board-ids:
 
 Default board IDs
 #################
@@ -29,7 +31,7 @@ convention so using custom board IDs should be reserved to very
 specific configurations (e.g. 4 MTMs or 2 ECMs).
 
 .. csv-table:: Default logic board IDs
-   :name: default-board-ids
+   :name: default-board-ids-table
    :header: "ID", "MTML", "MTMR", "ECM", "PSM1", "PSM2", "PSM3", "SUJ Classic"
    :align: center
 

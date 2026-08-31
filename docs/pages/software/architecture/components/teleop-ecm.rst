@@ -33,17 +33,17 @@ issues:
 
 *  The ECM has 4 DOF (3 translations and 1 rotation) while the MTM has 6 DOF (3
    translations and 3 rotations). This means that some of the MTM motions are
-   not feasable for the ECM.
+   not feasible for the ECM.
 
 *  MTM wrist rotations would be used to control the first two joints of the ECM.
    These joints are not as light as the wrist of the PSM instruments.  Small
    wrist motions on the operator's side would lead to aggressive motions on the ECM.
 
 * Once the ECM teleoperation ends, the MTM orientation will not match the PSM's
-  end effector orientation.  This would require to re-align the MTM more often
+  end effector orientation.  This would require re-aligning the MTM more often
 
 Instead, the ECM teleoperation is performed using both MTMs.  The operator
-feels like their holding the world with both hands and moving the world instead
+feels like they are holding the world with both hands and moving the world instead
 of the camera itself.
 
 On the patient's side, the ECM motion is constrained by the RCM.  The camera can

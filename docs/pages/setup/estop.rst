@@ -64,7 +64,7 @@ variations of safety connectors in the different generations of
 controller boxes, as shown in the figure below. All of them can be
 upgraded to the standard configuration (shown on the right) by using
 the appropriate `retrofit kit
-<https://github.com/jhu-dvrk/dvrk-estop-retrofit>`_
+<https://github.com/jhu-dvrk/dvrk-estop-retrofit>`__.
 
 .. figure:: /images/estop/estop_connectors.png
    :width: 600
@@ -155,7 +155,7 @@ which case the 5-pin connector would be used), but has the
 disadvantage that the cable must be redone to support fewer or more
 controllers. Thus, for controller boxes with a single connector, we
 recommend installing the `retrofit kit
-<https://github.com/jhu-dvrk/dvrk-estop-retrofit>`_ to obtain the
+<https://github.com/jhu-dvrk/dvrk-estop-retrofit>`__ to obtain the
 standard two connector configuration and instead use the :ref:`modular
 E-stop chain <estop-modular>`.
 

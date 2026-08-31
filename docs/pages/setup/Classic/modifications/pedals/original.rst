@@ -1,13 +1,13 @@
 .. _pedals-original:
 
-Orginal da Vinci foot pedals
-============================
+Original da Vinci foot pedals
+=============================
 
 Description
 -----------
 
 The original da Vinci foot pedal tray has 5 pedals.  From left to
-right: CLUTCH, CAMERA, Focus +/-, GOAG and BI-COAG.  The pedals CLUTCH
+right: CLUTCH, CAMERA, Focus +/-, COAG and BI-COAG.  The pedals CLUTCH
 and CAMERA are used to clutch the MTMs and switch to-from PSM vs ECM
 teleoperation.  The Focus +/- is used to control the endoscope focus
 (there is a custom cable for the dVRK) and cauterization (mono-polar

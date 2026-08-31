@@ -57,8 +57,8 @@ Electronics/Enclosures
   * `QLA test board <https://github.com/jhu-cisst/FPGA1394-QLA-Test>`_
   * `DQLA <https://github.com/jhu-dvrk/dvrk-DQLA>`_
   * `dMIB <https://github.com/jhu-dvrk/dvrk-pcb-dMIB>`_
-  * `dSIB <https://github.com/jhu-dvrk/dvrk-pcb-dSIB>`__
-  * `Intrument detection Dallas retrofit dongle <https://github.com/jhu-dvrk/dvrk_Dallas_Dongle>`_
+  * `dSIB (Classic) <https://github.com/jhu-dvrk/dvrk-pcb-dSIB>`_
+  * `Instrument detection Dallas retrofit dongle <https://github.com/jhu-dvrk/dvrk_Dallas_Dongle>`_
   * `dVRK Classic controller test board <https://github.com/jhu-dvrk/dvrk-controller-test-board>`_
   * `dVRK Classic SUJ controller assembly instructions <https://github.com/jhu-dvrk/dVRK-Classic-SUJ-Controller>`_
 
@@ -66,8 +66,8 @@ Electronics/Enclosures
 
   * Motor power board: `dRAC <https://github.com/jhu-dvrk/drac>`_
   * `Front panel LEDs <https://github.com/jhu-dvrk/dvrk-si-front-panel-led>`_
-  * `ESxx programmer <https://github.com/jhu-dvrk/esxx-programmer-pcba>`_
-  * `dSIB <https://github.com/jhu-dvrk/dSIB-Si-pcba>`_
+  * `ESxx programmer (PCBA) <https://github.com/jhu-dvrk/esxx-programmer-pcba>`_
+  * `dSIB (Si) <https://github.com/jhu-dvrk/dSIB-Si-pcba>`_
   * `dSIB Z <https://github.com/jhu-dvrk/dSIB-Z-Si-pcba>`_
   * `dVRK Si controller test board <https://github.com/jhu-dvrk/dvrk-si-test-board>`_
   * `dVRK Si controller bill of materials and assembly instructions <https://github.com/jhu-dvrk/dVRK-Si-Controller>`_
@@ -78,7 +78,7 @@ Firmware/Software
 * Firmware for all dVRK logic boards (aka FPGA1394): `mechatronics-firmware <https://github.com/jhu-cisst/mechatronics-firmware>`_
 * Client library and tools for all FPGA1394: `mechatronics-software <https://github.com/jhu-cisst/mechatronics-software>`_
 * Embedded software for Zynq PS on FPGA1394 v3: `mechatronics-embedded <https://github.com/jhu-cisst/mechatronics-embedded>`_
-* `ESxx programmer <https://github.com/jhu-dvrk/esxx-programmer-firmware>`_ (STM32)
+* `ESxx programmer (firmware) <https://github.com/jhu-dvrk/esxx-programmer-firmware>`_ (STM32)
 * `dSIB Si <https://github.com/jhu-dvrk/dSIB-Si-firmware>`_ (STM32)
 * `dSIB Z Si <https://github.com/jhu-dvrk/dSIB-Z-Si-firmware>`_ (STM32)
 

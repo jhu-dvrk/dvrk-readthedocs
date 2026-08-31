@@ -68,7 +68,7 @@ Notes
 =====
 
 * The :ref:`dVRK system <system>` publishes both synchronous (events) and
-  asynchronous data (state data).  Events (such as ``operating_state`` are
+  asynchronous data (state data).  Events (such as ``operating_state``) are
   published as fast as possible.  State data (such as ``measured_js``...) is
   published periodically. By default, the dVRK system publishes data at 100Hz
   (10ms).  This can be increased using the ``-p`` command line argument.  The
@@ -80,13 +80,13 @@ Notes
   publishing events or subscribing to commands).
 * It is possible to configure which ROS topics are available. The dVRK ROS
   system node can expose topics from both the IO and PID components in read-only
-  or read-write mode (see :ref:`system appication<system>`).
+  or read-write mode (see :ref:`system application <system>`).
 * We provide a dVRK client API over ROS for both Python (``import
   dvrk``) and Matlab (``dvrk.``).  These are very convenient for quick
   testing and sending commands from an interactive interpreter, but
   they come at a cost.  To provide all the possible features, these
   dVRK clients have to subscribe to all the dVRK topics and this will
-  definitely slow down your interpreter.  This is specially true for
+  definitely slow down your interpreter.  This is especially true for
   the Matlab client.  You can look at the ``dvrk_bag_replay.py``
   example in the ``dvrk_python`` package
   (https://github.com/jhu-dvrk/dvrk_python) to see how to use the

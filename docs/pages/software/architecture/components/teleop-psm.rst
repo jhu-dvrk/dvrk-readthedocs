@@ -176,17 +176,17 @@ performed by capping the maximum jaw velocity until the two angles match.
 
 From the user perspective, it gives plenty of time to react and adjust their
 grip for the ongoing task. The maximum jaw velocity can be configured in the
-systen JSON configuration file.
+system JSON configuration file.
 
 
 Cartesian velocity
 ******************
 
-The teleoperation component provides an option to use the MTM cartesian velocity
-along the cartesian position.  Since the dVRK arm class provides the MTM
-cartesian velocity (twist), it can be used to compute cartesian position and
+The teleoperation component provides an option to use the MTM Cartesian velocity
+along with the Cartesian position.  Since the dVRK arm class provides the MTM
+Cartesian velocity (twist), it can be used to compute Cartesian position and
 velocity goals for the PSM.  On the PSM side, the twist is converted to desired
-joint positions and velocities (using the jacobian).  The PID can then use these
+joint positions and velocities (using the Jacobian).  The PID can then use these
 to provide a smoother and more reactive motion.  Informal testing indicates that
 the latency between the MTM and PSM motion is reduced by a factor close to 5
 (from 100ms to 20ms).  This can be deactivated in the system JSON configuration

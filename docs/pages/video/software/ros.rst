@@ -6,7 +6,7 @@ Introduction
 ************
 
 ``gscam`` is a ROS node using the ``gstreamer`` library.  The gstreamer
-library supports a few frame grabbers including the Hauppage one.  The
+library supports a few frame grabbers including the Hauppauge one.  The
 gstreamer development library can be installed using ``apt-get
 install``.  Make sure you install gstreamer 1.0, not 0.1.
 
@@ -16,8 +16,8 @@ ROS Ubuntu packages vs build from source
 Use ``apt install`` to install gscam on Ubuntu 18.04 with ROS 1.  The
 package name should be ``ros-melodic-gscam``.  It will install all the
 required dependencies for you.  ``gscam`` is also available as a
-Debian package for ROS2 Galactic, Humble... so use ``apt intall`` for
-all ROS2 configuration.
+Debian package for ROS2 Galactic, Humble... so use ``apt install`` for
+all ROS2 configurations.
 
 On Ubuntu 20.04 gscam binaries for ROS 1 Noetic are not available via
 ``apt``, so you will need to compile it in your ROS workspace.  The

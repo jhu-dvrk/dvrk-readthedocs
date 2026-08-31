@@ -18,7 +18,7 @@ IOs
   dVRK controllers <connectivity>`.
 
 * If you want to use the ``port`` ``udp``, all your controllers need
-  to have a `FPGAs V3 <fpga>` (any controller released after 2024) and
+  to have an :ref:`FPGA V3 <fpga>` (any controller released after 2024) and
   you need to daisy chain your controllers with Ethernet cables.  You
   don't need any FireWire cable nor adapter on the PC.
 
