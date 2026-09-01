@@ -212,6 +212,10 @@ components of the original patient's cart to fit the dVRK controllers.
 
    The dSIB-Z-Si board with all its cables connected.
 
+.. note::
+
+   The board used at JHU pictured above is an early version; it is labelled dESSJ. The dSIB-Si-Z looks exactly the same except for the label.
+
 DGIST setup
 ***********
 
