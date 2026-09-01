@@ -25,13 +25,13 @@ There are a few boards with embedded firmware used for the dVRK, either Classic 
 
 * :ref:`ESPM <espm>`: FPGA based, designed by Intuitive Surgical. dVRK Si only,
   located in PSM/ECM arm. Board design is not open-sourced, firmware is specific
-  to dVRK and is not open-sourced. Boots from EPROM or custom dVRK bootloader
-  with SD card.
+  to dVRK and is not open-sourced. Reprogrammed using the :ref:`ESXX programmer <esxx>`
+  and boots from on-board Flash.
 
 * :ref:`ESSJ <essj>`: FPGA based, designed by Intuitive Surgical. dVRK Si with SUJ only,
   located in SUJ arms. Board design is not open-sourced, firmware is specific to
-  dVRK and is not open-sourced.  Boots from EPROM or custom dVRK bootloader
-  with SD card.
+  dVRK and is not open-sourced. Reprogrammed using the :ref:`ESXX programmer <esxx>`
+  and boots from on-board Flash.
 
 * :ref:`dSIB-Si and dSIB-Si-Z <dsib-si-setup>`: STM32 microprocessor based,
   designed at JHU for the :ref:`dVRK Si with SUJ <setup-si-suj>`.  Boards
@@ -89,6 +89,18 @@ https://github.com/jhu-cisst/mechatronics-embedded/releases/latest.
 
 If the controllers are connected to the PC via Ethernet, it is also possible to
 update the SD card using `scp`.
+
+ESPM and ESSJ
+*************
+
+The ESPM and ESSJ boards are reprogrammed using the :ref:`ESXX programmer <esxx>` via JTAG.
+The ESXX programmer uses a micro SD card containing the custom firmware binaries (``esxx_loader.rbf``, ``espm.rpd``, and ``essj.rpd``) provided in ``sd_content.zip``, available from the `esxx-programmer-sd-content releases <https://github.com/jhu-dvrk/esxx-programmer-sd-content/releases>`_.
+
+.. note::
+
+   These firmware files are **not** downloaded or updated by the :ref:`dvrk-sd-card-updater <sd-card-updater>` script, which is intended solely for FPGA1394V3 controller SD cards.
+
+For full programming and setup instructions, see the :ref:`ESPM and ESSJ section <espm>`.
 
 dSIB-Si and dSIB-Si-Z
 *********************

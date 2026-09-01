@@ -89,7 +89,18 @@ Introduction
 
 The ESXX programmer replaces the obsolete ESPM programmer. It is a **one-time use** tool: it is needed to replace the vendor's firmware (from Intuitive) on the ESPM and ESSJ boards with custom dVRK firmware using an open communication protocol over LVDS. Once the boards have been reprogrammed, the ESXX programmer should be removed.
 
-The ESXX programmer uses a micro SD card containing the custom firmware images (see :ref:`dvrk-sd-card-updater <sd-card-updater>`).
+The ESXX programmer uses a micro SD card containing the custom firmware images. The required files are provided in ``sd_content.zip``, available from the `esxx-programmer-sd-content releases <https://github.com/jhu-dvrk/esxx-programmer-sd-content/releases>`_.
+
+.. note::
+
+   These firmware files are **not** uploaded by the :ref:`dvrk-sd-card-updater <sd-card-updater>` script, which is used only for controller FPGA1394V3 SD cards.
+
+To prepare the micro SD card:
+
+1. Download ``sd_content.zip`` from the `esxx-programmer-sd-content releases <https://github.com/jhu-dvrk/esxx-programmer-sd-content/releases>`_.
+2. Uncompress ``sd_content.zip``. It contains three files: ``esxx_loader.rbf``, ``espm.rpd``, and ``essj.rpd``.
+3. Copy these three files directly to the root of a FAT32-formatted micro SD card.
+4. Insert the micro SD card into the ESXX programmer.
 
 Video tutorial: `ESXX programmer tutorial (YouTube video) <https://youtu.be/yIdvk0Wox8w>`_
 

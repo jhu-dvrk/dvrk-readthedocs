@@ -79,6 +79,7 @@ Firmware/Software
 * Client library and tools for all FPGA1394: `mechatronics-software <https://github.com/jhu-cisst/mechatronics-software>`_
 * Embedded software for Zynq PS on FPGA1394 v3: `mechatronics-embedded <https://github.com/jhu-cisst/mechatronics-embedded>`_
 * `ESxx programmer (firmware) <https://github.com/jhu-dvrk/esxx-programmer-firmware>`_ (STM32)
+* `ESxx programmer (SD content) <https://github.com/jhu-dvrk/esxx-programmer-sd-content>`_
 * `dSIB Si <https://github.com/jhu-dvrk/dSIB-Si-firmware>`_ (STM32)
 * `dSIB Z Si <https://github.com/jhu-dvrk/dSIB-Z-Si-firmware>`_ (STM32)
 
