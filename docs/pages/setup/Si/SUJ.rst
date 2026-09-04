@@ -6,7 +6,7 @@ SUJ
 The goal is to re-use the internal cables and sensors in the SUJ
 passive arms for the dVRK controllers. This way all the signals from
 the active arm ESPMs (:ref:`2 D-sub connectors <setup-si-connections>`) can
-be carried all the way through the ESSJs o the dSIBs at the base of the
+be carried all the way through the ESSJs to the dSIBs at the base of the
 patient cart.
 
 The overall flow is shown at the bottom of the following figure. More details
@@ -22,7 +22,7 @@ can be found in the :ref:`dVRK electronic introduction <boards-intro>`.
 
    The dSIB-Si should be connected directly to the dRAC based
    controller.  You might have received some custom cables to connect
-   to arm to the controller.  Even though they use the same
+   the arm to the controller.  Even though they use the same
    connectors, they don't carry all the signals required for the SUJ
    and ESSJs.  So, **don't use the custom cables** between the dSIB and
    the controller (:ref:`see also <setup-si-connections>`).
@@ -161,7 +161,7 @@ back of the SUJ as well as most of the existing electronics at the
 base of the patient cart. The dSIB boards are also used to power the
 SUJ brakes.
 
-The dSIB-Z-Si board is used for the linear potentiometers for all SUJs. It reads the potentiometers for all four translations stages. It is connected to a single large connector that comes from the SUJ column on one end. On the other end, it uses 4 serial ports to communicate with the dSIB-Si boards. These 4 ports are labeled, make sure you connect them to the correct dSIB/controller.
+The dSIB-Z-Si board is used for the linear potentiometers for all SUJs. It reads the potentiometers for all four translation stages. It is connected to a single large connector that comes from the SUJ column on one end. On the other end, it uses 4 serial ports to communicate with the dSIB-Si boards. These 4 ports are labeled, make sure you connect them to the correct dSIB/controller.
 
 JHU setup
 *********
@@ -175,13 +175,13 @@ needed, the arm serial number.
    :width: 300
    :align: center
 
-   Side view of the patient's cart with dVRK controllers.
+   Side view of the patient cart with dVRK controllers.
 
 In the picture above, the controllers are very low on the cart. This
 is the only way to connect the existing, short cables from the SUJ
 columns to the dSIB mounted on the back of the dVRK controllers. You
 will unfortunately have to remove most of the old electronic
-components of the original patient's cart to fit the dVRK controllers.
+components of the original patient cart to fit the dVRK controllers.
 
 .. figure:: /images/Si/Si-controllers-SUJ-front-labeled.jpg
    :width: 600
