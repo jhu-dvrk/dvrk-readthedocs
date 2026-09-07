@@ -55,7 +55,7 @@ by a few clips.
    the brakes.  This is not something you should do too often, but it
    can help during the setup: `moving an unpowered Si arm (YouTube video) <https://www.youtube.com/shorts/wBXQduLbHdE>`_.
 
-To program the ESPM, connect an :ref:`ESXX programmer <esxx>` to the JTAG port on the ESPM board. Once programmed, the ESXX programmer should be removed and the cover reinstalled.
+To program the ESPM, connect an :ref:`ESXX programmer <esxx>` to the JTAG port on the ESPM board. Use ``espm.rpd``. Once programmed, the ESXX programmer should be removed and the cover reinstalled.
 
 
 .. _essj:
@@ -77,7 +77,7 @@ Like the ESPM, it communicates by default using a proprietary protocol over LVDS
 
    Patient cart SUJ setup with 4 ESPMs and 4 ESSJs
 
-To program the ESSJ, connect an :ref:`ESXX programmer <esxx>` to the JTAG port on the ESSJ board. Once programmed, the ESXX programmer should be removed.
+To program the ESSJ, connect an :ref:`ESXX programmer <esxx>` to the JTAG port on the ESSJ board.  Use ``essj.rpd``. Once programmed, the ESXX programmer should be removed.
 
 .. _esxx:
 
