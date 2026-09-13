@@ -17,12 +17,25 @@ distributions:
    sudo apt install python-is-python3 # set Python 3 as default Python
    sudo apt install python3-vcstool python3-colcon-common-extensions # for colcon
    sudo apt install python3-pykdl # for the CRTK Python client library
+   sudo apt install git-lfs # required for dVRK model meshes
 
 For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
 .. tabs::
 
-   .. tab:: Ubuntu 24.04 (**recommended**)
+   .. tab:: Ubuntu 26.04 (**recommended**)
+
+      Ubuntu 26.04 with ROS Lyrical:
+
+      .. code-block:: bash
+
+         sudo apt install libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion libcppunit-dev qt6-base-dev qt6-5compat-dev qt6-tools-dev qt6-declarative-dev qt6-svg-dev libgl-dev libegl-dev libhidapi-dev python3-pyudev libgraphviz-dev # dVRK
+         sudo apt install ros-lyrical-joint-state-publisher* ros-lyrical-xacro ros-lyrical-camera-info-manager ros-lyrical-image-transport ros-lyrical-image-transport-plugins # ROS
+         sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libcairo2-dev libjsoncpp-dev python3-opencv python3-numpy libgtk-3-dev libgtkmm-3.0-dev # stereo viewer & data collection
+
+      .. note:: Ubuntu 26.04 uses Qt 6.
+         
+   .. tab:: Ubuntu 24.04
 
       Ubuntu 24.04 with ROS Jazzy:
 
@@ -44,16 +57,6 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
          sudo apt install ros-humble-joint-state-publisher* ros-humble-xacro ros-humble-camera-info-manager ros-humble-image-transport ros-humble-image-transport-plugins # ROS
          sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libcairo2-dev libjsoncpp-dev python3-opencv python3-numpy libgtk-3-dev libgtkmm-3.0-dev # stereo viewer & data collection
 
-   .. tab:: Ubuntu 20.04
-
-      Ubuntu 20.04 with ROS Galactic:
-
-      .. code-block:: bash
-
-         sudo apt install libraw1394-dev libncurses5-dev qtcreator swig sox espeak cmake-curses-gui cmake-qt-gui git subversion gfortran libcppunit-dev libqt5xmlpatterns5-dev libhidapi-dev python3-pyudev # dVRK
-         sudo apt install ros-galactic-joint-state-publisher* ros-galactic-xacro # ROS
-         sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libcairo2-dev libjsoncpp-dev python3-opencv python3-numpy libgtk-3-dev # stereo viewer & data collection
-
 
 Colcon workspace, clone and build
 #################################
@@ -68,10 +71,18 @@ Create your ROS 2 workspace and clone all repositories using ``vcs``:
    cd ~/ros2_ws/src
    # make sure you use the correct vcs file
    vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-main.vcs --recursive
+   # fetch Git LFS assets (including dVRK instrument meshes)
+   vcs custom --git --nested --workers 1 --args lfs pull
 
 .. warning:: If you get some errors related to access denied, it is possible GitHub blocks you because vcs uses multiple threads.  If this is the case, try something like: ``vcs import --input https://raw.githubusercontent.com/jhu-saw/vcs/main/ros2-dvrk-main.vcs --recursive --retry 10 --workers 1``.
 
 .. note:: If you forgot the ``--recursive`` option, go in ``~/ros2_ws/src/cisst-saw/sawRobotIO1394`` and run ``git submodule init; git submodule update`` (this is to pull the "AmpIO" code).
+
+.. important:: Install Git LFS before importing the workspace.  The
+   ``dvrk_model`` package stores instrument meshes in Git LFS; without it,
+   RViz reports ``No meshes found`` for instrument OBJ files.  Run
+   ``vcs custom --git --nested --workers 1 src --args lfs pull`` from the
+   workspace root, then rebuild ``dvrk_model``.
 
 .. hint:: To update an existing source directory, simply go in the directory (``cd ~/ros2_ws/src``) and call ``vcs pull``.  This will update all the repositories checked out under ``src``.
 
