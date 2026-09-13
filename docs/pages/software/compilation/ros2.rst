@@ -23,7 +23,7 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
 .. tabs::
 
-   .. tab:: Ubuntu 26.04 (**recommended**)
+   .. tab:: Ubuntu 26.04
 
       Ubuntu 26.04 with ROS Lyrical:
 
@@ -35,7 +35,7 @@ For cisst/SAW and dVRK, you will also need the following Ubuntu packages:
 
       .. note:: Ubuntu 26.04 uses Qt 6.
          
-   .. tab:: Ubuntu 24.04
+   .. tab:: Ubuntu 24.04 (**recommended**)
 
       Ubuntu 24.04 with ROS Jazzy:
 
