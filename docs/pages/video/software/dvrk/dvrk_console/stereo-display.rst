@@ -29,8 +29,9 @@ session.
 Rendering and outputs
 *********************
 
-``glimage`` opens one side-by-side window.  ``glimages`` opens one window per
-eye.  The control window toggles the status overlay,
+``side_by_side`` opens one side-by-side window.  ``separate`` opens one window per
+eye.  ``headless`` runs without display windows (useful for streaming via sockets such as OpenXR).
+The control window toggles the status overlay,
 and adjusts the extra-stream scale when those streams are configured.
 
 .. figure:: /images/gui/stereo_overlay_gui.png
@@ -95,7 +96,7 @@ Run the display calibration only after ``stereo_source`` and
 The script requires root-level ``gst_input`` and ``eye_size``.  Use left and right
 arrows to change the offset, ``g`` to toggle the grid, ``f`` for fullscreen,
 and ``q`` to finish and choose whether to save.  Add ``--split`` to preview one
-window per eye; it is selected automatically for a ``glimages`` configuration.
+window per eye; it is selected automatically for a ``separate`` configuration.
 
 Launching the complete video path
 *********************************

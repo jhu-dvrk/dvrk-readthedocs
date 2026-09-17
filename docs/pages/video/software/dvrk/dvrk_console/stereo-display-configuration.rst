@@ -14,7 +14,7 @@ The display consumes a side-by-side stereo stream produced by
      "dvrk_console_namespace": "console",
      "gst_input": "@dvrk:stereo_alignment:stereo",
      "eye_size": {"width": 1920, "height": 1080},
-     "sinks": ["glimage"]
+     "sinks": ["side_by_side"]
    }
 
 ``gst_input`` accepts a canonical dVRK socket reference or a plain GStreamer
@@ -44,7 +44,7 @@ Top-level fields
    * - ``display_horizontal_offset_px``
      - Working-depth calibration written by ``stereo_display_calibration``.
    * - ``sinks``
-     - Any combination of ``glimage`` and ``glimages``.
+     - Any combination of ``side_by_side``, ``separate``, and ``headless``.
 
 Example outputs and picture-in-picture
 **************************************
@@ -60,7 +60,7 @@ Example outputs and picture-in-picture
      "gst_input": "@dvrk:stereo_alignment:stereo",
      "gst_output": "@dvrk:stereo_display:stereo",
      "eye_size": {"width": 1920, "height": 1080},
-     "sinks": ["glimages"],
+     "sinks": ["separate"],
      "pip_gst_inputs": {
        "monos": [
          {"gst_input": "videotestsrc pattern=ball is-live=true ! video/x-raw,width=640,height=480,framerate=10/1"}
