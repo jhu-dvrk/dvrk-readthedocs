@@ -199,3 +199,43 @@ If you are using a haptic device (e.g. ForceDimension/Falcon) as your MTM which
 has an un-actuated wrist, the teleoperation script will not be able to align the
 MTM to match the PSM orientation. In this case, you must use the ``-n`` option
 to skip alignment.
+
+
+.. _rqt_dvrk:
+
+``rqt_dvrk``
+************
+
+* ROS 2 Python rqt plugins using PyQt5 through ``python_qt_binding``
+* ROS package ``rqt_dvrk``
+* Compatible with **all dVRK setups**
+* https://github.com/jhu-dvrk/rqt_dvrk
+
+dVRK rqt plugins that depend on ``dvrk_python``. The package provides four
+plugins:
+
+* **Arm** — displays CRTK operating state, measured and setpoint joint
+  positions (with optional jaw), and Cartesian pose (position + RPY). Discrete
+  joint and Cartesian move commands can be sent from the panel. Cartesian
+  commands preserve the frame ID from the latest ``measured_cp`` message.
+* **Console** — controls dVRK teleoperation (start/stop), scale, and active
+  teleoperation component selection. Destructive actions (power off, home)
+  require explicit confirmation.
+* **Diagnostics** — subscribes to ``/diagnostics``
+  (``diagnostic_msgs/DiagnosticArray``) and displays the current status of all
+  reported components.
+* **System** — displays and controls the state of all dVRK arms in a running
+  system. Powered by the ``dvrk_python`` client library.
+
+.. code-block:: bash
+
+   rqt --standalone rqt_dvrk/Arm --args --arm PSM1
+   rqt --standalone rqt_dvrk/Console
+   rqt --standalone rqt_dvrk/Diagnostics
+   rqt --standalone rqt_dvrk/System
+
+The arm plugin accepts ``--robot-config FILE`` (path to a YAML robot
+configuration) or ``--arm NAME`` to use a built-in configuration, and an
+optional ``--namespace NAME`` to override the ROS namespace. The console and
+system plugins accept ``--console NAME`` or ``--system NAME`` to override the
+default ROS namespace.

@@ -135,6 +135,7 @@ dVRK
     * Matlab ROS client library and examples: `dvrk_matlab <https://github.com/jhu-dvrk/dvrk_matlab>`_
     * Gravity compensation for MTMs: `dvrk-gravity-compensation <https://github.com/jhu-dvrk/dvrk-gravity-compensation>`_
     * PSM to camera registration: `dvrk_camera_registration <https://github.com/jhu-dvrk/dvrk_camera_registration>`_
+    * dVRK rqt widgets (arm, console, system, diagnostics): `rqt_dvrk <https://github.com/jhu-dvrk/rqt_dvrk>`_ (see :ref:`rqt_dvrk <rqt_dvrk>`)
 
   * Configuration
     
