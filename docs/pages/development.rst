@@ -7,8 +7,8 @@ Development
 .. toctree::
 
    development/options
-   development/middleware
-   development/components
+   development/bridges
+   development/generic-components
+   development/custom-components
    development/frames
    development/api
-   development/ros-clients

@@ -24,11 +24,11 @@ should familiarize yourself with `CRTK
    Default components for the dVRK process
 
 If you decide to use ROS and treat the dVRK system as a "black box", you will
-end-up with two (or more processes).  ROS is one example of middleware between
-the processes, we also provide some support for OpenIGTLink and plain UDP
-sockets.  You can write your ROS nodes using ROS directly or use the :ref:`CRTK
-Python Client <CRTK-Python-client>`.  The latter offers a simple Python API
-that doesn't require any ROS knowledge.
+end up with two or more processes using ROS as the :ref:`middleware bridge <devel-bridge-ros>`.  We
+also provide support for OpenIGTLink and plain UDP sockets
+(see :ref:`Middleware bridges <devel-bridges>`).  You can write your ROS nodes
+directly or use the :ref:`CRTK Python Client <CRTK-Python-client>`.  The
+latter offers a simple Python API that doesn't require any ROS knowledge.
 
 Alternatively, you can opt to implement your application's logic using a new or
 existing *cisstMultiTask* component.  In this case, your application will be a
@@ -46,7 +46,7 @@ you prefer Python, you should try the IRE (:ref:`embedded Python interpreter
 
 .. note::
 
-   There is at least two ways to write dVRK applications using Python. Over ROS
-   topics with the :ref:`CRTK Python Client <CRTK-Python-client>` or with the
-   embedded Python interpreter (:ref:`IRE <components-IRE>`). Pick based on your
+   There are at least two ways to write dVRK applications using Python: over ROS
+   topics with the :ref:`CRTK Python Client <CRTK-Python-client>`, or with the
+   :ref:`embedded Python interpreter <components-IRE>` (IRE). Pick based on your
    requirements.
