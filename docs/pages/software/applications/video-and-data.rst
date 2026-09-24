@@ -5,8 +5,7 @@ Video and data
 ##############
 
 The ``dvrk_data`` and ``dvrk_console`` packages provide applications for live
-video acquisition, low-latency stereo display, operator controls, and
-synchronized data collection.
+video acquisition, low-latency stereo display, operator controls, and data collection.
 
 All applications in this section require **ROS 2**.
 
@@ -147,7 +146,7 @@ Data collection, annotation and extraction
 ==========
 
 * C++ application with GStreamer and rosbag2 from ``dvrk_data``
-* Synchronized multi-channel recorder for stereo video streams, audio, and robot kinematic telemetry (written to MCAP rosbags and MP4 video files)
+* Multi-channel recorder for stereo video streams, audio, and robot kinematic telemetry (written to MCAP rosbags and MP4 video files)
 * https://github.com/jhu-dvrk/dvrk_data
 
 ::
