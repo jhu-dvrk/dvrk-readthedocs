@@ -1,7 +1,10 @@
+.. _video_and_data:
+.. _video-and-data:
 .. _dvrk-video-software:
 
-dVRK video software
-###################
+##############
+Video and data
+##############
 
 The dVRK video stack is divided into two packages.  ``dvrk_data`` owns
 video acquisition, local transport, stereo alignment, timing, recording, and
@@ -36,5 +39,5 @@ requires them.
 .. toctree::
    :maxdepth: 2
 
-   dvrk/dvrk_data/index
-   dvrk/dvrk_console/index
+   video-and-data/dvrk_data/index
+   video-and-data/dvrk_console/index

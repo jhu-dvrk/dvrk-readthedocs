@@ -11,7 +11,7 @@ be integrated in an end-user application.  Once you've configured your
 subset of dVRK arms to use in your ``system.json``, the dVRK system
 class will automatically set up some Qt widgets for visual debugging
 as well as some ROS topics, services and tf2 transforms.  This is
-described in the :ref:`software architecture <architecture>` page.
+described in the :ref:`software architecture <system-architecture>` page.
 The API is described in the :ref:`dVRK API 2.x <devel-api>`.  The
 dVRK API uses the CRTK naming convention as much as possible, so you
 should familiarize yourself with `CRTK

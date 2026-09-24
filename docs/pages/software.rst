@@ -11,5 +11,6 @@ controllers.
 .. toctree::
 
    software/compilation
-   software/architecture
+   software/dvrk-system
+   software/video-and-data
    software/applications

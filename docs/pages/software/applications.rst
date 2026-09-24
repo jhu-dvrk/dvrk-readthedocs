@@ -17,6 +17,7 @@ executable.
 .. toctree::
 
    applications/system
+   applications/video-and-data
    applications/debug
    applications/calibration
    applications/utilities

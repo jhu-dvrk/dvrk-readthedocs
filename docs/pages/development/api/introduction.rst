@@ -4,7 +4,7 @@ Introduction
 ############
 
 Each component of the dVRK described in the :ref:`software
-architecture <architecture>` provides a set of functionalities,
+architecture <system-architecture>` provides a set of functionalities,
 i.e. commands/events for a |cisstMultiTask|_ component or
 topics/services for a ROS node (see :ref:`ROS bridges <bridge-ros>`)
 
