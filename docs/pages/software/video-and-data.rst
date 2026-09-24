@@ -6,9 +6,8 @@
 Video and data
 ##############
 
-The dVRK video stack provides high-performance, low-latency stereo video
-acquisition, surgeon console displays, operator controls, and synchronized
-multi-modal data recording.
+The dVRK video stack provides low-latency stereo video
+acquisition, surgeon console displays, operator controls, and multi-modal data recording.
 
 The stack is organized into two ROS 2 packages:
 
@@ -31,11 +30,6 @@ Architecture and design choices
 The Teleoperation Latency Challenge
 ===================================
 
-Surgical robotic teleoperation requires tight hand-eye coordination. Studies
-show that total glass-to-glass latency (from optical photons hitting camera
-sensors to photons emitted by the surgeon's display) must remain well under
-**50–80 ms** to prevent operator fatigue, overshooting, and motion sickness.
-
 Stereo High-Definition video (e.g. 1080p60 per eye) generates uncompressed raw
 pixel throughput exceeding **3 Gbps** (over 370 MB/s). Passing this volume of
 imagery through a general-purpose robotic middleware introduces significant
@@ -50,20 +44,20 @@ bottlenecks:
   experience momentary slowdowns, middleware queues can buffer frames, causing
   the live display to fall progressively behind real time.
 
-Separation of Media Plane and Control Plane
+Separation of video data and control data
 ===========================================
 
 To achieve guaranteed sub-frame display latency alongside rich robot integration,
 the dVRK stack cleanly separates two data paths:
 
-1. **The Media Plane (GStreamer + Linux Abstract Sockets)**:
+1. **The video data (GStreamer + Linux Abstract Sockets)**:
    All high-bandwidth video frame movement remains strictly within local
    GStreamer pipelines. Between separate processes on the same machine, frames
    are passed through Linux domain sockets using **``unixfdsink``** and
    **``unixfdsrc``**. This transfers buffer file descriptors (such as shared
    memory or DMA buffers) directly through the Linux kernel without copying image
    payloads.
-2. **The Control Plane (ROS 2 & CRTK)**:
+2. **The control data (ROS 2 & CRTK)**:
    ROS 2 carries lightweight, low-bandwidth control messages: robot joint
    kinematics, Cartesian tool poses, foot pedal events (clutch, camera control),
    teleoperation states, and system warnings.
@@ -156,11 +150,11 @@ Abstract sockets have several advantages over filesystem paths (such as ``/tmp/*
   time using ``ros2 run dvrk_data gscam_socket``.
 
 
-Precision timing and synchronization
-************************************
+Timing and synchronization
+**************************
 
-High-fidelity surgical data science and robot learning require nanosecond-level
-time synchronization across heterogeneous sensors:
+Good surgical data science and robot learning require precise
+time stamping across heterogeneous sensors:
 
 1. **Hardware/Source Timestamping**: As each frame arrives at ``stereo_source``,
    a GStreamer buffer probe captures a monotonic ``CLOCK_REALTIME`` timestamp.
