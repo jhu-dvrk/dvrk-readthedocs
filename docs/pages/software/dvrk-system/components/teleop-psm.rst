@@ -55,16 +55,17 @@ States
 The dVRK teleoperation component maintains an internal state
 corresponding to the different stages of teleoperation:
 
-* **`DISABLED`**: nothing to do, the teleoperation doesn't need to run
+``DISABLED``
+  Nothing to do, the teleoperation doesn't need to run.
 
-* **`SETTING_ARMS_STATE`**: in this state the teleoperation tried to
-  "enable" and "home" the two arms, MTM and PSM
-  (``state_command("enable")`` and ``state_command("home")``) and
-  monitors their operating states (``operating_state``).  If both arms
-  are ready, the teleoperation component moves to the next state,
-  **`ALIGNING_MTM`**.
+``SETTING_ARMS_STATE``
+  In this state the teleoperation tried to "enable" and "home" the two arms, MTM
+  and PSM (``state_command("enable")`` and ``state_command("home")``) and
+  monitors their operating states (``operating_state``).  If both arms are ready,
+  the teleoperation component moves to the next state, ``ALIGNING_MTM``.
 
-* **`ALIGNING_MTM`**: at the point both arms are ready.
+``ALIGNING_MTM``
+  At the point both arms are ready.
 
   * The first thing the teleoperation has to do is make sure the MTM
     orientation matches the PSM one.  The PSM orientation (from
@@ -92,8 +93,9 @@ corresponding to the different stages of teleoperation:
        file).  The operator has to wiggle their fingers a small amount to signal
        that they're ready.
 
-* **`ENABLED`**: We're now in follow mode and the MTM motion will be
-  used to control the PSM.  There are two different steps:
+``ENABLED``
+  We're now in follow mode and the MTM motion will be used to control the PSM.
+  There are two different steps:
 
   * When the follow mode starts:
 
@@ -116,8 +118,7 @@ corresponding to the different stages of teleoperation:
     teleoperation since at no point it checks on the PSM pose (neither
     ``measured`` nor ``setpoint``) once the teleoperation has started.
 
-* **Clutch**:
-
+Clutch
   * When the operator uses the clutch to reposition their hands, the
     orientation on the MTM is locked so it will stay aligned to the
     PSM.  The first 3 degrees of freedom of the MTM are "freed"

@@ -32,16 +32,18 @@ Rendering and display topologies
 ``stereo_display`` supports three primary sink topologies configured in the
 ``sinks`` array:
 
-* **``separate`` (Classic HRSV)**:
+``separate`` (Classic HRSV)
   Opens two independent fullscreen windows, one for the left eye and one for the
   right eye. This topology is designed for the classic da Vinci High-Resolution
   Stereo Viewer (HRSV), which uses two separate video cables (DVI/HDMI) driven
   by a dedicated graphics card.
-* **``side_by_side`` (3D Monitors and Headsets)**:
+
+``side_by_side`` (3D Monitors and Headsets)
   Opens a single window displaying the left and right eye images packed horizontally
   side by side. This mode is used for 3D TVs, passive polarizing 3D monitors, and
   external 3D video headsets such as Gooviz.
-* **``headless`` (Socket Streaming and XR)**:
+
+``headless`` (Socket Streaming and XR)
   Runs the pipeline without creating on-screen display windows. The composited
   stereo stream is published to a local ``@dvrk`` socket or shared-memory buffer.
   This is typically used for headless recording, web streaming, or passing video
@@ -150,7 +152,7 @@ surgical planning systems to draw graphics directly on top of the live endoscope
 1. **Independent Stereo AR Streams**: Left and right AR graphics streams are
    received from abstract Unix sockets (e.g., ``@dvrk:stereo_source:left_ar``).
 2. **Hardware Compositing**: Graphics are blended with the camera frames using
-   GStreamer's **``glvideomixer``** element on the GPU.
+   GStreamer's ``glvideomixer`` element on the GPU.
 3. **Chroma Key Transparency**: An optional RGB color key (e.g. ``[0, 255, 0]``
    green) treats that color as fully transparent, allowing standard 2D/3D
    graphics applications to overlay shapes without needing an explicit alpha

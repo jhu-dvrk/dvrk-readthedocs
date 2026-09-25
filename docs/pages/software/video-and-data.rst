@@ -11,13 +11,16 @@ acquisition, surgeon console displays, operator controls, and multi-modal data r
 
 The stack is organized into two ROS 2 packages:
 
-* **``dvrk_data``**: Owns camera acquisition, local video transport, real-time
-  stereo alignment, per-frame hardware/software timestamping, data recording,
-  and dataset extraction.
-* **``dvrk_console``**: Owns the surgeon console display engine (supporting
-  Classic HRSV, 3D monitors, and headsets), vector head-up display (HUD)
-  overlays, picture-in-picture (PiP) and augmented reality (AR) mixing, and the
-  operator touchscreen/desktop control panel.
+``dvrk_data``
+  Owns camera acquisition, local video transport, real-time stereo alignment,
+  per-frame hardware/software timestamping, data recording, and dataset
+  extraction.
+
+``dvrk_console``
+  Owns the surgeon console display engine (supporting Classic HRSV, 3D
+  monitors, and headsets), vector head-up display (HUD) overlays,
+  picture-in-picture (PiP) and augmented reality (AR) mixing, and the operator
+  touchscreen/desktop control panel.
 
 .. warning::
 
@@ -53,8 +56,8 @@ the dVRK stack cleanly separates two data paths:
 1. **The video data (GStreamer + Linux Abstract Sockets)**:
    All high-bandwidth video frame movement remains strictly within local
    GStreamer pipelines. Between separate processes on the same machine, frames
-   are passed through Linux domain sockets using **``unixfdsink``** and
-   **``unixfdsrc``**. This transfers buffer file descriptors (such as shared
+   are passed through Linux domain sockets using ``unixfdsink`` and
+   ``unixfdsrc``. This transfers buffer file descriptors (such as shared
    memory or DMA buffers) directly through the Linux kernel without copying image
    payloads.
 2. **The control data (ROS 2 & CRTK)**:

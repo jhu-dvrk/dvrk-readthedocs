@@ -40,7 +40,7 @@ General
 *******
 
 * `dVRK Logo <https://github.com/jhu-dvrk/dvrk-logo>`_ (CAD, STL and png)
-* `Community publications <https://github.com/jhu-dvrk/community-publications>`_
+* `Community publications <https://dvrk.lcsr.jhu.edu/publications/index.html>`_
 
 Mechatronics
 ************
@@ -136,6 +136,10 @@ dVRK
     * Gravity compensation for MTMs: `dvrk-gravity-compensation <https://github.com/jhu-dvrk/dvrk-gravity-compensation>`_
     * PSM to camera registration: `dvrk_camera_registration <https://github.com/jhu-dvrk/dvrk_camera_registration>`_
     * dVRK rqt widgets (arm, console, system, diagnostics): `rqt_dvrk <https://github.com/jhu-dvrk/rqt_dvrk>`_ (see :ref:`rqt_dvrk <rqt_dvrk>`)
+    * Simulator base (shared contracts, tools, scenes): `dvrk_simulator_base <https://github.com/jhu-dvrk/dvrk_simulator_base>`_ (see :ref:`dvrk_simulator_base <dvrk_simulator_base>`)
+    * Simulator backend with NVIDIA Newton and Warp: `dvrk_newton <https://github.com/jhu-dvrk/dvrk_newton>`_ (see :ref:`dvrk_newton <dvrk_newton>`)
+    * Simulator backend with PyBullet: `dvrk_pybullet <https://github.com/jhu-dvrk/dvrk_pybullet>`_ (see :ref:`dvrk_pybullet <dvrk_pybullet>`)
+    * Simulator backend with NVIDIA Isaac Sim: `dvrk_isaac_sim <https://github.com/jhu-dvrk/dvrk_isaac_sim>`_ (see :ref:`dvrk_isaac_sim <dvrk_isaac_sim>`)
 
   * Configuration
     
@@ -157,4 +161,4 @@ CAD
   * Files used for ROS ``dvrk_model``: `dvrk_cad <https://github.com/jhu-dvrk/dvrk_cad>`_  This repository now includes high definition models of instruments.
   * High resolution instrument models: `instrument-cad <https://github.com/jhu-dvrk/instrument-cad>`_
   * Small parts used for calibration: `dvrk-calibration-parts <https://github.com/jhu-dvrk/dvrk-calibration-parts>`_ (Classic)
-  * Cannula replacement: `dvrk-cannulas <https://github.com/jhu-dvrk/dvrk-cannulas>`_ (Classic)
+  * Cannula replacement: `dvrk-cannulas <https://github.com/jhu-dvrk/dvrk-cannulas>`_ (Classic and Si)

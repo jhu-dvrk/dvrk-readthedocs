@@ -13,18 +13,23 @@ FPGA/dVRK controllers.
 
 The simulation ecosystem is organized into four ROS 2 packages:
 
-* **``dvrk_simulator_base``**: Owns the shared, simulator-independent CRTK ROS 2
-  contract, message validation, command mailboxes, spherical RCM cart frame
-  geometry, and scene/exercise schemas.
-* **``dvrk_newton``**: GPU-accelerated kinematics and physics backend built on
-  NVIDIA Newton and NVIDIA Warp, featuring sub-millisecond inverse kinematics
-  and multi-arm patient cart simulation.
-* **``dvrk_pybullet``**: Lightweight kinematic and dynamic simulation backend
-  powered by PyBullet, featuring automatic content-addressed model caching from
-  ``dvrk_model``.
-* **``dvrk_isaac_sim``**: High-fidelity USD-based simulation backend for
-  NVIDIA Isaac Sim 6.0 (Omniverse Kit), supporting RTX rendering and RTSP
-  stereo streaming.
+``dvrk_simulator_base``
+  Owns the shared, simulator-independent CRTK ROS 2 contract, message
+  validation, command mailboxes, spherical RCM cart frame geometry, and
+  scene/exercise schemas.
+
+``dvrk_newton``
+  GPU-accelerated kinematics and physics backend built on NVIDIA Newton and
+  NVIDIA Warp, featuring sub-millisecond inverse kinematics and multi-arm
+  patient cart simulation.
+
+``dvrk_pybullet``
+  Lightweight kinematic and dynamic simulation backend powered by PyBullet,
+  featuring automatic content-addressed model caching from ``dvrk_model``.
+
+``dvrk_isaac_sim``
+  High-fidelity USD-based simulation backend for NVIDIA Isaac Sim 6.0
+  (Omniverse Kit), supporting RTX rendering and RTSP stereo streaming.
 
 .. warning::
 
@@ -95,12 +100,12 @@ Command queueing semantics
 
 To balance real-time teleoperation with trajectory execution:
 
-* **Servo commands (``servo_jp``, ``servo_cp``, ``jaw/servo_jp``)**: Use
+* **Servo commands** (``servo_jp``, ``servo_cp``, ``jaw/servo_jp``): Use
   depth-one superseding mailboxes. New setpoints immediately overwrite pending
   ones, guaranteeing minimal latency during teleoperation.
-* **Move commands (``move_jp``, ``move_cp``, ``jaw/move_jp``)**: Remain
+* **Move commands** (``move_jp``, ``move_cp``, ``jaw/move_jp``): Remain
   ordered in a bounded FIFO queue, executing sequentially to completion.
-* **State commands (``state_command``)**: Processed sequentially to manage
+* **State commands** (``state_command``): Processed sequentially to manage
   power and homing transitions deterministically.
 
 
@@ -173,14 +178,14 @@ To ensure sub-frame teleoperation latency:
 * Simulated cameras render directly into Linux shared memory file descriptors
   (``memfd``).
 * Buffers are emitted through Linux domain abstract sockets using the
-  GStreamer **``unixfdsink``** element under the canonical convention:
+  GStreamer ``unixfdsink`` element under the canonical convention:
 
   .. code-block:: text
 
      @dvrk:<backend>:stereo_source   (e.g., @dvrk:newton:stereo_source, @dvrk:pybullet:stereo_source)
 
 * Consumers (such as ``dvrk_console stereo_display`` or VR headset bridges)
-  connect via **``unixfdsrc``** using one-frame leaky queues
+  connect via ``unixfdsrc`` using one-frame leaky queues
   (``leaky=downstream``). Old frames are automatically discarded if a receiver
   falls behind, preventing display lag.
 
@@ -210,7 +215,7 @@ physics engines or proprietary rendering libraries.
 
 Key components:
 
-* **``ArmRosInterface``**: Shared CRTK ROS 2 publisher/subscriber implementation.
+* ``ArmRosInterface``: Shared CRTK ROS 2 publisher/subscriber implementation.
 * **Cart frame tools**: ``generate_cart_frames`` and ``cart_frame_editor``.
 * **System startup tool**: ``start_dvrk_system`` automatically sequences
   system power, homing, and console state transitions.
@@ -403,22 +408,22 @@ Backend comparison matrix
      - Acceleration
      - Camera Transport
      - Primary Strengths
-   * - **``dvrk_newton``**
+   * - ``dvrk_newton``
      - NVIDIA Newton & Warp
      - NVIDIA GPU (CUDA)
      - Unix-FD abstract socket
      - Real-time 120 Hz GPU loop, fast DLS IK (<0.5 ms), VR teleoperation
-   * - **``dvrk_pybullet``**
+   * - ``dvrk_pybullet``
      - PyBullet
      - CPU or GPU (EGL/Tiny)
      - Unix-FD abstract socket
      - Lightweight, zero GPU driver requirement, fast headless CI/CD testing
-   * - **``dvrk_isaac_sim``**
+   * - ``dvrk_isaac_sim``
      - Isaac Sim 6.0 (PhysX)
      - NVIDIA RTX GPU
      - ROS Image & RTSP (H.264)
      - Photorealistic RTX ray-tracing, Omniverse USD ecosystem
-   * - **``dvrk_simulator_base``**
+   * - ``dvrk_simulator_base``
      - Contract / Interface
      - N/A
      - N/A
