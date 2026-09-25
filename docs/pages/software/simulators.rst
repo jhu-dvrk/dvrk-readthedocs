@@ -467,8 +467,8 @@ manager with a single command:
 .. code-block:: bash
 
    # Activate the Newton environment and source ROS 2 workspace
-   source ~/wss/dvrk/.venv-newton/bin/activate
-   source ~/wss/dvrk/install/setup.bash
+   source ~/ros2_ws/.venv-newton/bin/activate
+   source ~/ros2_ws/install/setup.bash
 
    # Launch patient cart, console overlay, and OpenXR teleoperation
    ros2 launch dvrk_newton open_xr.launch.py
