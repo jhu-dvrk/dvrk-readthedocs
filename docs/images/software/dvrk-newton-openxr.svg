@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 595" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 700; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 500; }
+      .badge { font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; }
+      .bullet { font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+      .arrow-text { font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; }
+    </style>
+    <filter id="shadow" x="-2%" y="-4%" width="104%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08" />
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#a855f7" />
+    </marker>
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f43f5e" />
+    </marker>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="920" height="595" fill="#ffffff" rx="16" />
+
+  <!-- ==================== TOP: Meta Quest HMD & Handhelds ==================== -->
+  <g transform="translate(50, 20)">
+    <rect width="820" height="82" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)" />
+    <text x="24" y="28" class="title" fill="#1e3a8a">Meta Quest VR Surgeon Console (sawOpenXR Runtime)</text>
+    <text x="24" y="50" class="bullet" fill="#1d4ed8"><tspan font-weight="700">6-DoF Hand Controllers:</tspan> Translates tracking to MTML &amp; MTMR inputs (position, orientation, grip jaws)</text>
+    <text x="24" y="70" class="bullet" fill="#1d4ed8"><tspan font-weight="700">Display &amp; Pedals:</tspan> Ingests stereo video stream; grip button = clutch; thumb button = camera</text>
+  </g>
+
+  <!-- Flow 1: Left downward (Control: sawOpenXR -> dvrk_system) -->
+  <path d="M 245 102 L 245 166" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-blue)" />
+  <rect x="120" y="121" width="250" height="24" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1" />
+  <text x="245" y="137" text-anchor="middle" class="arrow-text" fill="#1d4ed8">Controller 6-DoF Tracking &amp; Buttons</text>
+
+  <!-- Flow 2: Right upward (Video: dvrk-console -> sawOpenXR) -->
+  <path d="M 675 170 L 675 110" fill="none" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-rose)" />
+  <rect x="540" y="121" width="270" height="24" rx="6" fill="#ffffff" stroke="#fecdd3" stroke-width="1" />
+  <text x="675" y="137" text-anchor="middle" class="arrow-text" fill="#be123c">@dvrk:console:stereo_overlay (HMD Feed)</text>
+
+  <!-- ==================== MIDDLE ROW: CONTROL & VIDEO NODES ==================== -->
+  <!-- Middle Left: dvrk_system (Teleoperation) -->
+  <g transform="translate(50, 170)">
+    <rect width="395" height="160" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)" />
+    <text x="22" y="28" class="title" fill="#92400e">dvrk_system (Teleoperation)</text>
+    <text x="22" y="47" class="badge" fill="#b45309">sawIntuitiveResearchKit Component Manager</text>
+    <line x1="20" y1="58" x2="375" y2="58" stroke="#fde68a" stroke-width="1" />
+    <text x="22" y="78" class="bullet" fill="#78350f">• Pairs MTML -> PSM1 and MTMR -> PSM2</text>
+    <text x="22" y="100" class="bullet" fill="#78350f">• Coordinates clutching, scaling, and orientation align</text>
+    <text x="22" y="122" class="bullet" fill="#78350f">• Camera teleoperation mode switches to ECM</text>
+    <text x="22" y="144" class="bullet" fill="#78350f">• Config: system-MTML-MTMR-OpenXR-patient-cart-ROS</text>
+  </g>
+
+  <!-- Middle Right: dvrk_console (Video Overlay) -->
+  <g transform="translate(475, 170)">
+    <rect width="395" height="160" rx="10" fill="#fff1f2" stroke="#f43f5e" stroke-width="2" filter="url(#shadow)" />
+    <text x="22" y="28" class="title" fill="#9f1239">dvrk_console stereo_display</text>
+    <text x="22" y="47" class="badge" fill="#be123c">Real-Time Vector HUD &amp; Stream Compositor</text>
+    <line x1="20" y1="58" x2="375" y2="58" stroke="#fecdd3" stroke-width="1" />
+    <text x="22" y="78" class="bullet" fill="#881337">• Attaches to raw @dvrk:simulator:stereo_source</text>
+    <text x="22" y="100" class="bullet" fill="#881337">• Composites Cairo vector HUD overlays over video</text>
+    <text x="22" y="122" class="bullet" fill="#881337">• Live clutch, camera, and error status icons</text>
+    <text x="22" y="144" class="bullet" fill="#881337">• Zero-copy publish: @dvrk:console:stereo_overlay</text>
+  </g>
+
+  <!-- Flow 3: dvrk_system <-> dvrk_newton (CRTK Topics) -->
+  <line x1="245" y1="330" x2="245" y2="408" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-blue)" />
+  <rect x="135" y="355" width="220" height="24" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1" />
+  <text x="245" y="371" text-anchor="middle" class="arrow-text" fill="#1d4ed8">ROS 2 CRTK (servo_cp, measured_cp)</text>
+
+  <!-- Flow 4: dvrk_newton -> dvrk_console (Raw Video Stream) -->
+  <path d="M 675 412 L 675 332" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#arrow-purple)" />
+  <rect x="530" y="355" width="290" height="24" rx="6" fill="#ffffff" stroke="#d8b4fe" stroke-width="1" />
+  <text x="675" y="371" text-anchor="middle" class="arrow-text" fill="#7e22ce">@dvrk:simulator:stereo_source (Unix-FD memfd)</text>
+
+  <!-- ==================== BOTTOM: NVIDIA NEWTON SIMULATOR ==================== -->
+  <g transform="translate(50, 412)">
+    <rect width="820" height="156" rx="10" fill="#f0fdf4" stroke="#10b981" stroke-width="2" filter="url(#shadow)" />
+    <text x="24" y="28" class="title" fill="#065f46">dvrk_newton Simulator Node (120 Hz GPU Simulation Loop)</text>
+    
+    <!-- Left Column -->
+    <text x="24" y="62" class="bullet" fill="#064e3b"><tspan font-weight="700">• 4-Arm Patient Cart:</tspan> ECM, PSM1, PSM2, and PSM3 in unified simulation</text>
+    <text x="24" y="85" class="bullet" fill="#064e3b"><tspan font-weight="700">• Training Exercises:</tspan> Overlays tray_cubes or peg_board_ring</text>
+    <text x="24" y="108" class="bullet" fill="#064e3b"><tspan font-weight="700">• GPU Physics &amp; IK:</tspan> Warp articulation, mimic joint sync, sub-ms DLS IK</text>
+    <text x="24" y="131" class="bullet" fill="#064e3b"><tspan font-weight="700">• Stereo Rendering:</tspan> ECM optical camera rendered directly to memfd</text>
+
+    <!-- Right Column: Orchestration badge -->
+    <g transform="translate(555, 50)">
+      <rect width="245" height="84" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
+      <text x="16" y="24" class="badge" fill="#047857">Startup Orchestration</text>
+      <text x="16" y="47" class="bullet" fill="#065f46">• start_dvrk_system node</text>
+      <text x="16" y="69" class="bullet" fill="#065f46">• Automatic power-on &amp; homing</text>
+    </g>
+  </g>
+</svg>

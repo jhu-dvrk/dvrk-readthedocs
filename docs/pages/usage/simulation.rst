@@ -118,6 +118,13 @@ You can also communicate with the simulated robot using ROS topics
 Dynamic simulation
 ##################
 
+.. note::
+
+   For dedicated dVRK simulation backends featuring GPU acceleration,
+   PyBullet, NVIDIA Isaac Sim, and immersive OpenXR teleoperation, see
+   :ref:`Simulators <simulators>`.
+
+
 You can run the dVRK software and emulate the dVRK arms and their environment
 using a dynamic simulator. Dynamic simulation for the dVRK has been used for two
 main applications:

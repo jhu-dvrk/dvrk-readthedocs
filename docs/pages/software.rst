@@ -13,4 +13,5 @@ controllers.
    software/compilation
    software/dvrk-system
    software/video-and-data
+   software/simulators
    software/applications

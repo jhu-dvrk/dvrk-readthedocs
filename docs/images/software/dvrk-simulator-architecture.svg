@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 745" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: 700; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 500; }
+      .badge { font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; }
+      .bullet { font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+      .arrow-text { font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 600; }
+    </style>
+    <filter id="shadow" x="-2%" y="-4%" width="104%" height="110%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08" />
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#a855f7" />
+    </marker>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="920" height="745" fill="#ffffff" rx="16" />
+
+  <!-- ==================== LAYER 1: ROS 2 / CRTK Applications ==================== -->
+  <g transform="translate(50, 20)">
+    <rect width="820" height="70" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)" />
+    <text x="24" y="30" class="title" fill="#1e3a8a">ROS 2 / CRTK Applications &amp; Ecosystem</text>
+    <text x="24" y="52" class="subtitle" fill="#2563eb">dvrk_python  •  rqt_dvrk  •  dvrk_system  •  sawOpenXR  •  Autonomous controllers</text>
+  </g>
+
+  <!-- Connector 1 -->
+  <line x1="460" y1="90" x2="460" y2="136" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-blue)" />
+  <rect x="230" y="101" width="460" height="24" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1" />
+  <text x="460" y="117" text-anchor="middle" class="arrow-text" fill="#1d4ed8">CRTK Topics &amp; Services (servo_jp, servo_cp, move_*, operating_state)</text>
+
+  <!-- ==================== LAYER 2: dvrk_simulator_base ==================== -->
+  <g transform="translate(50, 138)">
+    <rect width="820" height="120" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)" />
+    <text x="24" y="30" class="title" fill="#92400e">dvrk_simulator_base (Shared Contract &amp; Middleware Layer)</text>
+    
+    <!-- Left Column -->
+    <text x="24" y="58" class="bullet" fill="#78350f"><tspan font-weight="700">• ArmRosInterface:</tspan> CRTK validation &amp; event QoS</text>
+    <text x="24" y="80" class="bullet" fill="#78350f"><tspan font-weight="700">• Command Mailboxes:</tspan> Depth-1 servo vs. queued move</text>
+    <text x="24" y="102" class="bullet" fill="#78350f"><tspan font-weight="700">• URDF Neutral:</tspan> Semantic joint/link binding; namespacing</text>
+
+    <!-- Right Column -->
+    <text x="440" y="58" class="bullet" fill="#78350f"><tspan font-weight="700">• Dynamic ECM_view:</tspan> Cartesian poses in live camera frame</text>
+    <text x="440" y="80" class="bullet" fill="#78350f"><tspan font-weight="700">• Spherical RCMs:</tspan> cart_frames CLI &amp; PyQt6 editor</text>
+    <text x="440" y="102" class="bullet" fill="#78350f"><tspan font-weight="700">• Orchestration:</tspan> start_dvrk_system power &amp; homing</text>
+  </g>
+
+  <!-- Connector 2: Split to Backends -->
+  <path d="M 460 258 L 460 280 L 247 280 L 247 308" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 460 280 L 672 280 L 672 308" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)" />
+  <rect x="220" y="268" width="480" height="24" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <text x="460" y="284" text-anchor="middle" class="arrow-text" fill="#475569">Backend Kinematics &amp; Mutation Contract (Name-based joint/link binding)</text>
+
+  <!-- ==================== LAYER 3: BACKENDS ==================== -->
+  <!-- Left: dvrk_newton -->
+  <g transform="translate(50, 310)">
+    <rect width="395" height="160" rx="10" fill="#f0fdf4" stroke="#10b981" stroke-width="2" filter="url(#shadow)" />
+    <text x="22" y="28" class="title" fill="#065f46">dvrk_newton (GPU Accelerated)</text>
+    <text x="22" y="47" class="badge" fill="#047857">NVIDIA Newton + NVIDIA Warp (warp-lang)</text>
+    <line x1="20" y1="58" x2="375" y2="58" stroke="#bbf7d0" stroke-width="1" />
+    <text x="22" y="78" class="bullet" fill="#064e3b">• Warp articulation with mimic joint constraints</text>
+    <text x="22" y="100" class="bullet" fill="#064e3b">• Real-time Damped Least-Squares IK (&lt;0.5 ms)</text>
+    <text x="22" y="122" class="bullet" fill="#064e3b">• 120 Hz GPU-paced isolated kinematics loop</text>
+    <text x="22" y="144" class="bullet" fill="#064e3b">• Interactive OpenGL ViewerGL or headless mode</text>
+  </g>
+
+  <!-- Right: dvrk_pybullet -->
+  <g transform="translate(475, 310)">
+    <rect width="395" height="160" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="2" filter="url(#shadow)" />
+    <text x="22" y="28" class="title" fill="#1e293b">dvrk_pybullet (Lightweight CPU)</text>
+    <text x="22" y="47" class="badge" fill="#475569">PyBullet Kinematic &amp; Dynamic Simulator</text>
+    <line x1="20" y1="58" x2="375" y2="58" stroke="#e2e8f0" stroke-width="1" />
+    <text x="22" y="78" class="bullet" fill="#334155">• Content-addressed model cache from dvrk_model</text>
+    <text x="22" y="100" class="bullet" fill="#334155">• 6-DoF numerical IK with locked mimic joints</text>
+    <text x="22" y="122" class="bullet" fill="#334155">• Kinematic joint resets (zero PID tuning needed)</text>
+    <text x="22" y="144" class="bullet" fill="#334155">• Headless EGL and Tiny CPU renderers for CI/CD</text>
+  </g>
+
+  <!-- Connector 3: Merge video streams -->
+  <path d="M 247 470 L 247 494 L 460 494 L 460 518" fill="none" stroke="#a855f7" stroke-width="2" marker-end="url(#arrow-purple)" />
+  <path d="M 672 470 L 672 494 L 460 494" fill="none" stroke="#a855f7" stroke-width="2" />
+  <rect x="230" y="482" width="460" height="24" rx="6" fill="#ffffff" stroke="#d8b4fe" stroke-width="1" />
+  <text x="460" y="498" text-anchor="middle" class="arrow-text" fill="#7e22ce">Raw Camera Frames via Linux memfd Shared Memory (Zero Copy)</text>
+
+  <!-- ==================== LAYER 4: Zero-Copy Video Sockets ==================== -->
+  <g transform="translate(50, 520)">
+    <rect width="820" height="68" rx="10" fill="#faf5ff" stroke="#a855f7" stroke-width="2" filter="url(#shadow)" />
+    <text x="24" y="28" class="title" fill="#6b21a8">Linux Abstract Domain Sockets: @dvrk:&lt;backend&gt;:stereo_source</text>
+    <text x="24" y="50" class="subtitle" fill="#7e22ce">GStreamer unixfdsink  •  Bounded 1-frame leaky queue (leaky=downstream)  •  Zero DDS latency</text>
+  </g>
+
+  <!-- Connector 4 -->
+  <line x1="460" y1="588" x2="460" y2="630" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow)" />
+  <rect x="260" y="598" width="400" height="24" rx="6" fill="#ffffff" stroke="#fecdd3" stroke-width="1" />
+  <text x="460" y="614" text-anchor="middle" class="arrow-text" fill="#be123c">GStreamer unixfdsrc Sub-Frame Inter-Process Video Feed</text>
+
+  <!-- ==================== LAYER 5: Console Overlay & Displays ==================== -->
+  <g transform="translate(50, 632)">
+    <rect width="820" height="88" rx="10" fill="#fff1f2" stroke="#f43f5e" stroke-width="2" filter="url(#shadow)" />
+    <text x="24" y="28" class="title" fill="#9f1239">dVRK Console Video Overlay &amp; Surgeon Displays</text>
+    <text x="24" y="51" class="bullet" fill="#9f1239"><tspan font-weight="700">stereo_display:</tspan> Real-time vector HUD (clutch &amp; camera icons, warnings) over @dvrk:console:stereo_overlay</text>
+    <text x="24" y="72" class="subtitle" fill="#be123c"><tspan font-weight="700">Display Endpoints:</tspan> sawOpenXR (Meta Quest VR Headset)  •  Classic HRSV  •  3D Monitors  •  dvrk_data record</text>
+  </g>
+</svg>
