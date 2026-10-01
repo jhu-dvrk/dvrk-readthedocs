@@ -41,6 +41,8 @@ Power supplies
   * 36V motor power supply (For ECM):
     https://store.astrodynetdi.com/225w-u-channel-power-supply-36vpmk225s-36u.html
 
+.. _hardware-modifications:
+
 Hardware modifications
 **********************
 
