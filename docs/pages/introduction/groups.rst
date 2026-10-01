@@ -94,7 +94,8 @@ the dVRK).
 \                                                                                                                                                                                    CA10
 51   2026  University of Rennes                                                                                                                Pierre Janin            da Vinci Si   CA9 SA1
 52   2026  Houston Methodist                                                                                                                   Stuart Corr             da Vinci Si   CA10 SA2
-53   2025  Yonsei University                                                                                                                   Jongsoo Lee             da Vinci Si   
+53   2026  Albert Einstein Hospital (Brazil)                                                                                                   Luciana Machado         da Vinci Si   CA10 SA2
+54   2025  Yonsei University                                                                                                                   Jongsoo Lee             da Vinci Si   
 \                                                                                                                                              Jongeun Choi
 ==== ==== ==================================================================================================================================== ======================= ============= =========== =========
 
