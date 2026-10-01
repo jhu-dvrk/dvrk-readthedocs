@@ -12,12 +12,12 @@ found in the release notes for:
 * dRAC: https://github.com/jhu-dvrk/drac#drac
 
 Some hardware
-[modifications](/jhu-dvrk/sawIntuitiveResearchKit/wiki/Controller-Boxes#hardware-modifications)
+:ref:`modifications<hardware-modifications>`
 might be required as we're adding new features and discovering issues
 with older builds.
 
 A list of sites for each build can be found in the
-[timeline](/jhu-dvrk/sawIntuitiveResearchKit/wiki/Timeline).
+:ref:`timeline<groups>`.
 
 The FPGA and QLA serial number (S/N) have the form ``BBBB-xx`` or
 ``BBBB-xxx``, where ``BBBB`` denotes the build number (see table
@@ -31,6 +31,9 @@ can be programmed using the ``pgm1394`` utility.
 
 All controllers come with FireWire adapters.  Ethernet adapters were
 introduced on FPGA 2+, i.e. in build #5 (2016).
+
+For the Si system, SUJ support is provided by a set of add-on boards (dSIB-Si and dSIB-Z-Si),
+which are not tracked separately.
 
 .. _controller-version:
 
@@ -52,6 +55,7 @@ dVRK Classic arm controllers
    "CA7", "2019", "2.1", "6007", "1.4b", "6006", "F"
    "CA8", "2020", "2.1", "6547", "1.4b", "6557", "F"
    "CA9", "2023", "3.1", "7589", "1.6", "7561", "F"
+   "CA10", "2026", "3.2", "8277", "1.6", "8306", "F"
 
 
 .. _si-arm-controller-version:
@@ -65,6 +69,7 @@ dVRK-Si arm controllers
    :align: center
 
    "SA1", "2023", "3.1", "7589", "3.3", "7565"
+   "SA2", "2026", "3.2", "8277", "3.4", "8419"
 
 
 .. _classic-suj--controller-version:
