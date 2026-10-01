@@ -26,13 +26,14 @@ the dVRK).
 ==== ==== ==================================================================================================================================== ======================= ============= =========== =========
 1    2004 `Johns Hopkins University <https://lcsr.jhu.edu>`_                                                                                   Peter Kazanzides        dVRK          CA0 CA1
 \    2014                                                                                                                                      Russell Taylor          da Vinci      CA3         CS0
-\    2022                                                                                                                                                              da Vinci Si   CA9 SA1     SS0
+\    2022                                                                                                                                                              da Vinci Si   CA9 SA1
 2    2012 `Worcester Polytechnic Inst. <http://aimlab.wpi.edu/research/projects/daVinci_Robot_Research_System>`_                               Greg Fischer            dVRK          CA1         CS1
 \                                                                                                                                                                      da Vinci
 3    2012 `Stanford University <http://charm.stanford.edu>`_                                                                                   Allison Okamura         dVRK          CA1
+\                                                                                                                                                                      da Vinci Si   CA9 SA1
 4    2012 University of British Columbia                                                                                                       Tim Salcudean           da Vinci      CA1
 5    2013 `U.C. Berkeley <http://bair.berkeley.edu/blog/2017/10/17/lfd-surgical-robots/>`_                                                     Ken Goldberg            dVRK          CA2
-\                                                                                                                                              Pieter Abbeel
+\                                                                                                                                                                      da Vinci Si   SA1 SA2
 6    2013 `Carnegie Mellon University <http://biorobotics.ri.cmu.edu/robots/daVinci.php>`_                                                     Howie Choset            dVRK          CA2
 7    2013 `Vanderbilt University ARMA <http://arma.vuse.vanderbilt.edu/index.php>`_                                                            Nabil Simaan            dVRK          CA2
 8    2013 Clemson University [#f1]_                                                                                                            Venkat Krovi            dVRK          CA2
@@ -45,13 +46,15 @@ the dVRK).
 \    2019                                                                                                                                                              da Vinci      CA7         CS1
 14   2014 `Scuola Superiore Sant'Anna <https://www.santannapisa.it/en/institute/biorobotics/surgical-robotics-and-allied-technologies-area>`_  Arianna Menciassi       dVRK  CA3
 15   2014 Seoul National University                                                                                                            Sungwan Kim             dVRK          CA3
-16   2014 `Óbuda University, Budapest <http://irob.uni-obuda.hu/?q=en>`_                                                                       Tamás Haidegger         da Vinci      CA3
+16   2014 `Óbuda University, Budapest <http://irob.uni-obuda.hu/?q=en>`_                                                                       Tamás Haidegger         da Vinci      CA3         CS1
 17   2015 Wayne State University                                                                                                               Abhilash Pandya [#f2]_  da Vinci      CA4
 18   2015 `University of Texas Austin ARTS <http://sites.utexas.edu/arts-lab/>`_ [#f3]_                                                        Farshid Alambeigi       da Vinci      CA4
 19   2015 `University of Verona <https://metropolis.scienze.univr.it>`_                                                                        Paolo Fiorini           da Vinci      CA4         CS1
+\                                                                                                                                                                      da Vinci Si   SA1
 20   2015 National Institutes of Health                                                                                                        Sheng Xu                da Vinci      CA4
 21   2016 Management Center Innsbruck                                                                                                          Yeongmi Kim             da Vinci      -
-22   2016 Case Western Reserve University                                                                                                      Cenk Cavusoglu [#f4]_   da Vinci      CA5
+22   2016 Case Western Reserve University                                                                                                      Cenk Cavusoglu [#f4]_   da Vinci      CA5 CA8
+\                                                                                                                                              Zonghe Chua             da Vinci Si     CA10 SA2
 23   2016 `U.C. San Diego <https://www.ucsdarclab.com>`_                                                                                       Michael Yip [#f5]_      da Vinci      CA5 CA7
 \    2021                                                                                                                                      Tania Morimoto [#f6]_   da Vinci      CA8         CS1
 24   2016 `Ben Gurion University <http://bioroblab.weebly.com>`_                                                                               Ilana Nisky             dVRK          CA5
@@ -63,10 +66,11 @@ the dVRK).
 \    2017                                                                                                                                      Philip Chiu             da Vinci      CA6
 \                                                                                                                                              Samuel Au
 29   2017 `University of Texas Austin HeRo <https://sites.utexas.edu/herolab/>`_                                                               Ann Majewicz Fey        dVRK          CA6
-30   2017 `University of Leeds <https://www.stormlabuk.com>`_                                                                                  Pietro Valdastri        da Vinci      CA6         CS1
+30   2017 `University of Leeds <https://www.stormlabuk.com>`_                                                                                  Pietro Valdastri        da Vinci      CA6 CA8         CS1
+\                                                                                                                                                                      da Vinci Si   CA9 SA1
 31   2017 Hochschule Reutlingen                                                                                                                Oliver Burgert          da Vinci      CA6
 32   2019 University of Maryland                                                                                                               Axel Krieger            da Vinci      CA7
-33   2019 `University of Alberta <http://www.ece.ualberta.ca/~tbs/pmwiki/>`_                                                                   Mahdi Tavakoli          dVRK          CA7
+33   2019 `University of Alberta <http://www.ece.ualberta.ca/~tbs/pmwiki/>`_                                                                   Mahdi Tavakoli          dVRK          CA7 CA9
 34   2019 Purdue University                                                                                                                    Juan Wachs              da Vinci      CA7
 \                                                                                                                                              Denny Yu
 35   2019 Wake Forest                                                                                                                          Philip Brown            da Vinci      CA7
@@ -77,9 +81,20 @@ the dVRK).
 40   2022 `New York University <https://wp.nyu.edu/meriit/>`_                                                                                  S\. Farokh Atashzar     dVRK          CA8
 41   2022 `The University of Utah <https://arm.cs.utah.edu>`_                                                                                  Alan Kuntz              dVRK          CA8 CA9
 42   2022 `Vanderbilt University MAPLE <https://my.vanderbilt.edu/maple-lab/>`_                                                                Jie Ying Wu             dVRK-Si       CA9 SA1
+\                                                                                                                                                                                    CA10 SA2
 43   2023 `Max Planck Institute <https://hi.is.mpg.de>`_                                                                                       Guido Caccianiga        da Vinci      CA9
-\                                                                                                                                                                      da Vinci Si   CA9 SA1     SS1
-44   2025  Yonsei University                                                                                                                   Jongsoo Lee             da Vinci Si   
+\                                                                                                                                                                      da Vinci Si   CA9 SA1
+44   2024  University of Southern Denmark                                                                                                      Thiusius Savarimuthu         dVRK         CA9
+45   2024  Stanford Medicine                                                                                                                   William Hiesinger           dVRK         CA9
+46   2025  Georgia Institute of Technology                                                                                                     Yue Chen                dVRK-Si       CA9 SA1
+47   2025  Italian Institute of Technology                                                                                                     Leonardo Mattos         da Vinci Si   CA9 SA1
+48   2025  University of Toronto                                                                                                               Lueder Kahrs            da Vinci      CA9
+49   2025  DGIST (Korea)                                                                                                                       Minho Hwang             da Vinci Si   CA9 SA1
+50   2025  Korea University                                                                                                                    Kisung Lee              da Vinci Si   CA9 SA1
+\                                                                                                                                                                                    CA10
+51   2026  University of Rennes                                                                                                                Pierre Janin            da Vinci Si   CA9 SA1
+52   2026  Houston Methodist                                                                                                                   Stuart Corr             da Vinci Si   CA10 SA2
+53   2025  Yonsei University                                                                                                                   Jongsoo Lee             da Vinci Si   
 \                                                                                                                                              Jongeun Choi
 ==== ==== ==================================================================================================================================== ======================= ============= =========== =========
 
