@@ -61,4 +61,4 @@ dVRK community
 
 Considering the exponential growth of dVRK related publications, these
 are now compiled in a BibTeX file hosted on GitHub:
-https://github.com/jhu-dvrk/community-publications.  You can see the existing publications on https://dvrk.lcsr.jhu.edu/publications/index.html
+https://github.com/jhu-dvrk/community-publications.  You can see the existing publications on https://jhu-dvrk.github.io/community-publications/

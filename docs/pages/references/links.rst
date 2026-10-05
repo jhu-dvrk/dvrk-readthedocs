@@ -40,7 +40,7 @@ General
 *******
 
 * `dVRK Logo <https://github.com/jhu-dvrk/dvrk-logo>`_ (CAD, STL and png)
-* `Community publications <https://dvrk.lcsr.jhu.edu/publications/index.html>`_
+* `Community publications <https://jhu-dvrk.github.io/community-publications/>`_
 
 Mechatronics
 ************
