@@ -2,30 +2,18 @@
 Getting started
 ***************
 
-Accounts
-========
+Accounts and support
+====================
 
 Once you know you will have physical access to a dVRK, you might want
-to create two accounts to access some privates resources:
+to request access to the private hardware documentation.  For support
+questions, use the dVRK Discourse forum.
 
+* dVRK Discourse forum: https://dvrk.discourse.group
 * Intuitive Surgical hardware wiki, http://research.intusurg.com/dvrk:
   please contact Intuitive to get an account created (at least one per
   site).  This wiki contains some important documentation regarding
   the hardware, including unboxing instructions and wiring fixes.
-* Google group for dVRK users,
-  https://groups.google.com/d/forum/research-kit-for-davinci and
-  research-kit-for-davinci@googlegroups.com. We strongly encourage
-  users to send support questions using this Google group.
-
-  1. Go to
-     https://groups.google.com/forum/#!forum/research-kit-for-davinci
-  2. Use the *Apply for membership* link to request membership.
-
-     .. note::
-
-	Don't forget to mention your group/university so the group
-	administrators can identify you.  Your application will be
-	rejected if you don't provide this information.
 
 Other readings
 ==============
@@ -45,6 +33,7 @@ started.
   * :download:`da Vinci Standard <https://dvrk.lcsr.jhu.edu/downloads/manuals/davinci-classic-user-manual.pdf>`
   * :download:`da Vinci Si <https://dvrk.lcsr.jhu.edu/downloads/manuals/davinci-si-user-manual.pdf>`
 
+* dVRK community publications: https://jhu-dvrk.github.io/community-publications/
 
 Overview
 ========
