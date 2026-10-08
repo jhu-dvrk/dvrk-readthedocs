@@ -40,8 +40,8 @@ the dVRK).
 9    2013 `University W. Ontario CSTAR <https://www.eng.uwo.ca/cstar/about_us/index.html>`_                                                    Rajni Patel             da Vinci      CA2
 10   2013 Hospital for Sick Kids, Toronto                                                                                                      Jim Drake, M.D.         dVRK          CA2
 11   2013 Intuitive Surgical Research                                                                                                          Simon DiMaio            da Vinci      CA2
-12   2014 `Imperial College <https://www.imperial.ac.uk/hamlyn-centre/about-us>`_                                                              Guang-Zhong Yang        da Vinci      CA3
-\    2016                                                                                                                                      Philip Pratt                          CA5
+12   2014 `Imperial College <https://www.imperial.ac.uk/hamlyn-centre/about-us>`_                                                              F\. Rodriguez Y Baena        da Vinci      CA3
+\    2016                                                                                                                                                                            CA5
 13   2014 University College, London                                                                                                           Dan Stoyanov            da Vinci      CA3
 \    2019                                                                                                                                                              da Vinci      CA7         CS1
 14   2014 `Scuola Superiore Sant'Anna <https://www.santannapisa.it/en/institute/biorobotics/surgical-robotics-and-allied-technologies-area>`_  Arianna Menciassi       dVRK  CA3
