@@ -1,0 +1,36 @@
+digraph openxr_real {
+  graph [rankdir=TB, newrank=true, bgcolor="white", pad=0.25, nodesep=0.6, ranksep=0.7,
+         fontname="DejaVu Sans", fontsize=16, label="OpenXR with a real patient cart", labelloc=t];
+  node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#64748b",
+        fontname="DejaVu Sans", fontsize=12, margin="0.16,0.12"];
+  edge [color="#2563eb", fontcolor="#1e40af", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+
+  headset [label="Headset + tracked controllers\nOpenXR runtime", fillcolor="#faf5ff"];
+  subgraph cluster_system {
+    label="dvrk_robot / dvrk_system"; color="#94a3b8"; style=rounded;
+    xr [label="sawOpenXR / mtsOpenXR\nGeneric MTML / MTMR and console events"];
+    teleop [label="dVRK console + PSM / ECM teleoperation\nPairings, enable, clutch, camera"];
+    arms [label="dVRK patient-arm components + mtsPID\nSUJ provides calibrated base frames"];
+    io [label="sawRobotIO1394\nPhysical patient-cart IO"];
+    xr -> teleop [label="Master poses / grippers / inputs"];
+    teleop -> arms [dir=both, label="Commands / measured state"];
+    arms -> io [dir=both, label="Motor commands / encoders"];
+  }
+  cart [label="Real patient cart\nECM, PSMs, SUJ", fillcolor="#fff7ed"];
+  camera [label="Physical endoscope + stereo camera\nLeft and right SDI video", fillcolor="#fff7ed"];
+  source [label="DeckLink capture\ndvrk_data / stereo_source", fillcolor="#f0fdfa"];
+  alignment [label="dvrk_data / stereo_alignment\nAlign eyes and pack stereo", fillcolor="#f0fdfa"];
+  display [label="dvrk_console / stereo_display\nConsole overlay; headless sink", fillcolor="#f0fdfa"];
+  headset -> xr [label="Tracked poses / input actions", color="#7e22ce", fontcolor="#7e22ce"];
+  io -> cart [dir=both, label="Classic: fw; Si: udpfw", color="#c2410c", fontcolor="#9a3412"];
+  camera -> source [label="SDI devices 0 and 1", color="#0f766e", fontcolor="#0f766e", constraint=false];
+  source -> alignment [label="Unix-FD left / right\n@dvrk:stereo_source:left / right", color="#0f766e", fontcolor="#0f766e", constraint=false];
+  alignment -> display [label="Unix-FD stereo\n@dvrk:stereo_alignment:stereo", color="#0f766e", fontcolor="#0f766e", constraint=false];
+  teleop -> display [label="ROS console status", style=dashed, constraint=false];
+  display -> xr [label="Unix-FD video\n@dvrk:stereo_display:openxr-overlay", color="#0f766e", fontcolor="#0f766e", constraint=false];
+  xr -> headset [label="Stereo video", color="#0f766e", fontcolor="#0f766e", constraint=false];
+  {rank=same; teleop; display;}
+  {rank=same; arms; alignment;}
+  {rank=same; io; source;}
+  {rank=same; cart; camera;}
+}

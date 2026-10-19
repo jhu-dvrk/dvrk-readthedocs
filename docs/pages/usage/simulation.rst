@@ -4,9 +4,19 @@
 Simulation
 **********
 
-This section assumes that you compiled the dVRK software, you don't need any hardware.
+The patient-side arms can be simulated while the operator uses a physical
+console. Start with :ref:`kinematic simulation <usage-kinematic-simulation>`
+for client scripts and RViz, or use the :ref:`patient-cart sessions
+<usage-simulator-sessions>` below to teleoperate a scene with MTMs or OpenXR.
 
 For first time users, we also have some :ref:`tips<usage-tips>`.
+
+The simulator packages and complete console sessions use ROS 2. Build and
+source your workspace as described under :ref:`ROS 2 compilation <ros2>`;
+backend installation and runtime requirements are under :ref:`Simulators
+<simulators>`.
+
+.. _usage-kinematic-simulation:
 
 Kinematic simulation
 ####################
@@ -115,15 +125,87 @@ You can also communicate with the simulated robot using ROS topics
 (see :ref:`dVRK client libraries<devel-ros-clients>`).
 
 
-Dynamic simulation
-##################
+.. _usage-simulator-sessions:
 
-.. note::
+Patient-cart sessions with a physical console
+#############################################
 
-   For dedicated dVRK simulation backends featuring GPU acceleration,
-   PyBullet, NVIDIA Isaac Sim, and immersive OpenXR teleoperation, see
-   :ref:`Simulators <simulators>`.
+These examples combine a simulated ECM and PSM1--PSM3 with a real operator
+interface. They use different engines to show how the same dVRK console and
+teleoperation components connect to either physical MTMs or an OpenXR input
+component. The engine controls the virtual arms and renders the endoscope
+view; ``dvrk_system`` runs the console and teleoperation components.
 
+.. toctree::
+   :maxdepth: 1
+
+   simulation/mtms-newton
+   simulation/openxr-pybullet
+
+The examples trace IO, teleoperation, and video separately. Arm commands and
+state cross the simulator's ROS 2 CRTK interface. Video reaches the console
+over a GStreamer transport. The simulator's robot control is kinematic even
+when exercise objects use the engine's physics; see :ref:`Simulators
+<simulators>` for backend behavior and limitations.
+
+Other supplied simulator profiles
+*********************************
+
+The current launch files also support the following combinations. Each table
+entry gives the ROS package followed by its launch filename; run it with
+``ros2 launch <package> <filename>``. Choose one session at a time, since the
+profiles share arm namespaces and video sockets.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 16 44 40
+
+   * - Backend
+     - Physical MTMs (``dvrk_config_jhu``)
+     - OpenXR (``saw_openxr``)
+   * - Newton
+     - ``davinci_newton.launch.py`` or ``davinci_si_newton.launch.py``
+     - ``openxr_newton.launch.py``
+   * - PyBullet
+     - ``davinci_pybullet.launch.py`` or ``davinci_si_pybullet.launch.py``
+     - ``openxr_pybullet.launch.py``
+   * - Isaac Sim
+     - ``davinci_si_isaac_sim.launch.py``
+     - ``openxr_isaac_sim.launch.py``
+
+The ``davinci_si_*`` profiles use the MTMs and Goovis head sensor configured
+for the JHU Si setup. They still use simulated patient-side arms. The
+``davinci_*`` profiles use the JHU Classic console hardware.
+
+For example, select Newton with OpenXR, or Isaac Sim with OpenXR:
+
+.. code-block:: bash
+
+   ros2 launch saw_openxr openxr_newton.launch.py exercise:=peg_board_ring.yaml rqt:=true
+
+.. code-block:: bash
+
+   ros2 launch saw_openxr openxr_isaac_sim.launch.py exercise:=tray_cubes.yaml rqt:=true
+
+Newton and PyBullet supply Unix-FD stereo to ``stereo_display``, which adds
+console status and forwards video to OpenXR. The Isaac Sim OpenXR profile
+uses RTSP directly and does not start this Unix-FD overlay process.
+
+These profiles accept ``exercise`` (default ``tray_cubes.yaml``), ``config``
+(backend runtime YAML), ``headless`` (default ``true``), and ``rqt`` (default
+``false``). ``exercise`` adds an exercise to the profile's patient cart;
+``headless:=false`` also opens the simulator viewer. The current shared
+launcher leaves homing and teleoperation to the operator.
+
+Source: `dvrk_config_jhu launch files
+<https://github.com/jhu-dvrk/dvrk_config_jhu/tree/main/launch>`_,
+`sawOpenXR launch files
+<https://github.com/adeguet1/sawOpenXR/tree/main/ros/launch>`_, and the
+`shared session launcher
+<https://github.com/jhu-dvrk/dvrk_simulator_base/blob/main/dvrk_simulator_base/launch.py>`_.
+
+Other dynamic simulators
+########################
 
 You can run the dVRK software and emulate the dVRK arms and their environment
 using a dynamic simulator. Dynamic simulation for the dVRK has been used for two

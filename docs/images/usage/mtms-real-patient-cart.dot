@@ -1,0 +1,33 @@
+digraph mtms_real {
+  graph [rankdir=TB, newrank=true, bgcolor="white", pad=0.25, nodesep=0.6, ranksep=0.65,
+         fontname="DejaVu Sans", fontsize=16, label="Physical MTMs and a real patient cart", labelloc=t];
+  node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#64748b",
+        fontname="DejaVu Sans", fontsize=12, margin="0.16,0.12"];
+  edge [color="#2563eb", fontcolor="#1e40af", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+
+  hardware [label="Physical MTMs, patient cart, controllers\nPedals and head sensor", fillcolor="#fff7ed"];
+  subgraph cluster_system {
+    label="dvrk_robot / dvrk_system"; color="#94a3b8"; style=rounded;
+    arms [label="sawRobotIO1394 + mtsPID\ndVRK MTM / PSM / ECM arms + SUJ"];
+    console [label="dVRK console\nInputs and pairing selection"];
+    teleop [label="PSM / ECM teleoperation\nMTMR–PSM1, MTML–PSM2; ECM"];
+    arms -> console [label="Pedals / head sensor"];
+    arms -> teleop [dir=both, label="Master / patient state and commands"];
+    console -> teleop [label="Enable / clutch / camera"];
+  }
+  camera [label="Physical stereo endoscope camera\nLeft and right SDI", fillcolor="#fff7ed"];
+  source [label="DeckLink capture\ndvrk_data / stereo_source", fillcolor="#f0fdfa"];
+  alignment [label="dvrk_data / stereo_alignment\nEye alignment", fillcolor="#f0fdfa"];
+  display [label="dvrk_console / stereo_display\nConsole overlay", fillcolor="#f0fdfa"];
+  viewer [label="Physical HRSV\nSeparate left / right windows", fillcolor="#f0fdfa"];
+  hardware -> arms [dir=both, label="FireWire (fw)", color="#c2410c", fontcolor="#9a3412"];
+  camera -> source [label="SDI capture", color="#0f766e", fontcolor="#0f766e"];
+  source -> alignment [label="Unix-FD left / right", color="#0f766e", fontcolor="#0f766e"];
+  alignment -> display [label="Unix-FD stereo", color="#0f766e", fontcolor="#0f766e"];
+  console -> display [label="ROS console status", style=dashed, constraint=false];
+  display -> viewer [label="Stereo video", color="#0f766e", fontcolor="#0f766e"];
+  {rank=same; hardware; camera;}
+  {rank=same; arms; source;}
+  {rank=same; console; alignment;}
+  {rank=same; teleop; display;}
+}

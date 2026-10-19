@@ -21,6 +21,10 @@ also differ between engines.
 These packages support **ROS 2 only**. The examples below use a sourced ROS 2
 Jazzy workspace on Ubuntu 24.04 and run from its root directory.
 
+For complete operator sessions, see :ref:`Usage: patient-cart simulation
+<usage-simulator-sessions>`, including :ref:`physical MTMs with Newton
+<usage-mtms-newton>` and :ref:`OpenXR with PyBullet <usage-openxr-pybullet>`.
+
 
 Choosing a backend
 ******************
@@ -184,9 +188,9 @@ Launch arguments
 ``simulator.launch.py`` accepts ``config``, ``scene``, ``headless``, ``rqt``,
 ``rqt_console``, and ``console``. Newton also accepts ``device``.
 
-A generic launch leaves ``headless`` unset, so the runtime YAML decides whether
-to open a desktop viewer. An explicit ``headless:=true`` or ``headless:=false``
-overrides it. Patient-cart and OpenXR profiles default to ``headless:=true``.
+The current shared launcher defaults to ``headless:=true``. Set
+``headless:=false`` to open a desktop viewer, or pass an empty ``headless``
+value to use the runtime YAML setting.
 ``console`` selects the namespace used by startup and monitoring clients; it
 does not rewrite the system JSON or video-overlay configuration.
 
@@ -280,9 +284,11 @@ System startup
 
 ``ros2 run dvrk_simulator_base start_dvrk_system`` waits for system/console
 connections, requests homing, and enables teleoperation after its configured
-wait. Use ``--no-teleop`` to request homing only. OpenXR and 3Dconnexion profiles
-start this helper automatically. JHU profiles with a control panel leave homing
-and teleoperation to the operator.
+wait. Use ``--no-teleop`` to request homing only. The current shared session
+launcher does not start this helper automatically. JHU profiles include a
+control panel; OpenXR profiles can use the system GUI or a separately started
+control panel. See the :ref:`Usage examples <usage-simulator-sessions>` for
+operator startup steps.
 
 
 .. _dvrk_pybullet:
@@ -442,53 +448,3 @@ selection and unrelated files. Use ``--config /path/to/runtime.yaml`` or
 Older ``isaac_sim_dir``, ROS middleware, and ``generated_dir`` runtime fields
 belonged to the in-process adapter. Use the interpreter environment variables
 and ``generated_root`` with the current frontend/worker architecture.
-
-
-OpenXR and patient-cart sessions
-********************************
-
-Each backend supplies ``open_xr.launch.py``. These profiles combine a patient
-cart with ``tray_cubes.yaml`` by default, start ``dvrk_system`` with the supplied
-OpenXR system JSON, and request homing/teleoperation through
-``start_dvrk_system``. Build the required ``dvrk_robot``, ``dvrk_console``, and
-``saw_openxr`` packages and configure a working OpenXR runtime for the headset.
-
-.. figure:: /images/software/dvrk-newton-openxr.svg
-   :width: 700
-   :align: center
-   :alt: Newton worker video reaches the console overlay and OpenXR headset while ROS CRTK commands pass through dvrk_system and the ROS frontend.
-
-   Newton's OpenXR profile keeps ROS control and Unix-FD video separate.
-
-.. code-block:: bash
-
-   source install/setup.bash
-   ros2 launch dvrk_newton open_xr.launch.py rqt:=true
-   ros2 launch dvrk_pybullet open_xr.launch.py scene:=peg_board_ring.yaml
-   ros2 launch dvrk_isaac_sim open_xr.launch.py scene:=tray_cubes.yaml
-
-Run one session at a time. Newton and PyBullet profiles send raw stereo to
-``@dvrk:simulator:stereo_source``. ``dvrk_console stereo_display`` adds the
-console overlay and supplies ``@dvrk:console:stereo_overlay`` to sawOpenXR.
-Isaac's profile uses RTSP directly and does not launch this Unix-FD overlay.
-Socket names and RTSP endpoints are profile/scene settings, not universal
-backend defaults.
-
-Use ``headless:=false`` to open a desktop viewer as well. ``scene`` selects an
-exercise added to the profile's cart; ``config`` selects runtime settings.
-``console`` configures monitoring/startup clients. Operator controls and
-teleoperation mappings are defined by the installed sawOpenXR and system
-configuration.
-
-JHU profiles are launched from ``dvrk_config_jhu``, for example:
-
-.. code-block:: bash
-
-   ros2 launch dvrk_config_jhu daVinciSi_MTML_MTMR_newton.launch.py \
-     exercise:=tray_cubes.yaml rqt:=true
-
-They include the control panel and leave homing and teleoperation to the
-operator. The Si launch variants are ``daVinciSi_MTML_MTMR_pybullet.launch.py``
-and ``daVinciSi_MTML_MTMR_isaac_sim.launch.py``. Classic-cart variants are
-``daVinci_MTML_MTMR_newton.launch.py`` and
-``daVinci_MTML_MTMR_pybullet.launch.py``.

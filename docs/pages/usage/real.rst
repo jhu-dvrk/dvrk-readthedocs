@@ -10,6 +10,37 @@ all the configuration files have been generated and calibrated.
 
 For first time users, we also have some :ref:`tips<usage-tips>`.
 
+Components and data flow
+########################
+
+The `JHU Classic system example
+<https://github.com/jhu-dvrk/dvrk_config_jhu/blob/main/jhu-daVinci/system-SUJ-ECM-MTMR-PSM1-MTML-PSM2-Teleop.json>`_
+connects physical MTMR to PSM1, MTML to PSM2, and both MTMs to ECM
+teleoperation. The matching ``jhu-daVinci`` video files capture physical
+endoscope images and display them in the HRSV.
+
+.. figure:: /images/usage/mtms-real-patient-cart.svg
+   :width: 100%
+   :align: center
+   :alt: Real MTM and patient-cart controllers connect to sawRobotIO1394, PID control, and dVRK arm components. Console inputs govern teleoperation. Captured endoscope video passes through stereo alignment and console overlay to the HRSV.
+
+   A physical console and patient cart use hardware IO on both sides of
+   teleoperation, with a separate endoscope video path.
+
+``dvrk_system`` creates ``sawRobotIO1394`` for controller IO, ``mtsPID`` for
+motor control, and the calibrated dVRK arm components. Its console receives
+the pedal and head-sensor events and selects the PSM/ECM teleoperation
+components. These components connect the master and patient-arm interfaces;
+ROS provides status and operator controls for tools such as the control panel.
+
+The video path uses ``dvrk_data stereo_source`` for capture,
+``dvrk_data stereo_alignment`` for eye alignment, and
+``dvrk_console stereo_display`` for the status overlay and HRSV windows.
+The display receives console status over ROS and video over GStreamer
+Unix-FD sockets. See `the JHU Classic configuration directory
+<https://github.com/jhu-dvrk/dvrk_config_jhu/tree/main/jhu-daVinci>`_ for the
+system and video files, and the visualization steps below to start them.
+
 Powering on controllers
 #######################
 
@@ -122,7 +153,7 @@ workspace's ``setup.bash`` and go in your configuration files directory:
 
 .. code-block:: bash
 
-   source ~/ros_ws/install/setup.bash
+   source ~/ros2_ws/install/setup.bash
    cd ~/ros2_ws/src/dvrk/dvrk_config_XXX # replace XXX with your organization's acronym
 
 .. warning::
@@ -135,7 +166,7 @@ To start the main dVRK system application:
 .. code-block:: bash
 
    # assuming you are in your configuration files directory
-   ros2 run dvrk_robot dvrk_system -j sytem-XXX.json # replace XXX with your configuration
+   ros2 run dvrk_robot dvrk_system -j system-XXX.json # replace XXX with your configuration
 
 See also:
 

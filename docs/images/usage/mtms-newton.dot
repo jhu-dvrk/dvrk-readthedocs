@@ -1,0 +1,36 @@
+digraph mtms_newton {
+  graph [rankdir=TB, newrank=true, bgcolor="white", pad=0.25, nodesep=0.5, ranksep=0.65,
+         fontname="DejaVu Sans", fontsize=16, label="Physical MTMs with Newton", labelloc=t];
+  node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#64748b",
+        fontname="DejaVu Sans", fontsize=12, margin="0.16,0.12"];
+  edge [color="#2563eb", fontcolor="#1e40af", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+
+  hardware [label="Physical MTML / MTMR\nControllers, pedals, head sensor", fillcolor="#fff7ed"];
+  subgraph cluster_system {
+    label="dvrk_robot / dvrk_system"; color="#94a3b8"; style=rounded;
+    io [label="sawRobotIO1394\nMTM + console IO"];
+    mtm [label="mtsPID + dVRK MTM arms\nPhysical master control"];
+    console [label="dVRK console\nInputs and pairing selection"];
+    teleop [label="PSM / ECM teleoperation\nMaster poses to patient commands"];
+    adapters [label="dvrk_psm_from_ros\ndvrk_arm_from_ros"];
+    io -> mtm [dir=both, label="Encoders / motor commands"];
+    io -> console [label="Pedals / head sensor"];
+    mtm -> teleop [dir=both, label="Master state / commands"];
+    console -> teleop [label="Enable / clutch / camera"];
+    teleop -> adapters [dir=both, label="Patient commands / state"];
+    {rank=same; mtm; console;}
+  }
+  frontend [label="Newton ROS frontend\nCRTK topics and diagnostics"];
+  worker [label="Newton worker + camera rendering\nVirtual ECM, PSM1–PSM3, exercise", fillcolor="#f0fdf4"];
+  display [label="dvrk_console / stereo_display\nConsole overlay; separate eye windows", fillcolor="#f0fdfa"];
+  viewer [label="Physical HRSV\nLeft and right displays", fillcolor="#f0fdfa"];
+  hardware -> io [dir=both, label="FireWire (fw)", color="#c2410c", fontcolor="#9a3412"];
+  adapters -> frontend [dir=both, label="ROS 2 CRTK"];
+  frontend -> worker [dir=both, label="Private Unix-socket IPC"];
+  worker -> display [label="Unix-FD stereo\n@dvrk:simulator:stereo_source", color="#0f766e", fontcolor="#0f766e", constraint=false];
+  console -> display [label="ROS console status", style=dashed, constraint=false];
+  display -> viewer [label="Stereo video", color="#0f766e", fontcolor="#0f766e", constraint=false];
+  {rank=same; teleop; viewer;}
+  {rank=same; adapters; display;}
+  {rank=same; frontend; worker;}
+}

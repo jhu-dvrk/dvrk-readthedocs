@@ -1,0 +1,32 @@
+digraph openxr_pybullet {
+  graph [rankdir=TB, newrank=true, bgcolor="white", pad=0.25, nodesep=0.6, ranksep=0.75,
+         fontname="DejaVu Sans", fontsize=16, label="OpenXR with PyBullet", labelloc=t];
+  node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#64748b",
+        fontname="DejaVu Sans", fontsize=12, margin="0.16,0.12"];
+  edge [color="#2563eb", fontcolor="#1e40af", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+
+  headset [label="OpenXR headset + controllers\nRuntime (for example WiVRn)", fillcolor="#faf5ff"];
+  subgraph cluster_system {
+    label="dvrk_robot / dvrk_system"; color="#94a3b8"; style=rounded;
+    xr [label="sawOpenXR / mtsOpenXR\nGeneric MTML / MTMR"];
+    console [label="dVRK console\nInputs and pairings"];
+    teleop [label="PSM / ECM teleoperation\nNon-haptic masters"];
+    adapters [label="dvrk_psm_from_ros\ndvrk_arm_from_ros"];
+    xr -> console [label="Presence / clutch / camera"];
+    xr -> teleop [label="Controller poses / grippers"];
+    console -> teleop [label="Enable / selection"];
+    teleop -> adapters [dir=both, label="Patient commands / state"];
+  }
+  frontend [label="PyBullet ROS frontend\nCRTK topics and diagnostics"];
+  worker [label="PyBullet worker + camera process\nVirtual patient cart + exercise", fillcolor="#f0fdf4"];
+  display [label="dvrk_console / stereo_display\nOverlay + desktop SBS preview", fillcolor="#f0fdfa"];
+  headset -> xr [label="Tracked poses / input actions", color="#7e22ce", fontcolor="#7e22ce"];
+  adapters -> frontend [dir=both, label="ROS 2 CRTK"];
+  frontend -> worker [dir=both, label="Private Unix-socket IPC"];
+  worker -> display [label="Unix-FD stereo\n@dvrk:simulator:stereo_source", color="#0f766e", fontcolor="#0f766e", constraint=false];
+  console -> display [label="ROS console status", style=dashed, constraint=false];
+  display -> xr [label="Unix-FD video\n@dvrk:console:stereo_overlay", color="#0f766e", fontcolor="#0f766e", constraint=false];
+  xr -> headset [label="Stereo video", color="#0f766e", fontcolor="#0f766e", constraint=false];
+  {rank=same; adapters; display;}
+  {rank=same; frontend; worker;}
+}
