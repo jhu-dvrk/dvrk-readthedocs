@@ -1,0 +1,76 @@
+digraph force_dimension_isaac_sim {
+  graph [rankdir=TB, splines=ortho, newrank=true, bgcolor="white", pad=0.25, nodesep=0.4, ranksep=1.0,
+         fontname="Arial,Helvetica,sans-serif", fontsize=16, label="Force Dimension with Isaac Sim and joystick pedals", labelloc=t];
+  node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#64748b",
+        fontname="Arial,Helvetica,sans-serif", fontsize=12, margin="0.16,0.12"];
+  edge [style=solid, color="#475569", fontcolor="#475569", fontname="Arial,Helvetica,sans-serif", fontsize=10, arrowsize=0.7];
+
+  // Keep the three columns ordered; cross-column links never set ranks.
+  subgraph cluster_control {
+    label=""; style=invis;
+    hardware [label="Force Dimension masters\nMTML, MTMR", fillcolor="#fff7ed", group="control"];
+    pedals [label="USB joystick foot pedals\nOperator presence, clutch, camera", fillcolor="#fff7ed", group="control"];
+    frontend [label="Isaac Sim ROS frontend\nCRTK topics and diagnostics", group="control"];
+    subgraph cluster_system {
+      label="dvrk_robot::dvrk_system"; color="#94a3b8"; style=rounded;
+      arms [label="sawForceDimensionSDK\nmtsForceDimension, generic masters", group="control"];
+      joystick [label="sawJoystick\nmtsJoystick, pedal events", group="control"];
+      console [label="dVRK console\nInputs and pairing", group="control"];
+      teleop [label="PSM / ECM teleoperation\nMaster poses to patient commands", group="control"];
+      adapters [label="dvrk_psm_from_ros\ndvrk_arm_from_ros", group="control"];
+      joystick -> console [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Presence, clutch,<BR/>camera</TD></TR></TABLE>>];
+      arms -> teleop [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Master state,<BR/>commands</TD></TR></TABLE>>];
+      console -> teleop [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Enable, clutch,<BR/>camera</TD></TR></TABLE>>];
+      teleop -> adapters [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Patient commands,<BR/>state</TD></TR></TABLE>>];
+    }
+  }
+  subgraph cluster_video {
+    label=""; style=invis;
+    worker [label="Isaac Sim worker + camera rendering\nVirtual ECM, PSM1–PSM3, exercise", fillcolor="#f0fdf4", group="video"];
+    display [label="dvrk_console::stereo_display\nConsole overlay; separate eye windows", fillcolor="#f0fdfa", group="video"];
+    viewer [label="Physical HRSV\nLeft and right displays", fillcolor="#f0fdfa", group="video"];
+  }
+  subgraph cluster_panel {
+    label=""; style=invis;
+    control_panel [label="dvrk_console::control_panel\nOperator controls and status\nOptional video previews", group="panel"];
+    touchscreen [label="Touch screen", fillcolor="#fff7ed", group="panel"];
+  }
+
+  hardware -> arms [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>USB</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626", minlen=2];
+  pedals -> joystick [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>USB</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
+  adapters -> frontend [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2 CRTK</TD></TR></TABLE>>, style=dashed];
+  frontend -> worker [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Unix socket<BR/>IPC</TD></TR></TABLE>>, color="#2563eb", fontcolor="#2563eb", constraint=false];
+  worker -> display [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>RTSP stereo</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d"];
+  console -> display [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2<BR/>console status</TD></TR></TABLE>>, style=dashed, constraint=false];
+  display -> viewer [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>DP, HDMI</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
+  console -> control_panel [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2<BR/>commands, status</TD></TR></TABLE>>, style=dashed, constraint=false];
+  display -> control_panel [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo overlay</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
+  control_panel -> touchscreen [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>DP, HDMI</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
+
+
+  {rank=same; hardware; pedals;}
+  {rank=same; arms; joystick;}
+
+  // Align the implicit columns at their bottom nodes.
+  {rank=same; frontend; viewer; touchscreen;}
+  column_order [shape=point, width=0, height=0, label="", style=invis, ordering=out];
+  column_order -> frontend [style=invis];
+  column_order -> viewer [style=invis];
+  column_order -> touchscreen [style=invis];
+
+  // Keep this legend consistent with readme-dot.md; include only types used above.
+  subgraph legend_rank {
+    rank=sink;
+    legend [shape=plain, style="", margin=0, label=<
+      <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3">
+        <TR><TD COLSPAN="5" ALIGN="LEFT"><B>Connection legend</B></TD></TR>
+        <TR><TD><FONT COLOR="#dc2626">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">Physical connection</FONT></TD><TD WIDTH="20"></TD><TD><FONT COLOR="#15803d">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">Video (RTSP, GStreamer socket)</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#2563eb">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">Unix socket IPC (simulator control/state)</FONT></TD><TD WIDTH="20"></TD><TD><FONT COLOR="#475569">┄▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">ROS 2 communication</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#475569">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">Internal component connection</FONT></TD><TD WIDTH="20"></TD><TD COLSPAN="2"></TD></TR>
+      </TABLE>
+    >];
+  }
+  frontend -> legend [style=invis];
+  viewer -> legend [style=invis];
+  touchscreen -> legend [style=invis];
+}

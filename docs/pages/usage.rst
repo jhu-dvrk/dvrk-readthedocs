@@ -32,6 +32,14 @@ Newton, and an OpenXR headset and controllers with PyBullet.
      - Headset and tracked controllers
      - Physical PSMs and ECM
      - Endoscope to the headset
+   * - :ref:`Force Dimension with Isaac Sim <usage-force-dimension-isaac>`
+     - Haptic masters and joystick pedals
+     - Simulated PSMs and ECM
+     - Isaac Sim stereo video
+   * - :ref:`Haply with a real patient cart <usage-haply-real>`
+     - Two Haply devices, original pedals, Goovis head sensor
+     - Physical Si PSMs and ECM
+     - Endoscope to the Goovis HMD
 
 The hardware examples use JHU configuration files with specific serial numbers,
 calibrations, IO ports, and video devices. Use the configuration matching your

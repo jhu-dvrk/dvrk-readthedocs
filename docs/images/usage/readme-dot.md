@@ -35,6 +35,10 @@ video sockets; do not repeat the transport name on each edge or label every
 IPC edge as shared memory or GStreamer. The simulator frontend/worker
 control channel exchanges JSON over a private Unix stream socket and is blue.
 Simulator video remains green, including video sent to a non-simulator process.
+When a simulator publishes RTSP instead of a GStreamer socket, label that edge
+`RTSP stereo` and use `Video (RTSP, GStreamer socket)` for its green legend
+entry. Only draw panel preview connections from publishers that provide a
+GStreamer socket; the panel does not consume RTSP directly.
 
 OpenXR runtime interaction is a logical API connection. It does not imply a
 DP, HDMI cable: a runtime can deliver headset video through streaming. Draw a
@@ -61,7 +65,9 @@ label `sawOpenXR / mtsOpenXR` describes a library/component relationship.
   two-way `ROS 2 commands, status` connection to the console. Also show a
   solid green connection from every GStreamer video publisher in the workflow
   to the panel: raw left/right capture, aligned stereo, simulator stereo, and
-  stereo overlay output where present. Identify only the stream on these
+  stereo overlay output. Include the green `Stereo overlay` connection from
+  `stereo_display` to `control_panel` in every workflow graph; this
+  represents consuming the configured overlay socket. Identify only the stream on these
   edges (`Left & right`, `Stereo`, or `Stereo overlay`); omit `GStreamer
   socket(s)` and `Optional preview` because the legend and panel subtitle
   already explain them. These edges represent available sources the panel can

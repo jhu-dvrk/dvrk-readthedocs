@@ -184,6 +184,12 @@
 <polygon fill="#dc2626" stroke="#dc2626" points="387.45,-199.02 385,-192.02 382.55,-199.02 387.45,-199.02" />
 </g>
 
+<g id="edge13" class="edge">
+<title>display-&gt;control_panel</title>
+<path fill="none" stroke="#15803d" d="M503.81,-304C503.81,-304 614.42,-304 614.42,-304" />
+<polygon fill="#15803d" stroke="#15803d" points="614.42,-306.45 621.42,-304 614.42,-301.55 614.42,-306.45" />
+</g>
+
 
 <g id="node11" class="node">
 <title>touchscreen</title>
@@ -191,7 +197,7 @@
 <text text-anchor="middle" x="709" y="-166.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Touch screen</text>
 </g>
 
-<g id="edge13" class="edge">
+<g id="edge14" class="edge">
 <title>control_panel-&gt;touchscreen</title>
 <path fill="none" stroke="#dc2626" d="M709,-263.78C709,-263.78 709,-195.28 709,-195.28" />
 <polygon fill="#dc2626" stroke="#dc2626" points="711.45,-195.28 709,-188.28 706.55,-195.28 711.45,-195.28" />
@@ -220,6 +226,7 @@
 </g><g class="edge-label" data-edge="worker-&gt;display" transform="translate(16.500 7.500)"><rect x="352.0" y="-372.17" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="354.5" y="-361.67" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
 </g><g class="edge-label" data-edge="worker-&gt;control_panel" transform="translate(16.500 7.500)"><rect x="597.49" y="-430.0" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="599.99" y="-419.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
 </g><g class="edge-label" data-edge="display-&gt;viewer" transform="translate(25.000 7.500)"><rect x="335.0" y="-249.67" width="50.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="337" y="-239.17" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">DP, HDMI</text>
+</g><g class="edge-label" data-edge="display-&gt;control_panel" transform="translate(-16.995 -7.500)"><rect x="542.11" y="-304.0" width="68.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="544.11" y="-293.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo overlay</text>
 </g><g class="edge-label" data-edge="control_panel-&gt;touchscreen" transform="translate(25.000 7.500)"><rect x="659.0" y="-244.53" width="50.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="661" y="-234.03" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">DP, HDMI</text>
 </g></g>
 </svg>

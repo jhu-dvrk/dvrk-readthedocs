@@ -4,6 +4,163 @@
 Other
 *****
 
+The following examples combine alternative master devices with either a
+simulated patient cart or physical patient-side arms. The master-device
+components run inside ``dvrk_system``; their console inputs and video paths
+can be chosen independently.
+
+.. _usage-force-dimension-isaac:
+
+Force Dimension with Isaac Sim and joystick pedals
+##################################################
+
+Force Dimension haptic devices provide the generic MTML and MTMR interfaces
+through ``sawForceDimensionSDK``. USB foot pedals configured as a Linux
+joystick provide operator presence, clutch, and camera events through
+``sawJoystick``. Isaac Sim supplies the patient cart and rendered endoscope
+images; no physical patient-cart controllers are required.
+
+.. figure:: /images/usage/force-dimension-isaac-sim.svg
+   :width: 100%
+   :align: center
+   :alt: Force Dimension masters and USB joystick pedals connect to generic master interfaces and the dVRK console. Teleoperation reaches Isaac Sim through ROS arm adapters and private simulator IPC. RTSP stereo video reaches stereo_display, whose overlay socket can be previewed in the control panel.
+
+   Haptic masters, joystick console inputs, and the Isaac Sim patient cart
+   use separate device, control, and video paths.
+
+Configuration pieces
+********************
+
+This is an integration example assembled from the existing component
+configurations, rather than a dedicated JHU launch profile. Prepare Isaac Sim
+as described under :ref:`dvrk_isaac_sim`, then combine these pieces in the
+system configuration:
+
+* Use ``sawForceDimensionSDK`` with class ``mtsForceDimension`` to expose
+  ``MTML`` and ``MTMR`` as ``MTM_GENERIC`` arms. The existing
+  ``sawForceDimensionSDK-MTML.json`` and
+  ``sawForceDimensionSDK-MTMR.json`` examples show the device names and serial
+  fields. Choose the frame transforms and gripper settings for the devices
+  being used; :ref:`components-alternative-hardware` describes the supported
+  master features.
+* Load ``sawJoystick`` with class ``mtsJoystick`` and map its button events
+  to the console's ``operator_present``, ``clutch``, and ``camera`` inputs.
+  Use ``input_type: COMPONENTS``. The current
+  ``jhu-dVRK/system-MTML-PSM1-joystick-console-input.json`` example and
+  ``misc/sawJoystickConfiguration.json`` show these component/interface
+  mappings. Button indices and the ``/dev/input/js*`` device depend on the
+  pedals; see :ref:`config-pedals-usb`.
+* Retain the patient-arm ROS adapters from
+  ``dvrk_isaac_sim/share/dvrk_systems/system-MTML-MTMR-Haply-patient-cart-ROS.json``:
+  ``dvrk_psm_from_ros`` for PSMs and ``dvrk_arm_from_ros`` for ECM. Replace
+  that file's Haply masters and simulated console inputs with the two
+  components above. Pair MTMR with PSM1, MTML with PSM2, and both masters
+  with ECM; a single-device setup can retain just one PSM pairing.
+
+Start the simulator in a sourced terminal:
+
+.. code-block:: bash
+
+   ros2 launch dvrk_isaac_sim simulator.launch.py \
+     scene:=ECM_PSM1_PSM2_PSM3_stereo_rtsp.yaml headless:=true
+
+Run ``dvrk_robot dvrk_system`` with the assembled system JSON in a second
+terminal. Console events travel directly between cisst components; only
+the patient-arm adapter connections use ROS. The Isaac frontend exchanges
+commands and state with its worker over private Unix-socket IPC.
+
+Video
+*****
+
+Isaac Sim currently publishes native RTSP stereo, normally at
+``rtsp://localhost:8554/ECM``. It does not publish the Newton/PyBullet
+Unix-FD camera socket. The ``jhu-daVinci-Si/isaac_sim/stereo_display_simulator.json``
+example supplies a GStreamer RTSP receive/decode pipeline for
+``dvrk_console stereo_display``. Match its decoder and display sink to the
+machine, and configure a ``gst_output`` socket if the control panel should
+preview the overlay. The control panel consumes that socket; it does not
+directly consume the RTSP source. See :ref:`dvrk-stereo-display` for the
+display configuration.
+
+.. _usage-haply-real:
+
+Two Haply masters with the JHU da Vinci Si patient cart
+#######################################################
+
+This example replaces both MTMs with Haply haptic devices while retaining
+the real Si PSMs, ECM, and SUJ. Original foot pedals provide clutch and camera
+events. The Goovis HMD displays stereo video and its USB HID head sensor
+supplies operator presence. The
+ready-to-launch profile is ``dvrk_config_jhu/jhu-daVinci-Si/haply``.
+
+.. figure:: /images/usage/haply-real-patient-cart.svg
+   :width: 100%
+   :align: center
+   :alt: Two Haply devices connect through Haply Service and sawHaplyService to dVRK teleoperation. Original pedals enter through controller IO and the Goovis HMD supplies operator presence over USB. Teleoperation controls the real Si patient cart. Stereo video reaches the Goovis HMD and can be previewed in the control panel.
+
+   Haply replaces the master arms, original pedals retain clutch and camera
+   inputs, and the Goovis HMD supplies stereo viewing and operator presence.
+
+Prepare and launch
+******************
+
+Build ``sawHaplyService`` in the workspace and start Haply Service. The
+profile uses the existing JHU device assignments: MTMR base ``0699`` with
+stylus ``1605``, and MTML base ``069E`` with stylus ``1606``. The service
+endpoint is ``ws://localhost:10001``. Complete the
+:ref:`real-robot startup procedure <usage-real>` for the Si patient cart.
+
+After adding the profile, install the updated configuration package and launch:
+
+.. code-block:: bash
+
+   colcon build --symlink-install --packages-select dvrk_config_jhu
+   source install/setup.bash
+   ros2 launch dvrk_config_jhu haply_davinci_si.launch.py
+
+The launch starts ``dvrk_robot::dvrk_system``, the SDI stereo pipeline, and
+``dvrk_console::control_panel``. Homing and teleoperation remain operator
+actions. Use ``video:=false`` to test without starting capture, or
+``control_panel:=false`` if another control panel is already running.
+
+The default uses ``PEDALS_GOOVIS_HEAD_SENSOR`` with ``hid/goovis-hd.json``
+for the Goovis USB head sensor. Original pedals use the Classic MTML QLA
+controller, as named in the JHU configuration.
+Keep this controller connected even though it no longer controls an MTM arm.
+The Si patient controllers do not supply these pedal inputs.
+To use the original ISI head sensor instead of the Goovis head sensor:
+
+.. code-block:: bash
+
+   ros2 launch dvrk_config_jhu haply_davinci_si.launch.py head_sensor:=isi
+
+IO, teleoperation, and video
+****************************
+
+``sawHaplyService`` loads ``mtsHaply`` in ``dvrk_system`` and exchanges device
+state and commands with Haply Service over WebSockets. It exposes MTML and
+MTMR as generic haptic masters. Teleoperation connects directly to the real
+patient-arm components, without simulator ROS adapters. MTMR selects PSM1
+or PSM3; MTML controls PSM2. The camera pedal selects ECM teleoperation with
+both masters. Automatic master alignment is disabled and PSM scale starts
+at ``0.2``.
+
+The patient cart keeps the existing JHU Si serials and SUJ-derived base frames:
+ECM ``438610``, PSM1 ``334809``, PSM2 ``586288``, and PSM3 ``698534``.
+The master HRSV transforms come from the existing two-Haply Isaac profile;
+check that the devices' physical placement matches those frames during testing.
+This profile has been checked as configuration, not exercised on the hardware.
+
+Video uses the neighboring ``sdi`` profile's DeckLink inputs and alignment
+settings. ``stereo_display`` opens one side-by-side window for the Goovis HMD,
+retains the Si profile's -150 px horizontal offset, and publishes the
+composited ``@dvrk:stereo_display:haply-overlay`` socket for the control panel.
+The panel can also preview the raw eye sockets and aligned stereo.
+
+The ``haply`` directory contains both head-sensor system JSONs, the two-device
+Haply configuration, and the three video pipeline JSONs. No manual assembly
+of configuration fragments is required for this JHU profile.
+
 .. _usage-openxr-real:
 
 OpenXR with a real patient cart
