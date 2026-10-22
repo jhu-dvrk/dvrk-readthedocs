@@ -1,32 +1,71 @@
 digraph openxr_pybullet {
-  graph [rankdir=TB, newrank=true, bgcolor="white", pad=0.25, nodesep=0.6, ranksep=0.75,
-         fontname="DejaVu Sans", fontsize=16, label="OpenXR with PyBullet", labelloc=t];
+  graph [rankdir=TB, splines=ortho, newrank=true, bgcolor="white", pad=0.25, nodesep=0.4, ranksep=1.0,
+         fontname="Arial,Helvetica,sans-serif", fontsize=16, label="OpenXR with PyBullet", labelloc=t];
   node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#64748b",
-        fontname="DejaVu Sans", fontsize=12, margin="0.16,0.12"];
-  edge [color="#2563eb", fontcolor="#1e40af", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+        fontname="Arial,Helvetica,sans-serif", fontsize=12, margin="0.16,0.12"];
+  edge [style=solid, color="#475569", fontcolor="#475569", fontname="Arial,Helvetica,sans-serif", fontsize=10, arrowsize=0.7];
 
-  headset [label="OpenXR headset + controllers\nRuntime (for example WiVRn)", fillcolor="#faf5ff"];
-  subgraph cluster_system {
-    label="dvrk_robot / dvrk_system"; color="#94a3b8"; style=rounded;
-    xr [label="sawOpenXR / mtsOpenXR\nGeneric MTML / MTMR"];
-    console [label="dVRK console\nInputs and pairings"];
-    teleop [label="PSM / ECM teleoperation\nNon-haptic masters"];
-    adapters [label="dvrk_psm_from_ros\ndvrk_arm_from_ros"];
-    xr -> console [label="Presence / clutch / camera"];
-    xr -> teleop [label="Controller poses / grippers"];
-    console -> teleop [label="Enable / selection"];
-    teleop -> adapters [dir=both, label="Patient commands / state"];
+  // Keep the three columns ordered; cross-column links never set ranks.
+  subgraph column_control {
+    label=""; style=invis;
+    headset [label="OpenXR headset + controllers\nRuntime (for example WiVRn)", fillcolor="#faf5ff", group="control"];
+    frontend [label="PyBullet ROS frontend\nCRTK topics and diagnostics", group="control"];
+    subgraph cluster_system {
+      label="dvrk_robot::dvrk_system"; color="#94a3b8"; style=rounded;
+      xr [label="sawOpenXR / mtsOpenXR\nGeneric MTML / MTMR", group="control"];
+      console [label="dVRK console\nInputs and pairing", group="control"];
+      teleop [label="PSM / ECM teleoperation\nNon-haptic masters", group="control"];
+      adapters [label="dvrk_psm_from_ros\ndvrk_arm_from_ros", group="control"];
+      xr -> console [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Presence, clutch,<BR/>camera</TD></TR></TABLE>>];
+      xr -> teleop [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Controller poses,<BR/>grippers</TD></TR></TABLE>>];
+      console -> teleop [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Enable, clutch,<BR/>camera</TD></TR></TABLE>>];
+      teleop -> adapters [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Patient commands,<BR/>state</TD></TR></TABLE>>];
+    }
   }
-  frontend [label="PyBullet ROS frontend\nCRTK topics and diagnostics"];
-  worker [label="PyBullet worker + camera process\nVirtual patient cart + exercise", fillcolor="#f0fdf4"];
-  display [label="dvrk_console / stereo_display\nOverlay + desktop SBS preview", fillcolor="#f0fdfa"];
-  headset -> xr [label="Tracked poses / input actions", color="#7e22ce", fontcolor="#7e22ce"];
-  adapters -> frontend [dir=both, label="ROS 2 CRTK"];
-  frontend -> worker [dir=both, label="Private Unix-socket IPC"];
-  worker -> display [label="Unix-FD stereo\n@dvrk:simulator:stereo_source", color="#0f766e", fontcolor="#0f766e", constraint=false];
-  console -> display [label="ROS console status", style=dashed, constraint=false];
-  display -> xr [label="Unix-FD video\n@dvrk:console:stereo_overlay", color="#0f766e", fontcolor="#0f766e", constraint=false];
-  xr -> headset [label="Stereo video", color="#0f766e", fontcolor="#0f766e", constraint=false];
-  {rank=same; adapters; display;}
-  {rank=same; frontend; worker;}
+  subgraph column_video {
+    label=""; style=invis;
+    worker [label="PyBullet worker + camera process\nVirtual patient cart + exercise", fillcolor="#f0fdf4", group="video"];
+    display [label="dvrk_console::stereo_display\nOverlay + desktop SBS preview", fillcolor="#f0fdfa", group="video"];
+  }
+  subgraph column_panel {
+    label=""; style=invis;
+    control_panel [label="dvrk_console::control_panel\nOperator controls and status\nOptional video previews", group="panel"];
+    touchscreen [label="Touch screen", fillcolor="#fff7ed", group="panel"];
+  }
+
+  headset -> xr [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>OpenXR poses,<BR/>actions<BR/>Stereo layers</TD></TR></TABLE>>, color="#7e22ce", fontcolor="#7e22ce", minlen=2];
+  adapters -> frontend [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2 CRTK</TD></TR></TABLE>>, style=dashed];
+  frontend:e -> worker:w [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Unix socket<BR/>IPC</TD></TR></TABLE>>, color="#2563eb", fontcolor="#2563eb", constraint=false];
+  worker -> display [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d"];
+  console -> control_panel [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2<BR/>commands, status</TD></TR></TABLE>>, style=dashed, constraint=false];
+  worker -> control_panel [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
+  display -> control_panel [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo overlay</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
+  control_panel -> touchscreen [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>DP, HDMI</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
+
+
+  console:e -> display:w [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2<BR/>console status</TD></TR></TABLE>>, style=dashed, constraint=false];
+  display:w -> xr:e [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo overlay</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
+
+  // Align the implicit columns at their bottom nodes.
+  {rank=same; frontend; display; touchscreen;}
+  column_order [shape=point, width=0, height=0, label="", style=invis, ordering=out];
+  column_order -> frontend [style=invis];
+  column_order -> display [style=invis];
+  column_order -> touchscreen [style=invis];
+
+  // Keep this legend consistent with readme-dot.md; include only types used above.
+  subgraph legend_rank {
+    rank=sink;
+    legend [shape=plain, style="", margin=0, label=<
+      <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3">
+        <TR><TD COLSPAN="5" ALIGN="LEFT"><B>Connection legend</B></TD></TR>
+        <TR><TD><FONT COLOR="#dc2626">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">Physical connection</FONT></TD><TD WIDTH="20"></TD><TD><FONT COLOR="#15803d">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">GStreamer socket (video)</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#2563eb">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">Unix socket IPC (simulator control/state)</FONT></TD><TD WIDTH="20"></TD><TD><FONT COLOR="#475569">┄▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">ROS 2 communication</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#475569">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">Internal component connection</FONT></TD><TD WIDTH="20"></TD><TD><FONT COLOR="#7e22ce">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">OpenXR runtime interaction</FONT></TD></TR>
+      </TABLE>
+    >];
+  }
+  frontend -> legend [style=invis];
+  display -> legend [style=invis];
+  touchscreen -> legend [style=invis];
 }

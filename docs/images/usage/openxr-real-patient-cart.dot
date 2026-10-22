@@ -1,36 +1,77 @@
 digraph openxr_real {
-  graph [rankdir=TB, newrank=true, bgcolor="white", pad=0.25, nodesep=0.6, ranksep=0.7,
-         fontname="DejaVu Sans", fontsize=16, label="OpenXR with a real patient cart", labelloc=t];
+  graph [rankdir=TB, splines=ortho, newrank=true, bgcolor="white", pad=0.25, nodesep=0.4, ranksep=1.0,
+         fontname="Arial,Helvetica,sans-serif", fontsize=16, label="OpenXR with a real patient cart", labelloc=t];
   node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#64748b",
-        fontname="DejaVu Sans", fontsize=12, margin="0.16,0.12"];
-  edge [color="#2563eb", fontcolor="#1e40af", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+        fontname="Arial,Helvetica,sans-serif", fontsize=12, margin="0.16,0.12"];
+  edge [style=solid, color="#475569", fontcolor="#475569", fontname="Arial,Helvetica,sans-serif", fontsize=10, arrowsize=0.7];
 
-  headset [label="Headset + tracked controllers\nOpenXR runtime", fillcolor="#faf5ff"];
-  subgraph cluster_system {
-    label="dvrk_robot / dvrk_system"; color="#94a3b8"; style=rounded;
-    xr [label="sawOpenXR / mtsOpenXR\nGeneric MTML / MTMR and console events"];
-    teleop [label="dVRK console + PSM / ECM teleoperation\nPairings, enable, clutch, camera"];
-    arms [label="dVRK patient-arm components + mtsPID\nSUJ provides calibrated base frames"];
-    io [label="sawRobotIO1394\nPhysical patient-cart IO"];
-    xr -> teleop [label="Master poses / grippers / inputs"];
-    teleop -> arms [dir=both, label="Commands / measured state"];
-    arms -> io [dir=both, label="Motor commands / encoders"];
+  // Keep the three columns ordered; cross-column links never set ranks.
+  subgraph column_control {
+    label=""; style=invis;
+    headset [label="OpenXR headset + controllers\nRuntime (for example WiVRn)", fillcolor="#faf5ff", group="control"];
+    cart [label="Real patient cart\nECM, PSMs, SUJ", fillcolor="#fff7ed", group="control"];
+    subgraph cluster_system {
+      label="dvrk_robot::dvrk_system"; color="#94a3b8"; style=rounded;
+      xr [label="sawOpenXR / mtsOpenXR\nGeneric MTML / MTMR", group="control"];
+      console [label="dVRK console\nInputs and pairing", group="control"];
+      teleop [label="PSM / ECM teleoperation\nNon-haptic masters", group="control"];
+      arms [label="dVRK patient-arm components + mtsPID\nSUJ provides calibrated base frames", group="control"];
+      io [label="sawRobotIO1394\nPhysical patient-cart IO", group="control"];
+      xr -> console [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Presence, clutch,<BR/>camera</TD></TR></TABLE>>];
+      xr -> teleop [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Controller poses,<BR/>grippers</TD></TR></TABLE>>];
+      console -> teleop [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Enable, clutch,<BR/>camera</TD></TR></TABLE>>];
+      teleop -> arms [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Commands,<BR/>measured state</TD></TR></TABLE>>];
+      arms -> io [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Motor commands,<BR/>encoders</TD></TR></TABLE>>];
+    }
   }
-  cart [label="Real patient cart\nECM, PSMs, SUJ", fillcolor="#fff7ed"];
-  camera [label="Physical endoscope + stereo camera\nLeft and right SDI video", fillcolor="#fff7ed"];
-  source [label="DeckLink capture\ndvrk_data / stereo_source", fillcolor="#f0fdfa"];
-  alignment [label="dvrk_data / stereo_alignment\nAlign eyes and pack stereo", fillcolor="#f0fdfa"];
-  display [label="dvrk_console / stereo_display\nConsole overlay; headless sink", fillcolor="#f0fdfa"];
-  headset -> xr [label="Tracked poses / input actions", color="#7e22ce", fontcolor="#7e22ce"];
-  io -> cart [dir=both, label="Classic: fw; Si: udpfw", color="#c2410c", fontcolor="#9a3412"];
-  camera -> source [label="SDI devices 0 and 1", color="#0f766e", fontcolor="#0f766e", constraint=false];
-  source -> alignment [label="Unix-FD left / right\n@dvrk:stereo_source:left / right", color="#0f766e", fontcolor="#0f766e", constraint=false];
-  alignment -> display [label="Unix-FD stereo\n@dvrk:stereo_alignment:stereo", color="#0f766e", fontcolor="#0f766e", constraint=false];
-  teleop -> display [label="ROS console status", style=dashed, constraint=false];
-  display -> xr [label="Unix-FD video\n@dvrk:stereo_display:openxr-overlay", color="#0f766e", fontcolor="#0f766e", constraint=false];
-  xr -> headset [label="Stereo video", color="#0f766e", fontcolor="#0f766e", constraint=false];
-  {rank=same; teleop; display;}
-  {rank=same; arms; alignment;}
-  {rank=same; io; source;}
-  {rank=same; cart; camera;}
+  subgraph column_video {
+    label=""; style=invis;
+    camera [label="Physical endoscope + stereo camera\nLeft and right SDI video", fillcolor="#fff7ed", group="video"];
+    source [label="dvrk_data::stereo_source\nDeckLink capture", fillcolor="#f0fdfa", group="video"];
+    alignment [label="dvrk_data::stereo_alignment\nAlign eyes and pack stereo", fillcolor="#f0fdfa", group="video"];
+    display [label="dvrk_console::stereo_display\nConsole overlay; headless sink", fillcolor="#f0fdfa", group="video"];
+  }
+  subgraph column_panel {
+    label=""; style=invis;
+    control_panel [label="dvrk_console::control_panel\nOperator controls and status\nOptional video previews", group="panel"];
+    touchscreen [label="Touch screen", fillcolor="#fff7ed", group="panel"];
+  }
+
+  headset -> xr [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>OpenXR poses,<BR/>actions<BR/>Stereo layers</TD></TR></TABLE>>, color="#7e22ce", fontcolor="#7e22ce", minlen=2];
+  io -> cart [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>UDP, FireWire</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
+  camera -> source [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>SDI, HDMI</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
+  source -> alignment [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Left &amp; right</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d"];
+  alignment -> display [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d"];
+  console -> control_panel [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2<BR/>commands, status</TD></TR></TABLE>>, style=dashed, constraint=false];
+  source -> control_panel [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Left &amp; right</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
+  alignment -> control_panel [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
+  display -> control_panel [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo overlay</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
+  control_panel -> touchscreen [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>DP, HDMI</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
+
+
+  console:e -> display:w [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2<BR/>console status</TD></TR></TABLE>>, style=dashed, constraint=false];
+  display:w -> xr:e [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo overlay</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
+
+  // Align the implicit columns at their bottom nodes.
+  {rank=same; cart; display; touchscreen;}
+  column_order [shape=point, width=0, height=0, label="", style=invis, ordering=out];
+  column_order -> cart [style=invis];
+  column_order -> display [style=invis];
+  column_order -> touchscreen [style=invis];
+
+  // Keep this legend consistent with readme-dot.md; include only types used above.
+  subgraph legend_rank {
+    rank=sink;
+    legend [shape=plain, style="", margin=0, label=<
+      <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3">
+        <TR><TD COLSPAN="5" ALIGN="LEFT"><B>Connection legend</B></TD></TR>
+        <TR><TD><FONT COLOR="#dc2626">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">Physical connection</FONT></TD><TD WIDTH="20"></TD><TD><FONT COLOR="#15803d">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">GStreamer socket (video)</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#475569">┄▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">ROS 2 communication</FONT></TD><TD WIDTH="20"></TD><TD><FONT COLOR="#475569">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">Internal component connection</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#7e22ce">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">OpenXR runtime interaction</FONT></TD><TD WIDTH="20"></TD><TD COLSPAN="2"></TD></TR>
+      </TABLE>
+    >];
+  }
+  cart -> legend [style=invis];
+  display -> legend [style=invis];
+  touchscreen -> legend [style=invis];
 }
