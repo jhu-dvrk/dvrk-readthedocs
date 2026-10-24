@@ -98,3 +98,21 @@ in ``dvrk_video`` and are provided for both ROS1 (XML) and ROS2
   * Low latency since there is no ROS message passing involved
   * Ability to change aspect ratio (e.g. with :ref:`Goovis HMD
     <goovis>`)
+
+ROS 2 video from dVRK sockets
+*****************************
+
+Use ``ros2 run dvrk_data gscam_socket`` to list active video sockets. To
+publish a full socket through ``gscam``, pass its name. For a side-by-side
+stereo socket, ``--channel`` publishes just one eye:
+
+.. code-block:: bash
+
+   ros2 run dvrk_data gscam_socket @dvrk:stereo_source:stereo --channel left
+   ros2 run dvrk_data gscam_socket @dvrk:stereo_source:stereo --channel right
+
+The channel option reads the frame's ``DataCollectionFrameTimestamps``
+``channel`` value to identify LR or RL layout and reports an error for a
+non-stereo socket. The selected eye is cropped at half the negotiated frame
+width. The equivalent launch argument is ``channel:=left`` or
+``channel:=right`` for ``ros2 launch dvrk_data gscam.launch.py``.

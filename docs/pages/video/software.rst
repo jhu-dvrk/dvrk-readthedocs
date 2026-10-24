@@ -7,4 +7,5 @@ Software based pipeline
    software/introduction
    software/frame-grabbers
    software/ros
+   software/timestamps
    software/calibration
