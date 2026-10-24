@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="893pt" height="728pt" viewBox="0.00 0.00 892.75 728.00">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(18 710)">
+<svg xmlns="http://www.w3.org/2000/svg" width="945pt" height="818pt" viewBox="0.00 0.00 945.00 818.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(18 800)">
 <title>mtms_real</title>
-<polygon fill="white" stroke="transparent" points="-18,18 -18,-710 874.75,-710 874.75,18 -18,18" />
-<text text-anchor="middle" x="428.38" y="-675.2" font-family="Arial,Helvetica,sans-serif" font-size="16.00">Physical MTMs and a real patient cart</text>
+<polygon fill="white" stroke="transparent" points="-18,18 -18,-800 927,-800 927,18 -18,18" />
+<text text-anchor="middle" x="454.5" y="-765.2" font-family="Arial,Helvetica,sans-serif" font-size="16.00">Physical MTMs and a real patient cart</text>
 <g id="clust1" class="cluster">
 <title>cluster_control</title>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_system</title>
-<path fill="white" stroke="#94a3b8" d="M83.75,-121C83.75,-121 297.75,-121 297.75,-121 303.75,-121 309.75,-127 309.75,-133 309.75,-133 309.75,-440 309.75,-440 309.75,-446 303.75,-452 297.75,-452 297.75,-452 83.75,-452 83.75,-452 77.75,-452 71.75,-446 71.75,-440 71.75,-440 71.75,-133 71.75,-133 71.75,-127 77.75,-121 83.75,-121" />
-<text text-anchor="middle" x="190.75" y="-435.2" font-family="Arial,Helvetica,sans-serif" font-size="16.00">dvrk_robot::dvrk_system</text>
+<path fill="white" stroke="#94a3b8" d="M28,-139C28,-139 242,-139 242,-139 248,-139 254,-145 254,-151 254,-151 254,-494 254,-494 254,-500 248,-506 242,-506 242,-506 28,-506 28,-506 22,-506 16,-500 16,-494 16,-494 16,-151 16,-151 16,-145 22,-139 28,-139" />
+<text text-anchor="middle" x="135" y="-489.2" font-family="Arial,Helvetica,sans-serif" font-size="16.00">dvrk_robot::dvrk_system</text>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_video</title>
@@ -21,205 +21,212 @@
 
 <g id="node1" class="node">
 <title>hardware</title>
-<path fill="#fff7ed" stroke="#64748b" d="M294.75,-650C294.75,-650 86.75,-650 86.75,-650 80.75,-650 74.75,-644 74.75,-638 74.75,-638 74.75,-618 74.75,-618 74.75,-612 80.75,-606 86.75,-606 86.75,-606 294.75,-606 294.75,-606 300.75,-606 306.75,-612 306.75,-618 306.75,-618 306.75,-638 306.75,-638 306.75,-644 300.75,-650 294.75,-650" />
-<text text-anchor="middle" x="190.75" y="-631.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Physical MTMs, patient cart, controllers</text>
-<text text-anchor="middle" x="190.75" y="-618.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Pedals and head sensor</text>
+<path fill="#fff7ed" stroke="#64748b" d="M239,-740C239,-740 31,-740 31,-740 25,-740 19,-734 19,-728 19,-728 19,-708 19,-708 19,-702 25,-696 31,-696 31,-696 239,-696 239,-696 245,-696 251,-702 251,-708 251,-708 251,-728 251,-728 251,-734 245,-740 239,-740" />
+<text text-anchor="middle" x="135" y="-721.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Physical MTMs, patient cart, controllers</text>
+<text text-anchor="middle" x="135" y="-708.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Pedals and head sensor</text>
 </g>
 
 <g id="node2" class="node">
 <title>arms</title>
-<path fill="#eff6ff" stroke="#64748b" d="M290.25,-418C290.25,-418 91.25,-418 91.25,-418 85.25,-418 79.25,-412 79.25,-406 79.25,-406 79.25,-386 79.25,-386 79.25,-380 85.25,-374 91.25,-374 91.25,-374 290.25,-374 290.25,-374 296.25,-374 302.25,-380 302.25,-386 302.25,-386 302.25,-406 302.25,-406 302.25,-412 296.25,-418 290.25,-418" />
-<text text-anchor="middle" x="190.75" y="-399.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">sawRobotIO1394 + mtsPID</text>
-<text text-anchor="middle" x="190.75" y="-386.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dVRK MTM / PSM / ECM arms + SUJ</text>
+<path fill="#eff6ff" stroke="#64748b" d="M234.5,-472C234.5,-472 35.5,-472 35.5,-472 29.5,-472 23.5,-466 23.5,-460 23.5,-460 23.5,-440 23.5,-440 23.5,-434 29.5,-428 35.5,-428 35.5,-428 234.5,-428 234.5,-428 240.5,-428 246.5,-434 246.5,-440 246.5,-440 246.5,-460 246.5,-460 246.5,-466 240.5,-472 234.5,-472" />
+<text text-anchor="middle" x="135" y="-453.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">sawRobotIO1394 + mtsPID</text>
+<text text-anchor="middle" x="135" y="-440.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dVRK MTM / PSM / ECM arms + SUJ</text>
 </g>
 
 <g id="edge4" class="edge">
 <title>hardware-&gt;arms</title>
-<path fill="none" stroke="#dc2626" d="M190.75,-598.75C190.75,-598.75 190.75,-425.18 190.75,-425.18" />
-<polygon fill="#dc2626" stroke="#dc2626" points="193.2,-425.18 190.75,-418.18 188.3,-425.18 193.2,-425.18" />
-<polygon fill="#dc2626" stroke="#dc2626" points="188.3,-598.75 190.75,-605.75 193.2,-598.75 188.3,-598.75" />
+<path fill="none" stroke="#dc2626" d="M135,-688.61C135,-688.61 135,-479.14 135,-479.14" />
+<polygon fill="#dc2626" stroke="#dc2626" points="137.45,-479.14 135,-472.14 132.55,-479.14 137.45,-479.14" />
+<polygon fill="#dc2626" stroke="#dc2626" points="132.55,-688.61 135,-695.61 137.45,-688.61 132.55,-688.61" />
 </g>
 
 <g id="node3" class="node">
 <title>console</title>
-<path fill="#eff6ff" stroke="#64748b" d="M210.75,-295.5C210.75,-295.5 114.75,-295.5 114.75,-295.5 108.75,-295.5 102.75,-289.5 102.75,-283.5 102.75,-283.5 102.75,-263.5 102.75,-263.5 102.75,-257.5 108.75,-251.5 114.75,-251.5 114.75,-251.5 210.75,-251.5 210.75,-251.5 216.75,-251.5 222.75,-257.5 222.75,-263.5 222.75,-263.5 222.75,-283.5 222.75,-283.5 222.75,-289.5 216.75,-295.5 210.75,-295.5" />
-<text text-anchor="middle" x="162.75" y="-276.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dVRK console</text>
-<text text-anchor="middle" x="162.75" y="-263.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Inputs and pairing</text>
+<path fill="#eff6ff" stroke="#64748b" d="M137,-331.5C137,-331.5 41,-331.5 41,-331.5 35,-331.5 29,-325.5 29,-319.5 29,-319.5 29,-299.5 29,-299.5 29,-293.5 35,-287.5 41,-287.5 41,-287.5 137,-287.5 137,-287.5 143,-287.5 149,-293.5 149,-299.5 149,-299.5 149,-319.5 149,-319.5 149,-325.5 143,-331.5 137,-331.5" />
+<text text-anchor="middle" x="89" y="-312.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dVRK console</text>
+<text text-anchor="middle" x="89" y="-299.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Inputs and pairing</text>
 </g>
 
 <g id="edge1" class="edge">
 <title>arms-&gt;console</title>
-<path fill="none" stroke="#475569" d="M162.75,-373.82C162.75,-373.82 162.75,-302.52 162.75,-302.52" />
-<polygon fill="#475569" stroke="#475569" points="165.2,-302.52 162.75,-295.52 160.3,-302.52 165.2,-302.52" />
+<path fill="none" stroke="#475569" d="M89,-427.74C89,-427.74 89,-338.66 89,-338.66" />
+<polygon fill="#475569" stroke="#475569" points="91.45,-338.66 89,-331.66 86.55,-338.66 91.45,-338.66" />
 </g>
 
 <g id="node4" class="node">
 <title>teleop</title>
-<path fill="#eff6ff" stroke="#64748b" d="M290.25,-173C290.25,-173 101.25,-173 101.25,-173 95.25,-173 89.25,-167 89.25,-161 89.25,-161 89.25,-141 89.25,-141 89.25,-135 95.25,-129 101.25,-129 101.25,-129 290.25,-129 290.25,-129 296.25,-129 302.25,-135 302.25,-141 302.25,-141 302.25,-161 302.25,-161 302.25,-167 296.25,-173 290.25,-173" />
-<text text-anchor="middle" x="195.75" y="-154.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">PSM / ECM teleoperation</text>
-<text text-anchor="middle" x="195.75" y="-141.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">MTMR–PSM1, MTML–PSM2; ECM</text>
+<path fill="#eff6ff" stroke="#64748b" d="M234.5,-191C234.5,-191 45.5,-191 45.5,-191 39.5,-191 33.5,-185 33.5,-179 33.5,-179 33.5,-159 33.5,-159 33.5,-153 39.5,-147 45.5,-147 45.5,-147 234.5,-147 234.5,-147 240.5,-147 246.5,-153 246.5,-159 246.5,-159 246.5,-179 246.5,-179 246.5,-185 240.5,-191 234.5,-191" />
+<text text-anchor="middle" x="140" y="-172.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">PSM / ECM teleoperation</text>
+<text text-anchor="middle" x="140" y="-159.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">MTMR–PSM1, MTML–PSM2; ECM</text>
 </g>
 
 <g id="edge2" class="edge">
 <title>arms-&gt;teleop</title>
-<path fill="none" stroke="#475569" d="M96,-366.83C96,-366.83 96,-180.3 96,-180.3" />
-<polygon fill="#475569" stroke="#475569" points="98.45,-180.3 96,-173.3 93.55,-180.3 98.45,-180.3" />
-<polygon fill="#475569" stroke="#475569" points="93.55,-366.83 96,-373.83 98.45,-366.83 93.55,-366.83" />
+<path fill="none" stroke="#475569" d="M181.5,-420.95C181.5,-420.95 181.5,-198.34 181.5,-198.34" />
+<polygon fill="#475569" stroke="#475569" points="183.95,-198.34 181.5,-191.34 179.05,-198.34 183.95,-198.34" />
+<polygon fill="#475569" stroke="#475569" points="179.05,-420.95 181.5,-427.95 183.95,-420.95 179.05,-420.95" />
 </g>
 
 <g id="edge3" class="edge">
 <title>console-&gt;teleop</title>
-<path fill="none" stroke="#475569" d="M142.75,-251.32C142.75,-251.32 142.75,-180.02 142.75,-180.02" />
-<polygon fill="#475569" stroke="#475569" points="145.2,-180.02 142.75,-173.02 140.3,-180.02 145.2,-180.02" />
+<path fill="none" stroke="#475569" d="M72,-287.24C72,-287.24 72,-198.16 72,-198.16" />
+<polygon fill="#475569" stroke="#475569" points="74.45,-198.16 72,-191.16 69.55,-198.16 74.45,-198.16" />
 </g>
 
 <g id="node8" class="node">
 <title>display</title>
-<path fill="#f0fdfa" stroke="#64748b" d="M544.75,-295.5C544.75,-295.5 388.75,-295.5 388.75,-295.5 382.75,-295.5 376.75,-289.5 376.75,-283.5 376.75,-283.5 376.75,-263.5 376.75,-263.5 376.75,-257.5 382.75,-251.5 388.75,-251.5 388.75,-251.5 544.75,-251.5 544.75,-251.5 550.75,-251.5 556.75,-257.5 556.75,-263.5 556.75,-263.5 556.75,-283.5 556.75,-283.5 556.75,-289.5 550.75,-295.5 544.75,-295.5" />
-<text text-anchor="middle" x="466.75" y="-276.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_console::stereo_display</text>
-<text text-anchor="middle" x="466.75" y="-263.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Console overlay</text>
+<path fill="#f0fdfa" stroke="#64748b" d="M525,-331.5C525,-331.5 369,-331.5 369,-331.5 363,-331.5 357,-325.5 357,-319.5 357,-319.5 357,-299.5 357,-299.5 357,-293.5 363,-287.5 369,-287.5 369,-287.5 525,-287.5 525,-287.5 531,-287.5 537,-293.5 537,-299.5 537,-299.5 537,-319.5 537,-319.5 537,-325.5 531,-331.5 525,-331.5" />
+<text text-anchor="middle" x="447" y="-312.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_console::stereo_display</text>
+<text text-anchor="middle" x="447" y="-299.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Console overlay</text>
 </g>
 
 <g id="edge8" class="edge">
 <title>console-&gt;display</title>
-<path fill="none" stroke="#475569" stroke-dasharray="5,2" d="M222.81,-273C222.81,-273 369.54,-273 369.54,-273" />
-<polygon fill="#475569" stroke="#475569" points="369.54,-275.45 376.54,-273 369.54,-270.55 369.54,-275.45" />
+<path fill="none" stroke="#475569" stroke-dasharray="5,2" d="M149.32,-309C149.32,-309 349.84,-309 349.84,-309" />
+<polygon fill="#475569" stroke="#475569" points="349.84,-311.45 356.84,-309 349.84,-306.55 349.84,-311.45" />
 </g>
 
 <g id="node10" class="node">
 <title>control_panel</title>
-<path fill="#eff6ff" stroke="#64748b" d="M828.25,-302C828.25,-302 677.25,-302 677.25,-302 671.25,-302 665.25,-296 665.25,-290 665.25,-290 665.25,-257 665.25,-257 665.25,-251 671.25,-245 677.25,-245 677.25,-245 828.25,-245 828.25,-245 834.25,-245 840.25,-251 840.25,-257 840.25,-257 840.25,-290 840.25,-290 840.25,-296 834.25,-302 828.25,-302" />
-<text text-anchor="middle" x="752.75" y="-283.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_console::control_panel</text>
-<text text-anchor="middle" x="752.75" y="-270.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Operator controls and status</text>
-<text text-anchor="middle" x="752.75" y="-257.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Optional video previews</text>
+<path fill="#eff6ff" stroke="#64748b" d="M880.5,-338C880.5,-338 729.5,-338 729.5,-338 723.5,-338 717.5,-332 717.5,-326 717.5,-326 717.5,-293 717.5,-293 717.5,-287 723.5,-281 729.5,-281 729.5,-281 880.5,-281 880.5,-281 886.5,-281 892.5,-287 892.5,-293 892.5,-293 892.5,-326 892.5,-326 892.5,-332 886.5,-338 880.5,-338" />
+<text text-anchor="middle" x="805" y="-319.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_console::control_panel</text>
+<text text-anchor="middle" x="805" y="-306.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Operator controls and status</text>
+<text text-anchor="middle" x="805" y="-293.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Optional video previews</text>
 </g>
 
 <g id="edge10" class="edge">
 <title>console-&gt;control_panel</title>
-<path fill="none" stroke="#475569" stroke-dasharray="5,2" d="M182.75,-244.3C182.75,-244.3 182.75,-209 182.75,-209 182.75,-209 685,-209 685,-209 685,-209 685,-237.65 685,-237.65" />
-<polygon fill="#475569" stroke="#475569" points="180.3,-244.3 182.75,-251.3 185.2,-244.3 180.3,-244.3" />
-<polygon fill="#475569" stroke="#475569" points="682.55,-237.65 685,-244.65 687.45,-237.65 682.55,-237.65" />
+<path fill="none" stroke="#475569" stroke-dasharray="5,2" d="M110.5,-280.45C110.5,-280.45 110.5,-236 110.5,-236 110.5,-236 737.25,-236 737.25,-236 737.25,-236 737.25,-273.87 737.25,-273.87" />
+<polygon fill="#475569" stroke="#475569" points="108.05,-280.45 110.5,-287.45 112.95,-280.45 108.05,-280.45" />
+<polygon fill="#475569" stroke="#475569" points="734.8,-273.87 737.25,-280.87 739.7,-273.87 734.8,-273.87" />
 </g>
 
 <g id="node13" class="node">
 <title>legend</title>
-<text text-anchor="start" x="313.75" y="-44.9" font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12.00">Connection legend</text>
-<text text-anchor="start" x="313.75" y="-24.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#dc2626">━▶</text>
-<text text-anchor="start" x="336.75" y="-25.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">Physical connection</text>
-<text text-anchor="start" x="462.75" y="-24.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#15803d">━▶</text>
-<text text-anchor="start" x="485.75" y="-25.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">GStreamer socket (video)</text>
-<text text-anchor="start" x="313.75" y="-5.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#475569">┄▶</text>
-<text text-anchor="start" x="336.75" y="-6.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">ROS 2 communication</text>
-<text text-anchor="start" x="462.75" y="-5.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#475569">━▶</text>
-<text text-anchor="start" x="485.75" y="-6.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">Internal component connection</text>
+<text text-anchor="start" x="294" y="-44.9" font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12.00">Connection legend</text>
+<text text-anchor="start" x="294" y="-24.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#dc2626">━▶</text>
+<text text-anchor="start" x="317" y="-25.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">Physical connection</text>
+<text text-anchor="start" x="443" y="-24.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#15803d">━▶</text>
+<text text-anchor="start" x="466" y="-25.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">GStreamer socket (video)</text>
+<text text-anchor="start" x="294" y="-5.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#475569">┄▶</text>
+<text text-anchor="start" x="317" y="-6.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">ROS 2 communication</text>
+<text text-anchor="start" x="443" y="-5.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#475569">━▶</text>
+<text text-anchor="start" x="466" y="-6.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">Internal component connection</text>
 </g>
 
 
 <g id="node5" class="node">
 <title>camera</title>
-<path fill="#fff7ed" stroke="#64748b" d="M560.25,-650C560.25,-650 373.25,-650 373.25,-650 367.25,-650 361.25,-644 361.25,-638 361.25,-638 361.25,-618 361.25,-618 361.25,-612 367.25,-606 373.25,-606 373.25,-606 560.25,-606 560.25,-606 566.25,-606 572.25,-612 572.25,-618 572.25,-618 572.25,-638 572.25,-638 572.25,-644 566.25,-650 560.25,-650" />
-<text text-anchor="middle" x="466.75" y="-631.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Physical stereo endoscope camera</text>
-<text text-anchor="middle" x="466.75" y="-618.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Left and right SDI</text>
+<path fill="#fff7ed" stroke="#64748b" d="M540.5,-740C540.5,-740 353.5,-740 353.5,-740 347.5,-740 341.5,-734 341.5,-728 341.5,-728 341.5,-708 341.5,-708 341.5,-702 347.5,-696 353.5,-696 353.5,-696 540.5,-696 540.5,-696 546.5,-696 552.5,-702 552.5,-708 552.5,-708 552.5,-728 552.5,-728 552.5,-734 546.5,-740 540.5,-740" />
+<text text-anchor="middle" x="447" y="-721.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Physical stereo endoscope camera</text>
+<text text-anchor="middle" x="447" y="-708.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Left and right SDI</text>
 </g>
 
 <g id="node6" class="node">
 <title>source</title>
-<path fill="#f0fdfa" stroke="#64748b" d="M534.25,-534C534.25,-534 399.25,-534 399.25,-534 393.25,-534 387.25,-528 387.25,-522 387.25,-522 387.25,-502 387.25,-502 387.25,-496 393.25,-490 399.25,-490 399.25,-490 534.25,-490 534.25,-490 540.25,-490 546.25,-496 546.25,-502 546.25,-502 546.25,-522 546.25,-522 546.25,-528 540.25,-534 534.25,-534" />
-<text text-anchor="middle" x="466.75" y="-515.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_data::stereo_source</text>
-<text text-anchor="middle" x="466.75" y="-502.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">DeckLink capture</text>
+<path fill="#f0fdfa" stroke="#64748b" d="M527.5,-606C527.5,-606 366.5,-606 366.5,-606 360.5,-606 354.5,-600 354.5,-594 354.5,-594 354.5,-574 354.5,-574 354.5,-568 360.5,-562 366.5,-562 366.5,-562 527.5,-562 527.5,-562 533.5,-562 539.5,-568 539.5,-574 539.5,-574 539.5,-594 539.5,-594 539.5,-600 533.5,-606 527.5,-606" />
+<text text-anchor="middle" x="447" y="-587.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_data::stereo_source</text>
+<text text-anchor="middle" x="447" y="-574.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">DeckLink capture, pack stereo</text>
 </g>
 
 <g id="edge5" class="edge">
 <title>camera-&gt;source</title>
-<path fill="none" stroke="#dc2626" d="M466.75,-605.91C466.75,-605.91 466.75,-541.01 466.75,-541.01" />
-<polygon fill="#dc2626" stroke="#dc2626" points="469.2,-541.01 466.75,-534.01 464.3,-541.01 469.2,-541.01" />
+<path fill="none" stroke="#dc2626" d="M447,-695.87C447,-695.87 447,-613.16 447,-613.16" />
+<polygon fill="#dc2626" stroke="#dc2626" points="449.45,-613.16 447,-606.16 444.55,-613.16 449.45,-613.16" />
 </g>
 
 <g id="node7" class="node">
 <title>alignment</title>
-<path fill="#f0fdfa" stroke="#64748b" d="M542.25,-418C542.25,-418 391.25,-418 391.25,-418 385.25,-418 379.25,-412 379.25,-406 379.25,-406 379.25,-386 379.25,-386 379.25,-380 385.25,-374 391.25,-374 391.25,-374 542.25,-374 542.25,-374 548.25,-374 554.25,-380 554.25,-386 554.25,-386 554.25,-406 554.25,-406 554.25,-412 548.25,-418 542.25,-418" />
-<text text-anchor="middle" x="466.75" y="-399.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_data::stereo_alignment</text>
-<text text-anchor="middle" x="466.75" y="-386.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Align eyes and pack stereo</text>
+<path fill="#f0fdfa" stroke="#64748b" d="M522.5,-472C522.5,-472 371.5,-472 371.5,-472 365.5,-472 359.5,-466 359.5,-460 359.5,-460 359.5,-440 359.5,-440 359.5,-434 365.5,-428 371.5,-428 371.5,-428 522.5,-428 522.5,-428 528.5,-428 534.5,-434 534.5,-440 534.5,-440 534.5,-460 534.5,-460 534.5,-466 528.5,-472 522.5,-472" />
+<text text-anchor="middle" x="447" y="-453.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_data::stereo_alignment</text>
+<text text-anchor="middle" x="447" y="-440.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Align stereo eyes</text>
 </g>
 
 <g id="edge6" class="edge">
 <title>source-&gt;alignment</title>
-<path fill="none" stroke="#15803d" d="M466.75,-489.91C466.75,-489.91 466.75,-425.01 466.75,-425.01" />
-<polygon fill="#15803d" stroke="#15803d" points="469.2,-425.01 466.75,-418.01 464.3,-425.01 469.2,-425.01" />
+<path fill="none" stroke="#15803d" d="M447,-561.87C447,-561.87 447,-479.16 447,-479.16" />
+<polygon fill="#15803d" stroke="#15803d" points="449.45,-479.16 447,-472.16 444.55,-479.16 449.45,-479.16" />
 </g>
 
 <g id="edge11" class="edge">
 <title>source-&gt;control_panel</title>
-<path fill="none" stroke="#15803d" d="M546.28,-512C639.65,-512 781.92,-512 781.92,-512 781.92,-512 781.92,-309.27 781.92,-309.27" />
-<polygon fill="#15803d" stroke="#15803d" points="784.37,-309.27 781.92,-302.27 779.47,-309.27 784.37,-309.27" />
+<path fill="none" stroke="#15803d" d="M539.74,-584C654.28,-584 834.17,-584 834.17,-584 834.17,-584 834.17,-345.1 834.17,-345.1" />
+<polygon fill="#15803d" stroke="#15803d" points="836.62,-345.1 834.17,-338.1 831.72,-345.1 836.62,-345.1" />
 </g>
 
 <g id="edge7" class="edge">
 <title>alignment-&gt;display</title>
-<path fill="none" stroke="#15803d" d="M466.75,-373.82C466.75,-373.82 466.75,-302.52 466.75,-302.52" />
-<polygon fill="#15803d" stroke="#15803d" points="469.2,-302.52 466.75,-295.52 464.3,-302.52 469.2,-302.52" />
+<path fill="none" stroke="#15803d" d="M447,-427.74C447,-427.74 447,-338.66 447,-338.66" />
+<polygon fill="#15803d" stroke="#15803d" points="449.45,-338.66 447,-331.66 444.55,-338.66 449.45,-338.66" />
 </g>
 
 <g id="edge12" class="edge">
 <title>alignment-&gt;control_panel</title>
-<path fill="none" stroke="#15803d" d="M554.42,-396C628.82,-396 723.58,-396 723.58,-396 723.58,-396 723.58,-309.22 723.58,-309.22" />
-<polygon fill="#15803d" stroke="#15803d" points="726.03,-309.22 723.58,-302.22 721.13,-309.22 726.03,-309.22" />
+<path fill="none" stroke="#15803d" d="M534.69,-450C632.1,-450 775.83,-450 775.83,-450 775.83,-450 775.83,-345.27 775.83,-345.27" />
+<polygon fill="#15803d" stroke="#15803d" points="778.28,-345.27 775.83,-338.27 773.38,-345.27 778.28,-345.27" />
 </g>
 
 <g id="node9" class="node">
 <title>viewer</title>
-<path fill="#f0fdfa" stroke="#64748b" d="M525.25,-173C525.25,-173 408.25,-173 408.25,-173 402.25,-173 396.25,-167 396.25,-161 396.25,-161 396.25,-141 396.25,-141 396.25,-135 402.25,-129 408.25,-129 408.25,-129 525.25,-129 525.25,-129 531.25,-129 537.25,-135 537.25,-141 537.25,-141 537.25,-161 537.25,-161 537.25,-167 531.25,-173 525.25,-173" />
-<text text-anchor="middle" x="466.75" y="-154.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Physical HRSV</text>
-<text text-anchor="middle" x="466.75" y="-141.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Left and right displays</text>
+<path fill="#f0fdfa" stroke="#64748b" d="M505.5,-191C505.5,-191 388.5,-191 388.5,-191 382.5,-191 376.5,-185 376.5,-179 376.5,-179 376.5,-159 376.5,-159 376.5,-153 382.5,-147 388.5,-147 388.5,-147 505.5,-147 505.5,-147 511.5,-147 517.5,-153 517.5,-159 517.5,-159 517.5,-179 517.5,-179 517.5,-185 511.5,-191 505.5,-191" />
+<text text-anchor="middle" x="447" y="-172.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Physical HRSV</text>
+<text text-anchor="middle" x="447" y="-159.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Left and right displays</text>
 </g>
 
 <g id="edge9" class="edge">
 <title>display-&gt;viewer</title>
-<path fill="none" stroke="#dc2626" d="M466.75,-251.32C466.75,-251.32 466.75,-180.02 466.75,-180.02" />
-<polygon fill="#dc2626" stroke="#dc2626" points="469.2,-180.02 466.75,-173.02 464.3,-180.02 469.2,-180.02" />
+<path fill="none" stroke="#dc2626" d="M447,-287.24C447,-287.24 447,-198.16 447,-198.16" />
+<polygon fill="#dc2626" stroke="#dc2626" points="449.45,-198.16 447,-191.16 444.55,-198.16 449.45,-198.16" />
 </g>
 
 <g id="edge13" class="edge">
 <title>display-&gt;control_panel</title>
-<path fill="none" stroke="#15803d" d="M556.85,-285C556.85,-285 658.06,-285 658.06,-285" />
-<polygon fill="#15803d" stroke="#15803d" points="658.06,-287.45 665.06,-285 658.06,-282.55 658.06,-287.45" />
+<path fill="none" stroke="#15803d" d="M537.34,-298C537.34,-298 710.47,-298 710.47,-298" />
+<polygon fill="#15803d" stroke="#15803d" points="710.47,-300.45 717.47,-298 710.47,-295.55 710.47,-300.45" />
 </g>
 
+
+<g id="edge14" class="edge">
+<title>control_panel:w-&gt;display:e</title>
+<path fill="none" stroke="#15803d" d="M717,-321C717,-321 544,-321 544,-321" />
+<polygon fill="#15803d" stroke="#15803d" points="544,-318.55 537,-321 544,-323.45 544,-318.55" />
+</g>
 
 <g id="node11" class="node">
 <title>touchscreen</title>
-<path fill="#fff7ed" stroke="#64748b" d="M788.75,-169C788.75,-169 716.75,-169 716.75,-169 710.75,-169 704.75,-163 704.75,-157 704.75,-157 704.75,-145 704.75,-145 704.75,-139 710.75,-133 716.75,-133 716.75,-133 788.75,-133 788.75,-133 794.75,-133 800.75,-139 800.75,-145 800.75,-145 800.75,-157 800.75,-157 800.75,-163 794.75,-169 788.75,-169" />
-<text text-anchor="middle" x="752.75" y="-147.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Touch screen</text>
+<path fill="#fff7ed" stroke="#64748b" d="M841,-187C841,-187 769,-187 769,-187 763,-187 757,-181 757,-175 757,-175 757,-163 757,-163 757,-157 763,-151 769,-151 769,-151 841,-151 841,-151 847,-151 853,-157 853,-163 853,-163 853,-175 853,-175 853,-181 847,-187 841,-187" />
+<text text-anchor="middle" x="805" y="-165.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Touch screen</text>
 </g>
 
-<g id="edge14" class="edge">
+<g id="edge15" class="edge">
 <title>control_panel-&gt;touchscreen</title>
-<path fill="none" stroke="#dc2626" d="M752.75,-244.78C752.75,-244.78 752.75,-176.28 752.75,-176.28" />
-<polygon fill="#dc2626" stroke="#dc2626" points="755.2,-176.28 752.75,-169.28 750.3,-176.28 755.2,-176.28" />
+<path fill="none" stroke="#dc2626" d="M805,-280.73C805,-280.73 805,-194.04 805,-194.04" />
+<polygon fill="#dc2626" stroke="#dc2626" points="807.45,-194.04 805,-187.04 802.55,-194.04 807.45,-194.04" />
 </g>
 
 
 
 
 
-<g class="edge-label" data-edge="hardware-&gt;arms" transform="translate(34.000 7.505)"><rect x="122.75" y="-526.97" width="68.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="124.75" y="-516.47" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">UDP, FireWire</text>
-</g><g class="edge-label" data-edge="arms-&gt;console" transform="translate(29.000 6.350)"><rect x="104.75" y="-364.17" width="58.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="116.75" y="-354.17" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Pedals,</text>
-<text text-anchor="start" x="106.75" y="-343.17" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">head sensor</text>
-</g><g class="edge-label" data-edge="arms-&gt;teleop" transform="translate(48.000 -27.270)"><rect x="0.0" y="-299.56" width="96.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="15" y="-289.56" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Master, patient</text>
-<text text-anchor="start" x="2" y="-278.56" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">state and commands</text>
-</g><g class="edge-label" data-edge="console-&gt;teleop" transform="translate(35.000 13.000)"><rect x="72.75" y="-241.67" width="70.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="74.75" y="-231.67" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Enable, clutch,</text>
-<text text-anchor="start" x="91.25" y="-220.67" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">camera</text>
-</g><g class="edge-label" data-edge="console-&gt;display" transform="translate(34.005 13.000)"><rect x="228.17" y="-299.0" width="68.00000000000003" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" stroke-dasharray="5,2" /><text text-anchor="start" x="246.67" y="-289" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">ROS 2</text>
-<text text-anchor="start" x="230.17" y="-278" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">console status</text>
-</g><g class="edge-label" data-edge="console-&gt;control_panel" transform="translate(4.200 13.000)"><rect x="344.55" y="-235.0" width="86.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" stroke-dasharray="5,2" /><text text-anchor="start" x="372.05" y="-225" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">ROS 2</text>
-<text text-anchor="start" x="346.55" y="-214" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">commands, status</text>
-</g><g class="edge-label" data-edge="camera-&gt;source" transform="translate(27.000 7.500)"><rect x="412.75" y="-588.46" width="54.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="414.75" y="-577.96" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">SDI, HDMI</text>
-</g><g class="edge-label" data-edge="source-&gt;alignment" transform="translate(26.500 7.500)"><rect x="413.75" y="-472.46" width="53.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="416.25" y="-461.96" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Left &amp; right</text>
-</g><g class="edge-label" data-edge="source-&gt;control_panel" transform="translate(12.460 7.500)"><rect x="712.46" y="-527.0" width="53.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="714.96" y="-516.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Left &amp; right</text>
-</g><g class="edge-label" data-edge="alignment-&gt;display" transform="translate(16.500 7.500)"><rect x="433.75" y="-353.17" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="436.25" y="-342.67" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
-</g><g class="edge-label" data-edge="alignment-&gt;control_panel" transform="translate(16.500 7.500)"><rect x="649.39" y="-411.0" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="651.89" y="-400.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
-</g><g class="edge-label" data-edge="display-&gt;viewer" transform="translate(-25.000 7.500)"><rect x="466.75" y="-230.67" width="50.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="468.75" y="-220.17" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">DP, HDMI</text>
-</g><g class="edge-label" data-edge="display-&gt;control_panel" transform="translate(-16.995 -7.500)"><rect x="590.45" y="-285.0" width="68.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="592.45" y="-274.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo overlay</text>
-</g><g class="edge-label" data-edge="control_panel-&gt;touchscreen" transform="translate(25.000 7.500)"><rect x="702.75" y="-225.53" width="50.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="704.75" y="-215.03" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">DP, HDMI</text>
+<g class="edge-label" data-edge="hardware-&gt;arms" transform="translate(34.000 7.495)"><rect x="67.0" y="-598.87" width="68.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="69" y="-588.37" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">UDP, FireWire</text>
+</g><g class="edge-label" data-edge="arms-&gt;console" transform="translate(29.000 13.000)"><rect x="31.0" y="-409.2" width="58.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="43" y="-399.2" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Pedals,</text>
+<text text-anchor="start" x="33" y="-388.2" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">head sensor</text>
+</g><g class="edge-label" data-edge="arms-&gt;teleop" transform="translate(-48.000 -27.310)"><rect x="181.5" y="-335.64" width="96.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="196.5" y="-325.64" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Master, patient</text>
+<text text-anchor="start" x="183.5" y="-314.64" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">state and commands</text>
+</g><g class="edge-label" data-edge="console-&gt;teleop" transform="translate(35.000 13.000)"><rect x="2.0" y="-268.7" width="70.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="4" y="-258.7" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Enable, clutch,</text>
+<text text-anchor="start" x="20.5" y="-247.7" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">camera</text>
+</g><g class="edge-label" data-edge="console-&gt;display" transform="translate(34.000 -13.000)"><rect x="181.58" y="-309.0" width="68.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" stroke-dasharray="5,2" /><text text-anchor="start" x="200.08" y="-299" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">ROS 2</text>
+<text text-anchor="start" x="183.58" y="-288" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">console status</text>
+</g><g class="edge-label" data-edge="console-&gt;control_panel" transform="translate(-4.090 13.000)"><rect x="334.59" y="-262.0" width="86.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" stroke-dasharray="5,2" /><text text-anchor="start" x="362.09" y="-252" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">ROS 2</text>
+<text text-anchor="start" x="336.59" y="-241" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">commands, status</text>
+</g><g class="edge-label" data-edge="camera-&gt;source" transform="translate(27.000 7.505)"><rect x="393.0" y="-669.52" width="54.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="395" y="-659.02" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">SDI, HDMI</text>
+</g><g class="edge-label" data-edge="source-&gt;alignment" transform="translate(16.500 7.505)"><rect x="414.0" y="-535.52" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="416.5" y="-525.02" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
+</g><g class="edge-label" data-edge="source-&gt;control_panel" transform="translate(16.505 7.500)"><rect x="773.4" y="-599.0" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="775.9" y="-588.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
+</g><g class="edge-label" data-edge="alignment-&gt;display" transform="translate(16.500 7.500)"><rect x="414.0" y="-398.2" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="416.5" y="-387.7" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
+</g><g class="edge-label" data-edge="alignment-&gt;control_panel" transform="translate(16.495 7.500)"><rect x="674.63" y="-465.0" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="677.13" y="-454.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
+</g><g class="edge-label" data-edge="display-&gt;viewer" transform="translate(-25.000 7.500)"><rect x="447.0" y="-257.7" width="50.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="449" y="-247.2" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">DP, HDMI</text>
+</g><g class="edge-label" data-edge="display-&gt;control_panel" transform="translate(33.995 7.500)"><rect x="555.91" y="-313.0" width="68.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="557.91" y="-302.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo overlay</text>
+</g><g class="edge-label" data-edge="control_panel:w-&gt;display:e" transform="translate(28.000 7.500)"><rect x="574.5" y="-336.0" width="56.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="576.5" y="-325.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Annotations</text>
+</g><g class="edge-label" data-edge="control_panel-&gt;touchscreen" transform="translate(25.000 7.495)"><rect x="755.0" y="-252.38" width="50.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="757" y="-241.88" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">DP, HDMI</text>
 </g></g>
 </svg>

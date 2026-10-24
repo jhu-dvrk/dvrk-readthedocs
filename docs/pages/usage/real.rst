@@ -22,7 +22,7 @@ endoscope images and display them in the HRSV.
 .. figure:: /images/usage/mtms-real-patient-cart.svg
    :width: 100%
    :align: center
-   :alt: Real MTM and patient-cart controllers connect to sawRobotIO1394, PID control, and dVRK arm components. Console inputs govern teleoperation. Captured endoscope video passes through stereo alignment and console overlay to the HRSV.
+   :alt: Real MTM and patient-cart controllers connect to sawRobotIO1394, PID control, and dVRK arm components. Console inputs govern teleoperation. Captured endoscope video passes through stereo alignment and console overlay to the HRSV; optional control-panel annotations return to the stereo display over a GStreamer socket.
 
    A physical console and patient cart use hardware IO on both sides of
    teleoperation, with a separate endoscope video path.
@@ -37,7 +37,10 @@ The video path uses ``dvrk_data stereo_source`` for capture,
 ``dvrk_data stereo_alignment`` for eye alignment, and
 ``dvrk_console stereo_display`` for the status overlay and HRSV windows.
 The display receives console status over ROS and video over GStreamer
-Unix-FD sockets. See `the JHU Classic configuration directory
+Unix-FD sockets. When annotations are enabled, ``control_panel`` reads the
+final overlay for its preview and publishes transparent side-by-side drawings
+on ``@dvrk:control_panel:annotations``; ``stereo_display`` consumes that socket
+as a stereo AR input. See `the JHU Classic configuration directory
 <https://github.com/jhu-dvrk/dvrk_config_jhu/tree/main/jhu-daVinci>`_ for the
 system and video files, and the visualization steps below to start them.
 

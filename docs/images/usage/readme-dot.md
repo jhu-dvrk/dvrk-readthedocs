@@ -64,15 +64,20 @@ label `sawOpenXR / mtsOpenXR` describes a library/component relationship.
   Use a dashed,
   two-way `ROS 2 commands, status` connection to the console. Also show a
   solid green connection from every GStreamer video publisher in the workflow
-  to the panel: raw left/right capture, aligned stereo, simulator stereo, and
-  stereo overlay output. Include the green `Stereo overlay` connection from
-  `stereo_display` to `control_panel` in every workflow graph; this
-  represents consuming the configured overlay socket. Identify only the stream on these
+  to the panel: raw capture (packed stereo or separate eyes), aligned stereo,
+  simulator stereo, and stereo overlay output. Include the green
+  `Stereo overlay` connection from `stereo_display` to `control_panel` in every
+  workflow graph; this represents consuming the configured overlay socket.
+  Identify only the stream on these
   edges (`Left & right`, `Stereo`, or `Stereo overlay`); omit `GStreamer
   socket(s)` and `Optional preview` because the legend and panel subtitle
   already explain them. These edges represent available sources the panel can
-  select, not a requirement to preview all streams simultaneously. Individual
-  arm ROS topics are omitted.
+  select, not a requirement to preview all streams simultaneously. In a
+  workflow that shows control-panel annotations, add a solid green
+  `Annotations` edge from `control_panel` back to `stereo_display` with
+  `constraint=false`. Keep it separate from the `Stereo overlay` preview edge;
+  document the annotation socket name in the Usage text. Individual arm ROS
+  topics are omitted.
 - Show a physical `Touch screen` below the control panel, connected from the
   panel by a solid red `DP, HDMI` edge.
 - Put the component or executable name first and its role on the next line.

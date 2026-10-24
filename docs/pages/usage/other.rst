@@ -155,7 +155,7 @@ Video uses the neighboring ``sdi`` profile's DeckLink inputs and alignment
 settings. ``stereo_display`` opens one side-by-side window for the Goovis HMD,
 retains the Si profile's -150 px horizontal offset, and publishes the
 composited ``@dvrk:stereo_display:haply-overlay`` socket for the control panel.
-The panel can also preview the raw eye sockets and aligned stereo.
+The panel can also preview either eye from the raw and aligned stereo sockets.
 
 The ``haply`` directory contains both head-sensor system JSONs, the two-device
 Haply configuration, and the three video pipeline JSONs. No manual assembly
@@ -261,9 +261,9 @@ simulation example, ``sawOpenXR`` currently asserts ``operator_present``
 continuously; this is not the original physical head-sensor behavior.
 
 **Video:** the JHU files capture left and right SDI inputs from DeckLink
-devices 0 and 1. ``stereo_source`` publishes the eye streams to
-``@dvrk:stereo_source:left`` and ``@dvrk:stereo_source:right``.
-``stereo_alignment`` aligns them and publishes
+devices 0 and 1. ``stereo_source`` packs them into the side-by-side
+``@dvrk:stereo_source:stereo`` socket. ``stereo_alignment`` consumes that
+stereo stream, aligns its eyes, and publishes
 ``@dvrk:stereo_alignment:stereo``. ``stereo_display`` uses its ``headless``
 sink to publish composited video at
 ``@dvrk:stereo_display:openxr-overlay``. ``sawOpenXR`` receives that socket
@@ -282,7 +282,7 @@ Configuration files
    * - ``system-OpenXR-daVinci.json`` (Classic) or ``system-OpenXR-daVinciSi.json`` (Si)
      - Real arm serials, SUJ/base frames, IO, generic masters, console events, and teleoperation mappings.
    * - ``stereo_source.json``
-     - Physical left/right capture devices and source sockets.
+     - Physical left/right capture devices and the packed stereo source socket.
    * - ``stereo_alignment.json``
      - Eye alignment, crop, color settings, and aligned stereo socket.
    * - ``stereo_display.json``

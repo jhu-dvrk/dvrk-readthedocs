@@ -101,8 +101,23 @@ AR configuration
      }
    }
 
-The current field names are ``left`` and ``right``; each is an endpoint object
-with a ``gst_input`` field.
+``left`` and ``right`` each accept a separate eye endpoint with a
+``gst_input`` field. For the combined side-by-side LR annotation stream from
+:ref:`dvrk-control-panel`, use ``ar.stereo`` instead:
+
+.. code-block:: json
+
+   {
+     "ar": {
+       "enabled": true,
+       "stereo": {"gst_input": "@dvrk:control_panel:annotations"}
+     }
+   }
+
+If AR is enabled without another input, the stereo input defaults to this
+socket. If the panel overrides ``annotations.gst_output``, set
+``ar.stereo.gst_input`` to the same socket name. The stereo annotation stream
+uses transparency, so it does not need ``color_key``.
 
 The installed ``stereo_display.schema.json`` is the authoritative structural
 reference for these fields.

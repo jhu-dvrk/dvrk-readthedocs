@@ -166,9 +166,9 @@
 
 <g id="node9" class="node">
 <title>source</title>
-<path fill="#f0fdfa" stroke="#64748b" d="M668.5,-534C668.5,-534 533.5,-534 533.5,-534 527.5,-534 521.5,-528 521.5,-522 521.5,-522 521.5,-502 521.5,-502 521.5,-496 527.5,-490 533.5,-490 533.5,-490 668.5,-490 668.5,-490 674.5,-490 680.5,-496 680.5,-502 680.5,-502 680.5,-522 680.5,-522 680.5,-528 674.5,-534 668.5,-534" />
+<path fill="#f0fdfa" stroke="#64748b" d="M681.5,-534C681.5,-534 520.5,-534 520.5,-534 514.5,-534 508.5,-528 508.5,-522 508.5,-522 508.5,-502 508.5,-502 508.5,-496 514.5,-490 520.5,-490 520.5,-490 681.5,-490 681.5,-490 687.5,-490 693.5,-496 693.5,-502 693.5,-502 693.5,-522 693.5,-522 693.5,-528 687.5,-534 681.5,-534" />
 <text text-anchor="middle" x="601" y="-515.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_data::stereo_source</text>
-<text text-anchor="middle" x="601" y="-502.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">DeckLink capture</text>
+<text text-anchor="middle" x="601" y="-502.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">DeckLink capture, pack stereo</text>
 </g>
 
 <g id="edge8" class="edge">
@@ -181,7 +181,7 @@
 <title>alignment</title>
 <path fill="#f0fdfa" stroke="#64748b" d="M676.5,-418C676.5,-418 525.5,-418 525.5,-418 519.5,-418 513.5,-412 513.5,-406 513.5,-406 513.5,-386 513.5,-386 513.5,-380 519.5,-374 525.5,-374 525.5,-374 676.5,-374 676.5,-374 682.5,-374 688.5,-380 688.5,-386 688.5,-386 688.5,-406 688.5,-406 688.5,-412 682.5,-418 676.5,-418" />
 <text text-anchor="middle" x="601" y="-399.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_data::stereo_alignment</text>
-<text text-anchor="middle" x="601" y="-386.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Align eyes and pack stereo</text>
+<text text-anchor="middle" x="601" y="-386.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Align stereo eyes</text>
 </g>
 
 <g id="edge9" class="edge">
@@ -192,7 +192,7 @@
 
 <g id="edge15" class="edge">
 <title>source-&gt;control_panel</title>
-<path fill="none" stroke="#15803d" d="M680.53,-512C773.9,-512 916.17,-512 916.17,-512 916.17,-512 916.17,-309.27 916.17,-309.27" />
+<path fill="none" stroke="#15803d" d="M693.86,-512C786.82,-512 916.17,-512 916.17,-512 916.17,-512 916.17,-309.27 916.17,-309.27" />
 <polygon fill="#15803d" stroke="#15803d" points="918.62,-309.27 916.17,-302.27 913.72,-309.27 918.62,-309.27" />
 </g>
 
@@ -265,8 +265,8 @@
 </g><g class="edge-label" data-edge="console-&gt;control_panel" transform="translate(-37.960 13.000)"><rect x="400.63" y="-235.0" width="86.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" stroke-dasharray="5,2" /><text text-anchor="start" x="428.13" y="-225" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">ROS 2</text>
 <text text-anchor="start" x="402.63" y="-214" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">commands, status</text>
 </g><g class="edge-label" data-edge="camera-&gt;source" transform="translate(27.000 7.500)"><rect x="547.0" y="-588.46" width="54.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="549" y="-577.96" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">SDI, HDMI</text>
-</g><g class="edge-label" data-edge="source-&gt;alignment" transform="translate(26.500 7.500)"><rect x="548.0" y="-472.46" width="53.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="550.5" y="-461.96" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Left &amp; right</text>
-</g><g class="edge-label" data-edge="source-&gt;control_panel" transform="translate(12.460 7.500)"><rect x="846.71" y="-527.0" width="53.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="849.21" y="-516.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Left &amp; right</text>
+</g><g class="edge-label" data-edge="source-&gt;alignment" transform="translate(16.500 7.500)"><rect x="568.0" y="-472.46" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="570.5" y="-461.96" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
+</g><g class="edge-label" data-edge="source-&gt;control_panel" transform="translate(5.790 7.500)"><rect x="873.38" y="-527.0" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="875.88" y="-516.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
 </g><g class="edge-label" data-edge="alignment-&gt;display" transform="translate(16.500 7.500)"><rect x="568.0" y="-353.17" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="570.5" y="-342.67" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
 </g><g class="edge-label" data-edge="alignment-&gt;control_panel" transform="translate(16.500 7.500)"><rect x="783.64" y="-411.0" width="33.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="786.14" y="-400.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Stereo</text>
 </g><g class="edge-label" data-edge="display-&gt;viewer" transform="translate(25.000 7.500)"><rect x="551.0" y="-230.67" width="50.0" height="15.0" fill="white" fill-opacity="1" stroke="#dc2626" stroke-width="1" /><text text-anchor="start" x="553" y="-220.17" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#dc2626">DP, HDMI</text>

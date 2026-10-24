@@ -1,5 +1,5 @@
 digraph mtms_real {
-  graph [rankdir=TB, splines=ortho, newrank=true, bgcolor="white", pad=0.25, nodesep=0.75, ranksep=1.0,
+  graph [rankdir=TB, splines=ortho, newrank=true, bgcolor="white", pad=0.25, nodesep=1.25, ranksep=1.25,
          fontname="Arial,Helvetica,sans-serif", fontsize=16, label="Physical MTMs and a real patient cart", labelloc=t];
   node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#64748b",
         fontname="Arial,Helvetica,sans-serif", fontsize=12, margin="0.16,0.12"];
@@ -22,8 +22,8 @@ digraph mtms_real {
   subgraph cluster_video {
     label=""; style=invis;
     camera [label="Physical stereo endoscope camera\nLeft and right SDI", fillcolor="#fff7ed", group="video"];
-    source [label="dvrk_data::stereo_source\nDeckLink capture", fillcolor="#f0fdfa", group="video"];
-    alignment [label="dvrk_data::stereo_alignment\nAlign eyes and pack stereo", fillcolor="#f0fdfa", group="video"];
+    source [label="dvrk_data::stereo_source\nDeckLink capture, pack stereo", fillcolor="#f0fdfa", group="video"];
+    alignment [label="dvrk_data::stereo_alignment\nAlign stereo eyes", fillcolor="#f0fdfa", group="video"];
     display [label="dvrk_console::stereo_display\nConsole overlay", fillcolor="#f0fdfa", group="video"];
     viewer [label="Physical HRSV\nLeft and right displays", fillcolor="#f0fdfa", group="video"];
   }
@@ -35,14 +35,15 @@ digraph mtms_real {
 
   hardware -> arms [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>UDP, FireWire</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626", minlen=2];
   camera -> source [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>SDI, HDMI</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
-  source -> alignment [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Left &amp; right</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d"];
+  source -> alignment [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d"];
   alignment -> display [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d"];
   console -> display [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2<BR/>console status</TD></TR></TABLE>>, style=dashed, constraint=false];
   display -> viewer [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>DP, HDMI</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
   console -> control_panel [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2<BR/>commands, status</TD></TR></TABLE>>, style=dashed, constraint=false];
-  source -> control_panel [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Left &amp; right</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
+  source -> control_panel [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
   alignment -> control_panel [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
   display -> control_panel [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Stereo overlay</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
+  control_panel:w -> display:e [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Annotations</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d", constraint=false];
   control_panel -> touchscreen [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>DP, HDMI</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
 
 
