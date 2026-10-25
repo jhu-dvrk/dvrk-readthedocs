@@ -213,12 +213,12 @@ For setup and measurement instructions, see :ref:`dvrk-latency-calibration`.
 ================================
 
 * Python utility from ``dvrk_data``
-* Interactive tool to calibrate stereo camera offset, scaling, and rotation
+* GTK tool to calibrate stereo crop, horizontal and vertical shifts, and color balance
 * https://github.com/jhu-dvrk/dvrk_data
 
 ::
 
-   ros2 run dvrk_data stereo_alignment_calibration -c stereo_alignment.json
+   ros2 launch dvrk_data stereo_alignment_calibration.launch.py
 
 For alignment calibration instructions, see :ref:`dvrk-video-data`.
 
@@ -229,14 +229,15 @@ For alignment calibration instructions, see :ref:`dvrk-video-data`.
 ==============================
 
 * Python utility from ``dvrk_console``
-* Utility to test and configure display outputs, resolutions, and monitor offsets for surgeon consoles
+* GTK tool to adjust stereo video shift and widget disparity for a display
 * https://github.com/jhu-dvrk/dvrk_console
 
 ::
 
-   ros2 run dvrk_console stereo_display_calibration
+   ros2 launch dvrk_console stereo_display_calibration.launch.py
 
-For display layout details, see :ref:`dvrk-stereo-display-configuration`.
+For calibration steps, see :ref:`dvrk-stereo-display`; for configuration
+fields, see :ref:`dvrk-stereo-display-configuration`.
 
 
 .. _app-gscam-socket:

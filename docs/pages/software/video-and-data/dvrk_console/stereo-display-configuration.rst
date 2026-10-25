@@ -41,8 +41,12 @@ Top-level fields
      - Width and height of one eye.
    * - ``overlay_alpha``
      - HUD opacity from 0.0 to 1.0; default 0.7.
+   * - ``display_horizontal_shift_px``
+     - Signed shift of the stereo video on this display, in final per-eye pixels. Positive moves left-eye pixels right and right-eye pixels left. Default 0.
+   * - ``widget_horizontal_disparity_px``
+     - Signed disparity of fixed HUD widgets and extra-stream tiles, in final per-eye pixels. Positive places them nearer; zero is the display plane. Default 0.
    * - ``display_horizontal_offset_px``
-     - Working-depth calibration written by ``stereo_display_calibration``.
+     - Deprecated name for the widget setting with the opposite sign. It cannot be combined with ``widget_horizontal_disparity_px``.
    * - ``sinks``
      - Any combination of ``side_by_side``, ``separate``, and ``headless``.
 
@@ -56,7 +60,8 @@ Example outputs and picture-in-picture
      "name": "surgeon_display",
      "dvrk_console_namespace": "console",
      "overlay_alpha": 0.7,
-     "display_horizontal_offset_px": 18,
+     "display_horizontal_shift_px": 0,
+     "widget_horizontal_disparity_px": -18,
      "gst_input": "@dvrk:stereo_alignment:stereo",
      "gst_output": "@dvrk:stereo_display:stereo",
      "eye_size": {"width": 1920, "height": 1080},
@@ -74,6 +79,12 @@ At most two entries across ``pip_gst_inputs.monos`` and
 warning.  Each entry contains a ``gst_input`` field, which may be a plain
 GStreamer source fragment or a canonical ``@dvrk:role:name`` socket.  Scale is
 clamped to 0.01 through 0.99.
+
+Calibrate camera crop and alignment first, then use the
+``stereo_display_calibration.launch.py`` workflow in :ref:`dvrk-stereo-display`
+to set video shift and widget depth. The video shifts within each eye, leaving
+black pixels at the exposed edge. Touch-panel annotations use final display
+coordinates and remain registered after the shift.
 
 If your extra stream come from the SlicerGStreamer plugin (https://github.com/rosmed/SlicerGStreamer), you can use something like:
 

@@ -91,7 +91,7 @@ contains the profile files selected by the launch:
    * - ``ECM_PSM1_PSM2_PSM3.yaml``
      - Includes ``../simulator_cart.yaml`` and configures the stereo camera and video socket.
    * - ``stereo_display_simulator.json``
-     - Reads rendered video; selects separate HRSV windows and the display offset.
+     - Reads rendered video; selects separate HRSV windows and the widget disparity.
 
 The supplied camera profile renders 800 by 600 pixels per eye at 15 Hz.
 ``eye_size: auto`` in the display JSON follows the stream dimensions. Edit

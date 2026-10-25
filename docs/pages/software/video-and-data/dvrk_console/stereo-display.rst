@@ -167,29 +167,37 @@ surgical planning systems to draw graphics directly on top of the live endoscope
 Camera alignment versus display calibration
 *******************************************
 
-Two distinct calibration steps must be performed:
+Calibrate the camera pair first with the ``dvrk_data`` launch described in
+:ref:`dvrk-video-data`. That step saves the crop, horizontal and vertical
+alignment, and color balance in ``stereo_alignment.json``. At runtime,
+``stereo_alignment`` applies those values and publishes the aligned stereo
+socket used by the display.
 
-1. **Camera Alignment (``stereo_alignment``)**:
-   Calibrates the physical cameras. It corrects optical differences between the
-   left and right sensors, including vertical disparities, horizontal shifts,
-   optical roll/rotation, and color balance before publishing
-   ``@dvrk:stereo_alignment:stereo``. See :ref:`dvrk-video-data`.
-2. **Display Calibration (``stereo_display_calibration``)**:
-   Calibrates the surgeon display. It adjusts the horizontal disparity
-   (``display_horizontal_offset_px``) so that the stereo convergence plane
-   matches the surgeon's eyes and working distance at the console.
-
-To calibrate the display offset:
+Next, from the directory containing ``stereo_source.json``,
+``stereo_alignment.json``, and ``stereo_display.json``, run:
 
 .. code-block:: bash
 
-   ros2 run dvrk_console stereo_display_calibration -c stereo_display.json
+   ros2 launch dvrk_console stereo_display_calibration.launch.py
 
-* Use the **Left** and **Right** arrow keys to adjust the pixel offset until stereo
-  fusion is comfortable.
-* Press **g** to toggle the alignment grid.
-* Press **f** to toggle fullscreen mode.
-* Press **q** to quit and save the new offset to ``stereo_display.json``.
+This starts source, alignment, and the GTK display calibration tool. The tool
+can show one side-by-side preview or two movable eye windows; **Fullscreen
+previews** fills the window height. **Left/Right** adjusts the video shift and
+**Up/Down** adjusts widget disparity, one pixel per key, while either the
+control window or a preview has focus. The HUD icons show the selected widget
+depth relative to the shifted video. **Save & quit** writes the values to
+``stereo_display.json`` and stops the launched video processes; **Quit** asks
+about unsaved changes.
+
+``display_horizontal_shift_px`` changes the video convergence for this display.
+``widget_horizontal_disparity_px`` positions fixed HUD widgets and extra-stream
+tiles at a comfortable depth. Both are measured in final per-eye pixels;
+positive disparity moves left-eye pixels right and right-eye pixels left. The
+legacy ``display_horizontal_offset_px`` affected widgets, not video, and is
+converted to widget disparity with the opposite sign when saved.
+
+Use ``config_dir:=/path/to/configs`` for another directory, or override
+``source_config``, ``alignment_config``, and ``display_config`` individually.
 
 Launching the complete video path
 *********************************

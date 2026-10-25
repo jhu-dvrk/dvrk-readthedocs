@@ -286,7 +286,7 @@ Configuration files
    * - ``stereo_alignment.json``
      - Eye alignment, crop, color settings, and aligned stereo socket.
    * - ``stereo_display.json``
-     - Console overlay, headless output, and display offset.
+     - Console overlay, headless output, video shift, and widget disparity.
    * - ``sawOpenXR-dvrk-socket.json``
      - Receives the composited stereo socket for the headset.
 

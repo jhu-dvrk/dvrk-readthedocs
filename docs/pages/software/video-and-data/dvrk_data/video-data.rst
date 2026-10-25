@@ -152,30 +152,33 @@ Downstream of this bridge, normal ROS image-transport costs apply.
 Stereo calibration
 ******************
 
-The runtime application and calibration script have different roles:
-
-* ``stereo_alignment`` continuously performs the saved transformation.
-* ``stereo_alignment_calibration`` interactively finds the crop, horizontal
-  and vertical alignment, and color adjustments and writes them to the JSON
-  file.
-
-Start the source, calibrate, then run the alignment process:
+Run from the directory containing ``stereo_source.json`` and, if it already
+exists, ``stereo_alignment.json``:
 
 .. code-block:: bash
 
-   ros2 run dvrk_data stereo_source -c stereo_source.json
-   ros2 run dvrk_data stereo_alignment_calibration -c stereo_alignment.json
-   ros2 run dvrk_data stereo_alignment -c stereo_alignment.json
+   ros2 launch dvrk_data stereo_alignment_calibration.launch.py
 
-The calibration preview overlays green-tinted left and magenta-tinted right
-frames.  Use the arrow keys for horizontal and vertical alignment, ``+`` and
-``-`` for crop size, ``o`` and ``p`` for crop-width correction, ``c`` to cycle
-color matching, ``f`` for fullscreen, and ``q`` to finish and choose whether
-to save.  Add ``--split`` to open one preview window per eye.
+The launch starts ``stereo_source`` and opens the GTK calibration tool after
+the source is ready. The tool can create ``stereo_alignment.json`` on its first
+run. It previews the stereo socket, with a side-by-side window or separate
+left and right windows, plus a difference overlay. Adjust horizontal and
+vertical alignment, crop, and optional color correction, then select **Save &
+quit**. The launch stops the source when the tool closes. **Quit** asks about
+unsaved changes.
 
-Stereo alignment makes corresponding image content coincide.  It does not
-create hardware camera synchronization; the two source timestamps remain
-available so their acquisition separation can be inspected.
+**Apply crop** and **Auto-crop for current alignment** start enabled. Auto-crop
+finds the largest crop that accommodates the current shifts. The overlay's
+brightness and difference-gain sliders affect only the preview; they are not
+saved. For another directory, add ``config_dir:=/path/to/configs``. Use
+``source_config:=...`` or ``alignment_config:=...`` to override either file
+name.
+
+To use the saved calibration for normal operation, launch the complete video
+pipeline described in :ref:`dvrk-stereo-display`, which starts source,
+alignment, and display in order. Stereo alignment does not synchronize the
+hardware cameras; both source timestamps remain available to inspect their
+acquisition separation.
 
 .. _dvrk-gstreamer-dot-files:
 
