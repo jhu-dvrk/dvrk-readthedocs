@@ -1,21 +1,17 @@
 Data collection workflow
 ########################
 
-The collection tools are designed as a sequence:
+The collection tools follow this workflow:
 
-.. code-block:: text
+.. figure:: /images/software/data-collection.svg
+   :width: 100%
+   :align: center
+   :alt: Video streams, ROS 2 topics, and recording settings feed dvrk_data record. The recorded session can be extracted in full, or video_tag can create frame ranges for tagged extraction. Extraction produces timestamped media and ROS-topic CSV files.
 
-   record configuration
-           |
-           v
-        record ------> MP4 + sidecar JSON + ROS bag + session index
-           |                              |
-           +----------> optional tags ----+
-                                          |
-                                          v
-                                       extract
-                                          |
-                             timestamped media and CSV
+   ``record`` writes a session that ``extract`` can process in full. Optionally,
+   ``video_tag`` marks ranges in a recorded video for selected extraction. The
+   :download:`Graphviz source </images/software/data-collection.dot>` is
+   available with the diagram.
 
 Use :ref:`dvrk-latency-calibration` before the final experiment when an empirical
 video latency estimate should be recorded with the session.  The measured

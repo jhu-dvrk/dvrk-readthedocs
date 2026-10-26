@@ -19,7 +19,12 @@ The display consumes a side-by-side stereo stream produced by
 
 ``gst_input`` accepts a canonical dVRK socket reference or a plain GStreamer
 source fragment.  ``eye_size`` is one eye's dimensions; the side-by-side input
-is twice this width.
+is twice this width. Use ``"eye_size": "auto"`` to detect dimensions from
+the incoming stereo stream. If ``gst_input`` is omitted, it defaults to
+``@dvrk:stereo_alignment:stereo``.
+
+Latest-frame selection is unconditional. The :ref:`dvrk-frame-timing` panel is
+always present in the control window; neither feature needs an enable flag.
 
 Top-level fields
 ****************
@@ -36,9 +41,9 @@ Top-level fields
    * - ``gst_input``
      - Main side-by-side input: a canonical ``@dvrk:role:name`` socket or a plain GStreamer source fragment.
    * - ``gst_output``
-     - Optional canonical dVRK socket for the composed stereo output.
+     - Canonical dVRK socket for the main stereo video and HUD; default ``@dvrk:stereo_display:overlay``. Empty disables the socket. PiP tiles belong to the video-window layouts.
    * - ``eye_size``
-     - Width and height of one eye.
+     - Width and height of one eye, or ``"auto"`` to detect the incoming size.
    * - ``overlay_alpha``
      - HUD opacity from 0.0 to 1.0; default 0.7.
    * - ``display_horizontal_shift_px``
@@ -78,7 +83,9 @@ At most two entries across ``pip_gst_inputs.monos`` and
 ``pip_gst_inputs.stereos`` are used.  Additional entries are discarded with a
 warning.  Each entry contains a ``gst_input`` field, which may be a plain
 GStreamer source fragment or a canonical ``@dvrk:role:name`` socket.  Scale is
-clamped to 0.01 through 0.99.
+clamped to 0.01 through 0.99. Extra feeds use the
+:ref:`dvrk-latest-frame-policy`; their update rates are independent of the
+camera's and a missing frame does not block camera layout updates.
 
 Calibrate camera crop and alignment first, then use the
 ``stereo_display_calibration.launch.py`` workflow in :ref:`dvrk-stereo-display`

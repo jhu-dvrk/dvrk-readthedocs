@@ -14,26 +14,34 @@ Processes and data flow
 ``stereo_source``
 =================
 
-``stereo_source`` owns the left and right camera pipelines.  It converts each
-output to I420, places bounded leaky queues before consumers, records a
-``CLOCK_REALTIME`` source timestamp in the buffer metadata, and publishes the
-two streams on abstract Unix sockets.
+``stereo_source`` owns the left and right camera pipelines. It converts each
+output to I420, records a CPU ``CLOCK_REALTIME`` source timestamp in the buffer
+metadata, and combines the latest available eye images into a side-by-side LR
+stream. Bounded leaky queues discard superseded frames.
 
 .. code-block:: bash
 
    ros2 run dvrk_data stereo_source -c stereo_source.json
 
-When no outputs are specified in the camera endpoints, it creates the
-conventional sockets ``@dvrk:stereo_source:left`` and
-``@dvrk:stereo_source:right``.
+The root ``gst_output`` defaults to ``@dvrk:stereo_source:stereo``. Separate
+``@dvrk:stereo_source:left`` and ``@dvrk:stereo_source:right`` outputs are
+optional: set ``camera.left.gst_output`` and ``camera.right.gst_output`` to
+publish them. Omitting or emptying either eye's output disables that separate
+socket.
 
 ``stereo_alignment``
 ====================
 
-``stereo_alignment`` consumes the two eyes, applies per-eye color correction,
-crop, horizontal shift, and vertical shift, then creates an I420 side-by-side
-stereo frame.  It preserves the source observations and adds a
-``stereo_output`` timestamp.
+``stereo_alignment`` normally consumes
+``@dvrk:stereo_source:stereo``. It applies per-eye color correction, crop,
+horizontal and vertical shifts, and optional scaling, then combines the latest
+processed eye images into an I420 side-by-side stream. It skips reprocessing an
+eye when only its peer's source timestamp changed. It preserves per-eye source
+observations and adds an ``alignment_output`` timestamp, also available under
+the legacy ``stereo_output`` name.
+
+Separate left and right inputs can be configured instead of the combined
+input; see :ref:`dvrk-video-configuration`.
 
 .. code-block:: bash
 
@@ -42,6 +50,35 @@ stereo frame.  It preserves the source observations and adds a
 Its conventional output is
 ``@dvrk:stereo_alignment:stereo``.  :ref:`dvrk-stereo-display`
 and :ref:`dvrk-record` normally consume this socket independently.
+
+.. _dvrk-latest-frame-policy:
+
+Latest available frames
+***********************
+
+``stereo_source``, ``stereo_alignment``, and the display's spatial mixers each
+retain one cached image per input. When any input changes, they compose output
+from the newest cached images. They do not wait for matching left/right PTS,
+matching frame numbers, or an update from the other eye. This is the normal
+behavior; there is no JSON synchronization switch.
+
+During streaming, an eye with no image yet is black. If an eye stops updating,
+its last image remains while the other continues. If both eyes stop, the display
+can retain an old image; :ref:`dvrk-frame-timing` continues aging that image and
+marks the unchanged source as stale. Startup dimension detection and connection
+recovery still apply; this policy describes frame selection in a running
+pipeline.
+
+Combined stereo output is variable-rate. Two independent 30 Hz eye inputs can
+produce approximately 60 stereo updates per second, because either eye can
+trigger output. This does not increase either camera's acquisition rate. Updates
+may be coalesced or dropped when processing cannot keep up. Consumers should
+use buffer timestamps rather than assuming a fixed stereo update interval.
+
+Original CPU source times and available reference-clock metadata identify the
+images actually selected. New output PTS describe publication time. Preserving
+those source observations does not pair images or synchronize hardware cameras;
+see :ref:`dvrk-timestamps`.
 
 Why video is not transported as ROS images
 *******************************************
@@ -109,7 +146,7 @@ Bridging a socket to ROS images
 
 .. code-block:: bash
 
-   ros2 run dvrk_data gscam_socket @dvrk:stereo_source:left
+   ros2 run dvrk_data gscam_socket @dvrk:stereo_source:stereo
 
 The launch file can also be invoked directly when the fully qualified name is
 known:
@@ -117,7 +154,7 @@ known:
 .. code-block:: bash
 
    ros2 launch dvrk_data gscam.launch.py \
-     socket:=@dvrk:stereo_source:left
+     socket:=@dvrk:stereo_source:stereo
 
 If ``socket`` is omitted, the launch file lists currently active ``@dvrk``
 sockets and exits without launching ``gscam_node``.
@@ -144,8 +181,9 @@ The launch arguments are:
      - ``<role>_<name>``
 
 For the example above, images are published under
-``/stereo_source/left/image_raw`` and camera information under
-``/stereo_source/left/camera_info``.  The bridge uses a one-buffer leaky queue,
+``/stereo_source/stereo/image_raw`` and camera information under
+``/stereo_source/stereo/camera_info``. To bridge only one eye, first enable its
+separate source output and select that socket instead.  The bridge uses a one-buffer leaky queue,
 ``videoconvert``, and ``gscam_node`` with sink synchronization disabled.
 Downstream of this bridge, normal ROS image-transport costs apply.
 
@@ -176,9 +214,12 @@ name.
 
 To use the saved calibration for normal operation, launch the complete video
 pipeline described in :ref:`dvrk-stereo-display`, which starts source,
-alignment, and display in order. Stereo alignment does not synchronize the
-hardware cameras; both source timestamps remain available to inspect their
-acquisition separation.
+alignment, and display in order. The alignment calibration tool previews the
+source socket directly; it does not run the separate ``stereo_alignment``
+process. Display calibration and the complete video launch include that
+process. Use the display timing panel to inspect the full running path. Camera
+alignment changes geometry and color; it does not synchronize the hardware
+cameras or match timestamps between eyes.
 
 .. _dvrk-gstreamer-dot-files:
 

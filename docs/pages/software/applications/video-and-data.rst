@@ -45,6 +45,10 @@ This launch file coordinates the startup sequence of:
 2. :ref:`stereo_alignment <app-stereo-alignment>` (delayed by 2 seconds)
 3. :ref:`stereo_display <app-stereo-display>` (delayed by 4 seconds)
 
+The running pipeline uses :ref:`dvrk-latest-frame-policy` unconditionally,
+without matching left/right timestamps. The display's :ref:`dvrk-frame-timing`
+panel reports per-eye age, source FPS, and channel time difference.
+
 For details on configuration and arguments, see :ref:`dvrk-stereo-display`.
 
 
@@ -92,7 +96,10 @@ You can also pass an explicit configuration file:
 
    ros2 run dvrk_console stereo_display -c <path-to-stereo-display.json>
 
-For display configuration and supported modes, see :ref:`dvrk-stereo-display` and :ref:`dvrk-stereo-display-configuration`.
+The control window always includes :ref:`dvrk-frame-timing`, with five-second
+average/max ages, resettable peaks, and stale-source indicators. See
+:ref:`dvrk-stereo-display` and :ref:`dvrk-stereo-display-configuration` for
+configuration and supported modes.
 
 
 .. _app-stereo-source:
@@ -122,7 +129,7 @@ For configuration details, see :ref:`dvrk-video-data` and :ref:`dvrk-video-confi
 ====================
 
 * C++ application with GStreamer from ``dvrk_data``
-* Applies real-time transformation, crop, and rectification matrices to align left and right video streams
+* Applies per-eye color correction, crop, horizontal/vertical shifts, and optional scaling to the latest available images
 * https://github.com/jhu-dvrk/dvrk_data
 
 .. note::

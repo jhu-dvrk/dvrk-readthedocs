@@ -44,11 +44,10 @@ Rendering and display topologies
   external 3D video headsets such as Gooviz.
 
 ``headless`` (Socket Streaming and XR)
-  Runs the pipeline without creating on-screen display windows. The composited
-  stereo stream is published to a local ``@dvrk`` socket or shared-memory buffer.
-  This is typically used for headless recording, web streaming, or passing video
-  frames to OpenXR spatial computing applications (such as Apple Vision Pro or
-  Meta Quest).
+  Creates no video-output windows; the control window is still available.
+  The main stereo stream and HUD can be published through the configured
+  local ``@dvrk`` output socket for recording or XR consumers. The default
+  socket is ``@dvrk:stereo_display:overlay``; an empty ``gst_output`` disables it.
 
 Along with the video displays, a **Control Window** is created:
 
@@ -56,13 +55,16 @@ Along with the video displays, a **Control Window** is created:
    :width: 400px
    :align: center
 
-   Stereo display control window
+   Stereo display controls (earlier version, before the Frame timing panel)
 
 The control window allows the operator to:
 
 * Toggle the status HUD overlay on or off (**"Overlay"**);
 * Toggle left and right eye corner labels (**"L/R Labels"**);
 * Select the display monitor and toggle fullscreen for each output window;
+* Inspect per-eye frame age, channel time difference, source FPS, and stale
+  indicators in **Frame timing**;
+* Clear collected timing history with **Reset statistics**;
 * Dynamically adjust picture-in-picture stream scale (when extra streams are configured);
 * Quit the application (**"Quit"**).
 
@@ -74,13 +76,90 @@ The control window allows the operator to:
    ``"overlay_alpha"`` in ``stereo_display.json``.
 
 
+.. _dvrk-frame-timing:
+
+Frame timing panel
+******************
+
+The control window always shows **Frame timing**; it requires no JSON option.
+Statistics refresh four times per second. Ages and channel differences are
+shown in milliseconds.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 80
+
+   * - Value
+     - Meaning
+   * - Left / Right: Current
+     - Age of the most recently received source image for that eye. It keeps
+       increasing when buffers stop arriving.
+   * - Left / Right: Avg, Max
+     - Average and maximum ages sampled when buffers reached the display
+       input during the last five seconds. Reused source images still
+       contribute their actual age to these statistics.
+   * - Left / Right: Peak
+     - Largest age observed since the statistics were reset, including
+       the growing age of a stalled frame.
+   * - Left / Right: FPS
+     - Rate of source-timestamp changes over the last five seconds, or the
+       shorter interval since startup/reset. Repeated buffers carrying the
+       same source timestamp do not count as new camera images. This is
+       independent of stereo-buffer rate and monitor refresh rate.
+   * - Δt: Current
+     - Signed difference ``left source time - right source time`` for the
+       images most recently received at the display. A negative value means
+       the left image's source observation is older.
+   * - Δt: Avg, Max
+     - Average and maximum absolute channel differences in the last five
+       seconds, so positive and negative offsets do not cancel.
+
+An eye is marked **STALE** when its source timestamp has not changed at the
+display for 500 ms, even if repeated buffers continue arriving. If no samples
+remain in the rolling window, Avg and Max show ``--`` while Current and Peak
+can continue aging. Missing source timestamps, or source times later than the
+observing CPU's realtime clock, also show ``--`` rather than a zero age.
+**Reset statistics** clears the rolling history and peaks while video keeps
+running.
+
+Ages use the CPU source observations carried with the selected pixels and are
+measured at the display sink input. In separate-eye mode each sink is measured
+independently. They exclude latency before the source probe and the physical
+monitor's scanout. Source observations use ``CLOCK_REALTIME``; elapsed aging
+between received buffers uses a steady clock. The panel does not compare
+independent hardware-clock epochs. See :ref:`dvrk-timestamps` for clock domains
+and :ref:`dvrk-latency-calibration` for an empirical camera latency estimate.
+
+For diagnosis:
+
+* An increasing per-eye age with little or no source FPS indicates reused or
+  stalled camera content, even if overlays or buffer delivery continue.
+* A large absolute Δt indicates separation between the selected eye images.
+  The pipeline reports it without delaying one eye to match the other.
+* Growing ages on both eyes with a modest Δt indicate a common delay in the
+  upstream path; compare source, alignment, and display stages.
+
+Latest-frame display layouts
+****************************
+
+Display shifts, PiP, and AR use the same :ref:`dvrk-latest-frame-policy` as
+source and alignment. Each spatial mixer caches one image per input and
+composes the latest available images when an input changes. A slow auxiliary
+stream does not gate camera updates. Input PTS are not matched between eyes;
+original source observations remain available for the timing panel.
+
+Layout scaling and blending operate on CPU frames. The final video windows
+upload the completed images through ``glupload`` and ``gtkglsink`` with sink
+clock synchronization disabled. The output can update at a different rate
+from either eye's distinct-source FPS.
+
 The Cairo Head-Up Display (HUD) engine
 **************************************
 
 To provide critical robotic feedback without diverting the surgeon's gaze,
 ``stereo_display`` includes a high-performance vector Head-Up Display (HUD).
-The HUD is rendered using **Cairo** directly onto the OpenGL frame textures
-inside the GStreamer display sink:
+The HUD is drawn with **Cairo** on CPU video frames before the final upload
+to the OpenGL display sinks:
 
 .. figure:: /images/gui/stereo_overlay_side_by_side_gooviz.png
    :width: 400px
@@ -97,7 +176,7 @@ State updates are protected by a mutex and cached in an internal ``OverlayState`
 structure. When a video frame arrives, Cairo draws the latest cached state
 vectorially, ensuring that:
 
-* Video playback and rendering are never blocked by ROS 2 middleware processing;
+* Streaming threads use cached state without waiting for a new ROS 2 message;
 * Overlays scale cleanly to any resolution (from SD up to 4K);
 * Text, icons, and status badges remain crisp and anti-aliased.
 
@@ -151,17 +230,19 @@ surgical planning systems to draw graphics directly on top of the live endoscope
 
 1. **Independent Stereo AR Streams**: Left and right AR graphics streams are
    received from abstract Unix sockets (e.g., ``@dvrk:stereo_source:left_ar``).
-2. **Hardware Compositing**: Graphics are blended with the camera frames using
-   GStreamer's ``glvideomixer`` element on the GPU.
+2. **Latest-image Compositing**: Arrival-driven spatial mixers blend the
+   newest available graphics and camera images on CPU frames. The result is
+   uploaded to the OpenGL display sinks.
 3. **Chroma Key Transparency**: An optional RGB color key (e.g. ``[0, 255, 0]``
    green) treats that color as fully transparent, allowing standard 2D/3D
    graphics applications to overlay shapes without needing an explicit alpha
    channel.
-4. **Asynchronous Frame Timing (PTS Rewriting)**: AI segmentation and detection
-   models often run at lower or variable rates (e.g. 15–30 Hz) compared to the
-   60 Hz endoscopic video. The AR pipeline rewrites buffer Presentation Time
-   Stamps (PTS) to the running pipeline clock, ensuring that the latest available
-   AI annotation displays without stalling the 60 Hz live video feed.
+4. **Independent Input Timing**: Graphics and camera inputs can update at
+   different rates. Each mixer uses its newest cached images without matching
+   input PTS or waiting for a peer update. New output PTS describe publication;
+   the camera's original source observations remain attached for diagnostics.
+   Optional AR inputs supply transparent images when unavailable, and stale AR
+   content is cleared after its input timeout. See :ref:`dvrk-control-panel`.
 
 
 Camera alignment versus display calibration

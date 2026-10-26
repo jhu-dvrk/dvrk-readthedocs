@@ -50,25 +50,30 @@ bottlenecks:
 Separation of video data and control data
 ===========================================
 
-To achieve guaranteed sub-frame display latency alongside rich robot integration,
-the dVRK stack cleanly separates two data paths:
+To keep video latency low alongside robot integration, the dVRK stack separates
+two data paths:
 
 1. **The video data (GStreamer + Linux Abstract Sockets)**:
    All high-bandwidth video frame movement remains strictly within local
    GStreamer pipelines. Between separate processes on the same machine, frames
    are passed through Linux domain sockets using ``unixfdsink`` and
    ``unixfdsrc``. This transfers buffer file descriptors (such as shared
-   memory or DMA buffers) directly through the Linux kernel without copying image
-   payloads.
+   memory or DMA buffers) through the kernel. Sharing these buffers avoids ROS
+   image serialization; format conversion, scaling, compositing, or encoding
+   can still copy or transform pixels.
 2. **The control data (ROS 2 & CRTK)**:
    ROS 2 carries lightweight, low-bandwidth control messages: robot joint
    kinematics, Cartesian tool poses, foot pedal events (clutch, camera control),
    teleoperation states, and system warnings.
 
-Small, bounded **leaky queues** (``leaky=downstream``) are placed at each socket
-boundary. If a recording sink or monitor lags momentarily, old frames are
-immediately dropped so that the live surgeon viewer always displays the freshest
-possible image.
+The live source, alignment, and display paths use bounded **leaky queues**
+(``leaky=downstream``) and one cached image per mixer input. An update from either
+eye uses the newest available images, without waiting for a matching timestamp
+or the other eye. This behavior is unconditional, including display shifts,
+picture-in-picture, and AR layouts. See :ref:`dvrk-latest-frame-policy`.
+
+The display's :ref:`dvrk-frame-timing` panel reports per-eye age, source update
+rate, and channel time difference so repeated or stalled video remains visible.
 
 When standard ROS image consumers (such as computer vision nodes or remote
 viewers) are needed, an on-demand bridge (``gscam_socket``) can expose selected
@@ -81,53 +86,15 @@ System topology and data flow
 The complete video and data pipeline is decoupled into specialized processes
 communicating over local abstract sockets:
 
-.. code-block:: text
+.. figure:: /images/software/video-and-data.svg
+   :width: 100%
+   :align: center
+   :alt: Left and right cameras feed stereo_source, then stereo_alignment. Aligned video branches to stereo_display and record. The display drives a physical surgeon display and publishes an optional overlay preview. ROS 2 carries console status and operator commands separately from the video sockets.
 
-   +-------------------------------------------------------------+
-   |                       Camera Hardware                       |
-   |              (DeckLink SDI, V4L2 HDMI/USB, etc.)            |
-   +-------------------------------------------------------------+
-                                  |
-                                  v
-   +-------------------------------------------------------------+
-   |                     stereo_source (C++)                     |
-   |  - Left and right hardware frame capture                    |
-   |  - Real-time timestamp probe (CLOCK_REALTIME)               |
-   |  - Converts to I420 and exposes bounded output sockets       |
-   +-------------------------------------------------------------+
-             |                                        |
-             | @dvrk:stereo_source:left               | @dvrk:stereo_source:right
-             +--------------------+-------------------+
-                                  |
-                                  v
-   +-------------------------------------------------------------+
-   |                    stereo_alignment (C++)                   |
-   |  - Per-eye color correction, crop, and geometric shifts     |
-   |  - Composes aligned side-by-side stereo stream              |
-   |  - Adds stereo_output timestamp to frame metadata           |
-   +-------------------------------------------------------------+
-                                  |
-                                  | @dvrk:stereo_alignment:stereo
-            +---------------------+---------------------+
-            |                                           |
-            v                                           v
-   +-----------------------------+       +-----------------------------+
-   |     stereo_display (C++)    |       |         record (C++)        |
-   |  - Low-latency OpenGL sinks |       |  - Multi-stream MP4 video   |
-   |  - Cairo vector HUD overlays|       |  - JSON timestamp sidecars  |
-   |  - AR & PiP stream blending |       |  - Synchronized MCAP bag    |
-   |  - HRSV / 3D monitor / HMD  |       +-----------------------------+
-   +-----------------------------+
-            |
-            | (Subscribes to ROS 2 CRTK topics:
-            |  arm states, clutch, camera pedals)
-            v
-   +-----------------------------+
-   |      control_panel (C++)    |
-   |  - Touchscreen operator GUI |
-   |  - Robot power, homing, teleop
-   |  - Optional embedded preview|
-   +-----------------------------+
+   Live stereo video follows GStreamer sockets; ROS 2 carries console state and
+   operator commands. The control panel can preview the source, aligned, or
+   overlaid video. The :download:`Graphviz source
+   </images/software/video-and-data.dot>` is available with the diagram.
 
 
 The ``@dvrk`` socket convention
@@ -146,29 +113,36 @@ Abstract sockets have several advantages over filesystem paths (such as ``/tmp/*
   If an application crashes or is terminated unexpectedly, the operating system
   automatically cleans up the socket immediately.
 * **Deterministic Addressing**: Standardized roles ensure predictable endpoints:
-  - ``@dvrk:stereo_source:left`` and ``@dvrk:stereo_source:right``
-  - ``@dvrk:stereo_alignment:stereo``
-  - ``@dvrk:stereo_display:stereo`` (optional composed display loopback)
+
+  * ``@dvrk:stereo_source:stereo`` (default combined LR source)
+  * ``@dvrk:stereo_source:left`` and ``@dvrk:stereo_source:right`` (when configured)
+  * ``@dvrk:stereo_alignment:stereo`` (default aligned output)
+  * ``@dvrk:stereo_display:overlay`` (default display socket output; configurable)
 * **Discoverability**: The active dVRK socket registry can be queried in real
   time using ``ros2 run dvrk_data gscam_socket``.
 
 
-Timing and synchronization
-**************************
+Timing observations and frame selection
+***************************************
 
-Good surgical data science and robot learning require precise
-time stamping across heterogeneous sensors:
+The live pipeline selects images by arrival, independently for each eye. It
+preserves timestamps for diagnostics and later correlation, without using them
+to pair or delay left and right frames.
 
-1. **Hardware/Source Timestamping**: As each frame arrives at ``stereo_source``,
-   a GStreamer buffer probe captures a monotonic ``CLOCK_REALTIME`` timestamp.
-2. **Metadata Propagation**: This timestamp travels alongside the buffer through
-   alignment and display stages via custom GStreamer metadata structures.
-3. **Per-Frame Sidecars**: During recording, ``dvrk_data record`` writes a
-   compact JSON sidecar (``video_sidecar@1.0.0``) storing frame index,
-   pipeline duration, and precise epoch timestamps alongside the compressed MP4
-   file.
-4. **Multi-Modal Correlation**: Video frame timestamps correlate directly with
-   robot kinematic and wrench samples recorded in parallel ROS 2 MCAP rosbags.
+#. ``stereo_source`` records CPU ``CLOCK_REALTIME`` observations as frames pass
+   its source probes. These are Unix-epoch wall-clock values, not monotonic or
+   hardware exposure times.
+#. Per-eye source observations and available hardware/reference-clock metadata
+   follow the selected pixels through alignment and display. Output-stage times
+   describe publication and processing, not a replacement camera observation.
+#. ``record`` writes frame indices and explicit timing observations to
+   ``dvrk_data:video_sidecar@1.0.0`` JSON sidecars beside the MP4 files.
+#. These observations support video/robot-data correlation. Hardware triggering,
+   clock alignment across devices, and empirical camera latency remain separate
+   concerns; recording timestamps does not itself synchronize sensors.
+
+See :ref:`dvrk-timestamps` for clock domains and missing stage times, and
+:ref:`dvrk-frame-timing` for the live display statistics.
 
 
 Documentation structure

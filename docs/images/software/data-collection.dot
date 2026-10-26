@@ -1,0 +1,44 @@
+// Regenerate from this directory: python3 ../usage/render-dot.py data-collection.dot
+digraph data_collection {
+  graph [rankdir=TB, splines=ortho, newrank=true, bgcolor="white", pad=0.25,
+         nodesep=0.65, ranksep=1.0, fontname="Arial,Helvetica,sans-serif"];
+  node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#64748b",
+        fontname="Arial,Helvetica,sans-serif", fontsize=12, margin="0.16,0.12"];
+  edge [color="#475569", fontcolor="#475569", fontname="Arial,Helvetica,sans-serif",
+        fontsize=10, arrowsize=0.7];
+
+  config [label="Record configuration\nVideos, topics, encoding"];
+  video [label="Video streams\nGStreamer sockets", fillcolor="#f0fdfa"];
+  topics [label="Robot and console\nROS 2 topics"];
+  record [label="dvrk_data::record\nCapture and session metadata", fillcolor="#f0fdfa"];
+  session [label="Recorded session\nMP4 + sidecar JSON + index.json\nOptional ROS bag and audio", fillcolor="#f0fdfa"];
+  tag [label="dvrk_data::video_tag\nReview and mark frame ranges"];
+  tags [label="Video tags JSON\nOptional selected ranges"];
+  extract [label="dvrk_data::extract\nFull session or tagged ranges", fillcolor="#f0fdfa"];
+  output [label="Extracted media and ROS-topic CSV\nTimestamped outputs", fillcolor="#f0fdfa"];
+
+  config -> record [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Settings</TD></TR></TABLE>>];
+  video -> record [color="#15803d", fontcolor="#15803d",
+    xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Video</TD></TR></TABLE>>];
+  topics -> record [style=dashed,
+    xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2<BR/>messages</TD></TR></TABLE>>];
+  record -> session [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Session files</TD></TR></TABLE>>];
+  session -> tag [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Recorded video</TD></TR></TABLE>>];
+  tag -> tags [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Frame ranges</TD></TR></TABLE>>];
+  session -> extract [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Full session</TD></TR></TABLE>>];
+  tags -> extract [constraint=false,
+    xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Selected ranges</TD></TR></TABLE>>];
+  extract -> output [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Media, CSV</TD></TR></TABLE>>];
+
+  subgraph legend_rank {
+    rank=sink;
+    legend [shape=plain, style="", margin=0, label=<
+      <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3">
+        <TR><TD COLSPAN="5" ALIGN="LEFT"><B>Connection legend</B></TD></TR>
+        <TR><TD><FONT COLOR="#15803d">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">GStreamer socket (video)</FONT></TD><TD WIDTH="20"></TD><TD><FONT COLOR="#475569">┄▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">ROS 2 communication</FONT></TD></TR>
+        <TR><TD><FONT COLOR="#475569">━▶</FONT></TD><TD ALIGN="LEFT"><FONT POINT-SIZE="10">Files and processing</FONT></TD><TD WIDTH="20"></TD><TD COLSPAN="2"></TD></TR>
+      </TABLE>
+    >];
+  }
+  output -> legend [style=invis];
+}

@@ -18,21 +18,26 @@ Stereo source
      "camera": {
        "size": {"width": 1920, "height": 1080},
        "left": {
-         "gst_input": "v4l2src device=/dev/video-left ! video/x-raw,width=1920,height=1080,framerate=30/1",
-         "gst_output": "@dvrk:stereo_source:left"
+         "gst_input": "v4l2src device=/dev/video-left ! video/x-raw,width=1920,height=1080,framerate=30/1"
        },
        "right": {
-         "gst_input": "v4l2src device=/dev/video-right ! video/x-raw,width=1920,height=1080,framerate=30/1",
-         "gst_output": "@dvrk:stereo_source:right"
+         "gst_input": "v4l2src device=/dev/video-right ! video/x-raw,width=1920,height=1080,framerate=30/1"
        }
      }
    }
 
 The ``gst_input`` values are GStreamer source fragments, not complete
 pipelines with sinks.  Add device-specific elements such as ``deinterlace`` to
-the fragment when required.  ``gst_output`` is optional; when omitted,
-``stereo_source`` publishes the conventional ``@dvrk:stereo_source:left`` and
-``@dvrk:stereo_source:right`` sockets.
+the fragment when required. The root ``gst_output`` defaults to
+``@dvrk:stereo_source:stereo``, a combined LR stream. To enable separate eye
+outputs as well, explicitly set ``camera.left.gst_output`` to
+``@dvrk:stereo_source:left`` and ``camera.right.gst_output`` to
+``@dvrk:stereo_source:right``. An omitted or empty per-eye output is disabled.
+
+``camera.size`` may be ``"auto"`` to detect incoming dimensions, or an object
+with the expected per-eye width and height. Source and alignment use the
+unconditional :ref:`dvrk-latest-frame-policy`; no synchronization option needs
+to be added to these JSON files.
 
 Stereo alignment
 ****************
@@ -43,11 +48,11 @@ Stereo alignment
      "type": "dvrk_data:stereo_alignment@1.0.0",
      "name": "endoscope",
      "preserve_size": true,
+     "gst_input": "@dvrk:stereo_source:stereo",
      "gst_output": "@dvrk:stereo_alignment:stereo",
      "camera": {
        "size": {"width": 1920, "height": 1080},
        "left": {
-         "gst_input": "@dvrk:stereo_source:left",
          "color": {
            "brightness": 0.0,
            "contrast": 1.0,
@@ -56,7 +61,6 @@ Stereo alignment
          }
        },
        "right": {
-         "gst_input": "@dvrk:stereo_source:right",
          "color": {
            "brightness": 0.0,
            "contrast": 1.0,
@@ -72,10 +76,15 @@ Stereo alignment
      }
    }
 
-The ``camera.left.gst_input`` and ``camera.right.gst_input`` values can be
-canonical dVRK socket references or direct GStreamer source fragments.
-``gst_output`` is optional; when omitted, ``stereo_alignment`` publishes
-``@dvrk:stereo_alignment:stereo``.
+The root ``gst_input`` defaults to ``@dvrk:stereo_source:stereo``. As an
+alternative, omit the root input and set both ``camera.left.gst_input`` and
+``camera.right.gst_input`` to canonical dVRK sockets or direct GStreamer source
+fragments. Do not combine a root input with separate eye inputs.
+
+``camera.size`` accepts ``"auto"`` or fixed per-eye dimensions. Crop and shift
+values remain input-pixel calibration values and must fit the detected camera
+size. The root ``gst_output`` defaults to ``@dvrk:stereo_alignment:stereo``;
+set it to an empty string to disable the socket output.
 
 With ``preserve_size`` enabled, the aligned crop is scaled back to the declared
 per-eye camera size after maintaining its aspect ratio.  Disable it to publish

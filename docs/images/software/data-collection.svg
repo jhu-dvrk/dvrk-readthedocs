@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="564pt" height="686pt" viewBox="0.00 0.00 564.00 686.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(18 668)">
+<title>data_collection</title>
+<polygon fill="white" stroke="transparent" points="-18,18 -18,-668 546,-668 546,18 -18,18" />
+
+<g id="node1" class="node">
+<title>config</title>
+<path fill="#eff6ff" stroke="#64748b" d="M142,-650C142,-650 12,-650 12,-650 6,-650 0,-644 0,-638 0,-638 0,-618 0,-618 0,-612 6,-606 12,-606 12,-606 142,-606 142,-606 148,-606 154,-612 154,-618 154,-618 154,-638 154,-638 154,-644 148,-650 142,-650" />
+<text text-anchor="middle" x="77" y="-631.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Record configuration</text>
+<text text-anchor="middle" x="77" y="-618.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Videos, topics, encoding</text>
+</g>
+
+<g id="node4" class="node">
+<title>record</title>
+<path fill="#f0fdfa" stroke="#64748b" d="M345.5,-534C345.5,-534 182.5,-534 182.5,-534 176.5,-534 170.5,-528 170.5,-522 170.5,-522 170.5,-502 170.5,-502 170.5,-496 176.5,-490 182.5,-490 182.5,-490 345.5,-490 345.5,-490 351.5,-490 357.5,-496 357.5,-502 357.5,-502 357.5,-522 357.5,-522 357.5,-528 351.5,-534 345.5,-534" />
+<text text-anchor="middle" x="264" y="-515.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_data::record</text>
+<text text-anchor="middle" x="264" y="-502.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Capture and session metadata</text>
+</g>
+
+<g id="edge1" class="edge">
+<title>config-&gt;record</title>
+<path fill="none" stroke="#475569" d="M154,-628C171.86,-628 185.75,-628 185.75,-628 185.75,-628 185.75,-541.09 185.75,-541.09" />
+<polygon fill="#475569" stroke="#475569" points="188.2,-541.09 185.75,-534.09 183.3,-541.09 188.2,-541.09" />
+</g>
+
+<g id="node2" class="node">
+<title>video</title>
+<path fill="#f0fdfa" stroke="#64748b" d="M315,-650C315,-650 213,-650 213,-650 207,-650 201,-644 201,-638 201,-638 201,-618 201,-618 201,-612 207,-606 213,-606 213,-606 315,-606 315,-606 321,-606 327,-612 327,-618 327,-618 327,-638 327,-638 327,-644 321,-650 315,-650" />
+<text text-anchor="middle" x="264" y="-631.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Video streams</text>
+<text text-anchor="middle" x="264" y="-618.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">GStreamer sockets</text>
+</g>
+
+<g id="edge2" class="edge">
+<title>video-&gt;record</title>
+<path fill="none" stroke="#15803d" d="M264,-605.91C264,-605.91 264,-541.01 264,-541.01" />
+<polygon fill="#15803d" stroke="#15803d" points="266.45,-541.01 264,-534.01 261.55,-541.01 266.45,-541.01" />
+</g>
+
+<g id="node3" class="node">
+<title>topics</title>
+<path fill="#eff6ff" stroke="#64748b" d="M487.5,-650C487.5,-650 386.5,-650 386.5,-650 380.5,-650 374.5,-644 374.5,-638 374.5,-638 374.5,-618 374.5,-618 374.5,-612 380.5,-606 386.5,-606 386.5,-606 487.5,-606 487.5,-606 493.5,-606 499.5,-612 499.5,-618 499.5,-618 499.5,-638 499.5,-638 499.5,-644 493.5,-650 487.5,-650" />
+<text text-anchor="middle" x="437" y="-631.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Robot and console</text>
+<text text-anchor="middle" x="437" y="-618.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">ROS 2 topics</text>
+</g>
+
+<g id="edge3" class="edge">
+<title>topics-&gt;record</title>
+<path fill="none" stroke="#475569" stroke-dasharray="5,2" d="M374.33,-628C356.71,-628 342.25,-628 342.25,-628 342.25,-628 342.25,-541.09 342.25,-541.09" />
+<polygon fill="#475569" stroke="#475569" points="344.7,-541.09 342.25,-534.09 339.8,-541.09 344.7,-541.09" />
+</g>
+
+<g id="node5" class="node">
+<title>session</title>
+<path fill="#f0fdfa" stroke="#64748b" d="M354,-418C354,-418 174,-418 174,-418 168,-418 162,-412 162,-406 162,-406 162,-373 162,-373 162,-367 168,-361 174,-361 174,-361 354,-361 354,-361 360,-361 366,-367 366,-373 366,-373 366,-406 366,-406 366,-412 360,-418 354,-418" />
+<text text-anchor="middle" x="264" y="-399.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Recorded session</text>
+<text text-anchor="middle" x="264" y="-386.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">MP4 + sidecar JSON + index.json</text>
+<text text-anchor="middle" x="264" y="-373.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Optional ROS bag and audio</text>
+</g>
+
+<g id="edge4" class="edge">
+<title>record-&gt;session</title>
+<path fill="none" stroke="#475569" d="M264,-489.82C264,-489.82 264,-425.45 264,-425.45" />
+<polygon fill="#475569" stroke="#475569" points="266.45,-425.45 264,-418.45 261.55,-425.45 266.45,-425.45" />
+</g>
+
+<g id="node6" class="node">
+<title>tag</title>
+<path fill="#eff6ff" stroke="#64748b" d="M231,-289C231,-289 65,-289 65,-289 59,-289 53,-283 53,-277 53,-277 53,-257 53,-257 53,-251 59,-245 65,-245 65,-245 231,-245 231,-245 237,-245 243,-251 243,-257 243,-257 243,-277 243,-277 243,-283 237,-289 231,-289" />
+<text text-anchor="middle" x="148" y="-270.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_data::video_tag</text>
+<text text-anchor="middle" x="148" y="-257.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Review and mark frame ranges</text>
+</g>
+
+<g id="edge5" class="edge">
+<title>session-&gt;tag</title>
+<path fill="none" stroke="#475569" d="M202.5,-360.78C202.5,-360.78 202.5,-296.04 202.5,-296.04" />
+<polygon fill="#475569" stroke="#475569" points="204.95,-296.04 202.5,-289.04 200.05,-296.04 204.95,-296.04" />
+</g>
+
+<g id="node8" class="node">
+<title>extract</title>
+<path fill="#f0fdfa" stroke="#64748b" d="M461,-289C461,-289 303,-289 303,-289 297,-289 291,-283 291,-277 291,-277 291,-257 291,-257 291,-251 297,-245 303,-245 303,-245 461,-245 461,-245 467,-245 473,-251 473,-257 473,-257 473,-277 473,-277 473,-283 467,-289 461,-289" />
+<text text-anchor="middle" x="382" y="-270.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">dvrk_data::extract</text>
+<text text-anchor="middle" x="382" y="-257.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Full session or tagged ranges</text>
+</g>
+
+<g id="edge7" class="edge">
+<title>session-&gt;extract</title>
+<path fill="none" stroke="#475569" d="M328.5,-360.78C328.5,-360.78 328.5,-296.04 328.5,-296.04" />
+<polygon fill="#475569" stroke="#475569" points="330.95,-296.04 328.5,-289.04 326.05,-296.04 330.95,-296.04" />
+</g>
+
+<g id="node7" class="node">
+<title>tags</title>
+<path fill="#eff6ff" stroke="#64748b" d="M213.5,-173C213.5,-173 80.5,-173 80.5,-173 74.5,-173 68.5,-167 68.5,-161 68.5,-161 68.5,-141 68.5,-141 68.5,-135 74.5,-129 80.5,-129 80.5,-129 213.5,-129 213.5,-129 219.5,-129 225.5,-135 225.5,-141 225.5,-141 225.5,-161 225.5,-161 225.5,-167 219.5,-173 213.5,-173" />
+<text text-anchor="middle" x="147" y="-154.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Video tags JSON</text>
+<text text-anchor="middle" x="147" y="-141.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Optional selected ranges</text>
+</g>
+
+<g id="edge6" class="edge">
+<title>tag-&gt;tags</title>
+<path fill="none" stroke="#475569" d="M147,-244.91C147,-244.91 147,-180.01 147,-180.01" />
+<polygon fill="#475569" stroke="#475569" points="149.45,-180.01 147,-173.01 144.55,-180.01 149.45,-180.01" />
+</g>
+
+<g id="edge8" class="edge">
+<title>tags-&gt;extract</title>
+<path fill="none" stroke="#475569" d="M225.72,-151C243.76,-151 257.75,-151 257.75,-151 257.75,-151 257.75,-267 257.75,-267 257.75,-267 283.72,-267 283.72,-267" />
+<polygon fill="#475569" stroke="#475569" points="283.72,-269.45 290.72,-267 283.72,-264.55 283.72,-269.45" />
+</g>
+
+<g id="node9" class="node">
+<title>output</title>
+<path fill="#f0fdfa" stroke="#64748b" d="M481.5,-173C481.5,-173 284.5,-173 284.5,-173 278.5,-173 272.5,-167 272.5,-161 272.5,-161 272.5,-141 272.5,-141 272.5,-135 278.5,-129 284.5,-129 284.5,-129 481.5,-129 481.5,-129 487.5,-129 493.5,-135 493.5,-141 493.5,-141 493.5,-161 493.5,-161 493.5,-167 487.5,-173 481.5,-173" />
+<text text-anchor="middle" x="383" y="-154.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Extracted media and ROS-topic CSV</text>
+<text text-anchor="middle" x="383" y="-141.4" font-family="Arial,Helvetica,sans-serif" font-size="12.00">Timestamped outputs</text>
+</g>
+
+<g id="edge9" class="edge">
+<title>extract-&gt;output</title>
+<path fill="none" stroke="#475569" d="M382,-244.91C382,-244.91 382,-180.01 382,-180.01" />
+<polygon fill="#475569" stroke="#475569" points="384.45,-180.01 382,-173.01 379.55,-180.01 384.45,-180.01" />
+</g>
+
+<g id="node10" class="node">
+<title>legend</title>
+<text text-anchor="start" x="241" y="-44.9" font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12.00">Connection legend</text>
+<text text-anchor="start" x="241" y="-24.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#15803d">━▶</text>
+<text text-anchor="start" x="264" y="-25.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">GStreamer socket (video)</text>
+<text text-anchor="start" x="402" y="-24.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#475569">┄▶</text>
+<text text-anchor="start" x="425" y="-25.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">ROS 2 communication</text>
+<text text-anchor="start" x="241" y="-5.9" font-family="Arial,Helvetica,sans-serif" font-size="12.00" fill="#475569">━▶</text>
+<text text-anchor="start" x="264" y="-6.5" font-family="Arial,Helvetica,sans-serif" font-size="10.00">Files and processing</text>
+</g>
+
+<g class="edge-label" data-edge="config-&gt;record" transform="translate(20.500 0.420)"><rect x="144.75" y="-600.42" width="41.0" height="15.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="147.25" y="-589.92" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Settings</text>
+</g><g class="edge-label" data-edge="video-&gt;record" transform="translate(14.500 7.500)"><rect x="235.0" y="-588.46" width="29.0" height="15.0" fill="white" fill-opacity="1" stroke="#15803d" stroke-width="1" /><text text-anchor="start" x="237.5" y="-577.96" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#15803d">Video</text>
+</g><g class="edge-label" data-edge="topics-&gt;record" transform="translate(25.000 0.580)"><rect x="292.25" y="-600.58" width="50.0" height="26.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" stroke-dasharray="5,2" /><text text-anchor="start" x="301.75" y="-590.58" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">ROS 2</text>
+<text text-anchor="start" x="294.25" y="-579.58" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">messages</text>
+</g><g class="edge-label" data-edge="record-&gt;session" transform="translate(30.500 7.495)"><rect x="203.0" y="-472.63" width="61.0" height="15.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="205.5" y="-462.13" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Session files</text>
+</g><g class="edge-label" data-edge="session-&gt;tag" transform="translate(36.500 7.500)"><rect x="129.5" y="-343.41" width="73.0" height="15.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="132" y="-332.91" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Recorded video</text>
+</g><g class="edge-label" data-edge="session-&gt;extract" transform="translate(28.500 7.500)"><rect x="271.5" y="-343.41" width="57.0" height="15.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="274" y="-332.91" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Full session</text>
+</g><g class="edge-label" data-edge="tag-&gt;tags" transform="translate(32.500 7.500)"><rect x="82.0" y="-227.46" width="65.0" height="15.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="84.5" y="-216.96" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Frame ranges</text>
+</g><g class="edge-label" data-edge="tags-&gt;extract" transform="translate(37.500 7.500)"><rect x="182.75" y="-220.97" width="75.0" height="15.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="185.25" y="-210.47" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Selected ranges</text>
+</g><g class="edge-label" data-edge="extract-&gt;output" transform="translate(29.000 7.500)"><rect x="324.0" y="-227.46" width="58.0" height="15.0" fill="white" fill-opacity="1" stroke="#475569" stroke-width="1" /><text text-anchor="start" x="326" y="-216.96" font-family="Arial,Helvetica,sans-serif" font-size="10.00" fill="#475569">Media, CSV</text>
+</g></g>
+</svg>
