@@ -17,7 +17,7 @@ Run it with a :ref:`dvrk-stereo-display-configuration`:
 Options
 *******
 
-``--grid`` displays the calibration grid.
+``-i`` / ``--input`` overrides the side-by-side stereo input.
 
 For a graph of the negotiated display pipeline, see
 :ref:`dvrk-gstreamer-dot-files`.
@@ -70,9 +70,7 @@ The control window allows the operator to:
 
 .. note::
 
-   The calibration grid is not in this window; it is enabled via the
-   ``--grid`` command-line option on ``stereo_display`` or dynamically in
-   ``stereo_display_calibration``. Overlay opacity is configured via
+   Overlay opacity is configured via
    ``"overlay_alpha"`` in ``stereo_display.json``.
 
 
@@ -201,9 +199,8 @@ The HUD subscribes to CRTK topics under the configured console namespace
   reflecting the endoscopic camera's orientation in space.
 * **Safety Warnings**: Instantaneous warning banners if an arm reaches joint
   limits, safety stops, or invalid Cartesian position states (``measured_cp``).
-* **Eye Labels & Alignment Grid**: Left/right corner badges (toggled via the
-  **"L/R Labels"** control button) and an optical alignment grid (enabled via
-  the ``--grid`` command-line option).
+* **Eye Labels**: Left/right corner badges toggled via the **"L/R Labels"**
+  control button.
 
 
 Picture-in-picture (PiP) and augmented reality (AR)
@@ -250,9 +247,10 @@ Camera alignment versus display calibration
 
 Calibrate the camera pair first with the ``dvrk_data`` launch described in
 :ref:`dvrk-video-data`. That step saves the crop, horizontal and vertical
-alignment, and color balance in ``stereo_alignment.json``. At runtime,
-``stereo_alignment`` applies those values and publishes the aligned stereo
-socket used by the display.
+alignment in ``stereo_alignment.json``. Color balance is determined separately
+with ``stereo_find_color_adjustment`` and saved to ``stereo_color_adjustment.json``.
+At runtime, either ``stereo_alignment`` or ``stereo_rectify`` loads the shared
+color file and publishes the stereo socket used by the display.
 
 Next, from the directory containing ``stereo_source.json``,
 ``stereo_alignment.json``, and ``stereo_display.json``, run:

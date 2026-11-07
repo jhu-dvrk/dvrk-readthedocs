@@ -52,22 +52,6 @@ Stereo alignment
      "gst_output": "@dvrk:stereo_alignment:stereo",
      "camera": {
        "size": {"width": 1920, "height": 1080},
-       "left": {
-         "color": {
-           "brightness": 0.0,
-           "contrast": 1.0,
-           "saturation": 1.0,
-           "hue": 0.0
-         }
-       },
-       "right": {
-         "color": {
-           "brightness": 0.0,
-           "contrast": 1.0,
-           "saturation": 1.0,
-           "hue": 0.0
-         }
-       },
        "crop": {"width": 1800, "height": 1012},
        "alignment": {
          "horizontal_shift_px": 0,
@@ -76,10 +60,18 @@ Stereo alignment
      }
    }
 
-The root ``gst_input`` defaults to ``@dvrk:stereo_source:stereo``. As an
-alternative, omit the root input and set both ``camera.left.gst_input`` and
-``camera.right.gst_input`` to canonical dVRK sockets or direct GStreamer source
-fragments. Do not combine a root input with separate eye inputs.
+The root ``gst_input`` defaults to ``@dvrk:stereo_source:stereo``. Processing
+accepts only a combined side-by-side left/right stream. Use ``-i`` /
+``--input`` to override it explicitly; separate eye processing inputs are
+unsupported.
+
+Color correction is stored independently in ``stereo_color_adjustment.json``.
+Both ``stereo_alignment`` and ``stereo_rectify`` discover that file beside their
+processing configuration, or accept ``--color-adjustment /path/to/file.json``.
+An absent discovered file means neutral correction. Generate the shared file
+with ``ros2 run dvrk_data stereo_find_color_adjustment``. Its type is
+``dvrk_data:stereo_color_adjustment@1.0.0`` and its ``left`` and ``right`` objects
+contain ``brightness``, ``contrast``, ``saturation``, and ``hue``.
 
 ``camera.size`` accepts ``"auto"`` or fixed per-eye dimensions. Crop and shift
 values remain input-pixel calibration values and must fit the detected camera

@@ -146,7 +146,7 @@ Bridging a socket to ROS images
 
 .. code-block:: bash
 
-   ros2 run dvrk_data gscam_socket @dvrk:stereo_source:stereo
+   ros2 run dvrk_data gscam_socket -i @dvrk:stereo_source:stereo
 
 The launch file can also be invoked directly when the fully qualified name is
 known:
@@ -201,8 +201,9 @@ The launch starts ``stereo_source`` and opens the GTK calibration tool after
 the source is ready. The tool can create ``stereo_alignment.json`` on its first
 run. It previews the stereo socket, with a side-by-side window or separate
 left and right windows, plus a difference overlay. Adjust horizontal and
-vertical alignment, crop, and optional color correction, then select **Save &
-quit**. The launch stops the source when the tool closes. **Quit** asks about
+vertical alignment and crop, then select **Save & quit**. Use
+``ros2 run dvrk_data stereo_find_color_adjustment`` independently to create
+``stereo_color_adjustment.json``. The launch stops the source when the tool closes. **Quit** asks about
 unsaved changes.
 
 **Apply crop** and **Auto-crop for current alignment** start enabled. Auto-crop
@@ -218,8 +219,15 @@ alignment, and display in order. The alignment calibration tool previews the
 source socket directly; it does not run the separate ``stereo_alignment``
 process. Display calibration and the complete video launch include that
 process. Use the display timing panel to inspect the full running path. Camera
-alignment changes geometry and color; it does not synchronize the hardware
+alignment changes geometry; it does not synchronize the hardware
 cameras or match timestamps between eyes.
+
+The full ``stereo_video_pipeline.launch.py`` launcher selects the only available
+``stereo_alignment.json`` or ``stereo_rectify.json`` automatically. If both
+exist, explicitly pass ``processor:=alignment`` or ``processor:=rectify``.
+It never silently prefers one processor. The selected processor's output is
+wired to the display automatically. Use ``color_config:=/path/to/file.json``
+to override the shared color file.
 
 .. _dvrk-gstreamer-dot-files:
 
