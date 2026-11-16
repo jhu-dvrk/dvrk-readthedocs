@@ -34,20 +34,13 @@ How to
 Installation
 ============
 
-Clone the repository into your workspace:
+Add ``sawSocketStreamer`` using the
+:ref:`instructions for adding components to an existing workspace <vcs-add-components>`.
+Use ``socket-streamer-main.vcs`` or ``socket-streamer-devel.vcs`` to match the
+dVRK installation, then rebuild and source the same workspace.
 
-.. code-block:: bash
-
-   cd ~/ros2_ws/src/cisst-saw   # adjust to your workspace
-   git clone https://github.com/jhu-saw/sawSocketStreamer
-
-Build alongside the dVRK:
-
-.. code-block:: bash
-
-   colcon build   # ROS 2
-   # or: catkin build  (ROS 1)
-   # or: cmake / make  (no ROS)
+The manifest provides the core component. Its optional ROS frontend also
+uses the cisst/ROS and CRTK dependencies supplied by the dVRK manifest.
 
 Configuration files
 ===================

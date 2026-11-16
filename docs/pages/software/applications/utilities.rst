@@ -175,7 +175,9 @@ the dVRK teleoperation can be customized. See also :ref:`derived components
 component directly. The script is given ROS namespaces for an MTM and PSM to
 begin teleoperation with, which could be an actual dVRK MTM and PSM, or the MTM
 could instead be a haptic device such as a `ForceDimension
-<https://github.com/jhu-saw/sawForceDimensionSDK>`_. When running, teleoperation
+<https://github.com/jhu-saw/sawForceDimensionSDK>`_. Retrieve optional SAW
+components using :ref:`Adding components to an existing workspace
+<vcs-add-components>`. When running, teleoperation
 works very similarly to the built-in dVRK teleoperation.
 
 To run teleoperation, first start a :ref:`dVRK system <system>` for the arms you

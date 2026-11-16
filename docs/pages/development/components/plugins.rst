@@ -15,7 +15,11 @@ for it and the component has a *provided interface* that matches the
 dVRK arm it is meant to replace.  We've successfully integrated some
 alternate for the MTM:
 
-* Sensible Phantom Omni using *sawSensablePhantom*
+Retrieve additional master-device components using
+:ref:`Adding components to an existing workspace <vcs-add-components>`.
+Build them together with dVRK before loading them from a system configuration.
+
+* Sensable Phantom Omni using *sawSensablePhantom*
   (https://github.com/jhu-saw/sawSensablePhantom): The Omni doesn't
   provide a gripper so when used with the default dVRK teleoperation,
   the jaws are ignored.  The two buttons on the stylus can be used to

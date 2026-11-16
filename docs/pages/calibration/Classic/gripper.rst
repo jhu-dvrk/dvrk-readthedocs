@@ -47,7 +47,7 @@ port, use ``-p`` (e.g. ``-p udpfw``). A typical run looks like:
 
 ::
 
-   adeguet1@lcsr-dvrk-09:~/ros2_ws/src/dvrk/dvrk_config_jhu/jhu-daVinci$
+   user@computer:~/ros2_ws/src/dvrk/dvrk_config_jhu/jhu-daVinci$
      sawIntuitiveResearchKitGripperCalibration -c sawRobotIO1394-MTML-gripper-34863.json
 
    Configuration file: sawRobotIO1394-MTML-gripper-34863.json

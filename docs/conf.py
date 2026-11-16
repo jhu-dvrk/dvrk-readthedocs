@@ -197,8 +197,8 @@ rst_prolog = """
 
 .. |qladisp| replace:: :ref:`qladisp<qladisp>`
 
-.. |sawKeyboard| replace:: *sawKeyboard*
-.. _sawKeyboard: https://github.com/jhu-saw/sawKeyboard
+.. |sawGenericInput| replace:: *sawGenericInput*
+.. _sawGenericInput: https://github.com/jhu-saw/sawGenericInput
 
 .. |sawTextToSpeech| replace:: *sawTextToSpeech*
 .. _sawTextToSpeech: https://github.com/jhu-saw/sawTextToSpeech

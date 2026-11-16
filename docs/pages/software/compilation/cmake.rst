@@ -80,7 +80,7 @@ The main repositories for the dVRK project are:
   repository is included as a submodule of ``cisst-saw.git``
 
 * https://github.com/jhu-saw/....  - repositories for
-  |sawRobotIO1394|_, |sawKeyboard|_, |sawControllers|_...  All
+  |sawRobotIO1394|_, |sawGenericInput|_, |sawControllers|_...  All
   included as submodules of ``cisst-saw.git``
 
 * http://github.com/jhu-dvrk/sawIntuitiveResearchKit - *SAW*

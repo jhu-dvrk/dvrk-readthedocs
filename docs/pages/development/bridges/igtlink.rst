@@ -39,20 +39,13 @@ How to
 Installation
 ============
 
-Clone the repository into your workspace:
+Add ``sawOpenIGTLink`` using the
+:ref:`instructions for adding components to an existing workspace <vcs-add-components>`.
+Use ``open-igtlink-main.vcs`` or ``open-igtlink-devel.vcs`` to match the
+dVRK installation, then rebuild and source the same workspace.
 
-.. code-block:: bash
-
-   cd ~/ros2_ws/src/cisst-saw
-   git clone https://github.com/jhu-saw/sawOpenIGTLink
-
-Build alongside the dVRK:
-
-.. code-block:: bash
-
-   colcon build   # ROS 2
-   # or: catkin build  (ROS 1)
-   # or: cmake / make  (no ROS)
+The component also requires OpenIGTLink version 3 or newer; install that
+library as described in the component README before building.
 
 Configuration files
 ===================

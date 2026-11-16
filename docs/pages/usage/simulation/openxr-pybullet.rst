@@ -10,11 +10,15 @@ console for a simulated ECM and PSM1--PSM3. ``sawOpenXR`` supplies the
 patient-arm state and renders the endoscope view.
 
 The entry point is `openxr_pybullet.launch.py
-<https://github.com/adeguet1/sawOpenXR/blob/main/ros/launch/openxr_pybullet.launch.py>`_
+<https://github.com/jhu-saw/sawOpenXR/blob/main/ros/launch/openxr_pybullet.launch.py>`_
 in ``saw_openxr``. Its profile is in ``sawOpenXR/share/dvrk_pybullet``.
 
 Prepare and launch
 ##################
+
+Add ``sawOpenXR`` using :ref:`Adding components to an existing workspace
+<vcs-add-components>`, choosing ``openxr-main.vcs`` or ``openxr-devel.vcs``
+to match the dVRK installation.
 
 Build and source a workspace containing ``saw_openxr``, ``dvrk_robot``,
 ``dvrk_console``, ``dvrk_simulator_base``, and ``dvrk_pybullet``. Prepare the
@@ -24,7 +28,7 @@ working EGL configuration for its camera.
 
 Connect the headset to a working OpenXR runtime before starting the session.
 The `sawOpenXR setup instructions
-<https://github.com/adeguet1/sawOpenXR#readme>`_ describe WiVRn for Quest and
+<https://github.com/jhu-saw/sawOpenXR#readme>`_ describe WiVRn for Quest and
 other standalone headsets, including the USB connection option.
 
 From the workspace root:
@@ -108,14 +112,14 @@ The current ``sawOpenXR`` bindings include:
 ``operator_present`` is currently asserted continuously by ``sawOpenXR``;
 it is not a headset-worn sensor. The controller clutches and tracking state
 must be understood independently. See the `component implementation
-<https://github.com/adeguet1/sawOpenXR/blob/main/core/components/code/mtsOpenXR.cpp>`_
+<https://github.com/jhu-saw/sawOpenXR/blob/main/core/components/code/mtsOpenXR.cpp>`_
 and package README for the full input behavior.
 
 Configuration files
 ###################
 
 The `OpenXR PyBullet profile
-<https://github.com/adeguet1/sawOpenXR/tree/main/share/dvrk_pybullet>`_ contains:
+<https://github.com/jhu-saw/sawOpenXR/tree/main/share/dvrk_pybullet>`_ contains:
 
 .. list-table::
    :header-rows: 1

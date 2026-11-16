@@ -151,6 +151,10 @@ when exercise objects use the engine's physics; see :ref:`Simulators
 Other supplied simulator profiles
 *********************************
 
+The OpenXR profiles require ``sawOpenXR`` in addition to the dVRK repositories.
+Retrieve it using :ref:`Adding components to an existing workspace
+<vcs-add-components>` and rebuild the workspace.
+
 The current launch files also support the following combinations. Each table
 entry gives the ROS package followed by its launch filename; run it with
 ``ros2 launch <package> <filename>``. Choose one session at a time, since the
@@ -200,7 +204,7 @@ launcher leaves homing and teleoperation to the operator.
 Source: `dvrk_config_jhu launch files
 <https://github.com/jhu-dvrk/dvrk_config_jhu/tree/main/launch>`_,
 `sawOpenXR launch files
-<https://github.com/adeguet1/sawOpenXR/tree/main/ros/launch>`_, and the
+<https://github.com/jhu-saw/sawOpenXR/tree/main/ros/launch>`_, and the
 `shared session launcher
 <https://github.com/jhu-dvrk/dvrk_simulator_base/blob/main/dvrk_simulator_base/launch.py>`_.
 

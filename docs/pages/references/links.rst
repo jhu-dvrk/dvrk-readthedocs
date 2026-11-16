@@ -103,7 +103,7 @@ cisst libraries and SAW components
   * `cisst-ros <https://github.com/jhu-cisst/cisst-ros>`_ ROS 1 and 2 bridge for SAW components
   * `vcs files <https://github.com/jhu-saw/vcs>`_ for cisst, SAW components and dVRK
   * `sawTextToSpeech <https://github.com/jhu-saw/sawTextToSpeech>`_
-  * `sawKeyboard <https://github.com/jhu-saw/sawKeyboard>`_
+  * `sawGenericInput <https://github.com/jhu-saw/sawGenericInput>`_
   * `sawControllers <https://github.com/jhu-saw/sawControllers>`_
   * `sawRobotIO1394 <https://github.com/jhu-saw/sawRobotIO1394>`_
   * *cisst*\ /*SAW* presentations, September 2021

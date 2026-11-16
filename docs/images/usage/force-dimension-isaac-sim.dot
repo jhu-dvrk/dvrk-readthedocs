@@ -1,6 +1,6 @@
 digraph force_dimension_isaac_sim {
   graph [rankdir=TB, splines=ortho, newrank=true, bgcolor="white", pad=0.25, nodesep=0.4, ranksep=1.0,
-         fontname="Arial,Helvetica,sans-serif", fontsize=16, label="Force Dimension with Isaac Sim and joystick pedals", labelloc=t];
+         fontname="Arial,Helvetica,sans-serif", fontsize=16, label="Force Dimension with Isaac Sim and USB pedals", labelloc=t];
   node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#64748b",
         fontname="Arial,Helvetica,sans-serif", fontsize=12, margin="0.16,0.12"];
   edge [style=solid, color="#475569", fontcolor="#475569", fontname="Arial,Helvetica,sans-serif", fontsize=10, arrowsize=0.7];
@@ -9,16 +9,16 @@ digraph force_dimension_isaac_sim {
   subgraph cluster_control {
     label=""; style=invis;
     hardware [label="Force Dimension masters\nMTML, MTMR", fillcolor="#fff7ed", group="control"];
-    pedals [label="USB joystick foot pedals\nOperator presence, clutch, camera", fillcolor="#fff7ed", group="control"];
+    pedals [label="USB evdev foot pedals\nOperator presence, clutch, camera", fillcolor="#fff7ed", group="control"];
     frontend [label="Isaac Sim ROS frontend\nCRTK topics and diagnostics", group="control"];
     subgraph cluster_system {
       label="dvrk_robot::dvrk_system"; color="#94a3b8"; style=rounded;
       arms [label="sawForceDimensionSDK\nmtsForceDimension, generic masters", group="control"];
-      joystick [label="sawJoystick\nmtsJoystick, pedal events", group="control"];
+      inputs [label="sawGenericInput\nmtsEvdev, pedal events", group="control"];
       console [label="dVRK console\nInputs and pairing", group="control"];
       teleop [label="PSM / ECM teleoperation\nMaster poses to patient commands", group="control"];
       adapters [label="dvrk_psm_from_ros\ndvrk_arm_from_ros", group="control"];
-      joystick -> console [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Presence, clutch,<BR/>camera</TD></TR></TABLE>>];
+      inputs -> console [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Presence, clutch,<BR/>camera</TD></TR></TABLE>>];
       arms -> teleop [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Master state,<BR/>commands</TD></TR></TABLE>>];
       console -> teleop [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Enable, clutch,<BR/>camera</TD></TR></TABLE>>];
       teleop -> adapters [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Patient commands,<BR/>state</TD></TR></TABLE>>];
@@ -37,7 +37,7 @@ digraph force_dimension_isaac_sim {
   }
 
   hardware -> arms [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>USB</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626", minlen=2];
-  pedals -> joystick [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>USB</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
+  pedals -> inputs [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>USB</TD></TR></TABLE>>, color="#dc2626", fontcolor="#dc2626"];
   adapters -> frontend [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>ROS 2 CRTK</TD></TR></TABLE>>, style=dashed];
   frontend -> worker [dir=both, xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>Unix socket<BR/>IPC</TD></TR></TABLE>>, color="#2563eb", fontcolor="#2563eb", constraint=false];
   worker -> display [xlabel=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2" BGCOLOR="white"><TR><TD>RTSP stereo</TD></TR></TABLE>>, color="#15803d", fontcolor="#15803d"];
@@ -49,7 +49,7 @@ digraph force_dimension_isaac_sim {
 
 
   {rank=same; hardware; pedals;}
-  {rank=same; arms; joystick;}
+  {rank=same; arms; inputs;}
 
   // Align the implicit columns at their bottom nodes.
   {rank=same; frontend; viewer; touchscreen;}

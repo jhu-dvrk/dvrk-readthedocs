@@ -11,25 +11,30 @@ can be chosen independently.
 
 .. _usage-force-dimension-isaac:
 
-Force Dimension with Isaac Sim and joystick pedals
-##################################################
+Force Dimension with Isaac Sim and USB pedals
+#############################################
 
 Force Dimension haptic devices provide the generic MTML and MTMR interfaces
-through ``sawForceDimensionSDK``. USB foot pedals configured as a Linux
-joystick provide operator presence, clutch, and camera events through
-``sawJoystick``. Isaac Sim supplies the patient cart and rendered endoscope
+through ``sawForceDimensionSDK``. USB foot pedals provide operator presence, clutch, and camera events through
+``sawGenericInput`` and its ``mtsEvdev`` component. Isaac Sim supplies the patient cart and rendered endoscope
 images; no physical patient-cart controllers are required.
 
 .. figure:: /images/usage/force-dimension-isaac-sim.svg
    :width: 100%
    :align: center
-   :alt: Force Dimension masters and USB joystick pedals connect to generic master interfaces and the dVRK console. Teleoperation reaches Isaac Sim through ROS arm adapters and private simulator IPC. RTSP stereo video reaches stereo_display, whose overlay socket can be previewed in the control panel.
+   :alt: Force Dimension masters and USB evdev pedals connect to generic master interfaces and the dVRK console. Teleoperation reaches Isaac Sim through ROS arm adapters and private simulator IPC. RTSP stereo video reaches stereo_display, whose overlay socket can be previewed in the control panel.
 
-   Haptic masters, joystick console inputs, and the Isaac Sim patient cart
+   Haptic masters, evdev console inputs, and the Isaac Sim patient cart
    use separate device, control, and video paths.
 
 Configuration pieces
 ********************
+
+Retrieve ``sawForceDimensionSDK`` with ``ros-force-dimension-main.vcs`` or
+``ros-force-dimension-devel.vcs`` using
+:ref:`Adding components to an existing workspace <vcs-add-components>`.
+Check that its dependency versions match your dVRK workspace. Add
+``sawGenericInput`` if the workspace does not already contain it.
 
 This is an integration example assembled from the existing component
 configurations, rather than a dedicated JHU launch profile. Prepare Isaac Sim
@@ -43,18 +48,17 @@ system configuration:
   fields. Choose the frame transforms and gripper settings for the devices
   being used; :ref:`components-alternative-hardware` describes the supported
   master features.
-* Load ``sawJoystick`` with class ``mtsJoystick`` and map its button events
-  to the console's ``operator_present``, ``clutch``, and ``camera`` inputs.
-  Use ``input_type: COMPONENTS``. The current
-  ``jhu-dVRK/system-MTML-PSM1-joystick-console-input.json`` example and
-  ``misc/sawJoystickConfiguration.json`` show these component/interface
-  mappings. Button indices and the ``/dev/input/js*`` device depend on the
-  pedals; see :ref:`config-pedals-usb`.
+* Load ``sawGenericInput`` with class ``mtsEvdev`` and map its named button
+  interfaces to the console's ``operator_present``, ``clutch``, and ``camera``
+  inputs. Use ``input_type: COMPONENTS``. The
+  :ref:`USB pedal configuration <config-pedals-usb>` shows the device selector,
+  ``KEY_*``/``BTN_*`` mappings, and component/interface connections.
 * Retain the patient-arm ROS adapters from
-  ``dvrk_isaac_sim/share/dvrk_systems/system-MTML-MTMR-Haply-patient-cart-ROS.json``:
+  `Haply simulation system configuration
+  <https://github.com/jhu-saw/sawHaplyService/blob/devel/share/dvrk_simulation/system-Haply.json>`_:
   ``dvrk_psm_from_ros`` for PSMs and ``dvrk_arm_from_ros`` for ECM. Replace
-  that file's Haply masters and simulated console inputs with the two
-  components above. Pair MTMR with PSM1, MTML with PSM2, and both masters
+  that file's Haply masters with the Force Dimension component and retain
+  the ``sawGenericInput`` pedal mappings described above. Pair MTMR with PSM1, MTML with PSM2, and both masters
   with ECM; a single-device setup can retain just one PSM pairing.
 
 Start the simulator in a sourced terminal:
@@ -104,7 +108,10 @@ ready-to-launch profile is ``dvrk_config_jhu/jhu-daVinci-Si/haply``.
 Prepare and launch
 ******************
 
-Build ``sawHaplyService`` in the workspace and start Haply Service. The
+Retrieve ``sawHaplyService`` using
+:ref:`Adding components to an existing workspace <vcs-add-components>`
+with ``ros-haply-main.vcs`` or ``ros-haply-devel.vcs``. Build and source the
+workspace, then start Haply Service. The
 profile uses the existing JHU device assignments: MTMR base ``0699`` with
 stylus ``1605``, and MTML base ``069E`` with stylus ``1606``. The service
 endpoint is ``ws://localhost:10001``. Complete the
@@ -177,13 +184,15 @@ and ``jhu-daVinci-Si/open-xr``. They contain site-specific hardware serial
 numbers, calibration paths, IO settings, and DeckLink capture devices.
 Complete the :ref:`real-robot setup and startup checks <usage-real>` and
 match these settings to your hardware. The `sawOpenXR README
-<https://github.com/adeguet1/sawOpenXR#readme>`_ also records the package's
+<https://github.com/jhu-saw/sawOpenXR#readme>`_ also records the package's
 hardware-use limitations; these configurations describe an integration and
 do not establish that it has been validated for another system.
 
 Launch a JHU profile
 ********************
 
+Add ``sawOpenXR`` using :ref:`Adding components to an existing workspace
+<vcs-add-components>` with ``openxr-main.vcs`` or ``openxr-devel.vcs``.
 With the workspace built and sourced, connect the OpenXR runtime and headset
 as in the :ref:`PyBullet example <usage-openxr-pybullet>`. Choose the launch
 matching the physical cart.
