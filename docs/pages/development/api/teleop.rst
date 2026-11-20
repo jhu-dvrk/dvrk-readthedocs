@@ -19,15 +19,16 @@ under the namespace ``MTMx_PSMx`` (e.g. ``MTML_PSM1``,
   * *cisst*: event write ``std::string``
   * *ROS*: publisher ``std_msgs/String``
   * dVRK specific: current state.  Possible values are defined in
-    ``components/code/mtsTeleOperationPSM.cpp``: ``DISABLED``,
-    ``SETTING_ARMS_STATE``, ``ALIGNING_MTM`` and ``ENABLED``.
+    ``core/components/code/mtsTeleOperationPSM.cpp``: ``DISABLED``,
+    ``SETTING_ARMS_STATE``, ``CHECKING_DATA``, ``ALIGNING_MTM`` and
+    ``ENABLED``.
 
 * ``desired_state``
 
   * *cisst*: event write ``std::string``
   * *ROS*: publisher ``std_msgs/String``
   * dVRK specific: desired state.  Possible values are defined in
-    ``components/code/mtsTeleOperationPSM.cpp``: ``DISABLED``,
+    ``core/components/code/mtsTeleOperationPSM.cpp``: ``DISABLED``,
     ``ALIGNING_MTM`` and ``ENABLED``.
 
 * ``state_command``
@@ -143,7 +144,11 @@ under the namespace ``MTMx_PSMx`` (e.g. ``MTML_PSM1``,
 ECM
 ***
 
-C++ class is ``mtsTeleOperationECM``.
+C++ classes are ``mtsTeleOperationECMTwoHands`` and
+``mtsTeleOperationECMOneHand`` (both derived from
+``mtsTeleOperationECMBase``).  Possible ``current_state`` values are
+``DISABLED``, ``SETTING_ARMS_STATE``, ``CHECKING_DATA``, and
+``ENABLED`` (desired states: ``DISABLED`` and ``ENABLED``).
 
 * ``current_state``
 

@@ -8,11 +8,11 @@ PSM teleoperation
 Introduction
 ************
 
-The dVRK teleoperation components (``mtsTeleOperationPSM`` and
-``mtsTeleOperationECM``) are provided as examples of dVRK
-applications.  As much as we would like to have an implementation as
-good as the teleoperation provided by Intuitive Surgical on their
-clinical systems, this is not (yet) the case.
+The dVRK teleoperation components (``mtsTeleOperationPSM``,
+``mtsTeleOperationECMTwoHands``, and ``mtsTeleOperationECMOneHand``) are
+provided as examples of dVRK applications.  As much as we would like to have an
+implementation as good as the teleoperation provided by Intuitive Surgical on
+their clinical systems, this is not (yet) the case.
 
 If you need to write a new teleoperation logic or build upon the existing one,
 take a look at the :ref:`application development section <devel-options>`.
@@ -62,7 +62,12 @@ corresponding to the different stages of teleoperation:
   In this state the teleoperation tried to "enable" and "home" the two arms, MTM
   and PSM (``state_command("enable")`` and ``state_command("home")``) and
   monitors their operating states (``operating_state``).  If both arms are ready,
-  the teleoperation component moves to the next state, ``ALIGNING_MTM``.
+  the teleoperation component moves to the next state, ``CHECKING_DATA``.
+
+``CHECKING_DATA``
+  In this state the teleoperation verifies that the Cartesian poses reported by
+  both arms (``MTM/measured_cp`` and ``PSM/setpoint_cp``) are valid before
+  moving to ``ALIGNING_MTM``.
 
 ``ALIGNING_MTM``
   At the point both arms are ready.
@@ -216,12 +221,12 @@ Code
 ****
 
 * dVRK constants:
-  https://github/jhu-dvrk/sawIntuitiveResearchKit/blob/main/components/include/sawIntuitiveResearchKit/mtsIntuitiveResearchKit.h
+  https://github.com/jhu-dvrk/sawIntuitiveResearchKit/blob/main/core/components/include/sawIntuitiveResearchKit/mtsIntuitiveResearchKit.h
   (some related to PSM teleoperation)
 * Header file:
-  https://github/jhu-dvrk/sawIntuitiveResearchKit/blob/main/components/include/sawIntuitiveResearchKit/mtsTeleOperationPSM.h
+  https://github.com/jhu-dvrk/sawIntuitiveResearchKit/blob/main/core/components/include/sawIntuitiveResearchKit/mtsTeleOperationPSM.h
 * Code file:
-  https://github/jhu-dvrk/sawIntuitiveResearchKit/blob/main/components/code/mtsTeleOperationPSM.cpp
+  https://github.com/jhu-dvrk/sawIntuitiveResearchKit/blob/main/core/components/code/mtsTeleOperationPSM.cpp
 
 API
 ***
