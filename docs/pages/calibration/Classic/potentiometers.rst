@@ -72,12 +72,57 @@ identify a zero position based on mechanical properties.
 
 .. warning::
 
-   It is important to calibrate the potentiometer scales before the
-   offsets!
+   When using the original ``.cal`` file for your arm, it is important
+   to calibrate the potentiometer scales before the offsets!
 
-.. note::
+.. _calibration-classic-pots-missing-cal:
 
-   If your original calibration files are way off, the original offsets might prevent the dVRK from working (even with the ``-C`` option). You might have to do a rough offset calibration to get an initial position closer to zero. 
+Missing ``.cal`` files (MTMs)
+-----------------------------
+
+Original factory ``.cal`` files were historically required for all
+Classic arms, and if you have the original ``.cal`` files for your
+arms, you should always use them.  However, these files are getting
+harder to locate for new groups.
+
+For the **MTMs**, you don't strictly need the calibration files
+specific to your arms.  In most cases you can use the nominal MTM
+calibration files provided in
+``sawIntuitiveResearchKit/share/cal-files`` (``MTML-average.cal`` and
+``MTMR-average.cal``, see
+https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/share/cal-files)
+or reuse ``.cal`` files from another system (for example in
+``dvrk_config_jhu/jhu-dVRK/cal-files``:
+https://github.com/dvrk-config/dvrk_config_jhu/tree/main/jhu-dVRK/cal-files).
+
+.. important::
+
+   Left (``MTML``) and right (``MTMR``) calibration files are
+   different (notably, the 5th actuator/joint has opposite potentiometer
+   scale signs and joints 1, 4, and 5 have different offsets due to
+   the mirrored wrist gimbal and asymmetric joint limits).  Make sure
+   you use an ``MTML`` ``.cal`` file for ``MTML`` and an ``MTMR``
+   ``.cal`` file for ``MTMR``, and pass your arm's serial number using
+   ``-s <serial>`` when running ``dvrk-io-config-generator.py``.
+
+When starting from a nominal or borrowed ``.cal`` file, the potentiometer
+scales are already within ~1% of your arm's true scales, but the
+initial pose reported from the potentiometer offsets might be very far
+off.  Because inaccurate
+initial offsets can cause software joint limits to be wrong during the
+large-motion scale calibration, follow this **3-step process** instead
+(running ``dvrk_system`` with ``-K -C`` and restarting it after saving
+each step):
+
+1. **Calibrate offsets first using the zero position** (:ref:`Calibrating offsets <calibration-classic-pots-offset>`):
+   this gives an initial estimate of the potentiometer offsets so that
+   joint positions and software joint limits are reasonably accurate.
+2. **Calibrate the scales** (:ref:`Calibrating scales <calibration-classic-pots-scale>`):
+   move across the joint range to calibrate potentiometer scales
+   against the encoders.
+3. **Re-calibrate the offsets using the zero position** (:ref:`Calibrating offsets <calibration-classic-pots-offset>`):
+   since updating the scales shifts the linear conversion, re-run the
+   offset calibration at the zero position to finalize the offsets. 
 
 Requirements
 ============

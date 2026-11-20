@@ -60,14 +60,29 @@ The script has 6 options:
   :ref:`qladisp <qladisp>`.
 * *calibration file*: also referred as ``.cal`` file. For all Classic
   arms (first generation PSMs and ECMs as well as all MTMs currently
-  supported), you will need a ``.cal`` file.  This file contains the
-  latest calibration performed by Intuitive Surgical.  You will need
-  to reach out to Intuitive Surgical to get these files.  Please save
-  them along your dVRK configuration files for future use.
+  supported), ``dvrk-io-config-generator.py`` requires a ``.cal``
+  file.  This file contains the factory calibration performed by
+  Intuitive Surgical.  If you have the original ``.cal`` files for
+  your arms, you should always use them and save them along your dVRK
+  configuration files for future use.  However, original ``.cal``
+  files are getting harder to locate.  For MTMs, you do not strictly
+  need the calibration file specific to your arm: you can use the
+  nominal MTM calibration files provided in
+  ``sawIntuitiveResearchKit/share/cal-files`` (``MTML-average.cal``
+  and ``MTMR-average.cal``, see
+  https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/share/cal-files)
+  or reuse an MTM ``.cal`` file from another system (for example from
+  https://github.com/dvrk-config/dvrk_config_jhu/tree/main/jhu-dVRK/cal-files).
+  When using a nominal or
+  borrowed ``.cal`` file, you must specify your arm's serial number
+  with ``-s`` and follow the 3-step :ref:`Classic potentiometer
+  calibration <calibration-classic-pots>` procedure.
 * *serial number*: you can find the serial number on the arm itself
   (aka `trk id`).  The serial number doesn't need to be specified for
-  Classic arms since it can be found in the `.cal` file, but you need
-  to make sure it matches the number on the arm you're using.
+  Classic arms when using the arm's own ``.cal`` file since it can be
+  found in the ``.cal`` file, but you must specify it with ``-s`` when
+  using a nominal or borrowed ``.cal`` file (and always make sure it
+  matches the number on the arm you're using).
 * *port*: port used to connect to the dVRK controllers. It is optional,
   and the default is ``fw``.  If you are using FireWire between the
   controllers and Ethernet to connect between the PC and the first dVRK

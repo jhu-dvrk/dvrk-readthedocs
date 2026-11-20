@@ -16,9 +16,15 @@ Before you get started, make make sure you've setup the dVRK arms first:
 The dVRK Classic arms use a fair amount of analog signals that need to
 be calibrated for better accuracy.  The initial values in the JSON IO
 configuration file are generated from the ``.cal`` file provided by
-ISI.  Unfortunately, these values don't take into account the
-differences between the original ISI controllers and the dVRK
-controllers, so it is required to calibrate each set of arm/controller.
+ISI (if you have the original ``.cal`` files for your arms, you should
+use them; for MTMs without original ``.cal`` files, nominal ``MTML``
+and ``MTMR`` ``.cal`` files are available as described in
+:ref:`configuration generators <config-generators>` and
+:ref:`potentiometer calibration <calibration-classic-pots>`).
+Unfortunately, the values in the ``.cal`` files don't take into
+account the differences between the original ISI controllers and the
+dVRK controllers, so it is required to calibrate each set of
+arm/controller.
 
 There are a number of different calibration steps to perform,
 different for each type of arm. The relevant calibrations for each arm
