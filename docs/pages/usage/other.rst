@@ -300,10 +300,10 @@ Configuration files
      - Receives the composited stereo socket for the headset.
 
 Sources: `Classic launch
-<https://github.com/jhu-dvrk/dvrk_config_jhu/blob/main/launch/openxr_davinci.launch.py>`_,
+<https://github.com/dvrk-config/dvrk_config_jhu/blob/main/launch/openxr_davinci.launch.py>`_,
 `Classic configuration
-<https://github.com/jhu-dvrk/dvrk_config_jhu/tree/main/jhu-daVinci/open-xr>`_,
+<https://github.com/dvrk-config/dvrk_config_jhu/tree/main/jhu-daVinci/open-xr>`_,
 `Si launch
-<https://github.com/jhu-dvrk/dvrk_config_jhu/blob/main/launch/openxr_davinci_si.launch.py>`_,
+<https://github.com/dvrk-config/dvrk_config_jhu/blob/main/launch/openxr_davinci_si.launch.py>`_,
 and `Si configuration
-<https://github.com/jhu-dvrk/dvrk_config_jhu/tree/main/jhu-daVinci-Si/open-xr>`_.
+<https://github.com/dvrk-config/dvrk_config_jhu/tree/main/jhu-daVinci-Si/open-xr>`_.

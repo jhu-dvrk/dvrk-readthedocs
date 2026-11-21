@@ -6,7 +6,7 @@
 Power board QLA
 ***************
 
-The QLA board is designed to support up to 4 axis.  For each axis, it provides:
+The QLA board is designed to support up to 4 axes.  For each axis, it provides:
 
   * Motor power using linear amplifiers, either current or voltage mode.  Voltage
     mode was introduced in QLA Rev 1.5.  The QLA supports up to 48V, 6.25A
@@ -24,7 +24,7 @@ The QLA has the following connectors:
   * 3 x 2-pin connectors for fans (12V)
 
 The QLA board also includes safety relays which can be integrated into the
-systems's estop chain. To cool the 4 linear amplifiers, the board uses a large
+system's e-stop chain. To cool the 4 linear amplifiers, the board uses a large
 aluminum heatsink. Active cooling (i.e., a fan) was added in later revisions.
 
 QLA boards are designed to be mated with FPGA1394 boards. The FPGA1394 board
@@ -35,7 +35,7 @@ FireWire and Ethernet interfaces to the host computer.
    :align: center
    :width: 400
  
-   QLA board under a FPGA1394
+   QLA board under an FPGA1394
 
 .. note::
 

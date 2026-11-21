@@ -25,7 +25,7 @@ data, i.e. the *mtsCollectorState* and *mtsCollectorEvent*.
   containing a short history of the state and are advanced at each iteration
   (time tic).
 
-* Event collectors: component that can dynamically create required interfaces
+* Event collectors: components that can dynamically create required interfaces
   to observe events, with (*write*) or without payload (*void*).
 
 To manage multiple collectors at once, |cisstMultiTask|_ also provides
@@ -148,7 +148,7 @@ separated text file (CSV) and the content is described in a ``.desc`` text file.
     Data: jaw/measured_js.Name.size:{uli}
     Data: jaw/measured_js.Position.size:{uli}
 
-The description file provides the path to the CSV file, the data and time of the
+The description file provides the path to the CSV file, and the date and time of the
 collection reference's time (start time). For each data element, you get the
 name and type (``d`` for double, ``str`` for string...)
 
@@ -171,7 +171,7 @@ any).
    8.375486588,2,0,1,1,LARGE_NEEDLE_DRIVER:400006[..]
    8.375498866,1,8.375485771,1,1,2,HOMED,1,0
 
-Note that event's payload might contain their own timestamp. It corresponds to
+Note that an event's payload might contain its own timestamp. It corresponds to
 the time the event was emitted. This timestamp is more precise than the time
 received and should be used when available.
 
@@ -193,7 +193,7 @@ There are also :ref:`ROS topics to control the state and event collectors
 Drawbacks
 =========
 
-One of the main drawback of the state collectors is that not all state data
+One of the main drawbacks of the state collectors is that not all state data
 members are stored in a state table, and if they are, they don't always follow
 the CRTK naming convention (since they are meant to be internal).
 
@@ -210,7 +210,7 @@ component will lead to:
     E- Class mtsManagerLocal: File: mtsManagerLocal.cpp Line: 1975 -  Connect: failed to register interfaces for component "", the following component(s) are available: ::QtComponent, ECM, ECM_GUI, ECM_PID, ECM_PID_GUI, ECM_SUJ, LCM_MCC, MCS, MTML, MTML_GUI, MTML_MTMR_ECM, MTML_MTMR_ECM_widget, MTML_PID, MTML_PID_GUI, MTML_PSM2, MTML_PSM2_widget, MTML_PSM3, MTML_PSM3_widget, MTMR, MTMR_GUI, MTMR_PID, MTMR_PID_GUI, MTMR_PSM1, MTMR_PSM1_widget, PSM1, PSM1_GUI, PSM1_PID, PSM1_PID_GUI, PSM1_SUJ, PSM2, PSM2_GUI, PSM2_PID, PSM2_PID_GUI, PSM2_SUJ, PSM3, PSM3_GUI, PSM3_PID, PSM3_PID_GUI, PSM3_SUJ, SUJ, collectors, collectorsQt, collectors_PSM1_StateTable, collectors_PSM1_StateTable::QtComponent, console_widget, system, system_widget, text-to-speech, 
 
 The nice thing is that you can find all the existing components in the error
-messages in the cisstLog-xxx.txt file.  Same thing for an incorrect data name (example with type measured_pc instead of measured_cp):
+messages in the ``cisstLog-xxx.txt`` file.  Same thing for an incorrect data name (example with typo ``measured_pc`` instead of ``measured_cp``):
 
 ::
 

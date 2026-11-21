@@ -18,7 +18,7 @@ the image above.
 
 .. note::
 
-   If your controllers have the 4 and 5 pins connectors, you can just
+   If your controllers have the 4-pin and 5-pin connectors, you can just
    read the section :ref:`"Modular E-Stop chain" <estop-modular>` to
    figure out how to use the provided e-stop cables.  Everything else
    is for upgrading older controllers, reference and debugging.
@@ -37,7 +37,7 @@ Overview of safety chain
 Each controller box contains one or two connectors to support a
 "safety chain". The basic concept is that the safety chain must be
 unbroken (i.e., electrically closed) for the motor power supplies in
-all of connected controller boxes to be enabled.  If any device on
+all of the connected controller boxes to be enabled.  If any device on
 the safety chain breaks electrical continuity, then all motor power
 supplies in all connected controller boxes are disabled.  Devices in
 the safety chain include manually operated switches, such as the
@@ -130,7 +130,7 @@ These are shown in the following image (from the dvrk-estop-retrofit project):
    :align: center
 
 This design is intended to enable quick reconfiguration of the safety
-circuit. For example, a complete DVRK setup (4 daisy-chained
+circuit. For example, a complete dVRK setup (4 daisy-chained
 controller boxes) would have 1 E-Stop Cable, 3 Extension Cables, and 1
 Termination Plug. To split this into two separate systems (e.g.,
 MTMR+PSM1 and MTML+PSM2), each system would use 1 E-Stop Cable, 1
@@ -195,7 +195,7 @@ It is good practice to connect the GND (ground) on all components of a
 system. The original controller box, with a 4-pin safety connector,
 did not include a specific GND connection between controller boxes and
 therefore relied on the likelihood that the GND would be shared via
-the AC wiring (e.g., if all controller boxes are plugged in to the
+the AC wiring (e.g., if all controller boxes are plugged into the
 same AC circuit).
 
 To correct this deficiency, later versions of the controller box
@@ -226,7 +226,7 @@ via the e-stop. The figure below shows the wiring with the 5-pin
 safety connector, but similar wiring can be done with the single 4-pin
 connector.
 
-Connect the modified connector to the controller box you want to debug and run the ''qladisp'' program:
+Connect the modified connector to the controller box you want to debug and run the ``qladisp`` program:
 
 .. code-block:: bash
 
@@ -250,8 +250,7 @@ Test single controller box with QLA relays in the loop
 ******************************************************
 
 After confirming that the power system is working, we start to add
-relays inside one controller box to the chain.  With the [modular
-connector setup](#3-modular-e-stop-chain-recommended), you should
+relays inside one controller box to the chain.  With the :ref:`modular connector setup <estop-modular>`, you should
 attach the E-Stop cable to the 5-pin connector and the Termination
 Plug to the 4-pin connector, as shown in the following figure.
 Alternatively, for a single 4-pin or 5-pin connector, modify the cable
@@ -292,9 +291,9 @@ Assume we test board 0 first:
 
 * Turn on relay now
 
- * ``$ qladisp 0``
- * Press 'p' to turn on relay
- * You should also hear a click sound from the relay
+  * ``$ qladisp 0``
+  * Press 'p' to turn on relay
+  * You should also hear a click sound from the relay
 
 * Do a continuity test between T1 and T2. Now they should be shorted;
   if not, contact us.

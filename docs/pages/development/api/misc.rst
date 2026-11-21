@@ -13,14 +13,14 @@ See also cisstMultiTask state :ref:`collectors <collectors>`.
 
   * *cisst*: command write ``double``
   * *ROS*: subscriber ``std_msgs/Float64``
-  * dVRK specific. Start data collection in `delay` seconds.  To start now, send
+  * dVRK specific. Start data collection in ``delay`` seconds.  To start now, send
     0 as delay.
 
 * ``collectors/stop``
 
   * *cisst*: command write ``double``
   * *ROS*: subscriber ``std_msgs/Float64``
-  * dVRK specific. Stop data collection in `delay` seconds.  To stop now, send
+  * dVRK specific. Stop data collection in ``delay`` seconds.  To stop now, send
     0 as delay.
 
 * ``collectors/set_working_directory``
@@ -35,7 +35,7 @@ See also cisstMultiTask state :ref:`collectors <collectors>`.
   * *ROS*: subscriber ``std_msgs/Empty``
   * dVRK specific. Reset the file names for data collection.  Stop followed by
     start doesn't change the file used for data collection.  To create a new
-    file, you need to use ``set_output_to_default``.  It this method is called
+    file, you need to use ``set_output_to_default``.  If this method is called
     while data collection is ongoing, the collectors will automatically stop,
     save the remaining data in the current file, open a new file and restart the
     collection.

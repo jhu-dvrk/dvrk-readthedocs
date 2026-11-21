@@ -5,8 +5,7 @@ The dVRK usually comes with a set of foot pedals.  If you have a full
 da Vinci Classic surgeon console, you will need to disconnect the foot
 pedals and use a standard extension cable.
 
-This section also presents alternative foot pedals that can be used
-the dVRK controllers and software.  There are multiple cases where one
+This section also presents alternative foot pedals that can be used with the dVRK controllers and software.  There are multiple cases where one
 might need some extra foot pedals:
 
 * Splitting your system into two systems, e.g. using the MTMR and PSM1

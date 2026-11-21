@@ -18,7 +18,7 @@ positions (radians for revolute joints and meters for prismatic
 joints). The conversion is a linear function based on an offset and a
 scale, i.e. ``position = offset + scale * voltage``.  Intuitive
 Surgical performed an initial calibration for all arms and can provide
-these values in a ``.cal`` file.  Using these ``.cal`` file and the
+these values in a ``.cal`` file.  Using these ``.cal`` files and the
 dVRK config generator, we get the IO JSON
 ``sawRobotIO1394-<arm>-<serial>.json`` files used for the dVRK.  See
 :ref:`configuration generators<config-generators>`.
@@ -61,13 +61,13 @@ identify a zero position based on mechanical properties.
 
 * For the calibration process, you need to hold the arm in zero
   position.  You can do this with the arm powered or not.  When
-  powered, you can use the GUI arm widget to control the joints
-  position and get the arm closed to the zero position (introduced in
+  powered, you can use the GUI arm widget to control the joint
+  positions and get the arm close to the zero position (introduced in
   dVRK 2.0).
 
 * This page contains a simple solution to calibrate the potentiometer
   offsets for the PSM last 4 actuators.  We also provide a method to
-  `calibrate the PSM 3rd potentiometer
+  :ref:`calibrate the PSM 3rd potentiometer
   <calibration-classic-pots-depth>`.
 
 .. warning::
@@ -128,7 +128,7 @@ Requirements
 ============
 
 For the ECM, make sure the brakes are properly calibrated.  This
-requires to calibrate both the controller current (see above) and the
+requires calibrating both the controller current (see above) and the
 power to release the brakes.
 
 As for the other calibration steps, you need to have all the
@@ -187,11 +187,11 @@ command line options for ``dvrk_system`` should look like:
 
 .. note::
 
-   The ``-C`` command line option (added in release 2.0.1) allows to
+   The ``-C`` command line option (added in release 2.0.1) allows you to
    run the dVRK system without the potentiometer safety checks
    (**C**\ alibration mode).  Otherwise, with very poorly calibrated
    potentiometer parameters, the application would keep shutting down,
-   preventing users to calibrate their potentiometer parameters.
+   preventing users from calibrating their potentiometer parameters.
 
 The file ``system-PSM2.json`` is specific to each system since it
 points to your ``sawRobotIO1394-PSM2-00000.json`` file.
@@ -206,14 +206,14 @@ In a separate shell, start the :ref:`potentiometer calibration script
 
 Make sure you use the same ``sawRobotIO1394-XXX-00000.json`` for the
 calibration script and the system application! The file name can be
-found in the system-PSM2.json file you're using.
+found in the ``system-PSM2.json`` file you're using.
 
 The ``-i`` option is required and should match the IO name in the system JSON configuration file.  The name is also used for the IO tab in the GUI.
 
 The calibration script will query the arm serial number from the JSON
 file and will display it.  The system application will do the same
 and display the serial number in the IO Qt widget.  This ensures that
-both applications are using an JSON file specific to the arm you are
+both applications are using a JSON file specific to the arm you are
 trying to calibrate.  But, if you happen to use different copies of
 the configuration file for your arm, the current system has no way to
 detect it.  So, make sure you are using the same file for both
@@ -252,8 +252,8 @@ The result should look like:
   6    | -79.427331 | -79.140566 |  1.003623
 
 In this case you can see corrections as high as 2% on the third joint
-(index 2).  Press `y[enter]` to save the results in a new JSON file.
-You can review the changes with `meld` or your preferred diff tool.
+(index 2).  Press ``y[enter]`` to save the results in a new JSON file.
+You can review the changes with ``meld`` or your preferred diff tool.
 
 Then stop the dVRK system application and restart it with the updated
 JSON IO file to re-run the calibration script.  The results should
@@ -270,7 +270,7 @@ improve:
   5    | -78.374442 | -78.373988 |  1.000006
   6    | -79.140566 | -79.138265 |  1.000029
 
-There is usually no point to save the results of the second pass.
+There is usually no point in saving the results of the second pass.
 
 .. _calibration-classic-pots-offset:
 
@@ -283,14 +283,14 @@ hold the joints at their zero position for the last 4 joints of the
 ECM), you will need to figure out a way to constrain the arm to its
 zero position (mechanical zero).
 
-For the scales' calibration, you first need to start the system
+As with the scale calibration, you first need to start the system
 application and power the arm.  If the arm can power with the existing
 potentiometer offsets, home the arm.  You can then either keep the arm
 powered and use the motors to position it close to its mechanical
 zero.  For the ECM and PSM, when the arm is maintained in position
 using its motors, you can use the "clutch" button to release the PID
 controller and position the arm manually.  For all arms, you can also
-use the ROS topics to send `move` goals or use the Qt GUI (dVRK 2.0
+use the ROS topics to send ``move`` goals or use the Qt GUI (dVRK 2.0
 and above).  Once the arm is close to its mechanical zero position,
 you can use the script below.
 
@@ -321,7 +321,7 @@ For the MTMs or ECM, the script will save all joint offsets.  For the
 PSMs, since we know there is an easy way to calibrate the last 4 joint
 offsets, the script will prompt you to figure out if you should save
 all the joints or only the last 4.  If you are using the Lego bars or
-template describe above, **DO NOT** save all, just save the last 4.
+template described above, **DO NOT** save all, just save the last 4.
 
 Then stop the system application, make sure you restart it with the
 updated JSON IO file and re-run the calibration script.  The results
@@ -338,5 +338,5 @@ should improve:
   5    |  175.741625 |  175.801207 | -0.059582
   6    |  179.851204 |  179.858797 | -0.007594
 
-Similar to the scales, there is usually no point to save the results
+Similar to the scales, there is usually no point in saving the results
 of the second pass for the offsets.

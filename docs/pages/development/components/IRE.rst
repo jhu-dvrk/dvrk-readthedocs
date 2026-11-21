@@ -12,11 +12,11 @@ is part of the *cisst* library *cisstInteractive*.
 To summarize, the IRE can:
 
 * Start a Python interpreter in the same process as all the other components
-* Find any component through the |cisstMultiTask| component manager
+* Find any component through the |cisstMultiTask|_ component manager
 * Since the IRE itself is a component, it can dynamically connect to any existing
   component
 * The IRE component can automatically mirror any interface because all
-  |cisstMultiTask| interfaces are self-describing
+  |cisstMultiTask|_ interfaces are self-describing
 * Using the mirrored interface's commands, the IRE can create callable
   objects able to trigger said commands
 
@@ -142,7 +142,7 @@ use:
    # short version
    PSM2_PID = cisstMultiTask.mtsCreateClientInterface('system_Python', 'PSM2_PID', 'Controller')
 
-The IRE provides access to the |cisstMultiTask| Local Component Manager (LCM). To get a list of all available components, use:
+The IRE provides access to the |cisstMultiTask|_ Local Component Manager (LCM). To get a list of all available components, use:
 
 .. code-block:: python
 

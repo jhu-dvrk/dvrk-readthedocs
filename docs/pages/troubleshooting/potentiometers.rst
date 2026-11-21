@@ -57,21 +57,21 @@ Connections
 
 If you're running into error messages regarding potentiometer and
 encoder inconsistencies, the first thing to check is the physical
-connections. Potentiometers feedback is an analog signal and is
+connections. Potentiometer feedback is an analog signal and is
 sensitive to bad connections/grounding. You will need to check the
 following connections:
 
 * The large Cannon ITT connector at the back of the dVRK controller
   (see `Cannon
-  ITT <https://www.ittcannon.com/products/dl-zif-connector/>`_.  Make
-  sure the connector is clean and the screw on the back is tighten (a
+  ITT <https://www.ittcannon.com/products/dl-zif-connector/>`_).  Make
+  sure the connector is clean and the screw on the back is tightened (a
   quarter turn).
 
 * The two Micro DB68 SCSI cables between the dMIB and the QLA boards
   (see :ref:`dVRK related acronym definitions <acronyms>`).
 
 To help yourself locate these connectors, check the :ref:`dVRK Classic
-controller's documentation <classic-internal>`
+controller's documentation <classic-internal>`.
 
 .. figure:: /images/controllers/qla1-controller-layout.jpg
    :width: 400
@@ -119,7 +119,7 @@ Start the system application and configure the system without homing:
   fairly stable (e.g. a few tenths of degrees/millimeters)
 * Then click **Bias from potentiometers**.  This step will pre-load
   the encoders based on the potentiometers
-*  The box **Use pot/encoder check** should be unchecked
+* The box **Use pot/encoder check** should be unchecked
 
 At that point, you will need to move the arm by hand. If you're using
 a PSM or ECM, remove any tool, sterile adapter or endoscope to make it
@@ -144,7 +144,7 @@ For each joint:
 
 If the values are not consistent within a few degrees/millimeters
 (these are the units used for the dVRK GUI), you likely have a broken
-encoder or potentiometers.
+encoder or potentiometer.
 
 If you're using a recent dVRK version (2.1+), there is an option to
 plot the encoder and potentiometer values directly in the system
@@ -196,7 +196,7 @@ is given in seconds.  Try to increase it progressively by doubling it
 and restart the dVRK application (no need to power on/off the
 controllers).  If the system is still not stable, double the
 **latency** and try again.  If the system is still not stable with a
-**latency** of 1 seconds (``1.0``), try the same approach with the
+**latency** of 1 second (``1.0``), try the same approach with the
 **distance** parameter.
 
 Summary

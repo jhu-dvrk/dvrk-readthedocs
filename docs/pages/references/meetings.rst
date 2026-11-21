@@ -58,7 +58,7 @@ Meetings
 2020 PI meeting
    Held online on June 30 2020.
 
-   * `PowerPoint presentation <https://dvrk.lcsr.jhu.edu/downloads/presentations//dVRK_2.0_2020_06.pptx>`_
+   * `PowerPoint presentation <https://dvrk.lcsr.jhu.edu/downloads/presentations/dVRK_2.0_2020_06.pptx>`_
 
 2018 Tutorial on Collaborative Robotics Toolkit (CRTK)
    Held on October 5 2018 in Madrid, Spain (IROS 2018): https://collaborative-robotics.github.io/iros-2018-tutorial.html

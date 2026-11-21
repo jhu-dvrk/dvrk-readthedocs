@@ -78,11 +78,11 @@ from the ISI Research Wiki
 The LEDs are:
 
 * Logic: power used for the FPGA board, i.e. on board computing/logic
-* Rail A/B: power supplies used for motor control (see details above).
-  MTM controllers have two different motor power supplies so the Rail
-  A and B LEDs are meaningful, PSM, ECM and SUJ controllers use a
+* Rail A/B: power supplies used for motor control.
+  MTM controllers have two different motor power supplies so both the Rail
+  A and B LEDs are meaningful; PSM, ECM and SUJ controllers use a
   single motor power supply, so the only meaningful LED is Rail A.
-  Rail A/B, i.e. motor power, can be turned on/off using a PC and need
+  Rail A/B, i.e. motor power, can be turned on/off using a PC and needs
   the :ref:`safety chain <estop>` to be closed.
 
 In general, the LEDs for power follow the following convention:

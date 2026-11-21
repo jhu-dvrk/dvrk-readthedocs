@@ -23,7 +23,7 @@ specified in the JSON config file.  The default offset is 65,535
 divided by two, i.e. 32,768.
 
 The same applies for the measured currents (A2D).  For both values,
-the scales is based on the QLA components, and we're only calibrating
+the scales are based on the QLA components, and we're only calibrating
 the offsets for ``current_to_bits`` and ``bits_to_current`` in the IO JSON file:
 
 .. code-block:: json
@@ -169,7 +169,7 @@ Notes:
   few tens of mA.  If you have significantly higher values, DO NOT
   PROCEED and reach out to the dVRK maintainers.
 
-* Finally, it is recommended test the new offsets by re-running the
-  calibration utility.  At the point, the offsets in mA should be
-  close to 0 (few tenths of mA) and the offsets in the JSON file should
-  be close to 0
+* Finally, it is recommended to test the new offsets by re-running the
+  calibration utility.  At that point, the offsets in mA should be
+  close to 0 (a few tenths of mA) and the offsets in the JSON file should
+  not change significantly.

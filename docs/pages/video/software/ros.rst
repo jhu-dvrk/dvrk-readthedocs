@@ -35,7 +35,7 @@ Using gscam
 
 To start the ``gscam`` node, we provide a couple of ROS launch scripts.
 **Make sure the launch script has been updated to use a working
-gstreamer pipeline** (as described above using ``gst-launch-1.01``).
+gstreamer pipeline** (as described above using ``gst-launch-1.0``).
 The main difference is that your pipeline for gscam should end with
 ``videoconvert`` and you need to remove ``autovideosink``.
 
@@ -53,7 +53,7 @@ topics:
 * ``/jhu_daVinci/left/image_raw``
 * ``/jhu_daVinci/right/image_raw``
 
-For a system with a DeckLink Duo, the `gscam_config` in a launch script would look like:
+For a system with a DeckLink Duo, the ``gscam_config`` in a launch script would look like:
 
 .. code-block:: xml
 
@@ -89,7 +89,7 @@ in ``dvrk_video`` and are provided for both ROS1 (XML) and ROS2
   can be dragged on the HRSV
 * ``decklink_stereo_goovis.launch``: launches 2 ``gscam`` nodes to grab
   the video, de-interlace and start 2 OpenGL based windows that can be
-  dragged on the stereo display.  The main advantage of the OpenGL
+  dragged on the stereo display.  The main advantages of the OpenGL
   views are:
 
   * Low latency since there is no ROS message passing involved

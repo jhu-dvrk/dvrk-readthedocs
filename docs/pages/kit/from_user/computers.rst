@@ -7,8 +7,7 @@ Computers
 
    You will need at least one PC running Linux, **but** it is strongly
    recommended to use two or more if you also need to set up the video
-   pipeline or if you plan to run some heavy computations along the
-   dVRK code.
+   pipeline or if you plan to run some heavy computations along with the dVRK code.
 
    Since we use ROS extensively, it is easy to spread the computing
    load across computers (see
@@ -58,7 +57,7 @@ dVRK connections
 
     * Bad FireWire adapters:
 
-      * `StartTech pex1394a2v2
+      * `StarTech pex1394a2v2
         <https://www.startech.com/en-us/cards-adapters/pex1394a2v2>`_
 
   * You can also check the following document, but it's a bit old and
@@ -83,7 +82,7 @@ Visualization
 
 These might be installed on the second PC.
 
-* Graphic card
+* Graphics card
 
   * Remember, if possible, use a different computer for the video
     pipeline (i.e. endoscopic images)
@@ -96,15 +95,13 @@ These might be installed on the second PC.
 
     .. warning::
 
-       Make sure the drivers from NVIDIA are properly installed, "nouveau" drivers tend to disrupt the FireWire communication.  This happens fairly often due to EUFI/Secure Boot option.  To make sure your drivers are installed correctly, try ``nvidia-smi``.
+       Make sure the drivers from NVIDIA are properly installed, "nouveau" drivers tend to disrupt the FireWire communication.  This happens fairly often due to the UEFI/Secure Boot option.  To make sure your drivers are installed correctly, try ``nvidia-smi``.
 
 * Frame grabbers
 
   * If you've received a stereo camera with an endoscope from
     Intuitive Surgical, you might want to buy a dual SDI frame
-    grabber.  The `Blackmagic DeckLink
-    Duo2 <https://www.blackmagicdesign.com/products/decklink/models>`_
-    have been used extensively by the dVRK community.  Remember to
+    grabber.  The `Blackmagic DeckLink Duo2 <https://www.blackmagicdesign.com/products/decklink/models>`_ has been used extensively by the dVRK community.  Remember to
     also buy some good SDI cables.
   
 OS
@@ -140,4 +137,4 @@ Software and OS requirements:
 * dVRK 1.7 (older systems, only if you need to run older firmware)
 
   * Ubuntu 16.04 or 18.04 (64 bits of course)
-  * ROS 1: Kinetic on Ubuntu 16.04 on Melodic on Ubuntu 18.04
+  * ROS 1: Kinetic on Ubuntu 16.04 and Melodic on Ubuntu 18.04

@@ -56,7 +56,7 @@ When setup joints are present, the following positions are reported:
 
 
 The following assumes the ECM is the reference arm for all the PSMs.
-Versions greater than 2.1, one can change the reference arm in the SUJ
+In versions greater than 2.1, one can change the reference arm in the SUJ
 configuration file. ⊙ represents the reference frame and the arrows
 show the transformations.
 
@@ -96,7 +96,7 @@ we recommend using the SUJ Fixed class.  This class maintains the
 transformation graph one would get with a real SUJ but the SUJ
 transformations have to be provided by the user.  These
 transformations are usually the result of a registration.  Using the
-SUJ Fixed class allows user to control the PSMs with respect to the
+SUJ Fixed class allows users to control the PSMs with respect to the
 ECM even when the ECM moves (e.g. ECM teleoperation).
 
 .. figure:: /images/transformations/dVRK-transformations-SUJ-Fixed.*
@@ -109,13 +109,13 @@ The class SUJ Fixed doesn't make any assumption regarding the main
 reference frame (aka "World").  Users could use an optical tracking
 system and find the respective base frame of the PSMs and ECM with
 respect to the tracking system.  In this case, the result of the
-registration represent ``/SUJ/PSM{1,2,3}/local/measured_cp`` and
+registration represents ``/SUJ/PSM{1,2,3}/local/measured_cp`` and
 ``/SUJ/ECM/local/measured_cp``.
 
 If the registration method is a hand-eye registration with respect to
 the ECM base (aka ECM RCM), the transformation for
 ``/SUJ/ECM/local/measured_cp`` is identity and ``ECM RCM`` is the same
-as `World` (see https://github.com/jhu-dvrk/dvrk_camera_registration).
+as ``World`` (see https://github.com/jhu-dvrk/dvrk_camera_registration).
 
 .. figure:: /images/transformations/dVRK-transformations-SUJ-Fixed-hand-eye-calibration.*
    :width: 600

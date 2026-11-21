@@ -14,10 +14,9 @@ See :ref:`SUJ Classic <suj>` for overview.
 Basic information:
 
 * The patient cart is on wheels and is motorized, so
-  it can be moved in and out the operation room
+  it can be moved in and out of the operating room
 * There are four passive arms, one to hold the ECM (SUJ-ECM) and three
-  to hold the PSMs (SUJ-PSM1, SUJ-PSM2 and SUJ-PSM3).  A two PSMs
-  model was also available, the da Vinci Si-E (no PSM3)
+  to hold the PSMs (SUJ-PSM1, SUJ-PSM2 and SUJ-PSM3).  A two-PSM model was also available, the da Vinci Si-E (no PSM3)
 * Each joint has an electric brake.  The brakes are controlled per
   arm.  For example, all the brakes on SUJ-PSM1 are released at the
   same time

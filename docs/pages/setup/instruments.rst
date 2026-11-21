@@ -7,13 +7,10 @@ Instruments
 Some instruments are supported by the dVRK but need to be physically
 modified.  For example, Permanent Cautery Spatula (xxx184):
 
-We need to "disable" disk #4 on the instrument because the actuator 3
-and 4 are mechanically coupled inside the instrument.  At that point
+We need to "disable" disk #4 on the instrument because actuators 3 and 4 are mechanically coupled inside the instrument.  At that point
 (December 2019), the dVRK software doesn't support driving 2 actuators
 coupled together to control a single joint.  Since it is hard to
-remove the mechanical coupling inside the instrument, we recommend to
-disable the disk #4 (either by removing the disk or filling off the
-plots on the disk).
+remove the mechanical coupling inside the instrument, we recommend disabling disk #4 (either by removing the disk or filing off the pins on the disk).
 
 .. figure:: /images/instruments/permanent-cautery-spatula/permanent-cautery-spatula.jpg
    :width: 350

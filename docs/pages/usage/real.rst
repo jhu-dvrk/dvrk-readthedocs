@@ -4,8 +4,8 @@
 Real robot
 **********
 
-This section describes a typical steps to use the dVRK. It assumes that your
-dVRK is fully setup, i.e. controllers are connected, software is compiled and
+This section describes the typical steps to use the dVRK. It assumes that your
+dVRK is fully set up, i.e. controllers are connected, software is compiled and
 all the configuration files have been generated and calibrated.
 
 For first time users, we also have some :ref:`tips<usage-tips>`.
@@ -14,7 +14,7 @@ Components and data flow
 ########################
 
 The `JHU Classic system example
-<https://github.com/jhu-dvrk/dvrk_config_jhu/blob/main/jhu-daVinci/system-SUJ-ECM-MTMR-PSM1-MTML-PSM2-Teleop.json>`_
+<https://github.com/dvrk-config/dvrk_config_jhu/blob/main/jhu-daVinci/system-SUJ-ECM-MTMR-PSM1-MTML-PSM2-Teleop.json>`_
 connects physical MTMR to PSM1, MTML to PSM2, and both MTMs to ECM
 teleoperation. The matching ``jhu-daVinci`` video files capture physical
 endoscope images and display them in the HRSV.
@@ -41,7 +41,7 @@ Unix-FD sockets. When annotations are enabled, ``control_panel`` reads the
 final overlay for its preview and publishes transparent side-by-side drawings
 on ``@dvrk:control_panel:annotations``; ``stereo_display`` consumes that socket
 as a stereo AR input. See `the JHU Classic configuration directory
-<https://github.com/jhu-dvrk/dvrk_config_jhu/tree/main/jhu-daVinci>`_ for the
+<https://github.com/dvrk-config/dvrk_config_jhu/tree/main/jhu-daVinci>`_ for the
 system and video files, and the visualization steps below to start them.
 
 Powering on controllers
@@ -88,7 +88,7 @@ only, use:
 
    qladisp -pfw
 
-If you are using an Etherner connection to the first controller and then
+If you are using an Ethernet connection to the first controller and then
 FireWire between the controllers, use:
 
 .. code-block:: bash
@@ -101,7 +101,7 @@ FireWire between the controllers, use:
    If ``qladisp`` is not found, remember to source your ROS workspace. Something
    like ``source ~/ros2_ws/install/setup.bash``.
 
-.. note:
+.. note::
 
    For users with FireWire only, there is a known issue related to the discovery
    of FireWire nodes after you power your controllers. The fix is to unplug the
@@ -111,7 +111,7 @@ FireWire between the controllers, use:
 
 The output of ``qladisp`` will provide the list of FPGA boards connected, their
 board Id as well as firmware version. It also shows the type of motor power
-board used (QLA1, DQLA, dRAC). ``qladisp`` is a bit verbose so, you might have to
+board used (QLA1, DQLA, dRAC). ``qladisp`` is a bit verbose, so you might have to
 scroll up to see the list of boards found.  The output you should be looking for is something like:
 
 .. code-block:: bash
@@ -134,8 +134,8 @@ use the dVRK until you figure out the connection issue(s).
 
 .. hint::
 
-   There is a know issue regarding FireWire discovery. After you power your
-   controllers, you might need to unplug, wait 5 seconds and, re-plug the
+   There is a known issue regarding FireWire discovery. After you power your
+   controllers, you might need to unplug, wait 5 seconds, and re-plug the
    FireWire cable between your PC and the first dVRK controller. You can
    disconnect that cable from the PC or from the first controller.
 
@@ -217,7 +217,7 @@ To home the dVRK, use the GUI or the ROS topic ``home``.
    :width: 300
    :align: center
 
-   Power On button in dVRK GUI
+   Home button in dVRK GUI
 
 When you home the dVRK, a few things should happen:
 
@@ -248,23 +248,23 @@ old robots. It is important to keep an eye on a few things while using it:
   investigate!  There is an exception, the MTM wrist control is not great and
   will occasionally trigger small vibrations.
 
-* IO frequency: The dVRK IO/PID thread is using "soft real-time". It is at mercy
+* IO frequency: The dVRK IO/PID thread is using "soft real-time". It is at the mercy
   of connection issues as well as the overall load on your computer. To check
   the IO frequency, you can use the GUI :ref:`timing widgets <timing-widget>` or
-  the ROS topics `period_statistics` of each software component. 
+  the ROS topics ``period_statistics`` of each software component. 
 
 * Computer load: The dVRK controller is sharing all the resources of your
   computer, make sure the overall load is not too high. You can use the command
   line ``htop`` to monitor memory usage, CPU load, IOs...
 
-* Amplifiers temperature. This shouldn't be an issue for recent dVRK controllers
+* Amplifier temperature: This shouldn't be an issue for recent dVRK controllers
   since :ref:`fans should have been installed<qla-heat-sink>`. You can check the
   temperature in the :ref:`IO widget<io>`.
 
 .. note::
 
    There are some checks implemented in the dVRK code, but the thresholds are
-   fairly high to avoid false negative. If your system is unstable make sure CPU
+   fairly high to avoid false negatives. If your system is unstable make sure CPU
    load, timing, temperatures... are fine.
 
 Setting up the instruments and endoscope
@@ -283,7 +283,7 @@ Positioning your PSMs and ECM
 You must pay attention to the initial position of your PSMs and ECM with respect
 to the workspace.  Ideally, you should avoid being close to any joint limit on
 your arm when the tip is close to the center of your workspace.  You also want
-to fan out our arms so, they don't collide with each other (see :ref:`PSM
+to fan out your arms so they don't collide with each other (see :ref:`PSM
 mounting <psm-ecm-position>`). When all the patient's side arms are in place, all
 the RCM points should form a sphere.  The center of the sphere being the center
 of the workspace and the diameter should be about 15~20 centimeters.

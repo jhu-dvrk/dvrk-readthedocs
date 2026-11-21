@@ -1,7 +1,7 @@
 .. _system:
 
 System
-#######
+######
 
 Overview
 ********
@@ -11,13 +11,13 @@ system. It comes in two versions:
 
 * ``dvrk_robot dvrk_system``
 
-  * C+ application with a Qt based GUI and ROS interface, it depends on cisst/SAW
+  * C++ application with a Qt-based GUI and ROS interface, it depends on cisst/SAW
   * Compatible with all dVRK controllers
   * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/ros/dvrk_robot
 
 * ``sawIntuitiveResearchKitSystem``
 
-  * C+ application with a Qt based GUI, it depends on cisst/SAW
+  * C++ application with a Qt-based GUI, it depends on cisst/SAW
   * Compatible with all dVRK controllers (including for Windows/MacOS over UDP)
   * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications
 
@@ -65,12 +65,12 @@ Shared options
 ``-c <value>, --collection-config <value>``
   *json configuration file for data collection using cisstMultiTask state table collector (optional)*
 
-  See examples of configurations files in the ``shared/collection``
+  See examples of configuration files in the ``share/collection``
   directory. This feature predates the dVRK ROS integration. Users
   should look into ROS bags for data collection.
 
 ``-C, --calibration-mode``
-  *run in calibration mode, doesn't use potentiometers to monitor encoder values and always force re-homing. This mode should only be used when calibrating your potentiometers. (optional)*
+  *run in calibration mode, doesn't use potentiometers to monitor encoder values and always forces re-homing. This mode should only be used when calibrating your potentiometers. (optional)*
 
   This command line option is required for many :ref:`calibration
   steps <calibration>`. It shouldn't be used on a regular basis since
@@ -79,7 +79,7 @@ Shared options
 ``-e <value>, --embedded-python <value>``
   *start an embedded Python shell to access all dVRK software components (optional)*
 
-  This will start an embedded Python interpreter along all the dVRK software
+  This will start an embedded Python interpreter along with all the dVRK software
   components. The embedded interpreter can be IPython (``IRE_IPYTHON``
   **recommended**), wxPython (``IRE_WXPYTHON`` **experimental**) or a Jupyter
   kernel (``IRE_JUPYTER`` **experimental**).  See also :ref:`development
@@ -111,8 +111,8 @@ ROS extra options
   messages as fast as possible. For all the robot's state topics (e.g. joint,
   kinematic... aka ``measured_js``, ``setpoint_cp``...) there is a periodic
   thread publishing the state at a constant rate. If your application can
-  process message at a higher rate, you can increase the period used to publish
-  to the robot's state.
+  process messages at a higher rate, you can decrease the period (increase the rate) used to publish
+  the robot's state.
 
 ``-P <value>, --tf-ros-period <value>``
   *period in seconds to read all components and broadcast tf2 (default 0.02, 20 ms, 50Hz).  There is no point to have a period higher than the arm component's period (optional)*

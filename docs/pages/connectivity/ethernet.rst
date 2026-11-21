@@ -8,10 +8,10 @@ Important Notes
 ###############
 
 * The Ethernet adapter on the computer must be configured for "Link
-  Local" on Linux (not static IP nor DHCP)
+  Local" on Linux (not static IP or DHCP)
 * The network cable goes directly from the computer to the "bridge"
-  controller (no hub nor switch)
-* The software then communicates using UDP, the "bridge" controller is
+  controller (no hub or switch)
+* The software then communicates using UDP; the "bridge" controller is
   a UDP server and the computer is a UDP client
 
 Setup
@@ -22,7 +22,7 @@ Ethernet adapter
 
 You will need a network adapter dedicated to the communication with
 the dVRK controllers (e.g., a PCIe Ethernet adapter).  The dVRK
-network port on the computer can't be plugged in to a router or hub
+network port on the computer can't be plugged into a router or hub
 and used to access the Internet.  Therefore, we recommend installing 2
 network adapters on your computer, one for the LAN/WAN and one for the
 dVRK.  The dVRK dedicated network adapter will be directly connected
@@ -52,7 +52,7 @@ to configure for the dVRK:
   not enough if you have a full da Vinci (2 MTMs, 3 PSMs, ECM and
   SUJ).
 * In tab "IPv4 Settings", change "method" to "Link-Local Only".
-* In tab "IPv6 Settings", change to "Disabled"
+* In tab "IPv6 Settings", change to "Disabled".
 
 macOS
 =====
@@ -74,7 +74,7 @@ Virtual machines
 
 We recommend a native OS (as opposed to a virtual machine guest OS) as
 we're not totally sure how the VM network adapter would impact
-performances.  If you need to use a VM, the following has been used
+performance.  If you need to use a VM, the following has been used
 for a Linux guest with a Windows host using VMWare:
 
 * Select "Bridged" in virtual machine network settings and check the
@@ -151,5 +151,5 @@ The output should look like:
    64 bytes from 169.254.0.100: icmp_seq=2 ttl=64 time=0.308 ms
    ...
 
-This allows to check that you can reach the controllers over Ethernet
+This allows you to check that you can reach the controllers over Ethernet
 and that the loop time is reasonable (~0.3 ms).

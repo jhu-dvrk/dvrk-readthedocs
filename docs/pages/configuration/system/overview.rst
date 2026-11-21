@@ -18,7 +18,7 @@ in a single application.
 In the early days of the dVRK, users had to write and compile their own C++ main
 to combine all the components based on their needs. This was rather
 tedious so we introduced the system configuration file. When loaded by
-the dVRK applications (either ``sawIntuititiveResearchKitSystem`` or
+the dVRK applications (either ``sawIntuitiveResearchKitSystem`` or
 the ROS node ``dvrk_system``), this file is used to:
 
 * set the communication port(s) and parameters
@@ -70,10 +70,10 @@ The dVRK system application will:
     **serial** number
 
   * create and configure a PID component using the file
-    ``pid/-sawControllersPID-PSM.json`` based on the arm's
+    ``pid/sawControllersPID-PSM.json`` based on the arm's
     **type**.
 
-  * create an arm components and configure it using the arm specific
+  * create an arm component and configure it using the arm specific
     configuration file ``PSM1-28007`` using the arm's **name** and
     **serial** number
 
@@ -84,10 +84,10 @@ The dVRK system application will:
 For a full system with 2 MTMs, setup joints, 3 PSMs, an ECM, foot
 pedals, head sensor, focus controller, teleoperation... the dVRK
 application will create, configure and connect tens of components. The
-system configuration file, while a bit complex, greatly simplify the
+system configuration file, while a bit complex, greatly simplifies the
 process.
 
-The system configuration file main sections are:
+The system configuration file's main sections are:
 
 * ``IOs`` used to identify and configure one or more IO ports
 

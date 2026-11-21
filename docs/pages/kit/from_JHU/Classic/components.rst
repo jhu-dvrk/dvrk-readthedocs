@@ -12,8 +12,7 @@ Custom boards (PCBs)
 * For the DQLA based controller, the DQLA-Q and DQLA-F designs are
   open source and available on GitHub:
   https://github.com/jhu-dvrk/dvrk-DQLA
-* The dMIB is provided by Intuitive Surgical. The design, including
-  schematics and BOM, are available on GitHub:
+* The dMIB is provided by Intuitive Surgical. The design, including schematics and BOM, is available on GitHub:
   https://github.com/jhu-dvrk/dvrk-pcb-dMIB
 
 Power supplies
@@ -53,4 +52,4 @@ Hardware modifications
 
 * QLAs:
 
-   * :ref:`Heat sink and fan <qla-heat-sink>`
+  * :ref:`Heat sink and fan <qla-heat-sink>`

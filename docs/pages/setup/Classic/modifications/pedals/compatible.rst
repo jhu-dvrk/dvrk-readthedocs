@@ -12,7 +12,7 @@ a spare PSM with an alternate master arm (e.g., PSM and Force
 Dimension master).
 
 The design described below is based on up to 3 pairs of foot pedals.
-One can use one, two or three pairs as needed.  The wiring allows to
+One can use one, two or three pairs as needed.  The wiring allows one to
 swap the pedals without any software reconfiguration.  This
 configuration is also pin compatible with the real da Vinci foot
 pedals.  By default, the first pair of foot pedals is wired as the
@@ -29,11 +29,11 @@ Material
 
  * One (or two or three) pairs of foot pedals.  We found that these
    pedals are nicely built and heavy enough to not slide on the floor
-   when used: https://smile.amazon.com/dp/B077NM69DL The following
+   when used: https://www.amazon.com/dp/B077NM69DL The following
    model might work as well but we didn't try:
-   https://smile.amazon.com/Plastic-Double-Action-Switch-Pedal/dp/B077NK8XYZ
+   https://www.amazon.com/Plastic-Double-Action-Switch-Pedal/dp/B077NK8XYZ
  * Cables:
-   https://smile.amazon.com/Monoprice-6ft-DB15-Molded-Cable/dp/B002LWJ7TA
+   https://www.amazon.com/Monoprice-6ft-DB15-Molded-Cable/dp/B002LWJ7TA
    You will need 2 to 4 cables.
 
 Wiring

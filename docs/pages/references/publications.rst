@@ -33,7 +33,7 @@ dVRK
 
 * | :download:`Software Architecture of the da Vinci Research Kit </publications/chen-deguet-etal-irc-2017.pdf>`
   | Zihan Chen and Anton Deguet and Russell H. Taylor and Peter Kazanzides
-  | IEEE International Conference on Robotics Computing, Taichung, Taiwan, April 2017
+  | IEEE International Conference on Robotic Computing (IRC 2017), Taichung, Taiwan, April 2017.
   | **Best Paper Award**
 
 * | :download:`An Open-Source Research Kit for the da Vinci Surgical System </publications/kazanzides-chen-etal-icra-2014.pdf>`
@@ -61,4 +61,4 @@ dVRK community
 
 Considering the exponential growth of dVRK related publications, these
 are now compiled in a BibTeX file hosted on GitHub:
-https://github.com/jhu-dvrk/community-publications.  You can see the existing publications on https://jhu-dvrk.github.io/community-publications/
+https://github.com/jhu-dvrk/community-publications.  You can see the existing publications on https://jhu-dvrk.github.io/community-publications/.

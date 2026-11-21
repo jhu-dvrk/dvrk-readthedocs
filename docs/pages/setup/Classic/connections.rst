@@ -12,7 +12,7 @@ large cable with an ITT Cannon 156 connector that comes from the arm.
    controllers
 
 When connecting to the dVRK controller, make sure you don't force the connector
-in, the connector should insert without any forces (ZIF - Zero Insertion Force).
+in, the connector should insert without any force (ZIF - Zero Insertion Force).
 The direction varies between arms, cable coming out either on the left or right
 of the dVRK controller.
 
@@ -20,7 +20,7 @@ Once the connector is inserted, you need to use a large flat head
 screwdriver to secure it in place.  The screw on the back shell
 is connected to a camshaft to lock the connector to the controller.
 You need to turn by 90 degrees at most (a quarter turn), clockwise to
-clock and counterclockwise to unlock.  If you need to remove the
+lock and counterclockwise to unlock.  If you need to remove the
 connector, don't forget to unscrew it first.
 
 .. figure:: /images/controllers/Classic-ITT-Cannon-screw.jpeg
@@ -67,5 +67,5 @@ Arm specific notes:
      Empty connectors on Classic patient cart
 
   The cables from the SUJs are pretty short, but they should reach the
-  back of dVRK SUJ controller when it is mounted on the patient cart's
+  back of the dVRK SUJ controller when it is mounted on the patient cart's
   column.

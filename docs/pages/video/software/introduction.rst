@@ -9,7 +9,7 @@ main 3 "components" on the PC are:
 
 * Frame grabbers
 * Software
-* Video output (most likely a graphic card with 2 extra outputs for HRSV)
+* Video output (most likely a graphics card with 2 extra outputs for HRSV)
 
 .. figure:: /images/video/video-pipeline-software.*
    :width: 600

@@ -10,7 +10,7 @@ There are two main reasons why someone would want to define their own
 instrument parameters:
 
 * New mechanical design
-* Using an existing instrument but change it's behavior (e.g. change
+* Using an existing instrument but changing its behavior (e.g. change
   control point, depth limit)
 
 .. caution::
@@ -49,7 +49,7 @@ The main files are:
      arm, namely the ``sawRobotIO1394-<name>-<serial>.json`` by adding
      ``share/<system>`` to the search path.
   #. ``arm`` to overwrite the default rule to locate the arm
-     configuration file.  We recommend to follow the convention
+     configuration file.  We recommend following the convention
      ``<name>-<serial>-<instrument-name>.json`` to name your new arm
      file (e.g. ``PSM1-28007-Custom-Dummy.json``).
 
@@ -66,7 +66,7 @@ The main files are:
      custom instrument.  This is a very specific case and we expect
      most users should use the default, i.e. ``kinematic/psm.json``.
   #. ``tool-detection`` should be set to either ``MANUAL`` or
-     `FIXED``.  If set to ``MANUAL``, you will need to provide the
+     ``FIXED``.  If set to ``FIXED``, you will need to provide the
      tool name in the configuration file using the convention
      ``<name>:<model>``.  The custom ``name`` and ``model`` are
      defined in the instrument index file (see below).
@@ -75,7 +75,7 @@ The main files are:
   ``custom-tool-index.json``.  This file contains a list of custom
   ``instruments`` with:
 
-  #. ``model``: 6 digits number, usually start with ``40`` for Classic
+  #. ``model``: 6-digit number, usually starting with ``40`` for Classic
      instruments and ``42`` for S instruments.  We recommend to
      preserve this naming convention for your custom instruments and
      use the last 4 digits to identify your instrument.  See also
@@ -128,7 +128,7 @@ In your custom instrument definition file, change the last column of the ``toolt
 Change jaw's angles (grasping torque)
 =====================================
 
-When control in position, the jaws maximum grasping torque is based on
+When controlled in position, the jaws' maximum grasping torque is based on
 the PID output.  To increase the PID output without changing the PID
 gains and get a stronger grasp, the trick is to decrease the minimum
 joint limit.  This way, when the jaws stop moving because they're in
@@ -150,7 +150,7 @@ grasping force you need.  This will work up to a point since the
 torque itself is capped using the ``ftmax`` value defined for the
 ``jaw`` in the instrument definition file.  The following is not
 recommended but you can also increase the value for ``ftmax``.  Keep
-in mind than the IO level will then apply another cap defined in the
+in mind that the IO level will then apply another cap defined in the
 ``sawRobotIO1394-PSMx-xxxxx.json`` file (defined in amps).
 
 Disable the engage procedure
@@ -183,15 +183,15 @@ New mechanical design
 
 When you design your new instrument, there might be a few different issues to keep in mind.
 
-* Can the kinematic be described using DH parameters for a serial manipulator?
+* Can the kinematics be described using DH parameters for a serial manipulator?
 
   * If so, the built-in numerical solver might be usable and so will
     the cartesian control modes.  This will allow you to use the
     built-in tele-operation component.
-  * If the kinematic is very specific (e.g. snake like, parallel
+  * If the kinematics are very specific (e.g. snake-like, parallel
     platform...), integration will be trickier.  To get started, we
     suggest you ignore the cartesian API and only use the joint API.
-    You can then implement your own forward/inverse kinematic in a
+    You can then implement your own forward/inverse kinematics in a
     separate ROS node (C++/Python/Matlab) and send/receive joint
     states to/from the dVRK system.  If you need a tighter level of
     integration, you will need to derive the
@@ -202,7 +202,7 @@ When you design your new instrument, there might be a few different issues to ke
 
   * If it is, just make sure the ``DH`` parameters match your instrument.
   * If your instrument is not a full 6 dof instrument, not all
-    cartesian position will be reachable (not event taking into
+    Cartesian positions will be reachable (not even taking into
     account joint limits).  Since the internal numerical solver is not
     able to handle this case, we suggest creating some virtual links
     at the end of your kinematic chain.

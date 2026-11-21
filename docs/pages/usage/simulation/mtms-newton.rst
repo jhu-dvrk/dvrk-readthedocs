@@ -9,7 +9,7 @@ pedals, and head sensor to teleoperate a Newton patient cart. The ECM and
 PSM1--PSM3 are simulated. Newton's stereo camera is displayed in the HRSV.
 
 The entry point is `davinci_newton.launch.py
-<https://github.com/jhu-dvrk/dvrk_config_jhu/blob/main/launch/davinci_newton.launch.py>`_
+<https://github.com/dvrk-config/dvrk_config_jhu/blob/main/launch/davinci_newton.launch.py>`_
 in ``dvrk_config_jhu``. It selects the ``jhu-daVinci/newton`` profile through
 the shared ``jhu_launch`` helper.
 
@@ -75,7 +75,7 @@ Configuration files
 ###################
 
 The `jhu-daVinci/newton directory
-<https://github.com/jhu-dvrk/dvrk_config_jhu/tree/main/jhu-daVinci/newton>`_
+<https://github.com/dvrk-config/dvrk_config_jhu/tree/main/jhu-daVinci/newton>`_
 contains the profile files selected by the launch:
 
 .. list-table::

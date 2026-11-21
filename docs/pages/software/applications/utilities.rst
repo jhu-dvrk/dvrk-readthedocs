@@ -6,11 +6,11 @@ Utilities
 ``qlacommand``
 **************
 
-* C++ application with a text based interface using ncurse
+* C++ application with a text-based interface using ncurses
 * Compatible with **all dVRK controllers**
 * https://github.com/jhu-cisst/mechatronics-software/tree/main/tests/
 
-Program that broadcasts messages to all the dVRK controller found on
+Program that broadcasts messages to all the dVRK controllers found on
 the FireWire or UDP bus.  Commands include ``reboot``,
 ``reset-encoder-preload``, ``close-relays``, ``open-relays``...
 
@@ -48,7 +48,7 @@ section.
 
 * Python script with text interface (not ROS)
 * Compatible with **all dVRK setups**
-* https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/config-generator
+* https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/remove-logs
 
 Script used to locate and delete log and backup files. Every time a
 cisst/SAW based application (like the dVRK main system program) is
@@ -81,12 +81,12 @@ example:
 * Compatible with **all dVRK setups**
 * https://github.com/jhu-dvrk/dvrk_python/tree/devel/scripts
 
-This scripts will stop the teleoperation components (see :ref:`dVRK
-system <system>`), move the MTMs at their zero position, move the
+This script will stop the teleoperation components (see :ref:`dVRK
+system <system>`), move the MTMs to their zero position, move the
 PSM's shaft rotation to zero and restart the teleoperation.  The goal
-of the script is to "reset" the kinematic for both the MTMs and PSMs.
+of the script is to "reset" the kinematics for both the MTMs and PSMs.
 This is useful when the arms get into odd poses after a bit of
-teleoperation.::
+teleoperation::
 
    usage: dvrk_reset_teleoperation.py [-h] -m {MTML,MTMR} [{MTML,MTMR} ...] [-p {PSM1,PSM2,PSM3} [{PSM1,PSM2,PSM3} ...]]
 
@@ -94,7 +94,7 @@ teleoperation.::
 .. _hrsv_widget:
 
 ``hrsv_widget``
-********************
+***************
 
 * C++ ROS application with Qt widgets, doesn't depend on cisst/SAW
 * ROS package ``dvrk_hrsv_widget``
@@ -108,7 +108,7 @@ teleoperated by which MTM.  ROS is used to track the system's state.
 The two widgets can be dragged on top of the left and right views in
 the stereo display. This is a poor man's version of the UI in a
 clinical system, but it can still help users who are not familiar with
-the system.  We recommend to use ``dvrk_console stereo_display``
+the system.  We recommend using ``dvrk_console stereo_display``
 instead.
 
 .. _dvrk_console_stereo_display:
@@ -193,7 +193,7 @@ Next, start the teleoperation script with your chosen arms::
 If you don't have dVRK foot pedals, you can use the ``-c <clutch topic>`` and
 ``-o <operator pedal>`` topics to use a different source (these topics should
 each provide ``sensor_msgs/msg/Joy`` with one button). Alternatively, you can
-set ``-o`` to disable the operator pedal, note however that in this mode
+set ``-o`` to disable the operator pedal; note, however, that in this mode
 teleoperation will begin as soon as any MTM activity is detected, so please be
 careful.
 

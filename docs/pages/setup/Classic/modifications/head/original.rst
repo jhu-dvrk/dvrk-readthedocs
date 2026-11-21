@@ -47,14 +47,14 @@ You will then need to make a new cable to connect the da Vinci head
 sensor to the dVRK controllers.  It will be a DB 25 female on the head
 sensor's end and a high density HD 15 (aka DB 15) male on the
 controller's end.  The HD 15 male is designed to be connected to the
-`DOF 1` connector on the back of the dVRK controller (we provide
-examples of configuration files for the head sensor connected to `DOF
-1`).  The wiring pin out is provided in the following formats
+``DOF 1`` connector on the back of the dVRK controller (we provide
+examples of configuration files for the head sensor connected to ``DOF
+1``).  The wiring pinout is provided in the following formats:
 
 * :download:`PDF </images/Classic/head/daVinci-head-sensor-DB-25-to-DB-15.pdf>`
 * :download:`ods </images/Classic/head/daVinci-head-sensor-DB-25-to-DB-15.ods>`
 
-Once you have build your custom cable, you can connect it to the da
+Once you have built your custom cable, you can connect it to the da
 Vinci head sensor:
 
 .. figure:: /images/Classic/head/daVinci-head-sensor-cable.jpg

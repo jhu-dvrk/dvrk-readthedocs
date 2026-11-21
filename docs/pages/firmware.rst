@@ -12,14 +12,14 @@ with all dVRK controllers.
 
 .. note::
 
-   This section is an overview, please follow the links provided below for in depth documentation.
+   This section is an overview; please follow the links provided below for in-depth documentation.
 
 There are a few boards with embedded firmware used for the dVRK, either Classic or Si:
 
 * :ref:`FPGA1394 <fpga>`: FPGA based, designed at JHU for generic robot controllers. dVRK
   :ref:`Classic <controllers-classic>` and :ref:`Si <controllers-si>`, located
   in dVRK controllers. Both the board design and firmware are open-sourced.
-  FPGA1394V1 and FPGA1394V2 boot from EPROM. FPGA1394V3 boots from a SD card.
+  FPGA1394V1 and FPGA1394V2 boot from EPROM. FPGA1394V3 boots from an SD card.
 
 * Power Indicator board: designed at WPI. dVRK Classic only. Boots from EPROM.
 
@@ -41,7 +41,7 @@ There are a few boards with embedded firmware used for the dVRK, either Classic 
 
 .. important::
 
-   *FPGA* and *firmware* is used to reference the FPGA1394 board and firmware
+   *FPGA* and *firmware* are used to reference the FPGA1394 board and firmware
    unless specified otherwise.
 
 Upgrade
@@ -72,8 +72,8 @@ the SD card into any dVRK/dVRK-Si controller that has an SD slot.
 
 Remove all the SD cards from your system:
 
-* For dVRK Classic V3 controllers, card slot is located on the back
-* For dVRK Si controllers, card slot is on the front
+* For dVRK Classic V3 controllers, the card slot is located on the back
+* For dVRK Si controllers, the card slot is on the front
 
 The simplest approach is to use the :ref:`dVRK SD card updater
 <sd-card-updater>` to download all the dVRK firmware files to one or more SD
@@ -88,7 +88,7 @@ decompress and copy all the files to the SD card. The latest version can be foun
 https://github.com/jhu-cisst/mechatronics-embedded/releases/latest.
 
 If the controllers are connected to the PC via Ethernet, it is also possible to
-update the SD card using `scp`.
+update the SD card using ``scp``.
 
 ESPM and ESSJ
 *************

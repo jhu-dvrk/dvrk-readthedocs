@@ -6,10 +6,10 @@ Frame grabbers and ROS
 
 This describes a fairly low cost setup that can be used with the dVRK
 HRSV display (High Resolution Stereo Video).  We use a couple of cheap
-USB frame grabbers (Hauppage Live 2) for the analog videos from SD
+USB frame grabbers (Hauppauge Live 2) for the analog videos from SD
 cameras (640x480).  For HD systems (720p and 1080i), we tested a
 BlackMagic DeckLink Duo frame grabber with dual SDI inputs.  For
-displaying the video back, we just use a graphic card with two spare
+displaying the video back, we just use a graphics card with two spare
 video outputs.  The software relies heavily on ROS tools to grab and
 display the stereo video.  Some lag is to be expected.
 
@@ -40,9 +40,9 @@ You first need to install the drivers from BlackMagic, see
 https://www.blackmagicdesign.com/support/family/capture-and-playback
 The drivers are included in the package "Desktop Video".  Once you've
 downloaded the binaries and extracted the files from BlackMagic,
-follow the instructions on their ReadMe.txt.  For 64 bits Ubuntu
+follow the instructions on their ReadMe.txt.  For a 64-bit Ubuntu
 system, install the ``.deb`` files in subfolder ``deb/x86_64`` using
-``sudo dpkg -i \*.deb``.
+``sudo dpkg -i *.deb``.
 
 If your card is old, the DeckLink install might ask to run the
 BlackMagic firmware updater, i.e. something like
@@ -52,8 +52,8 @@ driver is working properly, the devices will show up under
 ``/dev/blackmagic``.
 
 You can quickly test the frame grabber using ``MediaExpress`` which
-should be installed along the drivers.  You can also select the video
-input using ``BlackmagicDesktopVideoSetup`` (also installed along
+should be installed along with the drivers.  You can also select the video
+input using ``BlackmagicDesktopVideoSetup`` (also installed along with the
 drivers).
 
 If you need to remove all the BlackMagic packages to test a different
@@ -100,7 +100,7 @@ USB SD S-Video frame grabbers
    century (~2000) and the quality is not great.  If you can, try to
    upgrade to HD CCUs and a SDI frame grabber (see above).
 
-The frame grabbers we used most often for SD endoscopes are Hauppage USB Live 2:
+The frame grabbers we used most often for SD endoscopes are Hauppauge USB Live 2:
 
  * Manufacturer:
    http://www.hauppauge.com/site/products/data_usblive2.html
@@ -127,7 +127,7 @@ output should look like:
    Bus 003 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
    Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-In this example, the Hauppage frame grabbers are on bus ``004`` and
+In this example, the Hauppauge frame grabbers are on bus ``004`` and
 ``001``.
 
 To check if the frame grabbers are working, one can use ``tvtime``
@@ -178,7 +178,7 @@ Then:
 		
    tvtime -Ld /dev/video1
 
-Once in ``tvtime``, change the input to S-Video by pressing ``i`` key.
+Once in ``tvtime``, change the input to S-Video by pressing the ``i`` key.
 If you see a black image, it's possible that you don't have enough
 light in front of your camera or endoscope.  If you happen to use a
 real da Vinci endoscope and CCUs (Camera Control Units), you can use
@@ -205,13 +205,13 @@ digit matches.  Example of commands:
    v4l2-ctl -d0 --list-formats-ext
 
 On Ubuntu 18.04, we found the following syntax seems to work with the
-USB Hauppage Live2:
+USB Hauppauge Live2:
 
 .. code-block:: bash
 		
    gst-launch-1.0 v4l2src device=/dev/video0 ! video/x-raw,interlace-mode=interleaved ! autovideosink
 
-To setup a ``udev`` rule, you first need to find a way to uniquely
+To set up a ``udev`` rule, you first need to find a way to uniquely
 identify each frame grabber.  To start, plug just one frame grabber
 then do ``ls /dev/video*``.  Use the full path to identify each frame
 grabber (e.g. ``/dev/video0``, ``/dev/video1``...):

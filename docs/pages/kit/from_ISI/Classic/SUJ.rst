@@ -24,8 +24,7 @@ without the active arms.
 
 Basic information:
 
-* The patient cart is on wheels, so it can be moved in and out the
-  operation room
+* The patient cart is on wheels, so it can be moved in and out of the operating room
 * There are three to four passive arms, one to hold the ECM (SUJ-ECM)
   and two to three to hold the PSMs (SUJ-PSM1, SUJ-PSM2 and optionally
   SUJ-PSM3)
@@ -43,9 +42,9 @@ Basic information:
 
      da Vinci Classic, clutch/brake button on SUJ for PSM1 and PSM2
 
-* All the passive arms (except PSM-SUJ3) have counterweights in the
+* All the passive arms (except SUJ-PSM3) have counterweights in the
   central column, so they can be moved up and down with minimal effort
-* The optional SUJ-PSM3 is mounted on front of the column and doesn't
+* The optional SUJ-PSM3 is mounted in front of the column and doesn't
   have a vertical counterweight  (maybe
   the third PSM was an afterthought).  Instead, there
   is a lift motor mounted at the base of the cart

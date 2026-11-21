@@ -4,7 +4,7 @@ Unboxing
 Intuitive components
 ********************
 
-When you received a new component from Intuitive Surgical, we strongly recommend to:
+When you receive a new component from Intuitive Surgical, we strongly recommend that you:
 
 * Read the unboxing documentation (`password protected page
   <https://research.intusurg.com/index.php/DVRK:Documentation:Main>`_)
@@ -47,18 +47,16 @@ dVRK controllers
   4 motors and 3 brakes.  You can verify which one is which by opening
   the controllers.  See also :ref:`Classic controllers
   <controllers-classic>`.
-* Once you verified the type of controller, we strongly recommend
+* Once you have verified the type of controller, we strongly recommend
   labeling the controllers with the name of the arm you plan to control
   along with the board IDs.  The board IDs should follow the
   convention described in the :ref:`configuration page <board-id>`.
-  For example, a controller for a Classic MTMR using FPGAs V2, the
+  For example, for a controller for a Classic MTMR using FPGA V2, the
   label should read ``MTMR (board IDs 2 - 3)``.  It is worth sticking
   a label on the front and back of the controller.
-* When you will first unbox the controllers, check the internal
+* When you first unbox the controllers, check the internal
   connections.  If you find a cable with a loose end or partially
-  unplugged you'll have to plug it back.  **This is quite important,
-  we've seen controllers that looked like they were delivered using a
-  roller coaster!**.  If you are not comfortable re-plugging the cables
+  unplugged, you'll have to plug it back in.  **This is quite important, we've seen controllers that looked like they were delivered using a roller coaster!**  If you are not comfortable re-plugging the cables
   by yourself, reach out to the dVRK maintainers.
 
   .. figure:: /images/general/dgist-dqla-loose.jpg

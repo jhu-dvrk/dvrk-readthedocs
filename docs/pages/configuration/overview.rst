@@ -4,10 +4,10 @@
 Overview
 ********
 
-The dVRK relies on multiple configurations files.  Some are shared
+The dVRK relies on multiple configuration files.  Some are shared
 across systems and some are specific to each arm or site.  For the
 site specific configuration files, we provide a configuration
-generator that simplify the process, but some files still have to be
+generator that simplifies the process, but some files still have to be
 created by hand.
 
 .. _configuration-files-types:
@@ -25,11 +25,11 @@ Site specific files
   teleoperation component. The most basic system file contains a
   single arm and uses the default options for everything else. The
   single arm system files are :ref:`automatically generated
-  <config-generators>` along the arm IO file. The system configuration
+  <config-generators>` along with the arm IO file. The system configuration
   files are parsed by the ``Configure`` method of the
-  :ref:`sawIntuititiveResearchKit<system-component>` ``dvrk::system``
-  component, they use the JSON file format.  See :ref:`system
-  configuration files <config-system>`
+  :ref:`sawIntuitiveResearchKit<system-component>` ``dvrk::system``
+  component and use the JSON file format.  See :ref:`system
+  configuration files <config-system>`.
 
 * **Arm**: These files specify the configuration of a specific arm
   (e.g. MTML, PSM2...).  They are therefore not shared across dVRK
@@ -62,16 +62,16 @@ Shared files
 ************
 
 * **Kinematics**: These files are used by the
-  :ref:`sawIntuititiveResearchKit<arms>` arm
+  :ref:`sawIntuitiveResearchKit<arms>` arm
   components.  There is one file per arm type.  They are shared across
   systems and use the JSON file format.  The format is defined in the
   *cisst* library *cisstRobot*, class ``robManipulator``.
 
 * **Instrument**: These files are used to store all the parameters
-  specific to a given instrument, i.e. kinematic of the last 3 joints,
+  specific to a given instrument, i.e. kinematics of the last 3 joints,
   jaw angle and torque limits... These are shared across all dVRK
   sites unless you are creating your :ref:`custom
-  instrument<config-custom-instruments>`.  They used the JSON file
+  instrument<config-custom-instruments>`.  They use the JSON file
   format and the filename follows the naming convention
   ``<TOOL_NAME>_<MODEL_NUMBER>.json``
   (e.g. ``LARGE_NEEDLE_DRIVER_400006.json``).  See :ref:`instrument
@@ -107,12 +107,12 @@ repository as a template for the files ``CMakeLists.txt``,
 ``package.xml`` and ``colcon.pkg``:
 https://github.com/dvrk-config/dvrk_config_jhu
 
-Assuming a site can have multiple systems, we use subdirectory per
+Assuming a site can have multiple systems, we use a subdirectory per
 system. Directory names start with the institution name (e.g. jhu for
 Johns Hopkins, isi for Intuitive Surgical) and should contain the
 system name (e.g. JHU has four systems, an original research kit:
 ``jhu-dVRK``, a full da Vinci Classic: ``jhu-daVinci``, a system with
-a S console and Si patient cart: ``jhu-daVinci-Si`` and a spare PSM
+an S console and Si patient cart: ``jhu-daVinci-Si`` and a spare PSM
 Si: ``jhu-dVRK-Si``).
 
 We strongly encourage each dVRK site to use their own configuration
@@ -125,12 +125,12 @@ Each directory should contain:
     each arm identified by its number.  You should also store the
     original ``.cal`` files provided by Intuitive Surgical since they
     are needed to re-generate the IO JSON files (for Classic arms only)
-  * your arms configuration files
+  * your arm configuration files
   * your system configuration files since these refer to your system
     specific IO configuration files
 
 It is recommended to use tags or branches to maintain your
-configurations files for each version of the dVRK.  For example, files
+configuration files for each version of the dVRK.  For example, files
 for the dVRK 2.4 are different from 2.3 but you might need both at a
 given time.
 
@@ -150,17 +150,17 @@ Shared files
 ************
 
 All the shared files are under the ``/share`` directory of the main
-dVRK repository: |sawIntuitiveResearchKit|.
+dVRK repository: |sawIntuitiveResearchKit|_.
 
 The subdirectories are:
 
 * ``io``: IO files for foot pedals, head sensors, focus controller...
 * ``pid``: default PID configuration files
-* ``kinematics``: kinematics (DH and maximum torques) for all dVRK
+* ``kinematic``: kinematics (DH and maximum torques) for all dVRK
   arms
-* ``tools``: all instrument definition files as well as main list
+* ``tool``: all instrument definition files as well as main list
   (``index.json``)
-* ``arm``: definition of arm that are not site specific, mostly
+* ``arm``: definitions of arms that are not site specific, mostly
   simulated arms
 * ``system``: definition of systems using no site specific arms,
   mostly for simulation
@@ -177,9 +177,9 @@ configuration file and a system configuration file for said arm.  There is also
 a system configuration wizard to generate system files once all the arm files
 are created. See :ref:`configuration generators <config-generators>`.
 
-There is still a few files that need to be generated by hand (for example, SUJ
-configuration files). Since the JHU configurations files are usually up-to-date,
-we recommend to look at https://github.com/dvrk-config/dvrk_config_jhu to find
+There are still a few files that need to be generated by hand (for example, SUJ
+configuration files). Since the JHU configuration files are usually up-to-date,
+we recommend looking at https://github.com/dvrk-config/dvrk_config_jhu to find
 examples.
 
 .. caution::

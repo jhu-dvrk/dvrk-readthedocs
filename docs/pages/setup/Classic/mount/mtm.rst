@@ -59,7 +59,7 @@ small Noga arm.
 
    Custom surgeon's console, mount for HMD
 
-The base and vertical post is made of 40 by 80 mm profiles.  We used a
+The base and vertical post are made of 40 by 80 mm profiles.  We used a
 standard 8020 bracket to support the front casters.  The arm rest can
 slide up and down (Allen wrench required).  All the controllers and
 video equipment are connected to a single power strip for
@@ -77,7 +77,7 @@ Resources
 
 The initial frame at Johns Hopkins was built using a fair amount of
 spare parts found in the lab.  If you plan to build a cart from
-scratch, we recommend to use the design provided by Hao Yang from
+scratch, we recommend using the design provided by Hao Yang from
 Vanderbilt University.
 
  * Overall view
@@ -86,7 +86,7 @@ Vanderbilt University.
       :width: 300
       :align: center
 
- * Actual bill of material.  Please note that the 4 support beams
+ * Actual bill of materials.  Please note that the 4 support beams
    mounted at 45 degree angle are not shown but they are listed as
    extra parts in the BOM. The same applies for the 2 aluminum plates
    used to mount the MTMs. :download:`- PDF -</images/Classic/surgeon-cart-8020-BOM.pdf>`

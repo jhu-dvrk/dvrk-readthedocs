@@ -117,7 +117,7 @@ Motion queries
   * *cisst*: read command ``prmPositionCartesianGet``
   * *ROS*: publisher ``geometry_msgs/TransformStamped``
   * dVRK specific: cartesian setpoint relative to the first frame of
-    the kinematic chain (see notes for ``local/measured_cp``).https://github.com/jhu-cisst/cisst-ros/tree/main/cisst_ros_crtk
+    the kinematic chain (see notes for ``local/measured_cp``).
 
 * ``body/jacobian``
 
@@ -137,7 +137,7 @@ Motion queries
     |cisstRobotManipulator|_. Finally, the cartesian effort is
     computed using the jacobian. This is a rough cartesian force
     emulation as the computations don't take into account gravity
-    compensation nor any other dynamic model or the arm.
+    compensation nor any other dynamic model of the arm.
 
 * ``spatial/jacobian``
 
@@ -164,7 +164,7 @@ Motion queries
     * ``sensor_msgs/JointState jp``, ``geometry_msgs/Pose cp``
     * ``geometry_msgs/Pose cp``, ``bool result``, ``string message``
 
-  * |CRTK|_: compute forward kinematic based on joint values
+  * |CRTK|_: compute forward kinematics based on joint values
     provided.  The length of the vector of joint positions determines
     which frame should be computed along the kinematic chain.  For
     ROS, the field ``jp.position`` is used to store joint positions.
@@ -182,7 +182,7 @@ Motion queries
     * ``sensor_msgs/JointState jp``, ``geometry_msgs/Pose cp``
     * ``geometry_msgs/Pose cp``, ``bool result``, ``string message``
 
-  * |CRTK|_: compute forward kinematic based on joint values
+  * |CRTK|_: compute forward kinematics based on joint values
     provided.  The length of the vector of joint positions determines
     which frame should be computed along the kinematic chain.  For
     ROS, the field ``jp.position`` is used to store joint positions.
@@ -199,7 +199,7 @@ Motion queries
     * ``geometry_msgs/Pose cp``, ``sensor_msgs/JointState jp``
     * ``sensor_msgs/JointState jp``, ``bool result``, ``string message``
 
-  * |CRTK|_: compute inverse kinematic based on cartesian goal and joint values
+  * |CRTK|_: compute inverse kinematics based on cartesian goal and joint values
     provided. This method prepends the base frame for the arm to the result.
 
 Motion commands
@@ -259,7 +259,7 @@ Motion commands
   * dVRK specific: set cartesian effort goal for low-level controller
     using ``spatial/jacobian`` (direct current control).  **Use with
     caution**, the only safety mechanism built-in is the cap on
-    maximum motor current.  For most application, use
+    maximum motor current.  For most applications, use
     ``body/servo_cf``.  Gravity compensation will be added based on
     last call to ``use_gravity_compensation`` (for MTMs and ECM).  See
     |cisstRobotManipulator|_.
@@ -271,7 +271,7 @@ Motion commands
   * dVRK specific: set cartesian effort goal for low-level controller
     using ``body/jacobian`` (direct current control).  **Use with
     caution**, the only safety mechanism built in is the cap on
-    maximum motor current.  Useful for haptic on MTM.  By default
+    maximum motor current.  Useful for haptics on MTM.  By default
     direction of force is defined by the orientation of the end
     effector.  To use the absolute orientation, toggle on/off using
     ``body/set_cf_orientation_absolute``.  Gravity compensation will
@@ -290,7 +290,7 @@ Motion commands
     command includes 3 parameters for each case: a linear gain, a
     damping gain and an offset.  This command can be used to define a
     simple haptic virtual fixture (plane, line, point, box corner...).
-    **Use with caution**, specially if the frame used to compute the
+    **Use with caution**, especially if the frame used to compute the
     cartesian impedance is far from the current arm position as this
     could lead to strong forces applied to the arm.  Internally the
     dVRK code uses the class ``osaCartesianImpedanceController`` from
@@ -302,7 +302,7 @@ Motion commands
   * *ROS*: subscriber ``geometry_msgs/TransformStamped``
   * |CRTK|_: set cartesian trajectory goal.  The current
     implementation converts the cartesian goal into a joint trajectory
-    goal and then execute the trajectory in joint space.  Therefore
+    goal and then executes the trajectory in joint space.  Therefore
     the current controller doesn't generate straight lines in
     cartesian space. See ``move_jp``.
 
@@ -415,14 +415,14 @@ C++ class is ``mtsIntuitiveResearchKitArmECM``.
 * ``manip_clutch``
 
   * *cisst*: event write ``prmEventButton``
-  * *ROS*: publisher ``sensor_msgs::Joy``
+  * *ROS*: publisher ``sensor_msgs/Joy``
   * dVRK specific: indicate if the clutch button on the ECM (located
     on top of the translation/insertion stage) is pressed or not.
 
 * ``endoscope_type``
 
   * *cisst*: event write ``std::string``
-  * *ROS*: publisher ``std_msgs::String``
+  * *ROS*: publisher ``std_msgs/String``
   * dVRK specific: indicate which endoscope is currently in use.  Note
     that the endoscope type is not detected automatically so this
     setting depends on the user.  It can be modified using the GUI or
@@ -431,10 +431,10 @@ C++ class is ``mtsIntuitiveResearchKitArmECM``.
 * ``set_endoscope_type``
 
   * *cisst*: write command ``std::string``
-  * *ROS*: subscriber ``std_msgs::String``
+  * *ROS*: subscriber ``std_msgs/String``
   * dVRK specific: set the type of endoscope mounted on the ECM.  The
     endoscope type is used for two things.  Up/down/straight is used
-    to compute the tool tip transformation for the forward kinematic.
+    to compute the tool tip transformation for the forward kinematics.
     HD/SD is used for gravity compensation, the HD camera head happens
     to be a bit heavier than the SD one (see :ref:`video pipeline
     <video-sources>`).  Possible values are defined in file
@@ -452,7 +452,7 @@ C++ class is ``mtsIntuitiveResearchKitArmMTM``.
   * *cisst*: read command ``prmStateJoint``
   * *ROS*: publisher ``sensor_msgs/JointState``
   * |CRTK|_: ``measured_js`` for the MTM gripper. The only field
-    available is the position of the gripper.  These is no measurement
+    available is the position of the gripper.  There is no measurement
     available for velocity or effort.
 
 * ``gripper/closed``
@@ -492,7 +492,7 @@ C++ class is ``mtsIntuitiveResearchKitArmMTM``.
     lock the MTM orientation (~wrist) when in clutch mode.  The
     operator can move around freely but the absolute orientation
     remains constant so the MTM is still aligned to the PSM when the
-    user restart the tele-operation.
+    user restarts the teleoperation.
 
 * ``unlock_orientation``
 
@@ -546,7 +546,7 @@ C++ class is ``mtsIntuitiveResearchKitArmPSM``.
   * dVRK specific: indicate which tool is currently in use.  Note that
     the tool type can be determined in different ways depending on
     your hardware and configuration files.  See :ref:`instrument
-    detection<config-dallas>`..
+    detection<config-dallas>`.
 
 * ``tool_type_request``
 

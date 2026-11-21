@@ -12,7 +12,7 @@ Introduction
 Overview
 ========
 
-The "logic" board, also known as "FPGA" board is used to process and pass data
+The "logic" board, also known as the "FPGA" board, is used to process and pass data
 between the robotic arm and the computer.
 
 On the computer's side, all FPGA boards have two FireWire ports so dVRK
@@ -57,20 +57,18 @@ V3 specificities
 ================
 
 The FPGA V3 also adds a dual-core ARM 32 processor embedded on the same chip as
-the FPGA. This arm processor can run Linux along with some user code while
+the FPGA. This ARM processor can run Linux along with some user code while
 having fast access to the FPGA data. We plan to take advantage of this feature
 for embedded computing (e.g. PID) and fast data collection.  See also `embedded
 mechatronics <https://github.com/jhu-cisst/mechatronics-embedded>`_.
 
-The FPGA V3 has a SD card slot used to:
+The FPGA V3 has an SD card slot used to:
 
 * Load the FPGA chip's firmware
 * Boot the ARM processors
 * Store user data
 
-The FPGA V3 has significantly more I/Os and gates than the FPGA V1/V2 therefore
-they are able to manage more than one QLA board at a time. To use a single logic
-board with 2 QLA, we introduced a set of boards to bridge two QLAs to a single
+The FPGA V3 has significantly more I/Os and gates than the FPGA V1/V2; therefore, it is able to manage more than one QLA board at a time. To use a single logic board with 2 QLAs, we introduced a set of boards to bridge two QLAs to a single
 FPGA.  We call this board set DQLA.
 
 .. figure:: /images/fpga1394/fpga-V3-DQLA-overview.*
@@ -107,7 +105,7 @@ Main versions of logic boards and core features:
 
 * FPGA V1 (https://github.com/jhu-cisst/FPGA1394)
 
-  * until to 2015
+  * until 2015
   * based on FPGA Xilinx Spartan 6
   * two FireWire ports for daisy-chaining
 
@@ -169,7 +167,7 @@ Number of FPGAs
 ###############
 
 The number of FPGAs (and therefore number of FireWire or Ethernet
-nodes) depends on the :ref:`controllers versions
+nodes) depends on the :ref:`controller versions
 <controller-versions>` and the number of arms.  The dVRK Classic
 controllers with FPGA V1 or V2 each have two logic boards (aka QLA1).
 The dVRK Classic controllers with FPGA V3 (DQLA), the Classic SUJ
@@ -185,8 +183,7 @@ In practice:
   V2, we have two MTMs, one ECM, three PSMs and the SUJ.  So six arm
   controllers using 12 logic boards and one more for the Classic SUJ
   controller for a grand total of 13 FPGAs.
-* More recent controllers use less FPGA boards so a full Si patient
-  cart with two Classic MTMs require only 6 FPGAs.
+* More recent controllers use fewer FPGA boards, so a full Si patient cart with two Classic MTMs requires only 6 FPGAs.
 
 .. note::
 

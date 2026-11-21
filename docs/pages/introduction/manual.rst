@@ -18,7 +18,7 @@ questions, use the dVRK Discourse forum.
 Other readings
 ==============
 
-Make sure you read all the other documentation, before you get
+Make sure you read all the other documentation before you get
 started.
 
 * ISI Research wiki (account required): https://research.intusurg.com/dvrkwiki/index.php?title=DVRK:Docs:Main
@@ -75,7 +75,7 @@ The main steps to set up a dVRK are:
   * :ref:`Classic/Standard arms <calibration_classic>`
   * :ref:`Si arms <calibration_si>`
 
-  This should be a one time step.  Don't forget to save the results of
+  This should be a one-time step.  Don't forget to save the results of
   the calibration under git.
 
 * **Applications** - :ref:`The applications section <applications>` lists the

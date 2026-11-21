@@ -8,7 +8,7 @@ switch to detect if the operator is present (usually the "COAG" foot
 pedal).  This is a reasonable solution for brief experiments, but it's
 not very convenient.  In this page we describe how to either create a
 "dVRK" head sensor from cheap parts or hack the existing da Vinci head
-sensor.  The later option is much nicer, but it requires a full da
+sensor.  The latter option is much nicer, but it requires a full da
 Vinci system, and it's important to note that you will need to keep the
 plastic covers on the surgeon's console (or find an alternative way to
 mount the head sensor).

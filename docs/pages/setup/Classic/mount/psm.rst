@@ -24,7 +24,7 @@ For a clinical system, the PSMs are mounted on the passive setup
 joints (SUJ).  These passive arms allow the user to position each
 arm's RCM point at the entry point in the patient.  The RCM point is
 physically located near the large black band on the cannulas.  Ideally
-all the arm's RCM points (PSMs and ECMs) should be located on the
+all the arms' RCM points (PSMs and ECM) should be located on the
 "surface" of the patient.
 
 .. figure:: /images/Classic/PSM/classic-PSM-cannula-installed.jpeg
@@ -38,7 +38,7 @@ workspace is fairly limited.  Therefore, it is very important to
 position them optimally to avoid hitting the physical joint limits.
 Ideally, when in zero position (i.e. each joint in the middle of their
 range), the instrument's shaft should be aligned to the normal on the
-"surface" of the patient.  To simply, one can consider that the
+"surface" of the patient.  To simplify, one can consider that the
 patient is a sphere and the entry points are placed at
 different azimuth and altitude.
 
@@ -59,5 +59,5 @@ Head.
    Ball head mounts used on the dVRK Classic at JHU
 
 For further examples of mounting frames for the PSMs, check the
-`Intuitive Research Wiki <Https://research.intusurg.com/>`_ (account
+`Intuitive Research Wiki <https://research.intusurg.com/>`_ (account
 required).

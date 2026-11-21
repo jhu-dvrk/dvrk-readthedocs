@@ -16,7 +16,7 @@ board ID should have been set during manufacturing based on the arm
 type using the :ref:`default-board-ids`. Not all Research Kits come
 with the ECM, PSM3 or SUJ but the board IDs should be reserved
 nevertheless.  PSMs on da Vinci Standard come with color stickers, so
-might be identified by their color: yellow (PSM1), green (PSM2) and
+they might be identified by their color: yellow (PSM1), green (PSM2) and
 red (PSM3).
 
 
@@ -39,7 +39,7 @@ specific configurations (e.g. 4 MTMs or 2 ECMs).
    "Board 2",  "1", "3", "5", "7", "9", "11 (B)", ""
 
 All controllers using the FPGA1394 v3 only use the ID of the first board (i.e.
-DQLA and dRAC controllers).  For example, Si PSM uses the single board ID 6.
+DQLA and dRAC controllers).  For example, Si PSM1 uses the single board ID 6.
 
 The simplest solution to check that the board ID(s) are correct on a given
 controller is to connect it to the PC and use :ref:`qladisp` or :ref:`dmesg`.

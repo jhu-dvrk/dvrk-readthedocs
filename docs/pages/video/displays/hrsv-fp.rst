@@ -6,7 +6,7 @@ pair of LCD panels.  The main issue is to find the proper size of
 monitor, i.e. roughly 14" with 4/3 ratio and ideally a fairly high
 resolution.
 
-* 2021: UBC used a pair of 14" monitor for CCTV from eyoyo:
+* 2021: UBC used a pair of 14" monitors for CCTV from Eyoyo:
   https://www.amazon.com/Eyoyo-Monitor-1024x768-Security-Speakers/dp/B08L9BC16X.
   Resolution is 1024x768.
 * 2018: CUHK used a pair of DELL monitors (1505FP:
@@ -18,7 +18,7 @@ resolution.
   **[password protected]**).  Unfortunately, some of these parts are
   getting harder to find online.  Resolution was up to 1400x1050.
 
-  .. figure:: /images/video/video-hrsv-dell-15.jpg
+.. figure:: /images/video/video-hrsv-dell-15.jpg
    :width: 500
    :align: center
 

@@ -17,7 +17,7 @@ It provides:
 * Clamp setpoint positions to stay within joint position limits
 * Cap maximum PID output to stay under maximum joint torque allowed
 * Simple PID tracking error, i.e. compares the joint setpoints and
-  measured.  If the difference is higher than a given threshold, the
+  measured positions.  If the difference is higher than a given threshold, the
   PID component triggers an error.
 
 Configuration files
@@ -30,8 +30,8 @@ the main dVRK repository under ``share/pid``.
 Applications
 ************
 
-  * *sawIntuitiveResearchKitQtConsoleJSON* and ROS
-    ``dvrk_robot/dvrk_console_json`` for regular use
+  * *sawIntuitiveResearchKitSystem* and ROS
+    ``dvrk_robot dvrk_system`` for regular use
   * *sawIntuitiveResearchKitQtPID* for debugging
 
 Widgets

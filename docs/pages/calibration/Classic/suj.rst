@@ -6,7 +6,7 @@ SUJ potentiometers
 .. warning::
 
    The SUJ are not extremely precise, the position of each instrument with
-   respect to the patient's cart is usually reported within 50mm cube!  To get a
+   respect to the patient's cart is usually reported within a 50 mm cube!  To get a
    better pose estimation of each instrument and (or with respect to) the
    camera, you will need to use an external sensor to register the active arms.
    Once properly registered, the relative accuracy of the instrument's pose
@@ -37,7 +37,7 @@ These dimensions are used to determine the scales on the labels.
 
 Joints diameters:
 
-* 0: Translation, we don't know where is the origin, use the floor level
+* 0: Translation, we don't know where the origin is, use the floor level
 * 1: Rotation, vertical axis, diameter 147.5 mm, circumference 463.4 mm (all -90/+90)
 * 2: Rotation, vertical axis, diameter 133.5 mm, circumference 419.4 mm (PSM1 -135/0, PSM2 0/+135, PSM3/ECM -90/+90)
 * 3: Rotation, vertical axis, diameter 107.5 mm, circumference 337.7 mm (all -90/+90)
@@ -48,11 +48,11 @@ Labels
 ======
 
 You can download a document to print on letter paper: :download:`dVRK labels for
-SUJ </images/Classic/SUJ/suj-labels.svg>`.  The `.svg` file can be opened,
-modified and printed using `inkscape` on Linux.  You can also find a
+SUJ </images/Classic/SUJ/suj-labels.svg>`.  The ``.svg`` file can be opened,
+modified and printed using ``inkscape`` on Linux.  You can also find a
 :download:`pdf version </images/Classic/SUJ/suj-labels.pdf>` if you don't have
-`inkscape`.  Please, if you update the `.svg` file, make sure you also update
-the `.pdf` and send the updated version to JHU.
+``inkscape``.  Please, if you update the ``.svg`` file, make sure you also update
+the ``.pdf`` and send the updated version to JHU.
 
 We used clear polyester labels (Hemmi Papilio Supplies, Gloss White/Clear
 Polyester, 3 mil with permanent adhesive, SKU: HPGC/HPGW) but you can also use
@@ -76,15 +76,15 @@ Notes
 
 * Every joint moves in the positive direction when turned counter-clockwise and
   in the negative direction when turned clockwise. This is why the labels for
-  joint 4 on the three PSMs are the only labels with negative values on the left
-  and negative values on the right.
+  joint 4 on the three PSMs are the only labels with positive values on the left
+and negative values on the right.
 
 * Make sure to put the labels on the link before the joint.
 
 * PSM1 and PSM2 have identical SUJs except for their second joints that have the
   same geometry but have different bounds of rotation (PSM1 moves from -135 to 0
-  and PSM 2 moves from 0 to 135). This is why the directions for their label
-  placement is the same.
+  and PSM2 moves from 0 to 135). This is why the direction for their label
+placement is the same.
 
 .. warning::
 
@@ -149,8 +149,8 @@ Overview
 When you're using the dVRK SUJ controller, the joint values are measured using
 potentiometers. The voltage measured has to be converted to an angle using a
 simple linear transformation. Since each system has different potentiometers,
-each system need to be individually calibrated. To do so, the dVRK GUI
-provides a very simple interface that allows to compute the scale and offset for
+each system needs to be individually calibrated. To do so, the dVRK GUI
+provides a very simple interface that allows computing the scale and offset for
 the linear transformation using two set points. At each point, the controller
 will provide the voltage and the user has to provide the measured angle using
 some kind of external measurement tool.
@@ -172,13 +172,13 @@ The main steps to perform the calibration for one SUJ are:
   24 potentiometers)
 * Enter the joint position you read on the label in the GUI "Joint Start" (click
   on the "Show more" button to see the calibration widget). By default, the
-  position is set to `-inf`. When you enter the actual joint position, the
+  position is set to ``-inf``. When you enter the actual joint position, the
   application records the current potentiometer value
 * On the same joint, go to the other extreme position and enter the real joint
   position in "Joint Finish". The point of using 2 positions as far as possible
   to each other is to minimize the error when we're computing the slope for the
   potentiometer to position linear function. "Joint Start" and "Joint Finish"
-  can be in any order, i.e. that start joint value doesn't have to be smaller
+  can be in any order, i.e. the start joint value doesn't have to be smaller
   than the joint finish value.
 * Repeat for all 6 joints on your SUJ. If you're calibrating the ECM SUJ, enter
   bogus values for the last two joints. Just make sure these values are all
@@ -199,8 +199,8 @@ The main steps to perform the calibration for one SUJ are:
     "secondary-offsets": [ -23431, 28095, -2.0391e+05, 1.8798e+05, 1.9171e+05, 2.1985e+05],
     "secondary-scales": [ 17476, -45752, 59677, -68628, -85785, -98040],
  
-   When you copy/paste these values to your configuration file, make sure you're
-   modifying the section for the SUJ you're currently calibrating.
+  When you copy/paste these values to your configuration file, make sure you're
+  modifying the section for the SUJ you're currently calibrating.
 
 * When you're done calibrating all SUJs, quit the dVRK console application and
   restart it to test the calibration.
@@ -234,7 +234,7 @@ column is for joint 0, second for joint 1, third for joint 2, and so on.
 
   #. Find and record the height of the PSM.
   #. Subtract the final height from the initial height.
-  #. Enter the difference in height in the second column of the first row.
+  #. Enter the difference in height in the first column of the second row.
 
 * Joints 1-5
 
@@ -258,7 +258,7 @@ PSM3
   #. Raise the PSM to its highest point.
   #. Find and record the height of the PSM.
   #. Subtract the final height from the initial height.
-  #. Enter the difference in height in the second column of the first row.
+  #. Enter the difference in height in the first column of the second row.
 
 * Joints 1-5
 
@@ -292,7 +292,7 @@ ECM
 
   #. Raise PSM1 to the point at which the bottom of PSM1's second joint and the ECM's second joint are level as seen below.
   #. Subtract the final height from the initial height.
-  #. Enter the difference in height in the second column of the first row.
+  #. Enter the difference in height in the first column of the second row.
 
 * Joints 1-3
 
@@ -303,14 +303,14 @@ ECM
   #. Repeat until all 3 joints have values in the top and bottom row.
   #. Fill the last two columns in with random numbers as place holders.
 
-**When the table is full of values hit "Manual Calibration" and the correct
+**When the table is full of values hit "Manual Recalibration" and the correct
 offsets and scales will print in the terminal.**
 
 Validation
 ##########
 
 When the calibration is complete, release the SUJ brakes and place all the RCMs
-together. Then check that the reported position of each SUJ arm (e.g. SUJ PSM1,
+together. Then check that the reported positions of each SUJ arm (e.g. SUJ PSM1,
 SUJ PSM2...) in the GUI are within a 20 mm cube of each other. The RCM point is
 the large black stripe on the cannulas.
 
@@ -321,7 +321,7 @@ the large black stripe on the cannulas.
    RCM points positioned close to each other
 
 The positions reported in the arm widgets (PSM1, PSM2...) should also show
-fairly short distance with respect to the ECM.  To make sure your setup joints
+fairly short distances with respect to the ECM.  To make sure your setup joints
 are properly calibrated, repeat the same experiment in different locations.
 Move the ECM first and then position each PSM so their RCM is as close as
 possible to the endoscope tip.
@@ -330,4 +330,4 @@ possible to the endoscope tip.
    :align: center
    :width: 200
 
-   RCM points positioned close the endoscope tip (origin)
+   RCM points positioned close to the endoscope tip (origin)

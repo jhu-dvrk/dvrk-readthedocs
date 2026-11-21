@@ -31,7 +31,7 @@ Basic information:
   safety checks
 * 3 electric brakes on the first 3 joints to prevent the arm from
   falling when not powered (like the :ref:`ECM Classic <ecm>`)
-* The second actuator controls a set of belts used to enforce a RCM
+* The second actuator controls a set of belts used to enforce an RCM
   point using complementary angles (remote center-of-motion, aka
   fulcrum point).  `Google search
   <https://www.google.com/search?q=surgical+robot+center+of+motion+fulcrum+point>`_.
@@ -57,9 +57,9 @@ Cannula and sterile adapter
 
 The design of the last 4 joints and instrument on the Si system is
 very similar to the :ref:`PSM Classic <psm>`.  The main differences are the sterile adapter and cannula
-shapes and the cannula holder is attached to the arm.
+shapes and how the cannula holder is attached to the arm.
 
-There is also video at the end of this section describing the process.
+There is also a video at the end of this section describing the process.
 
 .. figure:: /images/Si/PSM-Si-last-4-axis.jpeg
    :width: 250
@@ -87,8 +87,7 @@ the cannula.
 The cannula is reusable and sterilizable.  Cannulas come in different
 diameters, 5mm, 8mm... to match the diameter of the shaft of the
 instrument used.  Since we don't often use the real sterile drape,
-there is a small gap between the cannula holder and the cannula.  To
-prevent mechanical, one can use masking tape as a "shim".
+there is a small gap between the cannula holder and the cannula.  To prevent mechanical play, one can use masking tape as a "shim".
 
 .. figure:: /images/Si/PSM-Si-shim-on-cannula.jpeg
    :width: 250

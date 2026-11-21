@@ -7,7 +7,7 @@ Miscellaneous
 Stereo display
 **************
 
-HMD (for example :ref:`Goovis<goovis>`).
+HMD (for example :ref:`Goovis <goovis>`).
 
 FireWire cables
 ***************
@@ -22,9 +22,8 @@ a fair amount of time debugging connection issues.
 Foot pedal extension cable
 **************************
 
-If you need to use the original foot pedals of the da Vinci Classic
-(or S) surgeon, you need to buy a DB15 extension cable (for example
-https://smile.amazon.com/Monoprice-6ft-DB15-Molded-Cable/dp/B002LWJ7TA).
+If you need to use the original foot pedals of the da Vinci Classic (or S) surgeon's console, you need to buy a DB15 extension cable (for example
+https://www.amazon.com/Monoprice-6ft-DB15-Molded-Cable/dp/B002LWJ7TA).
 See also foot pedals :ref:`hardware <pedals>` and :ref:`software
 <config-system-console>`.
 
@@ -32,6 +31,6 @@ SD card reader
 **************
 
 For all the controllers released after 2024, i.e. dRAC or DQLA based,
-the firmware is loaded from a SD card.  To upgrade the firmware, you
-will need a SD card reader. We strongly recommend to have one on your
+the firmware is loaded from an SD card.  To upgrade the firmware, you
+will need an SD card reader. We strongly recommend having one on your
 dVRK computer (under Linux).

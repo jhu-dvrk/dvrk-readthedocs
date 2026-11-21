@@ -8,8 +8,8 @@ Teleoperation
 PSM
 ***
 
-C++ class is ``mtsTeleOperationPSM``.  Teleoperation components names
-are typically all upper case use the name of the MTM and PSM (e.g. for
+C++ class is ``mtsTeleOperationPSM``.  Teleoperation component names
+are typically all upper case and use the name of the MTM and PSM (e.g. for
 the cisst component: ``MTMR_PSM1``).  Topics for ROS are published
 under the namespace ``MTMx_PSMx`` (e.g. ``MTML_PSM1``,
 ``MTMR_PSM3``...).
@@ -36,7 +36,7 @@ under the namespace ``MTMx_PSMx`` (e.g. ``MTML_PSM1``,
   * *cisst*: write command ``std::string``
   * *ROS*: subscriber ``crtk_msgs/StringStamped``
   * dVRK specific: send command to change desired state.  Possible
-    values are: ``enable``, ``disable`` and ``align_mtm``
+    values are: ``enable``, ``disable`` and ``align_mtm``.
 
 * ``following``
 
@@ -44,7 +44,7 @@ under the namespace ``MTMx_PSMx`` (e.g. ``MTML_PSM1``,
   * *ROS*: publisher ``std_msgs/Bool``
   * dVRK specific: indicate if the PSM is following the MTM.  This can
     only happen if the teleoperation is ``ENABLED``, the user has
-    engaged the MTM and the teleoperation is not clutched.  This can
+    engaged the MTM and the teleoperation is not clutched.  This
     can be used to detect when the teleoperation component is
     actually sending commands to the PSM (using a combination of
     ``servo_cp`` and ``jaw/servo_jp``).
@@ -99,9 +99,9 @@ under the namespace ``MTMx_PSMx`` (e.g. ``MTML_PSM1``,
     the PSM orientation.  For alternate MTMs without motorized wrist, the
     operator will have to manually re-orient the MTM to match the PSM
     orientation.  When set, in clutch mode, the component will lock the MTM
-    orientation and leave the position (x, y, z) free so, the operator can
+    orientation and leave the position (x, y, z) free, so the operator can
     re-position their hands while preserving the orientation.  By default,
-    ``align_mtm`` is set to ``true`` and, it mimics the behavior of the clinical
+    ``align_mtm`` is set to ``true``, and it mimics the behavior of the clinical
     da Vinci systems.  Setting ``align_mtm`` to false allows relative
     orientation between the MTM and the PSM. This can be useful for alternate
     MTMs with a smaller SO3 space (e.g. ForceDimension haptic systems or Phantom
@@ -110,7 +110,7 @@ under the namespace ``MTMx_PSMx`` (e.g. ``MTML_PSM1``,
 * ``rotation_locked``
 
   * *cisst*: event write ``bool``
-  * *ROS*: publisher ``sensor_msgs/Joy``
+  * *ROS*: publisher ``std_msgs/Bool``
   * dVRK specific: indicate if the rotation is locked.  See
     ``lock_rotation``.
 
@@ -128,7 +128,7 @@ under the namespace ``MTMx_PSMx`` (e.g. ``MTML_PSM1``,
 * ``translation_locked``
 
   * *cisst*: event write ``bool``
-  * *ROS*: publisher ``sensor_msgs/Joy`` Triggers power off sequence for the whole system.
+  * *ROS*: publisher ``std_msgs/Bool``
   * dVRK specific: indicate if the translation is locked.  See
     ``lock_translation``.
 
@@ -153,35 +153,35 @@ C++ classes are ``mtsTeleOperationECMTwoHands`` and
 * ``current_state``
 
   * *cisst*: event write ``std::string``
-  * *ROS*: publisher ``std_msgs::String``
+  * *ROS*: publisher ``std_msgs/String``
   * dVRK specific: see similar command for PSM teleoperation.
 
 * ``desired_state``
 
   * *cisst*: event write ``std::string``
-  * *ROS*: publisher ``std_msgs::String``
+  * *ROS*: publisher ``std_msgs/String``
   * dVRK specific: see similar command for PSM teleoperation.
 
 * ``state_command``
 
   * *cisst*: write command ``std::string``
-  * *ROS*: subscriber ``std_msgs::String``
+  * *ROS*: subscriber ``crtk_msgs/StringStamped``
   * dVRK specific: see similar command for PSM teleoperation.
 
 * ``following``
 
   * *cisst*: event write ``bool``
-  * *ROS*: publisher ``std_msgs::Bool``
+  * *ROS*: publisher ``std_msgs/Bool``
   * dVRK specific: see similar command for PSM teleoperation.
 
 * ``scale``
 
   * *cisst*: event write ``double``
-  * *ROS*: publisher ``std_msgs::Float64``
+  * *ROS*: publisher ``std_msgs/Float64``
   * dVRK specific: see similar command for PSM teleoperation.
 
 * ``set_scale``
 
   * *cisst*: write command ``double``
-  * *ROS*: subscriber ``std_msgs::Float64``
+  * *ROS*: subscriber ``std_msgs/Float64``
   * dVRK specific: see similar command for PSM teleoperation.

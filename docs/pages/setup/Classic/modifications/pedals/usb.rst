@@ -5,8 +5,7 @@ USB foot pedals
 
 Use `sawGenericInput <https://github.com/jhu-saw/sawGenericInput>`_ with
 ``mtsEvdev`` to connect USB foot pedals on Linux. It supports pedals exposed
-as keyboard keys or joystick buttons through Linux input event devices. The device must provide an
-``/dev/input/event*`` node; a generic HID interface alone is not sufficient.
+as keyboard keys or joystick buttons through Linux input event devices. The device must provide a ``/dev/input/event*`` node; a generic HID interface alone is not sufficient.
 
 Compilation
 -----------
@@ -42,7 +41,7 @@ Use ``sawGenericInputConfigQt`` to select the pedal input node, observe its
 ``KEY_*`` or ``BTN_*`` events, and save a configuration. A device can be
 selected by name and USB vendor/product IDs, or by a stable path such as
 ``/dev/input/by-id/...-event-kbd``. Event numbers can change when devices are
-reconnected; an ``/dev/input/js*`` path is not used by ``mtsEvdev``.
+reconnected; a ``/dev/input/js*`` path is not used by ``mtsEvdev``.
 
 For PCsensor pedals with USB ID ``3553:b001``, install the supplied udev rule
 from the workspace root:

@@ -10,8 +10,7 @@ short a couple of pins on your sterile adapters (left two pins on the
 photo).
 
 Make sure you place the wire to short the two pins as deep as possible
-and keep the extremities of the pins as clean as possible.  If the tip
-of the pins are covered with soldering, you might have issues with the
+and keep the extremities of the pins as clean as possible.  If the tips of the pins are covered with solder, you might have issues with the
 electric contact when inserting the adapter.  This also affects the
 ability to read the instrument's Dallas chip (see :ref:`instrument
 detection <dallas>`).
@@ -40,15 +39,15 @@ monitor the *Buttons* widget in the *IO* tab of the dVRK console GUI
 Support for S/Si instruments
 ============================
 
-To use a S/Si tool with the dVRK Classic PSM, one need to use a
+To use an S/Si tool with the dVRK Classic PSM, one needs to use a
 modified Classic sterile adapter.  The modifications are a bit
 challenging so you should probably try to get some modified sterile
 adapters directly from ISI:
 
-* Side grooves need to be deepen
+* Side grooves need to be deepened
 * Ends of side grooves need to be cut to allow for a large tool
 * Bottom lip needs to be removed
-* Middle bar needs to be shaven but not too much otherwise the matting
+* Middle bar needs to be shaved, but not too much, otherwise the mating
   disks might fall
 
 .. figure:: /images/instruments/serile-adapter-S-Si-tools.jpg

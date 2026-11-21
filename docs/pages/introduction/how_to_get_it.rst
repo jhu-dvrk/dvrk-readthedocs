@@ -8,13 +8,12 @@ There are three main sources for the :ref:`first part of the kit
 * The vast majority of dVRK groups received their retired robots through the
   `Intuitive Foundation <https://www.intuitive-foundation.org/dvrk/>`_.
 * Some groups also salvaged retired da Vincis directly from a hospital
-  (often affiliated to their university). If you have any ongoing
+  (often affiliated with their university). If you have any ongoing
   collaboration with a hospital with a da Vinci system, it is worth
-  asking them what they plan to do with it when it will be
-  retired. Note that all the instruments and other disposable parts are also
+  asking them what they plan to do with it when it is retired. Note that all the instruments and other disposable parts are also
   very useful, so it's worth saving as much as possible.
 * Finally, it is possible to find full da Vinci systems or da Vinci
-  parts at a reasonable price on auctions sites such as eBay.
+  parts at a reasonable price on auction sites such as eBay.
 
 The second part of the kit is the :ref:`dVRK controllers <from_JHU>`.
 If you reached out to the Intuitive Foundation for the mechanical

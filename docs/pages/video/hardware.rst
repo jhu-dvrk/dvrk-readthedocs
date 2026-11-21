@@ -17,12 +17,12 @@ displaying on the HRSV monitors.
 You will need some standard cables as well as a pair of video
 converters (one for the left video and one for the right video):
 
- * S-Video to VGA: Paddsun US New for Video Converter CGA/EGA/YUV/RGB TO VGA board
- * SDI to VGA: Wiistar 3G-SDI to VGA Video Converter Box
+* S-Video to VGA: Paddsun US New for Video Converter CGA/EGA/YUV/RGB TO VGA board
+* SDI to VGA: Wiistar 3G-SDI to VGA Video Converter Box
 
- .. note::
-   
-	You can find more details in
-	https://research.intusurg.com/index.php/DVRK:Documentation:Main,
-	"S Console Disassembly and Vision Testing for the dVRK"
-	(**password protected**).
+.. note::
+
+   You can find more details in
+   https://research.intusurg.com/index.php/DVRK:Documentation:Main,
+   "S Console Disassembly and Vision Testing for the dVRK"
+   (**password protected**).

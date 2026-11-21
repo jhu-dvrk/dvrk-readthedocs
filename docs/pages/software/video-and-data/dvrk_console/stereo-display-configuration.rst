@@ -93,7 +93,7 @@ to set video shift and widget depth. The video shifts within each eye, leaving
 black pixels at the exposed edge. Touch-panel annotations use final display
 coordinates and remain registered after the shift.
 
-If your extra stream come from the SlicerGStreamer plugin (https://github.com/rosmed/SlicerGStreamer), you can use something like:
+If your extra stream comes from the SlicerGStreamer plugin (https://github.com/rosmed/SlicerGStreamer), you can use something like:
 
 .. code-block:: json
 

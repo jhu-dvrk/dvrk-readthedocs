@@ -22,8 +22,8 @@ remain disabled.
 
 .. warning::
 
-   *Direct control* should only be used for debugging and calibration
-   only.  When enabled, the user has a more direct access to the
+   *Direct control* should only be used for debugging and calibration.
+   When enabled, the user has more direct access to the
    controller's state and this can lead to unstable conditions... and
    potential damage to the dVRK arms.
 
@@ -56,13 +56,13 @@ between tics.
 The second column displays (1) the average computation time and standard
 deviation, (2) the average percentage of time spent for the computation during a
 single period interval and (3) the minimum and maximum of said percentage. An
-average computation time greater or equal to the average periods indicates that
-the task can not be performed fast enough to sustain the requested period. The
+average computation time greater than or equal to the average period indicates that
+the task cannot be performed fast enough to sustain the requested period. The
 maximum percentage shows what are the worst outliers, i.e. period overrun.
 
 The third column displays (1) the time window used to compute the statistics, 1
 second, (2) the number of iterations performed during the time window, similar
-to period frequency and (3) the number of time the computation took longer than
+to period frequency and (3) the number of times the computation took longer than
 the average period, number of outliers. 
 
 One can mouse over each element of the widget for a brief description.
@@ -74,8 +74,8 @@ Messages
 
 The message widget can display messages from multiple components. Each message
 is timestamped. Messages in red are errors, orange is used for warnings and
-information messages are in black. It is important to scroll up when error
-occurs to find the first error, an error is likely to trigger other error
+information messages are in black. It is important to scroll up when an error
+occurs to find the first error; an error is likely to trigger other error
 messages.
 
 .. figure:: /images/gui/gui-messages.*
@@ -97,10 +97,10 @@ saved in the ``cisstLog*.txt`` nor sent to the ROS logs.
 3D pose
 =======
 
-On top, from left to right, the widget display the names of the moving and
-reference frames (e.g. PSM1/ECM).  If the cartesian pose is meaningless (e.g.
+On top, from left to right, the widget displays the names of the moving and
+reference frames (e.g. PSM1/ECM).  If the Cartesian pose is meaningless (e.g.
 arm not homed, no instrument on PSM), the widget will show *Invalid* in red. The
-time displayed along the status is the time the pose was computed since the
+time displayed along with the status is the time the pose was computed since the
 program started.
 
 .. figure:: /images/gui/gui-pose-3D.*
@@ -132,7 +132,7 @@ Wrench
 
 The wrench widget can be used to visualize a wrench, 3D force and torque. This
 widget provides three views, 3D or 2D plot and plain text. To toggle between
-modes, use the mouse right click. views, use the
+modes, use the mouse right-click.
 
 .. figure:: /images/gui/gui-wrench-3D.png
    :width: 250
@@ -144,27 +144,27 @@ In 3D mode, the torque is not displayed.  The minimum and maximum
 forces encountered are shown in the top-left corner of the widget.  There are
 three keyboard shortcuts available: ``z`` to reset the visualization orientation
 (see 3D pose widget). ``a`` to enable/disable auto-resizing. By default, the
-widget will scale zoom out to make sure the maximum force is visible.  ``z`` can
+widget will zoom out to make sure the maximum force is visible.  ``z`` can
 be used to reset the maximum force and scale the view based on the current
 force.
 
- .. figure:: /images/gui/gui-wrench-2D.png
+.. figure:: /images/gui/gui-wrench-2D.png
    :width: 500
    :align: center
 
    Wrench widget (2D plot)
 
 In 2D view, the wrench is shown over time. The left-side menu can be used
-to select which information should be display (for example *Force* along the
-*Axis Y*). This widget used the 2D plot widget described below, hence it uses
+to select which information should be displayed (for example *Force* along the
+*Axis Y*). This widget uses the 2D plot widget described below, hence it uses
 the same keyboard shortcuts.
 
 2D plot
 =======
 
 The 2D plotting widget is hoping to overthrow the government. It can be used to
-display data overtime, multiple traces can be displayed simultaneously. It is a
-fairly simplistic widget so, if you need more advanced features, we recommend to
+display data over time; multiple traces can be displayed simultaneously. It is a
+fairly simplistic widget, so if you need more advanced features, we recommend
 use something like *PlotJuggler* over ROS.
 
 .. figure:: /images/gui/gui-plot.png
@@ -174,7 +174,7 @@ use something like *PlotJuggler* over ROS.
    Plot widget
 
 The widget displays the minimum and maximum values in the bottom-left and
-top-left corners. The right-click menu allows user to set the auto-scaling
+top-left corners. The right-click menu allows the user to set the auto-scaling
 parameters. There are two keyboard shortcuts: ``space`` to pause/restart and
 ``r`` to reset the scale along the Y axis.
 
@@ -191,9 +191,9 @@ window managers, these extra options allow some user customization of
 the dVRK GUIs.
 
 To activate the dark mode, add the option ``-D`` when starting the
-dVRK console application.  This applies to the plain application
-``sawIntuitiveResearchKitQtConsoleJSON`` as well as the ROS node
-``dvrk_robot/dvrk_console_json``.
+dVRK system application.  This applies to the plain application
+``sawIntuitiveResearchKitSystem`` as well as the ROS node
+``dvrk_robot dvrk_system``.
 
 .. figure:: /images/gui/dvrk-style-dark.png
    :width: 600

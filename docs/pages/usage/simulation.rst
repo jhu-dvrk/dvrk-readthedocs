@@ -21,14 +21,14 @@ backend installation and runtime requirements are under :ref:`Simulators
 Kinematic simulation
 ####################
 
-This section documents how to run kinematics simulation of da Vinci
+This section documents how to run kinematic simulation of the da Vinci
 Research Kit (dVRK). It is possible to run the dVRK in simulation mode
 on any computer as there is no need for a FireWire adapter.
 
 The kinematic simulation mode uses the same software components and
 configuration files as the real arm except that the PID controller doesn't
-communicate with the hardware. Instead, measured position in the joint space are
-based on the last commanded joint values. This mode allows user to test their
+communicate with the hardware. Instead, measured positions in joint space are
+based on the last commanded joint values. This mode allows users to test their
 code with simple motion commands. In kinematic simulation mode, the dVRK
 software retains most of the graphical user interface (IO widgets are not
 available of course) as well as the ROS topics. One can use Rviz to visualize
@@ -37,7 +37,7 @@ the arms in a virtual environment.
 .. warning::
 
    In simulation mode, there is no way to physically detect which instrument is
-   used for the PSM. You need to open the `Arm` `PSM` tab in the GUI and specify
+   used for the PSM. You need to open the ``Arm`` ``PSM`` tab in the GUI and specify
    which instrument is used. Without an instrument, one can not control the PSM
    in cartesian space since the kinematic chain is incomplete.
 
@@ -78,7 +78,7 @@ configuration file, GUI or over ROS topics.
    # S/Si patient cart
    ros2 launch dvrk_model patient_cart.launch.py generation:=Si
 
-   # dVRK only support Classic MTMs so no need to specify generation
+   # dVRK only supports Classic MTMs so no need to specify generation
    ros2 launch dvrk_model surgeon_console.launch.py
 
 In a second terminal, use a Python test script to make any arm move:
@@ -111,7 +111,7 @@ dvrk_system``, which can run a real or a simulated arm based on a configuration
 file in JSON format.
 
 The system example JSON configuration files are located in
-|sawIntuitiveResearchKit|_ under ``share/system`` folder. The
+|sawIntuitiveResearchKit|_ under the ``share/system`` folder. The
 simulated arm configuration files are under ``share/arm``.
 
 Usage
@@ -202,7 +202,7 @@ These profiles accept ``exercise`` (default ``tray_cubes.yaml``), ``config``
 launcher leaves homing and teleoperation to the operator.
 
 Source: `dvrk_config_jhu launch files
-<https://github.com/jhu-dvrk/dvrk_config_jhu/tree/main/launch>`_,
+<https://github.com/dvrk-config/dvrk_config_jhu/tree/main/launch>`_,
 `sawOpenXR launch files
 <https://github.com/jhu-saw/sawOpenXR/tree/main/ros/launch>`_, and the
 `shared session launcher
@@ -215,7 +215,7 @@ You can run the dVRK software and emulate the dVRK arms and their environment
 using a dynamic simulator. Dynamic simulation for the dVRK has been used for two
 main applications:
 
-* Simulate the dynamic of the PSM parallel linkage (da Vinci Standard/Classic).
+* Simulate the dynamics of the PSM parallel linkage (da Vinci Standard/Classic).
   This is used mostly to improve control.
 
 * Simulate the interactions between instruments and patient. This can be used to

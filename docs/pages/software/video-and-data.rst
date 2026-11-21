@@ -48,7 +48,7 @@ bottlenecks:
   the live display to fall progressively behind real time.
 
 Separation of video data and control data
-===========================================
+=========================================
 
 To keep video latency low alongside robot integration, the dVRK stack separates
 two data paths:

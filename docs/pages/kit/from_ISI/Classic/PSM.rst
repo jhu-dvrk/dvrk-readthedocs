@@ -27,7 +27,7 @@ Basic information:
   safety checks
 * The arm is designed with counterweights to stay as balanced as possible
 * The second actuator controls a mechanical parallelogram used to
-  enforce a RCM point (remote center-of-motion, aka fulcrum point).
+  enforce an RCM point (remote center-of-motion, aka fulcrum point).
   `Google search
   <https://www.google.com/search?q=surgical+robot+center+of+motion+fulcrum+point>`_.
 * The full kinematic chain is composed of two parts, the arm's base
@@ -67,7 +67,7 @@ There is a video at the end of this section describing the process.
 
 At the top of the insertion stage, we find the transmission mechanisms
 for the last 4 actuators.  These are four rotating bars with two pins
-(at different distance from center).
+(at different distances from the center).
 
 .. figure:: /images/Classic/PSM/classic-PSM-last-4-actuators.jpeg
    :width: 250

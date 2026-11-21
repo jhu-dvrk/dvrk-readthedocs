@@ -20,7 +20,7 @@ In the table below:
 * **ECM**: use of this I/O by ECM controller
 * **SUJ/dSIB**: use of this I/O for setup joint controller
 * **dMIB pin**: which connector (DOF1-DOF8 or FP) and pin number
-  (after :). Note that DOF1-DOF7 are HD15 connectors, DOF8 is a HD26
+  (after :). Note that DOF1-DOF7 are HD15 connectors, DOF8 is an HD26
   connector, and FP (foot pedal) is a DB15 connector.
 
 .. note::
@@ -61,7 +61,7 @@ In the table below:
    "2", "I:7", "POSLIM4", "", "Tool", "", "", ""
    "2", "I:8", "NEGLIM1", "", "", "", "", "DOF5:5"
    "2", "I:9", "NEGLIM2", "", "", "", "", "DOF6:5"
-   "2", "I:10", "NEGLIM3", "", "Adaptor", "", "", "DOF7:5"
+   "2", "I:10", "NEGLIM3", "", "Adapter", "", "", "DOF7:5"
    "2", "I:11", "NEGLIM4", "Arm", "Arm", "Arm", "", ""
    "2", "O:0", "DOUT1", "", "", "", "", "DOF5:14"
    "2", "O:1", "DOUT2", "", "", "", "", "DOF6:14"

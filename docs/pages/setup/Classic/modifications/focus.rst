@@ -56,13 +56,13 @@ You will need to make the following custom cable:
 * dVRK controller side
 
   * Using digital outs on first QLA FPGA
-  * Digital out 3 connected to DB 15 on `DOF 1`:
+  * Digital out 3 connected to DB 15 on ``DOF 1``:
 
      * Pin 14: on: 0V, off: 5V.  We should use this pin for focus +
        control, off by default
      * Pin 10 is grounded
 
-  * Digital out 2 connected to DB 15 on `DOF 2`:
+  * Digital out 2 connected to DB 15 on ``DOF 2``:
 
      * Pin 14: on: 0V, off: 5V.  We should use this pin for focus -
        control, off by default
@@ -72,15 +72,15 @@ You will need to make the following custom cable:
 
   * The cable is "Y" shaped, on the dVRK controller side you will need
     two male DB 15 connectors (3 rows of 5 pins) which will plug in
-    the connector labeled `DOF 1` and `DOF 2` on the back of the dVRK
+    the connectors labeled ``DOF 1`` and ``DOF 2`` on the back of the dVRK
     controller.  On the ISI focus controller side, you need a single
     male DB 15 connector (1 row of 8 pins, 1 row of 7 pins).
   * You need 3 wires in your cable:
 
-    * Focus + signal: dMIB `DOF 1` pin 14 <-> Focus controller pin 4
-    * Focus - signal: dMIB `DOF 2` pin 14 <-> Focus controller pin 1
-    * Ground: dMIB `DOF 1` pin 10 and/or `DOF 2` pin 10 <-> Focus
-      controller pin 9 (dMIB share ground between `DOF 1` and `DOF2`)
+    * Focus + signal: dMIB ``DOF 1`` pin 14 <-> Focus controller pin 4
+    * Focus - signal: dMIB ``DOF 2`` pin 14 <-> Focus controller pin 1
+    * Ground: dMIB ``DOF 1`` pin 10 and/or ``DOF 2`` pin 10 <-> Focus
+  controller pin 9 (dMIB shares ground between ``DOF 1`` and ``DOF 2``)
 
   * :download:`PowerPoint cabling diagram
     </images/Classic/focus/FocusControllerWiring.pptx>` (same as

@@ -9,7 +9,7 @@ Ubuntu packages
 
 Install ROS 2 following instructions from `www.ros.org
 <https://www.ros.org>`_.  The following packages might not be
-installed along the ROS desktop but are needed for all ROS
+installed along with the ROS desktop but are needed for all ROS
 distributions:
 
 .. code-block:: bash
@@ -129,11 +129,11 @@ Compile using ``colcon``:
           - "-DCMAKE_BUILD_TYPE=Release"
       EOF
 
-.. note:: `colcon build` is not as smart as ``catkin build``: you need
+.. note:: ``colcon build`` is not as smart as ``catkin build``: you need
    to be in the top directory of your workspace to build (for example
    ``~/ros2_ws``).  Do not try to build in a subdirectory in your
    workspace, colcon will create a new set of ``build``, ``install``
-   and ``log`` directories.  ``catkin build`` recursively look in
+   and ``log`` directories.  ``catkin build`` recursively looks in
    parent directories until it finds the workspace root, ``colcon``
    doesn't.
 
@@ -176,7 +176,7 @@ Use a ROS launch file to start the dVRK in simulated mode with the patient cart 
 
    dVRK with Classic patient cart simulated in RViz
 
-In the dVRK GUI, open the `Arm` `PSM1` tab and select an instrument to use.
+In the dVRK GUI, open the ``Arm`` ``PSM1`` tab and select an instrument to use.
 
 In a second terminal, use a Python test script to make an arm move:
 
@@ -186,7 +186,7 @@ In a second terminal, use a Python test script to make an arm move:
    ros2 run dvrk_python dvrk_arm_test.py -a PSM1
 
 The main :ref:`dVRK ROS node<system>` is ``dvrk_system`` from
-the ``dvrk_robot``.  This node requires configuration files specific
+the ``dvrk_robot`` package.  This node requires configuration files specific
 to your system.
 
 You can also find more launch examples in the :ref:`Usage/Simulation
@@ -197,7 +197,7 @@ Notes
 
 * ROS2 will broadcast on your subnet. That means that other computers
   on the same subnet might send ROS messages you don't
-  want. Reciprocally, your topics will be broadcasted to others. To
+  want. Reciprocally, your topics will be broadcast to others. To
   prevent this, you can use the environment variables
   ``ROS_AUTOMATIC_DISCOVERY_RANGE`` or ``ROS_DOMAIN_ID``. These are
   documented on docs.ros.org.

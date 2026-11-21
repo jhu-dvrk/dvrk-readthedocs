@@ -10,12 +10,12 @@ frequency.  There are a few notable exceptions:
   connected).  This is required to:
 
   * Minimize the number of IOs (inputs/outputs).  For n boards (2 per
-    arm controllers in most cases), sequential reads and writes would
+    arm controller in most cases), sequential reads and writes would
     require 2 x n IOs, one read and one write per board.  FireWire
     also allows to broadcast a single write command to multiple
     controllers and read from all controllers in a single message.
-    This reduces the number of IOs to a fixed number (~2), whatever
-    the number of controllers are used.  This is only possible if a
+    This reduces the number of IOs to a fixed number (~2), regardless of
+    the number of controllers used.  This is only possible if a
     single thread manages all the IOs.
   * Avoid simultaneous accesses to the FireWire port from multiple
     threads (FireWire read/write are thread safe, but processes can
@@ -32,7 +32,7 @@ frequency.  There are a few notable exceptions:
   2 milliseconds.  Instead, we used the *cisstMultiTask*
   ExecIn/ExecOut feature (see `cisstMultiTask concepts
   <https://cisst.readthedocs.io/en/main/libraries/cisstMultiTask/concepts.html>`_)
-  which allows to attach a component to another.  Effectively, the
+  which allows attaching one component to another.  Effectively, the
   parent thread now runs the child's computation whenever needed.  In
   pseudo code:
 

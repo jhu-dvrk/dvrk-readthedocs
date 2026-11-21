@@ -28,7 +28,7 @@ use two different approaches:
   requires QLA Version 1.4 or greater.
 
 You can test the instrument detection using the command line tool
-``instrument`` provided with the low level software (along ``qladisp``
+``instrument`` provided with the low-level software (along with ``qladisp``
 in ``AmpIO``).  The ``instrument`` program will dump the memory from
 the instrument in a text file.  Make sure you have an instrument
 properly seated in the sterile adapter before launching the program.

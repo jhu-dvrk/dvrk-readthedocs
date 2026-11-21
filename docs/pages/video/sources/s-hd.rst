@@ -7,11 +7,11 @@ S HD
 Ikegami
 *******
 
-Intuitive started to release an HD endoscope along the da Vinci S (see
+Intuitive started to release an HD endoscope along with the da Vinci S (see
 :ref:`generations of da Vinci systems <davinci-generations>`).  The
 endoscope and mount are the same as the Standard SD endoscope, but the
 camera heads are different.  They still use a motorized mechanism to
-control the focus, but the sensor now support full HD (1080x1920).  To
+control the focus, but the sensors now support full HD (1920x1080).  To
 process the raw signal from the camera, there are also two CCUs.
 Intuitive used different CCUs over time.  Some systems come with the
 Ikegami CCUs.  The video output is SDI (1080i).

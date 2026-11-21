@@ -35,7 +35,7 @@ by the Multi-Scale Medical Robotics Center (MRC), InnoHK, Hong Kong,
 China.
 
 The following individuals have contributed in one way or another to the dVRK:
-Juan Barragan Nogera, Dale Bergman, Brendan Burkhart, Jonathan Bohren, Guido
+Juan Barragan Noguera, Dale Bergman, Brendan Burkhart, Jonathan Bohren, Guido
 Caccianiga, Preetham Chalasani, Zihan Chen, Tommaso Da Col, Anton Deguet,
 Claudia D'Ettorre, Simon DiMaio, Noah Drakes, Kyle Ettinger, Gregory Fischer,
 Alessandro Gozzi, Ankur Kapoor, Peter Kazanzides, Stefan Kohlgrueber, Aravind S.

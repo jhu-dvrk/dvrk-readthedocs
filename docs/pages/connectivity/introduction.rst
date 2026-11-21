@@ -9,7 +9,7 @@ which version of dVRK controllers are used.
 
 While testing the communication with the dVRK controllers, keep in
 mind that the number of FPGA boards (showing as either a FireWire node
-or and Ethernet IP) depends on the type of controller you're using and
+or an Ethernet IP) depends on the type of controller you're using and
 how they are connected.  See :ref:`controllers<nb-fpgas>`.
 
 FireWire only
@@ -22,13 +22,14 @@ communicate between the computer and the dVRK controllers. The
 interface standard IEEE 1394 is also known as FireWire (`Wikipedia
 entry <https://en.wikipedia.org/wiki/IEEE_1394>`_). In this scenario,
 the controllers are daisy-chained using FireWire and the computer is
-also on the FireWire chain.  This approach works will all generations
+also on the FireWire chain.  This approach works with all generations
 of dVRK controllers and is the most reliable approach.
 
 .. figure:: /images/connectivity/PC-controllers-firewire-only.*
    :width: 600
    :align: center
 
+   FireWire only
    FireWire only
 
 .. hint::
@@ -67,7 +68,7 @@ the computer and all the other dVRK controllers.
 Ethernet only
 =============
 
-When all the controllers are build around the logic board FPGA V3, it is
+When all the controllers are built around the logic board FPGA V3, it is
 possible to use Ethernet between the controllers. This solution doesn't require
 any FireWire connection. 
 

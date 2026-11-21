@@ -10,7 +10,7 @@ Arm IO, arm and arm system
 
 To get started, you should use the Python based application
 ``dvrk-io-config-generator.py``.  The script should be in your path after
-your build and source your ``devel/setup.bash`` (ROS 1) or
+you build and source your ``devel/setup.bash`` (ROS 1) or
 ``install/setup.bash`` (ROS 2).
 
 This script will generate a "blank" IO JSON configuration file for the
@@ -56,14 +56,14 @@ The script has 6 options:
   controllers for Classic arms delivered before 2022 are ``QLA1``
   based.  All controllers for Classic arms delivered after 2022 are
   ``DQLA`` based.  All controllers for Si arms (PSMs and ECMs) are
-  ``dRAC`` based.  The hardware type should match the output of
+  ``dRAC`` based (hardware type ``dRA1``).  The hardware type should match the output of
   :ref:`qladisp <qladisp>`.
-* *calibration file*: also referred as ``.cal`` file. For all Classic
+* *calibration file*: also referred to as a ``.cal`` file. For all Classic
   arms (first generation PSMs and ECMs as well as all MTMs currently
   supported), ``dvrk-io-config-generator.py`` requires a ``.cal``
   file.  This file contains the factory calibration performed by
   Intuitive Surgical.  If you have the original ``.cal`` files for
-  your arms, you should always use them and save them along your dVRK
+  your arms, you should always use them and save them along with your dVRK
   configuration files for future use.  However, original ``.cal``
   files are getting harder to locate.  For MTMs, you do not strictly
   need the calibration file specific to your arm: you can use the
@@ -78,7 +78,7 @@ The script has 6 options:
   with ``-s`` and follow the 3-step :ref:`Classic potentiometer
   calibration <calibration-classic-pots>` procedure.
 * *serial number*: you can find the serial number on the arm itself
-  (aka `trk id`).  The serial number doesn't need to be specified for
+  (aka ``trk id``).  The serial number doesn't need to be specified for
   Classic arms when using the arm's own ``.cal`` file since it can be
   found in the ``.cal`` file, but you must specify it with ``-s`` when
   using a nominal or borrowed ``.cal`` file (and always make sure it
@@ -133,8 +133,8 @@ The IO configuration generator will also generate a simple system configuration
 file.  This system configuration is designed to use a single arm, the one for
 which the script created the IO file.
 
-Once you created all the IO files and calibrated your arms, you will likely
-want to combine multiple arms, foot pedals, header sensors... in a single system
+Once you have created all the IO files and calibrated your arms, you will likely
+want to combine multiple arms, foot pedals, head sensors... in a single system
 configuration file.
 
 The file format for the :ref:`dVRK system applications <system>` is described in

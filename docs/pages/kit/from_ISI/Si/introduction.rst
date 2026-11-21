@@ -13,12 +13,12 @@ redesigned for the da Vinci S.  The Si patient cart mostly carries
 over the S patient cart (see :ref:`da Vinci generations
 <davinci-generations>`).
 
-The third generation of da Vinci systems (Si) share very few features
+The third generation of da Vinci systems (Si) shares very few features
 with the first generation (Classic) since the surgeon's console is new
 and the patient's cart is basically an S patient's cart.  The few
-notable exception are:
+notable exceptions are:
 
-* The instruments geometry, albeit the Si instruments are slightly
+* The instrument geometry, albeit the Si instruments are slightly
   longer. We can use Si instruments on the dVRK Classic PSMs.
 * ECM endoscope adapter. This means that we can use any endoscope
   coming from a Classic, S or Si on an ECM Classic, S or Si.
@@ -60,7 +60,7 @@ setup <setup-si>`)
   * Light source
   * Camera control units
   * Focus controller (for S systems only)
-  * The rack itself if provided along the dVRK
+  * The rack itself if provided along with the dVRK
 
 * Patient's cart
 

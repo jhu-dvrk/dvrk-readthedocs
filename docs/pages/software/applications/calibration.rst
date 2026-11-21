@@ -6,7 +6,7 @@ Calibration
 ``sawRobotIO1394CurrentCalibration``
 ************************************
 
-* C+ application with a text based interface, it depends on cisst/SAW
+* C++ application with a text-based interface, it depends on cisst/SAW
 * Compatible with **dVRK Classic controllers only** (not dVRK-Si)
 * https://github.com/jhu-saw/sawRobotIO1394/tree/main/core/applications/current-calibration
 
@@ -26,7 +26,7 @@ Usage is described in the :ref:`Classic motor current calibration
 
 * ROS Python script with a text based interface, it depends on
   CRTK/dVRK Python to communicate with the dVRK system.  The dVRK
-  system must be running at the same time, with the options ``-C -i
+  system must be running at the same time, with the options ``-C -K -j
   ...``
 * ROS package ``dvrk_python``
 * Compatible with **dVRK Classic active arm controllers only** (not SUJ or anything dVRK-Si)
@@ -48,7 +48,7 @@ Usage is described in the :ref:`Classic potentiometer calibration
 
 * ROS Python script with a text based interface, it depends on
   CRTK/dVRK Python to communicate with the dVRK system.  The dVRK
-  system must be running at the same time, with the options ``-C -i
+  system must be running at the same time, with the options ``-C -K -j
   ...``
 * ROS package ``dvrk_python``
 * Compatible with **dVRK Classic PSM only** (not SUJ, MTM, ECM or anything dVRK-Si)
@@ -67,7 +67,7 @@ offset <calibration-classic-pots-depth>` section.
 ``sawIntuitiveResearchKitGripperCalibration``
 *********************************************
 
-* C+ application with a text based interface, it depends on cisst/SAW
+* C++ application with a text-based interface, it depends on cisst/SAW
 * Compatible with **dVRK Classic MTM only**
 * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/gripper-calibration
 
@@ -83,7 +83,7 @@ Usage is described in the :ref:`Classic MTM gripper calibration
 ``sawIntuitiveResearchKitSiPotentiometersCalibration``
 ******************************************************
 
-* C+ application with a text based interface, it depends on cisst/SAW
+* C++ application with a text-based interface, it depends on cisst/SAW
 * Compatible with **dVRK-Si PSM and ECM only**
 * https://github.com/jhu-dvrk/sawIntuitiveResearchKit/tree/main/core/applications/si-potentiometers-calibration
 

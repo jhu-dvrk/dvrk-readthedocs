@@ -9,7 +9,7 @@ Introduction
 The following describes an alternative to the original HRSV unit from
 ISI.  The original units use CRT monitors and the maximum resolution
 is 720x1280 over VGA.  The idea is to replace the display using either
-a VR headset or HMD.  Most VR headset require the use of their SDK and
+a VR headset or HMD.  Most VR headsets require the use of their SDK and
 in most cases, transferring the video over Wi-Fi.  We looked for a
 solution that wouldn't require any SDK and simply show up as an extra
 monitor under Linux.  This way we can just drag and drop the video
@@ -32,8 +32,8 @@ features:
 
 * Supports HDMI-3D.  We don't have any code for this (yet).
 * Supports 3D using a single QHD channel with side-by-side images.
-  The image is split into left and right channels and each use one
-  half of the full image.  This means that we loose half the
+  The image is split into left and right channels and each uses one
+  half of the full image.  This means that we lose half the
   horizontal resolution.  The HMD has a button to toggle the 3D.  A
   quick press toggles between 2D and 3D.  A long press (3 seconds)
   swaps the left and right channels.
@@ -88,7 +88,7 @@ device 15:
 
    usbhid-dump -s 1:15 -f -e stream
 
-As you place your head in and out the HMD you should see the values
+As you place your head in and out of the HMD you should see the values
 changing in your terminal.  The head sensor status is the 17th value.
 
 Once the permissions are set correctly, you can :ref:`edit your system
@@ -110,7 +110,7 @@ use the left or right of the display.  This works without having to
 look into the Goovis.
 
 Both solutions are based on ``gstreamer`` and rely on the
-``glimagesink`` which allows to change the image aspect ratio.
+``glimagesink`` which allows changing the image aspect ratio.
 
 Pure ``gstreamer``
 ==================

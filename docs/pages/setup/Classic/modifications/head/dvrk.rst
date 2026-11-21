@@ -9,7 +9,7 @@ Hardware
 * 1 Digital Distance Sensor 10cm (http://www.pololu.com/product/1134)
 * 20 Molex pin connectors (Digikey Part No. WM2510-ND - we only need 6
   pin connectors)
-* 12-feet S-Video Cable or any 3 wire cable would work (we just
+* 12-foot S-Video Cable or any 3-wire cable would work (we just
   happened to have an old S-Video cable handy)
 * 1 male DB 15 connector (for the connection to the dVRK controller)
 * 1 3-pin right angle connector (for the connection on the sensor side)
@@ -30,7 +30,7 @@ Notes:
 
 * J18 is a 15-pin connector labelled DOF 4 on the back of the dVRK
   controller
-* Please connect head sensor and foot pedal on same controller box
+* Please connect the head sensor and foot pedal on the same controller box
 
 Physical setup
 --------------

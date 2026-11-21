@@ -11,7 +11,7 @@ Functionalities
 The class ``mtsRobot1394`` is part of the `sawRobotIO1394
 <https://github.com/jhu-saw/sawRobotIO1394>`_ library.  It is built on
 top of the *Amp1394* library used to communicate with the dVRK
-controllers (part of :ref:`mechatronic software <amp1394>`).
+controllers (part of :ref:`mechatronics software <amp1394>`).
 
 It provides:
 
@@ -30,23 +30,23 @@ Configuration files
 
 Configuration files use JSON.  Most files are specific to each arm
 identified by its :ref:`serial number <serial-number>`.  There are a
-few files than can be shared across sites.  These are used for digital
+few files that can be shared across sites.  These are used for digital
 IOs and therefore do not require any calibration.  They can be found
 in the main dVRK repository under ``share/io``.
 
 Applications
 ************
 
-  * *sawIntuitiveResearchKitQtConsoleJSON* and ROS
-    ``dvrk_robot/dvrk_console_json`` for regular use
-  * *sawRobotIO1394QtConsole* and ``ROS robot_io/robot_io_console``
+  * *sawIntuitiveResearchKitSystem* and ROS
+    ``dvrk_robot dvrk_system`` for regular use
+  * *sawRobotIO1394QtConsole* and ROS ``robot_io/robot_io_console``
     for debugging
 
 Widgets
 *******
 
 For any arm without brakes (Classic MTMs and PSMs), the IO widget
-display all the information regarding the state of the controller and
+displays all the information regarding the state of the controller and
 axes.  By default, this widget only has two active buttons, *Direct
 control* and *Plot position*.
 
@@ -67,7 +67,7 @@ the current sent to any motor or brake.
 
    None of the operations allowed in *Direct control* should be
    performed if there is a PID or arm component running (e.g. with
-   *sawIntuitiveResearchKitQtConsoleJSON*)
+   *sawIntuitiveResearchKitSystem*)
 
 .. caution::
 
@@ -84,11 +84,11 @@ The arm will likely fall under its own weight.
    :width: 600
    :align: center
 
-   IO widget for an arm without brakes (MTM)
+   IO widget for an arm with brakes (ECM)
 
 The dVRK controllers can also be used to read different analog inputs,
 i.e. not tied to a motorized axis.  This is the case for the Hall
-effect sensor of the MTM grippers.  When you will start a dVRK console
+effect sensor of the MTM grippers.  When you start a dVRK system
 application with an MTM, there will be an IO widget for each MTM
 gripper.  In these widgets, the current setpoint and measure are
 meaningless, and it doesn't need to be powered.  The widget is also
@@ -102,8 +102,8 @@ the 4 axes are used to drive the SUJ brakes.
    IO widget for a single analog input (MTM gripper)
 
 One very convenient feature of the IO widget is the ability to plot
-the potentiometer positions along the encoder based positions.  This
-is useful to check if there are any issue with either the
+the potentiometer positions along with the encoder-based positions.  This
+is useful to check if there are any issues with either the
 potentiometers or encoders.
 
 .. figure:: /images/gui/gui-Classic-MTML-io-plot.png

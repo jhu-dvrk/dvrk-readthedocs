@@ -13,7 +13,7 @@ The dVRK system also supports generic arms, i.e. one can use a
 different type of hardware as long as there is a cisst/SAW component
 for it and the component has a *provided interface* that matches the
 dVRK arm it is meant to replace.  We've successfully integrated some
-alternate for the MTM:
+alternatives for the MTM:
 
 Retrieve additional master-device components using
 :ref:`Adding components to an existing workspace <vcs-add-components>`.

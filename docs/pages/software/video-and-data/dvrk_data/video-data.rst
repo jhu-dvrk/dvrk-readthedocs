@@ -40,8 +40,8 @@ eye when only its peer's source timestamp changed. It preserves per-eye source
 observations and adds an ``alignment_output`` timestamp, also available under
 the legacy ``stereo_output`` name.
 
-Separate left and right inputs can be configured instead of the combined
-input; see :ref:`dvrk-video-configuration`.
+Processing accepts a combined side-by-side left/right stream; see
+:ref:`dvrk-video-configuration`.
 
 .. code-block:: bash
 
@@ -81,7 +81,7 @@ those source observations does not pair images or synchronize hardware cameras;
 see :ref:`dvrk-timestamps`.
 
 Why video is not transported as ROS images
-*******************************************
+******************************************
 
 A ROS image path represents every frame as a middleware message.  Depending on
 the ROS distribution, RMW implementation, publisher/subscriber arrangement,

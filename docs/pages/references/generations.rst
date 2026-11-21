@@ -38,7 +38,7 @@ Supported:
 
 Not supported:
 
-* S PSMs (ver1) and ECMs (ver2). Some S system came with more recent
+* S PSMs (ver1) and ECMs (ver2). Some S systems came with more recent
   PSMs or ECMs which are supported. The version is identified by the
   number following **ASSY,PSM<ver>** or **ASSY,ECM<ver>** on the arm's
   label.
@@ -53,7 +53,7 @@ Not supported:
      :align: center
      :width: 400
 
-     dVRK supported S/Si PSM, **ASSY,PSM3**
+     dVRK supported S/Si PSM, **ASSY,PSM2**
 
 * Si patient cart motorized base
 * Si MTMs

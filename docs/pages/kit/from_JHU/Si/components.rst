@@ -8,6 +8,7 @@ Custom boards (PCBs)
 
 * :ref:`Component versions <controller-versions>` by build/date.
 * The FPGA design is open source and available on GitHub:
+  https://github.com/jhu-cisst/FPGA1394V3
 * The dRAC design is open source and available on GitHub:
   https://github.com/jhu-dvrk/drac
 * The LED board design is open source and available on
@@ -24,7 +25,7 @@ Power supplies
 * Replacement power supplies:
 
   * 12V logic power supply: https://www.digikey.com/en/products/detail/mean-well-usa-inc/LRS-50-12/7705044
-  * 48V motor power supply: https://www.digikey.co.nz/en/products/detail/cui-inc/VOF-300-48
+  * 48V motor power supply: https://www.digikey.com/en/products/detail/cui-inc/VOF-300-48/4867628
 
 Bill of materials and assembly
 ******************************

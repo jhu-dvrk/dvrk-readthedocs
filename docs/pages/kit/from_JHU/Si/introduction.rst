@@ -9,14 +9,13 @@ box.  There is no dVRK support for the Si/Xi surgeon's console
 (i.e. MTMs, foot pedals...).
 
 Each controller is built around a single dRAC/FPGA stack.  Both boards
-(dRAC and FPGA logic board) were designed at JHU.  The dRAC board
-provided 10 PWM power lines for the PSMs and ECMs (7 motors and 3
+(dRAC and FPGA logic board) were designed at JHU.  The dRAC board provides 10 PWM power lines for the PSMs and ECMs (7 motors and 3
 brakes).
 
 One main difference between the QLA and the dRAC is that the dRAC
 doesn't need to process any low power signals since the embedded ESPM
 does.  The ESPM converts all the low power signals (encoder,
-potentiometer, buttons, instrument Id, LEDs) and communicate with the
+potentiometer, buttons, instrument ID, LEDs) and communicates with the
 dVRK controllers over a serial digital connection (LVDS).  To
 communicate with the arm, the dVRK-Si controllers use two standard
 D-Sub connectors, one for the LVDS communication and one for the 10

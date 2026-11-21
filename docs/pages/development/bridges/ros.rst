@@ -128,7 +128,7 @@ MTM wrench example (hold the arm before running):
    ral.spin()
 
    m.set_wrench_body_orientation_absolute(True)
-   m.body.servo_cf(numpy.array([0.0, 0.0, 2.0, 0.0, 0.0, 0.0]))  # 2 N in y
+   m.body.servo_cf(numpy.array([0.0, 0.0, 2.0, 0.0, 0.0, 0.0]))  # 2 N in z
    m.lock_orientation_as_is()
    m.set_gravity_compensation(True)
 

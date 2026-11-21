@@ -59,7 +59,7 @@ the controller to access the jumper.
    :width: 500
    :align: center
 
-To get a better access to the jumper, you can disconnect the SCSI 68
+To get better access to the jumper, you can disconnect the SCSI-68
 connector but this is not required.
 
 .. figure:: /images/Classic/tool-detection/dmib-tool-jumper-locate.png
@@ -141,7 +141,7 @@ good soldering skills (or use the EndoWrist soldering iron).
 
 **Step 3.** See the figure below. Solder a jumper wire between the 'R1
 pin' in the 156-pin connector (J3) and the top left pin, aka pin 9, in
-the 'foot pedal' DB-9 connector (J24). *Some dMIB have misaligned
+the 'foot pedal' DB-15 connector (J24). *Some dMIBs have misaligned
 silkscreen for the 156-pin connector, like the rev. D in the figure.*
 
 .. figure:: /images/Classic/tool-detection/dmib-modification.jpg

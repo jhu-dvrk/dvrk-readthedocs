@@ -11,19 +11,19 @@ Important notes
 
     FireWire A connectors have 6 pins. Two of them carry power to
     drive an external device (e.g. hard drive). The dVRK doesn't use
-    these two pins but if a user accidentally force the connector
+    these two pins, but if a user accidentally forces the connector
     upside-down, the two power pins will instead touch the data lines
     and **irreversibly** damage the dVRK FPGA board. Make sure you
     respect the direction of the FireWire connector. Think of it as
     old USB connectors, these are not reversible like USB-C,
-    Lightning... If you have to force it to plug it, visually check
+    Lightning... If you have to force it to plug it in, visually check
     that the connector is not upside-down.
 
 
 * There is no such thing as a FireWire to USB adapter, so you will need
   a computer with a FireWire adapter
-* FireWire is not supported by virtualization software (VMWare Fusion,
-  Parallel...) so you will need to use a native Linux OS (we strongly
+* FireWire is not supported by virtualization software (VMware Fusion,
+  Parallels...) so you will need to use a native Linux OS (we strongly
   recommend Ubuntu LTS)
 * You should never have two PCs connected to the same FireWire chain
 * Avoid mixing dVRK controllers and other FireWire devices on the same
@@ -104,7 +104,7 @@ Convenient solution
 ===================
 
 If you or your institution doesn't care about who can access the
-FireWire devices on your system, you can grant anyone to have read and
+FireWire devices on your system, you can grant anyone read and
 write permissions on all FireWire devices. This is simpler to manage
 and should satisfy the requirements of most, if not all, dVRK users.
 
@@ -200,7 +200,7 @@ two boards per controller/arm.
 ******************
 
 If qladisp doesn't work, check that all FireWire devices have been
-found and created with the correct files permissions using ``ls -al
+found and created with the correct file permissions using ``ls -al
 /dev/fw*``. The output should look like:
 
 .. code-block::

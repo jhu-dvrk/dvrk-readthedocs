@@ -10,7 +10,7 @@ The grippers on the MTM use a Hall Effect sensor to measure the
 opening.  The analog values are converted to an approximate angle
 using a linear equation.  The goal of the calibration procedure is to
 define the scale and offset used for the conversion.  The da Vinci MTM
-gripper used two small springs, one weak outer spring to keep the
+gripper uses two small springs, one weak outer spring to keep the
 gripper opened and a stronger inner spring (but shorter one) used to
 create some resistance when the gripper is almost closed.  From the
 user point of view, we have 3 different repeatable positions:
@@ -96,13 +96,13 @@ Notes:
   display a found range from 0 to the maximum value you provided
   (suggested is 60).
 * Since the closed-but-not-tight position depends on the user, it is
-  not perfectly repeatable.  You will need some trials and errors to
+  not perfectly repeatable.  You will need some trial and error to
   fine tune the calibration.
 
 Validation
 ==========
 
-Once you calibrated your MTM gripper, you can visually check the
+Once you have calibrated your MTM gripper, you can visually check the
 results using the dVRK system application (either
 ``sawIntuitiveResearchKitSystem`` or ROS ``dvrk_robot
 dvrk_system``).  Open the GUI tab for your MTM gripper and in
@@ -116,8 +116,8 @@ the values should be close to zero and finally, when the gripper is
 fully closed, you should reach low negative values (-40 degrees or
 less).
 
-   .. figure:: /images/Classic/MTM/GUI-gripper-calibration-validation.png
-      :width: 400
-      :align: center
+.. figure:: /images/Classic/MTM/GUI-gripper-calibration-validation.png
+   :width: 400
+   :align: center
 
-      MTM Classic gripper angle visualization
+   MTM Classic gripper angle visualization

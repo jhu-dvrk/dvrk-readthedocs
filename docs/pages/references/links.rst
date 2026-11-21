@@ -90,75 +90,75 @@ Software
 
    Most of the code should be downloaded using ``vcs`` (python
    vcstools) instead of ``git`` to make sure all the repositories you
-   need are cloned.  ``vcs`` also allows to use a specific branch or
+   need are cloned.  ``vcs`` also allows you to use a specific branch or
    tag per repository to enforce checking out compatible versions.
    See :ref:`VCS instructions <vcs>` for the dVRK.
 
 cisst libraries and SAW components
 ==================================
 
-  * `cisst repository <https://github.com/jhu-cisst/cisst>`_
-  * `cisst documentation <https://cisst.readthedocs.io>`_
-  * `cisst netlib <https://github.com/jhu-cisst/cisstNetlib>`_
-  * `cisst-ros <https://github.com/jhu-cisst/cisst-ros>`_ ROS 1 and 2 bridge for SAW components
-  * `vcs files <https://github.com/jhu-saw/vcs>`_ for cisst, SAW components and dVRK
-  * `sawTextToSpeech <https://github.com/jhu-saw/sawTextToSpeech>`_
-  * `sawGenericInput <https://github.com/jhu-saw/sawGenericInput>`_
-  * `sawControllers <https://github.com/jhu-saw/sawControllers>`_
-  * `sawRobotIO1394 <https://github.com/jhu-saw/sawRobotIO1394>`_
-  * *cisst*\ /*SAW* presentations, September 2021
+* `cisst repository <https://github.com/jhu-cisst/cisst>`_
+* `cisst documentation <https://cisst.readthedocs.io>`_
+* `cisst netlib <https://github.com/jhu-cisst/cisstNetlib>`_
+* `cisst-ros <https://github.com/jhu-cisst/cisst-ros>`_ ROS 1 and 2 bridge for SAW components
+* `vcs files <https://github.com/jhu-saw/vcs>`_ for cisst, SAW components and dVRK
+* `sawTextToSpeech <https://github.com/jhu-saw/sawTextToSpeech>`_
+* `sawGenericInput <https://github.com/jhu-saw/sawGenericInput>`_
+* `sawControllers <https://github.com/jhu-saw/sawControllers>`_
+* `sawRobotIO1394 <https://github.com/jhu-saw/sawRobotIO1394>`_
+* *cisst*\ /*SAW* presentations, September 2021
 
-    * Part 1 (30 min): https://youtu.be/SSo2MPsfBlk
-    * Part 2 (45 min): https://youtu.be/XD0S4GzvfM8
+  * Part 1 (30 min): https://youtu.be/SSo2MPsfBlk
+  * Part 2 (45 min): https://youtu.be/XD0S4GzvfM8
 
 CRTK
 ====
 
-  * `Documentation <https://crtk-robotics.readthedocs.io>`_
-  * `ROS messages <https://github.com/collaborative-robotics/crtk_msgs>`_
-  * `Python ROS client library <https://github.com/collaborative-robotics/crtk_python_client>`_
-  * `Matlab ROS client library <https://github.com/collaborative-robotics/crtk_matlab_client>`_
+* `Documentation <https://crtk-robotics.readthedocs.io>`_
+* `ROS messages <https://github.com/collaborative-robotics/crtk_msgs>`_
+* `Python ROS client library <https://github.com/collaborative-robotics/crtk_python_client>`_
+* `Matlab ROS client library <https://github.com/collaborative-robotics/crtk_matlab_client>`_
 
 dVRK
 ====
 
-  * General
+* General
     
-    * Main site: `dVRK <https://dvrk.lcsr.jhu.edu>`_
-    * Documentation: `dvrk.readthedocs.io <https://dvrk.readthedocs.io>`_
-    * `YouTube channel <https://www.youtube.com/channel/UCxZyIKTjk2coKGZslIOfblw>`_
+  * Main site: `dVRK <https://dvrk.lcsr.jhu.edu>`_
+  * Documentation: `dvrk.readthedocs.io <https://dvrk.readthedocs.io>`_
+  * `YouTube channel <https://www.youtube.com/channel/UCxZyIKTjk2coKGZslIOfblw>`_
 
-  * Code
+* Code
     
-    * Core components: `sawIntuitiveResearchKit <https://github.com/jhu-dvrk/sawIntuitiveResearchKit>`_
-    * Python ROS client library and examples: `dvrk_python <https://github.com/jhu-dvrk/dvrk_python>`_
-    * Matlab ROS client library and examples: `dvrk_matlab <https://github.com/jhu-dvrk/dvrk_matlab>`_
-    * Gravity compensation for MTMs: `dvrk-gravity-compensation <https://github.com/jhu-dvrk/dvrk-gravity-compensation>`_
-    * PSM to camera registration: `dvrk_camera_registration <https://github.com/jhu-dvrk/dvrk_camera_registration>`_
-    * dVRK rqt widgets (arm, console, system, diagnostics): `rqt_dvrk <https://github.com/jhu-dvrk/rqt_dvrk>`_ (see :ref:`rqt_dvrk <rqt_dvrk>`)
-    * Simulator base (shared contracts, tools, scenes): `dvrk_simulator_base <https://github.com/jhu-dvrk/dvrk_simulator_base>`_ (see :ref:`dvrk_simulator_base <dvrk_simulator_base>`)
-    * Simulator backend with NVIDIA Newton and Warp: `dvrk_newton <https://github.com/jhu-dvrk/dvrk_newton>`_ (see :ref:`dvrk_newton <dvrk_newton>`)
-    * Simulator backend with PyBullet: `dvrk_pybullet <https://github.com/jhu-dvrk/dvrk_pybullet>`_ (see :ref:`dvrk_pybullet <dvrk_pybullet>`)
-    * Simulator backend with NVIDIA Isaac Sim: `dvrk_isaac_sim <https://github.com/jhu-dvrk/dvrk_isaac_sim>`_ (see :ref:`dvrk_isaac_sim <dvrk_isaac_sim>`)
+  * Core components: `sawIntuitiveResearchKit <https://github.com/jhu-dvrk/sawIntuitiveResearchKit>`_
+  * Python ROS client library and examples: `dvrk_python <https://github.com/jhu-dvrk/dvrk_python>`_
+  * Matlab ROS client library and examples: `dvrk_matlab <https://github.com/jhu-dvrk/dvrk_matlab>`_
+  * Gravity compensation for MTMs: `dvrk-gravity-compensation <https://github.com/jhu-dvrk/dvrk-gravity-compensation>`_
+  * PSM to camera registration: `dvrk_camera_registration <https://github.com/jhu-dvrk/dvrk_camera_registration>`_
+  * dVRK rqt widgets (arm, console, system, diagnostics): `rqt_dvrk <https://github.com/jhu-dvrk/rqt_dvrk>`_ (see :ref:`rqt_dvrk <rqt_dvrk>`)
+  * Simulator base (shared contracts, tools, scenes): `dvrk_simulator_base <https://github.com/jhu-dvrk/dvrk_simulator_base>`_ (see :ref:`dvrk_simulator_base <dvrk_simulator_base>`)
+  * Simulator backend with NVIDIA Newton and Warp: `dvrk_newton <https://github.com/jhu-dvrk/dvrk_newton>`_ (see :ref:`dvrk_newton <dvrk_newton>`)
+  * Simulator backend with PyBullet: `dvrk_pybullet <https://github.com/jhu-dvrk/dvrk_pybullet>`_ (see :ref:`dvrk_pybullet <dvrk_pybullet>`)
+  * Simulator backend with NVIDIA Isaac Sim: `dvrk_isaac_sim <https://github.com/jhu-dvrk/dvrk_isaac_sim>`_ (see :ref:`dvrk_isaac_sim <dvrk_isaac_sim>`)
 
-  * Configuration
+* Configuration
     
-    * Configuration files from JHU: `dvrk_config_jhu <https://github.com/dvrk-config/dvrk_config_jhu>`_
-    * GitHub organization for all dVRK sites: `github.com:/dvrk-config <https://github.com/dvrk-config>`_
+  * Configuration files from JHU: `dvrk_config_jhu <https://github.com/dvrk-config/dvrk_config_jhu>`_
+  * GitHub organization for all dVRK sites: `github.com/dvrk-config <https://github.com/dvrk-config>`_
       
-    * ROS URDF and launch files: `dvrk_model <https://github.com/jhu-dvrk/dvrk_model>`_
-    * ROS launch files for video: `dvrk_video <https://github.com/jhu-dvrk/dvrk_video>`_
+  * ROS URDF and launch files: `dvrk_model <https://github.com/jhu-dvrk/dvrk_model>`_
+  * ROS launch files for video: `dvrk_video <https://github.com/jhu-dvrk/dvrk_video>`_
 
-  * Other
+* Other
     
-    * Documentation source: `dvrk-readthedocs <https://github.com/jhu-dvrk/dvrk-readthedocs>`_
-    * Continuous integration: `dvrk-github-workflow <https://github.com/jhu-dvrk/dvrk-github-workflow>`_
+  * Documentation source: `dvrk-readthedocs <https://github.com/jhu-dvrk/dvrk-readthedocs>`_
+  * Continuous integration: `dvrk-github-workflow <https://github.com/jhu-dvrk/dvrk-github-workflow>`_
 
 
 CAD
 ***
 
-  * Files used for ROS ``dvrk_model``: `dvrk_cad <https://github.com/jhu-dvrk/dvrk_cad>`_  This repository now includes high definition models of instruments.
-  * High resolution instrument models: `instrument-cad <https://github.com/jhu-dvrk/instrument-cad>`_
-  * Small parts used for calibration: `dvrk-calibration-parts <https://github.com/jhu-dvrk/dvrk-calibration-parts>`_ (Classic)
-  * Cannula replacement: `dvrk-cannulas <https://github.com/jhu-dvrk/dvrk-cannulas>`_ (Classic and Si)
+* Files used for ROS ``dvrk_model``: `dvrk_cad <https://github.com/jhu-dvrk/dvrk_cad>`_.  This repository now includes high definition models of instruments.
+* High resolution instrument models: `instrument-cad <https://github.com/jhu-dvrk/instrument-cad>`_
+* Small parts used for calibration: `dvrk-calibration-parts <https://github.com/jhu-dvrk/dvrk-calibration-parts>`_ (Classic)
+* Cannula replacement: `dvrk-cannulas <https://github.com/jhu-dvrk/dvrk-cannulas>`_ (Classic and Si)

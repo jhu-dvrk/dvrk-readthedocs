@@ -19,11 +19,11 @@ the :ref:`system configuration file <config-system>`, it will:
 * If the arm requires it, a :ref:`PID component <pid>` will also be created and
   configured.
 * If the arm is using a dVRK IO (e.g. not a simulated arm), the system component
-  will locate the corresponding IO configuration file corresponding to the arm,
+  will locate the IO configuration file corresponding to the arm,
   and use it to configure the IO component.
 * For each console defined in the configuration file, a console object is
   created (C++ class not a cisstMultiTask component). All the console objects
-  are internal to the system, Their functionalities are exposed using interfaces
+  are internal to the system. Their functionalities are exposed using interfaces
   provided by the system component.
 * For each console, the components required to provide the user events *operator
   present*, *clutch* and *camera* are dynamically created.
@@ -40,7 +40,7 @@ It is possible to start the :ref:`dVRK system <system>` without the ROS bridge
 with *sawIntuitiveResearchKitSystem* or without the Qt interface (``-t`` command
 line option).
 
-Once the dVRK application and configured, the system components manages the
+Once the dVRK application is created and configured, the system component manages the
 overall state of the dVRK:
 
 * Power on, off, home...
@@ -66,7 +66,7 @@ for one MTM.
 It is also possible to have two surgeon's consoles. In this case, the system has
 the following arms: SUJ, ECM, PSM1, PSM2 and PSM3 on the patient's side. Then we
 have MTML1 and MTMR1 for the first console and MTML2 and MTMR2 for the second
-console.  At minima, each console needs two MTMs as well as 3 inputs for
+console.  At a minimum, each console needs two MTMs as well as 3 inputs for
 *operator present*, *clutch* and *camera*. There are many possible
 teleoperations:
 
@@ -77,11 +77,11 @@ Not all 14 combinations make sense based on how the PSMs are configured on the
 patient's side.  But it makes sense to be able to toggle which arms are
 controlled and by whom. For the dVRK, all the desired sets (``MTML1_PSM2``,
 ``MTML1_MTMR1_ECM``...) have to be declared in the system configuration file. An
-instance of each teleoperation is also created but, they are not all selected at
+instance of each teleoperation is also created, but they are not all selected at
 the same time.  The system component prevents conflicts (any arm used by two
 teleoperation components) by automatically unselecting one of the
 teleoperations. Users can select and unselect teleoperation components using the
 graphical user interface or ROS topics.
 
-Finally, the dVRK allows some configurations not supported on the Clinical
+Finally, the dVRK allows some configurations not supported on the clinical
 system such as two ECMs on a patient's cart.

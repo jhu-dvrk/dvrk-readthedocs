@@ -87,9 +87,9 @@ ESXX Programmer
 Introduction
 ************
 
-The ESXX programmer replaces the obsolete ESPM programmer. It only need to be used **during setup**: it is needed to replace the vendor's firmware (from Intuitive) on the ESPM and ESSJ boards with custom dVRK firmware using an open communication protocol over LVDS. Once the boards have been reprogrammed, the ESXX programmer should be removed.
+The ESXX programmer replaces the obsolete ESPM programmer. It only needs to be used **during setup**: it is needed to replace the vendor's firmware (from Intuitive) on the ESPM and ESSJ boards with custom dVRK firmware using an open communication protocol over LVDS. Once the boards have been reprogrammed, the ESXX programmer should be removed.
 
-Keep ESXX programmer for future firmware updates. 
+Keep the ESXX programmer for future firmware updates. 
 
 The ESXX programmer uses a micro SD card containing the custom firmware images. The required files are provided in ``sd_content.zip``, available from the `esxx-programmer-sd-content releases <https://github.com/jhu-dvrk/esxx-programmer-sd-content/releases>`_.
 
@@ -128,7 +128,7 @@ To connect the ESXX programmer to either an ESPM or ESSJ board:
 
    JTAG port on the ESSJ board
 
-2. Connect the cable between the target board and the ESXX programmer, then power on the target by turning on the controller power switch. Both ESPM and ESSJ are powered by the dVRK Si controller through dSIB-Si. Once you become familiar with the connectors, you may connect with target powered on.
+2. Connect the cable between the target board and the ESXX programmer, then power on the target by turning on the controller power switch. Both ESPM and ESSJ are powered by the dVRK Si controller through dSIB-Si. Once you become familiar with the connectors, you may connect with the target powered on.
 
 .. warning::
 
@@ -143,7 +143,7 @@ To connect the ESXX programmer to either an ESPM or ESSJ board:
 Testing
 *******
 
-Once programmed and after disconnecting the ESXX programmer, power cycle the dVRK Si controller to load the new firmwares.
+Once programmed and after disconnecting the ESXX programmer, power cycle the dVRK Si controller to load the new firmware.
 
 When you power the dVRK controller, its front LEDs (PL,
 PS, ESPM, COM, 48V and AMP) will flash green from left to right until

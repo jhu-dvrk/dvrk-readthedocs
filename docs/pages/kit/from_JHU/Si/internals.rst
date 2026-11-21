@@ -6,7 +6,7 @@ Internal layout
 ###############
 
 The FPGA V3/dRAC-based controllers contain one FPGA V3 and one dRAC
-board, a LED board, 2 power supplies (12V logic and 48V motors and
+board, an LED board, and 2 power supplies (12V logic and 48V motors and
 brakes).
 
 .. figure:: /images/controllers/drac-controller-diagram.*

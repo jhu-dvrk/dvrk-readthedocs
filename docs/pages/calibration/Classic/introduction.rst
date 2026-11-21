@@ -7,7 +7,7 @@ Introduction
 
    This section is for the Classic arms only!
 
-Before you get started, make make sure you've setup the dVRK arms first:
+Before you get started, make sure you've set up the dVRK arms first:
 
 * :ref:`Hardware setup <setup-classic>`
 * :ref:`Connectivity <connectivity>`

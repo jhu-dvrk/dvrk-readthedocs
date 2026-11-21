@@ -41,8 +41,8 @@ you prefer Python, you should try the IRE (:ref:`embedded Python interpreter
 .. note::
 
    Even though the exact syntax depends on the programming language, all the
-   dVRK APIs, C++, Python, ROS topics, JSON over UDP (|sawSocketStreamer|) use
-   the :ref:`CRTK naming convention! <API-introduction>`
+   dVRK APIs (C++, Python, ROS topics, JSON over UDP via |sawSocketStreamer|_) use
+   the :ref:`CRTK naming convention <API-introduction>`!
 
 .. note::
 

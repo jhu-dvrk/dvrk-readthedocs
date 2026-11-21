@@ -9,7 +9,7 @@ Introduction
 On the da Vinci Classic (aka Standard) and S, the HRSV (High Resolution
 Stereo Video) can be moved up and down to adjust to the height of the
 user.  Some dVRK groups have received the original surgeon console,
-sometimes as-is and some other times gutted from their electronics.
+sometimes as-is and some other times gutted of their electronics.
 
 Original electronics
 ====================

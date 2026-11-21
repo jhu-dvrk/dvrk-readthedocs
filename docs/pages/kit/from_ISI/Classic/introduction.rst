@@ -6,8 +6,7 @@ Introduction
 History
 =======
 
-The first generation da Vinci, IS1000 and IS1200 (also known as Standard or
-Classic) was developed in the late 1990s.  It was retired from clinical use in
+The first generation da Vinci, IS1000 and IS1200 (also known as Standard or Classic), was developed in the late 1990s.  It was retired from clinical use in
 2012.
 
 .. note::
@@ -57,7 +56,7 @@ setup <setup-classic>`)
     mirrors and CRT monitors for both eyes
   * Head sensor: sensor used to detect if the operator is looking at
     the stereo display and enable the teleoperation
-  * Console lift motor: adjustable height for the HRSV for better ergonomic
+  * Console lift motor: adjustable height for the HRSV for better ergonomics
   * Console frame: can be reused to hold everything as opposed to
     building a custom frame
 
@@ -66,7 +65,7 @@ setup <setup-classic>`)
   * Light source
   * Camera control units (SD and HD)
   * Focus controller
-  * The rack itself if provided along the dVRK
+  * The rack itself if provided along with the dVRK
 
 * Patient's cart (Classic only)
 

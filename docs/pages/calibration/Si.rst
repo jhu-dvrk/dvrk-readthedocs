@@ -30,10 +30,10 @@ absolute position in radians or meters to each potentiometer value
 fact that we know:
 
 * The encoder resolution
-* The expected range of motion for each joints
+* The expected range of motion for each joint
 
 Therefore, by moving each joint from one limit to another we can find
-the measured range for a given joint and, recenter the measured range
+the measured range for a given joint and recenter the measured range
 to the expected range.
 
 Procedure
@@ -58,7 +58,7 @@ To calibrate the potentiometers, use:
 
 .. code-block:: bash
 
-   sawIntuitiveResearchKitSPotentiometersCalibration -c sawRobotIO1394-ECM-123456.json  # use the json file for your arm!
+   sawIntuitiveResearchKitSiPotentiometersCalibration -c sawRobotIO1394-ECM-123456.json  # use the json file for your arm!
 
 The :ref:`calibration program
 <sawintuitiveresearchkitsipotentiometerscalibration>` will try to

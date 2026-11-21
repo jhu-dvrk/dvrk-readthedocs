@@ -40,4 +40,4 @@ Applications
 * Heart Motion Compensation using the dVRK, UBC & Stanford (2015):
   https://youtu.be/DofIP9HE4GI
 * Autonomous Robot Surgery: Performing Surgical Subtasks without Human
-  Intervention, UC Berkeley (2014):https://youtu.be/beVWB6NtAaA
+  Intervention, UC Berkeley (2014): https://youtu.be/beVWB6NtAaA

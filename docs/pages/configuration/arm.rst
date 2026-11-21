@@ -42,8 +42,7 @@ can set the tool detection to be manual, automatic or fixed:
 The different options for ``tool_detection`` are:
 
 * ``AUTOMATIC``: this will rely on the Dallas chip query (this will
-  work with all Si PSMs as well as :ref:`Classic PSMs with a recent or
-  modified controllers <dallas>`)
+  work with all Si PSMs as well as :ref:`Classic PSMs with a recent or modified controller <dallas>`)
 * ``MANUAL``: when a tool is inserted, the user or application has to
   specify which tool to use.  This can be done using the Arm GUI with
   a drop-down menu or using a programmatic interface (e.g. ROS topic).

@@ -102,7 +102,7 @@ See next section for the :ref:`dSIB<dsib-si-setup>` descriptions.
 
 On the front view, you can locate the 4 original RACs as well as all
 the connectors that will be connected to the dSIB on the dVRK
-controllers.  There are 2 connectors from a bundle (white), a 2-wires
+controllers.  There are 2 connectors from a bundle (white), a 2-wire
 black cable, a "FireWire B" cable (used for LVDS) and a grounding cable with
 a ring terminal.  Bundle all these cables together and label with the name of the arm.
 
@@ -123,7 +123,7 @@ The upper "FireWire" cable (J10) and the bottom cable (J13) plugged into each RA
 
 .. caution::
 
-   The FireWire cable is mounted on the back of the dRAC PCB, labeled
+   The FireWire cable is mounted on the back of the RAC PCB, labeled
    J11. There is not much space to unplug it. We strongly recommend
    you detach the RAC (the whole block) from the large steel plate
    holding all 4 RACs, so you can unplug the cable without damaging the

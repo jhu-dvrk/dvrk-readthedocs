@@ -15,7 +15,6 @@ Connectors
 * Two Ethernet connectors
 * 4 and 5-pin safety chain connectors; see :ref:`E-Stop <estop>`
 * One SD card slot for the firmware and user applications
-  controllers
 
 
 .. figure:: /images/controllers/drac-controller-layout.png
@@ -46,7 +45,7 @@ Once the firmware is found and started:
 
 * AMP: state of the axis amplifiers. Off if all the motor amplifiers
   are off, solid green if any amplifier is on. The LED will blink red
-  if the controller has to shutdown (e.g. communication watchdog
+  if the controller has to shut down (e.g. communication watchdog
   timeout)
 
 The LEDs on the back of the controller are directly mounted on the

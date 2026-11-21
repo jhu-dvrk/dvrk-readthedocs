@@ -67,7 +67,7 @@ monitoring the absolute position of a given feature on the instrument.
     5).  It is a pretty easy axis to locate, and it is rigidly attached
     to the shaft so its distance to the RCM point is only affected by
     the 3rd actuator.  The fourth joint (rotation along the shaft) can
-    be used to align the 5 joint's axis with the first joint's axis
+    be used to align the 5th joint's axis with the first joint's axis
     (90-degree rotation from 0)
   * To track the absolute 3D position of the feature, we recommend using a camera on a tripod connected to your computer.  This way you
     can place some "marker" on your screen and make sure the feature
@@ -78,7 +78,7 @@ monitoring the absolute position of a given feature on the instrument.
     is so each group can adjust the range of motion to the amount of
     free space around their PSM.
   * Finally, while the arm is rocking back and forth, the user can
-    adjust the depth offset using the keys `+`/`-`
+    adjust the depth offset using the keys ``+``/``-``
 
 Since a picture is worth a thousand words, we provide a short `video
 describing the procedure <https://youtu.be/jejdnB8irSA>`_.
@@ -90,7 +90,7 @@ Requirements
 * A working system file for the PSM you need to calibrate
 * A camera on a tripod or fixed mount is recommended.  A basic USB web
   camera will do fine.  For Linux, most USB cameras can be used with
-  `tvtime`
+``tvtime``
 * An 8mm da Vinci Classic instrument (e.g. Large Needle Driver,
   DeBakey, Micro Forceps...).  The procedure won't work with S/Si
   instruments since they are too long (see :ref:`instruments
@@ -120,7 +120,7 @@ Procedure
   feed on your dVRK computer (or another computer if you prefer)
 * In a third terminal, launch the :ref:`calibration script
   <dvrk_calibrate_potentiometer_psm>`
-  (``dvrk_calibrate_potentiometer_psm_cv.py``) with the
+  (``dvrk_calibrate_potentiometer_psm.py``) with the
   ``sawRobotIO1394-PSMx-xxxxx.json`` corresponding to your PSM,
   something like:
 
@@ -161,7 +161,7 @@ Introduction
 
 The basic idea is the same as in the manual version: if we rock the
 PSM side to side (around the first joint) and choose the insertion
-depth so that the axis for joint 5 should be position at the RCM, then
+depth so that the axis for joint 5 should be positioned at the RCM, then
 joint 5's axis should not move. If it does move, we adjust the
 insertion calibration until it is fixed. For the computer to
 automatically track joint 5's axis via a camera, the screw needs to be
@@ -191,7 +191,7 @@ Requirements
 Procedure
 ---------
 
-* Start system with ``-C option``!  For example:
+* Start system with ``-C`` option!  For example:
 
   .. code-block:: bash
 
@@ -220,13 +220,13 @@ Procedure
   ideal, but at least +/-50 degrees should be ok. Smaller ranges of
   motion may work, but may fail to work properly in some cases.
 * As soon as you press ``d`` (for *done*), the PSM will move briskly to
-  the starting position and beginning measuring the camera's
+  the starting position and begin measuring the camera's
   orientation. *NOTE* If the pink vision target moves out of the
   camera's view during this step, either adjust the camera's angle or
   move it slightly further away. You will be prompted to select the
   target by clicking it on the screen, to avoid tracking the wrong
   pink object.
-* Next, the PSM will beginning rocking side to side and calibration
+* Next, the PSM will begin rocking side to side and calibration
   will commence. At any point, if the computer loses track of the
   target a message will be shown in the terminal prompting you to
   click on the target again.
@@ -234,7 +234,7 @@ Procedure
   by default), calibration will complete. If the timeout is reached
   before convergence (2 minutes by default), calibration will fail. In
   this case, try improving lighting, camera position, etc. or increase
-  the timeout (this can be done via a option on the calibration
+  the timeout (this can be done via an option on the calibration
   script, use ``-t 180`` to raise it to three minutes). Finally, if
   convergence is almost reached but not quite, you could try loosening
   the convergence threshold, e.g. passing ``--threshold 0.5`` to raise
@@ -258,7 +258,7 @@ of 4 mm resulted in over 45% increased RMSE (root-mean-square error),
 with typical RMSE of 1.86 mm for a calibrated PSM. For uncalibrated
 dVRK systems, the potentiometer offset error is often 5-10 mm, which
 can result in more than doubling the RMSE. Maximum error across the
-PSMs range of motion also decreased significantly with proper
+PSM's range of motion also decreased significantly with proper
 calibration.
 
 .. figure:: /images/Classic/PSM/psm-pot-calib-effect.png

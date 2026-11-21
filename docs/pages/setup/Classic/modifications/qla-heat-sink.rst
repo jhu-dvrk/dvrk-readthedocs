@@ -28,14 +28,14 @@ heat sink and fan.  The ECM arm is not as light as the PSMs and
 requires a fair bit more power.  The second joint itself can draw
 close to 0.5 A continuously.
 
-The MTMs and PSMs can run for- a little while (half hour or so) without
+The MTMs and PSMs can run for a little while (half hour or so) without
 any issues but for prolonged usage, we strongly recommend upgrading
 your controllers with an extra heat sink and fan.
 
 Power source for the fans
 =========================
 
-The QLA boards have multiple 2 pins 12 V connectors that are powered
+The QLA boards have multiple 2-pin 12 V connectors that are powered
 when the motor power is turned on.  We can use these to power a fan
 for active cooling.
 
@@ -114,7 +114,7 @@ There are three 12V connectors on the QLA, all equivalent.  Note that
 one of them might already be used for the whole controller case fan.
 The fan's plug still has room for 3 pins while the QLA plugs only have
 two pins, so there are two physical ways to plug the fans.  Make sure
-you plug it so the two wires (black and red) and aligned with the QLA
+you plug it so the two wires (black and red) are aligned with the QLA
 plug.
 
 .. figure:: /images/qla-heat-sink-socket-370/qla-heat-sink-board-power.jpg

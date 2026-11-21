@@ -4,7 +4,7 @@
 Repositories
 ************
 
-For ROS users, we recommend to use ``vcs`` to retrieve all the
+For ROS users, we recommend using ``vcs`` to retrieve all the
 repositories used by the dVRK software stack.  ``vcs`` allows users to
 manage a set of repositories.  The source of all packages based on the
 *cisst*/*SAW* libraries can be downloaded using ``vcs``.  Generic

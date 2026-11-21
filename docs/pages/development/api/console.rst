@@ -35,7 +35,9 @@ Per console
 ***********
 
 One can have multiple consoles, in this case the namespace can be ``console1/``,
-``console2/``... instead of ``console/``. * ``console/camera``
+``console2/``... instead of ``console/``.
+
+* ``console/camera``
 
   * *cisst*: event write ``prmEventButton``
   * *ROS*: publisher ``sensor_msgs/Joy``
@@ -51,8 +53,8 @@ One can have multiple consoles, in this case the namespace can be ``console1/``,
   * *ROS*: publisher ``sensor_msgs/Joy``
   * dVRK specific: indicate if the console assumes it should clutch
     the active teleoperation components.  The console component
-    simple passes the clutch state to the teleoperation components
-    who then have to handle the clutch.
+    simply passes the clutch state to the teleoperation components,
+    which then have to handle the clutch.
 
 * ``console/operator_present``
 
@@ -93,7 +95,7 @@ One can have multiple consoles, in this case the namespace can be ``console1/``,
   * *ROS*: subscriber ``std_msgs/Bool``
   * dVRK specific: enable or disable the teleoperation at the console
     level.  When teleoperation is enabled for the console, the
-    console will manage with teleoperation components should be
+    console will manage which teleoperation components should be
     enabled using the following logic:
 
     * Teleoperation components must be declared in the console JSON
@@ -118,7 +120,7 @@ One can have multiple consoles, in this case the namespace can be ``console1/``,
 * ``console/teleop/scale``
 
   * *cisst*: event write ``double``
-  * *ROS*: publisher ``std_msgs::Float64``
+  * *ROS*: publisher ``std_msgs/Float64``
   * dVRK specific: last scale sent to all teleoperation components.
     If a scale is set directly for a specific teleoperation component
     (i.e. not using the console teleoperation scale), said component
@@ -134,21 +136,21 @@ One can have multiple consoles, in this case the namespace can be ``console1/``,
 * ``console/teleop/teleop_selected``
 
   * *cisst*: event write ``std::string``
-  * *ROS*: publisher ``std_msgs::String``
+  * *ROS*: publisher ``std_msgs/String``
   * dVRK specific: indicate which pairs of MTMs/PSMs are currently
     selected (PSM and ECM teleoperation components).
 
 * ``console/teleop/teleop_unselected``
 
   * *cisst*: event write ``std::string``
-  * *ROS*: publisher ``std_msgs::String``
+  * *ROS*: publisher ``std_msgs/String``
   * dVRK specific: indicate which pairs of MTMs/PSMs are currently
     unselected (PSM and ECM teleoperation components).
 
 * ``console/teleop/select_teleop``
 
   * *cisst*: write command ``std::string``
-  * *ROS*: subscriber ``std_msgs::String``
+  * *ROS*: subscriber ``std_msgs/String``
   * dVRK specific: select a specific PSM or ECM teleoperation.  The string
     message is the name of the teleoperation component to select (``MTMR_PSM1``,
     ``MTMR1_MTML1_ECM``...).  If there is any conflict between the newly
@@ -160,7 +162,7 @@ One can have multiple consoles, in this case the namespace can be ``console1/``,
 * ``console/teleop/unselect_teleop``
 
   * *cisst*: write command ``std::string``
-  * *ROS*: subscriber ``std_msgs::String``
+  * *ROS*: subscriber ``std_msgs/String``
   * dVRK specific: unselect a specific PSM or ECM teleoperation.
 
 Foot pedals

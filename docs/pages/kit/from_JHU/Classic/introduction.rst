@@ -16,7 +16,7 @@ of them per controller.
 
 The controllers are designed to interface with the da Vinci Classic
 (first generation) active arms, both on the patient and surgeon's
-side.  The physical interface between the QLA/FPGA boards is a dMIB
+side.  The physical interface between the QLA/FPGA boards and the arm is a dMIB
 (da Vinci Manipulator Interface Board).  The controllers provide
 inputs for the potentiometers and encoders as well as miscellaneous
 digital IOs (foot pedals, buttons...).  For motor control they use

@@ -7,12 +7,12 @@ dMIB modification for setup joints switch ECM pre 2015
 
    The SUJ switch for the ECM is physically connected to the ECM
    Classic controller. If your ECM controller was manufactured before
-   2015, SUJ switch will not work unless you modify the dMIB
+   2015, the SUJ switch will not work unless you modify the dMIB.
 
 The setup joint switch/button on the ECM is not using the same digital
 input as the setup joint switch on the PSMs.  This was unfortunately
-discovered after the dMIB were designed (pre-2015 revisions).  In
-other words, you might have to modify the dMIB to short a couple pins.
+discovered after the dMIB was designed (pre-2015 revisions).  In
+other words, you might have to modify the dMIB to short a couple of pins.
 You will need someone in house who can do some soldering.
 
 Using the sawRobotIO1394 Console you should be able to monitor the

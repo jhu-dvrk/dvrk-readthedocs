@@ -11,7 +11,7 @@ ROS 1
 
 .. warning::
 
-   ROS1 itself is not maintained anymore, we strongly recommend to use ROS2.
+   ROS1 itself is not maintained anymore; we strongly recommend using ROS2.
    The dVRK support for ROS1 will likely be dropped after release 2.4 (end of
    2025).
 
@@ -115,7 +115,7 @@ Use a ROS launch file to start the dVRK in simulated mode with the patient cart 
 
    dVRK with Classic patient cart simulated in RViz
 
-In the dVRK GUI, open the `Arm` `PSM1` tab and select an instrument to use.
+In the dVRK GUI, open the ``Arm`` ``PSM1`` tab and select an instrument to use.
 
 In a second terminal, use a Python test script to make an arm move:
 
@@ -125,7 +125,7 @@ In a second terminal, use a Python test script to make an arm move:
    rosrun dvrk_python dvrk_arm_test.py -a PSM1
 
 The main :ref:`dVRK ROS node<system>` is ``dvrk_system`` from
-the ``dvrk_robot``.  This node requires configuration files specific
+the ``dvrk_robot`` package.  This node requires configuration files specific
 to your system.
 
 You can also find more launch examples in the :ref:`Usage/Simulation
@@ -137,5 +137,5 @@ Notes
 * Don't forget to start a ``roscore`` if you're using ``rosrun``.
   ``roslaunch`` will start a ``roscore`` if needed.
 
-* Don't forget to kill our roscore when you're done.  If you're
+* Don't forget to kill your ``roscore`` when you're done.  If you're
   working on a shared computer, other users will thank you.

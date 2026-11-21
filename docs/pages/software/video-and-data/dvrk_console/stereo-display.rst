@@ -41,7 +41,7 @@ Rendering and display topologies
 ``side_by_side`` (3D Monitors and Headsets)
   Opens a single window displaying the left and right eye images packed horizontally
   side by side. This mode is used for 3D TVs, passive polarizing 3D monitors, and
-  external 3D video headsets such as Gooviz.
+  external 3D video headsets such as Goovis.
 
 ``headless`` (Socket Streaming and XR)
   Creates no video-output windows; the control window is still available.

@@ -36,7 +36,7 @@ The main parts of a da Vinci instrument are:
 
 * two release levers, used to remove the instrument from the sterile
   adapter
-* rotating shaft, long tube containing cables/rodes to transmit the
+* rotating shaft, long tube containing cables/rods to transmit the
   motion for the last 3 actuators
 * an articulated wrist with 2 degrees of freedom (EndoWrist)
 * a tip, articulated (scissor, grasper, forceps...) or not (hook,
@@ -68,10 +68,9 @@ Classic vs S/Si
 The main differences between the first generation of instruments
 (Classic) and the second (S and Si) are:
 
-* Model number: both generation of instruments are identified by a 6 digits
-  number.  Classic instrument model numbers start with **400** while S/Si
+* Model number: both generations of instruments are identified by a 6-digit number.  Classic instrument model numbers start with **400** while S/Si
   instrument model numbers start with **420**.  For example, a classic large
-  needle driver (LND) uses **400**\ 006 while a S/Si LND uses
+  needle driver (LND) uses **400**\ 006 while an S/Si LND uses
   **420**\ 006.
 * Length: S/Si instruments are longer.  If you are curious, you should
   look at S/Si PSM arms, they have an interesting two stage
@@ -83,7 +82,7 @@ The main differences between the first generation of instruments
 * Shape of the instrument disk plate and sterile adapter: since both
   the Classic and S/Si were commercially available at the same time,
   the instruments have a different base-plate to make sure a Classic
-  instrument can't be accidentally inserted on a S/Si PSM and a S/Si
+  instrument can't be accidentally inserted on an S/Si PSM and an S/Si
   instrument can't be inserted on a Classic PSM.
 
   .. figure:: /images/instruments/instrument-Classic-vs-Si-housing.jpeg
@@ -100,7 +99,7 @@ The main differences between the first generation of instruments
 
 .. note::
 
-   Since the da Vinci classic has been retired in 2012, it is getting
+   Since the da Vinci Classic was retired in 2012, it is getting
    harder to find instruments for this model.  Fortunately, when
    Intuitive Surgical introduced the da Vinci S (and later Si) the
    instruments remained **almost** unchanged, so it is possible to use
@@ -112,8 +111,7 @@ EndoWrist
 #########
 
 The wrist design is pretty much the same between the Classic and Si
-instruments.  Instruments actually share their names and serial's
-number last 3 digits across generations.  A Large Needle Driver for
+instruments.  Instruments actually share their names and part number's last 3 digits across generations.  A Large Needle Driver for
 the da Vinci Classic has the serial number 400\ **006** while the
 Large Needle Driver for the da Vinci S and Si has the serial number 4\
 **2**\ 0\ **006**.
@@ -137,7 +135,7 @@ stacked disks.  This is sometimes known as a snake-like robot.
 
 For energized instruments (see next section), the wrist has to include
 some electric insulators in the last joint. For a bipolar instrument,
-each jaw is isolated from the other and the rest of the instrument
+each jaw is isolated from the other and the rest of the instrument.
 
 .. figure:: /images/instruments/instrument-bipolar-EndoWrist.jpeg
    :width: 250
@@ -191,7 +189,7 @@ number on the cover.
    :width: 250
    :align: center
 
-   Large needle with "new" gear-based roll mechanism ("VER 12")
+   Large needle driver with "new" gear-based roll mechanism ("VER 12")
 
 .. warning::
 

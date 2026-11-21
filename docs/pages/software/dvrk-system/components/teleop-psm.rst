@@ -25,14 +25,14 @@ Behavior
 
 The current implementation primarily attempts to mimic the
 teleoperation implemented on the Intuitive Surgical Inc (ISI) clinical
-systems. The MTM motion (input) is divided in 3 components:
+systems. The MTM motion (input) is divided into 3 components:
 
 * Position: the 3D position of the MTM is used to compute a *relative*
   translation applied to the PSM position.  Since it is relative, it
   can be scaled and clutched to compute the PSM desired position.
 
-* Orientation: the 3D orientation of the PSM with respect to camera should
-  always match the orientation of MTM with respect to the surgeon's display.
+* Orientation: the 3D orientation of the PSM with respect to the camera should
+  always match the orientation of the MTM with respect to the surgeon's display.
   Therefore the orientation is *absolute* and there is no rotation to be applied
   to the MTM orientation to compute the PSM orientation (note that there is
   always a small rotation offset that we will describe later).  Maintaining the
@@ -46,7 +46,7 @@ systems. The MTM motion (input) is divided in 3 components:
   Ideally, a zero angle represents closed gripper and jaws.  We
   maintain a scale to match the maximum opening of the gripper with
   the jaws.  The scale is hardware dependent and we can't clutch the
-  gripper so this an *absolute* relation between the MTM gripper and
+  gripper so this is an *absolute* relation between the MTM gripper and
   the PSM jaws.
 
 States
@@ -59,7 +59,7 @@ corresponding to the different stages of teleoperation:
   Nothing to do, the teleoperation doesn't need to run.
 
 ``SETTING_ARMS_STATE``
-  In this state the teleoperation tried to "enable" and "home" the two arms, MTM
+  In this state the teleoperation tries to "enable" and "home" the two arms, MTM
   and PSM (``state_command("enable")`` and ``state_command("home")``) and
   monitors their operating states (``operating_state``).  If both arms are ready,
   the teleoperation component moves to the next state, ``CHECKING_DATA``.
@@ -70,7 +70,7 @@ corresponding to the different stages of teleoperation:
   moving to ``ALIGNING_MTM``.
 
 ``ALIGNING_MTM``
-  At the point both arms are ready.
+  At this point, both arms are ready.
 
   * The first thing the teleoperation has to do is make sure the MTM
     orientation matches the PSM one.  The PSM orientation (from
@@ -78,23 +78,23 @@ corresponding to the different stages of teleoperation:
     (``MTM/setpoint_cp``) to compute the desired pose for the MTM.  We
     use a ``move`` command (``MTM/move_cp``).
   * Once the move command has been sent, the teleoperation component
-    uses a set of criterions to decide if we can start teleoperation
-    itself (i.e. go in follow mode).  If these conditions are not met,
-    the dVRK console periodically sends warning telling the user what
+    uses a set of criteria to decide if we can start teleoperation
+    itself (i.e. go into follow mode).  If these conditions are not met,
+    the dVRK console periodically sends warnings telling the user what
     is wrong:
 
     #. The MTM must have moved to the desired orientation
        (``MTM/goal_cp``).  It happens mostly when the user applies too
        much torque on the wrist and doesn't allow the MTM to move
        toward the goal.  For this, we compare the orientation goal
-       send previously with the actual MTM orientation
+       sent previously with the actual MTM orientation
        (``MTM/measured_cp``).  The difference is converted to an
        axis/angle representation and we check the angle against a
        given threshold.
     #. The user must have their fingers on the MTM gripper.  There is no
        "presence" sensor so the teleoperation component checks the amount of
        motion on the last two MTM joints (roll and gripper) and compares this to
-       a predefined set of thresholds (configurable in system JSON configuration
+       a predefined set of thresholds (configurable in the system JSON configuration
        file).  The operator has to wiggle their fingers a small amount to signal
        that they're ready.
 
@@ -104,8 +104,8 @@ corresponding to the different stages of teleoperation:
 
   * When the follow mode starts:
 
-    #. Both the MTM measured cartesian pose (``MTM/measured_cp`` and
-       PSM setpoint cartesian pose ``PSM/setpoint_cp``) are saved as
+    #. Both the MTM measured Cartesian pose (``MTM/measured_cp``) and
+       PSM setpoint Cartesian pose (``PSM/setpoint_cp``) are saved as
        initial poses.
     #. The MTM is "freed" (``MTM/servo_cf(zero_wrench)``) and gravity
        compensation is turned on (``MTM/set_gravity_compensation(true)``).  The
@@ -120,7 +120,7 @@ corresponding to the different stages of teleoperation:
     #. And finally send to PSM: ``PSM/servo_cp(psm_servo_cp)``
 
   * We can see from the steps above that this is a unilateral
-    teleoperation since at no point it checks on the PSM pose (neither
+    teleoperation since at no point does it check the PSM pose (neither
     ``measured`` nor ``setpoint``) once the teleoperation has started.
 
 Clutch
@@ -140,12 +140,12 @@ Rotation offset
 
 Ideally the orientation should remain absolute.  In practice the MTM orientation
 is never exactly equal to the PSM orientation due to floating point errors,
-mechanical errors and some effort applied by the operator.  The teleoperation is
-entering in follow mode when the error in orientation is under a certain
-threshold.  When the error is under that threshold, the teleoperation save the
+mechanical errors and some effort applied by the operator.  The teleoperation
+enters follow mode when the error in orientation is under a certain
+threshold.  When the error is under that threshold, the teleoperation saves the
 rotational error as a rotation offset.  This offset is then applied to the MTM
 orientation every time it is sent to the PSM.  Without the rotation offset, the
-PSM orientation would jump a little bit when the teleoperation enters in follow
+PSM orientation would jump a little bit when the teleoperation enters follow
 mode.
 
 When turning off ``align_mtm``, the orientation becomes relative and
@@ -159,17 +159,17 @@ Gripper and jaws
 
 For the gripper and jaws, we use a negative closing angle to increase the
 grasping torque on the PSM side.  This implies that the MTM gripper must be able
-to send negative angles when squizzed hard.  On the da Vinci, the gripper is
+to send negative angles when squeezed hard.  On the da Vinci, the gripper is
 maintained open by two springs, a long weak one and a shorter strong one.  As
 the user tightens their grip, the first spring provides a small resistance. When
 the gripper is about half closed, the second spring kicks in and provides a
 stronger resistance.  We use this transition point to define zero on the MTM
 gripper.  This creates a simple but effective force feedback on the gripper.
 
-The teleoperation component first query both the MTM and PSM to get their
+The teleoperation component first queries both the MTM and PSM to get their
 maximum opening angles. The ratio of these two angles is used as a scale to map
 the MTM gripper angle to the PSM jaws angle.  The scale and zero can be
-configured in system JSON configuration file if needed.  The minimum negative
+configured in the system JSON configuration file if needed.  The minimum negative
 value is not used to scale the closing angle.  The maximum torque applied on the
 instrument jaws is defined in the instrument's JSON configuration file.
 
@@ -202,7 +202,7 @@ Main limitations
 ****************
 
 * PSM's mechanical limits are not taken into account.  The
-  teleoperation logic just sends a cartesian goal and doesn't check
+  teleoperation logic just sends a Cartesian goal and doesn't check
   nor track if this position is reachable.  This leads to unexpected
   motion and PID tracking errors on the PSM when operating past the
   joint limits.

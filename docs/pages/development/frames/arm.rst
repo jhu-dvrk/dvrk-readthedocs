@@ -28,10 +28,10 @@ For each individual arm, the cartesian positions are based on:
     * defined in the system JSON configuration per arm using ``base_frame``
     * set at runtime by command or ROS topic ``set_base_frame``
 
-For example, the MTM kinematic (DH parameters) start from the link 0,
+For example, the MTM kinematics (DH parameters) start from link 0,
 i.e. close to the attachment point/shoulder (see
-``share/kinematics/mtmr.json`` in
-https://github.com/jhu-dVRK/sawIntuitiveResearchKit) and has Z
+``share/kinematic/mtmr.json`` in
+https://github.com/jhu-dvrk/sawIntuitiveResearchKit) and have Z
 pointing up, X to the left and Y towards the user.  But the ISI
 convention expects that X points to the left when viewed from the
 stereo display, Y should point up and Z away from the user.
@@ -95,7 +95,7 @@ Patient's side
 **************
 
 The base frames defined in your ``system.json`` depend on how your
-PSMs are mounted.  If you have a fixed camera, you can use or hand-eye
+PSMs are mounted.  If you have a fixed camera, you can use our hand-eye
 calibration method:
 https://github.com/jhu-dvrk/dvrk_camera_registration.  If you have an
 ECM, see :ref:`SUJ <frames_SUJ>`.

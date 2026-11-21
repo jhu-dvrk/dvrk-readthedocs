@@ -8,7 +8,7 @@ Intuitive Surgical
 ##################
 
 **ISI**
-  Intuitive Surgical Inc., now known simply as Intuitive (https://wwww.intuitive.com)
+  Intuitive Surgical Inc., now known simply as Intuitive (https://www.intuitive.com)
 
 **Classic**
   First generation da Vinci. The original da Vinci research kit is based on the :ref:`Classic <davinci-classic>`. Also known as Standard.  Patient cart came with either 2 or 3 PSMs.
@@ -17,7 +17,7 @@ Intuitive Surgical
   See :ref:`Classic <davinci-classic>`.
 
 **S**
-  Second generation da Vinci. New patient cart (PSMs, ECM, SUJs...), but surgeon console (MTMs, pedals, display...) are similar to first generation.
+  Second generation da Vinci. New patient cart (PSMs, ECM, SUJs...), but surgeon console (MTMs, pedals, display...) is similar to first generation.
 
 **Si**
   Third generation da Vinci (see :ref:`da Vinci Si <davinci-si>`). New surgeon console (MTMs, dual console, display, simulator...). Patient cart is similar to second generation. Supported by the dRAC based :ref:`dVRK Si controllers <controllers-si>`.
@@ -26,13 +26,13 @@ Intuitive Surgical
   Same as Si but with only two PSMs on the patient cart (PSM3 not included).
 
 **Xi**
-  Fourth generation da Vinci.  New setup joints, new arm to replace both PSMs and ECM (now known as USMs) can be used to hold tools or camera.  Surgeon console and stereo display similar to Si.
+  Fourth generation da Vinci.  New setup joints, and a new arm (now known as USM) to replace both PSMs and ECM that can be used to hold tools or a camera.  Surgeon console and stereo display similar to Si.
 
 **X**
   Similar to Si but with Xi patient side arms.
 
 **5**
-  Latest generation, new surgeon console and patient cart based on Xi systems.  The da Vinci 5 also introduce instruments with force sensing to provide haptic feedback to the operator.
+  Latest generation, new surgeon console and patient cart based on Xi systems.  The da Vinci 5 also introduces instruments with force sensing to provide haptic feedback to the operator.
 
 **PSM**
   Patient Side Manipulator, 2 to 3 on a full da Vinci system. Mechanically identical, they're called PSM1, PSM2, PSM3 (see :ref:`Classic PSM <psm>` and :ref:`Si PSM <psm-si>`).
@@ -48,7 +48,7 @@ Intuitive Surgical
   ECM and PSMs.  Some early versions (Standard, S, Si) came with only
   three passive arms (missing PSM3). See :ref:`Classic SUJ <suj>` and :ref:`Si SUJ <suj-si>`.
 
-**HRSV**:
+**HRSV**
   High Resolution Stereo Viewer.  At least 3 versions exist, 640x480 CRT (Standard and S), 1024x768 CRT (S HD), LCD (Si/Xi/5). The Research Kit initially came with the CRT 640x480, recent sites should receive the console from S HD systems. See :ref:`Video <video>`.
 
 **CCU**
@@ -77,13 +77,13 @@ General
   Computer-Integrated Surgical Systems and Technology: `NSF ERC CISST <https://cisst.org>`_ and `cisst libraries <https://github.com/jhu-cisst>`_
 
 **SAW**
-  Surgical Workstation Assistant: `components based on cisst libraries <https://cisst.readthedocs.io/en/main/libraries/overview.html>`_
+  Surgical Assistant Workstation: `components based on cisst libraries <https://cisst.readthedocs.io/en/main/libraries/overview.html>`_
 
 **CRTK**
   `Collaborative Robotics ToolKit <https://crtk-robotics.readthedocs.io>`_
 
 **ROS**
-  `Robotic Operating System <https://www.ros.org>`_ (see :ref:`ROS 1 <ros1>` and :ref:`ROS 2 <ros2>` compilation)
+  `Robot Operating System <https://www.ros.org>`_ (see :ref:`ROS 1 <ros1>` and :ref:`ROS 2 <ros2>` compilation)
 
 dVRK specific
 *************
@@ -94,10 +94,10 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
   Motor power board, Quad Linear Amplifier, JHU designed board with power for up to 4 axes (see :ref:`QLA board <qla>`).  Used in :ref:`Classic arm controllers <controllers-classic>` (2 per controller) and :ref:`Classic SUJ controller <controllers-suj-classic>`.
 
 **dRAC**
-  Motor power board 10 PWM power lines, JHU designed board to power up to 7 motors and 3 brakes (see :ref:`dRAC board <drac>`).  Used in :ref:`Si controllers <controllers-si>`.
+  Motor power board with 10 PWM power lines, JHU designed board to power up to 7 motors and 3 brakes (see :ref:`dRAC board <drac>`).  Used in :ref:`Si controllers <controllers-si>`.
 
 **FPGA**
-  Logic board designed by JHU, mated with QLAs or dRAC (see :ref:`FPGA board <fpga>`). Provides 2 FireWire adapters to daisy-chain and connect to PC. Versions 2+ also includes an Ethernet adapter.  Version 3+ uses a newer FPGA, 2 FireWire and 2 Ethernet adapters, a dual-core ARM processor boots from a micro-SD card (see :ref:`FPGA versions <fpga-versions>`).
+  Logic board designed by JHU, mated with QLAs or dRAC (see :ref:`FPGA board <fpga>`). Provides 2 FireWire adapters to daisy-chain and connect to PC. Version 2+ also includes an Ethernet adapter.  Version 3+ uses a newer FPGA, 2 FireWire and 2 Ethernet adapters, and a dual-core ARM processor that boots from a micro-SD card (see :ref:`FPGA versions <fpga-versions>`).
 
 **QLA-FPGA**
   Board set including a QLA and FPGA board.  Used in the Classic arm controllers, up to CA9 (see :ref:`controller versions <controller-versions>`).
@@ -106,7 +106,7 @@ All boards are designed by JHU and built specifically for the dVRK unless mentio
   Dual QLA setup with a single FPGA board (version 3+).  Used in the Classic arm controllers after CA9 (see :ref:`controller versions <controller-versions>`).
 
 **Firmware**
-  In most cases, refers to embedded software running on the FPGA logic board.  For Si systems can also refer to the ESSJ or ESPM boards. See :ref:`dVRK firmware <firmware>`.
+  In most cases, refers to embedded software running on the FPGA logic board.  For Si systems, it can also refer to the ESSJ or ESPM boards. See :ref:`dVRK firmware <firmware>`.
 
 **dMIB**
   da Vinci Manipulator Interface Board, board designed to interface between the ISI manipulators using an ITT Cannon plus a foot pedal connector and the QLA-FPGA connectors (SCSI and RS cables).  Used in :ref:`Classic arm controllers <controllers-classic>` (see also :ref:`dMIB I/Os <dmib-io>`).

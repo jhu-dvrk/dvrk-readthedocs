@@ -4,10 +4,10 @@ CMake
 
 .. warning::
 
-   **We strongly recommend to NOT use these instructions**, unless you
-   are really allergic to ROS.  The ROS build with :ref:`ROS 1 catkin
+   **We strongly recommend NOT using these instructions**, unless you
+   are really allergic to ROS.  The ROS builds with :ref:`ROS 1 catkin
    <ros1>` or :ref:`ROS 2 colcon <ros2>` are much simpler and require
-   less manual steps.
+   fewer manual steps.
 
 Introduction
 ############
@@ -34,7 +34,7 @@ There are some major drawbacks when not using ROS:
   :ref:`sawSocketStreamer <udp-json>` or :ref:`sawOpenIGTLink <igtl>`,
   but these are not as convenient as ROS.
 
-* None of the programs provided along the dVRK relying on ROS will
+* None of the programs provided along with the dVRK relying on ROS will
   work.  That includes many calibration scripts.  So if you plan to
   use Windows or macOS for a specific application, you will still need
   to use Linux/ROS to calibrate your system.  The :ref:`configuration
@@ -79,12 +79,12 @@ The main repositories for the dVRK project are:
 * https://github.com/jhu-cisst/cisst.git - cisst libraries, this
   repository is included as a submodule of ``cisst-saw.git``
 
-* https://github.com/jhu-saw/....  - repositories for
+* https://github.com/jhu-saw - repositories for
   |sawRobotIO1394|_, |sawGenericInput|_, |sawControllers|_...  All
   included as submodules of ``cisst-saw.git``
 
-* http://github.com/jhu-dvrk/sawIntuitiveResearchKit - *SAW*
-  components specific to the dVRK. Included as submodule of
+* https://github.com/jhu-dvrk/sawIntuitiveResearchKit - *SAW*
+  components specific to the dVRK. Included as a submodule of
   ``cisst-saw.git``
 
 Compilation
@@ -92,7 +92,7 @@ Compilation
 
 For all OSs, you need to first compile *cisstNetlib*.  It is
 recommended to compile the C version of *cisstNetlib* unless you have
-access to a old Fortran compiler (gfortran 9 or lower).  You will then
+access to an old Fortran compiler (gfortran 9 or lower).  You will then
 need to compile the *cisst/SAW* meta repository.  The steps are
 described in the GitHub continuous integration YAML files:
 
@@ -133,7 +133,7 @@ environment variables with ``bash``, go in your build tree and type:
 
 .. code-block:: bash
 
-   cisst/cisstvars.sh
+   source cisst/cisstvars.sh
 
 Notes:
 

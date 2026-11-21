@@ -12,7 +12,7 @@ configuration files and edit them by hand.
 
 There are three types of SUJ for the dVRK: *Classic*, *Si* and *Fixed*.
 
-The configurations files are somewhat similar across the SUJ types but not
+The configuration files are somewhat similar across the SUJ types but not
 exactly the same.  Make sure you start from the correct version.
 
 Classic
@@ -21,7 +21,7 @@ Classic
 Examples can be found in ``dvrk/dvrk_config_jhu/jhu-daVinci``.
 
  * ``sawRobotIO1394-SUJ.json``: This file is unique to each system since it is
-   calibrated for current feedback so, you should keep your version in your configuration file directory 
+   calibrated for current feedback, so you should keep your version in your configuration file directory. 
  * ``suj-ECM-1-2-3.json``: This file contains the DH parameters for all the SUJs
    as well as the calibration results for the potentiometers to joint values
    conversion.  As such, this file is also specific to each system.

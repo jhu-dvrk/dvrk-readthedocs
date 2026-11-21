@@ -4,10 +4,10 @@ Classic SD
 ##########
 
 ISI SD Panasonic (640x480) is the most common endoscopic system found
-on Classic/Standard full da Vinci system.  The camera heads come with
+on Classic/Standard full da Vinci systems.  The camera heads come with
 a motorized mechanism to control the focus.  To process the raw video
 signals, there are two CCUs (Camera Control Units), usually bolted to
-the video tower.  One of the CCU model used is the Panasonic GP US742
+the video tower.  One of the CCU models used is the Panasonic GP US742
 (at least in the US).  The video outputs on the back of the CCUs are
 all analog and the simplest option is to use the S-Video
 (https://www.lifewire.com/s-video-definition-1082148) connection.
